@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.85 $ $Date: 2000/12/10 11:33:19 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.86 $ $Date: 2001/03/28 12:04:26 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.85 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.86 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2226,6 +2226,9 @@ Text::
 ::DoubleMetaphone adcf Convert string to phonetic encoding          MAURICE
 ::FastTemplate    bdpO Perl subs from line-oriented templates       BOZZIO
 ::Substitute      adpf Runtime backslash sequence substitution      ILTZU
+
+Text::PDF::
+::API
 
 Text::Wrap::
 ::Hyphenate       a    Like Text::Wrap with ability to hyphenate    MJD
