@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.31 $$Date: 2000/02/19 10:26:29 $
+The Perl 5 Module List       $Revision: 3.32 $$Date: 2000/03/29 13:37:55 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.31 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.32 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1301,6 +1301,7 @@ Math::
 
 Statistics::
 ::ChiSquare       Rdpf Chi Square test - how random is your data?   JONO
+::ConwayLife      ???? ...                                          ANDK
 ::Descriptive     RdpO Descriptive statistical methods              COLINK
 ::LTU             RdpO Implements Linear Threshold Units            TOMFA
 ::MaxEntropy      Rdpf Maximum Entropy Modeling                     TERDOEST
@@ -1352,7 +1353,7 @@ List::
 ::Util            bdcf List utilities (eg min, max, reduce)         GBARR
 
 Bit::
-::Vector          RdcO Efficient bit vector and set base class      STBEY
+::Vector          RdcO Fast bit-vec, sets of int & big int math lib STBEY
 
 Set::
 ::IntRange        RdcO Set of integers (arbitrary intervals, fast)  STBEY
@@ -1477,7 +1478,7 @@ Data::
 ::DRef            adph Nested data access using delimited strings   EVO
 ::Dumper          RdpO Convert data structure into perl code        GSAR
 ::Flow            RdpO Acquire data based on recipes                ILYAZ
-::Locations       RdpO Handles nested insertion points in your data STBEY
+::Locations       RdpO Insert data into other data w/o temp files   STBEY
 ::Reporter        RdcO Ascii Report Generator                       RVAZ
 ::Walker          adpO Navigate through Perl data structures        JNOLAN
 
@@ -2502,7 +2503,6 @@ Win32::
 
 WinNT             cdcf Interface to Windows NT specific functions   WIN32
 NT                cdcf Old name for WinNT - being phased out        WIN32
-
 Win95             i    Interface to Windows 95 specific functions   WIN32
 
 Win32API::
