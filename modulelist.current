@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.44 $$Date: 2000/05/21 19:01:03 $
+The Perl 5 Module List       $Revision: 3.45 $$Date: 2000/05/21 20:24:59 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.44 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.45 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1177,6 +1177,7 @@ Net::
 ::Bind            adpO Interface to bind daemon files               KJOHNSON
 ::CDDB            cdpr Interface to the CDDB (CD Database)          DSTALDER
 ::Cmd             cdpO For command based protocols (FTP, SMTP etc)  GBARR
+::DLookup         adpO Lookup domains on Internic and 2-letter TLDs DJASMINE
 ::DNS             bdpO Interface to the DNS resolver                MFUHR
 ::Dict            cdpO Client of Dictionary Server Protocol (DICT)  ABIGAIL
 ::Dnet            cdcO DECnet-specific socket usage                 SPIDB
@@ -1384,6 +1385,7 @@ PDL::
 Array::
 ::Compare         adpO Class to compare two arrays                  DAVECROSS
 ::Heap            cdpf Manipulate array elements as a heap          JMM
+::IntSpan         RdpO Handling arrays using IntSpan techniques     TEVERETT
 ::PrintCols       adpf Print elements in vertically sorted columns  AKSTE
 ::Substr          idp  Implement array using substr()               LWALL
 ::Vec             idp  Implement array using vec()                  LWALL
@@ -1633,18 +1635,25 @@ Sybase::
 
 Ace               i    Interface to ACEDB (Popular Genome DB)       LDS
 BBDB              Rdph Insiduous big brother database               LAXEN
+DTREE             cdcf Interface to Faircom DTREE multikey ISAM db  JWAT
 Datascope         Rdcf Interface to Datascope RDBMS                 DANMQ
+Fame              adcO Interface to FAME database and language      TRIAS
 LotusNotes        i    Interface to Lotus Notes C/C++ API           MBRECH
 Msql              RmcO Mini-SQL database interface                  JWIED
 Mysql             RmcO mysql database interface                     JWIED
+NetCDF            bmcr Interface to netCDF API for scientific data  SEMM
 ObjStore          Rm+O ObjectStore OODBMS Interface                 JPRIT
 Pg                Rdcf PostgreSQL SQL database interface            MERGL
 PgSQL             adpO "Pure perl" interface to PostgreSQL          GTHYNI
 Pogo              ad+O Interface for GOODS object database          SEYN
 Postgres          RncO PostgreSQL interface with Perl5 coding style VKHERA
 Sprite            RdpO Limited SQL interface to flat file databases SHGUN
-Xbase             bdpf Read Xbase files with simple IDX indexes     PRATP
+Stanza            i    Text format database used by OSF and IBM     JHI
+VDBM              i    Client/server-layers on top of DBM files     RAM
+WAIT              adhO A rewrite of the freeWAIS-sf engine in Perl  ULPFR
+Wais              Rdcf Interface to the freeWAIS-sf libraries       ULPFR
 XBase             bdpO Read/write interface to XBase files          JANPAZ
+Xbase             bdpf Read Xbase files with simple IDX indexes     PRATP
 
 Tied Hash File Interfaces:
 
@@ -1686,12 +1695,6 @@ DbFramework::
 ::Table           adpO Relational table/entity class                PSHARPE
 ::Util            adhO Utility functions/methods                    PSHARPE
 
-DTREE             cdcf Interface to Faircom DTREE multikey ISAM db  JWAT
-Fame              adcO Interface to FAME database and language      TRIAS
-NetCDF            bmcr Interface to netCDF API for scientific data  SEMM
-Stanza            i    Text format database used by OSF and IBM     JHI
-VDBM              i    Client/server-layers on top of DBM files     RAM
-
 BTRIEVE::
 ::SAVE            bdpO Read-write access to BTRIEVE SAVE files      DLANE
 
@@ -1708,10 +1711,15 @@ OLE::
 ::PropertySet     aupO Property Set interface                       MSCHWARTZ
 ::Storage         aupO Structured Storage / OLE document interface  MSCHWARTZ
 
+Spectrum::
+::CLI             RdpO API for Spectrum Enterprise Mgr. CLI         PLONKA
+
 Spreadsheet::
 ::Excel           i    Interface to Excel spreadsheets              RRAWLINGS
 ::Lotus           i    Interface to Lotus 1-2-3 spreadsheets        RRAWLINGS
 ::WriteExcel      bupO Write numbers & text in Excel binary format  JMCNAMARA
+
+Thesaurus         RdpO Create associations between related things   DROLSKY
 
 X500::
 ::DN              Mdpo X500 Distinguished Name parser               RSAVAGE
@@ -2619,6 +2627,7 @@ Selectable        cdpO Event-driven I/O streams                     MUIR
 
 Log::
 ::Agent           adpr A general logging framework                  RAM
+::Dispatch        Rdpf Log messages to multiple outputs             DROLSKY
 ::Topics          Rdpf Control flow of topic based logging messages JARW
 
 Expect            RdpO Close relative of Don Libes' Expect in perl  AUSCHUTZ
@@ -2680,18 +2689,19 @@ _______________________________________________________________________
 
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
+Agent             cdpO Transportable Agent module                   SPURKIS
 Archie            Rdpf Archie queries via Prospero ARDP protocol    GBOSS
 BnP               RdhO Build'n'Play all-purpose batch install. tool STBEY
 Bundle            i    Namespace reserved for modules collections   ANDK
 CPAN              RdpO Perl Archive browse and download             ANDK
 Gedcom            bmpO Interface to genealogy Gedcom files          PJCJ
+Logfile           RdpO Generic methods to analyze logfiles          ULPFR
+NetObj            adpO Module loading in real time over TCP/IP      JDUNCAN
 Neural            ad+O Generic simulation of neural networks        LUKKA
 Nexus             cdcO Interface to Nexus (threads/ipc/processes)   RDO
 Pcap              i    An interface for LBL's packet capture lib    AMOSS
 Roman             Rdpf Convert Roman numbers to and from Arabic     OZAWA
 SDDF              cd+O Interface to Pablo Self Defining Data Format FIS
-WAIT              adhO A rewrite of the freeWAIS-sf engine in Perl  ULPFR
-Wais              Rdcf Interface to the freeWAIS-sf libraries       ULPFR
 
 Astro::
 ::Coord           Rdpf Transform telescope and source coordinates   CPHIL
@@ -2700,6 +2710,15 @@ Astro::
 ::SLA             Rdcf Interface to SLALIB positional astronomy lib TJENNESS
 ::SunTime         cdpf Calculate sun rise/set times                 ROBF
 ::Time            Rdpf General time conversions for Astronomers     CPHIL
+
+Audio::
+::CD              bdcO Perl interface to libcdaudio (cd + cddb)     DOUGM
+::Sox             i    sox sound library as one or more modules     NI-S
+Audio::Play::
+::MPG123          RdcO Generic frontend for MPG123                  MLEHMANN
+
+BarCode::
+::UPC             i    Produce PostScript UPC barcodes              JONO
 
 Bio               i    Utilities for molecular biology              SEB
 
@@ -2715,53 +2734,45 @@ Chemistry::
 ::Elements        RdpO Working with Chemical Elements               BDFOY
 ::Isotopes        idpO extends Elements to deal with isotopes       BDFOY
 
+Cisco::
+::Conf            adpO Cisco router administratian via TFTP         JWIED
+
+FAQ::
+::OMatic          RdpO A CGI-based FAQ/help database maintainer     JHOWELL
+
 Finance::
 ::Quote           Rmph Fetch stock prices over the Internet         PJF
 ::QuoteHist       bdpO Historical stock quotes from multiple sites  MSISK
+
+HP200LX::
+::DB              cdpO Handle HP 200LX palmtop computer database    GGONTER
+::DBgui           cdpO Tk base GUI for HP 200LX db files            GGONTER
+
+LEGO::
+::RCX             bdpO Control you Lego Mindstorm RCX computer      JQUILLAN
+
+MIDI              RdpO Object interface to MIDI files               SBURKE
+MIDI::
+::Realtime        cdpO Interacts with MIDI devices in realtime      FOOCHRE
+
+Penguin           RdpO Remote Perl in Secure Environment            AMERZKY
+Penguin::
+::Easy            RdpO Provides quick, easy access to Penguin API   JDUNCAN
+
+Psion::
+::Db              idpO Handle Psion palmtop computer database files IANPX
 
 Remedy::
 ::AR              adcO Interface to Remedy's Action Request API     RIK
 
 ARS               Mmhh Interface to Remedy's Action Request API     JMURPHY
 
-Psion::
-::Db              idpO Handle Psion palmtop computer database files IANPX
-
-HP200LX::
-::DB              cdpO Handle HP 200LX palmtop computer database    GGONTER
-::DBgui           cdpO Tk base GUI for HP 200LX db files            GGONTER
-
-Agent             cdpO Transportable Agent module                   SPURKIS
-NetObj            adpO Module loading in real time over TCP/IP      JDUNCAN
-
-Penguin           RdpO Remote Perl in Secure Environment            AMERZKY
-Penguin::
-::Easy            RdpO Provides quick, easy access to Penguin API   JDUNCAN
-
-BarCode::
-::UPC             i    Produce PostScript UPC barcodes              JONO
-
-Audio::
-::CD              bdcO Perl interface to libcdaudio (cd + cddb)     DOUGM
-::Sox             i    sox sound library as one or more modules     NI-S
-Audio::Play::
-::MPG123          RdcO Generic frontend for MPG123                  MLEHMANN
-
 Video::Capture::
 ::V4l             Rdch Video4linux framegrabber interface           MLEHMANN
-
-MIDI              RdpO Object interface to MIDI files               SBURKE
-MIDI::
-::Realtime        cdpO Interacts with MIDI devices in realtime      FOOCHRE
-
-Logfile           RdpO Generic methods to analyze logfiles          ULPFR
 
 SyslogScan::   
 ::SyslogEntry     bdpO Parse UNIX syslog                            RHNELSON
 ::SendmailLine    bdpO Summarize sendmail transactions              RHNELSON
-
-FAQ::
-::OMatic          RdpO A CGI-based FAQ/help database maintainer     JHOWELL
 
 Geo::
 ::METAR           Rdpf Process Aviation Weather (METAR) Data        JZAWODNY
@@ -2774,8 +2785,8 @@ Games::
 ::Hex             cdpO Object library for hexmap-based board games  JHKIM
 ::WordFind        bdpO Generate word-find type puzzles              AJOHNSON
 
-Cisco::
-::Conf            adpO Cisco router administratian via TFTP         JWIED
+Schedule::        See also Schedule:: in chapter 4
+::Match           adpf Pattern-based crontab-like schedule          TAIY
 
 Silly::
 ::StringMaths     adpf Do maths with letters and strings            SKINGTON
@@ -2784,9 +2795,6 @@ Watchdog::
 ::Service         adpO Look for service in process table            PSHARPE
 ::HTTPService     adpO Test status of HTTP server                   PSHARPE
 ::MysqlService    adpO Test status of Mysql server                  PSHARPE
-
-Schedule::        See also Schedule:: in chapter 4
-::Match           adpf Pattern-based crontab-like schedule          TAIY
 
 _______________________________________________________________________
 
