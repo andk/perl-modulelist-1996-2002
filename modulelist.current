@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.31 $Date: 1996/09/09 20:45:30 $
+The Perl 5 Module List       Revision: 2.31 $Date: 1996/09/11 04:39:49 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -2029,4 +2029,21 @@ to a CGI script that lets you edit the database entries yourself.
     ftp://ftp.cs.ruu.nl/pub/NEWS.ANSWERS/perl-faq/
     ftp://ftp.funet.fi/pub/languages/perl/doc/faq
     ftp://src.doc.ic.ac.uk/packages/perl/FAQ
+
+  Remember, FAQ are always avaiable from the fine rtfm server
+    ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/module-list
+    ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
+
+If you want to retrieve a FAQ from the *.answers archives, you might
+also like to try the following archive sites:
+
+North America: ftp.uu.net                     /usenet/news.answers
+               mirrors.aol.com                /pub/rtfm/usenet
+               ftp.seas.gwu.edu               /pub/rtfm
+Europe:        ftp.uni-paderborn.de           /pub/FAQ
+               ftp.Germany.EU.net             /pub/newsarchive/news.answers
+               ftp.sunet.se                   /pub/usenet
+Asia:          nctuccca.edu.tw                /USENET/FAQ
+               hwarang.postech.ac.kr          /pub/usenet/news.answers
+               ftp.hk.super.net               /mirror/faqs
 
