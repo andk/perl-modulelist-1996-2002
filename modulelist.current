@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.58 $$Date: 2000/10/18 05:15:07 $
+The Perl 5 Module List       $Revision: 3.59 $$Date: 2000/10/21 07:46:31 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.58 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.59 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1122,7 +1122,7 @@ SGI::
 ::SysCalls        cdcf SGI-specific system calls                    AMOSS
 ::GL              adcr SGI's Iris GL library                        AMOSS
 ::FM              adcr SGI's Font Management library                AMOSS
-::FAM
+::FAM             RdcO Interface to SGI/Irix File Access Monitor    JGLICK
 
 Solaris::
 ::ACL             adch Provides access to ACLs in Solaris           IROBERTS
@@ -1724,7 +1724,7 @@ AsciiDB::
 
 Db::
 ::Ctree           Rdcr Faircom's CTREE+ database interface          REDEN
-::Documentum      bdcf Documentum EDMS Perl client interface        MSROTH
+::Documentum      Rdcf Documentum EDMS Perl client interface        MSROTH
 ::dmObject        cdpO Object-based interface to Documentum EDMS    JGARRISON
 
 DbFramework::
@@ -2094,13 +2094,13 @@ Parse::
 Search::
 ::Dict            Supf Search a dictionary ordered text file        P5P
 ::InvertedIndex   bdpO Inverted index database support              SNOWHARE
-::Binary
+::Binary          Rdpf Generic binary search                        RANT
 
 SGML::
 ::Element         cdpO Build a SGML element structure tree          LSTAF
-::Parser
+::Parser          RdpO SGML instance parser                         EHOOD
 ::SPGrove         bd+O Load SGML, XML, and HTML files               KMACLEOD
-::Entity
+::Entity          RdpO An entity defined in an SGML or XML document KMACLEOD
 
 SGMLS             RdpO A Post-Processor for SGMLS and NSGMLS        INGOMACH
 
@@ -2679,7 +2679,7 @@ IMAP::
 ::Admin           RdpO IMAP Administration                          EESTABROO
 
 Sendmail::
-::Milter          bdch Write mail filters for sendmail in Perl      CYING
+::Milter          Rdch Write mail filters for sendmail in Perl      CYING
 
 _______________________________________________________________________
 
@@ -3349,7 +3349,7 @@ to a CGI script that lets you edit the database entries yourself.
   DBONNER  David Bonner <dbonner@cs.bu.edu>
   DBRESH   Doug Breshears <breshear@eonet.com>
   DBRIAN   Dan Brian <dbrian@cpan.org>
-  DCANTRELL David Cantrell <david@cantrell.org.uk>
+  DCANTRELL David Cantrell <fromPAUSE@barnyard.co.uk>
   DCARRAWAY Devin Carraway <cpan@nospam.devin.com>
   DCARRIGAN Dave Carrigan <dave@rudedog.org>
   DCEPML   The DCE-Perl mailing list
@@ -3576,7 +3576,7 @@ to a CGI script that lets you edit the database entries yourself.
   IBMTORDB2 Robert Indrigo <db2perl@ca.ibm.com>
   ICKHABOD Paul Johnston <johnston.p@worldnet.att.net>
   IFLAN    Ian Flanigan <flan@cs.wustl.edu>
-  IFROL    Ivan Frolcov <frolcov@dsd.fbm.msu.ru>
+  IFROL    Ivan Frolcov <nsome@mail.ru>
   IGREC    Marino Andres <>
   IGUTHRIE Ian Guthrie <IGuthrie@aol.com>
   IKETRIS  Ilya Ketris <ilya@gde.to>
