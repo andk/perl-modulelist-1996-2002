@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.18 $$Date: 1999/10/31 17:32:55 $
+The Perl 5 Module List       $Revision: 3.19 $$Date: 1999/10/31 17:43:14 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.18 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.19 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -899,6 +899,9 @@ Devel::
 ::Symdump         RdpO Perl symbol table access and dumping         ANDK
 ::TraceFuncs      adpO Trace funcs by using object destructions     JOEHIL
 ::TraceLoad       Rdpf Traces the loading of perl source code       JPRIT
+
+Exception::
+::Cxx             Rd+f Cause perl to longjmp using C++ exceptions   JPRIT
 
 Usage             bupr Type and range checking on subroutine args   JACKS
 
@@ -1347,6 +1350,7 @@ Tie::
 ::DBI             RdpO Tie hash to a DBI handle                     LDS
 ::Dir             adpr Tie hash for reading directories             GBARR
 ::File            adpr Tie hash to files in a directory             AMW
+::FileLRUCache    a    N/A                                          SNOWHARE
 ::Handle          RdpO Base class for implementing tied filehandles STBEY
 ::HashDefaults    adpr Let a hash have default values               JDPORTER
 ::IxHash          RdpO Indexed hash (ordered array/hash composite)  GSAR
@@ -1370,6 +1374,8 @@ Tie::Cache::
 Class::
 ::Eroot           RdpO Eternal Root - Object persistence            DMR
 ::Multimethods    Rdpf A multiple dispatch mechanism for Perl       DCONWAY
+::NamedParms      a    N/A                                          SNOWHARE
+::ParmList        a    N/A                                          SNOWHARE
 ::Singleton       bdpO Implementation of a "Singleton" class        ABW
 ::Template        Rdpr Struct/member template builder               DMR
 ::Tree            Mdpo C++ class hierarchies & disk directories     RSAVAGE
@@ -1412,6 +1418,7 @@ Data::
 ::Flow            RdpO Acquire data based on recipes                ILYAZ
 ::Locations       RdpO Handles nested insertion points in your data STBEY
 ::Reporter        RdpO Ascii Report Generator                       RVAZ
+::Walker          a    Navigating through Perl data structures      JNOLAN
 
 Tree::
 ::Base            cdpO Defines a basic binary search tree           MSCHWERN
@@ -1774,6 +1781,7 @@ Natural Languages
 Lingua::
 ::DetectCharset   a    Heuristics to detect coded character sets    JNEYSTADT
 ::Ispell          adpf Interface to the Ispell spellchecker         JDPORTER
+::Stem            a    N/A                                          SNOWHARE
 
 Specific Natural Languages
 
@@ -1822,6 +1830,7 @@ Parse::
 
 Search::
 ::Dict            Supf Search a dictionary ordered text file        P5P
+::InvertedIndex   a    N/A                                          SNOWHARE
 
 SGML::
 ::Element         cdpO Build a SGML element structure tree          LSTAF
@@ -2010,6 +2019,7 @@ CGI::
 ::Imagemap        adpO Imagemap handling for specialized apps       MIKEH
 ::LogCarp         adpf Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr         RmpO Fork CGI app as a per-session mini server    CGIP
+::Minimal         a    N/A                                          SNOWHARE
 ::Out             adpf Buffer CGI output and report errors          MUIR
 ::Persistent      adpO Transparent State Persistence in CGI scripts VIPUL
 ::Query           adpO Parse CGI quiry strings                      MPECK
@@ -2321,9 +2331,6 @@ AtExit            Rdpr atexit() function to register exit-callbacks BRADAPP
 Callback          RdpO Define easy to use function callback objects MUIR
 Memoize           adpr Cache results of individual function calls   MJD
 Religion          adpr Control where you go when you die()/warn()   KJALB
-
-Exception::
-::Cxx             Rd+f Cause perl to longjmp using C++ exceptions   JPRIT
 
 Hook::
 ::PrePostCall     adpO Add actions before and after a routine       PVERD
