@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.70 $$Date: 2000/11/07 10:20:33 $
+The Perl 5 Module List       $Revision: 3.71 $$Date: 2000/11/07 12:15:11 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.70 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.71 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2462,7 +2462,7 @@ MIME::Lite::
 
 Apache            SmcO Interface to request_rec struct + API        APML
 
-PerlHandler
+Apache PerlHandler modules
 
 Apache::
 ::AdBanner        cdpf Ad banner server                             CHOLET
@@ -2514,17 +2514,17 @@ Apache::
 ::WDB             bdpf Database query/edit tool using DBI           JROWE
 ::WebSQL          cdpO Adaptation of Sybase's WebSQL                GUNTHER
 
-PerlInitHandler
+Apache PerlInitHandler modules
 
 Apache::
 ::RequestNotes    ampf Pass cookie & form data around pnotes        GEOFF
 
-PerlHeaderParserHandler
+Apache PerlHeaderParserHandler modules
 
 Apache::
 ::AgentDeny       cdpf Deny abusive User-Agents                     ROBH
 
-PerlAuthenHandler
+Apache PerlAuthenHandler modules
 
 Apache::
 ::AuthAny         bdpf Authenticate with any username/password      MPB
@@ -2547,7 +2547,7 @@ Apache::
 ::PHLogin         bdpf Authenticate via a PH database               JGROENVEL
 ::TicketAccess    bdpO Ticket based access/authentication           MPB
 
-PerlAuthzHandler
+Apache PerlAuthzHandler modules
 
 Apache::
 ::AuthCookie      bdpf Authen + Authz via cookies                   BARTLEY
@@ -2560,7 +2560,7 @@ Apache::
 ::AuthzSSL        bdpf Authorize based on client cert               MPB
 ::RoleAuthz       i    Role-based authorization                     DOUGM
 
-PerlAccessHandler
+Apache PerlAccessHandler modules
 
 Apache::
 ::AccessLimitNum  bmpf Limit user access by number of requests      APML
@@ -2570,7 +2570,7 @@ Apache::
 ::RobotLimit      cdpf Limit access of robots                       PARKER
 ::SpeedLimit      bdpf Control client request rate                  MPB
 
-PerlTypeHandler
+Apache PerlTypeHandler modules
 
 Apache::
 ::AcceptLanguage  cdpf Send file type based on language pref        ROBH
@@ -2578,7 +2578,7 @@ Apache::
 ::MimeDBI         bdpf Type mapping from a DBI database             MPB
 ::MimeXML         bdpf mime encoding sniffer for XML files          MSERGEANT
 
-PerlTransHandler (May also include a PerlHandler)
+Apache PerlTransHandler modules (May also include a PerlHandler)
 
 Apache::
 ::AdBlocker       bdpf Block advertisement images                   MPB
@@ -2595,7 +2595,7 @@ Apache::
 ::Throttle        bdpf Speed-based content negotiation              DONS
 ::TransLDAP       bdpf Translate URIs to LDAP queries               CDONLEY
 
-PerlFixupHandler
+Apache PerlFixupHandler modules
 
 Apache::
 ::HttpEquiv       bdpf HTML HTTP-EQUIV tags to HTTP headers         ROBH
@@ -2603,7 +2603,7 @@ Apache::
 ::Timeit          bmpf Benchmark PerlHandlers                       APML
 ::Usertrack       bdpf Perl version of mod_usertrack                ABH
 
-PerlLogHandler
+Apache PerlLogHandler modules
 
 Apache::
 ::DBILogConfig    bdpf Custom format logging via DBI                JBODNAR
@@ -2613,12 +2613,12 @@ Apache::
 ::Traffic         bdpf Logs bytes transferred, per-user basis       MAURICE
 ::WatchDog        c    Look for problematic URIs                    DOUGM
 
-PerlChildInitHandler
+Apache PerlChildInitHandler modules
 
 Apache::
 ::Resource        Smpf Limit resources used by httpd children       APML
 
-Server Configuration
+Apache Server Configuration
 
 Apache::
 ::ConfigLDAP      i    Config via LDAP and <Perl>                   MARKK
@@ -2628,13 +2628,15 @@ Apache::
 ::httpd_conf      bmpO Methods to configure and run an httpd        APML
 ::src             SmpO Finding and reading bits of source           APML
 
-Database
+Apache Database modules
 
 Apache::
 ::DBI             bmpO Persistent DBI connection mgmt.              MERGL
-::Sybase::DBlib   bmpO Persistent DBlib connection mgmt.            BMILLETT
-::Sybase::CTlib   bapO Persistent CTlib connection mgmt.            MDOWNING
 ::Mysql           bdpO Persistent connection mgmt. for Mysql        NJENSEN
+
+Apache::Sybase::
+::DBlib           bmpO Persistent DBlib connection mgmt.            BMILLETT
+::CTlib           bapO Persistent CTlib connection mgmt.            MDOWNING
 
 Interfaces and integration with Apache C structures and modules
 
@@ -2692,7 +2694,7 @@ Apache::
 ::Symdump         bmpf Symbol table snapshots to disk               APML
 ::test            Smpf Handy routines for 'make test' scripts       APML
 
-Misc
+Miscellaneous Apache modules
 
 Apache::
 ::Byterun         i    Run Perl bytecode modules                    DOUGM
