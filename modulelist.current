@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.38 $Date: 1997/02/25 17:05:43 $
+The Perl 5 Module List       Revision: 2.39 $Date: 1997/03/11 19:37:59 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -131,6 +131,7 @@ currently registered CPAN sites:
         Germany
             ftp://ftp.gmd.de/packages/CPAN/
             ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/
+            ftp://ftp.mpi-sb.mpg.de/pub/perl/CPAN/
             ftp://ftp.rz.ruhr-uni-bochum.de/pub/CPAN/
             ftp://ftp.uni-erlangen.de/pub/source/Perl/CPAN/
             ftp://ftp.uni-hamburg.de/pub/soft/lang/perl/CPAN/
@@ -185,7 +186,7 @@ currently registered CPAN sites:
             ftp://ftp.rge.com/pub/languages/perl/
             ftp://ftp.sedl.org/pub/mirrors/CPAN/
             ftp://ftp.spu.edu/pub/CPAN/
-            ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
+            ftp://uiarchive.uiuc.edu/pub/lang/perl/CPAN/
     South America
         Chile
             ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
@@ -600,7 +601,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.3.1.2 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.63 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1673,7 +1674,7 @@ Graphics::
 
 Image::
 ::Size         Rdpf  Measure size of images in common formats     RJRAY
-
+::ColorSpace   id    transform colors between colorspaces         JONO
 
 _______________________________________________________________________
 
@@ -1728,6 +1729,7 @@ IO::
 ::Format       adpO  Treat perl formats as objects                SBECK
 ::Handle       cdpO  Base class for input/output handles          GBARR
 ::Pipe         cdpO  Methods for pipe handles                     GBARR
+::Ptty         adcf  Pseudo terminal interface functions          GBARR
 ::Socket       cdpO  Methods for socket input/output handles      GBARR
 ::Seekable     cdpO  Methods for seekable input/output handles    GBARR
 ::Select       adpO  Object interface to system select call       GBARR
