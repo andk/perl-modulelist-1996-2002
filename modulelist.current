@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.29 $$Date: 2000/02/19 09:11:42 $
+The Perl 5 Module List       $Revision: 3.30 $$Date: 2000/02/19 10:20:06 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.29 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.30 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2773,8 +2773,8 @@ ISO3166    Two letter codes for country identification   Locale::Country
 
 =======================================================================
 
-			  Part 5 - Who's Who
-			  ==================
+                 Part 5 - Who's Who and What's Where
+                 ===================================
 
 1) Information / Contact Reference Details (in alphabetical order)
 
