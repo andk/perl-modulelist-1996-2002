@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.53 $Date: 1999/02/06 15:39:29 $
+The Perl 5 Module List       Revision: 2.53 $Date: 1999/02/16 11:57:44 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -236,6 +236,7 @@ currently registered CPAN sites:
             ftp://cpan.if.usp.br/pub/mirror/CPAN/
             ftp://cpan.nas.nasa.gov/pub/perl/CPAN/
             ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/
+            ftp://ftp-mirror.internap.com/pub/CPAN/
             ftp://ftp.ccs.neu.edu/net/mirrors/ftp.funet.fi/pub/languages/perl/CPAN/
             ftp://ftp.cdrom.com/pub/perl/CPAN/
             ftp://ftp.cise.ufl.edu/pub/perl/CPAN/
@@ -686,7 +687,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.116 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.117 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1206,7 +1207,7 @@ Net::
 ::DummyInetd   RdpO  A dummy Inetd server                         GBARR
 ::FTP          adpf  Interface to File Transfer Protocol          GBARR
 ::Gen          adcO  Generic support for socket usage             SPIDB
-::Hotline      RdpO  Interface to the Hotline protocol            JSIRACUSA
+::Hotline      RdpO  Interface to the Hotline protocol            JSIRACUSA +
 ::ICAP         adpO  Interface to ICAP Protocol (Internet-Draft)  KJOHNSON
 ::IMAP         adpO  Interface to IMAP Protocol (RFC2060)         KJOHNSON
 ::IRC          cdpO  Internet Relay Chat interface                DSHEPP
@@ -1524,7 +1525,7 @@ Sybase::
 ::Sybperl      Rdpf  sybperl 1.0xx compatibility module           MEWP
 ::CTlib        RdcO  Sybase CTlibrary interface                   MEWP
 
-Ace            i     Interface to ACEDB (Popular Genome DB)       LDS
+Ace            i     Interface to ACEDB (Popular Genome DB)       LDS   +
 Datascope      Rdcf  Interface to Datascope RDBMS                 DANMQ
 LotusNotes     i     Interface to Lotus Notes C/C++ API           JONO
 Msql           RmcO  Mini-SQL database interface                  JWIED
@@ -1622,7 +1623,7 @@ Other Major X Windows User Interface Modules:
 Gtk            bdcO  binding of the Gtk library used by GIMP      KJALB !
 
 Gtk::
-::Dialog       adph  Simple interface to create dialogs in Gtk    ALISTAIRC
+::Dialog       adph  Simple interface to create dialogs in Gtk    ALISTAIRC +
 
 Gnome          bdcO  Bindings to the Gnome Desktop Toolkit        KJALB +
 Sx             Rdcf  Simple Athena widget interface               FMC
@@ -1917,7 +1918,7 @@ User::
 ::utent        cdcO  Interface to utmp/utmpx/wtmp/wtmpx database  ROSCH
 
 PGP::          adpO  Simple interface to PGP subprocess via pipes PGPML
-::Sign         bdpr  Create/verify PGP/GnuPG signatures, securely RRA
+::Sign         bdpr  Create/verify PGP/GnuPG signatures, securely RRA   !
 
 DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
@@ -2063,7 +2064,7 @@ WebFS::
 CGI_Lite       MnpO  Light-weight interface for fast apps         SHGUN
 FCGI           Rdcr  Fast CGI                                     SKIMO
 WING           RmhO  Apache based IMAP/NNTP Gateway               MICB  +
-Authorizenet   bdpf  Get Credit Card Info from authorizenet       DLINCOLN
+Authorizenet   bdpf  Get Credit Card Info from authorizenet       DLINCOLN +
 
 _______________________________________________________________________
 
@@ -2180,7 +2181,7 @@ Chart::
 MPEG::
 ::MP3Info      bdpf  Extract/edit tag information in MP3 files    CNANDOR +
 
-Gimp           Mmch  Rich interface to write plugins for The Gimp MLEHMANN
+Gimp           Mmch  Rich interface to write plugins for The Gimp MLEHMANN !
 T3D            cdpO  Realtime extensible 3D rendering             GJB
 ThreeD         i     Namespace root for all kinds of 3D modules   ADESC
 RenderMan      a     Manipulate RenderMan objects                 GMLEWIS
@@ -2323,7 +2324,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Archie         Rdpf  Archie queries via Prospero ARDP protocol    GBOSS
-BnP            RdhO  Build'n'Play all-purpose batch install. tool STBEY
+BnP            RdhO  Build'n'Play all-purpose batch install. tool STBEY +
 Bundle         i     Namespace reserved for modules collections   ANDK
 CPAN           RdpO  Perl Archive browse and download             ANDK
 Neural         ad+O  Generic simulation of neural networks        LUKKA
@@ -2591,6 +2592,7 @@ to a CGI script that lets you edit the database entries yourself.
   ALANCITT Alan Citterman <alan@mfgrtl.com>
   ALANSZ   Alan Schwartz <alansz@uic.edu>
   ALEXIOB  Alessandro Iob <alexiob@iname.com>
+  ALISTAIRC Alistair Cunningham <ac212@debian.org>
   ALLENS   E. Allen Smith <easmith@beatrice.rutgers.edu>
   ALSCH    Alan Scheinine <scheinin@crs4.it>
   ALTITUDE Alex Tang <altitude@cic.net>
@@ -2631,6 +2633,7 @@ to a CGI script that lets you edit the database entries yourself.
   BGINGERY Bruce Gingery <bgingery@gtcs.com>
   BHOLZMAN Benjamin Holzman <bholzman@bender.com>
   BHUGHES  Brad Hughes <brad@tgsmc.com>
+  BIRNEY   Ewan Birney <birney@sanger.ac.uk>
   BJEPS    Brian Jepson <bjepson@conan.ids.net>
   BLANTREWI Boris Lantrewitz <lantrewi@do.isst.fhg.de>
   BMEEKINGS Brian Meekings <meekings@idi-middleware.com>
@@ -2662,6 +2665,7 @@ to a CGI script that lets you edit the database entries yourself.
   CGIP     The CGI-Perl Developers mailing list
            Mailing list is temporarily closed
   CHAMAS   Joshua Chamas <chamas@alumni.stanford.org>
+  CHDAG    Chris Dagdigian <cdagdigian@genetics.com>
   CHGEUER  Christian H. Geuer-Pollmann <christian.geuer-pollmann@crypto.gun.de>
   CHGOETZE Christian Goetze <perl@resolute.com>
   CHIPS    Chip Salzenberg <chip@pobox.com>
@@ -2723,6 +2727,7 @@ to a CGI script that lets you edit the database entries yourself.
   DJPADZ   Dj Padzensky <djpadz@padz.net>
   DKOCH    Daniel Koch <dkoch@amcity.com>
   DKWILSON Damion K. Wilson <dkw@rcm.bm>
+  DLINCOLN Dan Lincoln <dan@galaxymall.com>
   DMACKS   Daniel Macks <dmacks@netspace.org>
   DMEGG    David Megginson <dmeggins@microstar.com>
   DMO      Darryl Okahata <darrylo@sr.hp.com>
@@ -2881,7 +2886,7 @@ to a CGI script that lets you edit the database entries yourself.
   JNEYSTADT John Neystadt <john@neystadt.org>
   JNH      Joseph N. Hall <joseph@5sigma.com>
   JNOBLE   Joel Noble <jnoble@mediaone.com>
-  JNOLAN   John Nolan <jnolan@n2k.com>
+  JNOLAN   John Nolan <jpnolan@op.net>
   JOCASA   Joe Casadonte <joc@netaxs.com>
   JOEHIL   Joe Hildebrand <joe.hildebrand@twcable.com >
   JOHNH    John Heidemann <johnh@isi.edu>
@@ -2896,6 +2901,7 @@ to a CGI script that lets you edit the database entries yourself.
   JROGERS  Jay Rogers <jay@rgrs.com>
   JROWE    Jeff Rowe <j.p.rowe@larc.nasa.gov>
   JSIRACUSA John Siracusa <siracusa@mindspring.com>
+  JSMITH   James G Smith <j-smith@physics.tamu.edu>
   JSTOF    John Stoffel <john@wpi.edu>
   JSWARTZ  Jonathan Swartz <jswartz@cmp.com>
   JTOBEY   John Tobey <spam@john-edwin-tobey.org>
@@ -2985,6 +2991,7 @@ to a CGI script that lets you edit the database entries yourself.
   MIKEH    Mike Heins <mikeh@iac.net>
   MIKEKING Michael King <mike808@mo.net>
   MIKESTOK Mike Stok <mike@stok.co.uk>
+  MILSO    Milan Sorm <sorm@fi.muni.cz>
   MIVKOVIC Milivoj Ivkovic <mi@alma.ch>
   MJAEG    Michal Jaegermann <michal@ellpspace.math.ualberta.ca>
   MJD      Mark-Jason Dominus <mjd-perl-pause2@plover.com>
@@ -2996,6 +3003,7 @@ to a CGI script that lets you edit the database entries yourself.
   MMML     The MakeMaker mailing list
            Mail to makemaker-REQUEST@franz.ww.tu-berlin.de with body
            "subscribe"
+  MMORENO  Marco Moreno <Marco.Moreno@pobox.com>
   MORTY    Mordechai Abzug <mabzug1@gl.umbc.edu>
   MPECK    Martyn Peck <mwp@mwpnet.com>
   MPIOTR   Michael Piotrowski <mxp@linguistik.uni-erlangen.de>
@@ -3173,6 +3181,7 @@ to a CGI script that lets you edit the database entries yourself.
   SRZ      Stephen Zander <gibreel@pobox.com>
   STANM    Stan Melax <melax@bioware.com>
   STBEY    Steffen Beyer <sb@engelschall.com>
+  STCHER   Steve Chervitz <sac@neomorphic.com>
   STEVENSL Steven Slegel <stevensl@ccpl.carr.lib.md.us>
   STLACY   Stacy Lacy <stacy-lacy@worldnet.att.net>
   STOLKIN  Steven Tolkin <tolkin@mediaone.net>
