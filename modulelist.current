@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.80 $ $Date: 2000/11/18 11:10:31 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.81 $ $Date: 2000/11/19 11:38:44 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -507,7 +507,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.80 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.81 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1259,12 +1259,16 @@ Net::
 ::Pager           RdpO Send Numeric/AlphaNumeric Pages to any pager ROOTLEVEL
 ::Whois           RdpO Get+parse "whois" domain data from InterNIC  DHUDES
 ::XWhois          RdpO Whois Client Interface for Perl5.            VIPUL
+::ICQ
 
 Net::Daemon::
 ::SSL             RdpO SSL extension for Net::Daemon                MKUL
 
 Net::IMAP::
 ::Simple          bdpO Only implements the basic IMAP features      JPAF
+
+Net::SNMP::
+::Interfaces
 
 Net::Telnet::
 ::Cisco           RdpO Net::Telnet wrapper for Cisco devices        JOSHUA
@@ -1419,6 +1423,9 @@ Statistics::
 Algorithm::
 ::Diff            Rdpf Diff (also Longest Common Subsequence)       NEDKONZ
 ::Permute         bdcO Handy and fast permutation with OO interface EDPRATOMO
+
+Algorithm::Graphs::
+::TransitiveClosure
 
 Algorithm::Numerical::
 ::Shuffle         Rdph Knuth's shuffle algorithm                    ABIGAIL
@@ -2246,19 +2253,19 @@ SGMLS             RdpO A Post-Processor for SGMLS and NSGMLS        INGOMACH
 XML               RmhO Large collection of XML related modules      XMLML
 
 XML::
-::DOM             bmpO Implements Level 1 of W3's DOM               ENNO  
+::DOM             bmpO Implements Level 1 of W3's DOM               ENNO
 ::Dumper          ampO Converts XML from/to Perl code               EISEN
 ::Encoding        ???? Parses encoding map XML files                COOPERCL
 ::Edifact         ???? Scripts for translating EDIFACT into XML     KRAEHE
 ::Generator       adpn Generates XML documents                      BHOLZMAN
-::Grove           RmpO Flexible lightweight mid-level XML objects   KMACLEOD 
+::Grove           RmpO Flexible lightweight mid-level XML objects   KMACLEOD
 ::miniXQL         ???? Simplistic XQL-like search using streams     MSERGEANT
 ::Parser          bmcO Flexible fast parser with plug-in styles     COOPERCL
 ::QL              ???? Implements the XML Query Language            MSERGEANT
 ::Registry        ampO Implements a generic XML registry            EISEN
 ::Writer          ???? Module for writing XML documents             DMEGG
 ::XQL             ampO Performs XQL queries on XML object trees     ENNO
-                       
+
 Frontier::             
 ::RPC             ???? Performs Remote Procedure Calls using XML    KMACLEOD
 
@@ -2327,7 +2334,6 @@ Getargs::
 Argv              bdph Provide an OO interface to an ARGV           DSB
 ConfigReader      cdpO Read directives from configuration file      AMW
 Resources         bdpf Application defaults management in Perl      FRANCOC
-IniConf                Read/Write INI-Style configuration files     RBOW
 
 App::             General application development tools
 ::Config          bdpO Configuration file mgmt                      ABW
@@ -2335,6 +2341,7 @@ App::             General application development tools
 
 Config::
 ::FreeForm        bdpf Provide in-memory configuration data         BTROTT
+::IniFiles             Read/Write INI-Style configuration files     RBOW
 
 CfgTie            adph Framework for tieing system admin tasks      RANDYM
 
