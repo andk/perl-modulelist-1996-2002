@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.93 $ $Date: 2001/05/03 09:43:05 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.94 $ $Date: 2001/05/03 14:15:49 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.93 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.94 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -749,10 +749,11 @@ Where the 'DSLIP' characters have the following meanings:
 
   P - Public License
     p   - Standard-Perl: user may choose between GPL and Artistic
+    b   - BSD: The BSD License
     g   - GPL: GNU General Public License
     l   - LPGL: GNU Library Public License, 
     a   - Artistic license alone
-    d   - distribution allowed without restrictions
+    o   - other (but distribution allowed without restrictions)
 
 DISCLAIMER: The status of the Public License field is there for
 informational purpose only and does not constitute a legal binding of
@@ -1310,6 +1311,7 @@ Net::
 ::IMIP             impO? RFC2447 tools for event scheduling           SRL
 ::ParseWhois       RmpO? Get+Parse "whois" domain data                ABEROHAM
 ::Server           adpO? Extensible (class) oriented internet server  RHANDOM
+::Peep
 
 Net::Daemon::
 ::SSL              RdpO? SSL extension for Net::Daemon                MKUL
@@ -2608,6 +2610,7 @@ Digest::
 ::SHA1             cdch?  NIST SHA message digest algorithm           UWEH
 ::HMAC             Rdph?  HMAC message integrity check                GAAS
 ::UserSID          adph? Managing session-id's with Digest::SHA1      XWOLF
+::BubbleBabble
 
 Crypt::
 ::Beowulf          Rdpf? An original, very fast encryption algorithm  SIFUKURT
@@ -2645,6 +2648,7 @@ Crypt::
 ::NULL             RdpO? NULL Encryption Algorithm                    AMS
 ::DH               adpO? Diffie-Hellman key exchange system           BTROTT
 ::PassGen          adpf? Generate pronouncable passwords              TJENNESS
+::GOST
 
 Crypt::OpenSSL::
 ::RSA              bdcO? Interface to OpenSSL RSA methods             IROBERTS
@@ -2719,6 +2723,7 @@ CGI::
 ::SSI              RdpO? Use SSI from CGI scripts                     JAMES
 ::FormMagick       bmpO? FormMagick                                   SKUD
 ::Test             adpO? Off-line CGI test framework                  RAM
+::Portable
 
 HTML::
 ::Base             adpO? Object-oriented way to build pages of HTML   GAND
