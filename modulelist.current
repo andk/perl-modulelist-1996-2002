@@ -715,10 +715,10 @@ but this is also transparent. Only the .pm file is required to exist.
 
    or upload to one of these sites:
 
-       ftp://franz.ww.tu-berlin.de/incoming (preferred)
+       ftp://pause.kbx.de/incoming (preferred)
        ftp://ftp.cis.ufl.edu/incoming
 
-   and notify upload@franz.ww.tu-berlin.de.
+   and notify upload@pause.kbx.de.
 
    By using the PAUSE WWW interface you can ask the Upload Server to
    mirror your modules from your ftp or WWW site into your own
@@ -2360,6 +2360,7 @@ might relate to the modules they are developing.
 
 
 
+
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 RFC821     Simple Mail Transfer Protocol                 Net::SMTP
@@ -2390,8 +2391,8 @@ RFC2045-2049
 RFC2138    Terminal server authentification and accting  RADIUS
 RFC2229    Dictionary Server                             Net::Dict
 _______________________________________________________________________
-
 2)   ITU - International Telegraph Union (X.*)
+
 
 
 
@@ -2412,7 +2413,6 @@ ISO3166    Two letter codes for country identification   Locale::Country
 =======================================================================
            Part 5 - Who's Who and What's Where
            ===================================
-
 1) Information / Contact Reference Details (in alphabetical order)
 
 The following list of email addresses is based on the credentials
@@ -2449,8 +2449,7 @@ to a CGI script that lets you edit the database entries yourself.
   ANDYGLEW Andy Glew <glew@cs.wisc.edu>
   ANTRO    Antonio Rosella <anface@yahoo.com>
   APML     The Perl/Apache Mailing List
-           Mail to modperl-REQUEST@listproc.itribe.net with body
-           "subscribe"
+           Mail to modperl-REQUEST@apache.org with body "subscribe"
   ARSML    The ARSperl Mailing List
            See http://arsinfo.cit.buffalo.edu/ for mor info.
   ASHER    Aaron Sherman <ajs@ajs.com>
