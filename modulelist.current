@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.26 $$Date: 1999/11/19 03:12:32 $
+The Perl 5 Module List       $Revision: 3.27 $$Date: 2000/01/25 09:43:25 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -521,7 +521,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.26 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.27 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1127,7 +1127,7 @@ PDA::
 Hardware related modules
 
 Hardware::
-::Simulator       adpf Simulate different pieces of hardware        GBARTELS
+::Simulator       adpf Simulate different pieces of hardware        GSLONDON
 
 Device::
 ::SerialPort      bdpO POSIX clone of Win32::SerialPort             BBIRTH
@@ -1590,10 +1590,13 @@ DbFramework::
 
 DTREE             cdcf Interface to Faircom DTREE multikey ISAM db  JWAT
 Fame              adcO Interface to FAME database and language      TRIAS
-MARC              bmpO MAchine Readable Catalog (library bib. data) PERL4LIB
 NetCDF            bmcr Interface to netCDF API for scientific data  SEMM
 Stanza            i    Text format database used by OSF and IBM     JHI
 VDBM              i    Client/server-layers on top of DBM files     RAM
+
+MARC              bmpO MAchine Readable Catalog (library bib. data) PERL4LIB
+MARC::
+::XML             ampO MAchine Readable Catalog / XML Extension     PERL4LIB
 
 Metadata::
 ::Base            bdpO Base metadata functionality                  DJBECKETT
@@ -1780,7 +1783,10 @@ Filesys::
 ::mntent          adpf By-name interface                            TOMC
 ::statfs          adpf By-name interface                            TOMC
 
-LockFile::           Application-level locking facilities
+LockFile::             Application-level locking facilities
+::Lock            i    Lock handles created by LockFile::* schemes  RAM
+::Manager         i    Records locks created by LockFile::*         RAM
+::Scheme          i    Abstract superclass for locking modules      RAM
 ::Simple          adpr Simple file locking mechanism                RAM
 
 Stat::
@@ -2097,6 +2103,7 @@ CGI::
 ::LogCarp         adpf Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr         RmpO Fork CGI app as a per-session mini server    CGIP
 ::Minimal         MdpO A micro-sized CGI handler                    SNOWHARE
+::MxScreen        i    Screen multi-plexer framework                RAM
 ::Out             adpf Buffer CGI output and report errors          MUIR
 ::Persistent      adpO Transparent State Persistence in CGI scripts VIPUL
 ::Query           adpO Parse CGI quiry strings                      MPECK
@@ -2273,6 +2280,9 @@ NetServer::
 
 Time::
 ::Warp            Rmcf Change the start and speed of Event time     JPRIT
+
+Spool::
+::Queue           i    Generic printer spooling facilities          RAM
 
 _______________________________________________________________________
 
