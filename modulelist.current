@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.37 $Date: 1997/02/05 23:20:16 $
+The Perl 5 Module List       Revision: 2.37 $Date: 1997/02/25 16:02:16 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -908,7 +908,6 @@ ExtUtils::
 ::Embed        Rdpf  Utilities for embedding Perl in C/C++ apps   DOUGM
 ::F77          cdpo  Facilitate use of FORTRAN from Perl/XS code  KGB
 
-
 Test::
 ::Harness      Supf  Executes perl-style tests                    ANDK
 
@@ -1303,6 +1302,7 @@ Qt             cd+O  Interface to the Qt toolkit                  AWIN  +
 
 X11::
 ::Fvwm         i     interface to the FVWM window manager API     RJRAY
+
 _______________________________________________________________________
 
 9) Interfaces to or Emulations of Other Programming Languages
