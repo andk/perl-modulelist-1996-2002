@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.49 $Date: 1998/08/15 08:53:26 $
+The Perl 5 Module List       Revision: 2.49 $Date: 1998/08/15 11:39:32 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -284,6 +284,12 @@ spool area.
 
 You should be able to get a copy from one of these places:
 
+  1.) ASCII version:
+        ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/module-list
+        ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
+  2.) HTML version:
+        http://www.perl.com/CPAN/modules/00modlist.long.html
+
 
 
 Editorial Information and Copyright
@@ -301,6 +307,17 @@ Andreas.Koenig@mind.de.
 Disclaimer: The content of this document is simply a collection of
 information gathered from many sources with little or no checking.
 There are NO warranties with regard to this information or its use.
+
+A little background information... I (Tim) created the Module List in
+August 1994 and maintained it manually till April 1996. By that time
+Andreas had implemented the Perl Authors Upload Server (PAUSE) and it
+was happily feeding modules through to the CPAN archive sites (see
+http://www.perl.com/CPAN/modules/04pause.html for details). Since PAUSE
+held a database of module information which could be maintained by
+module authors it made sense for the module listing part of the Module
+List to be built from that database. In April 1996 Andreas took over
+the automatic posting of the Module List and I now maintain the other
+parts of the text. We plan to add value to the automation over time.
 
 ======================================================================
 
@@ -655,7 +672,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.99 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.102 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -701,7 +718,12 @@ but this is also transparent. Only the .pm file is required to exist.
 
    Follow the instructions and links on
 
+       http://www.perl.com/CPAN/modules/04pause.html
+
    or upload to one of these sites:
+
+       ftp://franz.ww.tu-berlin.de/incoming (preferred)
+       ftp://ftp.cis.ufl.edu/incoming
 
    and notify upload@pause.kbx.de.
 
@@ -2349,6 +2371,9 @@ Contacts: MICB P5P
 
 3) Object Management Group CORBA & IDL
 
+Work is underway on the COPE mailing list, led by Bart Schuller, to
+implement a Perl binding for CORBA. See http://www.lunatech.com/cope/
+
 Contacts: COPEML BARTS
 
 
@@ -2361,6 +2386,12 @@ Contacts: P5P CHIPS
 
 
 5) Extend Yacc To Write XS Code
+
+To quote Larry, "The right way to integrate yacc with Perl would be to
+have it spit out an XS module, presumably." Some version of yacc, like
+byacc, should be converted to spit out an OO .xs and .pm implementing
+a parser. Jake Donham's work so far is available in his CPAN directory
+http://www.perl.com/CPAN/authors/id/JAKE.
 
 Contacts: JAKE NI-S P5P
 
@@ -2386,8 +2417,6 @@ It also aims to encourage module authors to consider any standards that
 might relate to the modules they are developing.
 
 1)   IETF - Internet Engineering Task Force (RFCs)
-
-
 
 
 Standard   Description                                   Module Name
@@ -2423,6 +2452,7 @@ _______________________________________________________________________
 
 
 2)   ITU - International Telegraph Union (X.*)
+
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 X.209      Basic Encoding Rules for ASN.1                Convert::BER
@@ -2442,6 +2472,11 @@ ISO3166    Two letter codes for country identification   Locale::Country
 			  ==================
 1) Information / Contact Reference Details (in alphabetical order)
 
+The following list of email addresses is based on the credentials
+stored on the automated Perl Authors Upload Server (PAUSE). If any of
+the details is not up to date, you're requested to visit
+http://www.perl.com/CPAN/modules/04pause.html, where you will find a pointer
+to a CGI script that lets you edit the database entries yourself.
 
   Ref      Contact Details
   -----    --------------------------------------------------------------
@@ -3004,4 +3039,28 @@ ISO3166    Two letter codes for country identification   Locale::Country
   YLU      Luke Y. Lu <ylu@mail.utexas.edu>
   YVESP    Yves Paindaveine <yp@gr.osf.org>
   ZENIN    Byron Brummer <zenin@bawdycaste.org>
+
+2) Perl Frequently Asked Questions (FAQ)
+
+  The FAQ is available on all CPAN sites in the directory doc/FAQs
+  (e.g., http://www.perl.com/CPAN/doc/FAQs/) as well as from the RTFM
+  server where you can find all posted FAQs:
+
+    ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/
+    ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
+
+  RTFM mirror sites:
+
+  North America:
+    ftp://ftp.uu.net/usenet/news.answers
+    ftp://mirrors.aol.com/pub/rtfm/usenet
+    ftp://ftp.seas.gwu.edu/pub/rtfm
+  Europe:
+    ftp://ftp.uni-paderborn.de/pub/FAQ
+    ftp://ftp.Germany.EU.net/pub/newsarchive/news.answers
+    ftp://ftp.sunet.se/pub/usenet
+  Asia:
+    ftp://nctuccca.edu.tw/USENET/FAQ
+    ftp://hwarang.postech.ac.kr/pub/usenet/news.answers
+    ftp://ftp.hk.super.net/mirror/faqs
 
