@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.52 $Date: 1999/02/06 15:26:59 $
+The Perl 5 Module List       Revision: 2.52 $Date: 1999/02/06 15:27:08 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -686,7 +686,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.113 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.114 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2168,7 +2168,7 @@ Image::
 Chart::
 ::Base         RdpO  Business chart widget collection             NINJAZ !
 ::GnuPlot      RdpO  Access to gnuplot library                    NPESKETT +
-::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTO
+::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTON
 ::XMGR         Rdph  interface to XMGR plotting package           TJENNESS
 
 MPEG::
