@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.77 $ $Date: 2000/11/14 22:22:32 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.78 $ $Date: 2000/11/18 09:53:02 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -507,7 +507,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.77 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.78 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -834,6 +834,7 @@ Perl Language Extensions
 Alias             bdcf Convenient access to data/code via aliases   GSAR
 End               RdpO Generalized END {}.                          ABIGAIL
 Error             adpO Error/exception handling in an OO-ish way    GBARR
+Inline            RdpO Making C extensions easy to write in Perl    INGY
 Perl              adcO Create Perl interpreters from within Perl    GSAR
 Protect           bdpf declare subs private or member               JDUNCAN
 Regexp            adcO An OO interface to regular expressions       GBARR
@@ -925,8 +926,6 @@ Pod::
 ::Usage           bdpf Print Usage messages based on your own pod   BRADAPP
 ::Rtf             RdpO Converter from POD to Rich Text Format       PVHP
 ::Hlp             RdpO Convert POD to formatted VMS Help text       PVHP
-
-Inline
 
 _______________________________________________________________________
 
@@ -1097,7 +1096,7 @@ Mac::Comm::
 ::OT_PPP          RdpO Control Open Transport PPP / Remote Access   CNANDOR
 
 Mac::FileSpec::
-::Unixish
+::Unixish         Mdpf Unixish-compatability in filespecs           SBURKE
 
 Mac::OSA::
 ::Simple          Rdph Simple access to Mac::OSA                    CNANDOR
@@ -1582,9 +1581,9 @@ Class::
 ::TOM             RmpO Transportable Object Model for perl          JDUNCAN
 ::Contract        RdpO Design-by-Contract OO in Perl.               DCONWAY
 ::WhiteHole       RdpO Treat unhandled method calls as errors       MSCHWERN
-::BlackHole
-::Classless
-::ISA
+::BlackHole       RdpO treat unhandled method calls as no-op        SBURKE
+::Classless       MdpO Framework for classless OOP                  SBURKE
+::ISA             Mdpf Report the search path thru an ISA tree      SBURKE
 
 Object::
 ::Info            Rupf General info about objects (is-a, ...)       JACKS
@@ -1649,7 +1648,7 @@ Tree::
 ::Ternary_XS      adcO XS implementation of ternary search trees    LBROCARD
 ::Trie            bdpO An implementation of the Trie data structure AVIF
 ::Nary            RdpO Perl implementation of N-ary search trees    FSORIANO
-::DAG_Node
+::DAG_Node        MdpO base class for trees                         SBURKE
 
 DFA::
 ::Command         Mdpo Discrete Finite Automata command processor   RSAVAGE
@@ -1708,7 +1707,7 @@ DBD::
 ::mSQL            RmcO Msql Driver for DBI                          JWIED
 ::mysql           RmcO Mysql Driver for DBI                         JWIED
 ::pNET            amcO DBD proxy driver                             JWIED
-::InterBase
+::InterBase       amcO DBI driver for InterBase RDBMS server        EDPRATOMO
 
 Oraperl           Rmpf Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl           bmpf Ingperl emulation interface for DBD::Ingres  HTOUG
@@ -1778,7 +1777,7 @@ Db::
 ::Ctree           Rdcr Faircom's CTREE+ database interface          REDEN
 ::Documentum      Rdcf Documentum EDMS Perl client interface        MSROTH
 ::dmObject        cdpO Object-based interface to Documentum EDMS    JGARRISON
-::DFC             cdpO OO Interface to Documentum's DFC             MSROTH
+::DFC             adpO OO Interface to Documentum's DFC             MSROTH
 
 DbFramework::
 ::Attribute       adpO Relational attribute class                   PSHARPE
@@ -1863,14 +1862,76 @@ Emacs             adpf Support for Perl embedded in GNU Emacs       JTOBEY
 Emacs::
 ::Lisp            bdch Perl-to-Emacs-Lisp glue                      JTOBEY
 
-Tk X Windows User Interface Modules:
+Tk X Windows User Interface Modules
 
-Tk                bmcO Object oriented version of Tk v4             TKML
+Tk                bmcO The Tk module                                TKML
 
-   See the Tk module list at
-   http://www.Lehigh.EDU/~sol0/ddumont/ptk_module_list.html
+Tk::
+::TextANSIColor   bdpO use ANSI color codes in Text widget          TJENNESS
+::Autoscroll      cdpf Alternative way to scroll                    SREZIC
+::Axis            RmpO Canvas with Axes                             TKML
+::CheckBox        RdpO A radio button widget that uses a checkmark  DKWILSON
+::ChildNotification RdpO Alert widget when child is created         DKWILSON
+::Clock           RdpO Canvas based Clock widget                    HMBRAND
+::Cloth           Rdpo Object interface to Tk::Canvas and items     ACH
+::Columns         RdpO Multi column lists w/ resizable borders      DKWILSON
+::ComboEntry      RdpO Drop down list + entry widget                DKWILSON
+::ContextHelp     cdpO A context-sensitive help system              SREZIC
+::Dial            Rmp0 An alternative to the Scale widget           TKML
+::Date            cdpO A date/time widget                           SREZIC
+::Enscript        cdpf Create postscript from text files using Tk   SREZIC
+::FcyEntry        adpO Entry with bg color depending on -state      ACH
+::FileDialog      Rdpo A highly configurable file selection widget  BPOWERS
+::FileEntry       adpO Primitive clone of Tix FileEntry widget      ACH
+::FireButton      Rdpo Keeps invoking callback when pressed         ACH
+::FlatCheckbox    cdpO A checkbox suitable for flat reliefs         SREZIC
+::FontDialog      cdpO A font dialog widget for perl/Tk             SREZIC
+::Getopt          adpO Configuration interface to Getopt::Long      SREZIC
+::HistEntry       cdpO An entry widget with history capability      SREZIC
+::HTML            bdpo View HTML in a Tk Text widget                NI-S
+::IconCanvas      RdpO Canvas with movable iconic interface         DKWILSON
+::JPEG            RdcO JPEG loader for Tk::Photo                    NI-S
+::LockDisplay     RdpO Screen saver/lock widget with animation      LUSOL
+::Login           cdpo A Login widget (name, passwd, et al)         BPOWERS
+::Menustrip       RdpO Another MenuBar                              DKWILSON
+::More            adpO A more (or less) like text widget            ACH
+::Multi           bdpO Manages several Text or Canvas widgets       DDUMONT
+::NumEntry        Rdpo Numerical entry widget with up/down buttons  ACH
+::ObjScanner      bdpO A scanner to view an object's attribute      DDUMONT
+::Olwm            Rmp0 Interface to OpenLook toplevels properties   TKML
+::Pane            Rdpo A Frame that can be scrolled                 TKML
+::PNG             RdcO PNG loader for Tk::Photo                     NI-S
+::Pod             ?mpO POD browser toplevel widget                  TKML 
+::ProgressBar     Rdpo Status/progress bar                          TKML        
+::ProgressMeter   cdpo Simple thermometer-style widget w/callbacks  BPOWERS
+::RotCanvas       RdpO Canvas with arbitrary rotation support       AQUMSIEH
+::SplitFrame      RdpO A sliding separator for two child widgets    DKWILSON
+::TabFrame        RdpO A tabbed frame geometry manager              DKWILSON
+::TabbedForm      RdpO Ext. TabFrame, allowing managed subwidgets   DKWILSON
+::TableEdit       RdpO Simplified interface to a flat file database DKWILSON
+::TableMatrix     bdcO Display data in Table/Spreadsheet format     CERNEY  
+::TiedListbox     RmpO Gang together Listboxes                      TKML
+::TFrame          Rdpo A Frame with a title                         ACH
+::TIFF            adpO TIFF loader for Tk::Photo                    SREZIC
+::Tree            RdpO Create and manipulate Tree widgets           CTDEAN
+::TreeGraph       RdpO Widget to draw a tree in a Canvas            DDUMONT 
+::WaitBox         Rdpo A Wait dialog, of the "Please Wait" variety  BPOWERS
+::XMLViewer       adpO Tk widget to display XML                     SREZIC  
 
 Modules in the realm of Tk but with a separate namespace
+
+Log::Dispatch::
+::ToTk            RdpO Interface class between Log::Dispatch and Tk DDUMONT
+::TkText          RdpO Text widget to log Log::Dispatch messages    DDUMONT
+
+Puppet::
+::Body            adpO Base class for persistent data               DDUMONT
+::Log             bdpO Logging facility based on Tk                 DDUMONT 
+::Any             adpO Base class for an optionnal GUI              DDUMONT 
+
+Puppet::VcsTools::
+::History         bdpO VCS (RCS HMS) history viewer based on Canvas DDUMONT 
+::File            adpO VCS (RCS HMS) file manager                   DDUMONT 
 
 Orac              RdpO DBA GUI tool for Oracle, Informix and Sybase ANDYDUNC
 PPresenter        MdpO Create presentations with Tk in Perl or XML  MARKOV
@@ -2125,7 +2186,7 @@ Lingua::EN::
 ::Syllable        a    Estimate syllable count in words             GREGFAST
 
 Lingua::EN::Numbers::
-::Ordinate
+::Ordinate        Rdpf go from cardinal (53) to ordinal (53rd)      SBURKE
 
 Lingua::RU::
 ::Charset         anpf Detect/Convert russian character sets.       FARBER
@@ -2166,7 +2227,7 @@ Parse::
 ::Tokens          bdpO Base class for parsing tokens from text      MCKAY
 ::Yapp            RdpO Generates OO LALR parser modules             FDESAR
 ::YALALR          RdpO Yet Another LALR parser                      SFINK
-::Vipar           RdpO Visual LALR parser debugger                  SFINK
+::Vipar           bdpO Visual LALR parser debugger                  SFINK
 
 Search::
 ::Dict            Supf Search a dictionary ordered text file        P5P
@@ -2190,7 +2251,7 @@ XML               RmhO Large collection of XML related modules      XMLML
     namespace to avoid bloat.
 
 RDF::
-::Service
+::Service         ampO RDF API with DBI and other backends          JONAS
 
 RTF::
 ::Base            i    Classes for Microsoft Rich Text Format       NI-S
@@ -2441,7 +2502,7 @@ HTML::
 ::CalendarMonth   RmpO Calendar Months as easy HTML::Element trees  MSISK
 ::Demoroniser     adpO Correct moronic and incompatible HTML        JDPORTER
 ::EP              adpO Modular, extensible Perl embedding           JWIED
-::Element         ampO Representation of a HTML parsing tree        LWWWP
+::Element         RdpO Representation of a HTML parsing tree        SBURKE
 ::ElementGlob     RmpO Manipulate multiple HTML elements as one     MSISK
 ::ElementRaw      RmpO Graft HTML strings onto an HTML::Element     MSISK
 ::ElementSuper    RmpO Various HTML::Element extensions             MSISK
@@ -2467,7 +2528,7 @@ HTML::
 ::Template        MmpO a simple HTML templating system              SAMTREGAR
 ::TokeParser      RmpO  Alternative HTML::Parser interface          LWWWP
 ::Validator       bdpO HTML validator utilizing nsgmls and libwww   SAIT
-::Tagset
+::Tagset          Rdpf data tables useful in parsing HTML           SBURKE
 
 HTML::Widgets::
 ::DateEntry       RdpO Creates date entry widgets for HTML forms.   KENNEDYH
@@ -3184,7 +3245,7 @@ Astro::
 ::SLA             Rdcf Interface to SLALIB positional astronomy lib TJENNESS
 ::SunTime         cdpf Calculate sun rise/set times                 ROBF
 ::Time            Rdpf General time conversions for Astronomers     CPHIL
-::Sunrise
+::Sunrise         RdpO Computes sunrise/sunset for a given day      RKHILL
 
 Audio::
 ::CD              bdcO Perl interface to libcdaudio (cd + cddb)     DOUGM
@@ -3214,7 +3275,7 @@ Business::
 ::ISSN            adpO Object and functions to work with ISSN       SAPAPO
 ::OnlinePayment   RdpO Ecommerce middleware                         JASONK
 ::UPC             ???? manipulating Universal Product Codes         ROBF
-::US_Amort
+::US_Amort        Mdph US-style loan amortization calculations      SBURKE
 
 Chemistry::
 ::Elements        RdpO Working with Chemical Elements               BDFOY
@@ -3237,9 +3298,9 @@ Games::
 ::Dice            cdpf Simulates rolling dice                       PNE
 ::Hex             cdpO Object library for hexmap-based board games  JHKIM
 ::WordFind        bdpO Generate word-find type puzzles              AJOHNSON
-::Alak
-::Dissociate
-::Worms
+::Alak            Rdpf a simple gomoku-like game                    SBURKE
+::Dissociate      Mdpf a Dissociated Press algorithm and filter     SBURKE
+::Worms           RdpO A life simulator for Conway/Patterson worms  SBURKE
 
 Geo::
 ::METAR           Rdpf Process Aviation Weather (METAR) Data        JZAWODNY
@@ -3552,6 +3613,7 @@ to a CGI script that lets you edit the database entries yourself.
   ASPINDLER Andreas Spindler <info@prismtk.de>
   ASPINELLI Andrea Spinelli <aspinelli@etsteam.it>
   ASTEAM   ActiveState development team <dev@ActiveState.com>
+  ASTILLER Andreas Stiller <andreas.stiller@eds.com>
   AUSCHUTZ Austin Schutz <tex@habit.com>
   AVATAR   Albert K. T. Hui <avatar@deva.net>
   AVIF     Avi Finkel <avi@finkel.org>
@@ -4365,7 +4427,7 @@ to a CGI script that lets you edit the database entries yourself.
   NOG      Norbert Gruener <nog@MPA-Garching.MPG.DE>
   NPADGEN  Neil Padgen <nrp@i.am>
   NPESKETT Nick Peskett <cpan@peskett.com>
-  NREICHEN Nils Reichen <eicndhcpd@worldcom.ch>
+  NREICHEN Nils Reichen <nreichen@eicndhcpd.ch>
   NTHIERY  Nicolas Thiéry <Nicolas.Thiery@ens.fr>
   NVPAT    Nathan V. Patwardhan <nvp@ora.com>
   NWALSH   Norman Walsh <norm@berkshire.net>
@@ -4558,7 +4620,7 @@ to a CGI script that lets you edit the database entries yourself.
   SAPAPO   Sami Poikonen <sp@iki.fi>
   SARGIE   Peter Sergeant <pete_sergeant@hotmail.com>
   SBALA    S Balamurugan <sbm@india.ti.com>
-  SBECK    Sullivan Beck <sbeck@cise.ufl.edu>
+  SBECK    Sullivan Beck <sbeck@cpan.org>
   SBERKHOLZ Scott Berkholz <scottb@streamsoftware.com>
   SBONDS   Steve W Bonds <store0@hotmail.com>
   SBOSS    Scott Boss <scott at sboss dot net>
@@ -4687,7 +4749,7 @@ to a CGI script that lets you edit the database entries yourself.
   TIMB     Tim Bunce <Tim.Bunce@ig.co.uk>
   TIMBU    Tim Burlowski <timbu@timbu.org>
   TIMM     Tim Meadowcroft <tim@schmerg.com>
-  TIMMY    Tim Hammerquist <cafall@voffice.net>
+  TIMMY    Tim Hammerquist <tim@dichosoft.com>
   TIMPOTTER Tim Potter <tpot@frungy.org>
   TIMPX    Tim Goodwin <tjg@star.le.ac.uk>
   TJENNESS Tim Jenness <t.jenness@jach.hawaii.edu>
