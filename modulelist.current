@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.32 $Date: 1996/09/17 00:00:01 $
+The Perl 5 Module List       Revision: 2.32 $Date: 1996/09/17 21:27:48 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -40,7 +40,7 @@ Part 2 - The Perl 5 Module List
 18)  Images, Pixmap and Bitmap Manipulation, Drawing and Graphing
 19)  Mail and Usenet News
 20)  Control Flow Utilities (callbacks and exceptions etc)
-21)  File Handle and Input/Output Stream Utilities
+21)  File Handle, Directory Handle and Input/Output Stream Utilities
 22)  Microsoft Windows Modules
 23)  Miscellaneous Modules
 
@@ -116,8 +116,6 @@ currently registered CPAN sites:
     Europe
         Austria
             ftp://ftp.tuwien.ac.at/pub/languages/perl/CPAN/
-        Belgium
-            ftp://ftp.kulnet.kuleuven.ac.be/pub/mirror/CPAN/
         Czech Republic
             ftp://sunsite.mff.cuni.cz/Languages/Perl/CPAN/
         Denmark
@@ -177,7 +175,6 @@ currently registered CPAN sites:
             ftp://ftp.ou.edu/mirrors/CPAN/
             ftp://ftp.rge.com/pub/languages/perl/
             ftp://ftp.sedl.org/pub/mirrors/CPAN/
-            ftp://ftp.sterling.com/CPAN/
             ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
     South America
         Chile
@@ -853,7 +850,7 @@ Pod::
 ::Parser       bdpO  Base class for parsing pod syntax            BRADAPP !
 ::Pod          cdpr  converter to canonical pod                   KJALB
 ::RTF          cdpr  converter to RTF                             KJALB
-::Select       bdpf  Print only selected section of pod docs      BRADAPP +
+::Select       bdpf  Print only selected sections of pod docs     BRADAPP +
 ::Simplify     cdpr  Common pod parsing code                      KJALB
 ::Texinfo      cdpr  converter to texinfo                         KJALB
 ::Text         Supf  convert POD data to formatted ASCII text     TOMC
@@ -995,7 +992,7 @@ Net::
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
 ::SNPP         cdpO  Client interface to SNPP protocol            GBARR
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
-::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   ADESC
+::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   SAMPO !
 ::TCP          adcO  TCP-specific socket usage                    SPIDB
 ::Telnet       cdpO  Inheritable Telnet socket object protocol    GBARR
 ::Time         adpf  Obtain time from remote machines             GBARR
@@ -1071,11 +1068,16 @@ Statistics::
 ::Descriptive  RdpO  Descriptive statistical methods              JKAST
 ::ChiSquare    Rdpf  Chi Square test - how random is your data?   JONO
 
+PDL            cdcf  Perl Data Language - numeric analysis env    KGB +
+
 Array::
 ::Vec          idp   Implement array using vec()                  LWALL
 ::Substr       idp   Implement array using substr()               LWALL
 ::Virtual      idp   Implement array using a file                 LWALL
 ::PrintCols    adpf  Print elements in vertically sorted columns  AKSTE
+
+List::
+::Extra        cdcf  Extra list/array manipulation functions      JNH +
 
 Set::
 ::Scalar       adpO  Set of scalars (inc references)              JHI
@@ -1269,6 +1271,7 @@ File::
 ::Attrib       idpO  Get/set file attributes (stat)               TYEMQ
 ::Basename     Supf  Return basename of a filename                P5P
 ::CheckTree    Supf  Check file/dir tree against a specification  P5P
+::Cmp          bdpf  Compare file contents quickly                JNH +
 ::Copy         adpf  Copying files or filehandles                 ASHER
 ::CounterFile  RdpO  Persistent counter class                     GAAS
 ::Find         Supf  Call func for every item in a directory tree P5P
@@ -1418,7 +1421,10 @@ CGI::
 ::Response     ampO  Response construction for CGI applications   CGIP
 ::Session      cmpO  Maintain session/state information           MGH
 
+Apache         bdcO  Interface to the Apache server API           DOUGM
+CCI            i     Common Client Interface for WWW browsers     DOUGM
 CGI_Lite       ampO  Light-weight interface for fast apps         SHGUN
+FCGI           Rdcf  Fast CGI (requires sfio)                     SKIMO +
 
 HTML::
 ::QuickCheck   cdpf  Fast simple validation of HMTL text          YLU
@@ -1463,9 +1469,6 @@ MIME::
 ::Entity       adpO  An extracted and decoded MIME entity         ERYQ
 ::Head         adpO  A parsed MIME header                         ERYQ
 ::Parser       adpO  Parses streams to create MIME entities       ERYQ
-
-Apache         bdcO  Interface to the Apache server API           DOUGM
-CCI            i     Common Client Interface for WWW browsers     DOUGM
 
 
 _______________________________________________________________________
@@ -1532,7 +1535,6 @@ Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 GD             adcO  GIF editing/painting/manipulation            LDS
 OpenGL         adcf  Interface to OpenGL drawing/imaging library  STANM
-PDL            cdcf  Perl Data Language - numeric analysis env    KGB
 PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
 VRML           cdpf  VRML primitives and ext. to create scenes    HPALM
@@ -1658,8 +1660,6 @@ ARS            Rd??  Interface to Remedy's Action Request API     JMURPHY
 Psion::
 ::Db           idpO  Handle Psion palmtop computer database files IANPX
 
-Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
-
 Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN
 
 Penguin::
@@ -1673,6 +1673,12 @@ BarCode::
 
 Audio::
 ::Sox          i     sox sound library as one or more modules     NI-S
+
+Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
+
+SyslogScan::   
+::SyslogEntry  bdpO  Parse UNIX syslog                            RHNELSON +
+::SendmailLine bdpO  Summarize sendmail transactions              RHNELSON +
 
 =======================================================================
 
