@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.37 $Date: 1997/02/25 16:02:16 $
+The Perl 5 Module List       Revision: 2.37 $Date: 1997/02/25 16:08:04 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -111,8 +111,7 @@ currently registered CPAN sites:
             ftp://ftp.wownet.net/pub2/PERL/
     Australasia
         Australia
-            ftp://coombs.anu.edu.au/pub/perl/CPAN/
-            ftp://ftp.mame.mu.oz.au/pub/perl/CPAN/
+            ftp://ftp.netinfo.com.au/pub/perl/CPAN/
         New Zealand
             ftp://ftp.tekotago.ac.nz/pub/perl/CPAN/
     Europe
@@ -130,6 +129,7 @@ currently registered CPAN sites:
             ftp://ftp.ibp.fr/pub/perl/CPAN/
             ftp://ftp.pasteur.fr/pub/computing/unix/perl/CPAN/
         Germany
+            ftp://ftp.gmd.de/packages/CPAN/
             ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/
             ftp://ftp.rz.ruhr-uni-bochum.de/pub/CPAN/
             ftp://ftp.uni-erlangen.de/pub/source/Perl/CPAN/
@@ -246,7 +246,7 @@ You should be able to get a copy from one of these places:
 
 Editorial Information and Copyright
 
-This document is Copyright (c) 1996 by Tim Bunce and Andreas König. All
+This document is Copyright (c) 1997 by Tim Bunce and Andreas König. All
 rights reserved. Permission to distribute this document, in full or
 part, via electronic means (emailed, posted or archived) or printed
 copy is granted providing that no charges are involved, reasonable
@@ -1447,6 +1447,16 @@ I18N::
 Locale::
 ::gettext      Rdcf  Multilanguage messages                       PVANDRY
 
+Unicode::
+::UCS2         adp0    Unicode UCS-2 encoded strings              GAAS
+::UCS4         i       Unicode UCS-4 encoded strings              GAAS
+::CType        i       Classification of Unicode chars            GAAS
+
+Modules related to countries or national conventions
+
+No::*          adpf  Norwegian stuff                              GAAS
+
+
 _______________________________________________________________________
 
 14) Authentication, Security and Encryption (see also Networking)
@@ -1625,6 +1635,7 @@ GD             adcO  GIF editing/painting/manipulation            LDS
 OpenGL         adcf  Interface to OpenGL drawing/imaging library  STANM
 PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
+GIFgraph       ad    Package to generate GIF graphs, uses GD.pm   MVERB
 
 VRML::         adpO  VRML primitives and ext. to create scenes    HPALM 
 ::VRML1        adpO  VRML primitives and ext. with VRML 1.x       HPALM
@@ -1686,6 +1697,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 IO::
+::Format       i     (Description missing)                        SBECK
 ::Handle       cdpO  Base class for input/output handles          GBARR
 ::Pipe         cdpO  Methods for pipe handles                     GBARR
 ::Socket       cdpO  Methods for socket input/output handles      GBARR
