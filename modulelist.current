@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.38 $Date: 1997/02/25 16:43:47 $
+The Perl 5 Module List       Revision: 2.38 $Date: 1997/02/25 16:44:30 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -1448,14 +1448,18 @@ Locale::
 ::gettext      Rdcf  Multilanguage messages                       PVANDRY
 
 Unicode::
-::UCS2         adp0    Unicode UCS-2 encoded strings              GAAS
-::UCS4         i       Unicode UCS-4 encoded strings              GAAS
-::CType        i       Classification of Unicode chars            GAAS
+::UCS2         adp0  Unicode UCS-2 encoded strings                GAAS
+::UCS4         i     Unicode UCS-4 encoded strings                GAAS
+::CType        i     Classification of Unicode chars              GAAS
 
 Modules related to countries or national conventions
 
-No::*          adpf  Norwegian stuff                              GAAS
-
+No::
+::Dato         adpf  Norwegian stuff                              GAAS
+::KontoNr      adpf  Norwegian stuff                              GAAS
+::PersonNr     adpf  Norwegian stuff                              GAAS
+::Sort         adpf  Norwegian stuff                              GAAS
+::Telenor      adpf  Norwegian stuff                              GAAS
 
 _______________________________________________________________________
 
