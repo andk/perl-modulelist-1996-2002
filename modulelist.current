@@ -1,7 +1,7 @@
-The Perl 5 Module List       Revision: 2.40 $Date: 1997/03/28 17:53:05 $
+The Perl 5 Module List       Revision: 2.41 $Date: 1997/03/29 10:01:21 $
 ======================
 
-Maintained by Tim Bunce and Andreas König <modules@perl.com>
+Maintained by Tim Bunce and Andreas König <modules@perl.org>
 
 Contents
 
@@ -109,6 +109,8 @@ currently registered CPAN sites:
         Taiwan
             ftp://dongpo.math.ncu.edu.tw/perl/CPAN/
             ftp://ftp.wownet.net/pub2/PERL/
+        Thailand
+            ftp://ftp.riubon.ac.th/pub/mirrors/perl/CPAN/
     Australasia
         Australia
             ftp://ftp.netinfo.com.au/pub/perl/CPAN/
@@ -149,6 +151,8 @@ currently registered CPAN sites:
         Portugal
             ftp://ftp.ci.uminho.pt/pub/lang/perl/
             ftp://ftp.telepac.pt/pub/CPAN/
+        Romania
+            ftp://ftp.dntis.ro/pub/mirrors/perl-cpan/
         Russia
             ftp://ftp.sai.msu.su/pub/lang/perl/CPAN/
         Slovenia
@@ -226,7 +230,7 @@ community where you can. [ end of sermon :-]
 
 Help save the world! Please submit new entries and updates to us so we
 can keep this list up-to-date. Send the new or corrected entry by email
-to modules@perl.com (or modules@franz.ww.tu-berlin.de in case the above
+to modules@perl.org (or modules@franz.ww.tu-berlin.de in case the above
 doesn't work). Please do not send code to this address. Instead upload
 your module, once registered, to the PAUSE site for forwarding on to
 CPAN. See section 2, especially 2.6 and 2.11.
@@ -497,7 +501,7 @@ but this is also transparent. Only the .pm file is required to exist.
    (though having 23 called Sort::Quick is only marginally better :-).
    Imagine someone trying to install your module alongside many others.
    If in any doubt ask for suggestions in comp.lang.perl.modules or
-   modules@perl.com.
+   modules@perl.org.
 
    Please use a nested module name to informally group or categorise
    a module, e.g., placing a sorting module into a Sort:: category.
@@ -523,6 +527,12 @@ but this is also transparent. Only the .pm file is required to exist.
    standards for naming modules and the interface to methods in
    those modules.
 
+   If developing modules for private internal or project specific use,
+   that will never be released to the public, then you should ensure
+   that their names will not clash with any future public module. You
+   can do this either by using the reserved Local::* category or by
+   using a category name that includes an underscore like Foo_Corp::*.
+
    To be portable each component of a module name should be limited to
    11 characters. If it might be used on DOS then try to ensure each is
    unique in the first 8 characters. Nested modules make this easier.
@@ -538,7 +548,7 @@ but this is also transparent. Only the .pm file is required to exist.
    is to ask someone who knows. The comp.lang.perl.modules Usenet
    newsgroup is read by just about all the people who develop modules
    and it's generally the best place to ask first. If you need more
-   help then try modules@perl.com.
+   help then try modules@perl.org.
 
    All you need to do is post a short summary of the module, its
    purpose and interfaces. A few lines on each of the main methods is
@@ -604,7 +614,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.69 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.70 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -960,7 +970,7 @@ Name           DSLI  Description                                  Info
 POSIX          SupO  An interface to most (all?) of POSIX.1       P5P
 Fcntl          Sdcf  Defines fcntl() constants (see File::Lock)   JHI
 Ioctl          cdcf  Defines ioctl() constants                    KJALB
-Errno          i     Constants from <errno.h> EACCES, ENOENT etc  JHI
+Errno          cdpf  Constants from errno.h EACCES, ENOENT etc    GBARR
 Env            Supf  Alias environment variables as perl vars     P5P
 Shell          Supf  Run shell commands transparently within perl P5P
 
@@ -998,10 +1008,13 @@ Mac::                Macintosh specific modules
 ::Types        bmcO  (Un-)Packing of Macintosh specific types     MCPL
 
 Mac::Apps::
+::Anarchie     RdpO  Interface to Anarchie with AppleEvents       CNANDOR
 ::MacPGP       RdpO  Interface to MacPGP 2.6.3 with AppleEvents   CNANDOR
 
+Mac::Comm::
+::OT_PPP       RdpO  Interface to Open Transport/PPP              CNANDOR
+
 MSDOS::
-::Anarchie     cdpO  Interface to Anarchie with AppleEvents       CNANDOR +
 ::SysCalls     adcf  MSDOS interface (interrupts, port I/O)       DMO
 
 NeXTStep::
@@ -1034,12 +1047,16 @@ Socket         Sucf  Defines all socket-related constants         JACKS
 Ptty           adcf  Pseudo terminal interface functions          NI-S
 
 Net::
+::ACAP         adpO  Interface to ACAP Protocol (Internet-Draft)  KJOHNSON
+::Bind         adpO  Interface to bind daemon files               KJOHNSON
 ::Cmd          cdpO  For command based protocols (FTP, SMTP etc)  GBARR
 ::DNS          adpO  Interface to the DNS resolver                MFUHR
 ::Dnet         cdcO  DECnet-specific socket usage                 SPIDB
 ::Domain       adpf  Try to determine TCP domain name of system   GBARR
 ::FTP          adpf  Interface to File Transfer Protocol          GBARR
 ::Gen          adcO  Generic support for socket usage             SPIDB
+::ICAP         adpO  Interface to ICAP Protocol (Internet-Draft)  KJOHNSON
+::IMAP         adpO  Interface to IMAP Protocol (RFC2060)         KJOHNSON
 ::IRC          i     Internet Relay Chat interface                DSHEPP
 ::Ident        RdpO  Performs ident (rfc1413) lookups             JPC
 ::Inet         adcO  Internet (IP) socket usage                   SPIDB
@@ -1049,8 +1066,8 @@ Net::
 ::NNTP         adpO  Client interface to NNTP protocol            GBARR
 ::Netrc        adpO  Support for .netrc files                     GBARR
 ::POP3         adpO  Client interface to POP3 protocol            GBARR
-::Ping         Supf  TCP ping (only echo, will be replaced soon)  PMQS
 ::Ping         RdpO  TCP and ICMP ping implementation             RMOSE
+::Ping         Supf  TCP ping (only echo, will be replaced soon)  PMQS
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
 ::SNPP         cdpO  Client interface to SNPP protocol            GBARR
 ::SOCKS        cdcf  TCP/IP access through firewalls using SOCKS  SCOOPER
@@ -1063,6 +1080,7 @@ Net::
 ::netent       adpf  A by-name interface for networks functions   TOMC
 ::protoent     adpf  A by-name interface for protocols functions  TOMC
 ::servent      adpf  A by-name interface for services functions   TOMC
+::xAP          adpO  Interface to IMAP,ACAP,ICAP substrate        KJOHNSON
 
 IPC::
 ::Open2        Supf  Open a process for both reading and writing  P5P
@@ -1073,7 +1091,7 @@ IPC::
 ::Globalspace  cdpO  Multi-process shared hash and shared events  JACKS
 
 RPC::                Remote Procedure Calls (see also DCE::RPC)
-::ONC          i     Open Network Computing (Sun) RPC interface   PKUTS
+::ONC          adcO  ONC RPC interface (works with perlrpcgen)    JAKE
 
 DCE::                Distributed Computing Environment (OSF)
 ::Registry     bdcO  DCE registry functions                       DOUGM
@@ -1153,12 +1171,14 @@ List::
 
 Bit::
 ::ShiftReg     Rdcf  Rotate/shift registers (all C integer types) STBEY +
-::Vector       RdcO  Arbitrary length bit vectors (base class)    STBEY +
+::Vector       RdcO  Efficient bit vector base class              STBEY +
 
 Set::
-::Scalar       adpO  Set of scalars (inc references)              JHI
-::IntegerFast  RdcO  Set of integers (algorithmical computations) STBEY
+::IntRange     RdcO  Set of integers (arbitrary intervals, fast)  STBEY
 ::IntSpan      adpO  Set of integers newsrc style '1,5-9,11' etc  SWMCD
+::IntegerFast  RdcO  Set of integers (algorithmical computations) STBEY
+::Scalar       adpO  Set of scalars (inc references)              JHI
+::Window       bdpO  Manages an interval on the integer line      SWMCD
 
 Graph::
 ::Element      RdpO  Base class for element of directed graph     NEILB
@@ -1247,6 +1267,7 @@ DBD::
 ::Ingres       amcO  Ingres Driver for DBI                        HTOUG
 ::Oracle       amcO  Oracle Driver for DBI                        TIMB
 ::QBase        amcO  QBase Driver for DBI                         BENLI
+::Solid        amcO  Solid Driver for DBI                         TWENRICH
 ::Sybase       cdpO  Sybase Driver for DBI (uses Sybase::CTlib)   MEWP
 ::mSQL         amcO  Msql Driver for DBI                          ADESC
 
@@ -1302,6 +1323,7 @@ Term::
 ::ReadKey      Rdcf  Read keystrokes and change terminal modes    KJALB
 ::ReadLine     Sdcf  Common interface for various implementations ILYAZ
 ::Screen       RdpO  Basic screen + input class (uses Term::Cap)  MRKAE
+::Size         adcf  Simple way to get terminal size              TIMPX
 
 Term::ReadLine::
 ::Perl         RdpO  GNU Readline history and completion in Perl  ILYAZ
@@ -1412,8 +1434,9 @@ Text::
 ::Abbrev       Supf  Builds hash of all possible abbreviations    P5P
 ::ParseWords   Supf  Parse strings containing shell-style quoting HALPOM
 ::Soundex      Supf  Convert a string to a soundex value          MIKESTOK
-::Bib          RdpO  Parse refer(1)-style bibliography files      ERYQ
+::Bib          RdpO  Module moved to Text::Refer                  ERYQ
 ::CSV          cdcf  Manipulate comma-separated value strings     JNH
+::Refer        RdpO  Parse refer(1)-style bibliography files      ERYQ
 ::Tabs         Sdpf  Expand and contract tabs ala expand(1)       MUIR
 ::TeX          cdpO  TeX typesetting language input parser        ILYAZ
 ::Template     bdpO  Expand template text with embedded perl      MJD
@@ -1442,7 +1465,7 @@ Parse::
 SGML::
 ::Element      cdpO  Build a SGML element structure tree          LSTAF
 ::SP           cd+O  Interface to James Clark's Sp SGML parser    BARTS
-SGMLS          RdpO  A Post-Processor for SGMLS and NSGMLS        DMEGG
+SGMLS          RdpO  A Post-Processor for SGMLS and NSGMLS        INGOMACH
 
 TeX::
 ::DVI          adpO  Methods for writing DVI (Device INdependent) JANPAZ +
@@ -1487,6 +1510,8 @@ I18N::
 ::WideMulti    i     Wide and multibyte character string          JHI
 
 Locale::
+::Country      cdpf  ISO 3166 two letter country codes            NEILB
+::Language     cdpf  ISO 639 two letter language codes            NEILB
 ::gettext      Rdcf  Multilanguage messages                       PVANDRY
 
 Unicode::
@@ -1600,7 +1625,7 @@ MIME::
 ::Head         adpO  A parsed MIME header                         ERYQ
 ::IO           adpO  Simple I/O handles for filehandles/scalars   ERYQ
 ::Latin1       adpO  Encoding 8-bit Latin-1 as 7-bit ASCII        ERYQ
-::Lite         adpO  Single module for composing simple MIME msgs ERYQ  !
+::Lite         bdpO  Single module for composing simple MIME msgs ERYQ  !
 ::Parser       adpO  Parses streams to create MIME entities       ERYQ
 ::ParserBase   adpO  For building your own MIME parser            ERYQ
 ::Words        cdpf  Encode/decode RFC1522-escaped header strings ERYQ  +
@@ -1660,6 +1685,7 @@ Server::Mail::
 ::Functions    cupf  Functions for handling files and mailboxes   JACKS
 ::Object       cupO  Basic mail object                            JACKS
 
+MailBot        cdpO  Archive server, listserv, auto-responder     RHNELSON
 
 _______________________________________________________________________
 
@@ -1689,7 +1715,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 GD             adcO  GIF editing/painting/manipulation            LDS
-OpenGL         adcf  Interface to OpenGL drawing/imaging library  STANM
+OpenGL         adcf  Interface to OpenGL drawing/imaging library  ADESC
 PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
 GIFgraph       ad    Package to generate GIF graphs, uses GD.pm   MVERB
@@ -1706,6 +1732,8 @@ Image::
 ::ColorSpace   id    transform colors between colorspaces         JONO
 ::Magick       RdcO  Read, query, transform, and write images     JCRISTY +
 ::Size         Rdpf  Measure size of images in common formats     RJRAY
+
+ThreeD         i     Namespace root for all kinds of 3D modules   ADESC
 
 _______________________________________________________________________
 
