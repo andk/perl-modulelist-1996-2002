@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.46 $Date: 1998/01/04 12:19:04 $
+The Perl 5 Module List       Revision: 2.46 $Date: 1998/01/04 12:33:28 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -550,6 +550,24 @@ but this is also transparent. Only the .pm file is required to exist.
    useful categorisation for humans. The same is generally true for
    all package names.
 
+   Since the CPAN is huge and growing daily, it's essential that
+   module authors choose names which lend themselves to browsing.
+   That means minimizing acronyms, cute names, and jargon. Also,
+   don't make up a new top level category unless you have a good
+   reason; please choose an already-existing category when
+   possible. Send mail to modules@perl.org before you upload, so
+   we can help you select a name.
+
+   If you insist on a name that we consider inappropriate, we
+   won't prevent you from uploading your module -- but it'll
+   remain in your "author" directory and won't be directly visible
+   from CPAN/modules/by-module.
+
+   We appreciate the efforts of the contributors who have helped
+   make the CPAN the world's largest reusable code repository.  
+   Please help us enhance it by working with us to choose the
+   best name possible.
+
    If you are developing a suite of related modules/classes it's good
    practice to use nested classes with a common prefix as this will
    avoid namespace clashes. For example:  Xyz::Control, Xyz::View,
@@ -646,7 +664,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.83 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.84 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -901,6 +919,7 @@ Perl Pragmatic Modules
 builtin        adcf  A selection of subs destined for the core    GBARR
 constant       adpf  Define compile-time constants                PHOENIX
 diagnostics    Sdpf  For reporting perl diagnostics in full form  TOMC
+enum           i     implementation of enumeration items          NJLEON
 integer        Supf  Controls float vs. integer arithmetic        P5P
 less           Supf  Controls optimisations (yet unimplemented)   P5P
 lib            Supf  Simple way to add/delete directories in @INC P5P
@@ -1071,6 +1090,7 @@ Mac::Comm::
 
 MSDOS::
 ::Attrib       bdcf  Get/set DOS file attributes in OS/2 or Win32 CJM
+::Descript     bdpO  Manage 4DOS style DESCRIPT.ION files         CJM
 ::SysCalls     adcf  MSDOS interface (interrupts, port I/O)       DMO
 
 NeXTStep::
@@ -1128,6 +1148,7 @@ Net::
 ::IRC          cdpO  Internet Relay Chat interface                DSHEPP
 ::Ident        RdpO  Performs ident (rfc1413) lookups             JPC
 ::Inet         adcO  Internet (IP) socket usage                   SPIDB
+::Interfaces   a     ifconfig(1) implementation                   SRZ
 ::LDAP         adpO  Interface to LDAP Protocol (RFC1777)         PLDAP
 ::LDAPapi      Rdcf  Interface to UMICH and Netscape LDAP C API   CDONLEY
 ::NIS          adcO  Interface to Sun's NIS                       RIK
@@ -1289,11 +1310,13 @@ Time::
 
 Calendar::
 ::CSA          adcO  interface with calenders such as Sun and CDE KJALB
+::RCM          i     Russell Calendar Manager                     HTCHAPMAN
 
 Tie::
 ::Hash         Supr  Base class for implementing tied hashes      P5P
 ::Scalar       Supr  Base class for implementing tied scalars     P5P
 ::Array        c     Base class for implementing tied arrays      CHIPS
+::CPHash       bdpO  Case preserving but case insensitive hash    CJM
 ::Cache        adpO  In memory size limited LRU cache             MIKEH
 ::Dir          adpr  Tie hash for reading directories             GBARR
 ::File         adpr  Tie hash to files in a directory             AMW
@@ -1336,6 +1359,7 @@ Data::
 Tree::
 ::Base         cdpO  Defines a basic binary search tree           MSCHWERN
 ::Balanced     Rdpf  Extract balanced-delimiter substrings        DCONWAY
+::Fat          adcO  Embeddable F-Tree Algorithm Suite            JPRIT
 ::Smart        cdpO  Sorted hash-ish, becomes faster with use     MSCHWERN
 
 _______________________________________________________________________
@@ -1354,7 +1378,7 @@ DBD::
 ::Oracle       amcO  Oracle Driver for DBI                        TIMB
 ::QBase        amcO  QBase Driver for DBI                         BENLI
 ::Solid        amcO  Solid Driver for DBI                         TWENRICH
-::Sybase       cdpO  Sybase Driver for DBI (uses Sybase::CTlib)   MEWP
+::Sybase       amcO  Sybase Driver for DBI                        MEWP
 ::XBase        cmcO  Complete XBase support: read, write, index   JANPAZ
 ::mSQL         RmcO  Msql Driver for DBI                          JWIED !
 ::mysql        RmcO  Mysql Driver for DBI                         JWIED +
@@ -1364,14 +1388,16 @@ Oraperl        Rmpf  Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl        ampf  Ingperl emulation interface for DBD::Ingres  HTOUG !
 
 Sybase::
+::BCP          RdcO  Sybase BCP interface                         MEWP
 ::DBlib        RdcO  Sybase DBlibrary interface                   MEWP
 ::Sybperl      Rdpf  sybperl 1.0xx compatibility module           MEWP
-::CTlib        bdcO  Sybase CTlibrary interface                   MEWP
+::CTlib        RdcO  Sybase CTlibrary interface                   MEWP
 
 Datascope      Rdcf  Interface to Datascope RDBMS                 DANMQ
 LotusNotes     i     Interface to Lotus Notes C/C++ API           JONO
-Msql           RmcO  Mini-SQL, a light weight SQL database        JWIED
-ObjStore       ad+O  ObjectStore DBMS Interface                   JPRIT
+Msql           RmcO  Mini-SQL database interface                  JWIED
+Mysql          RmcO  mysql database interface                     JWIED
+ObjStore       Rm+O  ObjectStore OODBMS Interface                 JPRIT
 Pg             Rdcf  PostgreSQL SQL database interface            MERGL !
 Postgres       Rdcr  PostgreSQL interface with Perl5 coding style VKHERA
 Sprite         RdpO  Limited SQL interface to flat file databases SHGUN
@@ -1533,6 +1559,7 @@ Name           DSLI  Description                                  Info
 String::
 ::Approx       Rdpf  Approximate string matching and substitution JHI
 ::BitCount     adpf  Count number of "1" bits in strings          WINKO
+::CRC          Rdcf  Cyclic redundency check generation           MUIR
 ::Edit         adpf  Assorted handy string editing functions      TOMC
 ::MatchMany    adpf  Build fast code to match many patterns       TOMC
 ::Parity       adpf  Parity (odd/even/mark/space) handling        WINKO
@@ -1547,6 +1574,7 @@ Text::
 ::BibTeX       adcO  Parse BibTeX files                           GWARD
 ::CSV          adpO  Manipulate comma-separated value strings     ALANCITT
 ::DelimMatch   RdpO  Match (possibly nested) delimited strings    NWALSH
+::Format       RdpO  Advanced paragraph formatting                GABOR
 ::Invert       cdpO  Create/query inv. index of text entities     NNEUL
 ::Metaphone    adpf  Phonetic encoding.  A modern Soundex         MSCHWERN !
 ::Morse        cdpf  convert text to/from Morse code              JONO
@@ -1595,6 +1623,11 @@ SGMLS          RdpO  A Post-Processor for SGMLS and NSGMLS        INGOMACH
 TeX::
 ::DVI          adpO  Methods for writing DVI (DeVice Independent) JANPAZ
 ::Hyphen       adpO  Hyphenate words using TeX's patterns         JANPAZ
+
+FrameMaker::   cdpO  Top level FrameMaker interface               PEASE
+::FDK          idcO  Interface to Adobe FDK                       PEASE
+::MIF          cdpO  Parse and Manipulate FrameMaker MIF files    PEASE
+::Control      cdpO  Control a FrameMaker session                 PEASE
 
 Anagram        adcf  Anangram generator                           ASHER
 Marpa          cd+O  Context Free Parser                          JKEGL
@@ -1673,7 +1706,7 @@ User::
 ::utent        cdcO  Interface to utmp/utmpx/wtmp/wtmpx database  ROSCH
 
 PGP::          adpO  Simple interface to PGP subprocess via pipes PGPML
-::Sign         adpr  Create and check PGP signatures, securely    RRA
+::Sign         bdpr  Create and check PGP signatures, securely    RRA
 
 DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
@@ -1689,6 +1722,8 @@ Crypt::
 Authen::
 ::Krb5         cdcO  Interface to Kerberos API                    DOUGM
 
+SSLeay::
+::*            cdcO  Interface to SSLeay                          EAYNG
 
 _______________________________________________________________________
 
@@ -1711,6 +1746,7 @@ CGI::
 ::Out          adpf  Buffer CGI output and report errors          MUIR
 ::Request      RmpO  Parse CGI request and handle form fields     CGIP
 ::Response     ampO  Response construction for CGI applications   CGIP
+::Screen       adpO  Create multi screen CGI-scripts              ULPFR
 ::Session      cmpO  Maintain session/state information           MGH
 
 HTML::
@@ -1864,9 +1900,11 @@ PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
 GIFgraph       RdpO  Package to generate GIF graphs, uses GD.pm   MVERB !
 
-VRML::         adpO  VRML primitives and ext. to create scenes    HPALM 
-::VRML1        adpO  VRML primitives and ext. with VRML 1.x       HPALM
-::VRML2        idpO  VRML primitives and ext. with VRML 2.0       HPALM
+VRML::         RdpO  VRML methods independent of specification    HPALM
+::VRML1        RdpO  VRML methods with the VRML 1.0 standard      HPALM
+::VRML2        RdpO  VRML methods with the VRML 2.0 standard      HPALM
+::Color        Rdpf  color functions and X11 color names          HPALM
+::Base         RdpO  common basic methods                         HPALM
 
 Graphics::
 ::Simple       idcO  Simple drawing primitives                    NEERI
@@ -1907,7 +1945,7 @@ Mail::
 
 News::
 ::Article      adpO  Module for handling Usenet articles          AGIERTH +
-::Gateway      cdpO  Mail-to-news gateway and robomoderator       RRA
+::Gateway      ampO  Mail/news gatewaying, moderation support     RRA
 ::NNTPClient   bdpO  Support for clients of NNTP servers          RVA
 ::Newsrc       adpO  Manage .newsrc files                         SWMCD
 ::Scan         cdpO  Gathers and reports newsgroup statistics     GBACON
@@ -2047,7 +2085,7 @@ Chemistry::
 ::Isotopes     idpO  extends Elements to deal with isotopes       BDFOY
 
 FAQ::
-Omatic         RdpO  A CGI-based FAQ/help database maintainer     JHOWELL +
+::OMatic       RdpO  A CGI-based FAQ/help database maintainer     JHOWELL +
 
 
 =======================================================================
