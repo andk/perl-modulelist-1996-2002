@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.41 $Date: 1997/05/06 13:05:42 $
+The Perl 5 Module List       Revision: 2.42 $Date: 1997/06/05 09:05:52 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -105,6 +105,7 @@ currently registered CPAN sites:
             ftp://ftp.jaist.ac.jp/pub/lang/perl/CPAN/
             ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/
         South Korea
+            ftp://ftp.bora.net/pub/CPAN/
             ftp://ftp.nuri.net/pub/CPAN/
         Taiwan
             ftp://dongpo.math.ncu.edu.tw/perl/CPAN/
@@ -122,9 +123,12 @@ currently registered CPAN sites:
         Belgium
             ftp://ftp.kulnet.kuleuven.ac.be/pub/mirror/CPAN/
         Czech Republic
+            ftp://ftp.fi.muni.cz/pub/perl/
             ftp://sunsite.mff.cuni.cz/Languages/Perl/CPAN/
         Denmark
             ftp://sunsite.auc.dk/pub/languages/perl/CPAN/
+        Estonia
+            ftp://ftp.ut.ee/pub/languages/perl/CPAN/
         Finland
             ftp://ftp.funet.fi/pub/languages/perl/CPAN/
         France
@@ -169,6 +173,7 @@ currently registered CPAN sites:
             ftp://ftp.EU.net/packages/cpan/
         UK
             ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/
+            ftp://ftp.flirble.org/pub/languages/perl/CPAN/
             ftp://sunsite.doc.ic.ac.uk/packages/CPAN/
             ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/
     North America
@@ -177,6 +182,7 @@ currently registered CPAN sites:
             ftp://ftp.utilis.com/public/CPAN/
             ftp://theory.uwinnipeg.ca/pub/CPAN/
         USA
+            ftp://ftp.ccs.neu.edu/net/mirrors/ftp.funet.fi/pub/languages/perl/CPAN/
             ftp://ftp.cdrom.com/pub/perl/
             ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
             ftp://ftp.cs.colorado.edu/pub/perl/CPAN/
@@ -191,9 +197,6 @@ currently registered CPAN sites:
             ftp://ftp.sedl.org/pub/mirrors/CPAN/
             ftp://ftp.spu.edu/pub/CPAN/
             ftp://uiarchive.uiuc.edu/pub/lang/perl/CPAN/
-    South America
-        Chile
-            ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
 
 All the files under each of the directories listed above should be
 identical at all these sites since they are all automatically
@@ -614,7 +617,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.73 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.74 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
