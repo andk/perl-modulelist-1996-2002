@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.26 $Date: 1996/06/09 19:19:31 $
+The Perl 5 Module List       Revision: 2.27 $Date: 1996/06/11 08:45:42 $
 ======================
 
 Maintained by Tim Bunce and Andreas Koenig <modules@perl.com>
@@ -1078,7 +1078,7 @@ Tie::
 ::File         adpr  Tie hash to files in a directory             AMW
 ::IxHash       RdpO  Indexed hash (ordered array/hash composite)  GSAR
 ::Quick        i     Simple way to create ties                    TIMB
-::Watch        i     Uses Tie::Quick to watch a variable          TIMB
+::Watch        bdpO  Uses Tie::Quick to watch a variable          LUSOL !
 
 Class::
 ::Eroot        RdpO  Eternal Root - Object persistence            DMR
@@ -1222,17 +1222,19 @@ Name           DSLI  Description                                  Info
 Cwd            Supf  Current working directory functions
 
 File::
-::stat         adpf  A by-name interface for the stat function    TOMC
-::Path         Supf  File path and name utilities
+::Attrib       idpO  Get/set file attributes (stat)               TYEMQ
 ::Basename     Supf  Return basename of a filename
 ::CheckTree    Supf  Check file/dir tree against a specification
+::Copy         adpf  Copying files or filehandles                 ASHER
+::CounterFile  RdpO  Persistent counter class                     GAAS
 ::Find         Supf  Call func for every item in a directory tree
+::Flock	       adpf  flock() wrapper.  Auto-create locks          MUIR +
+::Glob         adpf  Filename globing (ksh style)                 TYEMQ
 ::Listing      bdpf  Parse directory listings                     GAAS
 ::Lock         adcf  File locking using flock() and lockf()       JHI
-::Glob         adpf  Filename globing (ksh style)                 TYEMQ
-::Attrib       idpO  Get/set file attributes (stat)               TYEMQ
-::CounterFile  RdpO  Persistent counter class                     GAAS
-::Copy         adpf  Copying files or filehandles                 ASHER
+::Path         Supf  File path and name utilities
+::Slurp        bdpf  Read/write/append files quickly              MUIR +
+::stat         adpf  A by-name interface for the stat function    TOMC
 
 Filesys::
 ::dfent        adpf  By-name interface                            TOMC
@@ -1365,6 +1367,7 @@ CGI::
 ::ErrorWrap    bdpf  Trap warnings and die and convert into HTML  TOMC
 ::Imagemap     adpO  Imagemap handling for specialized apps       MIKEH
 ::MiniSvr      RmpO  Fork CGI app as a per-session mini server    CGIP
+::Out          adpf  Buffer CGI output and report errors          MUIR +
 ::Request      RmpO  Parse CGI request and handle form fields     CGIP
 ::Response     ampO  Response construction for CGI applications   CGIP
 ::Session      cmpO  Maintain session/state information           MGH
@@ -1952,7 +1955,3 @@ to a CGI script that lets you edit the database entries yourself.
     ftp://src.doc.ic.ac.uk/packages/perl
     ftp://src.doc.ic.ac.uk/packages/perl5
     ftp://sungear.mame.mu.oz.au/pub/perl
-
-
-
-
