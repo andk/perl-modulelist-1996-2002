@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.25 $Date: 1996/05/24 18:05:29 $
+The Perl 5 Module List       Revision: 2.26 $Date: 1996/05/25 15:25:48 $
 ======================
 
 Maintained by Tim Bunce and Andreas Koenig <modules@perl.com>
@@ -48,13 +48,12 @@ Part 3 - Big Projects Registry
 
 1)   Introduction
 2)   Items in the Todo File
-3)   Perl Compiler
-4)   Multi-threading
-5)   Object Management Group CORBA & IDL
-6)   Expand Tied Array Interface
-7)   Tied File Handles
-8)   Extend Yacc To Write XS Code
-9)   Approximate Matching Regular Expressions
+3)   Multi-threading
+4)   Object Management Group CORBA & IDL     
+5)   Expand Tied Array Interface             
+6)   Tied File Handles                       
+7)   Extend Yacc To Write XS Code            
+8)   Approximate Matching Regular Expressions
 
 Part 4 - Who's Who and What's Where
 
@@ -115,12 +114,11 @@ currently registered CPAN sites:
             ftp://ftp.mame.mu.oz.au/pub/perl/CPAN/
         New Zealand
             ftp://ftp.tekotago.ac.nz/pub/perl/CPAN/
-    Canada
-        British Columbia
-            ftp://mango.pinc.com/pub/mirrors/CPAN/
     Europe
         Austria
             ftp://ftp.tuwien.ac.at/pub/languages/perl/CPAN/
+        Belgium
+            ftp://ftp.kulnet.kuleuven.ac.be/pub/mirror/CPAN/
         Czech Republic
             ftp://sunsite.mff.cuni.cz/MIRRORS/ftp.funet.fi/pub/languages/perl/CPAN/
         Denmark
@@ -145,6 +143,7 @@ currently registered CPAN sites:
         Slovenia
             ftp://ftp.arnes.si/software/perl/CPAN/
         Spain
+            ftp://ftp.etse.urv.es/pub/mirror/perl/
             ftp://ftp.rediris.es/mirror/CPAN/
         Sweden
             ftp://ftp.sunet.se/pub/lang/perl/CPAN/
@@ -156,27 +155,22 @@ currently registered CPAN sites:
             ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/
             ftp://sunsite.doc.ic.ac.uk/packages/CPAN/
             ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/
+    North America
+        USA
+            ftp://ftp.cdrom.com/pub/perl/CPAN/
+            ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
+            ftp://ftp.cs.colorado.edu/pub/perl/CPAN/
+            ftp://ftp.digital.com/pub/plan/perl/CPAN/
+            ftp://ftp.iguide.com/pub/mirrors/packages/perl/CPAN/
+            ftp://ftp.metronet.com/pub/perl/
+            ftp://ftp.rge.com/pub/languages/perl/CPAN/
+            ftp://ftp.sedl.org/pub/mirrors/CPAN/
+            ftp://ftp.sterling.com/CPAN/
+            ftp://ftp.uoknor.edu/mirrors/CPAN/
+            ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
     South America
         Chile
             ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
-    USA
-        California
-            ftp://ftp.cdrom.com/pub/perl/CPAN/
-            ftp://ftp.digital.com/pub/plan/perl/CPAN/
-        Colorado
-            ftp://ftp.cs.colorado.edu/pub/perl/CPAN/
-        Florida
-            ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
-        Illinois
-            ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
-        Massachusetts
-            ftp://ftp.iguide.com/pub/mirrors/packages/perl/CPAN/
-        Oklahoma
-            ftp://ftp.uoknor.edu/mirrors/CPAN/
-        Texas
-            ftp://ftp.metronet.com/pub/perl/
-            ftp://ftp.sedl.org/pub/mirrors/CPAN/
-            ftp://ftp.sterling.com/CPAN/
 
 All the files under each of the directories listed above should be
 identical at all these sites since they are all automatically
@@ -211,9 +205,10 @@ community where you can. [ end of sermon :-]
 Help save the world! Please submit new entries and updates to us so we
 can keep this list up-to-date. We would prefer changes to be submitted
 as context diff's (or just plain diff if your diff does not have a
-context diff option) by email to modules@perl.com.
-No tabs please.  Don't forget to upload your module to the PAUSE site
-for forwarding on to CPAN. See section 2.9.
+context diff option) by email to modules@perl.com (or
+modules@franz.ww.tu-berlin.de in case the above doesn't work).  No
+tabs please.  Don't forget to upload your module to the PAUSE site for
+forwarding on to CPAN. See section 2.9.
 
 
 How To Get a More Recent Copy of the List
@@ -789,6 +784,7 @@ If you're not going to be able to spend much time on something then say
 so. If you invite cooperation maybe someone will implement it for you!
 
 
+
 _______________________________________________________________________
 
 2) Perl Core Modules, Perl Language Extensions and Documentation Tools
@@ -800,7 +796,7 @@ UNIVERSAL      SucO  Internal universal base-class                JACKS
 SUPER          SucO  Internal class to access superclass methods
 DynaLoader     SucO  Dynamic loader for shared libraries
 AutoLoader     SupO  Automatic function loader (using AutoSplit)
-SelfLoader     SdpO  Automatic function loader (using __DATA__)
+SelfLoader     SdpO  Automatic function loader (using __DATA__)   JACKS !
 Exporter       SupO  Implements default import method for modules
 Carp           Supf  Throw exceptions outside current package
 Config         Supf  Stores details of perl build configuration
@@ -825,6 +821,11 @@ Perl Language Extensions
 Safe           SdcO  Restrict eval'd code to safe subset of ops   MICB
 Alias          bdcf  Convenient access to data/code via aliases   GSAR
 Plthread       i     Multithreading at Perl level (not O/S level) MICB
+
+The Perl Compiler
+
+B              aucO  The Perl Compiler                            MICB +
+O              aucO  Perl Compiler frontends                      MICB +
 
 Source Code Filters
 
@@ -863,15 +864,16 @@ ExtUtils::
 ::DynaGlue     i     Utilities/glue code for C<->Perl interfaces
 
 Test::
-::Harness      Sup   Executes perl-style tests                    ANDK
+::Harness      Supf  Executes perl-style tests                    ANDK
 
 Devel::
+::CallerItem   RupO  'caller()' Object wrapper + useful methods   JACKS
 ::DProf        Rdcf  Execution profiler                           DMR
 ::DumpStack    Rupf  Dumping of the current function stack        JACKS
-::CallerItem   RupO  'caller()' Object wrapper + useful methods   JACKS
-::Symdump      bdpf  Perl symbol table access and dumping         ANDK
-::TraceFuncs   adpO  Trace funcs by using object destructions     MUIR
 ::Peek         adcf  Peek at internal representation of Perl data ILYAZ
+::RegExp       adcO  Access perl internal regex functions         ILYAZ +
+::Symdump      RdpO  Perl symbol table access and dumping         ANDK !
+::TraceFuncs   adpO  Trace funcs by using object destructions     JOEHIL !
 ::embed        bdpf  Utilities for embedding Perl in C/C++ apps   DOUGM
 
 Usage          bupr  Type and range checking on subroutine args   JACKS
@@ -911,7 +913,7 @@ Quota          adcf  Disk quota system functions, local & remote  TOMZO
 Proc::
 ::times        adpf  By-name interface to process times function  TOMC
 ::Forkfunc     Rdpf  Simple lwall-style fork wrapper              MUIR
-::Simple       adpO  Fork wrapper with objects                    MSCHILLI +
+::Simple       adpO  Fork wrapper with objects                    MSCHILLI
 
 Platform Specific Modules
 
@@ -961,6 +963,7 @@ Net::
 ::Gen          adcO  Generic support for socket usage             SPIDB
 ::IRC          i     Internet Relay Chat interface                MRG
 ::Inet         adcO  Internet (IP) socket usage                   SPIDB
+::LDAP         i     Lightweight Directory Access Protocol                +
 ::NIS          adcO  Interface to Sun's NIS                       RIK
 ::NISPlus      adcO  Interface to Sun's NIS+                      RIK
 ::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
@@ -980,7 +983,7 @@ IPC::
 ::Open3        Supf  Like IPC::Open2 but with error handling
 ::Chat2        ?     Out-of-service during refit!                 GBARR
 ::SysV         adcr  shared memory, semaphores, messages etc      JACKS
-::Mmap         adcf  Interface to Unix's mmap() shared memory     MICB
+::Mmap         i     Interface to Unix's mmap() shared memory     MICB !
 ::Globalspace  cdpO  Multi-process shared hash and shared events  JACKS
 
 RPC::
@@ -988,11 +991,11 @@ RPC::
 ::DCE          i     Distributed Computing Environment (OSF) RPCs
 
 DCE::
-::Registry     cdcf  DCE registry functions                       TLP
+::Registry     cdcf  DCE registry functions                       DOUGM !
 
-Proxy          adpO  Transport-independent remote processing      MICB
+Proxy          i     Transport-independent remote processing      MICB !
 Proxy::
-::Tk           aucO  Tk transport class for Proxy (part of Tk)    MICB
+::Tk           ?     Tk transport class for Proxy (part of Tk)    MICB !
 
 ToolTalk       adcr  Interface to the ToolTalk messaging service  MARCP
 SNMP           RdcO  Interface to CMU's SNMPv2 libsnmp.a          GSM
@@ -1067,7 +1070,7 @@ Time::
 Tie::
 ::Hash         Supr  Base class for implementing tied hashes
 ::Scalar       Supr  Base class for implementing tied scalars
-::Array        i
+::Array        c     Base class for implementing tied arrays      CHIPS !
 ::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
 ::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
 ::Cache        adpO  In memory size limited LRU cache             MIKEH
@@ -1140,8 +1143,8 @@ AnyDBM_File    Sup   Uses first available *_File module above
 DBZ_File       adc   Tie to dbz files (mainly for news history)   IANPX
 MLDBM          bdpO  Transparently store multi-level data in DBM  GSAR
 
-AsciiDB        adp   Generic text database parsing                MICB
-MARC           i     Interface to MARC format (bibliography)      PEM   +
+AsciiDB        i     Generic text database parsing                MICB !
+MARC           i     Interface to MARC format (bibliography)      PEM
 NetCDF         bmcr  Interface to netCDF API for scientific data  SEMM
 Stanza         i     Text format database used by OSF and IBM     JHI
 
@@ -1170,6 +1173,7 @@ Major Character User Interface Modules:
 Curses         adcO  Character screen handling and windowing      WPS
 NCurses        cdcO  Curses using the ncurses package             WPS
 Perlmenu       Mdpf  Curses-based menu and template system        SKUNZ
+Cdk            RdcO  Collection of Curses widgets                 GLOVER +
 PV             bmpO  PerlVision curses windowing (OO widgets etc) AGUL
 
 Tk X Windows User Interface Modules:
@@ -1259,11 +1263,16 @@ Text::
 ::Soundex      Supf  Convert a string to a soundex value
 ::TeX          cdpO  TeX typesetting language input parser        ILYAZ
 ::Bib          RdpO  Parse refer(1)-style bibliography files      ERYQ
-::Stem         bdpf  Porter algorithm for stemming English words  IANPX
 ::Tabs         Sdpf  Expand and contract tabs ala expand(1)       MUIR
 ::Wrap         Sdpf  Wraps lines to make simple paragraphs        MUIR
 ::Template     bdpO  Expand template text with embedded perl      MJD
+
+Stemming algorithms
+
+Text::
+::English      adpf  English language stemming                    IANPX +
 ::German       adpf  German language stemming                     ULPFR
+::Stem         bdpf  Porter algorithm for stemming English words  IANPX
 
 Search::
 ::Dict         Supf  Search a dictionary ordered text file
@@ -1301,7 +1310,7 @@ Getopt::
 ::Help         bdpf  Yet another getopt, has help and defaults    IANPX
 
 ConfigReader   cdpO  Read directives from configuration file      AMW
-Resources      bdpf  Application defaults management in Perl      FRANCOC +
+Resources      bdpf  Application defaults management in Perl      FRANCOC
 
 
 _______________________________________________________________________
@@ -1330,7 +1339,7 @@ DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
 MD5            RdcO  MD5 message digest algorithm                 NWINT
 SHA            adcO  NIST SHA message digest algorithm            UWEH
-Kerberos       adcf  Kerberos IV authentication                   MICB
+Kerberos       i     Kerberos IV authentication                   MICB !
 GSS            i     Generic Security Services API (RFC 1508/9)   MSHLD
 
 Crypt::
@@ -1470,7 +1479,7 @@ Compress::
 ::Zlib         adcO  Interface to the Info-Zip zlib library       PMQS
 
 Convert::
-::UU           bdpf  UUencode and UUdecode                        ANDK  !
+::UU           bdpf  UUencode and UUdecode                        ANDK
 
 
 _______________________________________________________________________
@@ -1512,6 +1521,8 @@ News::
 ::NNTPClient   bdpO  Support for clients of NNTP servers          RVA
 ::Newsrc       adpO  Manage .newsrc files                         SWMCD
 
+NNTP::
+::Server       i     Support for an NNTP server                   JOEHIL +
 
 _______________________________________________________________________
 
@@ -1537,7 +1548,7 @@ IO::
 ::File         cdpO  Methods for disk file based i/o handles      GBARR
 ::Pty          cdpO  Methods for pseudo-terminal allocation etc   PEASE
 ::STREAMS      i cO  Methods for System V style STREAMS control
-::FastCGI      i                                                        +
+::FastCGI      i
 
 FileHandle     SupO  File handle objects and methods
 FileCache      Supf  Keep more files open than the system permits
@@ -1563,6 +1574,7 @@ Win32::
 ::WinError     adcf  Interface to Win32 WinError functions        WIN32
 ::Registry     adcf  Interface to Win32 Registry functions        WIN32
 ::Process      adcf  Interface to Win32 Process functions         WIN32
+::FUtils       bdcf  Implements missing File Utility functions    JOCASA +
 
 WinNT          cdcf  Interface to Windows NT specific functions   WIN32
 NT             cdcf  Old name for WinNT - being phased out        WIN32
@@ -1592,11 +1604,14 @@ Bio::
 Remedy::
 ::AR           adcO  Interface to Remedy's Action Request API     RIK
 
+ARS            Rd??  Interface to Remedy's Action Request API     JMURPHY +
+
 Psion::
 ::Db           idpO  Handle Psion palmtop computer database files IANPX
 
-Logfile        RdpO  Generic methods to analyze logfiles          ULPFR +
+Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 
+Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN +
 
 =======================================================================
 
@@ -1628,20 +1643,7 @@ from "Would be nice to have" to "Vague possibilities".
 Contacts: LWALL P5P
 
 
-3) Perl Compiler
-
-Part of the design of Perl 5 was to make it possible to write a
-C compiler for it.  Related to this is the ability to save and load a
-'flat' byte-code representation of the compiled perl code. It would be
-translated back into Perl's own internal form for speed.
-
-Malcolm Beattie <mbeattie@sable.ox.ac.uk> is currently developing a
-perl compiler with backends for C and byte-code.
-
-Contacts: MICB LWALL P5P
-
-
-4) Multi-threading
+3) Multi-threading
 
 This is really two projects. True threads (e.g., POSIX) using multiple
 independant perl interpreter structures and simple timeslicing of
@@ -1655,7 +1657,7 @@ in this area.
 Contacts: LWALL MICB P5P
 
 
-5) Object Management Group CORBA & IDL
+4) Object Management Group CORBA & IDL
 
 OMG's (Object Management Group) CORBA (Common Object Request Broker
 Architecture) specification provides the standard interface definition
@@ -1681,7 +1683,7 @@ Also:
     ftp://parcftp.parc.xerox.com/pub/ilu/ilu.html
 
 
-6) Expand Tied Array Interface
+5) Expand Tied Array Interface
 
 LEN, PUSH, POP, SHIFT, UNSHIFT and a fallback to SPLICE are needed.
 Complicated by very widespread use of arrays within perl internals.
@@ -1689,7 +1691,7 @@ Complicated by very widespread use of arrays within perl internals.
 Contacts: P5P LWALL
 
 
-7) Tied File Handles
+6) Tied File Handles
 
 It is a long term goal to allow perl file handles to be tied. This will
 probably be based on the sfio (Safe Fast IO) library.
@@ -1697,7 +1699,7 @@ probably be based on the sfio (Safe Fast IO) library.
 Contacts: PMQS TIMB P5P LWALL NI-S
 
 
-8) Extend Yacc To Write XS Code
+7) Extend Yacc To Write XS Code
 
 Some version of yacc, like byacc or bison, should be converted to spit
 out an OO .xs and .pm implementing a parser.
@@ -1705,7 +1707,7 @@ out an OO .xs and .pm implementing a parser.
 Contacts: NI-S P5P LWALL
 
 
-9) Approximate Matching Regular Expressions
+8) Approximate Matching Regular Expressions
 
 Add support for approximate matching (like the agrep utility).
 
@@ -1769,7 +1771,7 @@ to a CGI script that lets you edit the database entries yourself.
   ERYQ     Eryq <eryq@rhine.gsfc.nasa.gov>
   FIS      Frank Ian Smith <frank@ns.array.ca>
   FMC      Frederic Chauveau <fmc@pasteur.fr>
-+ FRANCOC  Franco Callari <franco@cim.mcgill.ca>
+  FRANCOC  Franco Callari <franco@cim.mcgill.ca>
   FSG      Felix Sebastian Gallo <fsg@coriolan.amicus.com>
   GAAS     Gisle Aas <aas@oslonett.no>
   GAND     Greg Anderson <greg@ftp.netgate.net>
@@ -1788,7 +1790,7 @@ to a CGI script that lets you edit the database entries yourself.
   JAMCC    Jamie McCarthy <jamie@voyager.net>
   JARW     John A.R. Williams <J.A.R.Williams@aston.ac.uk>
   JCMURPHY Jeff Murphy <jcmurphy@smurfland.cit.buffalo.edu>
-+ JDUNCAN  James Duncan <jduncan@hawk.igs.net>
+  JDUNCAN  James Duncan <jduncan@hawk.igs.net>
   JHI      Jarkko Hietaniemi <Jarkko.Hietaniemi@iki.fi>
   JKAST    Jason Kastner <jkastner@oboe.calpoly.edu>
   JKEGL    Jeffrey Kegler <jeffrey@best.com>
@@ -1816,7 +1818,7 @@ to a CGI script that lets you edit the database entries yourself.
   MAK      Martijn Koster <mak@surfski.webcrawler.com>
   MARCP    Marc Paquette <Marc.Paquette@crim.ca>
   MARKB    Mark Biggar <mab@wdl.loral.com>
-+ MATTW    Matthew M. Wright <mattw@worldwidemart.com>
+  MATTW    Matthew M. Wright <mattw@worldwidemart.com>
   MCPL     The MacPerl mailing list
            Mail to mac-perl-REQUEST@iis.ee.ethz.ch with body
            "subscribe"
@@ -1833,7 +1835,7 @@ to a CGI script that lets you edit the database entries yourself.
            "subscribe"
   MRG      Matthew Green <mrg@mame.mu.oz.au>
   MRKAE    Mark R. Kaehny <kaehny@execpc.com>
-+ MSCHILLI Michael Schilli <schilli@tep.e-technik.tu-muenchen.de>
+  MSCHILLI Michael Schilli <schilli@tep.e-technik.tu-muenchen.de>
   MSHLD    Michael Shields <shields@crosslink.net>
   MUIR     David Muir Sharnoff <muir@idiom.com>
   NEERI    Matthias Ulrich Neeracher <neeri@iis.ee.ethz.ch>
@@ -1846,13 +1848,13 @@ to a CGI script that lets you edit the database entries yourself.
            "subscribe"
   PATM     Pat Martin <pat@bronco.advance.com>
   PEASE    Mark Pease <peasem@primenet.com>
-+ PEM      Peter Murray <pem@po.cwru.edu>
+  PEM      Peter Murray <pem@po.cwru.edu>
   PGUEN    Philip Guenther <guenther@gac.edu>
   PKUTS    Peter Kutschera <peter@zditr1.arcs.ac.at>
   PMQS     Paul Marquess <pmarquess@bfsec.bt.co.uk>
   PRATP    Pratap Pereira <pereira@ee.eng.ohio-state.edu>
   PVERD    Philippe Verdret <phd@eurolang.fr>
-+ PVHP     Peter Prymmer <pvhp@lns62.lns.cornell.edu>
+  PVHP     Peter Prymmer <pvhp@lns62.lns.cornell.edu>
   RAM      Raphael Manfredi <ram@hptnos02.grenoble.hp.com>
   RBOW     Richard Bowen <rbowen@databeam.com>
   RDO      Robert Olson <olson@mcs.anl.gov>
@@ -1874,9 +1876,9 @@ to a CGI script that lets you edit the database entries yourself.
   STBEY    Steffen Beyer <sb@sdm.de>
   SWMCD    Steven McDougall <swm@cric.com>
   TIMB     Tim Bunce <Tim.Bunce@ig.co.uk>
-! TKML     The Tk Perl Mailing list
-!          Mail to majordomo@lists.stanford.edu with body "subscribe
-!          ptk <your-address>"
+  TKML     The Tk Perl Mailing list
+           Mail to majordomo@lists.stanford.edu with body "subscribe
+           ptk <your-address>"
   TLP      Travis L Priest <T.L.Priest@LaRC.NASA.GOV>
   TOMC     Tom Christiansen <tchrist@mox.perl.com>
   TOMFA    Tom Fawcett <fawcett@nynexst.com>
