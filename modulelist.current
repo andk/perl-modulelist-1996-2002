@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.94 $ $Date: 2001/05/03 14:15:49 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.95 $ $Date: 2001/05/03 14:56:40 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.94 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.95 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1311,7 +1311,7 @@ Net::
 ::IMIP             impO? RFC2447 tools for event scheduling           SRL
 ::ParseWhois       RmpO? Get+Parse "whois" domain data                ABEROHAM
 ::Server           adpO? Extensible (class) oriented internet server  RHANDOM
-::Peep
+::Peep             RdpO? Clients for Peep: The Network Auralizer      STARKY
 
 Net::Daemon::
 ::SSL              RdpO? SSL extension for Net::Daemon                MKUL
@@ -2208,7 +2208,7 @@ File::
 ::Rsync            bdpO? Copy efficiently over the net and locally    LEAKIN
 ::Signature        cdpf? Heuristics for file recognition              JHI
 ::Slurp            Mdpf? Read/write/append files quickly              MUIR
-::Sort             Rdpf? Sort a file or merge sort multiple files     CNANDOR
+::Sort             Rdpfa Sort a file or merge sort multiple files     CNANDOR
 ::Spec             bdpO? Handling files and directories portably      KJALB
 ::Sync             bdcf? POSIX/*nix fsync() and sync()                CEVANS
 ::Tail             bdpO? A more efficient tail -f                     MGRABNAR
@@ -2610,7 +2610,7 @@ Digest::
 ::SHA1             cdch?  NIST SHA message digest algorithm           UWEH
 ::HMAC             Rdph?  HMAC message integrity check                GAAS
 ::UserSID          adph? Managing session-id's with Digest::SHA1      XWOLF
-::BubbleBabble
+::BubbleBabble     bdpf? Create bubble-babble fingerprints            BTROTT
 
 Crypt::
 ::Beowulf          Rdpf? An original, very fast encryption algorithm  SIFUKURT
@@ -2648,7 +2648,7 @@ Crypt::
 ::NULL             RdpO? NULL Encryption Algorithm                    AMS
 ::DH               adpO? Diffie-Hellman key exchange system           BTROTT
 ::PassGen          adpf? Generate pronouncable passwords              TJENNESS
-::GOST
+::GOST             bdpO? GOST encryption algorithm                    VIPUL
 
 Crypt::OpenSSL::
 ::RSA              bdcO? Interface to OpenSSL RSA methods             IROBERTS
@@ -2723,7 +2723,7 @@ CGI::
 ::SSI              RdpO? Use SSI from CGI scripts                     JAMES
 ::FormMagick       bmpO? FormMagick                                   SKUD
 ::Test             adpO? Off-line CGI test framework                  RAM
-::Portable
+::Portable         adpO? Framework for server-agnostic web apps       DUNCAND
 
 HTML::
 ::Base             adpO? Object-oriented way to build pages of HTML   GAND
@@ -3544,7 +3544,7 @@ MPEG::
 ::MP3Play          RdhO? Create your own MPEG audio player            JRED
 
 MP3::
-::Info             bdpf? Manipulate / fetch info from MP3 audio files CNANDOR
+::Info             bdpfa Manipulate / fetch info from MP3 audio files CNANDOR
 ::Tag              bdpO? Tag - Module for reading tags of mp3 files   THOGEE
 ::Daemon           bdpO? A daemon that possesses mpg123               BEPPU
 
@@ -4647,6 +4647,7 @@ to a CGI script that lets you edit the database entries yourself.
   LENNY    Lenny Brenner <lenny@cpan.org>
   LENZO    Kevin Lenzo <lenzo@cs.cmu.edu>
   LEON     Leon Avery <leon@eatworms.swmed.edu>
+  LEXICON  Alexander Scouras <lexicon@anapraxis.net>
   LFINI    Luca Fini <lfini@arcetri.astro.it>
   LGODDARD Lee Goddard <lgoddard@cpan.org>
   LHOWARD  Les Howard <lhoward@spamcop.net>
@@ -5036,6 +5037,7 @@ to a CGI script that lets you edit the database entries yourself.
   ROSCH    Roderick Schertler <roderick@argon.org>
   ROSSI    Christian Rossi <rossi@loria.fr>
   RPIKKARA Raino Pikkarainen <raino.pikkarainen@saunalahti.fi>
+  RPOLZER  Rudolf Polzer <rpolzer@durchnull.de>
   RRA      Russ Allbery <rra@stanford.edu>
   RRAWLINGS Rachel McGregor Rawlings <rachel@wuxtry.com>
   RRS      Ryan Sadler <rrsadler@ttul.org>
