@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.48 $Date: 1998/06/25 21:09:45 $
+The Perl 5 Module List       Revision: 2.48 $Date: 1998/06/26 11:34:52 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -665,7 +665,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.88 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.89 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2264,7 +2264,8 @@ Name           DSLI  Description                                  Info
 Resolute::
 ::RAPS         cd+O  Interface to Resolute Software's RAPS        CHGOETZE
 
-AltaVista      cdcf  Perl Wrapper for AltaVista SDK functionality JTURNER
+AltaVista::
+::SDK          cdcf  Perl Wrapper for AltaVista SDK functionality JTURNER
 
 =======================================================================
 
