@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.42 $$Date: 2000/05/16 05:38:33 $
+The Perl 5 Module List       $Revision: 3.43 $$Date: 2000/05/18 07:04:43 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.42 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.43 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -888,7 +888,7 @@ Filter::
 
 Thread support (note that these are experimental, which equals pre-alpha)
 
-Thread            cuhh Manipulate threads in Perl (EXPERIMENTAL)    P5P
+Thread            cuhO Manipulate threads in Perl (EXPERIMENTAL)    P5P
 
 Thread::
 ::Group           bdph Wait()-like and grouping functions           DSUGAL
@@ -953,6 +953,7 @@ Carp::
 Coy               Rdpn Like Carp - only prettier                    DCONWAY
 
 Devel::
+::API             cdch Expose the Perl API in script space          INGY
 ::CallerItem      RupO 'caller()' Object wrapper + useful methods   JACKS
 ::CoreStack       adpf generate a stack dump from a core file       ADESC
 ::Coverage        adpf Coverage analysis for Perl code              RJRAY
@@ -963,6 +964,7 @@ Devel::
 ::Leak            Rdcf Find perl objects that are not reclaimed     NI-S
 ::PPPort          bdcn Portability aid for your XS code             KJALB
 ::Peek            adcf Peek at internal representation of Perl data ILYAZ
+::Poke            cdch Modify internal representation of Perl data  INGY
 ::RegExp          adcO Access perl internal regex functions         ILYAZ
 ::SmallProf       Rdpf Line-by-line profiler                        ASHTED
 ::Symdump         RdpO Perl symbol table access and dumping         ANDK
@@ -1204,6 +1206,7 @@ Net::
 ::POP3            adpO Client interface to POP3 protocol            GBARR
 ::Pcap            adcr An interface for LBL's packet capture lib    PLISTER
 ::Ping            SupO TCP and ICMP ping                            RMOSE
+::Printer         i??? Direct to lpd printing                       CFUHRMAN
 ::SMTP            adpf Interface to Simple Mail Transfer Protocol   GBARR
 ::SNMP            adpO Interface to SNMP Protocol (RFC1157)         GBARR
 ::SNPP            cdpO Client interface to SNPP protocol            GBARR
@@ -1212,6 +1215,7 @@ Net::
 ::Syslog          RdpO Forwarded syslog protocol                    LHOWARD
 ::TCP             RdcO TCP-specific socket usage                    SPIDB
 ::TFTP            cdpf Interface to Trivial File Transfer Protocol  GSM
+::TN3270          cdcO Communicate with IBM terminal devices        INGY
 ::Telnet          adpO Interact with TELNET port or other TCP ports JROGERS
 ::Time            adpf Obtain time from remote machines             GBARR
 ::Traceroute      bdpO Trace routes                                 HAG
@@ -1334,6 +1338,7 @@ Math::
 ::Integral        i    Integration of data                          AQUMSIEH
 ::Interpolate     Rdpr Polynomial interpolation of data             MATKIN
 ::LinearProg      idp  Linear programming utilities                 JONO
+::Logic           RdpO Provides pure 2, 3 or multi-value logic      SUMMER
 ::Matrix          adpO Matrix data type (transpose, multiply etc)   ULPFR
 ::MatrixBool      RdcO Matrix of booleans (Boolean Algebra)         STBEY
 ::MatrixCplx      idpO Matrix data type for Complex Numbers         STBEY
@@ -1579,6 +1584,8 @@ Name              DSLI Description                                  Info
 DBI               amcO Generic Database Interface (see DBD modules) DBIML
 
 DBIx::            Extensions to the DBI
+::Abstract        RmpO Wrapper for DBI that generates SQL           TURNERA
+::glueHTML        bdpO CGI interface to DBI databases               JFURNESS
 ::HTMLView        cdpO Creating web userinterfaces to DBI dbs       HAKANARDO
 ::OracleSequence  adpO OO access to Oracle sequences via DBD-Oracle BLABES
 ::Recordset       bmpO Access/Modify DBI handles via Arrays/Hashs   GRICHTER
@@ -1726,6 +1733,7 @@ Term::
 ::Query           Rdpf Intelligent user prompt/response driver      AKSTE
 ::ReadKey         Rdcf Read keystrokes and change terminal modes    KJALB
 ::ReadLine        Sdcf Common interface for various implementations ILYAZ
+::Scraper         cdpO Drive and scrape terminal applications       INGY
 ::Screen          RdpO Basic screen + input class (uses Term::Cap)  MRKAE
 ::Size            adcf Simple way to get terminal size              TIMPX
 ::TUI             bdpf User interface based on Term::ReadLine       SBECK
@@ -1876,6 +1884,9 @@ File::
 ::chmod           Mdpf Allows for symbolic chmod notation           PINYAN
 ::lockf           bdcf Interface to lockf system call               PHENSON
 ::stat            Supf A by-name interface for the stat function    TOMC
+
+Dir::
+::Purge           bdpO Delete files in directory based on timestamp JV
 
 Filesys::
 ::AFS             cdcO AFS Distributed File System interface        NOG
@@ -2237,6 +2248,7 @@ CGI::
 ::Request         RmpO Parse CGI request and handle form fields     CGIP
 ::Response        ampO Response construction for CGI applications   MGH
 ::Screen          adpO Create multi screen CGI-scripts              ULPFR
+::Session         cdpO Persistent storage of complex data in CGI    ZED
 ::SpeedyCGI       bdcn Run CGI scripts persistenly                  HORROCKS
 ::Validate        adpO Advanced CGI form parser                     ZENIN
 ::XMLForm         adpO Create/query XML for forms                   MSERGEANT
@@ -2285,6 +2297,10 @@ HTTP::
 HTTP::Request::
 ::Common          Rmpf Functions that generate HTTP::Requests       LWWWP
 ::Form            RdpO Generates HTTP::Request objects out of forms GBAUER
+
+WAP::
+::Wbmp            i??? Wireless bitmap manipulation module          SAA
+::WML             i??? Wireless Markup language routines            SAA
 
 HTTPD::
 ::UserAdmin       bdpO Management of server user databases          LDS
@@ -2403,7 +2419,8 @@ Server::Mail::
 MailBot           cdpO Archive server, listserv, auto-responder     RHNELSON
 
 NetServer::
-::Generic         adpO generic OOP class for internet servers       CHSTROSS
+::Compiler        idph State machine compiler for TCP/IP servers    CHSTROSS
+::Generic         RdpO generic OOP class for internet servers       CHSTROSS
 ::ProcessTop      Rmpf Gives a top-like control screen for Event    JPRIT
 
 Time::
@@ -2495,8 +2512,10 @@ Chart::
 MPEG::
 ::ID3v1Tag        MdpO Reads ID3v1 MPEG Audio Tags                  SVANZOEST
 ::ID3v2Tag        bdpO OO, extensible ID3 v2.3 tagging module       MDIMEO
-::MP3Info         bdpf Manipulate / fetch info from MP3 audio files CNANDOR
 ::MP3Play         adcO MPEG audio player                            JRED
+
+MP3::
+::Info            bdpf Manipulate / fetch info from MP3 audio files CNANDOR
 
 Xmms              bdcO Interactive remote control shell for xmms    DOUGM
 Xmms::
@@ -3607,7 +3626,7 @@ to a CGI script that lets you edit the database entries yourself.
   MFUHR    Michael Fuhr <mfuhr@dimensional.com>
   MFX      Markus F.X.J. Oberhumer <markus.oberhumer@jk.uni-linz.ac.at>
   MGAMMON  Mike Gammon <mgammon@interport.net>
-  MGH      Marc Hedlund <hedlund@best.com>
+  MGH      Marc Hedlund <marc@precipice.org>
   MGRABNAR Matija Grabnar <matija.grabnar@arnes.si>
   MHALLGREN Michael Hallgren <m.hallgren@free.fr>
   MHAMILTON Martin Hamilton <martin@net.lut.ac.uk>
@@ -3755,7 +3774,7 @@ to a CGI script that lets you edit the database entries yourself.
   PHOTO    Daniel M. Lipton <photo@tiac.net>
   PINYAN   Jeff Pinyan <japhy+perl@pobox.com>
   PJCJ     Paul Johnson <paul.pjcj@ntlworld.com>
-  PJF      Paul Jamieson Fenwick <pjf@schools.net.au>
+  PJF      Paul Jamieson Fenwick <pjf@internal.schools.net.au>
   PJONES   Peter J Jones <p@dancris.com>
   PJORDAN  Pete Jordan <japh@horus.cix.co.uk>
   PKUTS    Peter Kutschera <peter@zditr1.arcs.ac.at>
@@ -3962,7 +3981,7 @@ to a CGI script that lets you edit the database entries yourself.
   TIMB     Tim Bunce <Tim.Bunce@ig.co.uk>
   TIMM     Tim Meadowcroft <tim@schmerg.com>
   TIMMY    Tim Hammerquist <tim@dichosoft.com>
-  TIMPOTTER Tim Potter <tpot@acsys.anu.edu.au>
+  TIMPOTTER Tim Potter <tpot@frungy.org>
   TIMPX    Tim Goodwin <tjg@star.le.ac.uk>
   TJENNESS Tim Jenness <t.jenness@jach.hawaii.edu>
   TKML     The Tk Perl Mailing list
