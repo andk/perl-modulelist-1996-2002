@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.104 $ $Date: 2001/05/25 19:49:40 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.105 $ $Date: 2002/04/17 11:26:25 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,8 +508,8 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.104 $=~/\d+/g);
-                    sprintf "%d."."%02d"x$#r,@r };
+    $VERSION = do { my @r=(q$Revision: 3.105 $=~/\d+/g);
+                    sprintf "%d."."%03d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
    Use the number in announcements and archive file names when
@@ -1093,6 +1093,7 @@ Test::
 ::Mail             bdpOp Test framework for email applications        SKUD
 ::Simple           bmpfp Basic utilities for writing tests            MSCHWERN
 ::Exception        Rdpfp Functions for testing exception-based code   ADIE
+::More
 
 VCS::
 ::CVS              RdpO? Interface to GNU's CVS                       RSAVAGE
@@ -1231,8 +1232,6 @@ MSDOS::
 
 MVS::
 ::VBFile           bdpf? Read MVS VB (variable-length) files          GROMMEL
-
-NeXTStep::
 
 OS2::
 ::ExtAttr          RdcO? (Tied) access to extended attributes         ILYAZ
@@ -2756,38 +2755,46 @@ XML                RmhO? Large collection of XML related modules      XMLML
 XML::
 ::AutoWriter       RdpO? DOCTYPE based XML output                     RBS
 ::CSV              RmpOa Transform comma separated values to XML      ISTERIN
+::Canonical        adpOp Perl Implementation of Canonical XML         TJMATHER
 ::Catalog          RdpO? Resolve public identifiers and remap system  EBOHLMAN
+::Checker          ampOp Validates XML against DTD                    TJMATHER
+::Clean            adpfa XMLized text.                                PKUBANEK
+::Comma
 ::DOM              bmpOp Implements Level 1 of W3's DOM               TJMATHER
+::Directory        RdpOp Returns a content of directory as XML        PCIMPRICH
 ::Doctype          RdpO? A DTD object class                           RBS
 ::Dumper           ampO? Converts XML from/to Perl code               EISEN
 ::Edifact          ????? Scripts for translating EDIFACT into XML     KRAEHE
 ::Element          RdpOp XML elements with the same interface as HTML SBURKE
 ::Encoding         ????? Parses encoding map XML files                COOPERCL
+::Excel            RmpOa Transform Excel spreadsheet data into XML    ISTERIN
+::GDOME
+::GXML             MdpOp XML transformation and XML->HTML conv.       JCARTER
 ::Generator        bdpO? Generates XML documents                      BHOLZMAN
 ::Grove            RmpO? Flexible lightweight mid-level XML objects   KMACLEOD
 ::PPD              RdpO? PPD file format and XML parsing elements     MURRAY
 ::PYX              RdpO? XML to PYX generator                         MSERGEANT
 ::Parser           bmcO? Flexible fast parser with plug-in styles     COOPERCL
 ::QL               ????? Implements the XML Query Language            MSERGEANT
+::RDB              RdpOb create,populate, & unpop RDB tables from XML METZZO
+::RegExp           ampnp Regular expressions for XML tokens           TJMATHER
 ::Registry         ampO? Implements a generic XML registry            EISEN
 ::Sablotron        RdcOo Interface to the Sablotron XSLT processor    PAVELH
+::Simple           Rdphp Easy API to maintain XML (esp config files)  GRANTM
+::Stream
 ::TreeBuilder      RdpOp Build a tree of XML::Element objects         SBURKE
+::UM               ampOp Convert UTF-8 strings to any encoding        TJMATHER
 ::Writer           ????? Module for writing XML documents             DMEGG
 ::XPath            RdpO? A set of modules for parsing and evaluating  MSERGEANT
 ::XQL              ampOp Performs XQL queries on XML object trees     TJMATHER
 ::XSLT             RdcO? Process XSL Transformational sheets          JSTOWE
-::miniXQL          ????? Simplistic XQL-like search using streams     MSERGEANT
-::Excel            RmpOa Transform Excel spreadsheet data into XML    ISTERIN
 ::Xalan            ad+O? Interface to Xalan (Apache XSLT processor)   EDPRATOMO
-::GXML             MdpOp XML transformation and XML->HTML conv.       JCARTER
-::Checker          ampOp Validates XML against DTD                    TJMATHER
-::RegExp           ampnp Regular expressions for XML tokens           TJMATHER
-::UM               ampOp Convert UTF-8 strings to any encoding        TJMATHER
-::RDB              RdpOb create,populate, & unpop RDB tables from XML METZZO
-::Canonical        adpOp Perl Implementation of Canonical XML         TJMATHER
-::Clean            adpfa XMLized text.                                PKUBANEK
-::Simple           Rdphp Easy API to maintain XML (esp config files)  GRANTM
-::Directory        RdpOp Returns a content of directory as XML        PCIMPRICH
+::Xerces
+::miniXQL          ????? Simplistic XQL-like search using streams     MSERGEANT
+::NamespaceSupport
+
+XML::GDOME::
+::XSLT
 
 XML::Handler::
 ::Composer         ampOp Another XML printer/writer/generator         TJMATHER
@@ -4237,6 +4244,8 @@ Tasks              bdpOg Module for tasks/projects and time tracking  SERGEY
 RT                 RmpOg RT, a trouble ticketing system               JESSE
 
 System2            bdpfb like system(), but with STDOUT, STDERR avail REICHERT
+
+CompBio
 
 _______________________________________________________________________
 
