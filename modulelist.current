@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.59 $$Date: 2000/10/21 07:46:31 $
+The Perl 5 Module List       $Revision: 3.60 $$Date: 2000/10/21 07:48:40 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.59 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.60 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1316,6 +1316,7 @@ IPChains::
 SNMP              RdcO Interface to the UCD SNMP toolkit            GSM
 SNMP::
 ::Monitor         adpO Accounting and graphical display             JWIED
+::Util
 
 Mon::
 ::Client          RdpO Network monitoring client                    TROCKIJ
@@ -1392,6 +1393,7 @@ Statistics::
 ::MaxEntropy      Rdpf Maximum Entropy Modeling                     TERDOEST
 ::OLS             bdpO ordinary least squares (curve fitting)       SMORTON
 ::ROC             bdpf ROC curves with nonparametric conf. bounds   HAKESTLER
+::Distributions
 
 Algorithm::
 ::Diff            Rdpf Diff (also Longest Common Subsequence)       NEDKONZ
@@ -1452,6 +1454,8 @@ Set::
 ::Object          bdcO Set of Objects (smalltalkish: IdentitySet)   JLLEROY
 ::Scalar          adpO Set of scalars (inc references)              JHI
 ::Window          bdpO Manages an interval on the integer line      SWMCD
+::Bag
+::NestedGroups
 
 Graph::
 ::Element         RdpO Base class for element of directed graph     NEILB
@@ -1517,6 +1521,7 @@ Tie::
 ::OffsetArray     adpr Tie one array to another, with index offset  JDPORTER
 ::Persistent      Rdpr Persistent data structures via tie           RGIERSIG
 ::Quick           i    Simple way to create ties                    TIMB
+::RDBM
 ::RndHash         bdpO choose a random key of a hash in O(1) time   DFAN
 ::SecureHash      RdpO Enforced encapsulation of Perl objects       DCONWAY
 ::SentientHash    bdpr Tracks changes to nested data structures     ANDREWF
@@ -1761,6 +1766,7 @@ Spreadsheet::
 ::Excel           i    Interface to Excel spreadsheets              RRAWLINGS
 ::Lotus           i    Interface to Lotus 1-2-3 spreadsheets        RRAWLINGS
 ::WriteExcel      bupO Write numbers & text in Excel binary format  JMCNAMARA
+::ParseExcel
 
 X500::
 ::DN              Mdpo X500 Distinguished Name parser               RSAVAGE
@@ -1816,6 +1822,7 @@ Tk                bmcO Object oriented version of Tk v4             TKML
 
 Modules in the realm of Tk but with a separate namespace
 
+Orac              RdpO DBA GUI tool for Oracle, Informix and Sybase ANDYDUNC
 PPresenter        MdpO Presentations with Tk in Perl or XML         MARKOV
 
 Other Major X Windows User Interface Modules:
@@ -1976,6 +1983,8 @@ String::
 ::Scanf           Rdpf Implementation of C sscanf function          JHI
 ::ShellQuote      Rdpf Quote string for safe passage through shells ROSCH
 ::Strip           Rdcf xs Module to remove white-space from strings BPOWERS
+::Random
+::Similarity
 
 Language text related modules
 
@@ -2089,6 +2098,7 @@ Parse::
 ::ePerl           Rdcr Embedded Perl (ePerl) parser                 RSE
 ::Lex             adpO Generator of lexical analysers               PVERD
 ::RecDescent      MdpO Recursive descent parser generator           DCONWAY
+::Tokens          bdpO Base class for parsing tokens from text      MCKAY
 ::Yapp            RdpO Generates OO LALR parser modules             FDESAR
 
 Search::
@@ -2275,6 +2285,7 @@ Crypt::
 ::Solitaire       Rdpf A very simple encryption system              SIFUKURT
 ::Twofish         Rdpf Twofish Encryption Algorothm                 NISHANT
 ::UnixCrypt       Rdpf Perl-only implementation of crypt(3)         MVORL
+::RandPasswd
 
 Authen::
 ::ACE             adcO Interface to Security Dynamics ACE (SecurID) DCARRIGAN
@@ -2644,6 +2655,7 @@ Mail::
 ::Alias           bdpO Manipulate E-mail aliases and alias files    ZELT
 ::Audit           RdpO Toolkit for constructing mail filters        SIMON
 ::Cap             adpO Parse mailcap files as specified in RFC 1524 GBARR
+::CheckUser       bdpf Checking email addresses for validness       ILYAM
 ::Ezmlm           bdpO Object methods for ezmlm mailing lists       GHALSE
 ::Field           RdpO Base class for handling mail header fields   GBARR
 ::Folder          adpO Base-class for mail folder handling          KJOHNSON
@@ -2736,6 +2748,7 @@ Log::
 ::Agent           adpr A general logging framework                  RAM
 ::Dispatch        RdpO Log messages to multiple outputs             DROLSKY
 ::Topics          Rdpf Control flow of topic based logging messages JARW
+::TraceMessages   Rdpf Print developer's trace messages             EDAVIS
 
 Expect            RdpO Close relative of Don Libes' Expect in perl  RGIERSIG
 
