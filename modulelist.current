@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.45 $$Date: 2000/05/21 20:24:59 $
+The Perl 5 Module List       $Revision: 3.46 $$Date: 2000/05/22 04:22:49 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.45 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.46 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -848,6 +848,8 @@ Exporter::
 ::Import          Rdpn Alternate symbol exporter                    GARROW
 ::Options         adpO Extends Exporter to handle use-line options  YSTH
 ::PkgAlias        adpf Load a module into multiple namespaces       JDPORTER
+
+Regexp            adcO An OO interface to regular expressions       GBARR
 
 Safe::
 ::Hole            bdcO Exec subs in the original package from Safe  SEYN
@@ -1240,6 +1242,7 @@ IPC::
 ::Mmap            i    Interface to Unix's mmap() shared memory     MICB
 ::Open2           Supf Open a process for both reading and writing  P5P
 ::Open3           Supf Like IPC::Open2 but with error handling      P5P
+::Run             bdpf Run processes with piping and redirection    RBS
 ::Session         anpO remote shell session mgr; wraps open3()      STEVEGT
 ::Shareable       bdpr Tie a variable to shared memory              BSUGARS
 ::SharedCache     Rd?? Manage a cache in SysV IPC shared memory     SAMTREGAR
@@ -1451,6 +1454,7 @@ Time::
 ::HiRes           Rdcf High resolution time, sleep, and alarm       DEWEG
 ::JulianDay       Rdpf Converts y/m/d into seconds                  MUIR
 ::Local           Supf Implements timelocal() and timegm()          P5P
+::Object          adpO Object Oriented time objects                 MSERGEANT
 ::ParseDate       Rdpf Parses many forms of dates and times         MUIR
 ::Period          Rdpf Code to deal with time periods               PRYAN
 ::Timezone        Rdpf Figures out timezone offsets                 MUIR
@@ -1587,6 +1591,7 @@ DBI               amcO Generic Database Interface (see DBD modules) DBIML
 
 DBIx::            Extensions to the DBI
 ::Abstract        RmpO Wrapper for DBI that generates SQL           TURNERA
+::AnyDBD          bdpO Module to make cross db applications easier  MSERGEANT
 ::glueHTML        bdpO CGI interface to DBI databases               JFURNESS
 ::HTMLView        cdpO Creating web userinterfaces to DBI dbs       HAKANARDO
 ::OracleSequence  adpO OO access to Oracle sequences via DBD-Oracle BLABES
@@ -1611,6 +1616,7 @@ DBD::
 ::Oracle          amcO Oracle Driver for DBI                        TIMB
 ::QBase           amcO QBase Driver for DBI                         BENLI
 ::Solid           amcO Solid Driver for DBI                         TWENRICH
+::Sqlflex         RdcO SQLFLEX driver for DBI                       INFOFLEX
 ::Sybase          amcO Sybase Driver for DBI                        MEWP
 ::Unify           bdcO Unify driver for DBI                         HMBRAND
 ::XBase           ampO XBase driver for DBI                         JANPAZ
@@ -1966,10 +1972,12 @@ Text::
 Text::Wrap::
 ::Hyphenate       a    Like Text::Wrap with ability to hyphenate    MJD
 
-Other Text:: modules (these should be under String:: but pre-date it)
+Other Text:: modules (these should be under String:: but pre-date it
+or accidentally slipped in)
 
 Text::
 ::Balanced        Mdpf Extract balanced-delimiter substrings        DCONWAY
+::Banner          adpf Resembles UNIX banner command                LORY
 ::Merge           i??? Methods for text templating and data merging SHARRIS
 ::Parser          adpO String parser using patterns and states      PATM
 ::Trie            adpf Find common heads and tails from strings     ILYAZ
@@ -2367,6 +2375,7 @@ WebFS::
 WebCache::
 ::Digest          bdpf Internet Cache Protocol (RFCs 2186 and 2187) MHAMILTON
 
+ASP               Rdpr Perl interface to ASP PerlScript             TIMMY
 Authorizenet      bdpf Get Credit Card Info from authorizenet       DLINCOLN
 BizTalk           RdpO Microsoft BizTalk Framework Toolkit          SIMONJ
 CGI_Lite          MnpO Light-weight interface for fast apps         SHGUN
@@ -2639,6 +2648,7 @@ _______________________________________________________________________
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 Win32::
+::ADO             adpf ADO Constants and helper functions           MSERGEANT
 ::ASP             Rdpr Makes PerlScript ASP development easier      MSERGEANT
 ::AbsPath         Rdpf relative paths to absolute, understands UNCs JENDA
 ::AdminMisc       Rdcf Misc admin and net functions                 DAVEROTH
