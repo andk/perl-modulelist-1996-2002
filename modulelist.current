@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.12 $$Date: 1999/10/26 10:15:41 $
+The Perl 5 Module List       $Revision: 3.13 $$Date: 1999/10/26 16:42:23 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.12 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.13 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -794,6 +794,10 @@ Protect           bdpf declare subs private or member               JDUNCAN
 Safe              SdcO Restrict eval'd code to safe subset of ops   MICB
 Softref           bdcf Extension for weak/soft referenced SVs       ILYAZ
 
+Exporter::
+::Options         adpO Extends Exporter to handle use-line options  YSTH
+::PkgAlias        i    Alias namespaces                             JDPORTER
+
 The Perl Compiler
 
 B                 aucO The Perl Compiler                            MICB
@@ -870,6 +874,8 @@ Test::
 Carp::
 ::Assert          adpf Stating the obvious to let the computer know MSCHWERN
 
+Coy               RdpO like Carp only prettier                      DCONWAY
+
 Devel::
 ::CallerItem      RupO 'caller()' Object wrapper + useful methods   JACKS
 ::CoreStack       adpf generate a stack dump from a core file       ADESC
@@ -936,9 +942,8 @@ Proc::
 
 GTop              bdcO Perl interface to libgtop                    DOUGM
 
-Schedule::
+Schedule::           See also Schedule:: in chapter 23
 ::At              Rd   OS independent interface to the at command   JOSERODR
-::Match           adpr Pattern-based crontab-like schedule          TAIY
 
 Quota             Rdcf Disk quota system functions, local & remote  TOMZO
 
@@ -1318,6 +1323,7 @@ Time::
 
 Calendar::
 ::CSA             adcO interface with calenders such as Sun and CDE KJALB
+::Hebrew          cdpO Hebrew calendar conversion/manipulation      YSTH
 ::RCM             i    Russell Calendar Manager                     HTCHAPMAN
 
 Tie::
@@ -1746,7 +1752,7 @@ Natural Languages
 
 Lingua::
 ::DetectCharset   a    Heuristics to detect coded character sets    JNEYSTADT
-::Ispell          a    Interface to the ispell spellchecker         JDPORTER
+::Ispell          adpf Interface to the Ispell spellchecker         JDPORTER
 
 Specific Natural Languages
 
@@ -1757,6 +1763,7 @@ Lingua::
 Lingua::EN::
 ::Cardinal        i    Convert numbers to words                     HIGHTOWE
 ::Infinitive      Mdpo Find infinitive of a conjugated word         RSAVAGE
+::Hyphenate       Rdpf Syllable based hyphenation                   DCONWAY
 ::Inflect         Rdpf English singular->plural and "a"->"an"       DCONWAY
 ::Ordinal         i    Convert numbers to words                     HIGHTOWE
 ::Squeeze         bdpf Shorten english text for Pagers/GSM phones   JARIAALTO
@@ -2203,17 +2210,18 @@ Image::
 ::Colorimetry     cdpO transform colors between colorspaces         JONO
 ::Grab            RdpO Grabbing images off the Internet             MAHEX
 ::Magick          RdcO Read, query, transform, and write images     JCRISTY
-::ParseGIF        a    Parse GIF header information                 BENL
+::ParseGIF        RnpO Parse GIF images into component parts        BENL
 ::Size            Rdpf Measure size of images in common formats     RJRAY
 
 Chart::
 ::Base            RdpO Business chart widget collection             NINJAZ
-::Graph           Rmpr front-end to gnuplot and XRT                 MHYOUNG
+::Gdchart         bdch based on Bruce V's C gdchart distribution    MHEMPEL
 ::GnuPlot         RdpO Access to gnuplot library                    NPESKETT
+::Graph           Rmpr front-end to gnuplot and XRT                 MHYOUNG
+::PNGgraph        RdpO Package to generate PNG graphs, uses GD.pm   SBONDS
 ::Pie             adpO Implements "new Chart::Pie()"                KARLON
 ::Plot            bdcO Graph two-dimensional data (uses GD.pm)      SMORTON
 ::XMGR            Rdph interface to XMGR plotting package           TJENNESS
-::Gdchart         bdch based on Bruce V's C gdchart distribution    MHEMPEL
 
 MPEG::
 ::MP3Info         bdpf Extract/edit tag information in MP3 files    CNANDOR
@@ -2459,6 +2467,9 @@ Watchdog::
 ::Service         adpO Look for service in process table            PSHARPE
 ::HTTPService     adpO Test status of HTTP server                   PSHARPE
 ::MysqlService    adpO Test status of Mysql server                  PSHARPE
+
+Schedule::           See also Schedule:: in chapter 4
+::Match           adpf Pattern-based crontab-like schedule          TAIY
 
 _______________________________________________________________________
 
@@ -2933,6 +2944,7 @@ to a CGI script that lets you edit the database entries yourself.
   GENJISCH Genji Schmeder <genji@jps.net>
   GFLOHR   Guido Flohr <gufl0000@stud.uni-sb.de>
   GGONTER  Gerhard Gonter <gonter@wu-wien.ac.at>
+  GHALSE   Guy Antony Halse <guy@rucus.ru.ac.za>
   GHOARE   Graydon Hoare <graydon@groveware.com>
   GHUTCHIS Geoffrey Hutchison <ghutchis@wso.williams.edu>
   GJB      Geoffrey Broadwell <habusan2@sprynet.com>
@@ -3517,7 +3529,7 @@ to a CGI script that lets you edit the database entries yourself.
            Mail subscription requests to maintainer at
            <bailey@genetics.upenn.edu>
   WADG     Jeremy Wadsack <dgsupport@wadsack-allen.com>
-  WATANABE Hirofumi Watanabe <watanabe@ase.ptg.sony.co.jp>
+  WATANABE WATANABE Hirofumi <eban@os.rim.or.jp>
   WAYNEDAV Wayne Davison <wayne@clari.net>
   WAYNEM   Wayne Myers <waz@easynet.co.uk>
   WIN32    The Perl for Win32 Mailing lists
