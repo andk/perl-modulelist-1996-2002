@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.54 $Date: 1999/03/08 00:54:27 $
+The Perl 5 Module List       Revision: 2.54 $Date: 1999/03/09 08:01:20 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -688,7 +688,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.122 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.123 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1050,6 +1050,7 @@ Devel::
 Usage          bupr  Type and range checking on subroutine args   JACKS
 
 VCS::
+::CVS          Rdpo  Interface to GNU's CVS                       RSAVAGE
 ::PVCS         i     PVCS Version Manager (intersolv.com)         BMIDD
 ::RCS          idpf  Interface layer over RCS (See also Rcs)      RJRAY
 ::RCE          idcf  Perl layer over RCE C API                    RJRAY
@@ -1221,6 +1222,7 @@ Net::
 ::Gen          adcO  Generic support for socket usage             SPIDB
 ::Hotline      RdpO  Interface to the Hotline protocol            JSIRACUSA +
 ::ICAP         adpO  Interface to ICAP Protocol (Internet-Draft)  KJOHNSON
+::ICB          bdpO  ICB style chat server interface              JMV
 ::IMAP         adpO  Interface to IMAP Protocol (RFC2060)         KJOHNSON
 ::IRC          cdpO  Internet Relay Chat interface                DSHEPP
 ::Ident        RdpO  Performs ident (rfc1413) lookups             JPC
@@ -1246,6 +1248,7 @@ Net::
 ::TFTP         cdpf  Interface to Trivial File Transfer Protocol  GSM
 ::Telnet       adpO  Interact with TELNET port or other TCP ports JROGERS
 ::Time         adpf  Obtain time from remote machines             GBARR
+::Traceroute   bdpO  Trace routes                                 HAG
 ::UDP          cdcO  UDP-specific socket usage                    SPIDB
 ::hostent      adpf  A by-name interface for hosts functions      TOMC
 ::netent       adpf  A by-name interface for networks functions   TOMC
@@ -1383,8 +1386,14 @@ Heap::Elem::
 ::Ref          bdpO  Obj ref heap element container               JMM
 ::RefRev       bdpO  Obj ref element reversed order               JMM
 
+Scalar::
+::DualVar      bdcf  Create dual typed(number & string) variables GBARR
+
 List::
-::Utils        cdcf  Extra list/array manipulation functions      JNH
+::Util         bdcf  List utilities (eg min, max, reduce)         GBARR
+
+Ref::
+::Util         bdcf  Reference functions (eg blessed, reftype)    GBARR
 
 Bit::
 ::Vector       RdcO  Efficient bit vector and set base class      STBEY
@@ -1447,7 +1456,9 @@ Tie::
 ::IxHash       RdpO  Indexed hash (ordered array/hash composite)  GSAR
 ::Mem          adcO  Bind perl variables to memory addresses      PMQS
 ::Quick        i     Simple way to create ties                    TIMB
+::RndHash      bdpO  choose a random key of a hash in O(1) time   DFAN
 ::SentientHash cdpr  Tracks changes to nested data structures     ANDREWF
+::ShadowHash   adpO  Merge multiple data sources into a hash      RRA
 ::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
 ::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
 ::TextDir      rdpO  ties a hash to a directory of textfiles      KWILLIAMS
@@ -1457,6 +1468,7 @@ Class::
 ::Eroot        RdpO  Eternal Root - Object persistence            DMR
 ::Singleton    bdpO  Implementation of a "Singleton" class        ABW
 ::Template     Rdpr  Struct/member template builder               DMR
+::Tree         Mdpo  C++ class hierarchies & disk directories     RSAVAGE
 ::TOM          RmpO  Transportable Object Model for perl          JDUNCAN
 
 Object::
@@ -1475,13 +1487,13 @@ Sort::
 Data Type Marshaling (converting to/from strings) and Persistent Storage
 
 FreezeThaw     bdpf  Convert arbitrary objects to/from strings    ILYAZ
-Opal           i     Object Persistence Abstraction Layer (WIP)   JLLEROY
 Persistent     adpO  (not supported anymore, placeholder)         JPC
 Storable       bdcr  Persistent data structure mechanism          RAM
 Marshal::
 ::Dispatch     cdpO  Convert arbitrary objects to/from strings    MUIR
 ::Packed       cdpO  Run-length coded version of Marshal module   MUIR
 ::Eval         cdpO  Undo serialization with eval                 MUIR
+Tangram        bupO  Object persistence in relational databases   JLLEROY
 
 Data::
 ::Check        cdpO  Checks values for various data formats       KENHOLM
@@ -1495,6 +1507,7 @@ Tree::
 ::Base         cdpO  Defines a basic binary search tree           MSCHWERN
 ::Fat          adcO  Embeddable F-Tree Algorithm Suite            JPRIT
 ::Smart        cdpO  Sorted hash-ish, becomes faster with use     MSCHWERN
+::Trie         bdpO  An implementation of the Trie data structure AVIF
 
 _______________________________________________________________________
 
@@ -1513,6 +1526,7 @@ DBD::
 ::Altera       bdpO  Altera SQL Server for DBI - pure Perl code   DSOUFLIS
 ::CSV          adcO  SQL engine and DBI driver for CSV files      JWIED
 ::DB2          adcO  DB2 Driver for DBI                           MHM
+::Empress      adc0  Empress RDBMS Driver                         SWILLIAM
 ::FreeTDS      adcO  DBI driver for MS SQLServer and Sybase       SPANNRING +
 ::SearchServer cdcO  PCDOCS/Fulcrum SearchServer Driver for DB    SHARI +
 ::Informix     amcO  Informix Driver for DBI                      JOHNL
@@ -1532,6 +1546,7 @@ Oraperl        Rmpf  Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl        ampf  Ingperl emulation interface for DBD::Ingres  HTOUG
 
 Sybase::
+::Async        cdpO  interact with a Sybase asynchronously        WORENKD
 ::BCP          RdcO  Sybase BCP interface                         MEWP
 ::DBlib        RdcO  Sybase DBlibrary interface                   MEWP
 ::Sybperl      Rdpf  sybperl 1.0xx compatibility module           MEWP
@@ -1631,8 +1646,9 @@ PerlMenu       Mdpf  Curses-based menu and template system        SKUNZ
 Cdk            RdcO  Collection of Curses widgets                 GLOVER
 PV             bmpO  PerlVision curses windowing (OO widgets etc) AGUL
 
+Emacs          cdcf  Support for Perl embedded in GNU Emacs       JTOBEY
 Emacs::
-::Lisp         adcO  Support for perl embedded in GNU Emacs       JTOBEY
+::Lisp         bdch  Perl-to-Emacs-Lisp glue                      JTOBEY
 
 Tk X Windows User Interface Modules:
 
@@ -1724,6 +1740,7 @@ File::
 ::Listing      bdpf  Parse directory listings                     GAAS
 ::Lock         adcf  File locking using flock() and lockf()       JHI
 ::Path         Supf  File path and name utilities                 P5P
+::Signature    cdpf  Heuristics for file recognition              JHI
 ::Slurp        bdpf  Read/write/append files quickly              MUIR
 ::Sort         Rdpf  Emulate some functions of sort(1)            CNANDOR
 ::Spec         bdpO  Handling files and directories portably      KJALB
@@ -1758,6 +1775,7 @@ String::
 ::Approx       Rdpf  Approximate string matching and substitution JHI
 ::BitCount     adpf  Count number of "1" bits in strings          WINKO
 ::CRC          Rdcf  Cyclic redundency check generation           MUIR
+::CRC32        bdcf  ZMODEM-like CRC32 generation                 SOENKE
 ::Edit         adpf  Assorted handy string editing functions      TOMC
 ::Parity       adpf  Parity (odd/even/mark/space) handling        WINKO
 ::Scanf        Rdpf  Implementation of C sscanf function          JHI
@@ -1810,6 +1828,7 @@ Lingua::
 
 Lingua::EN::
 ::Cardinal     i     Convert numbers to words                     HIGHTOWE
+::Infinitive   Mdpo  Find infinitive of a conjugated word         RSAVAGE
 ::Inflect      Rdpf  English singular->plural and "a"->"an"       DCONWAY
 ::Ordinal      i     Convert numbers to words                     HIGHTOWE
 ::Squeeze      bdpf  Shorten english text for Pagers/GSM phones   JARIAALTO
@@ -1817,6 +1836,8 @@ Lingua::EN::
 ERG            Rdpf  An extensible report generator framework     PHOENIXL
 
 PostScript::
+::Barcode      bdpf  Various types of barcodes as PostScript      COLEMAN
+::Basic        bdpO  Basic methods for postscript generation      STWIGGER
 ::Font         Rdpf  analyzes PostScript font files               JV    +
 ::FontMetrics  Rdpf  analyzes Adobe Font Metric files             JV    +
 ::FontInfo     Rdpf  analyzes Windows font info files             JV    +
@@ -1824,6 +1845,7 @@ PostScript::
 Font::
 ::AFM          RdpO  Parse Adobe Font Metric files                GAAS
 ::TFM          adpO  Read info from TeX font metric files         JANPAZ
+::TTF          bdpO  TrueType font manipulation module            MHOSKEN
 
 Number::
 ::Format       adpO  Package for formatting numbers for display   WRW
@@ -1886,7 +1908,7 @@ Getopt::
 ::Long         Supf  Advanced option handling                     JV
 ::Mixed        Rdpf  Supports both long and short options         CJM
 ::Regex        ad    Option handling using regular expressions    JARW
-::Simple       RdpO  A simplified interface to Getopt::Long       RSAVAGE
+::Simple       MdpO  A simple-to-use interface to Getopt::Long    RSAVAGE
 ::Std          Supf  Implements basic getopt and getopts          P5P
 ::Tabular      adpr  Table-driven argument parsing with help text GWARD
 
@@ -1913,6 +1935,7 @@ I18N::
 
 Locale::
 ::Country      Rdpf  ISO 3166 two letter country codes            NEILB
+::Date         adpf  Month/weekday names in various languages     JHI
 ::Langinfo     cdcf  The <langinfo.h> API                         JHI
 ::Language     Rdpf  ISO 639 two letter language codes            NEILB
 ::Msgcat       RdcO  Access to XPG4 message catalog functions     CHRWOLF
@@ -1924,7 +1947,9 @@ Unicode::
 ::UCS4         i     Unicode UCS-4 encoded strings                GAAS
 ::CType        i     Classification of Unicode chars              GAAS
 
-Modules related to countries or national conventions
+Modules related to countries or national conventions. No and Cz
+predate Lingua namespace. In future please use the Lingua namespace
+for natural languages.
 
 No::
 ::Dato         adpf  Norwegian stuff                              GAAS
@@ -2002,6 +2027,7 @@ CGI::
 ::Carp         cmpf  Drop-in Carp replacement for CGI scripts     CGIP
 ::Deurl        Mdpr  decode the CGI parameters                    JENDA +
 ::Enurl        Mdpr  encode the CGI parameters                    JENDA +
+::Formalware   Mdpo  Convert an XML file to a suite of CGI forms  RSAVAGE
 ::Imagemap     adpO  Imagemap handling for specialized apps       MIKEH
 ::LogCarp      adpf  Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr      RmpO  Fork CGI app as a per-session mini server    CGIP
@@ -2032,6 +2058,7 @@ HTML::
 ::Subtext      adpO  Text substitutions on an HTML template       KAELIN +
 ::Table        bnpO  Write HTML tables via spreadsheet metaphor   STLACY
 ::TableLayout  bdpO  an extensible OO layout manager              SFARRELL
+::Validator    bdpO  HTML validator utilizing nsgmls and libwww   SAIT
 
 HTTP::
 ::Date         bmpf  Date conversion for HTTP date formats        LWWWP
@@ -2095,6 +2122,10 @@ HyperWave::
 WebFS::
 ::FileCopy     bdpf  Get, put, copy, delete files located by URL  BZAJAC
 
+WebCache::
+::Digest       bdpf  Internet Cache Protocol (RFCs 2186 and 2187) MHAMILTON 
+
+Catalog        bmpO  Manage/display resources catalog (URLs etc.) LDACHARY
 CGI_Lite       MnpO  Light-weight interface for fast apps         SHGUN
 FCGI           Rdcr  Fast CGI                                     SKIMO
 WING           RmhO  Apache based IMAP/NNTP Gateway               MICB  +
@@ -2185,7 +2216,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 GD             adcO  GIF editing/painting/manipulation            LDS
-OpenGL         adcf  Interface to OpenGL drawing/imaging library  CWEVERITT
+OpenGL         adcf  Interface to OpenGL drawing/imaging library  FIJI
 PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
 GIFgraph       RdpO  Package to generate GIF graphs, uses GD.pm   MVERB
@@ -2198,6 +2229,8 @@ VRML::         RdpO  VRML methods independent of specification    HPALM
 ::Browser      i     A complete VRML viewer                       LUKKA
 
 Graphics::
+::Libplot      RdcO  Binding for C libplotter plotting library    JLAPEYRE
+::Plotter      Rd+O  Binding for C++ libplotter plotting library  MAKLER
 ::Simple       idcO  Simple drawing primitives                    NEERI
 ::Turtle       idp   Turtle graphics package                      NEERI
 
@@ -2241,6 +2274,7 @@ Mail::
 ::POP3Client   RdpO  Support for clients of POP3 servers          SDOWD
 ::Send         adpO  Simple interface for sending mail            GBARR
 ::Sender       MdpO  socket() based mail with attachments, SMTP   JENDA +
+::Sendmail     Rdpf  Simple platform independent mailer           MIVKOVIC
 ::UCEResponder i     Spamfilter                                   CHSTROSS
 ::Util         adpf  Mail utilities (for by some Mail::* modules) GBARR
 
@@ -2323,6 +2357,7 @@ Win32::
 ::AbsPath      Rdpf  relative paths to absolute, understands UNCs JENDA +
 ::ASP          Rdpr  Makes PerlScript ASP development easier      MSERGEANT
 ::AdminMisc    Rdcf  Misc admin and net functions                 DAVEROTH
+::COM          cd+O  Access to native COM interfaces              JDB
 ::ChangeNotify bdcO  Monitor changes to files and directories     CJM
 ::Event        bdcO  Use Win32 event objects for IPC              CJM
 ::EventLog     adcf  Interface to Win32 EventLog functions        WIN32
@@ -2336,7 +2371,7 @@ Win32::
 ::NetAdmin     adcf  Interface to Win32 NetAdmin functions        WIN32
 ::NetResource  adcf  Interface to Win32 NetResource functions     WIN32
 ::ODBC         Rd+O  ODBC interface for accessing databases       DAVEROTH
-::OLE          adcf  Interface to OLE API functions               WIN32
+::OLE          Rm+h  Interface to OLE Automation                  JDB
 ::Pipe         Rd+O  Named Pipes and assorted function            DAVEROTH
 ::Process      adcf  Interface to Win32 Process functions         WIN32
 ::Registry     adcf  Interface to Win32 Registry functions        WIN32
@@ -2427,6 +2462,7 @@ Geo::
 ::WeatherNOAA  Rdpf  Current/forecast weather from NOAA           MSOLOMON
 
 Games::
+::Dice         cdpf  Simulates rolling dice                       PNE
 ::WordFind     bdpO  Generate word-find type puzzles              AJOHNSON
 
 Cisco::
