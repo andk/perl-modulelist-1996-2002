@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.51 $Date: 1999/02/05 20:58:27 $
+sThe Perl 5 Module List       Revision: 2.51 $Date: 1999/02/05 21:45:43 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -686,7 +686,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.111 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.112 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1345,6 +1345,7 @@ PDL::
 ::PP           amcf  Automatically generate C code for PDL        PERLDL
 ::Meschach     amcf  Links PDL to meschach matrix library         EGROSS
 ::NetCDF       adcr  Reads/Writes NetCDF files from/to PDL objs   DHUNT
+::Options      Rdph  Provides hash options handling for PDL       TJENNESS
 ::Slatec       amof  Interface to slatec (linpack+eispack) lib.   PERLDL
 
 Array::
@@ -1448,9 +1449,12 @@ Class::
 Object::
 ::Info         Rupf  General info about objects (is-a, ...)       JACKS
 
+MOP            i     Meta Object Protocol (Tool collection)       ORTALO
+
 Ref            RdpO  Print, compare, and copy perl structures     MUIR
 
 Sort::
+::ArbBiLex     Rdpf  sort functions for arbitrary sort orders     SBURKE
 ::Fields       bdpf  sort text lines by alpha or numeric fields   JNH
 ::PolySort     bdpO  general rules-based sorting of lists         DMACKS
 ::Versions     Rdpf  sorting of revision (and similar) numbers    KJALB
@@ -1468,9 +1472,11 @@ Marshal::
 
 Data::
 ::Check        cdpO  Checks values for various data formats       KENHOLM
+::DRef         adph  Nested data access using delimited strings   EVO
 ::Dumper       RdpO  Convert data structure into perl code        GSAR
 ::Flow         RdpO  Acquire data based on recipes                ILYAZ
 ::Locations    RdpO  Handles nested insertion points in your data STBEY
+::Reporter     RdpO  Ascii Report Generator                       RVAZ
 
 Tree::
 ::Base         cdpO  Defines a basic binary search tree           MSCHWERN
@@ -1917,8 +1923,13 @@ GSS            adcO  Generic Security Services API (RFC 2078)     MSHLD
 Crypt::
 ::CBC          adpO  Cipherblock chaining for Crypt::DES/IDEA     LDS
 ::DES          a     DES encryption (libdes)                      GARY
+::ElGamal      bdpO  ElGamal digital signatures and keys          VIPUL
 ::IDEA         a     International Data Encryption Algorithm      GARY
+::Keys         adpO  Management system for cryptographic keys     VIPUL
 ::PRSG         a     160 bit LFSR for pseudo random sequences     GARY
+::RSA          bdpO  RSA encryption, decryption, key generation   VIPUL
+
+OpenCA         Rdpf  Tools for running a Certification Authority  MADWOLF
 
 Authen::
 ::ACE          adcO  Interface to Security Dynamics ACE (SecurID) DCARRIGAN
@@ -1945,11 +1956,14 @@ URI::
 ::URL          RmpO  Uniform Resource Locator objects             LWWWP
 
 CGI::
+::Authent      Mdpf  request the HTTP authentification            JENDA 
 ::Base         RmpO  Complete HTTPD CGI Interface class           CGIP
 ::BasePlus     RmpO  Extra CGI::Base methods (incl file-upload)   CGIP
 ::CList        bdpO  Manages hierarchical collapsible lists       PEARCEC
 ::Cache        adpf  Speed up slow CGI scripts by caching         BROCSEIB
 ::Carp         cmpf  Drop-in Carp replacement for CGI scripts     CGIP
+::Deurl        Mdpr  decode the CGI parameters                    JENDA
+::Enurl        Mdpr  encode the CGI parameters                    JENDA
 ::Imagemap     adpO  Imagemap handling for specialized apps       MIKEH
 ::LogCarp      adpf  Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr      RmpO  Fork CGI app as a per-session mini server    CGIP
@@ -1960,6 +1974,7 @@ CGI::
 ::Screen       adpO  Create multi screen CGI-scripts              ULPFR
 ::Session      cmpO  Maintain session/state information           MGH
 ::Validate     adpO  Advanced CGI form parser                     ZENIN
+::XMLForm      adpO  Create/query XML for forms                   MSERGEANT
 
 HTML::
 ::QuickCheck   cdpf  Fast simple validation of HMTL text          YLU
@@ -2023,6 +2038,11 @@ MIME::
 ::ParserBase   adpO  For building your own MIME parser            ERYQ
 ::Words        cdpf  Encode/decode RFC1522-escaped header strings ERYQ
 
+Apache         RdcO  Interface to the Apache server API           DOUGM
+
+   For Apache see also
+   http://www.perl.com/CPAN/modules/by-module/Apache/apache-modlist.html
+
 Netscape::
 ::Cache        bdpO  Access Netscape cache files                  SREZIC
 ::History      bdpO  Class for accessing Netscape history DB      NEILB
@@ -2037,10 +2057,7 @@ WebFS::
 
 CGI_Lite       MnpO  Light-weight interface for fast apps         SHGUN
 FCGI           Rdcr  Fast CGI                                     SKIMO
-Apache         RdcO  Interface to the Apache server API           DOUGM
-
-   For Apache see also
-   http://www.perl.com/CPAN/modules/by-module/Apache/apache-modlist.html
+WING           RmhO  Apache based IMAP/NNTP Gateway               MICB
 
 _______________________________________________________________________
 
@@ -2151,7 +2168,8 @@ Image::
 Chart::
 ::Base         RdpO  Business chart widget collection             NINJAZ !
 ::GnuPlot      RdpO  Access to gnuplot library                    NPESKETT +
-::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTON
+::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTO
+::XMGR         Rdph  interface to XMGR plotting package           TJENNESS
 
 MPEG::
 ::MP3Info      bdpf  Extract/edit tag information in MP3 files    CNANDOR +
@@ -2178,6 +2196,7 @@ Mail::
 ::Mailer       adpO  Simple mail agent interface (see Mail::Send) GBARR
 ::POP3Client   RdpO  Support for clients of POP3 servers          SDOWD
 ::Send         adpO  Simple interface for sending mail            GBARR
+::Sender       MdpO  socket() based mail with attachments, SMTP   JENDA
 ::UCEResponder i     Spamfilter                                   CHSTROSS
 ::Util         adpf  Mail utilities (for by some Mail::* modules) GBARR
 
@@ -2254,11 +2273,14 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Win32::
+::AbsPath      Rdpf  relative paths to absolute, understands UNCs JENDA
 ::ASP          Rdpr  Makes PerlScript ASP development easier      MSERGEANT +
 ::AdminMisc    Rdcf  Misc admin and net functions                 DAVEROTH
 ::ChangeNotify bdcO  Monitor changes to files and directories     CJM
 ::Event        bdcO  Use Win32 event objects for IPC              CJM
 ::EventLog     adcf  Interface to Win32 EventLog functions        WIN32
+::FileOp       Mdpf  file operations + fancy dialogs, INI files   JENDA 
+::FileType     RdpO  modify Win32 fily type mapping               JENDA
 ::FUtils       bdcf  Implements missing File Utility functions    JOCASA
 ::GD           RdcO  Win32 port of the GD extension (gif module)  DAVEROTH
 ::IPC          bdcO  Base class for Win32 synchronization objects CJM
@@ -2280,7 +2302,7 @@ NT             cdcf  Old name for WinNT - being phased out        WIN32
 
 Win95          i     Interface to Windows 95 specific functions   WIN32
 
-Win32API
+Win32API::
 ::Registry     adcf  Win32 Registry functions/constants           TYEMQ
 ::File         cdcf  Win32 file/dir functions/constants           TYEMQ
 ::Window       cdcf  Win32 Windowing functions/constants          TYEMQ
