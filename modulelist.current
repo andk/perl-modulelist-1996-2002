@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.4 $$Date: 1999/10/22 05:37:34 $
+The Perl 5 Module List       $Revision: 3.5 $$Date: 1999/10/22 05:57:47 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.4 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.5 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1702,6 +1702,7 @@ Text::
 ::Morse           cdpf convert text to/from Morse code              JONO
 ::ParseWords      Supf Parse strings containing shell-style quoting HALPOM
 ::Refer           RdpO Parse refer(1)-style bibliography files      ERYQ
+::SimpleTemplate  adpO Template for dynamic text generation         TAIY
 ::Soundex         Supf Convert a string to a soundex value          MARKM
 ::Tabs            Sdpf Expand and contract tabs ala expand(1)       MUIR
 ::TeX             cdpO TeX typesetting language input parser        ILYAZ
@@ -1726,6 +1727,11 @@ Text::
 Natural Languages
 
 Lingua::
+::DetectCharset   a    Heuristics to detect coded character sets    JNEYSTADT
+
+Specific Natural Languages
+
+Lingua::
 ::EN              i    Namespace for English language modules
 ::PT              bupf Namespace for Portugese language modules     EGROSS
 
@@ -1735,6 +1741,9 @@ Lingua::EN::
 ::Inflect         Rdpf English singular->plural and "a"->"an"       DCONWAY
 ::Ordinal         i    Convert numbers to words                     HIGHTOWE
 ::Squeeze         bdpf Shorten english text for Pagers/GSM phones   JARIAALTO
+
+Lingua::RU::
+::Charset         i    Detect russian character sets                FARBER
 
 ERG               Rdpf An extensible report generator framework     PHOENIXL
 
@@ -2397,6 +2406,7 @@ FAQ::
 
 Geo::
 ::METAR           Rdpf Process Aviation Weather (METAR) Data        JZAWODNY
+::StormTracker    i    Retrieves tropical storm advisories          CARPENTER
 ::WeatherNOAA     Rdpf Current/forecast weather from NOAA           MSOLOMON
 
 Games::
