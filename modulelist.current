@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.53 $Date: 1999/03/01 22:57:48 $
+The Perl 5 Module List       Revision: 2.54 $Date: 1999/03/02 18:13:54 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -687,7 +687,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.119 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.120 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -871,6 +871,7 @@ Where the 'DSLI' characters have the following meanings:
   I - Interface Style
     f   - plain Functions, no references used
     h   - hybrid, object and function interfaces available
+    n   - no interface at all (huh?)
     r   - some use of unblessed References or ties
     O   - Object oriented using blessed references and/or inheritance
 
@@ -1038,6 +1039,7 @@ Devel::
 ::DProf        Rdcf  Execution profiler                           DMR
 ::DumpStack    Rupf  Dumping of the current function stack        JACKS
 ::Leak         Rdcf  Find perl objects that are not reclaimed     NI-S
+::PPPort       bdcn  Portability aid for your XS code             KJALB
 ::Peek         adcf  Peek at internal representation of Perl data ILYAZ
 ::RegExp       adcO  Access perl internal regex functions         ILYAZ
 ::SmallProf    a     Line-by-line profiler                        ASHTED
@@ -1142,6 +1144,9 @@ MSDOS::
 ::Descript     bdpO  Manage 4DOS style DESCRIPT.ION files         CJM
 ::SysCalls     adcf  MSDOS interface (interrupts, port I/O)       DMO
 
+MVS::
+::VBFile       bdpf  Read MVS VB (variable-length) files          GROMMEL
+
 NeXTStep::
 ::NetInfo      idcO  NeXTStep's NetInfo (like ONC NIS)            PGUEN
 
@@ -1160,6 +1165,13 @@ SGI::
 ::SysCalls     cdcf  SGI-specific system calls                    AMOSS
 ::GL           adcr  SGI's Iris GL library                        AMOSS
 ::FM           adcr  SGI's Font Management library                AMOSS
+
+Solaris::
+::MapDev       bdpf  Maps sdNN disk names to cNtNdN disk names    ABURLISON
+::Kstat        adcO  Access kernel performance statistics         ABURLISON
+::Kmem         idcf  Read values from the running kernel          ABURLISON
+::MIB          idcO  Access STREAMS network statistics            ABURLISON
+::NDD          idcO  Access network device statistics             ABURLISON
 
 Unix::
 ::UserAdmin    Rdpf  Interface to Unix Account Information        JZAWODNY
@@ -1333,8 +1345,8 @@ Statistics::
 ::OLS          bdpO  ordinary least squares (curve fitting)       SMORTON
 ::ROC          bdpO  ROC curves with nonparametric conf. bounds   HAKESTLER
 
-Algorithms::
-::LCS          bdpr  Longest Common Subsequence / diff            MJD   +
+Algorithm::
+::Diff         bdpr  Diff (also Longest Common Subsequence)       MJD
 
 Algorithms::Numerical::
 ::Shuffle      Rdph  Knuth's shuffle algorithm                    ABIGAIL
@@ -1501,7 +1513,7 @@ DBD::
 ::CSV          adcO  SQL engine and DBI driver for CSV files      JWIED
 ::DB2          adcO  DB2 Driver for DBI                           MHM
 ::FreeTDS      adcO  DBI driver for MS SQLServer and Sybase       SPANNRING
-::Fulcrum      cdcO  Fulcrum SearchServer Driver for DB           SHARI
+::SearchServer cdcO  PCDOCS/Fulcrum SearchServer Driver for DB    SHARI
 ::Informix     amcO  Informix Driver for DBI                      JOHNL
 ::Informix4    amcO  DBI driver for Informix SE 4.10              GTHYNI
 ::Ingres       amcO  Ingres Driver for DBI                        HTOUG
@@ -1556,6 +1568,17 @@ Db::
 ::Ctree        bdcr  Faircom's CTREE+ database interface          REDEN
 ::Documentum   bdcf  Documentum EDMS Perl client interface        BRIANSP
 ::dmObject     cdpO  Object-based interface to Documentum EDMS    JGARRISON
+
+DbFramework::
+::Attribute    adpO  Relational attribute class                   PSHARPE
+::DataModel    adpO  Relational data model/schema class           PSHARPE
+::DataType     adpO  Attribute data type class                    PSHARPE
+::ForeignKey   adpO  Relational foreign key class                 PSHARPE
+::Key          adpO  Relational key class                         PSHARPE
+::Persistent   adpO  Persistent object class                      PSHARPE
+::PrimaryKey   adpO  Relational primary key class                 PSHARPE
+::Table        adpO  Relational table/entity class                PSHARPE
+::Util         adhO  Utility functions/methods                    PSHARPE
 
 DTREE          cdcf  Interface to Faircom DTREE multikey ISAM db  JWAT
 Fame           adcO  Interface to FAME database and language      TRIAS
@@ -1699,7 +1722,6 @@ File::
 ::Glob         adpf  Filename globing (ksh style)                 TYEMQ
 ::Listing      bdpf  Parse directory listings                     GAAS
 ::Lock         adcf  File locking using flock() and lockf()       JHI
-::MVS_VB       bdpf  Read MVS VB (variable-length) files          GROMMEL
 ::Path         Supf  File path and name utilities                 P5P
 ::Slurp        bdpf  Read/write/append files quickly              MUIR
 ::Sort         Rdpf  Emulate some functions of sort(1)            CNANDOR !
@@ -1711,6 +1733,7 @@ File::
 ::stat         Supf  A by-name interface for the stat function    TOMC
 
 Filesys::
+::AFS          RucO  AFS Distributed File System interface        NOG
 ::Df           Rdpr  Disk free based on Filesys::Statvfs          IGUTHRIE
 ::DiskFree     adpO  OS independant parser of the df command      ABARCLAY
 ::Statvfs      Rdcf  Interface to the statvfs() system call       IGUTHRIE
@@ -2005,6 +2028,7 @@ HTML::
 ::ParseForm    i     Parse and handle HTML forms via templates    NMONNET
 ::SimpleParse  bdpO  Bare-bones HTML parser                       KWILLIAMS
 ::Stream       RdpO  HTML output stream                           ERYQ
+::Subtext      adpO  Text substitutions on an HTML template       KAELIN
 ::Table        bnpO  Write HTML tables via spreadsheet metaphor   STLACY
 ::TableLayout  bdpO  an extensible OO layout manager              SFARRELL
 
@@ -2131,6 +2155,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Compress::
+::Bzip2        Rdcf  Interface to the Bzip2 compression library   AZEMGI
 ::LZO          Rdcf  Interface to the LZO compression library     MFX   +
 ::Zlib         RdcO  Interface to the Info-Zip zlib library       PMQS
 
@@ -2230,6 +2255,9 @@ NNTP::
 
 NNML::
 ::Server       adpO  An simple RFC 977 NNTP server                ULPFR
+
+IMAP::
+::Admin        RdpO  IMAP Administration                          EESTABROO
 
 _______________________________________________________________________
 
@@ -2337,6 +2365,7 @@ Archie         Rdpf  Archie queries via Prospero ARDP protocol    GBOSS
 BnP            RdhO  Build'n'Play all-purpose batch install. tool STBEY +
 Bundle         i     Namespace reserved for modules collections   ANDK
 CPAN           RdpO  Perl Archive browse and download             ANDK
+Gedcom         bdpO  Interface to genealogy Gedcom files          PJCJ
 Neural         ad+O  Generic simulation of neural networks        LUKKA
 Nexus          cdcO  Interface to Nexus (threads/ipc/processes)   RDO
 Pcap           i     An interface for LBL's packet capture lib    AMOSS
@@ -2347,6 +2376,7 @@ Wais           Rdcf  Interface to the freeWAIS-sf libraries       ULPFR
 Business::
 ::CreditCard   Rdpf  Credit card number check digit test          JONO
 ::ISBN         RdpO  Work with ISBN as objects                    BDFOY
+::ISSN         adpO  Object and functions to work with ISSN       SAPAPO
 
 Bio::
 ::*            i     Utilities for molecular biology              SEB
