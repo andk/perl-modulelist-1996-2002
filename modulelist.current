@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.7 $$Date: 1999/10/22 08:16:53 $
+The Perl 5 Module List       $Revision: 3.8 $$Date: 1999/10/22 08:19:05 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.7 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.8 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1145,7 +1145,6 @@ NetPacket::
 ::IGMP            adpO  Internet Group Management Protocol          TIMPOTTER
 ::IP              adpO  Internet Protocol                           TIMPOTTER
 ::TCP             adpO  Transmission Control Protocol               TIMPOTTER
-::TCP             adpO  Transmission Control Protocol               TIMPOTTER
 ::UDP             adpO  User Datagram Protocol                      TIMPOTTER
 
 Proxy             i    Transport-independent remote processing      MICB
@@ -1225,6 +1224,7 @@ Statistics::
 
 Algorithm::
 ::Diff            bdpr Diff (also Longest Common Subsequence)       MJD
+::Permute         a    Easy and fast permutation                    EDPRATOMO
 
 Algorithm::Numerical::
 ::Shuffle         Rdph Knuth's shuffle algorithm                    ABIGAIL
@@ -1737,6 +1737,7 @@ Natural Languages
 
 Lingua::
 ::DetectCharset   a    Heuristics to detect coded character sets    JNEYSTADT
+::Ispell          a    Interface to the ispell spellchecker         JDPORTER
 
 Specific Natural Languages
 
@@ -2428,7 +2429,7 @@ FAQ::
 
 Geo::
 ::METAR           Rdpf Process Aviation Weather (METAR) Data        JZAWODNY
-::StormTracker    i    Retrieves tropical storm advisories          CARPENTER
+::Storm_Tracker   i    Retrieves tropical storm advisories          CARPENTER
 ::WeatherNOAA     Rdpf Current/forecast weather from NOAA           MSOLOMON
 
 Games::
