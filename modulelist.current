@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.59 $Date: 1999/10/19 02:10:12 $
+The Perl 5 Module List       Revision: 2.60 $Date: 1999/10/20 05:43:58 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.135 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.136 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -878,7 +878,7 @@ Devel::
 ::PPPort        bdcn Portability aid for your XS code             KJALB
 ::Peek          adcf Peek at internal representation of Perl data ILYAZ
 ::RegExp        adcO Access perl internal regex functions         ILYAZ
-::SmallProf     a    Line-by-line profiler                        ASHTED
+::SmallProf     Rdpf Line-by-line profiler                        ASHTED
 ::Symdump       RdpO Perl symbol table access and dumping         ANDK
 ::TraceFuncs    adpO Trace funcs by using object destructions     JOEHIL
 
@@ -918,7 +918,7 @@ Async::
 ::Process       i    class to run sub-processes                   DDUMONT
 
 Proc::
-::Background    bdpO OS independent background process objects    BZAJAC
+::Background    RdpO OS independent background process objects    BZAJAC
 ::ExitStatus    cdpf Interpret and act on wait() status values    ROSCH
 ::Forkfunc      Rdpf Simple lwall-style fork wrapper              MUIR
 ::ProcessTable  adcO Unix process table information               DURIST
@@ -1610,7 +1610,7 @@ File::
 ::Find          Supf Call func for every item in a directory tree P5P
 ::Flock         adpf flock() wrapper.  Auto-create locks          MUIR
 ::Glob          adpf Filename globing (ksh style)                 TYEMQ
-::Listing       bdpf Parse directory listings                     GAAS
+::Listing       Rdpf Parse directory listings                     GAAS
 ::Lock          adcf File locking using flock() and lockf()       JHI
 ::Path          Supf File path and name utilities                 P5P
 ::Signature     cdpf Heuristics for file recognition              JHI
@@ -1820,9 +1820,8 @@ Locale::
 ::gettext       Rdcf Multilanguage messages                       PVANDRY
 
 Unicode::
-::UCS2          adpO Unicode UCS-2 encoded strings                GAAS
-::UCS4          i    Unicode UCS-4 encoded strings                GAAS
-::CType         i    Classification of Unicode chars              GAAS
+::String        RdcO String manipulation for Unicode strings      GAAS
+::Map8          RdcO Convert between most 8bit encodings          GAAS
 
 No::
 ::Dato          adpf Norwegian stuff                              GAAS
@@ -1852,9 +1851,13 @@ PGP::          adpO  Simple interface to PGP subprocess via pipes PGPML
 
 DES             adcf DES encryption (libdes)                      EAYNG
 Des             adcf DES encryption (libdes)                      MICB
-MD5             RdcO MD5 message digest algorithm                 GAAS
-SHA             adcO NIST SHA message digest algorithm            UWEH
 GSS             adcO Generic Security Services API (RFC 2078)     MSHLD
+
+Digest::
+::MD5           Rdch  MD5 message digest algorithm                 GAAS
+::MD2           Rdch  MD2 message digest algorithm                 GAAS
+::SHA1          cdch  NIST SHA message digest algorithm            UWEH
+::HMAC          Rdph  HMAC message integrity check                 GAAS
 
 Crypt::
 ::CBC           adpO Cipherblock chaining for Crypt::DES/IDEA     LDS
@@ -1890,6 +1893,7 @@ _______________________________________________________________________
 Name            DSLI Description                                  Info
 -----------     ---- -------------------------------------------- -----
 URI::
+::Attr          ampO Stores attributes in the URI name space      LWWWP
 ::Escape        ampf General URI escaping/unescaping functions    LWWWP
 ::URL           RmpO Uniform Resource Locator objects             LWWWP
 
@@ -1927,27 +1931,33 @@ HTML::
 ::Embperl       Rmcf Embed Perl in HTML                           GRICHTER
 ::Entities      bmpf Encode/decode HTML entities                  LWWWP
 ::Formatter     ampO Convert HTML to plain text or Postscript     LWWWP
+::HeadParser    RmpO  Parse <HEAD> section of HTML documents      LWWWP
+::LinkExtor     RmpO  Extract links from HTML documents           LWWWP
 ::Mason         bdpO Build sites from modular Perl/HTML blocks    JSWARTZ
-::Parse         ampO Parse HTML documents                         LWWWP
 ::ParseForm     i    Parse and handle HTML forms via templates    NMONNET
+::Parser        RmpO  Basic HTML Parser                           LWWWP
 ::SimpleParse   bdpO Bare-bones HTML parser                       KWILLIAMS
 ::Stream        RdpO HTML output stream                           ERYQ
 ::Subtext       adpO Text substitutions on an HTML template       KAELIN
 ::Table         bnpO Write HTML tables via spreadsheet metaphor   STLACY
 ::TableLayout   bdpO an extensible OO layout manager              SFARRELL
 ::Template      adpO adds variables and loops to HTML             SAMTREGAR
+::TokeParser    RmpO  Alternative HTML::Parser interface          LWWWP
 ::Validator     bdpO HTML validator utilizing nsgmls and libwww   SAIT
 
 HTTP::
-::Date          bmpf Date conversion for HTTP date formats        LWWWP
-::Headers       bmpO Class encapsulating HTTP Message headers     LWWWP
-::Message       bmpO Base class for Request/Response              LWWWP
-::Request       bmpO Class encapsulating HTTP Requests            LWWWP
-::Response      bmpO Class encapsulating HTTP Responses           LWWWP
-::Status        bmpf HTTP Status code processing                  LWWWP
-::Negotiate     bmpf HTTP content negotiation                     LWWWP
+::Cookies       RmpO Storage of cookies                           LWWWP
+::Date          Rmpf Date conversion for HTTP date formats        LWWWP
+::Daemon        RmpO Base class for simple HTTP servers           LWWWP
+::Headers       RmpO Class encapsulating HTTP Message headers     LWWWP
+::Message       RmpO Base class for Request/Response              LWWWP
+::Request       RmpO Class encapsulating HTTP Requests            LWWWP
+::Response      RmpO Class encapsulating HTTP Responses           LWWWP
+::Status        Rmpf HTTP Status code processing                  LWWWP
+::Negotiate     Rmpf HTTP content negotiation                     LWWWP
 
 HTTP::Request::
+::Common        Rmpf Functions that generate HTTP::Requests       LWWWP
 ::Form          RdpO Generates HTTP::Request objects out of forms GBAUER
 
 HTTPD::
@@ -1962,7 +1972,8 @@ WWW::
 ::RobotRules    ampO Parse /robots.txt file                       LWWWP
 ::Search        adpO Front-end to Web search engines              JOHNH
 
-LWP::                Libwww-perl-5
+LWP::                Libwww-perl
+::Conn          ampO LWPng stuff                                  LWWWP
 ::MediaTypes    Rmpf Media types and mailcap processing           LWWWP
 ::Parallel      RmpO Allows parallel http and ftp access with LWP MARCLANG
 ::Protocol      RmpO LWP support for URL schemes (http, file etc) LWWWP
@@ -1998,7 +2009,7 @@ HyperWave::
 ::CSP           cdpO Interface to HyperWave's HCI protocol        GOSSAMER
 
 WebFS::
-::FileCopy      bdpf Get, put, copy, delete files located by URL  BZAJAC
+::FileCopy      Rdpf Get, put, copy, delete files located by URL  BZAJAC
 
 WebCache::
 ::Digest        bdpf Internet Cache Protocol (RFCs 2186 and 2187) MHAMILTON
@@ -2485,10 +2496,10 @@ RFC977     Network News Transfer Protocol                Net::NNTP
 RFC1035, RFC1183, RFC1706
            Domain names, implementation & specification  Net::DNS
 RFC1123    Date conversion routines                      HTTP::Date
-RFC1321    MD5 Message-Digest Algorithm                  MD5
+RFC1319    MD2 Message-Digest Algorithm                  Digest::MD2
+RFC1321    MD5 Message-Digest Algorithm                  Digest::MD5
 RFC1350    Trivial File Transfer Protocol                TFTP, Net::TFTP
 RFC1413    Identification Protocol                       Net::Ident
-RFC1521    Encode/decode quoted-printable strings        MIME::QuotedPrint
 RFC1592    Simple Network Management Protocol            SNMP, Net::SNMP
 RFC1738    Uniform Resource Locators                     URI::URL
 RFC1777    Lightweight Directory Access Protocol         Net::LDAP
@@ -2609,6 +2620,7 @@ to a CGI script that lets you edit the database entries yourself.
   BARTLEY  Eric Bartley <bartley@purdue.edu>
   BARTS    Bart Schuller <schuller@lunatech.com>
   BASKAR   Baskar S <baskar@india.ti.com>
+  BBACKER  Bryan Backer <bryan_backer@hp.com>
   BBIRTH   Bill Birthisel <wcbirthisel@alum.mit.edu>
   BBUM     Bill Bumgarner <bbum@friday.com>
   BDFOY    brian d foy <comdog@computerdog.com>
@@ -2841,6 +2853,7 @@ to a CGI script that lets you edit the database entries yourself.
   GNAT     Nathan Torkington <gnat@frii.com>
   GOSSAMER Gossamer <gossamer@tertius.net.au>
   GOZER    Philippe M. Chiasson <gozer@ectoplasm.dyndns.com>
+  GRANTM   Grant McLean <grantm@web.co.nz>
   GREGFAST Greg Fast <gdf@imsa.edu>
   GREGG    Gregg Helt <gregg@fruitfly.berkeley.edu>
   GREGOR   Gregor N. Purdy <gregor@focusresearch.com>
@@ -3232,6 +3245,7 @@ to a CGI script that lets you edit the database entries yourself.
   PWO      Peter W. Osel <pwo@perl.org>
   QUONG    Russell W Quong <quong@best.com>
   RA       Roman Kosenko <ra@amk.al.lg.ua>
+  RADER    Richard Rader <richard.rader@vlsi.com>
   RAM      Raphael Manfredi <Raphael_Manfredi@pobox.com>
   RANA     Arvind Ransaria <pushparvind@home.com>
   RANDY    Randy Jay Yarger <randy@hs1.hst.msu.edu>
@@ -3239,7 +3253,7 @@ to a CGI script that lets you edit the database entries yourself.
   RANT     Erik E. Rantapaa <rantapaa@math.umn.edu>
   RAP      Ryan Alyn Porter <rap@endymion.com>
   RAVN     Thorbjoern Ravn Andersen <ravn@mip.ou.dk>
-  RBERJON  Robin Berjon <robin@idl-net.com>
+  RBERJON  Robin Berjon <robin@knowscape.com>
   RBOW     Rich Bowen <rbowen@rcbowen.com>
   RBS      Barrie Slaymaker <rbs@telerama.com>
   RCALEY   Richard Caley <R.Caley@ed.ac.uk>
