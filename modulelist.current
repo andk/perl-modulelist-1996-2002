@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.50 $Date: 1999/02/03 07:00:50 $
+The Perl 5 Module List       Revision: 2.50 $Date: 1999/02/03 08:12:53 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -673,7 +673,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.106 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.107 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -721,10 +721,9 @@ but this is also transparent. Only the .pm file is required to exist.
 
        http://www.perl.com/CPAN/modules/04pause.html
 
-   or upload to one of these sites:
+   or upload to:
 
-       ftp://franz.ww.tu-berlin.de/incoming (preferred)
-       ftp://ftp.cis.ufl.edu/incoming
+       ftp://pause.kbx.de/incoming
 
    and notify upload@pause.kbx.de.
 
@@ -1589,7 +1588,8 @@ Tk X Windows User Interface Modules:
 
 Tk             bmcO  Object oriented version of Tk v4             TKML
 
-See the Tk module list at http://www.perl.com/CPAN/modules/by-module/Tk/tk-modlist.html
+   See the Tk module list at
+   http://www.perl.com/CPAN/modules/by-module/Tk/tk-modlist.html
 
 Other Major X Windows User Interface Modules:
 
@@ -1783,11 +1783,11 @@ SGML::
 ::SPGrove      bd+O  Load SGML, XML, and HTML files               KMACLEOD
 SGMLS          RdpO  A Post-Processor for SGMLS and NSGMLS        INGOMACH
 
-XML            Rmhh  Large collection of XML related modules      XMLML
+XML            RmhO  Large collection of XML related modules      XMLML
 
-Please visit the XML FAQ at
-http://www.perlxml.com/faq/perl-xml-faq.html for pointers to XML
-modules. A separate module list for XML is in preparation.
+    Please visit the XML FAQ at
+    http://www.perlxml.com/faq/perl-xml-faq.html for pointers to XML
+    modules. A separate module list for XML is in preparation.
 
 RTF::
 ::Base         i     Classes for Microsoft Rich Text Format       NI-S
@@ -2021,7 +2021,8 @@ CGI_Lite       MnpO  Light-weight interface for fast apps         SHGUN
 FCGI           Rdcr  Fast CGI                                     SKIMO
 Apache         RdcO  Interface to the Apache server API           DOUGM
 
-For Apache see also http://www.perl.com/CPAN/modules/by-module/Apache/apache-modlist.html
+   For Apache see also
+   http://www.perl.com/CPAN/modules/by-module/Apache/apache-modlist.html
 
 
 _______________________________________________________________________
@@ -2439,7 +2440,8 @@ Contacts: JAKE NI-S P5P
 
 6) Approximate Matching Regular Expressions
 
-Add support for approximate matching m/.../a (like the agrep utility).
+Add support into the core for approximate matching m/.../a (like the
+agrep utility).
 
 Contacts: JHI
 
@@ -2488,6 +2490,7 @@ RFC2045-2049
            MIME - Multipurpose Internet Mail Extensions  MIME::*
 RFC2138    Terminal server authentification and accting  RADIUS
 RFC2229    Dictionary Server                             Net::Dict
+
 _______________________________________________________________________
 
 2)   ITU - International Telegraph Union (X.*)
@@ -2495,6 +2498,7 @@ _______________________________________________________________________
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 X.209      Basic Encoding Rules for ASN.1                Convert::BER
+
 _______________________________________________________________________
 
 3)   ISO - International Standards Organization (ISO*)
@@ -2609,7 +2613,8 @@ to a CGI script that lets you edit the database entries yourself.
   CHSTROSS Charlie Stross <charlie@antipope.org>
   CHTHORMAN Chris Thorman <chris@thorman.com>
   CHTTRAX  Christoph T. Traxler <Christoph.T.Traxler@theo.physik.uni-giessen.de>
-  CJM      Christopher J. Madsen <ac608@yfn.ysu.edu>
+  CJM      Christopher J. Madsen <chris_madsen@geocities.com>
+  CKAISER  Cameron Kaiser <cdkaiser@concentric.net>
   CLINTDW  Clinton Wong <clintdw@netcom.com>
   CMASON   Chris Mason <cmason@ros.res.cmu.edu>
   CNANDOR  Chris Nandor <pudge@pobox.com>
@@ -3083,21 +3088,22 @@ to a CGI script that lets you edit the database entries yourself.
 
 2) Perl Frequently Asked Questions (FAQ)
 
-  The FAQ is available on all CPAN sites in the directory doc/FAQs
-  (e.g., http://www.perl.com/CPAN/doc/FAQs/) as well as from the RTFM
-  server where you can find all posted FAQs:
-    ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/
-    ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
-  RTFM mirror sites:
+The FAQ is available on all CPAN sites in the directory doc/FAQs
+(e.g., http://www.perl.com/CPAN/doc/FAQs/) as well as from the RTFM
+server where you can find all posted FAQs:
+  ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/
+  ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
 
-  North America:
-    ftp://ftp.uu.net/usenet/news.answers
-    ftp://mirrors.aol.com/pub/rtfm/usenet
-    ftp://ftp.seas.gwu.edu/pub/rtfm
-  Europe:
-    ftp://ftp.uni-paderborn.de/pub/FAQ
-    ftp://ftp.sunet.se/pub/usenet
-  Asia:
-    ftp://nctuccca.edu.tw/USENET/FAQ
-    ftp://hwarang.postech.ac.kr/pub/usenet/news.answers
-    ftp://ftp.hk.super.net/mirror/faqs
+RTFM mirror sites:
+
+North America:
+  ftp://ftp.uu.net/usenet/news.answers
+  ftp://mirrors.aol.com/pub/rtfm/usenet
+  ftp://ftp.seas.gwu.edu/pub/rtfm
+Europe:
+  ftp://ftp.uni-paderborn.de/pub/FAQ
+  ftp://ftp.sunet.se/pub/usenet
+Asia:
+  ftp://nctuccca.edu.tw/USENET/FAQ
+  ftp://hwarang.postech.ac.kr/pub/usenet/news.answers
+  ftp://ftp.hk.super.net/mirror/faqs
