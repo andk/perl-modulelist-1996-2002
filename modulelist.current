@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.22 $$Date: 1999/11/03 21:22:09 $
+The Perl 5 Module List       $Revision: 3.23 $$Date: 1999/11/06 09:51:10 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.22 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.23 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1534,7 +1534,7 @@ DbFramework::
 
 DTREE             cdcf Interface to Faircom DTREE multikey ISAM db  JWAT
 Fame              adcO Interface to FAME database and language      TRIAS
-MARC              ampO MAchine Readable Catalog (library bib. data) PERL4LIB
+MARC              bmpO MAchine Readable Catalog (library bib. data) PERL4LIB
 NetCDF            bmcr Interface to netCDF API for scientific data  SEMM
 Stanza            i    Text format database used by OSF and IBM     JHI
 VDBM              i    Client/server-layers on top of DBM files     RAM
@@ -2100,7 +2100,8 @@ WWW::
 ::RobotRules      ampO Parse /robots.txt file                       LWWWP
 ::Search          adpO Front-end to Web search engines              JOHNH
 
-LWP::                Libwww-perl
+LWP               RmpO Libwww-perl                                  LWWWP
+LWP::
 ::Conn            ampO LWPng stuff                                  LWWWP
 ::MediaTypes      Rmpf Media types and mailcap processing           LWWWP
 ::Parallel        RmpO Allows parallel http and ftp access with LWP MARCLANG
@@ -2251,7 +2252,9 @@ PGPLOT            Rdof PGPLOT plotting library - scientific graphs  KGB
 PixDraw           adcO Drawing and manipulating true color images   KSB
 GIFgraph          RdpO Package to generate GIF graphs, uses GD.pm   MVERB
 
-VRML::         RdpO  VRML methods independent of specification    HPALM
+VRML              RdpO VRML methods independent of specification    HPALM
+
+VRML::
 ::VRML1           RdpO VRML methods with the VRML 1.0 standard      HPALM
 ::VRML2           RdpO VRML methods with the VRML 2.0 standard      HPALM
 ::Color           Rdpf color functions and X11 color names          HPALM
@@ -2549,7 +2552,7 @@ Real::
 
 MQSeries          Rdch IBM's MQSeries messaging product interface   WPMOORE
 
-R3                i    SAP R/3 interface                            SCHOEN
+R3                adcO Interface to SAP R/3 using SAP\'s RFCSDK     SCHOEN
 
 =======================================================================
 
@@ -2923,7 +2926,7 @@ to a CGI script that lets you edit the database entries yourself.
   DMR      Dean Roehrich <roehrich@cray.com>
   DMUSGR   Dermot Musgrove <dermot.musgrove@virgin.net>
   DNAD     Dave Nadler <nadler@ug.eds.com>
-  DOMO     Dominic Dunlop <domo@slipper.ip.lu>
+  DOMO     Dominic Dunlop <domo@computer.org>
   DONS     Don Schwarz <dons@xnet.com>
   DOUGB    Doug Bagley <doug@bagley.org>
   DOUGL    Douglas Lankshear <DougL@ActiveState.com>
@@ -3024,7 +3027,7 @@ to a CGI script that lets you edit the database entries yourself.
   GREGOR   Gregor N. Purdy <gregor@focusresearch.com>
   GRICHTER Gerald Richter <richter@ecos.de>
   GROMMEL  Geoffrey Rommel <grommel@sears.com>
-  GSAR     Gurusamy Sarathy <gsar@umich.edu>
+  GSAR     Gurusamy Sarathy <gsar@ActiveState.com>
   GSM      Joe Marzot <gmarzot@baynetworks.com>
   GSPAF    Gene Spafford <spaf@cs.purdue.edu>
   GSPIVEY  Gary Spivey <spivey@romulus.ncsc.mil>
@@ -3035,6 +3038,7 @@ to a CGI script that lets you edit the database entries yourself.
   GWELCH   Gerad Welch <welch.119@osu.edu>
   GWILLIAMS Greg Williams <greg@cnation.com>
   HAG      Daniel Hagerty <hag@ai.mit.edu>
+  HAGANK   Ken Hagan <ken.hagan+no.spam+@louisville.edu>
   HAKANARDO Hakan Ardo <hakan@debian.org>
   HAKESTLER Hans A. Kestler <hans.kestler@medizin.uni-ulm.de>
   HALPOM   Hal Pomeranz <pomeranz@netcom.com>
@@ -3144,7 +3148,7 @@ to a CGI script that lets you edit the database entries yourself.
   JOSERODR Jose A. Rodriguez <Jose.Rodriguez+cpan@ac.upc.es>
   JOSH     Josh Wilmes <perl@hitchhiker.org>
   JOSTEN   Geert Josten <gjosten@sci.kun.nl>
-  JPAF     Joao Fonseca <joao.fonseca@solsuni.pt>
+  JPAF     Joao Fonseca <joao_g_fonseca@yahoo.com>
   JPC      Jan-Pieter Cornet <johnpc@xs4all.nl>
   JPEACOCK John Peacock <JPeacock@UnivPress.com>
   JPETERSON Jon Peterson <jon@snowdrift.org>
@@ -3502,6 +3506,7 @@ to a CGI script that lets you edit the database entries yourself.
   SHULL    Sean Hull <sean.hull@pobox.com>
   SHUTTON  Scott Hutton <shutton@pobox.com>
   SILVER   silver Harloe <silver@silverchat.com>
+  SIMONJ   Simon Johnston <simonj@microsoft.com>
   SKANE    Steve Kane <skane@cse.psu.edu>
   SKIMO    Sven Verdoolaege <skimo@kotnet.org>
   SKINGTON Sam Kington <sam@illuminated.co.uk>
