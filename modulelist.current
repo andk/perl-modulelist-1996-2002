@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.67 $$Date: 2000/11/06 14:49:40 $
+The Perl 5 Module List       $Revision: 3.68 $$Date: 2000/11/06 21:41:59 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.67 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.68 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -993,7 +993,7 @@ ClearCase::
 ::Ct              Mnpf Generic cleartool wrapper                    DSB
 
 Sub::
-::Curry           Rdpf Perl module to curry functions ((á la Lisp) DAVIDH
+::Curry           Rdpf Perl module to curry functions ((á la Lisp)) DAVIDH
 
 _______________________________________________________________________
 
@@ -1661,7 +1661,7 @@ DBD::
 ::SQLrelay        bdpO SQLrelay driver for DBI                      DMOW
 ::Solid           amcO Solid Driver for DBI                         TWENRICH
 ::Sqlflex         RdcO SQLFLEX driver for DBI                       INFOFLEX
-::Sybase          amcO Sybase Driver for DBI                        MEWP
+::Sybase          bmcO Sybase Driver for DBI                        MEWP
 ::Unify           bdcO Unify driver for DBI                         HMBRAND
 ::XBase           bmpO XBase driver for DBI                         JANPAZ
 ::mSQL            RmcO Msql Driver for DBI                          JWIED
@@ -2641,15 +2641,6 @@ Chart::
 ::Plot            bdcO Graph two-dimensional data (uses GD.pm)      SMORTON
 ::XMGR            Rdph interface to XMGR plotting package           TJENNESS
 
-MPEG::
-::ID3v1Tag        MdpO ID3v1 MP3 Tag Reader/Writer                  SVANZOEST
-::ID3v2Tag        bdpO OO, extensible ID3 v2.3 tagging module       MDIMEO
-::MP3Play         RdhO Create your own MPEG audio player            JRED
-
-MP3::
-::Info            bdpf Manipulate / fetch info from MP3 audio files CNANDOR
-::Tag             bdpO Tag - Module for reading tags of mp3 files   THOGEE
-
 Xmms              bdcO Interactive remote control shell for xmms    DOUGM
 Xmms::
 ::Config          bdcO Perl interface to the xmms_cfg_* API         DOUGM
@@ -2746,7 +2737,7 @@ IO::
 ::Handle          cdpO Base class for input/output handles          GBARR
 ::Lines           RdpO I/O handle to read/write to array of lines   ERYQ
 ::Pipe            cdpO Methods for pipe handles                     GBARR
-::Ptty            adcf Pseudo terminal interface functions          GBARR
+::Ptty            adcf Pseudo terminal interface functions          RGIERSIG
 ::Pty             cdpO Methods for pseudo-terminal allocation etc   PEASE
 ::React           RdpO OO Expect-like communication                 GARROW
 ::STREAMS         cdcO Methods for System V style STREAMS control   NI-S
@@ -2755,7 +2746,7 @@ IO::
 ::Seekable        cdpO Methods for seekable input/output handles    GBARR
 ::Select          adpO Object interface to system select call       GBARR
 ::Socket          cdpO Methods for socket input/output handles      GBARR
-::Stty            bdpf POSIX compliant stty interface               AUSCHUTZ
+::Stty            bdpf POSIX compliant stty interface               RGIERSIG
 ::Tee             RdpO Multiplex output to multiple handles         KENSHAN
 ::Wrap            RdpO Wrap old-style FHs in standard OO interface  ERYQ
 ::WrapTie         RdpO Tie your handles & retain full OO interface  ERYQ
@@ -2768,7 +2759,7 @@ SelectSaver       SupO Save and restore selected file handle        CHIPS
 Selectable        cdpO Event-driven I/O streams                     MUIR
 
 Log::
-::Agent           adpr A general logging framework                  RAM
+::Agent           adpO A general logging framework                  RAM
 ::Dispatch        RdpO Log messages to multiple outputs             DROLSKY
 ::Topics          Rdpf Control flow of topic based logging messages JARW
 ::TraceMessages   Rdpf Print developer's trace messages             EDAVIS
@@ -2869,8 +2860,18 @@ Astro::
 Audio::
 ::CD              bdcO Perl interface to libcdaudio (cd + cddb)     DOUGM
 ::Sox             i    sox sound library as one or more modules     NI-S
+
 Audio::Play::
 ::MPG123          RdcO Generic frontend for MPG123                  MLEHMANN
+
+MPEG::
+::ID3v1Tag        MdpO ID3v1 MP3 Tag Reader/Writer                  SVANZOEST
+::ID3v2Tag        bdpO OO, extensible ID3 v2.3 tagging module       MDIMEO
+::MP3Play         RdhO Create your own MPEG audio player            JRED
+
+MP3::
+::Info            bdpf Manipulate / fetch info from MP3 audio files CNANDOR
+::Tag             bdpO Tag - Module for reading tags of mp3 files   THOGEE
 
 BarCode::
 ::UPC             i    Produce PostScript UPC barcodes              JONO
@@ -4445,7 +4446,6 @@ Asia:
   ftp://nctuccca.edu.tw/USENET/FAQ
   ftp://hwarang.postech.ac.kr/pub/usenet/news.answers
   ftp://ftp.hk.super.net/mirror/faqs
-
 
 ### Local Variables: ###
 ### coding: utf-8 ###
