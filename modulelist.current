@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.58 $Date: 1999/07/15 15:28:02 $
+The Perl 5 Module List       Revision: 2.59 $Date: 1999/10/19 02:10:12 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -65,11 +65,6 @@ Part 5 - Who's Who and What's Where
 1)   Information / Contact Reference Details
 2)   Perl Frequently Asked Questions (FAQ) Files
 3)   Other Perl Archive Sites
-
-Key:
-
- '+' indicates a recently added section or item,
- '!' indicates a recently changed section or item (typically new modules).
 
 
 ======================================================================
@@ -525,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.133 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.135 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1499,6 +1494,7 @@ Term::
 ::Control       idpf Basic curses-type screen controls (gotxy)    KJALB
 ::Gnuplot       adcf Draw vector graphics on terminals etc        ILYAZ
 ::Info          adpf Terminfo interface (currently just Tput)     KJALB
+::Prompt        adpf Prompt a user                                ALLENS
 ::Query         Rdpf Intelligent user prompt/response driver      AKSTE
 ::ReadKey       Rdcf Read keystrokes and change terminal modes    KJALB
 ::ReadLine      Sdcf Common interface for various implementations ILYAZ
