@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.102 $ $Date: 2001/05/11 13:57:55 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.103 $ $Date: 2001/05/16 15:36:55 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.102 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.103 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -865,6 +865,10 @@ Softref            bdcf? Extension for weak/soft referenced SVs       ILYAZ
 
 Attribute::
 ::Handlers         RdpO? Simpler definition of attribute handlers     DCONWAY
+::Types
+::Memoize
+::TieClasses
+::Abstract
 
 Exporter::
 ::Import           Rdpn? Alternate symbol exporter                    GARROW
@@ -970,6 +974,10 @@ Pod::
 ::Usage            bdpf? Print Usage messages based on your own pod   BRADAPP
 ::XML              RdpO? Generate XML from POD                        MSERGEANT
 ::Tree             RdpO? Create a static syntax tree for a POD        SWMCD
+::Checker
+
+Perl6::
+::Variables
 
 _______________________________________________________________________
 
@@ -986,6 +994,7 @@ Include            adpO? Parse C header files for use in XS           GBARR
 Make               adpO? Makefile parsing, and 'make' replacement     NI-S
 Perlbug            RdpO? Database driven bug tracking system          RFOLEY
 Rcs                adcf? Alternate RCS interface (see VCS::RCS)       CFRETER
+Smirch
 Usage              bupr? Type and range checking on subroutine args   JACKS
 VCS                ampOp Generic interface to Version Control Systems LBROCARD
 
@@ -1018,22 +1027,23 @@ Conjury::
 Devel::
 ::CallerItem       RupO? 'caller()' Object wrapper + useful methods   JACKS
 ::CoreStack        adpf? generate a stack dump from a core file       ADESC
+::Cover            adcfp Code coverage metrics for Perl               PJCJ
 ::Coverage         adpf? Coverage analysis for Perl code              RJRAY
+::DProf            Rdcf? Execution profiler                           DMR
 ::DebugAPI         bdpf? Interface to the Perl debug environment      JHA
 ::DebugInit        bdpf? Create a .gdbinit or similar file            JASONS
-::DProf            Rdcf? Execution profiler                           DMR
 ::DumpStack        Rupf? Dumping of the current function stack        JACKS
 ::Leak             Rdcf? Find perl objects that are not reclaimed     NI-S
+::Modlist          Rdpf? Collect module use information               RJRAY
 ::PPPort           bdcn? Portability aid for your XS code             KJALB
 ::Peek             adcf? Peek at internal representation of Perl data ILYAZ
 ::RegExp           adcO? Access perl internal regex functions         ILYAZ
+::SearchINC
 ::SmallProf        Rdpf? Line-by-line profiler                        ASHTED
 ::StackTrace       RdpOp Stacktrace object w/ info like Carp::confess DROLSKY
 ::Symdump          RdpO? Perl symbol table access and dumping         ANDK
 ::TraceFuncs       adpO? Trace funcs by using object destructions     JOEHIL
 ::TraceLoad        Rdpf? Traces the loading of perl source code       PVERD
-::Modlist          Rdpf? Collect module use information               RJRAY
-::Cover            adcfp Code coverage metrics for Perl               PJCJ
 
 Exception::
 ::Class            RdpOp Declare exception class hierarchies          DROLSKY
@@ -1271,26 +1281,36 @@ Net::
 ::Bind             adpO? Interface to bind daemon files               KJOHNSON
 ::CDDB             cdpr? Interface to the CDDB (CD Database)          DSTALDER
 ::Cmd              cdpO? For command based protocols (FTP, SMTP etc)  GBARR
+::DHCPClient       adpO? Interface to DHCP as a client                JWALGENB
 ::DLookup          adpO? Lookup domains on Internic and 2-letter TLDs DJASMINE
 ::DNS              bdpO? Interface to the DNS resolver                MFUHR
+::DNSServer
 ::Daemon           adpO? Abstract base class for portable servers     JWIED
 ::Dnet             cdcO? DECnet-specific socket usage                 SPIDB
 ::Domain           adpf? Try to determine TCP domain name of system   GBARR
 ::DummyInetd       RdpO? A dummy Inetd server                         GBARR
 ::FTP              adpf? Interface to File Transfer Protocol          GBARR
 ::Gen              RdcO? Generic support for socket usage             SPIDB
+::Gnutella         bdpO? Gnutella network (v0.4) interface            IWADE
 ::Goofey           RdpO? Communicate with a Goofey server             GOSSAMER
+::HTTPTunnel       adpO? Tunnel through HTTP proxies with CONNECT     RWAHBY
+::Hesiod           bdchp Interface to Hesiod library API              PAYERLE
 ::Hotline          RdpO? Interface to the Hotline protocol            JSIRACUSA
 ::ICAP             adpO? Interface to ICAP Protocol (Internet-Draft)  KJOHNSON
 ::ICB              bdpO? ICB style chat server interface              JMV
+::ICQ              bmpO? Client interface to ICQ messaging            JMUHLICH
+::ICal             ampO? RFC2445 (iCalendar) protocol tools           SRL
 ::IMAP             adpO? Interface to IMAP Protocol (RFC2060)         KJOHNSON
+::IMIP             impO? RFC2447 tools for event scheduling           SRL
 ::IRC              cdpO? Internet Relay Chat interface                DSHEPP
+::ITIP             cmpO? RFC2446 tools for scheduling events          SRL
 ::Ident            RdpO? Performs ident (rfc1413) lookups             JPC
 ::Inet             RdcO? Internet (IP) socket usage                   SPIDB
 ::Interface        adcO? ifconfig(1) implementation                   SRZ
 ::Jabber           ampO? Access to the Jabber protocol                REATMON
 ::LDAP             ampOp Interface to LDAP Protocol (RFC1777)         PLDAP
 ::LDAPapi          Rdcf? Interface to UMICH and Netscape LDAP C API   CDONLEY
+::LMTP             cdpOp LMTP Protocol - RFC2033                      LHOWARD
 ::MsgLink          cdpO? Abstraction of "user" part for message link  RAM
 ::NIS              adcO? Interface to Sun's NIS                       RIK
 ::NISPlus          adcO? Interface to Sun's NIS+                      RIK
@@ -1299,15 +1319,25 @@ Net::
 ::Netrc            adpO? Support for .netrc files                     GBARR
 ::PH               RdpO? CCSO Nameserver Client class                 GBARR
 ::POP3             adpO? Client interface to POP3 protocol            GBARR
+::Pager            RdpO? Send Numeric/AlphaNumeric Pages to any pager ROOTLEVEL
+::ParseWhois       RmpO? Get+Parse "whois" domain data                ABEROHAM
 ::Patricia         RdcO? Patricia Trie perl module for fast IP addres PLONKA
 ::Pcap             adcr? An interface for LBL's packet capture lib    PLISTER
+::Peep             RdpO? Clients for Peep: The Network Auralizer      STARKY
 ::Ping             SupO? TCP and ICMP ping                            RMOSE
 ::Printer          RdpO? Direct to lpd printing                       CFUHRMAN
+::SCP
+::SFTP             adpOp Secure File Transfer Protocol client         BTROTT
+::SMPP             cdpO? Protocol for sending SMS (to GSM or CDMA).   SAMPO
+::SMS              RdpOp Send SMS wireless text-messages.             ROOTLEVEL
 ::SMTP             adpf? Interface to Simple Mail Transfer Protocol   GBARR
 ::SNMP             adpO? Interface to SNMP Protocol (RFC1157)         DTOWN
 ::SNPP             cdpO? Client interface to SNPP protocol            GBARR
 ::SOCKS            cdcf? TCP/IP access through firewalls using SOCKS  SCOOPER
+::SSH
+::SSL              RdcO? Glue that enables LWP to access https URIs   CHAMAS
 ::SSLeay           bmhf? Secure Socket Layer (based on OpenSSL)       SAMPO
+::Server           adpO? Extensible (class) oriented internet server  RHANDOM
 ::Syslog           RdpOp Forwarded syslog protocol                    LHOWARD
 ::TCP              RdcO? TCP-specific socket usage                    SPIDB
 ::TFTP             cdpf? Interface to Trivial File Transfer Protocol  GSM
@@ -1316,31 +1346,14 @@ Net::
 ::Traceroute       bdpO? Trace routes                                 HAG
 ::UDP              RdcO? UDP-specific socket usage                    SPIDB
 ::VNC              i???? Interface VNC remote frame buffer protocol   BRONG
+::Whois            RdpO? Get+parse "whois" domain data from InterNIC  DHUDES
+::XWhois           RdpO? Whois Client Interface for Perl5.            VIPUL
+::Z3950            bmcO? OO interface to the Yaz Z39.50 toolkit       MIRK
 ::hostent          adpf? A by-name interface for hosts functions      TOMC
 ::netent           adpf? A by-name interface for networks functions   TOMC
 ::protoent         adpf? A by-name interface for protocols functions  TOMC
 ::servent          adpf? A by-name interface for services functions   TOMC
 ::xAP              adpO? Interface to IMAP,ACAP,ICAP substrate        KJOHNSON
-::Z3950            bmcO? OO interface to the Yaz Z39.50 toolkit       MIRK
-::SSL              RdcO? Glue that enables LWP to access https URIs   CHAMAS
-::Pager            RdpO? Send Numeric/AlphaNumeric Pages to any pager ROOTLEVEL
-::Whois            RdpO? Get+parse "whois" domain data from InterNIC  DHUDES
-::XWhois           RdpO? Whois Client Interface for Perl5.            VIPUL
-::ICQ              bmpO? Client interface to ICQ messaging            JMUHLICH
-::SMS              RdpOp Send SMS wireless text-messages.             ROOTLEVEL
-::HTTPTunnel       adpO? Tunnel through HTTP proxies with CONNECT     RWAHBY
-::Gnutella         bdpO? Gnutella network (v0.4) interface            IWADE
-::ICal             ampO? RFC2445 (iCalendar) protocol tools           SRL
-::ITIP             cmpO? RFC2446 tools for scheduling events          SRL
-::IMIP             impO? RFC2447 tools for event scheduling           SRL
-::ParseWhois       RmpO? Get+Parse "whois" domain data                ABEROHAM
-::Server           adpO? Extensible (class) oriented internet server  RHANDOM
-::Peep             RdpO? Clients for Peep: The Network Auralizer      STARKY
-::Hesiod           bdchp Interface to Hesiod library API              PAYERLE
-::SMPP             cdpO? Protocol for sending SMS (to GSM or CDMA).   SAMPO
-::DHCPClient       adpO? Interface to DHCP as a client                JWALGENB
-::SFTP             adpOp Secure File Transfer Protocol client         BTROTT
-::LMTP             cdpOp LMTP Protocol - RFC2033                      LHOWARD
 
 Net::Daemon::
 ::SSL              RdpO? SSL extension for Net::Daemon                MKUL
@@ -1429,6 +1442,7 @@ SNMP::
 ::Monitor          adpO? Accounting and graphical display             JWIED
 ::Util             RdpO? Perform SNMP set,get,walk,next,walk_hash,... WMARQ
 ::NPAdmin          adpO? Perl API to query printers via SNMP.         BOZZIO
+::BridgeQuery
 
 Mon::
 ::Client           RdpO? Network monitoring client                    TROCKIJ
@@ -1517,6 +1531,9 @@ Math::MatrixReal::
 Math::Polynomial::
 ::Solve            Rdpf? Solve polynomials up to degree 4             JGAMBLE
 
+Math::Random::
+::MT
+
 Statistics::
 ::ChiSquare        Rdpf? Chi Square test - how random is your data?   JONO
 ::ConwayLife       RdpO? Simulates life using Conway's algorithm      DANB
@@ -1602,11 +1619,23 @@ Set::
 ::Crontab          RdpOa Expand crontab(5)-style integer lists        AMS
 ::Infinite         bdpOp Set Theory module for infinite sets          FGLOCK
 
+Graph
 Graph::
 ::Element          RdpO? Base class for element of directed graph     NEILB
 ::Node             RdpO? A node in a directed graph                   NEILB
 ::Edge             RdpO? An edge in a directed graph                  NEILB
 ::Kruskal          Rdpf? Kruskal Algorithm for Minimal Spanning Trees STBEY
+::Reader
+::Writer
+
+Graph::Reader::
+::XML
+
+Graph::Writer::
+::XML
+::Dot
+::VCG
+::daVinci
 
 Decision::
 ::Markov           bdpO? Build/evaluate Markov models for decisions   ALANSZ
@@ -1650,21 +1679,25 @@ Calendar::
 ::RCM              i   ? Russell Calendar Manager                     HTCHAPMAN
 
 Tie::
-::Hash             Supr? Base class for implementing tied hashes      P5P
-::Scalar           Supr? Base class for implementing tied scalars     P5P
+::AliasHash        Rdpr? Hash with key aliases                        ACALPINI
 ::Array            Supr? Base class for implementing tied arrays      P5P
 ::CPHash           bdpO? Case preserving but case insensitive hash    CJM
 ::Cache            Mdpr? In memory size limited LRU cache             CHAMAS
+::CharArray        Rdpr? Access Perl scalars as arrays of characters  ILTZU
+::Cycle            RdpO? Cycle through a list of values via a scalar. BDFOY
+::DBI              RdpO? Tie hash to a DBI handle                     LDS
 ::DB_FileLock      Rdpr? Locking access to Berkeley DB 1.x.           JMV
 ::DB_Lock          Rdpr? Tie DB_File with automatic locking           KWILLIAMS
-::DBI              RdpO? Tie hash to a DBI handle                     LDS
 ::Dir              adpr? Tie hash for reading directories             GBARR
 ::Discovery        Rdpr? Discover data by caching sub results         SIMON
+::DxHash
 ::File             adpr? Tie hash to files in a directory             AMW
 ::FileLRUCache     bdph? File based persistent LRU cache              SNOWHARE
 ::Handle           ?dpO? Base class for implementing tied filehandles STBEY
+::Hash             Supr? Base class for implementing tied hashes      P5P
 ::HashDefaults     adpr? Let a hash have default values               JDPORTER
 ::IxHash           RdpO? Indexed hash (ordered array/hash composite)  GSAR
+::LDAP             bdpr? Ties LDAP database to Perl hash              TAIY
 ::LLHash           Rdpr? Fast ordered hashes via linked lists         KWILLIAMS
 ::ListKeyedHash    Rdpr? Use lists to key multi-level hashes          SNOWHARE
 ::Mem              adcO? Bind perl variables to memory addresses      PMQS
@@ -1674,22 +1707,20 @@ Tie::
 ::Persistent       Rdpr? Persistent data structures via tie           RGIERSIG
 ::Quick            i   ? Simple way to create ties                    P5P
 ::RDBM             RdpO? Tie hashes to relational databases           LDS
+::RangeHash        bdph? Hashes with 'low,high' ranges as keys        RRWO
+::RegexpHash       adph? Use regular expressions as hash keys         RRWO
 ::RndHash          bdpO? choose a random key of a hash in O(1) time   DFAN
+::Scalar           Supr? Base class for implementing tied scalars     P5P
 ::SecureHash       RdpO? Enforced encapsulation of Perl objects       DCONWAY
 ::SentientHash     bdpr? Tracks changes to nested data structures     ANDREWF
 ::ShadowHash       adpO? Merge multiple data sources into a hash      RRA
 ::ShiftSplice      i   ? Defines shift et al in terms of splice       LWALL
 ::SortHash         Rdpr? Provides persistent sorting for hashes       CTWETEN
+::StrictHash
 ::SubstrHash       SdpO? Very compact hash stored in a string         LWALL
 ::TextDir          Rdpr? ties a hash to a directory of textfiles      KWILLIAMS
-::Watch            bdpO? Watch variables, run code when read/written  LUSOL
-::Cycle            RdpO? Cycle through a list of values via a scalar. BDFOY
-::LDAP             bdpr? Ties LDAP database to Perl hash              TAIY
-::CharArray        Rdpr? Access Perl scalars as arrays of characters  ILTZU
-::RangeHash        bdph? Hashes with 'low,high' ranges as keys        RRWO
-::RegexpHash       adph? Use regular expressions as hash keys         RRWO
-::AliasHash        Rdpr? Hash with key aliases                        ACALPINI
 ::WarnGlobal       adpr? Ties variables to functions, warns on use    STEPHEN
+::Watch            bdpO? Watch variables, run code when read/written  LUSOL
 
 Tie::Scalar::
 ::Timeout          adpr? Scalar variables that time out               MARCEL
@@ -1859,6 +1890,9 @@ DBIx::
 ::SystemCatalog    RdpO? Accessing system catalog in common databases MILSO
 ::dbMan            ampf? Tk database manipulating tool                MILSO
 
+DBIx::Lookup::
+::Field
+
 DBD::
 ::ASAny            adcO? Adaptive Server Anywhere Driver for DBI      SMIRNIOS
 ::Altera           bdpO? Altera SQL Server for DBI - pure Perl code   DSOUFLIS
@@ -2014,6 +2048,9 @@ Gemstone           RdpO? Interface to a GemStone object database      YOUD
 
 FameHLI            adcf? Ports Fame's C-API to Perl                   DAVEO
 
+Splash::
+::DB
+
 _______________________________________________________________________
 
 8) User Interfaces (Character and Graphical)
@@ -2022,6 +2059,7 @@ Name               DSLIP Description                                  Info
 ------------       ----- -------------------------------------------- ----
 Term::
 ::ANSIColor        Sdpf? Color output using ANSI escape sequences     RRA
+::ANSIScreen       bdpf? Terminal control using ANSI escape sequences AUTRIJUS
 ::Cap              Supf? Basic termcap: Tgetent, Tputs, Tgoto         TSANDERS
 ::Complete         Supf? Tab word completion using stty raw           WTOMPSON
 ::Control          idpf? Basic curses-type screen controls (gotxy)    KJALB
@@ -2035,7 +2073,7 @@ Term::
 ::Screen           RdpO? Basic screen + input class (uses Term::Cap)  MRKAE
 ::Size             adcf? Simple way to get terminal size              TIMPX
 ::TUI              bdpf? User interface based on Term::ReadLine       SBECK
-::ANSIScreen       bdpf? Terminal control using ANSI escape sequences AUTRIJUS
+::VT102
 
 Term::ReadLine::
 ::Perl             RdpO? GNU Readline history and completion in Perl  ILYAZ
@@ -2116,6 +2154,7 @@ Tk::
 ::ObjEditorDialog  bdpO? Tk popup dialog to edit data or objects      DDUMONT
 ::Pgplot           bdcfp Pgplot widget for Tk                         CPHIL
 ::PathEntry        adpO? Entry for selecting paths with completion    SREZIC
+::JComboBox
 
 Modules in the realm of Tk but with a separate namespace
 
@@ -2190,6 +2229,7 @@ Language::
 ::PGForth          i   ? Peter Gallasch's Forth implementation        PETERGAL
 ::ML               cdpf? Implementation of ML                         DSPARLING
 ::VBParser         i???? Visual Basic 6 source parser                 FRETT
+::Style
 
 Language::DATR::
 ::DATR2XML         RdpOp Convert DATR to XML and back, wth XSLT & DTD LGODDARD
@@ -2285,6 +2325,7 @@ File::
 ::BasicFlock       Rdpf? Simple flock() wrapper                       MUIR
 ::Searcher         bdpO? Search filetree do search/replace regexes    ASTUBBS
 ::VirtualPath      RdpO? Portable abstraction of a file/dir/url path  DUNCAND
+::NFSLock
 
 File::Searcher::
 ::Interactive      bdpO? Interactive search do search/replace regexes ASTUBBS
@@ -2477,6 +2518,7 @@ Parse::
 ::Yapp             RdpOp Generates OO LALR parser modules             FDESAR
 ::YALALR           RdpO? Yet Another LALR parser                      SFINK
 ::Vipar            bdpO? Visual LALR parser debugger                  SFINK
+::Lexer
 
 Search::
 ::Dict             Supf? Search a dictionary ordered text file        P5P
@@ -2519,6 +2561,11 @@ XML::
 ::miniXQL          ????? Simplistic XQL-like search using streams     MSERGEANT
 ::Excel            adpOa Transform Excel spreadsheet data into XML    ISTERIN
 ::Xalan            ad+O? Interface to Xalan (Apache XSLT processor)   EDPRATOMO
+::GXML
+
+XML::SAXDriver::
+::CSV
+::Excel
 
 Frontier::             
 ::RPC              ????? Performs Remote Procedure Calls using XML    KMACLEOD
@@ -2616,6 +2663,10 @@ Config::
 
 CfgTie             adph? Framework for tieing system admin tasks      RANDYM
 
+AppConfig
+AppConfig::
+::Std
+
 _______________________________________________________________________
 
 13) Internationalization and Locale
@@ -2639,6 +2690,7 @@ Locale::
 ::gettext          Rdcf? Multilanguage messages                       PVANDRY
 ::Maketext         RdpO? Framework for software localization          SBURKE
 ::PO               RdpO? Manipulate .po entries from gettext          ALANSZ
+::Currency
 
 Unicode::
 ::String           RdcO? String manipulation for Unicode strings      GAAS
@@ -2740,6 +2792,9 @@ Crypt::OpenSSL::
 ::RSA              bdcO? Interface to OpenSSL RSA methods             IROBERTS
 ::Random           bdcO? Interface to OpenSSL PRNG methods            IROBERTS
 ::BN               bdcO? Interface to OpenSSL arithmetic              IROBERTS
+
+Crypt::Schnorr::
+::AuthSign
 
 Authen::
 ::ACE              adcO? Interface to Security Dynamics ACE (SecurID) DCARRIGAN
@@ -2872,6 +2927,7 @@ HTTP::
 ::GHTTP            RdcO? Perl interface to the gnome ghttp library    MSERGEANT
 ::WebTest          Rdph? Run tests on remote URLs or local web files  RANDERSON
 ::QuickBase        RdpO? Wraps the QuickBase HTTP API                 CVONROES
+::Webdav
 
 HTTP::Request::
 ::Common           Rmpf? Functions that generate HTTP::Requests       LWWWP
@@ -2992,6 +3048,7 @@ Apache::
 ::iNcom            bdpf? An e-commerce framework                      FRAJULAC
 ::CVS              bdpO? Apache PerlContentHandler for CVS            BARBEE
 ::Motd             adph? Provides motd functionality to a webserver   CRAMIREZ
+::DnsZone
 
 Apache::ASP::
 ::Lite             impO? Lightweight IIS emulation under Apache       FERGUSOR
@@ -3323,6 +3380,9 @@ Convert::
 ::Base             adph? Convert integers to/from arbitrary bases.    VIPUL
 ::PEM              bdpOp Read/write encrypted ASN.1 PEM files         BTROTT
 
+Convert::ASCII::
+::Armor
+
 AppleII::
 ::Disk             bdpO? Read/write Apple II disk image files         CJM
 ::ProDOS           bdpO? Manipulate files on ProDOS disk images       CJM
@@ -3354,6 +3414,7 @@ ElectricArc        RdpO? Generic diagram manipulation toolset         SELKOVJR
 GIFgraph           RdpO? Obsolete, see GD::Graph                      MVERB
 Gimp               Mmch? Rich interface to write plugins for The Gimp MLEHMANN
 GraphViz           RdpOp Interface to the GraphViz graphing tool      LBROCARD
+Imager
 OpenGL             adcf? Interface to OpenGL drawing/imaging library  FIJI
 PGPLOT             Rdof? PGPLOT plotting library - scientific graphs  KGB
 PixDraw            adcO? Drawing and manipulating true color images   KSB
@@ -3391,6 +3452,7 @@ Image::
 ::Info             RdpO? Extract meta information from image files    GAAS
 ::Imlib2           RdcOp Interface to the Imlib2 image library        LBROCARD
 ::DeAnim           RdpO? Create static GIF file from animated GIF     KENMACF
+::IPTCInfo
 
 Chart::
 ::Base             RdpO? Business chart widget collection             NINJAZ
@@ -3400,6 +3462,8 @@ Chart::
 ::Pie              adpO? Implements "new Chart::Pie()"                KARLON
 ::Plot             bdcO? Graph two-dimensional data (uses GD.pm)      SMORTON
 ::XMGR             Rdph? interface to XMGR plotting package           TJENNESS
+::Pie3d
+::GRACE
 
 Xmms               bdcO? Interactive remote control shell for xmms    DOUGM
 Xmms::
@@ -3524,7 +3588,10 @@ Selectable         cdpO? Event-driven I/O streams                     MUIR
 
 Log::
 ::Agent            adpO? A general logging framework                  RAM
+::Delayed
+::Detect
 ::Dispatch         RdpOp Log messages to multiple outputs             DROLSKY
+::Loggerx
 ::Topics           Rdpf? Control flow of topic based logging messages JARW
 ::TraceMessages    RdpO? Print developer's trace messages             EDAVIS
 
@@ -3751,10 +3818,14 @@ Schedule::        See also Schedule:: in chapter 4
 
 Silly::
 ::StringMaths      adpf? Do maths with letters and strings            SKINGTON
+::Werder
 
 Speech::
 ::EST              cd+h? Interface to the Edinburgh Speech Tools lib  DJHD
 ::Festival         RdpO? Communicate with a festival server process.  RCALEY
+
+Speech::Festival::
+::Synthesiser
 
 Speech::Recognizer::
 ::SPX              Rdch? Interface to Sphinx-II speech recognition    DJHD
@@ -3778,6 +3849,11 @@ Poetry::
 ::Vogon            idpOa Vogon Poetry Generator                       AMS
 
 Workflow           adcfl Interface to the wftk workflow toolkit       MICHAEL
+
+GISI
+GISI::
+::SHAPE
+::MIFMID
 
 _______________________________________________________________________
 
