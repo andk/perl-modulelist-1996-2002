@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.65 $$Date: 2000/11/05 20:42:28 $
+The Perl 5 Module List       $Revision: 3.66 $$Date: 2000/11/06 08:55:07 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.65 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.66 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -835,6 +835,12 @@ strict            Supf Controls averments (similar to pragmas)      P5P
 subs              Supf use subs qw(x y); is short for sub x; sub y; P5P
 vars              Supf predeclare variable names                    P5P
 
+Experimental pragmatic modules live in the ex:: namespace
+
+ex::
+::implements
+::interface
+
 Perl Language Extensions
 
 Alias             bdcf Convenient access to data/code via aliases   GSAR
@@ -997,6 +1003,9 @@ VCS::
 ClearCase         idcf Environment for ClearCase revision control   BRADAPP
 ClearCase::
 ::Ct              Mnpf Generic cleartool wrapper                    DSB
+
+Sub::
+::Curry
 
 _______________________________________________________________________
 
@@ -1602,6 +1611,7 @@ Data::
 ::Locations       RdpO Insert data into other data w/o temp files   STBEY
 ::Reporter        RdcO Ascii Report Generator                       RVAZ
 ::Walker          RdpO Navigate through Perl data structures        JNOLAN
+::Random
 
 Tree::
 ::Base            cdpO Defines a basic binary search tree           MSCHWERN
@@ -1610,6 +1620,7 @@ Tree::
 ::Ternary         bdpO Perl implementation of ternary search trees  MROGASKI
 ::Ternary_XS      adcO XS implementation of ternary search trees    LBROCARD
 ::Trie            bdpO An implementation of the Trie data structure AVIF
+::Nary
 
 DFA::
 ::Command         Mdpo Discrete Finite Automata command processor   RSAVAGE
@@ -1734,6 +1745,7 @@ Db::
 ::Ctree           Rdcr Faircom's CTREE+ database interface          REDEN
 ::Documentum      Rdcf Documentum EDMS Perl client interface        MSROTH
 ::dmObject        cdpO Object-based interface to Documentum EDMS    JGARRISON
+::DFC
 
 DbFramework::
 ::Attribute       adpO Relational attribute class                   PSHARPE
@@ -1787,7 +1799,7 @@ Term::
 ::Control         idpf Basic curses-type screen controls (gotxy)    KJALB
 ::Gnuplot         adcf Draw vector graphics on terminals etc        ILYAZ
 ::Info            adpf Terminfo interface (currently just Tput)     KJALB
-::ProgressBar
+::ProgressBar     idpf Progress bar in just ASCII                   EDAVIS
 ::Prompt          adpf Prompt a user                                ALLENS
 ::Query           Rdpf Intelligent user prompt/response driver      AKSTE
 ::ReadKey         Rdcf Read keystrokes and change terminal modes    KJALB
@@ -2295,6 +2307,7 @@ Crypt::
 ::Twofish         Rdpf Twofish Encryption Algorothm                 NISHANT
 ::UnixCrypt       Rdpf Perl-only implementation of crypt(3)         MVORL
 ::RandPasswd      RdpO Random password generator based on FIPS-181  JDPORTER
+::Rijndael
 
 Authen::
 ::ACE             adcO Interface to Security Dynamics ACE (SecurID) DCARRIGAN
@@ -2455,6 +2468,10 @@ MIME::
 ::Parser          RdpO Parses streams to create MIME entities       ERYQ
 ::Types           adpr Returns the MIME type for a filename/suffix  OKAMOTO
 ::Words           Rdpf Encode/decode RFC1522-escaped header strings ERYQ
+
+MIME::Lite::
+::HTML            bmpO Provide routine to transform HTML to MIME    ALIAN
+
 
 Apache            RmcO Interface to the Apache server API           DOUGM
 
@@ -2644,6 +2661,7 @@ MPEG::
 
 MP3::
 ::Info            bdpf Manipulate / fetch info from MP3 audio files CNANDOR
+::Tag
 
 Xmms              bdcO Interactive remote control shell for xmms    DOUGM
 Xmms::
@@ -2658,7 +2676,7 @@ ThreeD            i    Namespace root for all kinds of 3D modules   ADESC
 RenderMan         a    Manipulate RenderMan objects                 GMLEWIS
 
 Flash::
-::SWF
+::SWF             cmpO Read/Write Macromedia Flash SWF files        SABREN
 
 _______________________________________________________________________
 
@@ -2687,6 +2705,7 @@ Mail::
 ::Sendmail        Rdpf Simple platform independent mailer           MIVKOVIC
 ::UCEResponder    i    Spamfilter                                   CHSTROSS
 ::Util            adpf Mail utilities (for by some Mail::* modules) GBARR
+::IMAPClient
 
 Mail::Field::
 ::Received        RdpO Parses Received headers as per RFC822        ASPIERS
@@ -2812,7 +2831,7 @@ Win32::
 ::Shortcut        Rd+O Manipulate Windows Shortcut files            ACALPINI
 ::Sound           Rdch An extension to play with Windows sounds     ACALPINI
 ::WinError        adcf Interface to Win32 WinError functions        WIN32
-::SystemInfo
+::SystemInfo      RdpO Memory and Processor information             CJOHNSTON
 
 WinNT             cdcf Interface to Windows NT specific functions   WIN32
 NT                cdcf Old name for WinNT - being phased out        WIN32
@@ -2849,8 +2868,8 @@ SDDF              cd+O Interface to Pablo Self Defining Data Format FIS
 
 AI::
 ::Fuzzy           RdpO Perl extension for Fuzzy Logic               SABREN
-::jNeural
-::NeuralNet
+::jNeural         RdcO Jet's Neural Architecture                    JETTERO
+::NeuralNet       RdpO A simple back-prop neural net                JBRYAN
 
 Astro::
 ::Coord           Rdpf Transform telescope and source coordinates   CPHIL
