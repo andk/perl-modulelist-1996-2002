@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.32 $$Date: 2000/03/29 13:37:55 $
+The Perl 5 Module List       $Revision: 3.33 $$Date: 2000/03/31 13:53:59 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.32 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.33 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -895,6 +895,7 @@ Pod::
 ::HTML            cdpr converter to HTML                            KJALB
 ::Index           cdpr index generator                              KJALB
 ::Latex           cdpr converter to LaTeX                           KJALB
+::LaTeX           bdpO Converts pod to latex with Pod::Parser       TJENNESS
 ::Lint            cdpO Lint-style validator for pod                 NEILB
 ::Man             cdpr converter to man page                        KJALB
 ::MIF             adpO converter to FrameMaker MIF                  JNH
@@ -953,7 +954,7 @@ Devel::
 Exception::
 ::Cxx             Rd+f Cause perl to longjmp using C++ exceptions   JPRIT
 
-Perf::               Performance measurement other than benchmarks
+Perf::            Performance measurement other than benchmarks
 ::ARM             a    Application Response Measurement             BBACKER
 
 Usage             bupr Type and range checking on subroutine args   JACKS
@@ -1009,7 +1010,7 @@ Proc::
 
 GTop              bdcO Perl interface to libgtop                    DOUGM
 
-Schedule::           See also Schedule:: in chapter 23
+Schedule::        See also Schedule:: in chapter 23
 ::At              Rd   OS independent interface to the at command   JOSERODR
 
 Quota             Rdcf Disk quota system functions, local & remote  TOMZO
@@ -1033,7 +1034,7 @@ Be::
 FreeBSD::
 ::SysCalls        cdcf FreeBSD-specific system calls                GARY
 
-Mac::                Macintosh specific modules
+Mac::             Macintosh specific modules
 ::AppleEvents     bmcO AppleEvent manager and AEGizmos              MCPL
 ::AssistantFrames RdpO Easy creation of assistant dialogs           GBAUER
 ::Components      bmcO (QuickTime) Component manager                MCPL
@@ -1206,13 +1207,13 @@ IPC::
 ::Signal          Rdpf Translate signal names to/from numbers       ROSCH
 ::SysV            adcr shared memory, semaphores, messages etc      JACKS
 
-RPC::                Remote Procedure Calls (see also DCE::RPC)
+RPC::             Remote Procedure Calls (see also DCE::RPC)
 ::pServer         RdpO Interface for building Perl Servers          JWIED
 ::pClient         RdpO Interface for building pServer Clients       JWIED
 ::ONC             adcO ONC RPC interface (works with perlrpcgen)    JAKE
 ::Simple          adpO Simple OO async remote procedure calls       DDUMONT
 
-DCE::                Distributed Computing Environment (OSF)
+DCE::             Distributed Computing Environment (OSF)
 ::ACL             bdcO Interface to Access Control List protocol    PHENSON
 ::DFS             bdcO DCE Distributed File System interface        PHENSON
 ::Login           bdcO Interface to login functions                 PHENSON
@@ -1253,7 +1254,8 @@ CORBA::
 ::IDLtree         adpf IDL to symbol tree translator                OMKELLOGG
 
 Modem::
-Vgetty            bdpO Interface to voice modems using vgetty       YENYA
+::VBox            i    ....                                         ANDK
+::Vgetty          bdpO Interface to voice modems using vgetty       YENYA
 
 ControlX10::
 ::CM10            RmpO Control unit for X10 modules                 BBIRTH
@@ -1301,7 +1303,7 @@ Math::
 
 Statistics::
 ::ChiSquare       Rdpf Chi Square test - how random is your data?   JONO
-::ConwayLife      ???? ...                                          ANDK
+::ConwayLife      adpr Simulates life using Conway's algorithm      DANB
 ::Descriptive     RdpO Descriptive statistical methods              COLINK
 ::LTU             RdpO Implements Linear Threshold Units            TOMFA
 ::MaxEntropy      Rdpf Maximum Entropy Modeling                     TERDOEST
@@ -1319,10 +1321,11 @@ Algorithm::Numerical::
 PDL               amcf Perl Data Language - numeric analysis env    PERLDL
 
 PDL::
-::PP              amcf Automatically generate C code for PDL        PERLDL
+::Audio           ???? ....                                         ANDK
 ::Meschach        amcf Links PDL to meschach matrix library         EGROSS
 ::NetCDF          bdhO Reads/Writes NetCDF files from/to PDL objs   DHUNT
 ::Options         Rdph Provides hash options handling for PDL       TJENNESS
+::PP              amcf Automatically generate C code for PDL        PERLDL
 ::Slatec          amof Interface to slatec (linpack+eispack) lib.   PERLDL
 
 Array::
@@ -1446,7 +1449,7 @@ Object::
 ::Info            Rupf General info about objects (is-a, ...)       JACKS
 ::Transaction     bdpO Transactions on serialized HASH files        MUIR
 
-POE::                Perl Object Environment
+POE::             Perl Object Environment
 ::Kernel          RdpO An event queue that dispatches events        RCAPUTO
 ::Session         RdpO state machine running on POE::Kernel events  RCAPUTO
 
@@ -1486,6 +1489,8 @@ Tree::
 ::Base            cdpO Defines a basic binary search tree           MSCHWERN
 ::Fat             Rdcf Embeddable F-Tree algorithm suite            JPRIT
 ::Smart           cdpO Splay tree, fastest for commonly accessed ke MSCHWERN
+::Ternary         bdpO Perl implementation of ternary search trees  MROGASKI
+::Ternary_XS      adcO XS implementation of ternary search trees    LBROCARD
 ::Trie            bdpO An implementation of the Trie data structure AVIF
 
 DFA::
@@ -1501,7 +1506,7 @@ Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 DBI               amcO Generic Database Interface (see DBD modules) DBIML
 
-DBIx::               Extensions to the DBI
+DBIx::            Extensions to the DBI
 ::HTMLView        cdpO Creating web userinterfaces to DBI dbs       HAKANARDO
 ::Recordset       bmpO Access/Modify DBI handles via Arrays/Hashs   GRICHTER
 ::Table           bdpO OO access to DBI database tables             DLOWE
@@ -1783,7 +1788,7 @@ Filesys::
 ::mntent          adpf By-name interface                            TOMC
 ::statfs          adpf By-name interface                            TOMC
 
-LockFile::             Application-level locking facilities
+LockFile::        Application-level locking facilities
 ::Lock            adpO Lock handles created by LockFile::* schemes  RAM
 ::Manager         adpO Records locks created by LockFile::*         RAM
 ::Scheme          adpO Abstract superclass for locking modules      RAM
@@ -1978,8 +1983,9 @@ ConfigReader      cdpO Read directives from configuration file      AMW
 Resources         bdpf Application defaults management in Perl      FRANCOC
 IniConf                Read/Write INI-Style configuration files     RBOW
 
-App::                General application development tools
+App::             General application development tools
 ::Config          bdpO Configuration file mgmt                      ABW
+::Manager         ???? ....                                         ANDK
 
 CfgTie            adph Framework for tieing system admin tasks      RANDYM
 
@@ -2031,7 +2037,8 @@ User::
 ::grent           adpf A by-name interface to groups database       TOMC
 ::utent           cdcO Interface to utmp/utmpx/wtmp/wtmpx database  ROSCH
 
-PGP::          adpO  Simple interface to PGP subprocess via pipes PGPML
+PGP               adpO Simple interface to PGP subprocess via pipes PGPML
+PGP::
 ::Sign            bdpr Create/verify PGP/GnuPG signatures, securely RRA
 
 DES               adcf DES encryption (libdes)                      EAYNG
@@ -2549,6 +2556,9 @@ Chemistry::
 ::Elements        RdpO Working with Chemical Elements               BDFOY
 ::Isotopes        idpO extends Elements to deal with isotopes       BDFOY
 
+Finance::
+::Quote           bdpf Fetch stock prices over the Internet         PJF
+
 Remedy::
 ::AR              adcO Interface to Remedy's Action Request API     RIK
 
@@ -2574,6 +2584,11 @@ BarCode::
 Audio::
 ::CD              bdcO Perl interface to libcdaudio (cd + cddb)     DOUGM
 ::Sox             i    sox sound library as one or more modules     NI-S
+Audio::Play::
+::MPG123          ???? ....                                         ANDK
+
+Video::Capture::
+::V4l             ???? ....                                         ANDK
 
 MIDI              RdpO Object interface to MIDI files               SBURKE
 
@@ -2606,7 +2621,7 @@ Watchdog::
 ::HTTPService     adpO Test status of HTTP server                   PSHARPE
 ::MysqlService    adpO Test status of Mysql server                  PSHARPE
 
-Schedule::           See also Schedule:: in chapter 4
+Schedule::        See also Schedule:: in chapter 4
 ::Match           adpf Pattern-based crontab-like schedule          TAIY
 
 _______________________________________________________________________
