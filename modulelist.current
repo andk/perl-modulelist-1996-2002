@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.63 $Date: 1999/10/20 13:43:02 $
+The Perl 5 Module List       Revision: 2.64 $Date: 1999/10/21 11:29:06 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.139 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.140 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1228,7 +1228,7 @@ PDL::
 ::Slatec        amof Interface to slatec (linpack+eispack) lib.   PERLDL
 
 Array::
-::Heap          cdpf manipulate array elements as a heap          JMM
+::Heap          cdpf Manipulate array elements as a heap          JMM
 ::PrintCols     adpf Print elements in vertically sorted columns  AKSTE
 ::Substr        idp  Implement array using substr()               LWALL
 ::Vec           idp  Implement array using vec()                  LWALL
@@ -1471,7 +1471,7 @@ DbFramework::
 
 DTREE           cdcf Interface to Faircom DTREE multikey ISAM db  JWAT
 Fame            adcO Interface to FAME database and language      TRIAS
-MARC            i    Interface to MARC format (bibliography)      PEM
+MARC            ampO MAchine Readable Catalog (library bib. data) PERL4LIB
 NetCDF          bmcr Interface to netCDF API for scientific data  SEMM
 Stanza          i    Text format database used by OSF and IBM     JHI
 
@@ -1671,6 +1671,7 @@ String::
 ::CRC32         bdcf ZMODEM-like CRC32 generation                 SOENKE
 ::Edit          adpf Assorted handy string editing functions      TOMC
 ::Parity        adpf Parity (odd/even/mark/space) handling        WINKO
+::RexxParse     Rdph Perl implementation of REXX 'parse' command  BLCKSMTH
 ::Scanf         Rdpf Implementation of C sscanf function          JHI
 ::ShellQuote    adpf Quote string for safe passage through shells ROSCH
 
