@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.31 $Date: 1996/08/31 00:10:03 $
+The Perl 5 Module List       Revision: 2.31 $Date: 1996/09/09 20:45:30 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -1096,7 +1096,7 @@ Time::
 ::gmtime       adpf  A by-name interface for gmtime               TOMC
 ::localtime    adpf  A by-name interface for localtime            TOMC
 ::Local        Supf  Implements timelocal() and timegm()          P5P
-::HiRes        i     High resolution timers and time-of-day       DEWEG !
+::HiRes        Rdcf  High resolution time, sleep, and alarm       DEWEG !
 ::CTime        Rdpf  Format Times ala ctime(3) with many formats  MUIR
 ::ParseDate    Rdpf  Parses many forms of dates and times         MUIR
 ::JulianDay    Rdpf  Converts y/m/d into seconds                  MUIR
@@ -2018,7 +2018,6 @@ to a CGI script that lets you edit the database entries yourself.
 
   Perl Meta-FAQ
     http://www.khoros.unm.edu/staff/neilb/perl/metaFAQ
-    http://www.cse.unsw.edu.au/perl/metaFAQ.html
     http://web.nexor.co.uk/perl/Meta-FAQ.txt
 
   Perl FAQ
