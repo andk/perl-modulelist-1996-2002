@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.33 $Date: 1996/10/17 14:10:57 $
+The Perl 5 Module List       Revision: 2.34 $Date: 1996/11/04 22:34:09 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -954,7 +954,7 @@ NeXTStep::
 ::NetInfo      idcO  NeXTStep's NetInfo (like ONC NIS)            PGUEN
 
 OS2::
-::Attrib       bdcf  Get or set file attributes (not EAs)         CJM +
+::Attrib       bdcf  Get or set file attributes (not EAs)         CJM
 ::ExtAttr      RdcO  (Tied) access to extended attributes         ILYAZ
 ::FTP          bncf  Access to ftplib interface                   ILYAZ
 ::PrfDB        RdcO  (Tied) access to .INI-style databases        ILYAZ
@@ -992,8 +992,8 @@ Net::
 ::NNTP         adpO  Client interface to NNTP protocol            GBARR
 ::Netrc        adpO  Support for .netrc files                     GBARR
 ::POP3         adpO  Client interface to POP3 protocol            GBARR
-::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
-::Ping         bdpO  Enhanced redesign of the above               RMOSE
+::Ping         Supf  TCP ping (only echo, will be replaced soon)  PMQS !
+::Ping         RdpO  TCP and ICMP ping implementation             RMOSE !
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
 ::SNPP         cdpO  Client interface to SNPP protocol            GBARR
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
@@ -1023,9 +1023,9 @@ DCE::                Distributed Computing Environment (OSF)
 ::rgybase      bdcO  Constants from rgybase.h,rgynbase.h          DOUGM
 ::Login        bdcO  Interface to login functions                 DOUGM
 ::login_base   bdcO  Constants from sec_login.h,sec_login_base.h  DOUGM
-::Status       bdpr  Tie to *sts.h files                          DOUGM
+::Status       bdpr  Make sense of DCE status codes               DOUGM !
 ::UUID         bdcf  Misc uuid functions                          DOUGM
-::ACL          cdcO  Interface to Access Control List protocol    DOUGM
+::ACL          bdcO  Interface to Access Control List protocol    DOUGM !
 ::aclbase      cdcO  Constants from aclbase.h                     DOUGM
 ::RPC          c     Remote Procedure Calls                       DOUGM
 
@@ -1073,7 +1073,10 @@ Statistics::
 ::Descriptive  RdpO  Descriptive statistical methods              JKAST
 ::ChiSquare    Rdpf  Chi Square test - how random is your data?   JONO
 
-PDL            amcf  Perl Data Language - numeric analysis env    PERLDL !
+PDL::          amcf  Perl Data Language - numeric analysis env    PERLDL
+::PP           amcf  Automatically generate C code for PDL        PERLDL
+::Meschach     amcf  Links PDL to meschach matrix library         EGROSS
+::Slatec       amof  Interface to slatec (linpack+eispack) lib.   PERLDL
 
 Array::
 ::Vec          idp   Implement array using vec()                  LWALL
@@ -1091,7 +1094,7 @@ Set::
 
 Date::
 ::CTime        adpf  Updated ctime.pl with mods for timezones     GBARR
-::DateCalc     Rdcf  Various standards based date calculations    STBEY
+::DateCalc     Rdcf  Various gregorian calendar date calculations STBEY !
 ::Format       Rdpf  Date formatter ala strftime                  GBARR
 ::GetDate      adcf  Yacc based free-format date parser in C      TOMC
 ::Interval     idpO  Lightweight normalised interval data type    TIMB
@@ -1124,7 +1127,7 @@ Tie::
 ::Quick        i     Simple way to create ties                    TIMB
 ::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
 ::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
-::Watch        bdpO  Uses Tie::Quick to watch a variable          LUSOL
+::Watch        bdpO  Watch variables, run code when read/written  LUSOL !
 
 Class::
 ::Eroot        RdpO  Eternal Root - Object persistence            DMR
@@ -1162,13 +1165,14 @@ Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 DBI            amcO  Generic Database Interface (see DBD modules) DBIML
 DBD::
-::Oracle       amcO  Oracle Driver for DBI                        TIMB
-::Ingres       i     Ingres Driver for DBI                        TIMB
-::Informix     adcO  Informix Driver for DBI                      ADESC
-::mSQL         amcO  Msql Driver for DBI                          ADESC
 ::DB2          adcO  DB2 Driver for DBI                           MHM
-::Sybase       cdpO  Sybase Driver for DBI (uses Sybase::CTlib)   MEWP
+::Fulcrum      cdcO  Fulcrum SearchServer Driver for DB           SHARI +
+::Informix     amcO  Informix Driver for DBI                      JOHNL !
+::Ingres       i     Ingres Driver for DBI                        TIMB
+::Oracle       amcO  Oracle Driver for DBI                        TIMB
 ::QBase        amcO  QBase Driver for DBI                         BENLI
+::Sybase       cdpO  Sybase Driver for DBI (uses Sybase::CTlib)   MEWP
+::mSQL         amcO  Msql Driver for DBI                          ADESC
 
 Oraperl        Rmpf  Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl        i     Ingperl emulation interface for DBD::Ingres  TIMB
@@ -1314,11 +1318,12 @@ Text::
 ::Abbrev       Supf  Builds hash of all possible abbreviations    P5P
 ::ParseWords   Supf  Parse strings containing shell-style quoting HALPOM
 ::Soundex      Supf  Convert a string to a soundex value          MIKESTOK
-::TeX          cdpO  TeX typesetting language input parser        ILYAZ
 ::Bib          RdpO  Parse refer(1)-style bibliography files      ERYQ
+::CSV          cdcf  Manipulate comma-separated value strings     JNH +
 ::Tabs         Sdpf  Expand and contract tabs ala expand(1)       MUIR
-::Wrap         Sdpf  Wraps lines to make simple paragraphs        MUIR
+::TeX          cdpO  TeX typesetting language input parser        ILYAZ
 ::Template     bdpO  Expand template text with embedded perl      MJD
+::Wrap         Sdpf  Wraps lines to make simple paragraphs        MUIR
 
 Stemming algorithms
 
@@ -1458,23 +1463,27 @@ HTTPD::
 ::Access       cdpO  Management of server access control files    DOUGM
 
 WWW::
+::References   cdpf  Manage a collection of reference items       JJDG
 ::RobotRules   ampO  Parse /robots.txt file                       LWWWP
-::Search       adpO  Front-end to Web search engines              JOHNH +
+::Search       adpO  Front-end to Web search engines              JOHNH
 
 LWP::                Libwww-perl-5
-::MediaTypes   bmpf  Media types and mailcap processing           LWWWP
-::Simple       bmpf  Simple procedural interface to libwww-perl   LWWWP
-::UserAgent    bmpO  A WWW UserAgent class                        LWWWP
-::RobotUA      bmpO  A UserAgent for robot applications           LWWWP
-::Protocol::*        LWP support for URL schemes (http, file etc) LWWWP
+::MediaTypes   Rmpf  Media types and mailcap processing           LWWWP !
+::Simple       Rmpf  Simple procedural interface to libwww-perl   LWWWP !
+::UserAgent    RmpO  A WWW UserAgent class                        LWWWP !
+::RobotUA      RmpO  A UserAgent for robot applications           LWWWP !
+::Protocol     RmpO  LWP support for URL schemes (http, file etc) LWWWP !
 
 MIME::
 ::Base64       Rdpf  Encode/decode Base 64 (RFC 1521)             GAAS
 ::QuotedPrint  Rdpf  Encode/decode Quoted-Printable               GAAS
-::Decoder      adpO  OO interface to existing MIME decoders       ERYQ
+::Decoder      adpO  OO interface for decoding MIME messages      ERYQ
 ::Entity       adpO  An extracted and decoded MIME entity         ERYQ
 ::Head         adpO  A parsed MIME header                         ERYQ
+::IO           adpO  Simple I/O handles for filehandles/scalars   ERYQ
+::Latin1       adpO  Encoding 8-bit Latin-1 as 7-bit ASCII        ERYQ
 ::Parser       adpO  Parses streams to create MIME entities       ERYQ
+::ParserBase   adpO  For building your own MIME parser            ERYQ
 
 
 _______________________________________________________________________
@@ -1533,10 +1542,10 @@ Convert::
 ::UU           bdpf  UUencode and UUdecode                        ANDK
 
 AppleII::
-::Disk         adpO  Read/write Apple II disk image files         CJM +
-::ProDOS       adpO  Manipulate files on ProDOS disk images       CJM +
-::DOS33        i     Manipulate files on DOS 3.3 disk images      CJM +
-::Pascal       i     Manipulate files on Apple Pascal disk images CJM +
+::Disk         adpO  Read/write Apple II disk image files         CJM
+::ProDOS       adpO  Manipulate files on ProDOS disk images       CJM
+::DOS33        i     Manipulate files on DOS 3.3 disk images      CJM
+::Pascal       i     Manipulate files on Apple Pascal disk images CJM
 
 
 _______________________________________________________________________
@@ -1551,8 +1560,8 @@ PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
 
 VRML::         adpO  VRML primitives and ext. to create scenes    HPALM 
-::VRML1        adpO  VRML primitives and ext. with VRML 1.x       HPALM +
-::VRML2        idpO  VRML primitives and ext. with VRML 2.0       HPALM +
+::VRML1        adpO  VRML primitives and ext. with VRML 1.x       HPALM
+::VRML2        idpO  VRML primitives and ext. with VRML 2.0       HPALM
 
 Graphics::
 ::Simple       idcO  Simple drawing primitives                    NEERI
@@ -1590,7 +1599,7 @@ NNTP::
 ::Server       i     Support for an NNTP server                   JOEHIL
 
 NNML::
-::Server       adpO  An simple RFC 977 NNTP server                ULPFR +
+::Server       adpO  An simple RFC 977 NNTP server                ULPFR
 
 _______________________________________________________________________
 
@@ -1790,7 +1799,7 @@ Contacts: PMQS TIMB P5P LWALL NI-S GBARR
 Some version of yacc, like byacc or bison, should be converted to spit
 out an OO .xs and .pm implementing a parser.
 
-Contacts: NI-S P5P LWALL
+Contacts: JAKE NI-S P5P LWALL
 
 
 
@@ -1815,6 +1824,7 @@ to a CGI script that lets you edit the database entries yourself.
   AGUL     Ashish Gulhati <hash@netropolis.org>
   AKSTE    Alan K. Stebbens <aks@hub.ucsb.edu>
   ALSCH    Alan Scheinine <scheinin@crs4.it>
+  ALTITUDE Alex Tang <altitude@cic.net>
   AMOSS    Amos Shapira <amoss@cs.huji.ac.il>
   AMW      Andrew Wilcox <awilcox@world.std.com>
   ANDK     Andreas König <a.koenig@franz.ww.TU-Berlin.DE>
@@ -1974,6 +1984,9 @@ to a CGI script that lets you edit the database entries yourself.
   PATM     Pat Martin <pat@bronco.advance.com>
   PEASE    Mark Pease <peasem@primenet.com>
   PEM      Peter Murray <pem@po.cwru.edu>
+  PERLDL   The Perl Data Language Mailing List
+           Mail subscription requests to
+           perldl-request@jach.hawaii.edu with body "subscribe"
   PGPML    The PGP Module Mailing List
            Mail to majordomo@dbc-mifco.com with body "subscribe
            perl-pgp <your-address>"
@@ -2005,6 +2018,7 @@ to a CGI script that lets you edit the database entries yourself.
   SEMM     Steve Emmerson <support@unidata.ucar.edu>
   SGEL     Sergio Gelato <gelato@oort.ap.sissa.it>
   SHGUN    Shishir Gundavaram <shishir@acs.bu.edu>
+  SHIGIO   Shigio Yamaguchi <shigio@ca2.so-net.or.jp>
   SHIKONO  Shinji KONO <kono@ie.u-ryukyu.ac.jp>
   SHUTTON  Scott Hutton <shutton@pobox.com>
   SKIMO    Sven Verdoolaege <skimo@breughel.ufsia.ac.be>
@@ -2012,7 +2026,7 @@ to a CGI script that lets you edit the database entries yourself.
   SPIDB    Spider Boardman <spider@orb.nashua.nh.us>
   SPP      Stephen P Potter <spp@pencom.com>
   SRIRAM   Sriram Srinivasan <sriram@tcs.com>
-  STANM    Stan Melax <stan@skyler.arc.ab.ca>
+  STANM    Stan Melax <melax@bioware.com>
   STBEY    Steffen Beyer <sb@sdm.de>
   SWMCD    Steven McDougall <swm@cric.com>
   TIMB     Tim Bunce <Tim.Bunce@ig.co.uk>
