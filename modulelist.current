@@ -1,5 +1,5 @@
-The Perl 5 Module List       $Revision: 3.71 $$Date: 2000/11/07 12:15:11 $
-======================
+The Perl 5 Module List $Revision: 3.72 $                    -*- coding:utf-8 -*-
+====================== $Date: 2000/11/07 12:32:15
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
 
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.71 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.72 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2460,7 +2460,7 @@ MIME::
 MIME::Lite::
 ::HTML            bmpO Provide routine to transform HTML to MIME    ALIAN
 
-Apache            SmcO Interface to request_rec struct + API        APML
+Apache            RmcO Interface to the Apache server API           DOUGM
 
 Apache PerlHandler modules
 
@@ -3511,6 +3511,7 @@ to a CGI script that lets you edit the database entries yourself.
   BMAVT    Bruno Tavares <bmavt_pause@clix.pt>
   BMEEKINGS Brian Meekings <meekings@idi-middleware.com>
   BMIDD    William J. Middleton <wjm@metronet.com>
+  BMILLETT Brian Millett <bpm@techapp.com>
   BMORGAN  Bruce Morgan <morgan@networks.curtin.edu.au>
   BOADLER  Bo Adler <thumper@ugcs.caltech.edu>
   BOBG     Bob Glickstein <bobg@zanshin.com>
@@ -3629,6 +3630,7 @@ to a CGI script that lets you edit the database entries yourself.
   DANKOGAI Dan Kogai <dankogai@dan.co.jp>
   DANMQ    Daniel M. Quinlan <danq@colorado.edu>
   DAOT     Thanh Dao <daot@us.ibm.com>
+  DARNOLD  Dean Arnold <darnold@earthlink.net>
   DAVECROSS Dave Cross <dave@dave.org.uk>
   DAVEL    Dave Lorand <davel@NOSPAM.src.uchicago.edu>
   DAVEM    Dave Moore <dave@epals.com>
@@ -3638,6 +3640,7 @@ to a CGI script that lets you edit the database entries yourself.
   DAVIDRA  David Ranvig <davidra@ifi.uio.no>
   DAVOD    David Scott <dragonstep@geocities.com>
   DBEAZLEY Dave Beazley <dmb@asator.lanl.gov>
+  DBENNETT David Bennett <dbennett@bensoft.com>
   DBIML    The DBI Mailing Lists
            Subscribe via http://www.fugue.com/dbi. If you can't do
            that then mail to dbi-REQUEST@fugue.com and ask (the human,
@@ -3841,6 +3844,7 @@ to a CGI script that lets you edit the database entries yourself.
   GTHYNI   Göran Thyni <goran@kirra.net>
   GUELICH  Scott Guelich <scott@scripted.com>
   GUIDO    Guido Flohr <guido@imperia.net>
+  GUNTHER  Gunther Birznieks <gunther@nhgri.nih.gov>
   GUYDX    Guy Decoux <decoux@moulon.inra.fr>
   GWARD    Greg Ward <gward@python.net>
   GWELCH   Gerad Welch <welch.119@osu.edu>
@@ -4073,6 +4077,7 @@ to a CGI script that lets you edit the database entries yourself.
   KTHOMAS  Kenny Thomas <adminkt@flint.umich.edu>
   KTORP    Kristian Torp <torp@cs.auc.dk>
   KULCHENKO Paul Kulchenko <paulclinger@yahoo.com>
+  KVAIL    Kevin Michael Vail <kevin@vailstar.com>
   KWILLIAMS Ken Williams <ken@forum.swarthmore.edu>
   KWITKNR  Kawai Takanori <GCD00051@nifty.ne.jp>
   LAXEN    Henry Laxen <nadine.and.henry@pobox.com>
@@ -4127,6 +4132,7 @@ to a CGI script that lets you edit the database entries yourself.
   MARKB    Mark Biggar <mab@wdl.loral.com>
   MARKC    Mark Constable <markc@goldcoast.org>
   MARKIM   Mark A. Imbriaco <mark.imbriaco@pobox.com>
+  MARKK    Mark Kennedy <mtk@ny.ubs.com>
   MARKM    Mark Mielke <mark@mielke.cc>
   MARKOV   Mark Overmeer <ask@ppresenter.org>
   MARKPRIOR Mark Prior <mrp@connect.com.au>
@@ -4213,6 +4219,9 @@ to a CGI script that lets you edit the database entries yourself.
   MMORENO  Marco Moreno <Marco.Moreno@pobox.com>
   MOND     Franz Schaefer <schaefer@mond.at>
   MORTY    Mordechai Abzug <mabzug1@gl.umbc.edu>
+  MPB      mod_perl book (Doug and Lincoln)
+           Not a mailing list, just a feedback address for the
+           mod_perl book by Doug MacEachern and Lincoln Stein
   MPECK    Martyn Peck <mwp@mwpnet.com>
   MPIOTR   Michael Piotrowski <mxp@dynalabs.de>
   MPOCOCK  Matthew Pocock <mrp@sanger.ac.uk>
@@ -4419,10 +4428,12 @@ to a CGI script that lets you edit the database entries yourself.
   RKITOVER Rafael Kitover <caelum@debian.org>
   RKOBES   Randy Kobes <randy@theory.uwinnipeg.ca>
   RLBJR    Richard Burkholder Jr. <rlb_jr@hotmail.com>
+  RMANGI   Rick Mangi <rmangi@tgix.com>
   RMITZ    Monte Mitzelfelt <monte-cpan@gonefishing.org>
   RMOSE    Russell Mosemann <mose@ns.ccsn.edu>
   RNAIMA   Reza Naima <reza@reza.net>
   ROBF     Rob Fugina <robf@geeks.com>
+  ROBH     Rob Hartill <robh@imdb.com>
   ROBVANSON Rob van Son <Rob.van.Son@hum.uva.nl>
   ROLAND   Roland Huß <roland@consol.de>
   RONALDWS Ronald Schmidt <RonaldWS@software-path.com>
@@ -4524,6 +4535,7 @@ to a CGI script that lets you edit the database entries yourself.
   SONDBERG Anders Sonderberg Mortensen <sondberg@indexdata.dk>
   SOOZ     Susan Lee Wilson <sooz@pobox.com>
   SORO     Alexandre Sorokine <srk@users.sourceforge.net>
+  SORTIZ   Salvador Ortíz <sortiz@msg.com.mx>
   SOVA     Vladimir Sovetov <sova@kpbank.ru>
   SPADKINS Stephen Adkins <spadkins@internetdynamics.com>
   SPANNRING Craig Spannring <cts@internetcds.com>
@@ -4694,7 +4706,3 @@ Asia:
   ftp://nctuccca.edu.tw/USENET/FAQ
   ftp://hwarang.postech.ac.kr/pub/usenet/news.answers
   ftp://ftp.hk.super.net/mirror/faqs
-
-
-Local Variables:
-coding: utf-8
