@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.11 $$Date: 1999/10/25 06:21:47 $
+The Perl 5 Module List       $Revision: 3.12 $$Date: 1999/10/26 10:15:41 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.11 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.12 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1200,6 +1200,7 @@ Math::
 ::Fortran         Rdpf Implements Fortran log10 & sign functions    JARW
 ::Fourier         i    Fast Fourier Transforms                      AQUMSIEH
 ::Fraction        bdpO Fraction Manipulation                        KEVINA
+::Geometry        i    2D and 3D algorithms                         GMCCAR
 ::IEEE            i    Interface to ANSI/IEEE Std 754-1985 funcs
 ::Integral        i    Integration of data                          AQUMSIEH
 ::Interpolate     Rdpr Polynomial interpolation of data             MATKIN
@@ -1495,6 +1496,7 @@ Fame              adcO Interface to FAME database and language      TRIAS
 MARC              ampO MAchine Readable Catalog (library bib. data) PERL4LIB
 NetCDF            bmcr Interface to netCDF API for scientific data  SEMM
 Stanza            i    Text format database used by OSF and IBM     JHI
+VDBM              i    Client/server-layers on top of DBM files     RAM
 
 Metadata::
 ::Base            bdpO Base metadata functionality                  DJBECKETT
@@ -1563,7 +1565,7 @@ Gtk::
 ::Dialog          adph Simple interface to create dialogs in Gtk    ALISTAIRC
 
 Fresco            cd+O Interface to Fresco (post X11R6 version)     BPETH
-Glade             a    Interface to Gtk+/Gnome UI builder           DMUSGR
+Glade             adph Glade/Gtk+/Gnome UI source code generator    DMUSGR
 Gnome             bdcO Bindings to the Gnome Desktop Toolkit        KJALB
 Qt                ad+O Interface to the Qt toolkit                  AWIN
 Sx                Rdcf Simple Athena widget interface               FMC
@@ -2237,6 +2239,7 @@ Mail::
 ::Address         adpf Manipulation of electronic mail addresses    GBARR
 ::Alias           adpO Reading/Writing/expanding of mail aliases    GBARR
 ::Cap             adpO Parse mailcap files as specified in RFC 1524 GBARR
+::Ezmlm           cdlO Object methods for ezmlm mailing lists       GHALSE
 ::Field           RdpO Base class for handling mail header fields   GBARR
 ::Folder          adpO Base-class for mail folder handling          KJOHNSON
 ::Header          RdpO Manipulate mail RFC822 compliant headers     GBARR
@@ -2476,7 +2479,6 @@ MQSeries          Rdch IBM's MQSeries messaging product interface   WPMOORE
 
 R3                i    SAP R/3 interface                            SCHOEN
 
-
 =======================================================================
 
 
@@ -2672,7 +2674,7 @@ to a CGI script that lets you edit the database entries yourself.
   AMUGNOLO Adrian Mugnolo <adrian@mugnolo.com>
   AMW      Andrew Wilcox <andrew_wilcox@gwi.net>
   ANATRA   Anand Natrajan <anand@virginia.edu>
-  ANDK     Andreas König <andreas.koenig@anima.de>
+  ANDK     Andreas J. König <andreas.koenig@anima.de>
   ANDREWF  Andrew Ford <andrew@icarus.demon.co.uk>
   ANDYD    Andy Dougherty <doughera@lafcol.lafayette.edu>
   ANDYDUNC Andy Duncan <andy_j_duncan@yahoo.com>
@@ -2819,7 +2821,7 @@ to a CGI script that lets you edit the database entries yourself.
   DCEPML   The DCE-Perl mailing list
            Mail to majordomo@lists.csupomona.edu with body "subscribe
            dce-perl <your-address>"
-  DCONWAY  Damian Conway <damian@cs.monash.edu.au>
+  DCONWAY  Damian Conway <damian@conway.org>
   DCOPPIT  David Coppit <david@coppit.org>
   DDUMONT  Dominique Dumont <Dominique_Dumont@grenoble.hp.com>
   DEANH    Dean Hudson <deanh@verio.net>
@@ -3098,6 +3100,7 @@ to a CGI script that lets you edit the database entries yourself.
   KAHUNA   Andy Finkenstadt <andy@finkenstadt.com>
   KAIH     Kai Henningsen <kai-cpan@khms.westfalen.de>
   KARLON   Karlon West <karlon@netcom.com>
+  KAUFMANN Rafael Kaufmann <rnedal@olimpo.com.br>
   KDOWNEY  Kyle Downey <kdowney@xline.com>
   KENFOX   Ken Fox <fox@vulpes.com>
   KENHOLM  Kenneth Alexander Holm III <rets@meta3.com>
