@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.90 $ $Date: 2001/05/03 09:12:06 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.91 $ $Date: 2001/05/03 09:31:25 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.90 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.91 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -753,6 +753,15 @@ Where the 'DSLIP' characters have the following meanings:
     l   - LPGL: GNU Library Public License, 
     a   - Artistic license alone
     d   - distribution allowed without restrictions
+
+DISCLAIMER: The status of the Public License field is there for
+informational purpose only and does not constitute a legal binding of
+any kind. To obtain proper information about the Licencing terms of a
+module and its accompanying files, please refer to the distribution of
+the modules or contact the author as appropriate. Please inform
+modules@perl.org if you encounter any mismatch between the contents of
+the Public License field and what the distribution actually says about
+it.
 
 Where letters are missing they can usually be inferred from the
 others.  For example 'i' implies 'id', 'S' implies 'Su'.
