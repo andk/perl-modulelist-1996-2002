@@ -2359,6 +2359,7 @@ might relate to the modules they are developing.
 1)   IETF - Internet Engineering Task Force (RFCs)
 
 
+
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 RFC821     Simple Mail Transfer Protocol                 Net::SMTP
@@ -2390,16 +2391,16 @@ RFC2138    Terminal server authentification and accting  RADIUS
 RFC2229    Dictionary Server                             Net::Dict
 _______________________________________________________________________
 
-
 2)   ITU - International Telegraph Union (X.*)
+
 
 
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 X.209      Basic Encoding Rules for ASN.1                Convert::BER
 _______________________________________________________________________
-
 3)   ISO - International Standards Organization (ISO*)
+
 
 
 Standard   Description                                   Module Name
@@ -2411,7 +2412,6 @@ ISO3166    Two letter codes for country identification   Locale::Country
 =======================================================================
            Part 5 - Who's Who and What's Where
            ===================================
-
 
 1) Information / Contact Reference Details (in alphabetical order)
 
@@ -2685,7 +2685,7 @@ to a CGI script that lets you edit the database entries yourself.
   JV       Johan Vromans <jvromans@squirrel.nl>
   JVENIER  John Venier <venier@odin.mdacc.tmc.edu>
   JWAT     John Watson <jwatson@cnj.digex.net>
-  JWIED    Jochen Wiedmann <wiedmann@neckar-alb.de>
+  JWIED    Jochen Wiedmann <joe@ispsoft.de>
   JWIEGLEY John Wiegley <johnw@oneworld.new-era.com>
   KDOWNEY  Kyle Downey <kdowney@xline.com>
   KENFOX   Ken Fox <fox@vulpes.com>
@@ -2745,6 +2745,7 @@ to a CGI script that lets you edit the database entries yourself.
   MGRABNAR Matija Grabnar <matija.grabnar@arnes.si>
   MHM      Mike Moran <db2perl@austin.ibm.com>
   MICB     Malcolm Beattie <mbeattie@sable.ox.ac.uk>
+  MICHAELD Michael D. Dowling <michaeld@cnet.com>
   MIKEDLR  Michael De La Rue <miked@ed.ac.uk>
   MIKEH    Mike Heins <mikeh@iac.net>
   MIKEKING Michael King <mike808@mo.net>
@@ -2946,7 +2947,6 @@ to a CGI script that lets you edit the database entries yourself.
   YLU      Luke Y. Lu <ylu@mail.utexas.edu>
   YVESP    Yves Paindaveine <yp@gr.osf.org>
   ZENIN    Byron Brummer <zenin@bawdycaste.org>
-  michaeld Michael D. Dowling <michaeld@cnet.com>
 
 2) Perl Frequently Asked Questions (FAQ)
 
