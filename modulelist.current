@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.99 $ $Date: 2001/05/05 06:17:44 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.100 $ $Date: 2001/05/10 15:09:26 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.99 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.100 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -855,7 +855,7 @@ Perl Language Extensions
 
 Alias              bdcf? Convenient access to data/code via aliases   GSAR
 End                RdpO? Generalized END {}.                          ABIGAIL
-Error              adpO? Error/exception handling in an OO-ish way    GBARR
+Error              adpO? Error/exception handling in an OO-ish way    UARUN
 NEXT               RdpO? Perl5 implementation of NEXT (RFC190)        DCONWAY
 Perl               adcO? Create Perl interpreters from within Perl    GSAR
 Protect            bdpf? declare subs private or member               JDUNCAN
@@ -973,7 +973,7 @@ AutoSplit          Supf? Splits modules into files for AutoLoader     P5P
 Bleach             RdpO? For really clean programs                    DCONWAY
 Continuus          adpO? Interface to Continuus Code Management tool  HENKE
 Coy                Rdpn? Like Carp - only prettier                    DCONWAY
-FindBin            adpf? Locate current script bin directory          GBARR
+FindBin            adpf? Locate current script bin directory          P5P
 Include            adpO? Parse C header files for use in XS           GBARR
 Make               adpO? Makefile parsing, and 'make' replacement     NI-S
 Perlbug            RdpO? Database driven bug tracking system          RFOLEY
@@ -1057,7 +1057,7 @@ _______________________________________________________________________
 Name               DSLIP Description                                  Info
 ------------       ----- -------------------------------------------- ----
 Env                Supf? Alias environment variables as perl vars     P5P
-Errno              cdpf? Constants from errno.h EACCES, ENOENT etc    GBARR
+Errno              cdpf? Constants from errno.h EACCES, ENOENT etc    P5P
 Fcntl              Sdcf? Defines fcntl() constants (see File::Lock)   JHI
 Ioctl              adcf? ioctl(2) constants                           JPRIT
 POSIX              SupO? An interface to most (all?) of POSIX.1       P5P
@@ -1274,7 +1274,7 @@ Net::
 ::Inet             RdcO? Internet (IP) socket usage                   SPIDB
 ::Interface        adcO? ifconfig(1) implementation                   SRZ
 ::Jabber           ampO? Access to the Jabber protocol                REATMON
-::LDAP             adpO? Interface to LDAP Protocol (RFC1777)         PLDAP
+::LDAP             ampOp Interface to LDAP Protocol (RFC1777)         PLDAP
 ::LDAPapi          Rdcf? Interface to UMICH and Netscape LDAP C API   CDONLEY
 ::MsgLink          cdpO? Abstraction of "user" part for message link  RAM
 ::NIS              adcO? Interface to Sun's NIS                       RIK
@@ -1289,7 +1289,7 @@ Net::
 ::Ping             SupO? TCP and ICMP ping                            RMOSE
 ::Printer          RdpO? Direct to lpd printing                       CFUHRMAN
 ::SMTP             adpf? Interface to Simple Mail Transfer Protocol   GBARR
-::SNMP             adpO? Interface to SNMP Protocol (RFC1157)         GBARR
+::SNMP             adpO? Interface to SNMP Protocol (RFC1157)         DTOWN
 ::SNPP             cdpO? Client interface to SNPP protocol            GBARR
 ::SOCKS            cdcf? TCP/IP access through firewalls using SOCKS  SCOOPER
 ::SSLeay           bmhf? Secure Socket Layer (based on OpenSSL)       SAMPO
@@ -1312,7 +1312,7 @@ Net::
 ::Whois            RdpO? Get+parse "whois" domain data from InterNIC  DHUDES
 ::XWhois           RdpO? Whois Client Interface for Perl5.            VIPUL
 ::ICQ              bmpO? Client interface to ICQ messaging            JMUHLICH
-::SMS              RdpO? Send SMS wireless text-messages.             ROOTLEVEL
+::SMS              RdpOp Send SMS wireless text-messages.             ROOTLEVEL
 ::HTTPTunnel       adpO? Tunnel through HTTP proxies with CONNECT     RWAHBY
 ::Gnutella         bdpO? Gnutella network (v0.4) interface            IWADE
 ::ICal             ampO? RFC2445 (iCalendar) protocol tools           SRL
@@ -1351,7 +1351,6 @@ NetAddr::
 
 IPC::
 ::Cache            adpO? Shared-memory object cache                   DCLINTON
-::Chat2            ?   ? Out-of-service during refit!                 GBARR
 ::ChildSafe        RdcO? Control child process w/o risk of deadlock   DSB
 ::Globalspace      cdpO? Multi-process shared hash and shared events  JACKS
 ::LDT              Rdpf? Implements a length based IPC protocol       JSTENZEL
@@ -1577,7 +1576,7 @@ Set::
 ::Scalar           adpO? Set of scalars (inc references)              JHI
 ::Window           bdpO? Manages an interval on the integer line      SWMCD
 ::CheckList        adph? Maintain a list of "to-do" items             MIKO
-::Crontab          RdpO? Expand crontab(5)-style integer lists        AMS
+::Crontab          RdpOa Expand crontab(5)-style integer lists        AMS
 
 Graph::
 ::Element          RdpO? Base class for element of directed graph     NEILB
@@ -1814,7 +1813,7 @@ DBIx::
 ::DBSchema         bmpO? Database-independent schema objects          IVAN
 ::XMLMEssage       bnpf? Exchange of XML messages between DBI sources ANDREIN
 ::Browse           idpO? A class to browse related tables via CGI/Web EJDRS
-::XHTML_Table      cdpOp Methods to create an XHTML table from SQL    JEFFA
+::XHTML_Table      adpOp Create XHTML tables from SQL queries         JEFFA
 
 DBD::
 ::ASAny            adcO? Adaptive Server Anywhere Driver for DBI      SMIRNIOS
@@ -1830,7 +1829,7 @@ DBD::
 ::Ingres           bmcO? Ingres Driver for DBI                        HTOUG
 ::Multiplex        a   ? Spreading database load acrross servers      TIMB
 ::ODBC             amcO? ODBC Driver for DBI                          DBIML
-::Oracle           MmcO? Oracle Driver for DBI                        TIMB
+::Oracle           MmcO? Oracle Driver for DBI                        DBIML
 ::QBase            amcO? QBase Driver for DBI                         BENLI
 ::RAM              bmpO? a DBI driver for files and data structures   JZUCKER
 ::SQLrelay         bdpO? SQLrelay driver for DBI                      DMOW
@@ -2069,7 +2068,7 @@ Tk::
 ::ObjEditor        bdpO? Tk widget to edit data or objects            DDUMONT
 ::ObjEditorDialog  bdpO? Tk popup dialog to edit data or objects      DDUMONT
 ::Pgplot           bdcfp Pgplot widget for Tk                         CPHIL
-::PathEntry
+::PathEntry        adpO? Entry for selecting paths with completion    SREZIC
 
 Modules in the realm of Tk but with a separate namespace
 
@@ -2218,7 +2217,7 @@ File::
 ::MultiTail        adpO? Tail multiple files                          SGMIANO
 ::Path             Supf? File path and name utilities                 P5P
 ::Remote           Rdph? Read/write/edit remote files transparently   NWIGER
-::Rsync            bdpO? Copy efficiently over the net and locally    LEAKIN
+::Rsync            bdpOp Copy efficiently over the net and locally    LEAKIN
 ::Signature        cdpf? Heuristics for file recognition              JHI
 ::Slurp            Mdpf? Read/write/append files quickly              MUIR
 ::Sort             Rdpfa Sort a file or merge sort multiple files     CNANDOR
@@ -3411,20 +3410,20 @@ Name               DSLIP Description                                  Info
 ------------       ----- -------------------------------------------- ----
 IO::
 ::AtomicFile       RdpO? Write a file which is updated atomically     ERYQ
-::Dir              cdpO? Directory handle objects and methods         GBARR
-::File             cdpO? Methods for disk file based i/o handles      GBARR
-::Handle           cdpO? Base class for input/output handles          GBARR
+::Dir              cdpO? Directory handle objects and methods         P5P
+::File             cdpO? Methods for disk file based i/o handles      P5P
+::Handle           cdpO? Base class for input/output handles          P5P
 ::Lines            RdpO? I/O handle to read/write to array of lines   ERYQ
-::Pipe             cdpO? Methods for pipe handles                     GBARR
+::Pipe             cdpO? Methods for pipe handles                     P5P
 ::Ptty             adcf? Pseudo terminal interface functions          RGIERSIG
 ::Pty              cdpO? Methods for pseudo-terminal allocation etc   PEASE
 ::React            RdpO? OO Expect-like communication                 GARROW
 ::STREAMS          cdcO? Methods for System V style STREAMS control   NI-S
 ::Scalar           RdpO? I/O handle to read/write to a string         ERYQ
 ::ScalarArray      RdpO? I/O handle to read/write to array of scalars ERYQ
-::Seekable         cdpO? Methods for seekable input/output handles    GBARR
-::Select           adpO? Object interface to system select call       GBARR
-::Socket           cdpO? Methods for socket input/output handles      GBARR
+::Seekable         cdpO? Methods for seekable input/output handles    P5P
+::Select           adpO? Object interface to system select call       P5P
+::Socket           cdpO? Methods for socket input/output handles      P5P
 ::Stty             bdpf? POSIX compliant stty interface               RGIERSIG
 ::Tee              RdpO? Multiplex output to multiple handles         KENSHAN
 ::Wrap             RdpO? Wrap old-style FHs in standard OO interface  ERYQ
@@ -4069,7 +4068,7 @@ to a CGI script that lets you edit the database entries yourself.
   CHAOS    Matthew R. Sheahan <chaos@crystal.palace.net>
   CHARDIN  Chuck Hardin <chardin@savageoasis.fc.net>
   CHESTER  Chester Day <chesterday@netscape.net>
-  CHGEUER  Christian H. Geuer-Pollmann <christian.geuer-pollmann@nue.et-inf.uni-siegen.de>
+  CHGEUER  Christian H. Geuer-Pollmann <geuer-pollmann@nue.et-inf.uni-siegen.de>
   CHGOETZE Christian Goetze <perl@resolute.com>
   CHIPMUNK Ronald J. Kimball <rjk@linguist.dartmouth.edu>
   CHIPS    Chip Salzenberg <chip@pobox.com>
@@ -4154,10 +4153,9 @@ to a CGI script that lets you edit the database entries yourself.
   DBEAZLEY Dave Beazley <dmb@asator.lanl.gov>
   DBENNETT David Bennett <dbennett@cpan.org>
   DBIML    The DBI Mailing Lists
-           Subscribe via http://www.fugue.com/dbi. If you can't do
-           that then mail to dbi-REQUEST@fugue.com and ask (the human,
-           Ted Lemon) to subscribe you to one or more of dbi-announce,
-           dbi-users, or dbi-dev.
+           For subscription info send an email to
+           LISTNAME-help@perl.org, where LISTNAME is one of dbi-users,
+           dbi-announce, or dbi-dev.
   DBMAKER  dbmaker <dbmaker@mars.syscom.com.tw>
   DBONNER  David Bonner <dbonner@cs.bu.edu>
   DBRESH   Doug Breshears <breshear@eonet.com>
@@ -5053,7 +5051,7 @@ to a CGI script that lets you edit the database entries yourself.
   ROLAND   Roland Huß <roland@consol.de>
   RONALDWS Ronald Schmidt <RonaldWS@software-path.com>
   ROODE    Eric J. Roode <eric@myxa.com>
-  ROOTLEVEL Simplewire <techsupport@simplewire.com>
+  ROOTLEVEL Simplewire <sdk@simplewire.com>
   ROSCH    Roderick Schertler <roderick@argon.org>
   ROSSI    Christian Rossi <rossi@loria.fr>
   RPIKKARA Raino Pikkarainen <raino.pikkarainen@saunalahti.fi>
@@ -5187,7 +5185,7 @@ to a CGI script that lets you edit the database entries yourself.
   STAS     Stas Bekman <stas@stason.org>
   STBEY    Steffen Beyer <sb@engelschall.com>
   STCHER   Steve Chervitz <sac@neomorphic.com>
-  STEPHEN  Stephen Nelson <steven-cpan@jubal.com>
+  STEPHEN  Stephen Nelson <steven@jubal.com>
   STERLING John K. Sterling <sterling@covalent.net>
   STERLPERL Sterling Levell <sterlperl@netzero.net>
   STEVE    Steven Pritchard <steve@silug.org>
@@ -5227,7 +5225,7 @@ to a CGI script that lets you edit the database entries yourself.
   THOGEE   Thomas Geffert <thg@users.sourceforge.net>
   TIBBS    Jason Tibbitts <tibbs@hpc.uh.edu>
   TILLY    Ben Tilly <ben_tilly@operamail.com>
-  TIMB     Tim Bunce <Tim.Bunce@pobox.com>
+  TIMB     Tim Bunce <dbi-users@perl.org>
   TIMBU    Tim Burlowski <timbu@timbu.org>
   TIMM     Tim Meadowcroft <tim@schmerg.com>
   TIMMY    Tim Hammerquist <tim@dichosoft.com>
