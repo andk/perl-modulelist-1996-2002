@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.75 $ $Date: 2000/11/13 13:01:13 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.76 $ $Date: 2000/11/13 13:04:47 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -507,7 +507,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.75 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.76 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2176,6 +2176,9 @@ XML               RmhO Large collection of XML related modules      XMLML
     It is discouraged to put higher level XML modules into the XML
     namespace to avoid bloat.
 
+RDF::
+::Service
+
 RTF::
 ::Base            i    Classes for Microsoft Rich Text Format       NI-S
 ::Document        a    Generate Rich Text (RTF) Files               RRWO
@@ -2407,6 +2410,7 @@ CGI::
 ::Minimal         MdpO A micro-sized CGI handler                    SNOWHARE
 ::MxScreen        cdpO Screen multi-plexer framework                RAM
 ::Out             adpf Buffer CGI output and report errors          MUIR
+::PathInfo        RdpO A lightweight PATH_INFO based CGI package    SNOWHARE
 ::Persistent      adpO Transparent State Persistence in CGI scripts VIPUL
 ::Query           adpO Parse CGI quiry strings                      MPECK
 ::QuickForm       Rdpf Handles UI & validation for CGI forms        SUMMER
@@ -2418,8 +2422,6 @@ CGI::
 ::Validate        adpO Advanced CGI form parser                     ZENIN
 ::WML             RdpO Subclass of CGI.pm for WML output            AWOOD
 ::XMLForm         adpO Create/query XML for forms                   MSERGEANT
-::PathInfo        RdpO A lightweight PATH_INFO based CGI package    SNOWHARE
-::Upload          bdpO Operation on CGI uploaded files.             MIYAGAWA
 
 HTML::
 ::Base            adpO Object-oriented way to build pages of HTML   GAND
@@ -2463,14 +2465,14 @@ HTTP::
 ::BrowserDetect   adph Detect browser, version, OS from UserAgent   LHS
 ::Cookies         RmpO Storage of cookies                           LWWWP
 ::DAV             ampO A client module for the WebDAV protocol      PCOLLINS
-::Date            Rmpf Date conversion for HTTP date formats        LWWWP
 ::Daemon          RmpO Base class for simple HTTP servers           LWWWP
+::Date            Rmpf Date conversion for HTTP date formats        LWWWP
 ::Headers         RmpO Class encapsulating HTTP Message headers     LWWWP
 ::Message         RmpO Base class for Request/Response              LWWWP
+::Negotiate       Rmpf HTTP content negotiation                     LWWWP
 ::Request         RmpO Class encapsulating HTTP Requests            LWWWP
 ::Response        RmpO Class encapsulating HTTP Responses           LWWWP
 ::Status          Rmpf HTTP Status code processing                  LWWWP
-::Negotiate       Rmpf HTTP content negotiation                     LWWWP
 
 HTTP::Request::
 ::Common          Rmpf Functions that generate HTTP::Requests       LWWWP
@@ -2485,11 +2487,11 @@ WML::
 ::Deck            cdpO WML Deck generator                           MALVARO
 
 HTTPD::
-::UserAdmin       bdpO Management of server user databases          LDS
-::GroupAdmin      bdpO Management of server group databases         LDS
+::Access          cdpO Management of server access control files    LDS
 ::Authen          bdpO Preform HTTP Basic and Digest Authentication LDS
 ::Config          cdpO Management of server configuration files     LDS
-::Access          cdpO Management of server access control files    LDS
+::GroupAdmin      bdpO Management of server group databases         LDS
+::UserAdmin       bdpO Management of server user databases          LDS
 
 WWW::
 ::BBSWatch        adpO email WWW bulletin board postings            TAYERS
@@ -2614,7 +2616,6 @@ Apache::
 Apache PerlAuthzHandler modules
 
 Apache::
-::AuthCookie      bdpf Authen + Authz via cookies                   BARTLEY
 ::AuthzAge        bmpf Authorize based on age                       APML
 ::AuthzDCE        cdpf DFS/DCE ACL based access control             DOUGM
 ::AuthzDBI        bmpO Group authorization via Perl's DBI           MERGL
