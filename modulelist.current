@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.56 $$Date: 2000/06/27 17:38:33 $
+The Perl 5 Module List       $Revision: 3.57 $$Date: 2000/06/27 17:46:20 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.56 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.57 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -962,6 +962,7 @@ Devel::
 ::CallerItem      RupO 'caller()' Object wrapper + useful methods   JACKS
 ::CoreStack       adpf generate a stack dump from a core file       ADESC
 ::Coverage        adpf Coverage analysis for Perl code              RJRAY
+::Datum           cdpf Debugging And Tracing Ultimate Module        CDE
 ::DebugAPI        bdpf Interface to the Perl debug environment      JHA
 ::DebugInit       i    Create a .gdbinit or similar file            JASONS
 ::DProf           Rdcf Execution profiler                           DMR
@@ -1185,6 +1186,8 @@ Socket::
 
 Net::
 ::ACAP            adpO Interface to ACAP Protocol (Internet-Draft)  KJOHNSON
+::AIM             adpO AOL Instant Messenger TOC protocol           ARYEH
+::AOLIM           bdpO AOL Instant Messenger TOC protocol           RWAHBY
 ::Bind            adpO Interface to bind daemon files               KJOHNSON
 ::CDDB            cdpr Interface to the CDDB (CD Database)          DSTALDER
 ::Cmd             cdpO For command based protocols (FTP, SMTP etc)  GBARR
@@ -1210,6 +1213,7 @@ Net::
 ::Jabber          ampO Access to the Jabber protocol                REATMON
 ::LDAP            adpO Interface to LDAP Protocol (RFC1777)         PLDAP
 ::LDAPapi         Rdcf Interface to UMICH and Netscape LDAP C API   CDONLEY
+::MsgLink         idpO Abstraction of "user" part of a network link RAM
 ::NIS             adcO Interface to Sun's NIS                       RIK
 ::NISPlus         adcO Interface to Sun's NIS+                      RIK
 ::NNTP            adpO Client interface to NNTP protocol            GBARR
@@ -1516,6 +1520,7 @@ Tie::
 ::SentientHash    bdpr Tracks changes to nested data structures     ANDREWF
 ::ShadowHash      adpO Merge multiple data sources into a hash      RRA
 ::ShiftSplice     i    Defines shift et al in terms of splice       LWALL
+::SortHash        Rdpr Provides persistent sorting for hashes       CTWETEN
 ::SubstrHash      SdpO Very compact hash stored in a string         LWALL
 ::TextDir         Rdpr ties a hash to a directory of textfiles      KWILLIAMS
 ::Watch           bdpO Watch variables, run code when read/written  LUSOL
@@ -1621,6 +1626,7 @@ DBIx::            Extensions to the DBI
 ::glueHTML        bdpO CGI interface to DBI databases               JFURNESS
 ::HTMLView        cdpO Creating web userinterfaces to DBI dbs       HAKANARDO
 ::OracleSequence  adpO OO access to Oracle sequences via DBD-Oracle BLABES
+::Password        MdpO Administer databases and passwords           KROW
 ::Recordset       bmpO Access/Modify DBI handles via Arrays/Hashs   GRICHTER
 ::Table           bdpO OO access to DBI database tables             DLOWE
 ::TableAdapter    adpO An object-relational mapper for DBI tables   GED
@@ -1643,6 +1649,7 @@ DBD::
 ::Oracle          amcO Oracle Driver for DBI                        TIMB
 ::QBase           amcO QBase Driver for DBI                         BENLI
 ::RAM             bmpO a DBI driver for files and data structures   JZUCKER
+::SQLrelay        bdpO SQLrelay driver for DBI                      DMOW
 ::Solid           amcO Solid Driver for DBI                         TWENRICH
 ::Sqlflex         RdcO SQLFLEX driver for DBI                       INFOFLEX
 ::Sybase          amcO Sybase Driver for DBI                        MEWP
@@ -1995,6 +2002,7 @@ Text::
 ::TeX             cdpO TeX typesetting language input parser        ILYAZ
 ::Templar         RdpO An object-oriented templating system         GED
 ::Template        MdpO Expand template text with embedded perl      MJD
+::TreeFile        bdpO Reads tree of strings into a data structure  JNK
 ::Vpp             RdpO Versatile text pre-processor                 DDUMONT
 ::Wrap            Sdpf Wraps lines to make simple paragraphs        MUIR
 ::iPerl           adpf Bring text-docs to life via embedded Perl    PFEIFFER
@@ -2188,6 +2196,7 @@ Locale::
 Unicode::
 ::String          RdcO String manipulation for Unicode strings      GAAS
 ::Map8            RdcO Convert between most 8bit encodings          GAAS
+::Normal          i??? Composition, canonical ordering, blocks      MHOSKEN
 
 No::
 ::Dato            Rdpf Norwegian stuff                              GAAS
@@ -2240,6 +2249,7 @@ Digest::
 ::HMAC            Rdph  HMAC message integrity check                GAAS
 
 Crypt::
+::Beowulf         Rdpf An original, very fast encryption algorithm  SIFUKURT
 ::Blowfish        adcO XS-based implementation of Blowfish          DPARIS
 ::Blowfish_PP     adpO Blowfish encryption algorithm in Pure Perl   MATTBM
 ::CBC             adpO Cipherblock chaining for Crypt::DES/IDEA     LDS
@@ -2248,12 +2258,15 @@ Crypt::
 ::ElGamal         bdpO ElGamal digital signatures and keys          VIPUL
 ::IDEA            a    International Data Encryption Algorithm      GARY
 ::Keys            adpO Management system for cryptographic keys     VIPUL
+::OTP             Rdpf Implements One Time Pad encryption           SIFUKURT
 ::Passwd          Mdhf Perl wrapper around the UFC Crypt            LUISMUNOZ
 ::PasswdMD5       Mdhf Interoperable MD5-based crypt() function     LUISMUNOZ
 ::PRSG            a    160 bit LFSR for pseudo random sequences     GARY
+::RC4             Rdpf Implements the RC4 encryption algorithm      SIFUKURT
 ::Random          bdpO Cryptographically Strong Random Numbers      VIPUL
 ::Rot13           cdpO simple encryption often seen on usenet       AYRNIEU
 ::RSA             bdpO RSA encryption, decryption, key generation   VIPUL
+::Solitaire       Rdpf A very simple encryption system              SIFUKURT
 ::Twofish         Rdpf Twofish Encryption Algorothm                 NISHANT
 ::UnixCrypt       Rdpf Perl-only implementation of crypt(3)         MVORL
 
@@ -2287,6 +2300,7 @@ URI::
 ::URL             RmpO Uniform Resource Locator objects             LWWWP
 
 CGI::
+::Application     bmpO Framework for building reusable web-apps     JERLBAUM
 ::ArgChecker      bdpO Consistent, extensible CGI param validation  DLOWE
 ::Authent         Mdpf request the HTTP authentification            JENDA
 ::Base            RmpO Complete HTTPD CGI Interface class           CGIP
@@ -2369,6 +2383,10 @@ HTTP::Request::
 WAP::
 ::Wbmp            i??? Wireless bitmap manipulation module          SAA
 ::WML             i??? Wireless Markup language routines            SAA
+
+WML::
+::Card            cdpO WML Cards generator                          MALVARO
+::Deck            cdpO WML Deck generator                           MALVARO
 
 HTTPD::
 ::UserAdmin       bdpO Management of server user databases          LDS
