@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.81 $ $Date: 2000/11/19 11:38:44 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.82 $ $Date: 2000/11/27 21:54:32 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -507,7 +507,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.81 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.82 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1259,7 +1259,7 @@ Net::
 ::Pager           RdpO Send Numeric/AlphaNumeric Pages to any pager ROOTLEVEL
 ::Whois           RdpO Get+parse "whois" domain data from InterNIC  DHUDES
 ::XWhois          RdpO Whois Client Interface for Perl5.            VIPUL
-::ICQ
+::ICQ             bmpO Client interface to ICQ messaging            JMUHLICH
 
 Net::Daemon::
 ::SSL             RdpO SSL extension for Net::Daemon                MKUL
@@ -1268,7 +1268,7 @@ Net::IMAP::
 ::Simple          bdpO Only implements the basic IMAP features      JPAF
 
 Net::SNMP::
-::Interfaces
+::Interfaces      RdpO Obtain network interface info via SNMP       JSTOWE
 
 Net::Telnet::
 ::Cisco           RdpO Net::Telnet wrapper for Cisco devices        JOSHUA
@@ -1425,7 +1425,7 @@ Algorithm::
 ::Permute         bdcO Handy and fast permutation with OO interface EDPRATOMO
 
 Algorithm::Graphs::
-::TransitiveClosure
+::TransitiveClosure RdpO Calculates the transitive closure          ABIGAIL
 
 Algorithm::Numerical::
 ::Shuffle         Rdph Knuth's shuffle algorithm                    ABIGAIL
@@ -1673,7 +1673,9 @@ Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 DBI               amcO Generic Database Interface (see DBD modules) DBIML
 
-DBIx::            Extensions to the DBI
+DBIx -- Extensions to the DBI
+
+DBIx::
 ::Abstract        RmpO Wrapper for DBI that generates SQL           TURNERA
 ::AnyDBD          bdpO Module to make cross db applications easier  MSERGEANT
 ::CGITables       adpO Easy DB access from a CGI                    TOBIX
@@ -2257,7 +2259,7 @@ XML::
 ::Dumper          ampO Converts XML from/to Perl code               EISEN
 ::Encoding        ???? Parses encoding map XML files                COOPERCL
 ::Edifact         ???? Scripts for translating EDIFACT into XML     KRAEHE
-::Generator       adpn Generates XML documents                      BHOLZMAN
+::Generator       bdpO Generates XML documents                      BHOLZMAN
 ::Grove           RmpO Flexible lightweight mid-level XML objects   KMACLEOD
 ::miniXQL         ???? Simplistic XQL-like search using streams     MSERGEANT
 ::Parser          bmcO Flexible fast parser with plug-in styles     COOPERCL
@@ -3144,7 +3146,7 @@ IO::
 ::Handle          cdpO Base class for input/output handles          GBARR
 ::Lines           RdpO I/O handle to read/write to array of lines   ERYQ
 ::Pipe            cdpO Methods for pipe handles                     GBARR
-::Ptty            adcf Pseudo terminal interface functions          RGIERSIG
+::Ptty            amcf Pseudo terminal interface functions          RGIERSIG
 ::Pty             cdpO Methods for pseudo-terminal allocation etc   PEASE
 ::React           RdpO OO Expect-like communication                 GARROW
 ::STREAMS         cdcO Methods for System V style STREAMS control   NI-S
@@ -3153,7 +3155,7 @@ IO::
 ::Seekable        cdpO Methods for seekable input/output handles    GBARR
 ::Select          adpO Object interface to system select call       GBARR
 ::Socket          cdpO Methods for socket input/output handles      GBARR
-::Stty            bdpf POSIX compliant stty interface               RGIERSIG
+::Stty            bmpf POSIX compliant stty interface               RGIERSIG
 ::Tee             RdpO Multiplex output to multiple handles         KENSHAN
 ::Wrap            RdpO Wrap old-style FHs in standard OO interface  ERYQ
 ::WrapTie         RdpO Tie your handles & retain full OO interface  ERYQ
@@ -3641,7 +3643,7 @@ to a CGI script that lets you edit the database entries yourself.
   AWOOD    Angus Wood <angus@z-y-g-o.com>
   AWRIGLEY Ave Wrigley <Ave.Wrigley@itn.co.uk>
   AYRNIEU  julian fondren <julian@imaji.net>
-  AZEMGI   Gawdi Azem <azemgi@rupert.informatik.uni-stuttgart.de>
+  AZEMGI   Gawdi Azem <gawdi@azem.de>
   AZUL     Alejandro Forero Cuervo <bachue@bachue.com>
   BARBACHAN Anthony Barbachan <barbacha@Hinako.AMBusiness.com>
   BARTLEY  Eric Bartley <bartley@purdue.edu>
@@ -3824,7 +3826,7 @@ to a CGI script that lets you edit the database entries yourself.
   DCEPML   The DCE-Perl mailing list
            Mail to majordomo@lists.csupomona.edu with body "subscribe
            dce-perl <your-address>"
-  DCLINTON DeWitt Clinton <dclinton@eziba.com>
+  DCLINTON DeWitt Clinton <dclinton@avacet.com>
   DCONWAY  Damian Conway <damian@conway.org>
   DCOPPIT  David Coppit <david@coppit.org>
   DDUMONT  Dominique Dumont <Dominique_Dumont@hp.com>
@@ -4032,7 +4034,7 @@ to a CGI script that lets you edit the database entries yourself.
   HCAMP    Hartmut Camphausen <h.camp@creagen.de>
   HENKE    Henrik Joensson <henrik7205@hotmail.com>
   HENRIK   Henrik Strom <henrik@computer.org>
-  HFB      Elaine M. Ashton <elaine@chaos.wustl.edu>
+  HFB      Elaine M. Ashton <hfb@cpan.org>
   HIGHTOWE Lester Hightower <hightowe@united-railway.com>
   HJHELGE  Hans Jorgen Helgesen <hans_helgesen@hotmail.com>
   HLHAMILT Harlin L. Hamilton Jr. <harlinh@cadence.com>
@@ -4149,6 +4151,7 @@ to a CGI script that lets you edit the database entries yourself.
   JMCNAMARA John McNamara <writeexcel@eircom.net>
   JMM      John Macdonald <jmm@elegant.com>
   JMOORE   Jason Moore <jmoore@sober.com>
+  JMUHLICH Jeremy Muhlich <jmuhlich@acm.jhu.edu>
   JMURPHY  Joel Murphy <jmurphy+pause@cnu.acsu.buffalo.edu>
   JMUSSE   Jama Musse Jama <jama@tecsiel.it>
   JMV      John M Vinopal <banshee@resort.com>
@@ -4193,6 +4196,7 @@ to a CGI script that lets you edit the database entries yourself.
   JSTENZEL Jochen Stenzel <perl@jochen-stenzel.de>
   JSTEWART John A. Stewart <john.stewart@crc.ca>
   JSTOF    John Stoffel <john@wpi.edu>
+  JSTOWE   Jonathan Stowe <jns@gellyfish.com>
   JSWARTZ  Jonathan Swartz <swartz@transbay.net>
   JTILLMAN James Tillman <jtillman@bigfoot.com>
   JTOBEY   John Tobey <jtobey@john-edwin-tobey.org>
@@ -4569,7 +4573,7 @@ to a CGI script that lets you edit the database entries yourself.
   RBOW     Rich Bowen <rbowen@rcbowen.com>
   RBS      Barrie Slaymaker <barries@slaysys.com>
   RCALEY   Richard Caley <R.Caley@ed.ac.uk>
-  RCAPUTO  Rocco Caputo <troc@netrus.net>
+  RCAPUTO  Rocco Caputo <troc+cpan@netrus.net>
   RCASHA   Ramon Casha <rcasha!megabyte.net>
   RCLAMP   Richard Clamp <richardc@unixbeard.net>
   RCS      Rob Seegel <rcseege@yahoo.com>
@@ -4822,7 +4826,7 @@ to a CGI script that lets you edit the database entries yourself.
   WATANABE WATANABE Hirofumi <eban@os.rim.or.jp>
   WAYNEDAV Wayne Davison <wayne@clari.net>
   WAYNEM   Wayne Myers <waz@easynet.co.uk>
-  WIMV     Wim Verhaegen <>
+  WIMV     Wim Verhaegen <wimv@cpan.org>
   WIN32    The Perl for Win32 Mailing lists
            Visit activestate's webpage at
            http://www.activestate.com/support/mailing_lists.htm
