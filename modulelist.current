@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.105 $ $Date: 2002/04/17 11:26:25 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.106 $ $Date: 2002/04/17 16:45:39 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.105 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.106 $=~/\d+/g);
                     sprintf "%d."."%03d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2611,8 +2611,6 @@ Text::
 ::MicroMason       Rdpfp Simplified HTML::Mason Templating            EVO
 ::ScriptTemplate   RdpO? Lightweight full-featured template processor TAIY
 
-Text::PDF::
-
 Text::Wrap::
 ::Hyphenate        a   ? Like Text::Wrap with ability to hyphenate    MJD
 
@@ -2772,6 +2770,7 @@ XML::
 ::GXML             MdpOp XML transformation and XML->HTML conv.       JCARTER
 ::Generator        bdpO? Generates XML documents                      BHOLZMAN
 ::Grove            RmpO? Flexible lightweight mid-level XML objects   KMACLEOD
+::NamespaceSupport
 ::PPD              RdpO? PPD file format and XML parsing elements     MURRAY
 ::PYX              RdpO? XML to PYX generator                         MSERGEANT
 ::Parser           bmcO? Flexible fast parser with plug-in styles     COOPERCL
@@ -2791,7 +2790,6 @@ XML::
 ::Xalan            ad+O? Interface to Xalan (Apache XSLT processor)   EDPRATOMO
 ::Xerces
 ::miniXQL          ????? Simplistic XQL-like search using streams     MSERGEANT
-::NamespaceSupport
 
 XML::GDOME::
 ::XSLT
