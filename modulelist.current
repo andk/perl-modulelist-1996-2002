@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.42 $Date: 1997/06/05 09:05:52 $
+The Perl 5 Module List       Revision: 2.42 $Date: 1997/06/07 02:50:29 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -617,7 +617,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.74 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.75 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -935,12 +935,12 @@ FindBin        adpf  Locate current script bin directory          GBARR
 DoWhatIWant    i     Does what you want without even asking
 
 ExtUtils::
-::DynaGlue     i     Utilities/glue code for C<->Perl interfaces  DOUGM
+::DynaGlue     adcr  Permits runtime execution of C library code  JTOBEY
 ::MakeMaker    SupO  Writes Makefiles for extensions              MMML
 ::Manifest     Supf  Utilities for managing MANIFEST files        MMML
 ::Typemap      i     xsubpp typemap handling                      WPS
 ::Embed        Rdpf  Utilities for embedding Perl in C/C++ apps   DOUGM
-::F77          cdpo  Facilitate use of FORTRAN from Perl/XS code  KGB
+::F77          RdpO  Facilitate use of FORTRAN from Perl/XS code  KGB
 
 Test::
 ::Harness      Supf  Executes perl-style tests                    ANDK
@@ -1200,7 +1200,7 @@ Graph::
 Date::
 ::Convert      cdpO  Conversion between Gregorian, Hebrew, more?  MORTY
 ::CTime        adpf  Updated ctime.pl with mods for timezones     GBARR
-::DateCalc     Rdcf  Various gregorian calendar date calculations STBEY
+::DateCalc     Rdcf  Gregorian calendar date calculations         STBEY
 ::Format       Rdpf  Date formatter ala strftime                  GBARR
 ::GetDate      adcf  Yacc based free-format date parser in C      TOMC
 ::Interval     idpO  Lightweight normalised interval data type    TIMB
