@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.110 $ $Date: 2002/08/27 22:41:01 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.111 $ $Date: 2002/08/27 23:22:31 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -49,14 +49,14 @@ Part 2 - The Perl 5 Module List
 
 Part 3 - Standards Cross-reference
 
-4.1) IETF - Internet Engineering Task Force (RFCs)
-4.2) ITU - International Telegraph Union (X.*)
-4.3) ISO - International Standards Organization (ISO*)
+3.1) IETF - Internet Engineering Task Force (RFCs)
+3.2) ITU - International Telegraph Union (X.*)
+3.3) ISO - International Standards Organization (ISO*)
 
 Part 4 - Who's Who and What's Where
 
-5.1) Information / Contact Reference Details
-5.2) Perl Frequently Asked Questions (FAQ) Files
+4.1) Information / Contact Reference Details
+4.2) Perl Frequently Asked Questions (FAQ) Files
 
 
 ======================================================================
@@ -499,7 +499,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.110 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.111 $=~/\d+/g);
                     sprintf "%d."."%03d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
