@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.101 $ $Date: 2001/05/11 13:46:21 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.102 $ $Date: 2001/05/11 13:57:55 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.101 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.102 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -824,7 +824,7 @@ Carp               Supf? Throw exceptions outside current package     P5P
 Config             Supf? Stores details of perl build configuration   P5P
 English            Supf? Defines English names for special variables  P5P
 Symbol             SupO? Create 'anonymous' symbol (typeglobs) refs   CHIPS
-Opcode             Supf? Disable named opcodes when compiling code    TIMB
+Opcode             Supf? Disable named opcodes when compiling code    P5P
 Taint              bdpf? Utilities related to tainting                PHOENIX
 
 Perl Pragmatic Modules
@@ -847,6 +847,7 @@ ex::
 ::implements       RdpO? Study in Polymorphism                        PDCAWLEY
 ::interface        RdpO? Another study in polymorphism                PDCAWLEY
 ::override         Rdpf? perl pragma to override core functions       CTWETEN
+::caution          bdpn? Same as use warnings; use strict;            YVES
 
 ex::constant::
 ::vars             Rdph? Perl pragma to create readonly variables     CTWETEN
@@ -882,7 +883,7 @@ Regexp             adcO? An OO interface to regular expressions       GBARR
 Regexp::
 ::Common           RdpO? Provide commonly requested regular expr.     DCONWAY
 ::Shellish         RdpO? Shell-like regular expressions               RBS
-::Func
+::Func             adpf? Replace =~, !~, m//, s/// with functions     NWIGER
 
 Safe::
 ::Hole             bdcO? Exec subs in the original package from Safe  SEYN
@@ -930,6 +931,11 @@ Thread::
 ::Signal           cuhh? A thread which runs signal handlers reliably P5P
 ::Specific         cuhh? Thread-specific keys                         P5P
 
+IThread::
+::Mutex            i???? ?                                            ABERGMAN
+::Semaphore        i???? ?                                            ABERGMAN
+::Queue            i???? ?                                            ABERGMAN
+
 Module Support
 
 Module::
@@ -963,6 +969,7 @@ Pod::
 ::Text             Supf? convert POD data to formatted ASCII text     TOMC
 ::Usage            bdpf? Print Usage messages based on your own pod   BRADAPP
 ::XML              RdpO? Generate XML from POD                        MSERGEANT
+::Tree             RdpO? Create a static syntax tree for a POD        SWMCD
 
 _______________________________________________________________________
 
@@ -1026,7 +1033,7 @@ Devel::
 ::TraceFuncs       adpO? Trace funcs by using object destructions     JOEHIL
 ::TraceLoad        Rdpf? Traces the loading of perl source code       PVERD
 ::Modlist          Rdpf? Collect module use information               RJRAY
-::Cover
+::Cover            adcfp Code coverage metrics for Perl               PJCJ
 
 Exception::
 ::Class            RdpOp Declare exception class hierarchies          DROLSKY
@@ -1088,7 +1095,7 @@ Proc::
 ::Spawn            Rdpf? Run external programs                        GARROW
 ::SyncExec         Rdpf? Spawn processes but report exec() errors     ROSCH
 ::times            adpf? By-name interface to process times function  TOMC
-::Queue
+::Queue            Rdpfp limits number of concurrent forked processes SALVA
 
 GTop               bdcO? Perl interface to libgtop                    DOUGM
 
@@ -1216,7 +1223,7 @@ VMS::
 ::SysCalls         i   ? VMS-specific system calls                    CBAIL
 ::System           Rdcf? VMS-specific system calls                    DSUGAL
 ::User             bdcr? Read access to system UAF data               DSUGAL
-::Mail
+::Mail             cdcO? Perl module for accessing callable VMS mail  DNORTH
 
 VMS::Fileutils::
 ::Root             RdpO? Evade VMS's 8 level directory restrictions   CLANE
@@ -1240,9 +1247,9 @@ Device::
 Device::ISDN::
 ::OCLM             bd??? Perl interface to the 3com OCLM ISDN TA      MERLIN
 
-AudioCD
+AudioCD            bdpO? Extension for controlling Audio CDs          SDERLE
 AudioCD::
-::Mac
+::Mac              bdcO? Extension for controlling Audio CDs on MacOS AJFRY
 
 _______________________________________________________________________
 
@@ -1301,7 +1308,7 @@ Net::
 ::SNPP             cdpO? Client interface to SNPP protocol            GBARR
 ::SOCKS            cdcf? TCP/IP access through firewalls using SOCKS  SCOOPER
 ::SSLeay           bmhf? Secure Socket Layer (based on OpenSSL)       SAMPO
-::Syslog           RdpO? Forwarded syslog protocol                    LHOWARD
+::Syslog           RdpOp Forwarded syslog protocol                    LHOWARD
 ::TCP              RdcO? TCP-specific socket usage                    SPIDB
 ::TFTP             cdpf? Interface to Trivial File Transfer Protocol  GSM
 ::Telnet           RdpO? Interact with TELNET port or other TCP ports JROGERS
@@ -1329,9 +1336,11 @@ Net::
 ::ParseWhois       RmpO? Get+Parse "whois" domain data                ABEROHAM
 ::Server           adpO? Extensible (class) oriented internet server  RHANDOM
 ::Peep             RdpO? Clients for Peep: The Network Auralizer      STARKY
-::Hesiod
-::SMPP
-::DHCPClient
+::Hesiod           bdchp Interface to Hesiod library API              PAYERLE
+::SMPP             cdpO? Protocol for sending SMS (to GSM or CDMA).   SAMPO
+::DHCPClient       adpO? Interface to DHCP as a client                JWALGENB
+::SFTP             adpOp Secure File Transfer Protocol client         BTROTT
+::LMTP             cdpOp LMTP Protocol - RFC2033                      LHOWARD
 
 Net::Daemon::
 ::SSL              RdpO? SSL extension for Net::Daemon                MKUL
@@ -1352,7 +1361,7 @@ Net::SNMP::
 ::Interfaces       RdpO? Obtain IfTable entries via SNMP              JSTOWE
 
 Net::SSH::
-::Perl             bdpO? Perl client Interface to SSH                 BTROTT
+::Perl             RdpOp Perl client Interface to SSH                 BTROTT
 
 Net::Telnet::
 ::Cisco            RdpO? Net::Telnet wrapper for Cisco devices        JOSHUA
@@ -1419,7 +1428,7 @@ SNMP               RdcO? Interface to the UCD SNMP toolkit            GSM
 SNMP::
 ::Monitor          adpO? Accounting and graphical display             JWIED
 ::Util             RdpO? Perform SNMP set,get,walk,next,walk_hash,... WMARQ
-::NPAdmin
+::NPAdmin          adpO? Perl API to query printers via SNMP.         BOZZIO
 
 Mon::
 ::Client           RdpO? Network monitoring client                    TROCKIJ
@@ -1494,7 +1503,7 @@ Math::
 ::BigIntFast       RdcO? Efficient big integer arithmetic (in C)      STBEY
 ::QuadTree         cdpO? Quad Edge data structure for 2D manifolds    FRED
 ::Fleximal         adpO? Arithmetic with any base representation      TILLY
-::Project
+::Project          RdpO? Compute intersection with upright line       MILSO
 
 Math::Business::
 ::EMA              adcO? An Exponential Moving Average Calculator     JETTERO
@@ -1522,7 +1531,7 @@ Algorithm::
 ::Diff             Rdpf? Diff (also Longest Common Subsequence)       NEDKONZ
 ::Permute          bdcO? Handy and fast permutation with OO interface EDPRATOMO
 ::SISort           Rdcr? Select And Insert sorting algorithm          HRAFNKELL
-::LUHN
+::LUHN             Rdpf? Calculate mod 10 Double Add Double checksum  TAYERS
 
 Algorithm::Graphs::
 ::TransitiveClosure RdpO? Calculates the transitive closure           ABIGAIL
@@ -1591,6 +1600,7 @@ Set::
 ::Window           bdpO? Manages an interval on the integer line      SWMCD
 ::CheckList        adph? Maintain a list of "to-do" items             MIKO
 ::Crontab          RdpOa Expand crontab(5)-style integer lists        AMS
+::Infinite         bdpOp Set Theory module for infinite sets          FGLOCK
 
 Graph::
 ::Element          RdpO? Base class for element of directed graph     NEILB
@@ -1631,8 +1641,8 @@ Time::
 ::localtime        Supf? A by-name interface for localtime            TOMC
 ::Seconds          RdcO? API to convert seconds to other date values  MSERGEANT
 ::Stopwatch        Rdpr? Use tied scalars as timers                   ILTZU
-::Unix
-::TAI64
+::Unix             RdpO? Force time() to return secs since UNIX epoch NWIGER
+::TAI64            i?c?a Time manipulation in the TAI64* formats      AMS
 
 Calendar::
 ::CSA              adcO? interface with calenders such as Sun and CDE KJALB
@@ -1662,7 +1672,7 @@ Tie::
 ::Multidim         adpr? "tie"-like multidimensional data structures  JDPORTER
 ::OffsetArray      adpr? Tie one array to another, with index offset  JDPORTER
 ::Persistent       Rdpr? Persistent data structures via tie           RGIERSIG
-::Quick            i   ? Simple way to create ties                    TIMB
+::Quick            i   ? Simple way to create ties                    P5P
 ::RDBM             RdpO? Tie hashes to relational databases           LDS
 ::RndHash          bdpO? choose a random key of a hash in O(1) time   DFAN
 ::SecureHash       RdpO? Enforced encapsulation of Perl objects       DCONWAY
@@ -1679,7 +1689,7 @@ Tie::
 ::RangeHash        bdph? Hashes with 'low,high' ranges as keys        RRWO
 ::RegexpHash       adph? Use regular expressions as hash keys         RRWO
 ::AliasHash        Rdpr? Hash with key aliases                        ACALPINI
-::WarnGlobal
+::WarnGlobal       adpr? Ties variables to functions, warns on use    STEPHEN
 
 Tie::Scalar::
 ::Timeout          adpr? Scalar variables that time out               MARCEL
@@ -1713,9 +1723,9 @@ Class::
 ::Tree             MdpO? C++ class hierarchies & disk directories     RSAVAGE
 ::WhiteHole        RdpO? Treat unhandled method calls as errors       MSCHWERN
 ::Handler          bdpO? Make Apache-like pseudoclass event handlers  NWIGER
-::Loader
-::Date
-::ArrayObjects
+::Loader           bdpO? Load modules & construct objects on demand.  VIPUL
+::Date             bdhO? a date and time class for perl               DLUX
+::ArrayObjects     bdph? utility class for array based objects        RBERJON
 
 Class::ObjectTemplate::
 ::DB               bdpO? Template base class for DB objects           JASONS
@@ -1781,9 +1791,14 @@ Data::
 ::JavaScript       Rdpr? Dumps structures into JavaScript code        SCHOP
 ::MultiValuedHash  RdpO? Hash whose keys have multiple ordered values DUNCAND
 ::Iterator         RupO? Simple iteration over complex data strucures HCAMP
-::Buffer           bdpO? Read/write buffer class                      BTROTT
+::Buffer           bdpOp Read/write buffer class                      BTROTT
 ::Lazy             Rdpr? provides "lazy" scalars, arrays and hashes   JENDA
 ::Denter           RdpO? An alternative to Data::Dumper and Storable. INGY
+::Compare          RdpO? Compare perl data structures                 FTASSIN
+::HexDump          RdpO? Hexadecial Dumper                            FTASSIN
+::Hexdumper        RdpO? Display binary data in multiple formats      DCANTRELL
+::Stash            bdpf? Data structures in simple text format        HRANICKY
+::BinStruct        bdpO? OO access to binary data structures          DJHD
 
 Tree::
 ::Base             cdpO? Defines a basic binary search tree           MSCHWERN
@@ -1794,7 +1809,7 @@ Tree::
 ::Trie             bdpO? An implementation of the Trie data structure AVIF
 ::Nary             RdpO? Perl implementation of N-ary search trees    FSORIANO
 ::DAG_Node         MdpO? base class for trees                         SBURKE
-::M
+::M                ad+O? M-trees provide efficient metric searches    MLEHMANN
 
 DFA::
 ::Command          MdpO? Discrete Finite Automata command processor   RSAVAGE
@@ -1806,6 +1821,8 @@ Thesaurus          RdpOp Create associations between related things   DROLSKY
 
 BabelObjects       cdpf? Web Service Framework                        KERMAGO
 
+YAML               cdhOp Yet Another Markup Language Support Module   INGY
+
 _______________________________________________________________________
 
 7) Database Interfaces (see also Data Types)
@@ -1815,7 +1832,7 @@ Name               DSLIP Description                                  Info
 DBI                amcO? Generic Database Interface (see DBD modules) DBIML
 
 DBI::
-::Format
+::Format           bmpO? Defined display formats for data from DBI    TLOWERY
 
 DBIx -- Extensions to the DBI
 
@@ -1838,9 +1855,9 @@ DBIx::
 ::XMLMEssage       bnpf? Exchange of XML messages between DBI sources ANDREIN
 ::Browse           idpO? A class to browse related tables via CGI/Web EJDRS
 ::XHTML_Table      adpOp Create XHTML tables from SQL queries         JEFFA
-::SchemaView
-::SystemCatalog
-::dbMan
+::SchemaView       adpf? Retrieving and drawing of DB schema (Tk)     MILSO
+::SystemCatalog    RdpO? Accessing system catalog in common databases MILSO
+::dbMan            ampf? Tk database manipulating tool                MILSO
 
 DBD::
 ::ASAny            adcO? Adaptive Server Anywhere Driver for DBI      SMIRNIOS
@@ -1854,7 +1871,7 @@ DBD::
 ::Informix         amcO? Informix Driver for DBI                      JOHNL
 ::Informix4        adcO? DBI driver for Informix SE 4.10              GTHYNI
 ::Ingres           bmcO? Ingres Driver for DBI                        HTOUG
-::Multiplex        a   ? Spreading database load acrross servers      TIMB
+::Multiplex        ampO? Spreading database load across servers       DBIML
 ::ODBC             amcO? ODBC Driver for DBI                          DBIML
 ::Oracle           MmcO? Oracle Driver for DBI                        DBIML
 ::QBase            amcO? QBase Driver for DBI                         BENLI
@@ -1871,8 +1888,8 @@ DBD::
 ::InterBase        amcO? DBI driver for InterBase RDBMS server        EDPRATOMO
 ::RDB              Rdof? DBI driver for Oracle RDB (OpenVMS only)     ASTILLER
 ::DtfSQLmac        RdpO? dtF/SQL (Mac OS edition) driver for DBI      TWEGNER
-::ADO
-::Excel
+::ADO              bmpO? Database interface modules of MS ADO for DBI TLOWERY
+::Excel            adpO? Excel database driver for the DBI module     KWITKNR
 
 Oraperl            Rmpf? Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl            bmpf? Ingperl emulation interface for DBD::Ingres  HTOUG
@@ -1908,7 +1925,7 @@ ObjStore           Rm+O? ObjectStore OODBMS Interface                 JPRIT
 Pg                 Rdcf? PostgreSQL SQL database interface            MERGL
 PgSQL              adpO? "Pure perl" interface to PostgreSQL          GTHYNI
 Pogo               ad+O? Interface for GOODS object database          SEYN
-Postgres           RncO? PostgreSQL interface with Perl5 coding style VKHERA
+Postgres           RncO? PostgreSQL interface with Perl5 coding style DAVEHOLL
 Sprite             RdpO? Limited SQL interface to flat file databases SHGUN
 Stanza             i   ? Text format database used by OSF and IBM     JHI
 VDBM               cdph? Client/server-layers on top of DBM files     RAM
@@ -1936,7 +1953,7 @@ MLDBM::
 
 DB_File::
 ::Lock             RdpO? DB_File wrapper with flock-based locking     DHARRIS
-::DB_Database
+::DB_Database      bdpO? DB_File to MultiField Table with Index       RANN
 
 DBM::
 ::DBass            adpf? DBM with hashes, locking and XML records     SPIDERBOY
@@ -2152,7 +2169,9 @@ Abstract Graphical User Interfaces modules
 GUI::
 ::Guido            i   ? bd+O Communicate with objects in a GUI       TBRADFUTE
 
-Cmenu
+Cmenu              bdpf? Curses-based menu and data entry functions   DREWF
+
+Prima              Rmchb A perl GUI toolkit                           KARASIK
 
 _______________________________________________________________________
 
@@ -2170,10 +2189,10 @@ Language::
 ::Prolog           adpO? An implementation of Prolog                  JACKS
 ::PGForth          i   ? Peter Gallasch's Forth implementation        PETERGAL
 ::ML               cdpf? Implementation of ML                         DSPARLING
-::VBParser
+::VBParser         i???? Visual Basic 6 source parser                 FRETT
 
 Language::DATR::
-::DATR2XML
+::DATR2XML         RdpOp Convert DATR to XML and back, wth XSLT & DTD LGODDARD
 
 Blatte             bdph? Utilities for Blatte language interpreters   BOBG
 Blatte::
@@ -2243,7 +2262,6 @@ File::
 ::Compare          Supf? Compare file contents quickly                P5P
 ::Copy             adpf? Copying files or filehandles                 ASHER
 ::CounterFile      RdpO? Persistent counter class                     GAAS
-::Df               adpf? Free disk space utilities (h2ph required)    FTASSIN
 ::Find             Supf? Call func for every item in a directory tree P5P
 ::Flock            Mdph? flock() wrapper.  Auto-create locks          MUIR
 ::Glob             adpf? Filename globing (ksh style)                 TYEMQ
@@ -2284,6 +2302,7 @@ Filesys::
 ::dfent            adpf? By-name interface                            TOMC
 ::mntent           adpf? By-name interface                            TOMC
 ::statfs           adpf? By-name interface                            TOMC
+::DiskSpace        RdpO? Perl df (requires h2ph)                      FTASSIN
 
 LockFile::        Application-level locking facilities
 ::Lock             adpO? Lock handles created by LockFile::* schemes  RAM
@@ -2442,6 +2461,7 @@ Font::
 
 Number::
 ::Format           RdpO? Package for formatting numbers for display   WRW
+::Encode           RdpO? Encode bit strings into digit strings        LUISMUNOZ
 
 Number::Phone::
 ::US               Rdpf? Validates several US phone number formats    KENNEDYH
@@ -2454,7 +2474,7 @@ Parse::
 ::Lex              adpO? Generator of lexical analysers               PVERD
 ::RecDescent       MdpO? Recursive descent parser generator           DCONWAY
 ::Tokens           bdpO? Base class for parsing tokens from text      MCKAY
-::Yapp             RdpO? Generates OO LALR parser modules             FDESAR
+::Yapp             RdpOp Generates OO LALR parser modules             FDESAR
 ::YALALR           RdpO? Yet Another LALR parser                      SFINK
 ::Vipar            bdpO? Visual LALR parser debugger                  SFINK
 
@@ -2475,7 +2495,7 @@ XML                RmhO? Large collection of XML related modules      XMLML
 
 XML::
 ::AutoWriter       RdpO? DOCTYPE based XML output                     RBS
-::CSV              ampO? Transform comma separated values to XML      ISTERIN
+::CSV              ampOa Transform comma separated values to XML      ISTERIN
 ::Catalog          RdpO? Resolve public identifiers and remap system  EBOHLMAN
 ::DOM              bdpO? Implements Level 1 of W3's DOM               TJMATHER
 ::Doctype          RdpO? A DTD object class                           RBS
@@ -2497,7 +2517,7 @@ XML::
 ::XQL              ampO? Performs XQL queries on XML object trees     TJMATHER
 ::XSLT             RdcO? Process XSL Transformational sheets          BRONG
 ::miniXQL          ????? Simplistic XQL-like search using streams     MSERGEANT
-::Excel            bdpO? Transform Excel spreadsheet data into XML    ISTERIN
+::Excel            adpOa Transform Excel spreadsheet data into XML    ISTERIN
 ::Xalan            ad+O? Interface to Xalan (Apache XSLT processor)   EDPRATOMO
 
 Frontier::             
@@ -2544,19 +2564,19 @@ Barcode::
 Syntax::Highlight::
 ::Perl             Rdph? Perform syntax highlighting of Perl code     JOHNSCA
 
-XMLI
+XMLI               bmpOa Encapsulates XML drivers                     ISTERIN
 
 CSS::
-::SAC
+::SAC              bdpO? Perl implementation of the Simple API to CSS RBERJON
 
-Whitespace
+Whitespace         MdpOp Detect and cleanup bogus whitespace in files RVAIDH
 
-PDF
+PDF                RdpO? PDF access and manipulation in Perl          ANTRO
 PDF::
-::Core
-::Parse
-::Create
-::Labels
+::Core             RdpO? Core Library for PDF library                 ANTRO
+::Parse            RdpO? parsing functions for PDF library            ANTRO
+::Create           RmpOd Create PDF files                             FTASSIN
+::Labels           bdpO? Produce sheets of mailing labels in PDF      OWEN
 
 _______________________________________________________________________
 
@@ -2590,7 +2610,7 @@ App::             General application development tools
 ::Manager          adch? Installing/Managing/Uninstalling Software    MLEHMANN
 
 Config::
-::FreeForm         bdpf? Provide in-memory configuration data         BTROTT
+::FreeForm         bdpfp Provide in-memory configuration data         BTROTT
 ::IniFiles             ? Read/Write INI-Style configuration files     RBOW
 ::Ini              RdpO? Accesses Windows .ini and .reg files         AVATAR
 
@@ -2676,7 +2696,7 @@ Digest::
 ::SHA1             cdch?  NIST SHA message digest algorithm           UWEH
 ::HMAC             Rdph?  HMAC message integrity check                GAAS
 ::UserSID          adph? Managing session-id's with Digest::SHA1      XWOLF
-::BubbleBabble     bdpf? Create bubble-babble fingerprints            BTROTT
+::BubbleBabble     bdpfp Create bubble-babble fingerprints            BTROTT
 
 Crypt::
 ::Beowulf          Rdpf? An original, very fast encryption algorithm  SIFUKURT
@@ -2710,9 +2730,9 @@ Crypt::
 ::CipherSaber      RdpO? OO module for CS-1 and CS-2 encryption       CHROMATIC
 ::PGPSimple        cdpO? Basic interface to PGP                       JHINKLE
 ::TEA              RdcOa Tiny Encryption Algorithm                    AMS
-::DSA              bdpO? DSA signatures and key generation            BTROTT
+::DSA              bdpOp DSA signatures and key generation            BTROTT
 ::NULL             RdpOa NULL Encryption Algorithm                    AMS
-::DH               adpO? Diffie-Hellman key exchange system           BTROTT
+::DH               bdpOp Diffie-Hellman key exchange system           BTROTT
 ::PassGen          adpf? Generate pronouncable passwords              TJENNESS
 ::GOST             bdpO? GOST encryption algorithm                    AMS
 
@@ -2728,6 +2748,7 @@ Authen::
 ::PAM              bdch? Interface to PAM library                     NIKIP
 ::TacacsPlus       adcO? Authentication on tacacs+ server             MSHOYHER
 ::Ticket           adpO? Suite consisting of master/client/tools      JSMITH
+::PIN              RdpO? Create and verify strong PIN numbers         LUISMUNOZ
 
 RADIUS::
 ::Dictionary       bdpO? Object interface to RADIUS dictionaries      CHRMASTO
@@ -2816,7 +2837,7 @@ HTML::
 ::StickyForms      adpO? HTML form generation for mod_perl/CGI        PMH
 ::Stream           RdpO? HTML output stream                           ERYQ
 ::Subtext          adpO? Text substitutions on an HTML template       KAELIN
-::Table            RupO? Write HTML tables via spreadsheet metaphor   AJPEACOCK
+::Table            RupOp Write HTML tables via spreadsheet metaphor   AJPEACOCK
 ::TableExtract     RmpO? Flexible HTML table extraction               MSISK
 ::TableLayout      bdpO? an extensible OO layout manager              PERSICOM
 ::Template         MmpO? a simple HTML templating system              SAMTREGAR
@@ -2828,7 +2849,7 @@ HTML::
 ::LoL              Rdpf? Construct HTML from Perl data structures     BOBG
 ::ActiveLink       bdpO? Dynamically activate HTML links based on URL NWIGER
 ::WebMake          RmpO? simple web site management system            JMASON
-::Lint
+::Lint             bdpOp HTML validation module (& script)            PETDANCE
 
 HTML::Widgets::
 ::DateEntry        RdpO? Creates date entry widgets for HTML forms.   KENNEDYH
@@ -2970,7 +2991,7 @@ Apache::
 ::ePerl            Rdpr? Fast emulated Embedded Perl (ePerl)          RSE
 ::iNcom            bdpf? An e-commerce framework                      FRAJULAC
 ::CVS              bdpO? Apache PerlContentHandler for CVS            BARBEE
-::Motd
+::Motd             adph? Provides motd functionality to a webserver   CRAMIREZ
 
 Apache::ASP::
 ::Lite             impO? Lightweight IIS emulation under Apache       FERGUSOR
@@ -3202,6 +3223,8 @@ OurNet             Rmch? Interface to BBS-based groupware platforms   AUTRIJUS
 
 HTTP:QuickBase     RdpO? Wraps the QuickBase HTTP API                 CVONROES
 
+UDDI               RdpO? UDDI client interface                        GAAS
+
 _______________________________________________________________________
 
 16) Server and Daemon Utilities
@@ -3222,7 +3245,8 @@ EventServer        RupO? Triggers objects on i/o, timers & interrupts JACKS
 ::Signal           Rupr? signalhandler for the eventserver            JACKS
 
 FUSE::
-::Server
+::Server           RdpO? Custom FUSE server creation                  IAMCAL
+::Client           cdpOp Custom FUSE client creation                  IAMCAL
 
 NetServer::
 ::Compiler         idph? State machine compiler for TCP/IP servers    CHSTROSS
@@ -3297,7 +3321,7 @@ Convert::
 ::Morse            Rdpf? Convert from/to Morse code (.--. . .-. .-..) TELS
 ::RACE             bdpf? Conversion between Unicode and RACE          MIYAGAWA
 ::Base             adph? Convert integers to/from arbitrary bases.    VIPUL
-::PEM
+::PEM              bdpOp Read/write encrypted ASN.1 PEM files         BTROTT
 
 AppleII::
 ::Disk             bdpO? Read/write Apple II disk image files         CJM
@@ -3366,6 +3390,7 @@ Image::
 ::Size             Rdpf? Measure size of images in common formats     RJRAY
 ::Info             RdpO? Extract meta information from image files    GAAS
 ::Imlib2           RdcOp Interface to the Imlib2 image library        LBROCARD
+::DeAnim           RdpO? Create static GIF file from animated GIF     KENMACF
 
 Chart::
 ::Base             RdpO? Business chart widget collection             NINJAZ
@@ -3458,7 +3483,7 @@ Memoize            bdpr? Automatically cache results of functions     MJD
 Memoize::
 ::ExpireLRU        Rdpr? Provide LRU Expiration for Memoize           BPOWERS
 
-ReleaseAction
+ReleaseAction      bdph? Trigger actions on destruction of a handle   TILLY
 
 _______________________________________________________________________
 
@@ -3487,7 +3512,9 @@ IO::
 ::Wrap             RdpO? Wrap old-style FHs in standard OO interface  ERYQ
 ::WrapTie          RdpO? Tie your handles & retain full OO interface  ERYQ
 ::Zlib             bdpO? IO:: style interface to Compress::Zlib       TOMHUGHES
-::Default
+::Default          RdpO? Replace select() with $DEFOUT, $DEFERR, $DEF NWIGER
+::String           RdpO? IO::File interface for in-core strings       GAAS
+::Stringy          RdpO? I/O on in-core objects like strings/arrays   ERYQ
 
 FileHandle         SupO? File handle objects and methods              P5P
 FileCache          Supf? Keep more files open than the system permits P5P
@@ -3551,6 +3578,10 @@ Win32::
 ::API              RdcO? Perl Win32 API Import Facility               ACALPINI
 ::DriveInfo        Rdpf? drives on Win32 systems                      MBLAZ
 
+Win32::MultiMedia::
+::Mci              cdch? An interface for the MCI system on Win32     THAMUS
+::Joystick         cdch? An interface for game controllers on Win32   THAMUS
+
 Win32::OLE::
 ::OPC              RdpO? Ole for Process Control Server Interface     MARTINTO
 
@@ -3578,7 +3609,8 @@ Archie             Rdpf? Archie queries via Prospero ARDP protocol    GBOSS
 BnP                RdhO? Build'n'Play all-purpose batch install. tool STBEY
 Bundle             i   ? Namespace reserved for modules collections   ANDK
 CPAN               RdpO? Perl Archive browse and download             ANDK
-Gedcom             bmpO? Interface to genealogy Gedcom files          PJCJ
+Gedcom             bmpOp Interface to genealogy Gedcom files          PJCJ
+Hints              RdpO? Tools for access hints databases (tips)      MILSO
 Logfile            RdpO? Generic methods to analyze logfiles          ULPFR
 NetObj             adpO? Module loading in real time over TCP/IP      JDUNCAN
 Neural             ad+O? Generic simulation of neural networks        LUKKA
@@ -3593,7 +3625,7 @@ AI::
 ::NeuralNet        RdpO? A simple back-prop neural net                JBRYAN
 
 AI::NeuralNet::
-::SOM
+::SOM              adpO? Kohonen Self-Organizing Maps                 VOISCHEV
 
 AI::Gene::
 ::Sequence         RdpO? Base class of mutation methods +gene grammar AJGOUGH
@@ -3614,6 +3646,7 @@ Audio::
 ::Sox              i   ? sox sound library as one or more modules     NI-S
 ::SoundFile        adcO? Sound I/O based on libsndfile, PDL interface TAIY
 ::Mixer            bdcf? Sound mixer control using ioctl              SERGEY
+::OSS              Rdcf? Interface to Open Sound System audio devices DJHD
 
 Audio::Play::
 ::MPG123           MdcO? Generic frontend for MPG123                  MLEHMANN
@@ -3658,12 +3691,18 @@ Embedix::
 FAQ::
 ::OMatic           RdpO? A CGI-based FAQ/help database maintainer     JHOWELL
 
+Festival::
+::Client           RdpO? Communicate with a Festival server           GOSSAMER
+
+Festival::Client::
+::Async            RdpO? Festival client blocking or non-blocking     DJHD
+
 FestVox            i???? Build synthetic voices (cf. www.festvox.org) LENZO
 
 Finance::
 ::Quote            RmpO? Fetch stock prices over the Internet         PJF
 ::QuoteHist        RdpO? Historical stock quotes from multiple sites  MSISK
-::Streamer         adpO? interface to Datek Streamer                  JERI
+::Streamer         adpOp interface to Datek Streamer                  JERI
 
 Games::
 ::Cards            adpO? Tools to write card games in Perl            AKARGER
@@ -3713,9 +3752,19 @@ Schedule::        See also Schedule:: in chapter 4
 Silly::
 ::StringMaths      adpf? Do maths with letters and strings            SKINGTON
 
+Speech::
+::EST              cd+h? Interface to the Edinburgh Speech Tools lib  DJHD
+::Festival         RdpO? Communicate with a festival server process.  RCALEY
+
+Speech::Recognizer::
+::SPX              Rdch? Interface to Sphinx-II speech recognition    DJHD
+
 SyslogScan::
 ::SyslogEntry      bdpO? Parse UNIX syslog                            RHNELSON
 ::SendmailLine     bdpO? Summarize sendmail transactions              RHNELSON
+
+Telephony::
+::Phonedev         bdcO? Interface to the Linux Telephony API         DJHD
 
 Video::Capture::
 ::V4l              Mdch? Video4linux framegrabber + vbe interface     MLEHMANN
@@ -3725,7 +3774,10 @@ Watchdog::
 ::HTTPService      adpO? Test status of HTTP server                   PSHARPE
 ::MysqlService     adpO? Test status of Mysql server                  PSHARPE
 
-Hints
+Poetry::
+::Vogon            idpOa Vogon Poetry Generator                       AMS
+
+Workflow           adcfl Interface to the wftk workflow toolkit       MICHAEL
 
 _______________________________________________________________________
 
@@ -3919,6 +3971,7 @@ to a CGI script that lets you edit the database entries yourself.
   -----    --------------------------------------------------------------
   AALLAN   Alasdair Allan <aa@babilim.co.uk>
   ABARCLAY Alan Barclay <gorilla@elaine.drink.com>
+  ABERGMAN Artur Bergman <artur at contiller.se>
   ABEROHAM Abraham Ingersoll <abe@dajoba.com>
   ABH      Ask Bjørn Hansen <ask-cpan@perl.org>
   ABIGAIL  Abigail <abigail@foad.org>
@@ -4206,6 +4259,7 @@ to a CGI script that lets you edit the database entries yourself.
   DAOT     Thanh Dao <daot@us.ibm.com>
   DARNOLD  Dean Arnold <darnold@earthlink.net>
   DAVECROSS Dave Cross <dave@dave.org.uk>
+  DAVEHOLL Dave Hollenbeck <daveholl@frii.com>
   DAVEL    Dave Lorand <davel@NOSPAM.src.uchicago.edu>
   DAVEM    Dave Moore <dave@epals.com>
   DAVEO    David Oberholtzer <daveo@obernet.com>
@@ -4351,7 +4405,7 @@ to a CGI script that lets you edit the database entries yourself.
   FARBER   Alex Farber <eedalf@eed.ericsson.se>
   FDESAR   Francois Desarmenien <francois@fdesar.net>
   FERGUSOR Ross Ferguson <ross.ferguson@cibc.co.uk>
-  FGLOCK   Flavio Soibelmann Glock <fglock@pucrs.br>
+  FGLOCK   Flávio Soibelmann Glock <fglock@pucrs.br>
   FHOLTRY  Frank Holtry <fholtry@lucent.com>
   FIJI     Ben Bennett <fiji@limey.net>
   FIMM     Dennis Taylor <corbeau@execpc.com>
@@ -4394,6 +4448,7 @@ to a CGI script that lets you edit the database entries yourself.
   GAAS     Gisle Aas <gisle@ActiveState.com>
   GABOR    Gábor Egressy <gabor@vmunix.com>
   GABY     Gaby Vanhegan <gaby@vanhegan.com>
+  GAFFER   George A. Fitch III <gaf3@gaf3.com>
   GAND     Greg Anderson <greg@ftp.netgate.net>
   GARROW   John M. Redford <John.Redford@fmr.com>
   GARY     Gary Howland <gary@hotlava.com>
@@ -4420,7 +4475,7 @@ to a CGI script that lets you edit the database entries yourself.
   GJRUSSEL Geoff Russell <geoff@austrics.com.au>
   GKE      Gustav Kristoffer Ek <stoffer@netcetera.dk>
   GKNOPS   Gerd Knops <gerti@BITart.com>
-  GLENNWOOD Glenn Wood <glenn@savesmart.com>
+  GLENNWOOD Glenn Wood <glenwood@alumni.caltech.edu>
   GLOVER   Mike Glover <glover@credit.erin.utoronto.ca>
   GMCCAR   Greg McCarroll <greg@mccarroll.demon.co.uk>
   GMLEWIS  Glenn M. Lewis <glenn@gmlewis.com>
@@ -4480,9 +4535,11 @@ to a CGI script that lets you edit the database entries yourself.
   HOWEN    Howard Owen <hbo@egbok.com>
   HPALM    Hartmut Palm <palm@gfz-potsdam.de>
   HRAFNKELL Hrafnkell Freyr Hlöðversson <keli@shebang.dk>
+  HRANICKY Jim Hranicky <jfh@cise.ufl.edu>
   HTCHAPMAN H. Todd Chapman <htchapma@oakland.edu>
   HTOUG    Henrik Tougaard <htoug@hotmail.com>
   HVDS     Hugo van der Sanden <hv@crypt0.demon.co.uk>
+  IAMCAL   Cal Henderson <cal@iamcal.com>
   IANC     Ian Clatworthy <ianc@mincom.co>
   IANPX    Ian Phillipps <ian@dial.pipex.com>
   IBMTORDB2 Robert Indrigo <db2perl@ca.ibm.com>
@@ -4546,7 +4603,7 @@ to a CGI script that lets you edit the database entries yourself.
   JDPORTER John D. Porter <jdporter@min.net>
   JDUNCAN  James A Duncan <j@mesduncan.co.uk>
   JEDWARDS Jim Edwards <inmet@altavista.com>
-  JEFFA    Jeffrey H. Anderson <captvanhalen@yahoo.com>
+  JEFFA    Jeffrey Hayes Anderson <captvanhalen@yahoo.com>
   JEFFH    Jeffrey Hulten <jeffh@premier1.net>
   JEFFMOCK Jeff Mock <jeff@mock.com>
   JEGAN    Joseph J. Egan <joseph_egan@hotmail.com>
@@ -4593,7 +4650,7 @@ to a CGI script that lets you edit the database entries yourself.
   JLATHAN  Jeff Lathan <lathan@pobox.com>
   JLBEC    Joel Becker <jlbec@ocala.cs.miami.edu>
   JLEVAN   Jerry LeVan <levan@eagle.eku.edu>
-  JLLEROY  Jean-Louis Leroy <jll@skynet.be>
+  JLLEROY  Jean-Louis Leroy <jll@soundobjectlogic.com>
   JLOLOFIE Justin Lolofie <justin@lolofie.com>
   JMAC     Jason McIntosh <jmac@jmac.org>
   JMAHAN   J. Michael Mahan <mahanm@nextwork.rose-hulman.edu>
@@ -4637,11 +4694,13 @@ to a CGI script that lets you edit the database entries yourself.
   JPRAVETZ Jim Pravetz <jpravetz@adobe.com>
   JPRIT    Joshua Nathaniel Pritikin <jpritikin@pobox.com>
   JQUILLAN John C. Quillan <quillan@doitnow.com>
+  JQUIROGA Jesús Quiroga Martín de Valmaseda <jquiroga@jquiroga.com>
   JRED     Jörn Reder <joern@netcologne.de>
   JRENNIE  Jason Rennie <jrennie@ai.mit.edu>
   JREPROGLE Jim Reprogle <jreprogle@worldnet.att.net>
   JROGERS  Jay Rogers <jay@rgrs.com>
   JROWE    Jeff Rowe <j.p.rowe@larc.nasa.gov>
+  JSHEARER John D. Shearer <jds@jkshearer.com>
   JSIRACUSA John Siracusa <siracusa@mindspring.com>
   JSLAGEL  Joe Slagel <slagel@geospiza.com>
   JSMITH   James G Smith <jgsmith@jamesmith.com>
@@ -4671,6 +4730,7 @@ to a CGI script that lets you edit the database entries yourself.
   KAELIN   Kaelin Colclasure <kaelin@acm.org>
   KAHUNA   Andy Finkenstadt <andy@finkenstadt.com>
   KAIH     Kai Henningsen <kai-cpan@khms.westfalen.de>
+  KARASIK  Dmitry Karasik <dmitry@karasik.eu.org>
   KARLON   Karlon West <karlon@netcom.com>
   KARLWARD Karl Ward <karlward@columbia.edu>
   KASEI    Marty Pauley <marty@kasei.com>
@@ -4775,6 +4835,7 @@ to a CGI script that lets you edit the database entries yourself.
   MARCP    Marc Paquette <Marc.Paquette@crim.ca>
   MAREKR   Marek Rouchal <Marek.Rouchal@gmx.net>
   MARKB    Mark Biggar <mab@wdl.loral.com>
+  MARKBUSH Mark J Bush <Mark.Bush@bushnet.demon.co.uk>
   MARKC    Mark Constable <markc@goldcoast.org>
   MARKIM   Mark A. Imbriaco <mark.imbriaco@pobox.com>
   MARKK    Mark Kennedy <mtk@ny.ubs.com>
@@ -4831,6 +4892,7 @@ to a CGI script that lets you edit the database entries yourself.
   MHOSKEN  Martin Hosken <martin_hosken@sil.org>
   MHYOUNG  Michael Young <mhyoung@ucsd.edu>
   MICB     Malcolm Beattie <mbeattie@sable.ox.ac.uk>
+  MICHAEL  Michael Roberts <wftk@vivtek.com>
   MICHAELD Michael D. Dowling <michaeld@cnet.com>
   MIJIT    michael j. talarczyk <mjt@mijit.com>
   MIKEC    Mike Carpenter <mikec@internet-software.com>
@@ -4975,6 +5037,7 @@ to a CGI script that lets you edit the database entries yourself.
   PATM     Pat Martin <pat@bronco.advance.com>
   PAULG    Paul Gampe <paulg@apnic.net>
   PAVELH   Pavel Hlavnicka <cpanuser@seznam.cz>
+  PAYERLE  Tom Payerle <payerle@physics.umd.edu>
   PBRYANT  Patrick W. Bryant <pbryant@gsu.edu>
   PBWOLF   Phill Wolf <pbwolf@cpan.org>
   PCOLLINS Patrick Collins <pcollins@web.fairfax.com.au>
@@ -4994,6 +5057,7 @@ to a CGI script that lets you edit the database entries yourself.
            perldl-request@jach.hawaii.edu with body "subscribe"
   PERLGIRL Sara Starre <theperlgirl@yahoo.com>
   PERSICOM Matthew O. Persico <persicom@acedsl.com>
+  PETDANCE Andy Lester <andy@petdance.com>
   PETEK    Pete Krawczyk <petek@bsod.net>
   PETER    Peter Thatcher <peterthatcher@yahoo.com>
   PETERGAL Peter Gallasch <gal@adv.magwien.gv.at>
@@ -5059,6 +5123,7 @@ to a CGI script that lets you edit the database entries yourself.
   RANDY    Randy Jay Yarger <randyyarger@hotmail.com>
   RANDYM   Randy Maas <randym@acm.org>
   RANI     Rani Pinchuk <rani@cpan.org>
+  RANN     冉宁煜 / Ran Ningyu <rny@163.net>
   RANT     Erik E. Rantapaa <rantapaa@math.umn.edu>
   RANTCZAK Robert Antczak <rantczak@home.com>
   RAP      Ryan Alyn Porter <rap@endymion.com>
@@ -5131,6 +5196,7 @@ to a CGI script that lets you edit the database entries yourself.
   RURBAN   Reini Urban <rurban@sbox.tu-graz.ac.at>
   RUSCHER  Paul Ruscher <ruscher@met.fsu.edu>
   RVA      Rodger V. Anderson <rodger@boi.hp.com>
+  RVAIDH   Rajesh Vaidheeswarran <rv@gnu.org>
   RVAZ     Ricardo Vazquez Armenta <rvazquez_a@yahoo.com>
   RVSUTHERL Richard Sutherland <rvsutherland@yahoo.com>
   RWAHBY   Riad Wahby <rwahby@cpan.org>
@@ -5185,6 +5251,7 @@ to a CGI script that lets you edit the database entries yourself.
   SHARKEY  Nick 'Sharkey' Moore <sharkey+cpan@zoic.org>
   SHARRIS  Steve Harris <perl@nullspace.com>
   SHARYANTO steven haryanto <steven@haryan.to>
+  SHAUN    Shaun Dawson <shaun@penguinair.com>
   SHAWNPW  Shawn P. Wallace <shawn@as220.org>
   SHERWOOD Steve Sherwood <pariah@netcomuk.co.uk>
   SHGUN    Shishir Gundavaram <shishir@ruby.ora.com>
@@ -5286,6 +5353,7 @@ to a CGI script that lets you edit the database entries yourself.
   TEVERETT Toby Everett <teverett@att.com>
   TGROSE   Tony G. Rose <tgr@cre.canon.co.uk>
   TGUMMELS Travis Gummels <travis@gummels.com>
+  THAMUS   Tom Kliethermes <tomk@informix.com>
   THOGEE   Thomas Geffert <thg@users.sourceforge.net>
   TIBBS    Jason Tibbitts <tibbs@hpc.uh.edu>
   TILLY    Ben Tilly <ben_tilly@operamail.com>
@@ -5302,6 +5370,7 @@ to a CGI script that lets you edit the database entries yourself.
            Mail to majordomo@lists.stanford.edu with body "subscribe
            ptk <your-address>"
   TLINDEN  Thomas Linden <perl@daemon.de>
+  TLOWERY  Thomas A. Lowery <stlowery@yahoo.com>
   TLP      Travis L Priest <T.L.Priest@LaRC.NASA.GOV>
   TOBIX    Tobias Brox <tobix@irctos.org>
   TODD     Torsten Hentschel <todd@bayleys.ping.de>
@@ -5384,7 +5453,8 @@ to a CGI script that lets you edit the database entries yourself.
   YLU      Luke Y. Lu <ylu@mail.utexas.edu>
   YOUD     David Youd <david@youdzone.com>
   YSTH     Yitzchak Scott-Thoennes <sthoenna@efn.org>
-  YULESHOW Wanshu Shao <yuleshow@online.sh.cn>
+  YULESHOW Wanshu Shao <Yule.Show@mail.doc.gov>
+  YVES     Yves Orton <demerphq@hotmail.com>
   YVESP    Yves Paindaveine <yp@gr.osf.org>
   ZED      Zed Lopez <zed@apricot.com>
   ZELT     Tom Zeltwanger <perl@ename.com>
