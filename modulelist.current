@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.87 $ $Date: 2001/03/28 12:11:00 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.88 $ $Date: 2001/05/01 12:17:56 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.87 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.88 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -713,11 +713,11 @@ characters which convey (approximate) basic status information.
 
 For example:
 
-Name           DSLI  Description                                  Info
--------------  ----  -------------------------------------------- -----
-Fcntl          Sdcf  Defines fcntl() constants (see File::Lock)   JHI
+Name           DSLIP  Description                                  Info
+-------------  -----  -------------------------------------------- -----
+Fcntl          Sdcfp  Defines fcntl() constants (see File::Lock)   JHI
 
-Where the 'DSLI' characters have the following meanings:
+Where the 'DSLIP' characters have the following meanings:
 
   D - Development Stage  (Note: *NO IMPLIED TIMESCALES*):
     i   - Idea, listed to gain consensus or as a placeholder
@@ -746,6 +746,14 @@ Where the 'DSLI' characters have the following meanings:
     n   - no interface at all (huh?)
     r   - some use of unblessed References or ties
     O   - Object oriented using blessed references and/or inheritance
+
+  P - Public License
+    p   - Standard-Perl denotes that the user may choose between GPL and Artistic
+    g   - GPL stands for GNU General Public License
+    l   - LPGL for GNU Library Public License, 
+    a   - Artistic for the Artistic license alone
+    d   - Unlimited-Distribution stands for all others that allow
+          unlimited distribution
 
 Where letters are missing they can usually be inferred from the
 others.  For example 'i' implies 'id', 'S' implies 'Su'.
