@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.48 $Date: 1998/06/26 11:34:52 $
+The Perl 5 Module List       Revision: 2.48 $Date: 1998/06/26 11:35:59 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -665,7 +665,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.89 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.90 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1108,8 +1108,8 @@ NeXTStep::
 ::NetInfo      idcO  NeXTStep's NetInfo (like ONC NIS)            PGUEN
 
 Netware::
-::NDS          cd+O Interface to Novell Directory Services        KTHOMAS
-::Bindery      cd+O Interface to Novell Bindery mode calls        KTHOMAS
+::NDS          cd+O  Interface to Novell Directory Services       KTHOMAS
+::Bindery      cd+O  Interface to Novell Bindery mode calls       KTHOMAS
 
 OS2::
 ::ExtAttr      RdcO  (Tied) access to extended attributes         ILYAZ
@@ -1431,7 +1431,7 @@ DBI            amcO  Generic Database Interface (see DBD modules) DBIML
 DBD::
 DBD::
 ::Altera       bdpO  Altera SQL Server for DBI - pure Perl code   DSOUFLIS
-::CSV          adc0  SQL engine and DBI driver for CSV files      JWIED
+::CSV          adcO  SQL engine and DBI driver for CSV files      JWIED
 ::DB2          adcO  DB2 Driver for DBI                           MHM
 ::Fulcrum      cdcO  Fulcrum SearchServer Driver for DB           SHARI
 ::Informix     amcO  Informix Driver for DBI                      JOHNL
@@ -1632,7 +1632,7 @@ LockFile::           Application-level locking facilities
 ::Simple       adpr  Simple file locking mechanism                RAM
 
 Stat::
-::lsMode       Rdpf  translate mode 0644 to -rw-r--r--            MJD
+::lsMode       Rdpf  Translate mode 0644 to -rw-r--r--            MJD
 
 _______________________________________________________________________
 
@@ -1656,7 +1656,7 @@ Text::
 ::Bib          RdpO  Module moved to Text::Refer                  ERYQ
 ::BibTeX       adcO  Parse BibTeX files                           GWARD
 ::CSV          adpO  Manipulate comma-separated value strings     ALANCITT
-::CSV_XS       adpO  Fast 8bit clean version of above             JWIED
+::CSV_XS       adpO  Fast 8bit clean version of Text::CSV         JWIED
 ::DelimMatch   RdpO  Match (possibly nested) delimited strings    NWALSH
 ::Format       RdpO  Advanced paragraph formatting                GABOR +
 ::Graphics     RdpO  Layout Helper for non-graphical terminals    SFARRELL
@@ -1722,7 +1722,7 @@ RTF::
 ::Base         i     Classes for Microsoft Rich Text Format       NI-S
 
 SQL::
-::Statement    adc0  Small SQL parser and engine                  JWIED
+::Statement    adcO  Small SQL parser and engine                  JWIED
 
 TeX::
 ::DVI          adpO  Methods for writing DVI (DeVice Independent) JANPAZ
@@ -1823,7 +1823,7 @@ SHA            adcO  NIST SHA message digest algorithm            UWEH
 GSS            adcO  Generic Security Services API (RFC 2078)     MSHLD
 
 Crypt::
-::CBC          adp0  Cipherblock chaining for Crypt::DES/IDEA     LDS
+::CBC          adpO  Cipherblock chaining for Crypt::DES/IDEA     LDS
 ::DES          a     DES encryption (libdes)                      GARY
 ::IDEA         a     International Data Encryption Algorithm      GARY
 ::PRSG         a     160 bit LFSR for pseudo random sequences     GARY
@@ -1834,7 +1834,7 @@ Authen::
 ::PAM          adcf  Interface to PAM library                     NIKIP
 ::TacacsPlus   adcO  Authentication on tacacs+ server             MSHOYHER +
 
-Authcard
+Authcard::
 ::SDI          RdcO  SecurityDynamics SecurID cards interface     NIGELM
 
 SSLeay::
@@ -1847,10 +1847,8 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 URI::
-::Copy         bdpf  Get, put, copy, delete files located by URL  BZAJAC
 ::Escape       ampf  General URI escaping/unescaping functions    LWWWP
 ::URL          RmpO  Uniform Resource Locator objects             LWWWP
-
 
 CGI::
 ::Base         RmpO  Complete HTTPD CGI Interface class           CGIP
@@ -1863,7 +1861,7 @@ CGI::
 ::LogCarp      adpf  Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr      RmpO  Fork CGI app as a per-session mini server    CGIP
 ::Out          adpf  Buffer CGI output and report errors          MUIR
-::Query        adpO  module to parse CGI quiry strings            MPECK
+::Query        adpO  Parse CGI quiry strings                      MPECK
 ::Request      RmpO  Parse CGI request and handle form fields     CGIP
 ::Response     ampO  Response construction for CGI applications   CGIP
 ::Screen       adpO  Create multi screen CGI-scripts              ULPFR +
@@ -1939,6 +1937,9 @@ Netscape::
 
 HyperWave::
 ::CSP          cdpO  Interface to HyperWave's HCI protocol        GOSSAMER
+
+WebFS::
+::FileCopy     bdpf  Get, put, copy, delete files located by URL  BZAJAC
 
 CCI            i     Common Client Interface for WWW browsers     DOUGM
 CGI_Lite       MnpO  Light-weight interface for fast apps         SHGUN
@@ -2253,7 +2254,7 @@ Games::
 ::WordFind     bdpO  Generate word-find type puzzles              AJOHNSON
 
 Cisco::
-::Conf         adp0  Cisco router administratian via TFTP         JWIED
+::Conf         adpO  Cisco router administratian via TFTP         JWIED
 
 _______________________________________________________________________
 
