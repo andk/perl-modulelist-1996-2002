@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.8 $$Date: 1999/10/22 08:19:05 $
+The Perl 5 Module List       $Revision: 3.9 $$Date: 1999/10/23 07:37:54 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.8 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.9 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -938,6 +938,7 @@ GTop              bdcO Perl interface to libgtop                    DOUGM
 
 Schedule::
 ::At              Rd   OS independent interface to the at command   JOSERODR
+::Match           adpr Pattern-based crontab-like schedule          TAIY
 
 Quota             Rdcf Disk quota system functions, local & remote  TOMZO
 
@@ -962,6 +963,7 @@ FreeBSD::
 
 Mac::                Macintosh specific modules
 ::AppleEvents     bmcO AppleEvent manager and AEGizmos              MCPL
+::AssistantFrames RdpO Easy creation of assistant dialogs           GBAUER
 ::Components      bmcO (QuickTime) Component manager                MCPL
 ::Files           bmcO File manager                                 MCPL
 ::Gestalt         bmcO Gestalt manager: Environment enquiries       MCPL
@@ -1077,9 +1079,11 @@ Net::
 ::DummyInetd      RdpO A dummy Inetd server                         GBARR
 ::FTP             adpf Interface to File Transfer Protocol          GBARR
 ::Gen             adcO Generic support for socket usage             SPIDB
+::Goofey          a    Communicate with a Goofey server             GOSSAMER
 ::Hotline         RdpO Interface to the Hotline protocol            JSIRACUSA
 ::ICAP            adpO Interface to ICAP Protocol (Internet-Draft)  KJOHNSON
 ::ICB             bdpO ICB style chat server interface              JMV
+::ICQ             a    Communicate with an ICQ server               GOSSAMER
 ::IMAP            adpO Interface to IMAP Protocol (RFC2060)         KJOHNSON
 ::IRC             cdpO Internet Relay Chat interface                DSHEPP
 ::Ident           RdpO Performs ident (rfc1413) lookups             JPC
@@ -1325,12 +1329,12 @@ Tie::
 ::Dir             adpr Tie hash for reading directories             GBARR
 ::File            adpr Tie hash to files in a directory             AMW
 ::Handle          RdpO Base class for implementing tied filehandles STBEY
-::HashDefaults    i    N/A                                          JDPORTER
+::HashDefaults    adpr Let a hash have default values               JDPORTER
 ::IxHash          RdpO Indexed hash (ordered array/hash composite)  GSAR
 ::ListKeyedHash   bdpr Use lists to key multi-level hashes          SNOWHARE
 ::Mem             adcO Bind perl variables to memory addresses      PMQS
-::Multidim        i    N/A                                          JDPORTER
-::OffsetArray     i    N/A                                          JDPORTER
+::Multidim        adpr "tie"-like multidimensional data structures  JDPORTER
+::OffsetArray     adpr Tie one array to another, with index offset  JDPORTER
 ::Quick           i    Simple way to create ties                    TIMB
 ::RndHash         bdpO choose a random key of a hash in O(1) time   DFAN
 ::SentientHash    cdpr Tracks changes to nested data structures     ANDREWF
@@ -1705,7 +1709,7 @@ Text::
 ::Format          RdpO Advanced paragraph formatting                GABOR
 ::Graphics        RdpO Graphics rendering toolkit with text output  SFARRELL
 ::Invert          cdpO Create/query inv. index of text entities     NNEUL
-::Macros          i    N/A                                          JDPORTER
+::Macros          adpO template macro expander (OO)                 JDPORTER
 ::Metaphone       bdcf A modern soundex. Phonetic encoding of words MSCHWERN
 ::MetaText        bdpO Text processing/markup meta-language         ABW
 ::Morse           cdpf convert text to/from Morse code              JONO
@@ -2735,7 +2739,7 @@ to a CGI script that lets you edit the database entries yourself.
   BSUGARS  Benjamin Sugars <bsugars@canoe.ca>
   BURL     Burl Nyswonger <Burl@Nyswonger.org>
   BWEILER  Bernard Weiler <Bernard.Weiler@icn.siemens.de>
-  BZAJAC   Blair Zajac <bzajac@geostaff.com>
+  BZAJAC   Blair Zajac <blair@akamai.com>
   CAADAMS  Clifford A. Adams <caadams@zynet.com>
   CARL     Carl Declerck <carl@miskatonic.inbe.net>
   CARLADLER Carl Adler <carl_adler@idx.com>
