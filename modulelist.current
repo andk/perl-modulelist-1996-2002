@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.31 $Date: 1996/09/12 02:42:42 $
+The Perl 5 Module List       Revision: 2.32 $Date: 1996/09/17 00:00:01 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -79,9 +79,8 @@ easier to use, reuse, integrate and extend.
 This list will be posted to comp.lang.perl.announce and comp.answers on
 a semi-regular basis. It has two key aims:
 
-  1.) FOR DEVELOPERS: To change duplication of effort into cooperation.
-  2.) FOR USERS: To quickly locate existing software which can be
-      reused.
+   - FOR DEVELOPERS: To change duplication of effort into cooperation.
+   - FOR USERS: To quickly locate existing software which can be reused.
 
 This list includes the Perl 5 standard modules, other completed
 modules, work-in-progress modules and would-be-nice-to-have ideas for
@@ -104,6 +103,8 @@ currently registered CPAN sites:
             ftp://ftp.hkstar.com/pub/CPAN/
         Japan
             ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/
+        South Korea
+            ftp://ftp.nuri.net/pub/CPAN/
         Taiwan
             ftp://dongpo.math.ncu.edu.tw/perl/CPAN/
     Australasia
@@ -129,6 +130,7 @@ currently registered CPAN sites:
         Germany
             ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/
             ftp://ftp.rz.ruhr-uni-bochum.de/pub/CPAN/
+            ftp://ftp.uni-hamburg.de/pub/soft/lang/perl/CPAN/
         Greece
             ftp://ftp.ntua.gr/pub/lang/perl/
         Hungary
@@ -173,13 +175,14 @@ currently registered CPAN sites:
             ftp://ftp.metronet.com/pub/perl/
             ftp://ftp.orst.edu/pub/packages/CPAN/
             ftp://ftp.ou.edu/mirrors/CPAN/
-            ftp://ftp.rge.com/pub/languages/perl/CPAN/
+            ftp://ftp.rge.com/pub/languages/perl/
             ftp://ftp.sedl.org/pub/mirrors/CPAN/
             ftp://ftp.sterling.com/CPAN/
             ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
     South America
         Chile
             ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
+
 
 All the files under each of the directories listed above should be
 identical at all these sites since they are all automatically
@@ -231,6 +234,8 @@ You should be able to get a copy from one of these places:
   2.) HTML version:
         http://www.perl.com/CPAN/modules/00modlist.long.html
 
+
+
 Editorial Information and Copyright
 
 This document is Copyright (c) 1996 by Tim Bunce and Andreas König. All
@@ -258,36 +263,31 @@ List to be built from that database. In April 1996 Andreas took over
 the automatic posting of the Module List and I now maintain the other
 parts of the text. We plan to add value to the automation over time.
 
-
-=======================================================================
-
+======================================================================
 
         Part 1 - Modules: Creation, Use and Abuse
         =========================================
 
-
-1) Perl 5 Module Terminology (a larry-terminology-mini-tutorial)
-   -------------------------
+1)   Perl 5 Module Terminology
+     -------------------------
 
 Perl 5 implements a class using a package, but the presence of a
-package doesn't imply the presence of a class.  A package is just a
-namespace.  A class is a package that provides subroutines that can be
-used as methods.  A method is just a subroutine that expects, as its
-first argument, either the name of a package (for "static" methods),
-or a reference to something (for "virtual" methods).
+package doesn't imply the presence of a class. A package is just a
+namespace. A class is a package that provides subroutines that can be
+used as methods. A method is just a subroutine that expects, as its
+first argument, either the name of a package (for "static" methods), or
+a reference to something (for "virtual" methods).
 
 A module is a file that (by convention) provides a class of the same
 name (sans the .pm), plus an import method in that class that can be
-called to fetch exported symbols.  This module may implement some of
-its methods by loading dynamic C or C++ objects, but that should be
-totally transparent to the user of the module.  Likewise, the module
-might set up an AUTOLOAD function to slurp in subroutine definitions on
-demand, but this is also transparent.  Only the .pm file is required to
-exist.
+called to fetch exported symbols. This module may implement some of its
+methods by loading dynamic C or C++ objects, but that should be totally
+transparent to the user of the module. Likewise, the module might set
+up an AUTOLOAD function to slurp in subroutine definitions on demand,
+but this is also transparent. Only the .pm file is required to exist.
 
-
-2) Guidelines for Module Creation
-   ------------------------------
+2)   Guidelines for Module Creation
+     ------------------------------
 
 2.1 Do similar modules already exist in some form?
 
@@ -850,13 +850,14 @@ Pod::
 ::Index        cdpr  index generator                              KJALB
 ::Latex        cdpr  converter to LaTeX                           KJALB
 ::Man          cdpr  converter to man page                        KJALB
-::Parser       b     Parser                                       BRADAPP +
+::Parser       bdpO  Base class for parsing pod syntax            BRADAPP !
 ::Pod          cdpr  converter to canonical pod                   KJALB
 ::RTF          cdpr  converter to RTF                             KJALB
-::Simplify     cdpr  Common pod parsing code                      KJALB !
+::Select       bdpf  Print only selected section of pod docs      BRADAPP +
+::Simplify     cdpr  Common pod parsing code                      KJALB
 ::Texinfo      cdpr  converter to texinfo                         KJALB
 ::Text         Supf  convert POD data to formatted ASCII text     TOMC
-::Usage        b     Print Usage messages based on your own pod   BRADAPP +
+::Usage        bdpf  Print Usage messages based on your own pod   BRADAPP !
 
 
 _______________________________________________________________________
@@ -1096,7 +1097,7 @@ Time::
 ::gmtime       adpf  A by-name interface for gmtime               TOMC
 ::localtime    adpf  A by-name interface for localtime            TOMC
 ::Local        Supf  Implements timelocal() and timegm()          P5P
-::HiRes        Rdcf  High resolution time, sleep, and alarm       DEWEG !
+::HiRes        Rdcf  High resolution time, sleep, and alarm       DEWEG
 ::CTime        Rdpf  Format Times ala ctime(3) with many formats  MUIR
 ::ParseDate    Rdpf  Parses many forms of dates and times         MUIR
 ::JulianDay    Rdpf  Converts y/m/d into seconds                  MUIR
@@ -1579,6 +1580,7 @@ Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Religion       adpr  Control where you go when you die()/warn()   KJALB
 Callback       RdpO  Define easy to use function callback objects MUIR
+AtExit         Rdpr  atexit() function to register exit-callbacks BRADAPP
 
 
 _______________________________________________________________________
@@ -1636,7 +1638,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Archie         Rdpf  Archie queries via Prospero ARDP protocol    GBOSS
-CPAN           adpO  Perl Archive browse and download             ANDK +
+CPAN           adpO  Perl Archive browse and download             ANDK
 CreditCard     Rdpf  Credit card number check digit test          JONO
 Neural         ad+O  Generic simulation of neural networks        LUKKA
 Nexus          cdcO  Interface to Nexus (threads/ipc/processes)   RDO
@@ -1813,6 +1815,7 @@ to a CGI script that lets you edit the database entries yourself.
   CHIPS    Chip Salzenberg <chs@nando.net>
   CHOWARTH Colin Howarth <colin@muc.de>
   CJM      Christopher J. Madsen <ac608@yfn.ysu.edu>
+  CNANDOR  Chris Nandor <pudge@pcix.com>
   DALGL    Bob Dalgleish <bob.dalgleish@sk.sympatico.ca>
   DANKOGAI Dan Kogai <dankogai@jms.jeton.or.jp>
   DANMQ    Daniel M. Quinlan <danq@colorado.edu>
@@ -1822,6 +1825,7 @@ to a CGI script that lets you edit the database entries yourself.
            that then mail to dbi-REQUEST@fugue.com and ask (the human,
            Ted Lemon) to subscribe you to one or more of dbi-announce,
            dbi-users, or dbi-dev.
+  DEWEG    Douglas E. Wegscheid <wegscd@whirlpool.com>
   DMACKS   Daniel Macks <dmacks@netspace.org>
   DMEGG    David Megginson <dmeggins@aix1.uottawa.ca>
   DMO      Darryl Okahata <darrylo@sr.hp.com>
@@ -1955,11 +1959,13 @@ to a CGI script that lets you edit the database entries yourself.
   RAM      Raphael Manfredi <ram@hptnos02.grenoble.hp.com>
   RBOW     Richard Bowen <rbowen@rcbowen.com>
   RDO      Robert Olson <olson@mcs.anl.gov>
+  RHOFER   Robert Hofer <hofer@informatik.uni-muenchen.de>
   RIK      Rik Harris <rik.harris@fulcrum.com.au>
   RJRAY    Randy J Ray <rjray@uswest.com>
   RJS      Robert J Seymour <rseymour@rseymour.com>
   RMOSE    Russell Mosemann <mose@ns.ccsn.edu>
   ROSCH    Roderick Schertler <roderick@gate.net>
+  RSE      Ralf S. Engelschall <rse@engelschall.com>
   RURBAN   Reini Urban <rurban@sbox.tu-graz.ac.at>
   RVA      Rodger Anderson <rodger@boi.hp.com>
   SAMPO    Sampo Kellomaki <sampo@neuronio.pt>
@@ -1995,6 +2001,7 @@ to a CGI script that lets you edit the database entries yourself.
   VMSML    The VMSPerl Mailing list
            Mail subscription requests to maintainer at
            <bailey@genetics.upenn.edu>
+  WATANABE Hirofumi Watanabe <watanabe@ase.ptg.sony.co.jp>
   WIN32    The Perl for Win32 Mailing list
            Mail to majordomo@mail.hip.com with body "subscribe
            Perl-Win32 <your-address>"
