@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.60 $Date: 1999/10/20 05:43:58 $
+The Perl 5 Module List       Revision: 2.60 $Date: 1999/10/20 09:45:23 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.136 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.137 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1330,6 +1330,10 @@ Class::
 Object::
 ::Info          Rupf General info about objects (is-a, ...)       JACKS
 
+POE::                Perl Object Environment
+::Kernel        RdpO An event queue that dispatches events        RCAPUTO
+::Session       RdpO state machine running on POE::Kernel events  RCAPUTO
+
 MOP             i    Meta Object Protocol (Tool collection)       ORTALO
 
 Ref             RdpO Print, compare, and copy perl structures     MUIR
@@ -1430,6 +1434,7 @@ XBase           bdpO Read/write interface to XBase files          JANPAZ
 Tied Hash File Interfaces:
 
 AnyDBM_File     Sup  Uses first available *_File module above     P5P
+BerkeleyDB      Rdco Interface to Berkeley DB 2 & 3               PMQS
 CDB_File        adc  Tie to CDB (Bernstein's constant DB) files   TIMPX
 DBZ_File        adc  Tie to dbz files (mainly for news history)   IANPX
 DB_File         Suc  Tie to DB files                              PMQS
@@ -1716,6 +1721,7 @@ PostScript::
 ::Font          Rdpf analyzes PostScript font files               JV
 ::FontMetrics   Rdpf analyzes Adobe Font Metric files             JV
 ::FontInfo      Rdpf analyzes Windows font info files             JV
+::Resources     Rdpf loads Unix PostScript Resources file         JV
 
 Font::
 ::AFM           RdpO Parse Adobe Font Metric files                GAAS
@@ -1824,11 +1830,11 @@ Unicode::
 ::Map8          RdcO Convert between most 8bit encodings          GAAS
 
 No::
-::Dato          adpf Norwegian stuff                              GAAS
-::KontoNr       adpf Norwegian stuff                              GAAS
-::PersonNr      adpf Norwegian stuff                              GAAS
-::Sort          adpf Norwegian stuff                              GAAS
-::Telenor       adpf Norwegian stuff                              GAAS
+::Dato          Rdpf Norwegian stuff                              GAAS
+::KontoNr       Rdpf Norwegian stuff                              GAAS
+::PersonNr      Rdpf Norwegian stuff                              GAAS
+::Sort          Rdpf Norwegian stuff                              GAAS
+::Telenor       Rdpf Norwegian stuff                              GAAS
 
 Cz::
 ::Cstocs        adpO Charset reencoding                           JANPAZ
@@ -1854,10 +1860,10 @@ Des             adcf DES encryption (libdes)                      MICB
 GSS             adcO Generic Security Services API (RFC 2078)     MSHLD
 
 Digest::
-::MD5           Rdch  MD5 message digest algorithm                 GAAS
-::MD2           Rdch  MD2 message digest algorithm                 GAAS
-::SHA1          cdch  NIST SHA message digest algorithm            UWEH
-::HMAC          Rdph  HMAC message integrity check                 GAAS
+::MD5           Rdch  MD5 message digest algorithm                GAAS
+::MD2           Rdch  MD2 message digest algorithm                GAAS
+::SHA1          cdch  NIST SHA message digest algorithm           UWEH
+::HMAC          Rdph  HMAC message integrity check                GAAS
 
 Crypt::
 ::CBC           adpO Cipherblock chaining for Crypt::DES/IDEA     LDS
@@ -1874,7 +1880,8 @@ OpenCA          Rdpf Tools for running a Certification Authority  MADWOLF
 
 Authen::
 ::ACE           adcO Interface to Security Dynamics ACE (SecurID) DCARRIGAN
-::Krb5          cdcO Interface to Kerberos API                    JHORWITZ
+::Krb4          RdcO Interface to Kerberos 4 API                  JHORWITZ
+::Krb5          RdcO Interface to Kerberos 5 API                  JHORWITZ
 ::PAM           bdch Interface to PAM library                     NIKIP
 ::TacacsPlus    adcO Authentication on tacacs+ server             MSHOYHER
 
@@ -1894,7 +1901,7 @@ Name            DSLI Description                                  Info
 -----------     ---- -------------------------------------------- -----
 URI::
 ::Attr          ampO Stores attributes in the URI name space      LWWWP
-::Escape        ampf General URI escaping/unescaping functions    LWWWP
+::Escape        Rmpf General URI escaping/unescaping functions    LWWWP
 ::URL           RmpO Uniform Resource Locator objects             LWWWP
 
 CGI::
@@ -1929,7 +1936,7 @@ HTML::
 ::EP            adpO Modular, extensible Perl embedding           JWIED
 ::Element       ampO Representation of a HTML parsing tree        LWWWP
 ::Embperl       Rmcf Embed Perl in HTML                           GRICHTER
-::Entities      bmpf Encode/decode HTML entities                  LWWWP
+::Entities      Rmpf Encode/decode HTML entities                  LWWWP
 ::Formatter     ampO Convert HTML to plain text or Postscript     LWWWP
 ::HeadParser    RmpO  Parse <HEAD> section of HTML documents      LWWWP
 ::LinkExtor     RmpO  Extract links from HTML documents           LWWWP
@@ -1979,10 +1986,11 @@ LWP::                Libwww-perl
 ::Protocol      RmpO LWP support for URL schemes (http, file etc) LWWWP
 ::RobotUA       RmpO A UserAgent for robot applications           LWWWP
 ::Simple        Rmpf Simple procedural interface to libwww-perl   LWWWP
+::UA            ampO LWPng stuff                                  LWWWP
 ::UserAgent     RmpO A WWW UserAgent class                        LWWWP
 
 MIME::
-::Base64        Rdpf Encode/decode Base 64 (RFC 1521)             GAAS
+::Base64        Rdhf Encode/decode Base 64 (RFC 2045)             GAAS
 ::QuotedPrint   Rdpf Encode/decode Quoted-Printable               GAAS
 ::Decoder       adpO OO interface for decoding MIME messages      ERYQ
 ::Entity        adpO An extracted and decoded MIME entity         ERYQ
@@ -2020,7 +2028,7 @@ CGI_Lite        MnpO Light-weight interface for fast apps         SHGUN
 FCGI            Rdcr Fast CGI                                     SKIMO
 WING            RmhO Apache based IMAP/NNTP Gateway               MICB
 WOMP            cdpO CGI App Dev Suite: authen/state/html         SPADKINS
-
+CIPP            RdpO Preprocessor for embedding Perl, SQL in HTML JRED
 _______________________________________________________________________
 
 16) Server and Daemon Utilities
@@ -2085,7 +2093,7 @@ Convert::
 ::BER           adpO Class for encoding/decoding BER messages     GBARR
 ::BinHex        cdpO Convert to/from RFC1741 HQX7 (Mac BinHex)    ERYQ
 ::EBCDIC        adpf ASCII to/from EBCDIC                         CXL
-::Recode        ?    Mapping functions between character sets     GAAS
+::Recode        Rdpf Mapping functions between character sets     GAAS
 ::SciEng        bdpO Convert numbers with scientific notation     COLINK
 ::Translit      MdpO String conversion among many character sets  GENJISCH
 ::UU            bdpf UUencode and UUdecode                        ANDK
