@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.74 $ $Date: 2000/11/07 12:58:53 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.75 $ $Date: 2000/11/13 13:01:13 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -507,7 +507,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.74 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.75 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -973,7 +973,7 @@ Devel::
 ::Symdump         RdpO Perl symbol table access and dumping         ANDK
 ::TraceFuncs      adpO Trace funcs by using object destructions     JOEHIL
 ::TraceLoad       Rdpf Traces the loading of perl source code       JPRIT
-::Modlist         RdpO Collect module use information               RJRAY
+::Modlist         Rdpf Collect module use information               RJRAY
 
 Exception::
 ::Class           bdpO Declare exception class hierarchies          DROLSKY
@@ -1251,10 +1251,10 @@ Net::
 ::servent         adpf A by-name interface for services functions   TOMC
 ::xAP             adpO Interface to IMAP,ACAP,ICAP substrate        KJOHNSON
 ::Z3950           adcO OO interface to the Yaz Z39.50 toolkit       MIRK
-::SSL
-::Pager
-::Whois
-::XWhois
+::SSL             RdcO Glue that enables LWP to access https URIs   CHAMAS
+::Pager           RdpO Send Numeric/AlphaNumeric Pages to any pager ROOTLEVEL
+::Whois           RdpO Get+parse "whois" domain data from InterNIC  DHUDES
+::XWhois          RdpO Whois Client Interface for Perl5.            VIPUL
 
 Net::Daemon::
 ::SSL             RdpO SSL extension for Net::Daemon                MKUL
@@ -1397,7 +1397,7 @@ Math::
 ::TrulyRandom     i    based on interrupt timing discrepancies      GARY
 ::VecStat         Rdpr Some basic numeric stats on vectors          ASPINELLI
 ::ematica         adcO Interface to the powerful Mathematica system ULPFR
-::Libm
+::Libm            RdcO Perl extension for the C math library, libm  DSLEWART
 
 Math::Business::
 ::EMA             adcO An Exponential Moving Average Calculator     JETTERO
@@ -1441,7 +1441,7 @@ Array::
 ::Substr          idp  Implement array using substr()               LWALL
 ::Vec             idp  Implement array using vec()                  LWALL
 ::Virtual         idp  Implement array using a file                 LWALL
-::Reform
+::Reform          RdpO Convert an array into N-sized array of array TBONE
 
 Hash::
 ::NoVivify        Rdcf Provide non-autovivifying hash functions     BPOWERS
@@ -1552,7 +1552,7 @@ Tie::
 ::SubstrHash      SdpO Very compact hash stored in a string         LWALL
 ::TextDir         Rdpr ties a hash to a directory of textfiles      KWILLIAMS
 ::Watch           bdpO Watch variables, run code when read/written  LUSOL
-::Cycle
+::Cycle           RdpO Cycle through a list of values via a scalar. BDFOY
 
 Tie::Scalar::
 ::Timeout         adpr Scalar variables that time out               MARCEL
@@ -1631,7 +1631,7 @@ Data::
 ::Reporter        RdcO Ascii Report Generator                       RVAZ
 ::Walker          RdpO Navigate through Perl data structures        JNOLAN
 ::Random          adpf Generate random sets of data                 ADEO
-::JavaScript
+::JavaScript      RdpO Dumps structures into JavaScript code        SCHOP
 
 Tree::
 ::Base            cdpO Defines a basic binary search tree           MSCHWERN
@@ -2135,7 +2135,7 @@ Font::
 ::AFM             RdpO Parse Adobe Font Metric files                GAAS
 ::TFM             RdpO Read info from TeX font metric files         JANPAZ
 ::TTF             bdpO TrueType font manipulation module            MHOSKEN
-::Fret
+::Fret            RdpO Fret - Font REporting Tool                   MHOSKEN
 
 Number::
 ::Format          RdpO Package for formatting numbers for display   WRW
@@ -2152,8 +2152,8 @@ Parse::
 ::RecDescent      MdpO Recursive descent parser generator           DCONWAY
 ::Tokens          bdpO Base class for parsing tokens from text      MCKAY
 ::Yapp            RdpO Generates OO LALR parser modules             FDESAR
-::YALALR
-::Vipar
+::YALALR          RdpO Yet Another LALR parser                      SFINK
+::Vipar           RdpO Visual LALR parser debugger                  SFINK
 
 Search::
 ::Dict            Supf Search a dictionary ordered text file        P5P
@@ -2270,8 +2270,8 @@ Locale::
 ::PGetText        bdpf What GNU gettext does, written in pure perl  MSHOYHER
 ::SubCountry      RdpO ISO 3166-2 two letter subcountry codes       KIMRYAN
 ::gettext         Rdcf Multilanguage messages                       PVANDRY
-::Maketext
-::PO
+::Maketext        RdpO Framework for software localization          SBURKE
+::PO              RdpO Manipulate .po entries from gettext          ALANSZ
 
 Unicode::
 ::String          RdcO String manipulation for Unicode strings      GAAS
@@ -2397,7 +2397,7 @@ CGI::
 ::CList           bdpO Manages hierarchical collapsible lists       PEARCEC
 ::Cache           adpf Speed up slow CGI scripts by caching         BROCSEIB
 ::Carp            cmpf Drop-in Carp replacement for CGI scripts     CGIP
-::Debug           adpn show CGI debugging data                      JONAS
+::Debug           Mdph show CGI debugging data                      JONAS
 ::Deurl           Mdpr decode the CGI parameters                    JENDA
 ::Enurl           Mdpr encode the CGI parameters                    JENDA
 ::Formalware      Mdpo Convert an XML file to a suite of CGI forms  RSAVAGE
@@ -2909,10 +2909,16 @@ _______________________________________________________________________
 
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
+ElectricArc       RdpO Generic diagram manipulation toolset         SELKOVJR
+GIFgraph          RdpO Obsolete, see GD::Graph                      MVERB
+Gimp              Mmch Rich interface to write plugins for The Gimp MLEHMANN
+GraphViz          RdpO Interface to the GraphViz graphing tool      LBROCARD
 OpenGL            adcf Interface to OpenGL drawing/imaging library  FIJI
 PGPLOT            Rdof PGPLOT plotting library - scientific graphs  KGB
 PixDraw           adcO Drawing and manipulating true color images   KSB
-GIFgraph          RdpO Obsolete, see GD::Graph                      MVERB
+RenderMan         a    Manipulate RenderMan objects                 GMLEWIS
+T3D               cdpO Realtime extensible 3D rendering             GJB
+ThreeD            i    Namespace root for all kinds of 3D modules   ADESC
 
 GD                adcO Interface to Gd Graphics Library             LDS
 GD::
@@ -2958,16 +2964,8 @@ Xmms::
 ::Remote          bdcO Perl interface to the xmms_remote_* API      DOUGM
 ::Plugin          i    Perl interface to the xmms plugin APIs       DOUGM
 
-ElectricArc       RdpO Generic diagram manipulation toolset         SELKOVJR
-Gimp              Mmch Rich interface to write plugins for The Gimp MLEHMANN
-T3D               cdpO Realtime extensible 3D rendering             GJB
-ThreeD            i    Namespace root for all kinds of 3D modules   ADESC
-RenderMan         a    Manipulate RenderMan objects                 GMLEWIS
-
 Flash::
 ::SWF             cmpO Read/Write Macromedia Flash SWF files        SABREN
-
-GraphViz
 
 _______________________________________________________________________
 
@@ -3754,6 +3752,7 @@ to a CGI script that lets you edit the database entries yourself.
   DJKERNEN David J. Kernen <David.__no.soliciting__Kernen@erols.com>
   DJPADZ   Dj Padzensky <djpadz@padz.net>
   DKOCH    Daniel Koch <dkoch@amcity.com>
+  DKUBB    Dan Kubb <dan@mealtips.com>
   DKUEBLER Daniel Kuebler <dkuebler@mobile-net.ch>
   DKWILSON Damion K. Wilson <dkw@rcm.bm>
   DLANE    Derek Lane <dereklane@pobox.com>
