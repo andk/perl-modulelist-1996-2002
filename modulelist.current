@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.39 $$Date: 2000/04/09 13:57:20 $
+The Perl 5 Module List       $Revision: 3.40 $$Date: 2000/04/13 13:33:40 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.39 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.40 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1278,7 +1278,7 @@ CORBA::
 ::IDLtree         adpf IDL to symbol tree translator                OMKELLOGG
 
 Modem::
-::VBox            cdpO Perl module for creation of voiceboxes       MLEHMANN
+::VBox            RdpO Perl module for creation of voiceboxes       MLEHMANN
 ::Vgetty          bdpO Interface to voice modems using vgetty       YENYA
 
 ControlX10::
@@ -1352,7 +1352,7 @@ Algorithm::Numerical::
 PDL               amcf Perl Data Language - numeric analysis env    PERLDL
 
 PDL::
-::Audio           ???? Sound synthesis and editing with PDL         MLEHMANN
+::Audio           adch Sound synthesis and editing with PDL         MLEHMANN
 ::Meschach        amcf Links PDL to meschach matrix library         EGROSS
 ::NetCDF          bdhO Reads/Writes NetCDF files from/to PDL objs   DHUNT
 ::Options         Rdph Provides hash options handling for PDL       TJENNESS
@@ -1457,13 +1457,13 @@ Tie::
 ::LLHash          Rdpr Fast ordered hashes via linked lists         KWILLIAMS
 ::ListKeyedHash   Rdpr Use lists to key multi-level hashes          SNOWHARE
 ::Mem             adcO Bind perl variables to memory addresses      PMQS
-::MmapArray       i??? Ties a file to an array                      ANDREWF
+::MmapArray       adcr Ties a file to an array                      ANDREWF
 ::Multidim        adpr "tie"-like multidimensional data structures  JDPORTER
 ::OffsetArray     adpr Tie one array to another, with index offset  JDPORTER
 ::Quick           i    Simple way to create ties                    TIMB
 ::RndHash         bdpO choose a random key of a hash in O(1) time   DFAN
 ::SecureHash      RdpO Enforced encapsulation of Perl objects       DCONWAY
-::SentientHash    cdpr Tracks changes to nested data structures     ANDREWF
+::SentientHash    bdpr Tracks changes to nested data structures     ANDREWF
 ::ShadowHash      adpO Merge multiple data sources into a hash      RRA
 ::ShiftSplice     i    Defines shift et al in terms of splice       LWALL
 ::SubstrHash      SdpO Very compact hash stored in a string         LWALL
@@ -2069,7 +2069,7 @@ IniConf                Read/Write INI-Style configuration files     RBOW
 
 App::             General application development tools
 ::Config          bdpO Configuration file mgmt                      ABW
-::Manager         cdch Installing/Managing/Uninstalling Software    MLEHMANN
+::Manager         adch Installing/Managing/Uninstalling Software    MLEHMANN
 
 CfgTie            adph Framework for tieing system admin tasks      RANDYM
 
@@ -2320,7 +2320,6 @@ CGI_Lite          MnpO Light-weight interface for fast apps         SHGUN
 CIPP              RdpO Preprocessor for embedding Perl, SQL in HTML JRED
 Catalog           bmpO Manage/display resources catalog (URLs etc.) LDACHARY
 FCGI              Rdcr Fast CGI                                     SKIMO
-HtDig             i??? Interface for the HtDig indexing system      JTILLMAN
 WDDX              RdpO Allows distributed data exchange via XML     GUELICH
 WING              RmhO Apache based IMAP/NNTP Gateway               MICB
 WOMP              cdpO CGI App Dev Suite: authen/state/html         SPADKINS
@@ -2695,10 +2694,10 @@ Audio::
 ::CD              bdcO Perl interface to libcdaudio (cd + cddb)     DOUGM
 ::Sox             i    sox sound library as one or more modules     NI-S
 Audio::Play::
-::MPG123          ???? Generic frontend for MPG123                  MLEHMANN
+::MPG123          RdcO Generic frontend for MPG123                  MLEHMANN
 
 Video::Capture::
-::V4l             ???? Video4linux framegrabber interface           MLEHMANN
+::V4l             Rdch Video4linux framegrabber interface           MLEHMANN
 
 MIDI              RdpO Object interface to MIDI files               SBURKE
 MIDI::
@@ -2753,9 +2752,11 @@ AltaVista::
 Real::
 ::Encode          i    Interface to Progressive Network's RealAudio KMELTZ
 
+HtDig             i??? Interface for the HtDig indexing system      JTILLMAN
 MQSeries          RdcO IBM's MQSeries messaging product interface   WPMOORE
 PQI               cdcO Perl Queuing Interface, to MQSeries, MSMQ    SIMONJ
 R3                bdcO Interface to SAP R/3 using RFCSDK            SCHOEN
+
 
 =======================================================================
 
@@ -3456,7 +3457,7 @@ to a CGI script that lets you edit the database entries yourself.
   KENSHAN  Chung-chieh Shan <ken@digitas.harvard.edu>
   KEVINA   Kevin Atkinson <kevina@clark.net>
   KFOGEL   Karl Fogel <kfogel@red-bean.com>
-  KGB      Karl Glazebrook <kgb@aaoepp.aao.gov.au>
+  KGB      Karl Glazebrook <karlglazebrook@yahoo.com>
   KIMRYAN  Kim Ryan <kimaryan@ozemail.com.au>
   KJALB    Kenneth Albanowski <kjahds@kjahds.com>
   KJOHNSON Kevin Johnson <kjj@pobox.com>
@@ -3506,6 +3507,7 @@ to a CGI script that lets you edit the database entries yourself.
   MACGYVER Habeeb J. Dihu <macgyver@tos.net>
   MADLINUX Lorance Stinson <lorance@madlinux.cx>
   MADWOLF  Massimiliano Pala <madwolf@openca.org>
+  MAGNUS   Magnus Cedergren <datorer.program@esplanaden.lysator.liu.se>
   MAHEX    Mark "Hex" Hershberger <mah@eecs.tulane.edu>
   MAK      Martijn Koster <mak@surfski.webcrawler.com>
   MAKLER   Piotr Klaban <makler@man.torun.pl>
@@ -3813,7 +3815,7 @@ to a CGI script that lets you edit the database entries yourself.
   SHARI    Davide Migliavacca <davide.migliavacca@inferentia.it>
   SHARKEY  Nick 'Sharkey' Moore <sharkey@netizen.com.au>
   SHARRIS  Steve Harris <perl@nullspace.com>
-  SHARYANTO Steven Haryanto <sh@bandung.pm.org>
+  SHARYANTO steven haryanto <steven@haryan.to>
   SHAWNPW  Shawn P. Wallace <shawn@as220.org>
   SHERWOOD Steve Sherwood <pariah@netcomuk.co.uk>
   SHGUN    Shishir Gundavaram <shishir@ruby.ora.com>
