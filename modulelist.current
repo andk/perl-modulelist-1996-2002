@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.95 $ $Date: 2001/05/03 14:56:40 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.96 $ $Date: 2001/05/04 08:54:58 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.95 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.96 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -855,11 +855,19 @@ Perl Language Extensions
 Alias              bdcf? Convenient access to data/code via aliases   GSAR
 End                RdpO? Generalized END {}.                          ABIGAIL
 Error              adpO? Error/exception handling in an OO-ish way    GBARR
+NEXT               RdpO? Perl5 implementation of NEXT (RFC190)        DCONWAY
 Perl               adcO? Create Perl interpreters from within Perl    GSAR
 Protect            bdpf? declare subs private or member               JDUNCAN
-Regexp             adcO? An OO interface to regular expressions       GBARR
 Safe               SdcO? Restrict eval'd code to safe subset of ops   MICB
 Softref            bdcf? Extension for weak/soft referenced SVs       ILYAZ
+
+Attribute::
+::Handlers
+
+Exporter::
+::Import           Rdpn? Alternate symbol exporter                    GARROW
+::Options          adpO? Extends Exporter to handle use-line options  YSTH
+::PkgAlias         adpf? Load a module into multiple namespaces       JDPORTER
 
 Inline             bdp?? Write Perl subroutines in other languages    INGY
 Inline::
@@ -869,10 +877,10 @@ Inline::
 ::Python           adcO? Easy implementation of Python extensions     NEILW
 ::Tcl              adcf? Write Perl subroutines in Tcl                RRS
 
-Exporter::
-::Import           Rdpn? Alternate symbol exporter                    GARROW
-::Options          adpO? Extends Exporter to handle use-line options  YSTH
-::PkgAlias         adpf? Load a module into multiple namespaces       JDPORTER
+Regexp             adcO? An OO interface to regular expressions       GBARR
+Regexp::
+::Common
+::Shellish
 
 Safe::
 ::Hole             bdcO? Exec subs in the original package from Safe  SEYN
@@ -904,6 +912,7 @@ Filter::
 ::cpp              bdcf? Filters script through C preprocessor        PMQS
 ::tee              bdcf? Copies to file perl source being compiled    PMQS
 ::decrypt          bdcf? Template for a perl source decryption filter PMQS
+::Simple
 
 Thread support (note that these are experimental, i.e. pre-alpha)
 
@@ -953,8 +962,6 @@ Pod::
 ::Usage            bdpf? Print Usage messages based on your own pod   BRADAPP
 ::XML              RdpO? Generate XML from POD                        MSERGEANT
 
-NEXT               RdpO? Perl5 implementation of NEXT (RFC190)        DCONWAY
-
 _______________________________________________________________________
 
 3) Development Support
@@ -970,7 +977,7 @@ Make               adpO? Makefile parsing, and 'make' replacement     NI-S
 Perlbug            RdpO? Database driven bug tracking system          RFOLEY
 Rcs                adcf? Alternate RCS interface (see VCS::RCS)       CFRETER
 Usage              bupr? Type and range checking on subroutine args   JACKS
-VCS                ampO? Generic interface to Version Control Systems LBROCARD
+VCS                ampOp Generic interface to Version Control Systems LBROCARD
 
 Benchmark          Supf? Easy way to time fragments of perl code      P5P
 Benchmark::
@@ -1011,14 +1018,14 @@ Devel::
 ::Peek             adcf? Peek at internal representation of Perl data ILYAZ
 ::RegExp           adcO? Access perl internal regex functions         ILYAZ
 ::SmallProf        Rdpf? Line-by-line profiler                        ASHTED
-::StackTrace       RdpO? Stacktrace object w/ info like Carp::confess DROLSKY
+::StackTrace       RdpOp Stacktrace object w/ info like Carp::confess DROLSKY
 ::Symdump          RdpO? Perl symbol table access and dumping         ANDK
 ::TraceFuncs       adpO? Trace funcs by using object destructions     JOEHIL
 ::TraceLoad        Rdpf? Traces the loading of perl source code       PVERD
 ::Modlist          Rdpf? Collect module use information               RJRAY
 
 Exception::
-::Class            RdpO? Declare exception class hierarchies          DROLSKY
+::Class            RdpOp Declare exception class hierarchies          DROLSKY
 ::Cxx              Rd+f? Cause perl to longjmp using C++ exceptions   JPRIT
 
 Perf::            Performance measurement other than benchmarks
@@ -1040,6 +1047,8 @@ VCS::
 ::PVCS             i   ? PVCS Version Manager (intersolv.com)         BMIDD
 ::RCS              idpf? Interface layer over RCS (See also Rcs)      RJRAY
 ::RCE              idcf? Perl layer over RCE C API                    RJRAY
+
+Bleach
 
 _______________________________________________________________________
 
@@ -1755,13 +1764,14 @@ Data::
 ::Iterator         RupO? Simple iteration over complex data strucures HCAMP
 ::Buffer           bdpO? Read/write buffer class                      BTROTT
 ::Lazy             Rdpr? provides "lazy" scalars, arrays and hashes   JENDA
+::Denter
 
 Tree::
 ::Base             cdpO? Defines a basic binary search tree           MSCHWERN
 ::Fat              Rdcf? Embeddable F-Tree algorithm suite            JPRIT
 ::Smart            cdpO? Splay tree, fastest for commonly accessed ke MSCHWERN
 ::Ternary          bdpO? Perl implementation of ternary search trees  MROGASKI
-::Ternary_XS       adcO? XS implementation of ternary search trees    LBROCARD
+::Ternary_XS       adcOp XS implementation of ternary search trees    LBROCARD
 ::Trie             bdpO? An implementation of the Trie data structure AVIF
 ::Nary             RdpO? Perl implementation of N-ary search trees    FSORIANO
 ::DAG_Node         MdpO? base class for trees                         SBURKE
@@ -1772,7 +1782,7 @@ DFA::
 ::Simple           cdpO? An "augmented transition network"            RANDYM
 
 Boulder            MdpO? Generalized tag/value data objects           LDS
-Thesaurus          RdpO? Create associations between related things   DROLSKY
+Thesaurus          RdpOp Create associations between related things   DROLSKY
 
 BabelObjects       cdpf? Web Service Framework                        KERMAGO
 
@@ -1804,6 +1814,7 @@ DBIx::
 ::DBSchema         bmpO? Database-independent schema objects          IVAN
 ::XMLMEssage       bnpf? Exchange of XML messages between DBI sources ANDREIN
 ::Browse           idpO? A class to browse related tables via CGI/Web EJDRS
+::XHTML_Table
 
 DBD::
 ::ASAny            adcO? Adaptive Server Anywhere Driver for DBI      SMIRNIOS
@@ -1951,7 +1962,7 @@ Spreadsheet::
 X500::
 ::DN               MdpO? X500 Distinguished Name parser               RSAVAGE
 
-Alzabo             RdpO? A data modelling tool and RDBMS-OO mapper    DROLSKY
+Alzabo             RdpOp A data modelling tool and RDBMS-OO mapper    DROLSKY
 
 Gemstone           RdpO? Interface to a GemStone object database      YOUD
 
@@ -2006,7 +2017,7 @@ Tk                 bmcO? Object oriented version of Tk v4             TKML
 
 Tk::
 ::TextANSIColor    bdpO? use ANSI color codes in Text widget          TJENNESS
-::Autoscroll       cdpf? Alternative way to scroll                    SREZIC
+::Autoscroll       cdpfp Alternative way to scroll                    SREZIC
 ::Axis             RmpO? Canvas with Axes                             TKML
 ::CheckBox         RdpO? A radio button widget that uses a checkmark  DKWILSON
 ::ChildNotification RdpO? Alert widget when child is created          DKWILSON
@@ -2057,6 +2068,7 @@ Tk::
 ::XMLViewer        adpO? Tk widget to display XML                     SREZIC
 ::ObjEditor        bdpO? Tk widget to edit data or objects            DDUMONT
 ::ObjEditorDialog  bdpO? Tk popup dialog to edit data or objects      DDUMONT
+::Pgplot
 
 Modules in the realm of Tk but with a separate namespace
 
@@ -2231,7 +2243,7 @@ Filesys::
 ::Df               Rdpr? Disk free based on Filesys::Statvfs          IGUTHRIE
 ::DiskFree         adpO? OS independant parser of the df command      ABARCLAY
 ::Ext2             Rdpf? Interface to e2fs filesystem attributes      JPIERCE
-::SamFS            adcf? Interface to SamFS API                       LUPE
+::SamFS            adcfa Interface to SamFS API                       LUPE
 ::Statvfs          Rdcf? Interface to the statvfs() system call       IGUTHRIE
 ::dfent            adpf? By-name interface                            TOMC
 ::mntent           adpf? By-name interface                            TOMC
@@ -2304,6 +2316,7 @@ Text::
 ::xSV              bdpO? Read CSV files, handling embedded returns    TILLY
 ::Header           bdpf? Content-independent RFC 822 header functions NWIGER
 ::BarGraph         RdpO? Generate text bar graph from data in a hash  KBAUCOM
+::EtText
 
 Text::PDF::
 ::API              Rmhh? Allows creation of nifty PDF-files.          AREIBENS
@@ -2359,6 +2372,9 @@ Lingua::EN::
 
 Lingua::EN::Numbers::
 ::Ordinate         Rdpf? go from cardinal (53) to ordinal (53rd)      SBURKE
+
+Lingua::Romana::
+::Perligata
 
 Lingua::RU::
 ::Charset          anpf? Detect/Convert russian character sets.       FARBER
@@ -2648,7 +2664,7 @@ Crypt::
 ::NULL             RdpO? NULL Encryption Algorithm                    AMS
 ::DH               adpO? Diffie-Hellman key exchange system           BTROTT
 ::PassGen          adpf? Generate pronouncable passwords              TJENNESS
-::GOST             bdpO? GOST encryption algorithm                    VIPUL
+::GOST             bdpO? GOST encryption algorithm                    AMS
 
 Crypt::OpenSSL::
 ::RSA              bdcO? Interface to OpenSSL RSA methods             IROBERTS
@@ -2761,6 +2777,7 @@ HTML::
 ::FormTemplate     bdpO? Store definition, make persist forms, report DUNCAND
 ::LoL              Rdpf? Construct HTML from Perl data structures     BOBG
 ::ActiveLink       bdpO? Dynamically activate HTML links based on URL NWIGER
+::WebMake
 
 HTML::Widgets::
 ::DateEntry        RdpO? Creates date entry widgets for HTML forms.   KENNEDYH
@@ -3099,7 +3116,7 @@ Apache::
 
 Netscape::
 ::Bookmarks        bdp?? Netscape bookmarks                           BDFOY
-::Cache            bdpO? Access Netscape cache files                  SREZIC
+::Cache            bdpOp Access Netscape cache files                  SREZIC
 ::History          bdpO? Class for accessing Netscape history DB      NEILB
 ::HistoryURL       bdpO? Like a URI::URL, but with visit time         NEILB
 ::Server           adcO? Perl interface to Netscape httpd API         BSUGARS
@@ -3224,6 +3241,7 @@ Convert::
 ::IBM390           bdhf? Convert data from/to S/390 representations   GROMMEL
 ::Morse            Rdpf? Convert from/to Morse code (.--. . .-. .-..) TELS
 ::RACE             bdpf? Conversion between Unicode and RACE          MIYAGAWA
+::Base
 
 AppleII::
 ::Disk             bdpO? Read/write Apple II disk image files         CJM
@@ -3255,7 +3273,7 @@ Name               DSLIP Description                                  Info
 ElectricArc        RdpO? Generic diagram manipulation toolset         SELKOVJR
 GIFgraph           RdpO? Obsolete, see GD::Graph                      MVERB
 Gimp               Mmch? Rich interface to write plugins for The Gimp MLEHMANN
-GraphViz           RdpO? Interface to the GraphViz graphing tool      LBROCARD
+GraphViz           RdpOp Interface to the GraphViz graphing tool      LBROCARD
 OpenGL             adcf? Interface to OpenGL drawing/imaging library  FIJI
 PGPLOT             Rdof? PGPLOT plotting library - scientific graphs  KGB
 PixDraw            adcO? Drawing and manipulating true color images   KSB
@@ -3291,7 +3309,7 @@ Image::
 ::ParseGIF         RdpO? Parse GIF images into component parts        BENL
 ::Size             Rdpf? Measure size of images in common formats     RJRAY
 ::Info             RdpO? Extract meta information from image files    GAAS
-::Imlib2           RdcO? Interface to the Imlib2 image library        LBROCARD
+::Imlib2           RdcOp Interface to the Imlib2 image library        LBROCARD
 
 Chart::
 ::Base             RdpO? Business chart widget collection             NINJAZ
@@ -3420,7 +3438,7 @@ Selectable         cdpO? Event-driven I/O streams                     MUIR
 
 Log::
 ::Agent            adpO? A general logging framework                  RAM
-::Dispatch         RdpO? Log messages to multiple outputs             DROLSKY
+::Dispatch         RdpOp Log messages to multiple outputs             DROLSKY
 ::Topics           Rdpf? Control flow of topic based logging messages JARW
 ::TraceMessages    RdpO? Print developer's trace messages             EDAVIS
 
