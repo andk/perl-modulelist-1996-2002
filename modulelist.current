@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.76 $ $Date: 2000/11/13 13:04:47 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.77 $ $Date: 2000/11/14 22:22:32 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -507,7 +507,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.76 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.77 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -926,6 +926,8 @@ Pod::
 ::Rtf             RdpO Converter from POD to Rich Text Format       PVHP
 ::Hlp             RdpO Convert POD to formatted VMS Help text       PVHP
 
+Inline
+
 _______________________________________________________________________
 
 3) Development Support
@@ -1093,6 +1095,9 @@ Mac::Apps::
 
 Mac::Comm::
 ::OT_PPP          RdpO Control Open Transport PPP / Remote Access   CNANDOR
+
+Mac::FileSpec::
+::Unixish
 
 Mac::OSA::
 ::Simple          Rdph Simple access to Mac::OSA                    CNANDOR
@@ -1577,6 +1582,9 @@ Class::
 ::TOM             RmpO Transportable Object Model for perl          JDUNCAN
 ::Contract        RdpO Design-by-Contract OO in Perl.               DCONWAY
 ::WhiteHole       RdpO Treat unhandled method calls as errors       MSCHWERN
+::BlackHole
+::Classless
+::ISA
 
 Object::
 ::Info            Rupf General info about objects (is-a, ...)       JACKS
@@ -1641,6 +1649,7 @@ Tree::
 ::Ternary_XS      adcO XS implementation of ternary search trees    LBROCARD
 ::Trie            bdpO An implementation of the Trie data structure AVIF
 ::Nary            RdpO Perl implementation of N-ary search trees    FSORIANO
+::DAG_Node
 
 DFA::
 ::Command         Mdpo Discrete Finite Automata command processor   RSAVAGE
@@ -1699,6 +1708,7 @@ DBD::
 ::mSQL            RmcO Msql Driver for DBI                          JWIED
 ::mysql           RmcO Mysql Driver for DBI                         JWIED
 ::pNET            amcO DBD proxy driver                             JWIED
+::InterBase
 
 Oraperl           Rmpf Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl           bmpf Ingperl emulation interface for DBD::Ingres  HTOUG
@@ -1858,7 +1868,7 @@ Tk X Windows User Interface Modules:
 Tk                bmcO Object oriented version of Tk v4             TKML
 
    See the Tk module list at
-   http://www.cpan.org/modules/by-module/Tk/tk-modlist.html
+   http://www.Lehigh.EDU/~sol0/ddumont/ptk_module_list.html
 
 Modules in the realm of Tk but with a separate namespace
 
@@ -2113,6 +2123,9 @@ Lingua::EN::
 ::Ordinal         i    Convert numbers to words                     HIGHTOWE
 ::Squeeze         bdpf Shorten english text for Pagers/GSM phones   JARIAALTO
 ::Syllable        a    Estimate syllable count in words             GREGFAST
+
+Lingua::EN::Numbers::
+::Ordinate
 
 Lingua::RU::
 ::Charset         anpf Detect/Convert russian character sets.       FARBER
@@ -2454,6 +2467,7 @@ HTML::
 ::Template        MmpO a simple HTML templating system              SAMTREGAR
 ::TokeParser      RmpO  Alternative HTML::Parser interface          LWWWP
 ::Validator       bdpO HTML validator utilizing nsgmls and libwww   SAIT
+::Tagset
 
 HTML::Widgets::
 ::DateEntry       RdpO Creates date entry widgets for HTML forms.   KENNEDYH
@@ -3170,6 +3184,7 @@ Astro::
 ::SLA             Rdcf Interface to SLALIB positional astronomy lib TJENNESS
 ::SunTime         cdpf Calculate sun rise/set times                 ROBF
 ::Time            Rdpf General time conversions for Astronomers     CPHIL
+::Sunrise
 
 Audio::
 ::CD              bdcO Perl interface to libcdaudio (cd + cddb)     DOUGM
@@ -3199,6 +3214,7 @@ Business::
 ::ISSN            adpO Object and functions to work with ISSN       SAPAPO
 ::OnlinePayment   RdpO Ecommerce middleware                         JASONK
 ::UPC             ???? manipulating Universal Product Codes         ROBF
+::US_Amort
 
 Chemistry::
 ::Elements        RdpO Working with Chemical Elements               BDFOY
@@ -3221,6 +3237,9 @@ Games::
 ::Dice            cdpf Simulates rolling dice                       PNE
 ::Hex             cdpO Object library for hexmap-based board games  JHKIM
 ::WordFind        bdpO Generate word-find type puzzles              AJOHNSON
+::Alak
+::Dissociate
+::Worms
 
 Geo::
 ::METAR           Rdpf Process Aviation Weather (METAR) Data        JZAWODNY
