@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.61 $$Date: 2000/10/22 15:13:06 $
+The Perl 5 Module List       $Revision: 3.62 $$Date: 2000/10/22 17:30:38 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.61 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.62 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2439,7 +2439,6 @@ MIME::
 ::Latin1          ?dpO DEPRECATED and removed                       ERYQ
 ::Lite            RdpO Single module for composing simple MIME msgs ERYQ
 ::Parser          RdpO Parses streams to create MIME entities       ERYQ
-::ParserBase      ?dpO REMOVED: folded into MIME::Parser            ERYQ
 ::Types           adpr Returns the MIME type for a filename/suffix  OKAMOTO
 ::Words           Rdpf Encode/decode RFC1522-escaped header strings ERYQ
 
