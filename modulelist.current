@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.24 $$Date: 1999/11/09 08:31:07 $
+The Perl 5 Module List       $Revision: 3.25 $$Date: 1999/11/19 02:58:18 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -521,7 +521,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.24 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.25 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1179,7 +1179,7 @@ Net::
 ::SNMP            adpO Interface to SNMP Protocol (RFC1157)         GBARR
 ::SNPP            cdpO Client interface to SNPP protocol            GBARR
 ::SOCKS           cdcf TCP/IP access through firewalls using SOCKS  SCOOPER
-::SSLeay          adcf Secure Socket Layer (Eric Young's version)   SAMPO
+::SSLeay          bmhf Secure Socket Layer (based on OpenSSL)       SAMPO
 ::TCP             adcO TCP-specific socket usage                    SPIDB
 ::TFTP            cdpf Interface to Trivial File Transfer Protocol  GSM
 ::Telnet          adpO Interact with TELNET port or other TCP ports JROGERS
@@ -1293,7 +1293,7 @@ Math::
 ::Polynomial      RdpO Polynomials as objects                       MATKIN
 ::Prime           i    Prime number testing                         GARY
 ::RandomPrime     i    Generates random primes of x bits            GARY
-::SigFigs         bdpf Math using scientific significant figures    SBECK
+::SigFigs         Rdpf Math using scientific significant figures    SBECK
 ::Spline          RdpO Cubic Spline Interpolation of data           JARW
 ::Trig            bdpf tan asin acos sinh cosh tanh sech cosech     JARW
 ::TrulyRandom     i    based on interrupt timing discrepancies      GARY
@@ -1378,7 +1378,7 @@ Date::
 ::Format          Rdpf Date formatter ala strftime                  GBARR
 ::Interval        idpO Lightweight normalised interval data type    KTORP
 ::Language        adpO Multi-language date support                  GBARR
-::Manip           Rdpf Manipulate/parse international dates/times   SBECK
+::Manip           Rdpf Complete date/time manipulation package      SBECK
 ::Parse           Rdpf ASCII Date parser using regexp's             GBARR
 ::Time            idpO Lightweight normalised datetime data type    TIMB
 
@@ -1766,7 +1766,7 @@ File::
 ::Sync            bdcf POSIX/*nix fsync() and sync()                CEVANS
 ::Tail            bdpO A more efficient tail -f                     MGRABNAR
 ::MultiTail       adpO Tail multiple files                          SGMIANO
-::chmod           adpf Symbolic chmod                               PINYAN
+::chmod           Mdpf Allows for symbolic chmod notation           PINYAN
 ::lockf           bdcf Interface to lockf system call               PHENSON
 ::stat            Supf A by-name interface for the stat function    TOMC
 
@@ -2057,7 +2057,7 @@ Authen::
 ::Krb5            RdcO Interface to Kerberos 5 API                  JHORWITZ
 ::PAM             bdch Interface to PAM library                     NIKIP
 ::TacacsPlus      adcO Authentication on tacacs+ server             MSHOYHER
-::Ticket          i    Suite consisting of master/client/tools      JSMITH
+::Ticket          adpO Suite consisting of master/client/tools      JSMITH
 
 RADIUS::
 ::Dictionary      bdpO Object interface to RADIUS dictionaries      CHRMASTO
@@ -2471,7 +2471,7 @@ Win32::
 ::FileType        RdpO modify Win32 fily type mapping               JENDA
 ::FUtils          bdcf Implements missing File Utility functions    JOCASA
 ::GD              RdcO Win32 port of the GD extension (gif module)  DAVEROTH
-::GuiTest         adcf Tests for SendKeys and more                  ERNGUI
+::GuiTest         adcf SendKeys, FindWindowLike and more            ERNGUI
 ::IPC             bdcO Base class for Win32 synchronization objects CJM
 ::Message         bdcf Network based message passing                DAVEROTH
 ::Mutex           bdcO Use Win32 mutex objects for IPC              CJM
@@ -2610,9 +2610,9 @@ AltaVista::
 Real::
 ::Encode          i    Interface to Progressive Network's RealAudio KMELTZ
 
-MQSeries          Rdch IBM's MQSeries messaging product interface   WPMOORE
+MQSeries          RdcO IBM's MQSeries messaging product interface   WPMOORE
 PQI               cdcO Perl Queuing Interface, to MQSeries, MSMQ    SIMONJ
-R3                adcO Interface to SAP R/3 using SAP\'s RFCSDK     SCHOEN
+R3                bdcO Interface to SAP R/3 using RFCSDK            SCHOEN
 
 =======================================================================
 
@@ -2820,6 +2820,7 @@ to a CGI script that lets you edit the database entries yourself.
   APML     The Perl/Apache Mailing List
            Mail to majordomo@apache.org with body "subscribe modperl"
   AQUMSIEH Ala Qumsieh <Ala.Qumsieh@matrox.com>
+  ARENSB   Andrew Arensburger <arensb@ooblick.com>
   ARIF     Anthony Iano-Fletcher <arif@compusnet.com>
   ARNDT    Arndt Schönewald <arndt@schoenewald.de>
   ARSML    The ARSperl Mailing List
@@ -2837,7 +2838,7 @@ to a CGI script that lets you edit the database entries yourself.
   AUSCHUTZ Austin Schutz <tex@habit.com>
   AVIF     Avi Finkel <avi@finkel.org>
   AWIN     Ashley Winters <jql@accessone.com>
-  AWRIGLEY Ave Wrigley <wrigley@cre.canon.co.uk>
+  AWRIGLEY Ave Wrigley <Ave.Wrigley@itn.co.uk>
   AYRNIEU  julian fondren <julian@imaji.net>
   AZEMGI   Gawdi Azem <azemgi@rupert.informatik.uni-stuttgart.de>
   BARBACHAN Anthony Barbachan <barbacha@Hinako.AMBusiness.com>
@@ -2913,7 +2914,7 @@ to a CGI script that lets you edit the database entries yourself.
   CHOWARTH Colin Howarth <colin@muc.de>
   CHRISCHU Christian Schultze <Christian_Schultze@b.maus.de>
   CHRMASTO Christopher Masto <chris@netmonger.net>
-  CHRWOLF  Christophe Wolfhugel <wolf@pasteur.fr>
+  CHRWOLF  Christophe Wolfhugel <wolf@oleane.net>
   CHSTROSS Charlie Stross <charlie@antipope.org>
   CHTHORMAN Chris Thorman <chris@thorman.com>
   CHTTRAX  Christoph T. Traxler <Christoph.T.Traxler@theo.physik.uni-giessen.de>
@@ -2948,7 +2949,7 @@ to a CGI script that lets you edit the database entries yourself.
            that then mail to dbi-REQUEST@fugue.com and ask (the human,
            Ted Lemon) to subscribe you to one or more of dbi-announce,
            dbi-users, or dbi-dev.
-  DBMAKER  dbmaker <dbmaker@lion.syscom.com.tw>
+  DBMAKER  dbmaker <dbmaker@mars.syscom.com.tw>
   DBONNER  David Bonner <dbonner@cs.bu.edu>
   DBRESH   Doug Breshears <breshear@eonet.com>
   DBRIAN   Dan Brian <dbrian@brians.org>
@@ -3393,6 +3394,7 @@ to a CGI script that lets you edit the database entries yourself.
   NIGELM   Nigel Metheringham <nigel@pobox.com>
   NIKIP    Nikolay Pelov <nikip@iname.com>
   NINJAZ   Peter Clark <ninjaz@webexpress.com>
+  NISHANT  Nishant Kakani <nishantkakani@hotmail.com>
   NJENSEN  Neil Jensen <njensen@habaneros.com>
   NJLEON   Nicholas J. Leon <nicholas@binary9.net>
   NMONNET  Nicolas Monnet <nico@idnet.fr>
@@ -3407,6 +3409,7 @@ to a CGI script that lets you edit the database entries yourself.
   NWINT    Neil Winton <winton_neil@jpmorgan.com>
   NWRIGHT  Nigel Wright <nwright@hmc.edu>
   OCROW    Owen Crow <ocrow@crl.com>
+  ODDFELLOW Robert Bedell <zen@tischer.net>
   OEVANS   O'Shaughnessy Evans <oevans@acm.org>
   OKAMOTO  Jeff Okamoto <okamoto@corp.hp.com>
   OLIBOU   Olivier Bouteille <bouteille@dial.oleane.com>
@@ -3577,6 +3580,7 @@ to a CGI script that lets you edit the database entries yourself.
   SMARTWORK SmartWorker folks at HBE <gozer@hbe.ca>
   SMAXIME  Soulé Maxime <max@dotcom.fr>
   SMCCAM   Stephen McCamant <alias@mcs.com>
+  SMIRNIOS John Smirnios <smirnios@sybase.com>
   SMORTON  Sanford Morton <smorton@pobox.com>
   SMPILL   Steve Pillinger <S.M.Pillinger@cs.bham.ac.uk>
   SNEEX    Bill Jones <sneex@fccj.org>
@@ -3670,7 +3674,7 @@ to a CGI script that lets you edit the database entries yourself.
   WMARQ    Wayne Marquette <wayne.marquette@ascend.com>
   WOODY    Jim Woodgate <woody@bga.com>
   WORENKD  David C. Worenklein <dcw@gcm.com>
-  WPMOORE  W. Phillip Moore <wpm@ms.com>
+  WPMOORE  W. Phillip Moore <Phil.Moore@msdw.com>
   WPS      William Setzer <William_Setzer@ncsu.edu>
   WRW      William R Ward <wrw@bayview.com>
   WSANNIS  William S. Annis <annis@biostat.wisc.edu>
@@ -3682,6 +3686,7 @@ to a CGI script that lets you edit the database entries yourself.
   XFIRE    Ilya Obshadko <x-fire@mail.ru>
   XMLML    Perl-XML Mailing List
            Send mail to subscribe-perl-xml@lyris.activestate.com
+  XOMINA   ryan mcleish <xomina@bitstream.net>
   YASU     Yasushi Saito <yasushi@cs.washington.edu>
   YENYA    Jan "Yenya" Kasprzak <kas@informatics.muni.cz>
   YLU      Luke Y. Lu <ylu@mail.utexas.edu>
