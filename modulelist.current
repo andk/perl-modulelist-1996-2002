@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.30 $Date: 1996/08/29 01:23:20 $
+The Perl 5 Module List       Revision: 2.31 $Date: 1996/08/31 00:10:03 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -850,11 +850,14 @@ Pod::
 ::Index        cdpr  index generator                              KJALB
 ::Latex        cdpr  converter to LaTeX                           KJALB
 ::Man          cdpr  converter to man page                        KJALB
-::Parse        cdpr  Common pod parsing code                      KJALB
+::Parser       b     Parser                                       BRADAPP +
 ::Pod          cdpr  converter to canonical pod                   KJALB
 ::RTF          cdpr  converter to RTF                             KJALB
+::Simplify     cdpr  Common pod parsing code                      KJALB !
 ::Texinfo      cdpr  converter to texinfo                         KJALB
 ::Text         Supf  convert POD data to formatted ASCII text     TOMC
+::Usage        b     Print Usage messages based on your own pod   BRADAPP +
+
 
 _______________________________________________________________________
 
@@ -931,7 +934,7 @@ MSDOS::
 ::SysCalls     adcf  MSDOS interface (interrupts, port I/O)       DMO
 
 FreeBSD::
-::SysCalls     cdcf  FreeBSD-specific system calls                GARY  +
+::SysCalls     cdcf  FreeBSD-specific system calls                GARY
 
 SGI::
 ::SysCalls     cdcf  SGI-specific system calls                    AMOSS
@@ -987,7 +990,7 @@ Net::
 ::Netrc        adpO  Support for .netrc files                     GBARR
 ::POP3         adpO  Client interface to POP3 protocol            GBARR
 ::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
-::Ping         bdpO  Enhanced redesign of the above               RMOSE !
+::Ping         bdpO  Enhanced redesign of the above               RMOSE
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
 ::SNPP         cdpO  Client interface to SNPP protocol            GBARR
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
@@ -1093,7 +1096,7 @@ Time::
 ::gmtime       adpf  A by-name interface for gmtime               TOMC
 ::localtime    adpf  A by-name interface for localtime            TOMC
 ::Local        Supf  Implements timelocal() and timegm()          P5P
-::HiRes        i     High resolution timers and time-of-day       JHI
+::HiRes        i     High resolution timers and time-of-day       DEWEG !
 ::CTime        Rdpf  Format Times ala ctime(3) with many formats  MUIR
 ::ParseDate    Rdpf  Parses many forms of dates and times         MUIR
 ::JulianDay    Rdpf  Converts y/m/d into seconds                  MUIR
@@ -1126,7 +1129,7 @@ Ref            RdpO  Print, compare, and copy perl structures     MUIR
 
 Sort::
 ::Versions     Rdpf  sorting of revision (and similar) numbers    KJALB
-::PolySort     bdpO  general rules-based sorting of lists         DMACKS +
+::PolySort     bdpO  general rules-based sorting of lists         DMACKS
 
 Data Type Marshaling (converting to/from strings) and Persistent Storage
 
@@ -1140,7 +1143,7 @@ Marshal::
 
 Data::
 ::Dumper       RdpO  Convert data structure into perl code        GSAR
-::Flow         RdpO  Acquire data based on recipes                ILYAZ !
+::Flow         RdpO  Acquire data based on recipes                ILYAZ
 
 
 _______________________________________________________________________
@@ -1378,7 +1381,7 @@ User::
 ::pwent        adpf  A by-name interface to password database     TOMC
 ::grent        adpf  A by-name interface to groups database       TOMC
 
-PGP            adpO  Simple interface to PGP subprocess via pipes PGPML !
+PGP            adpO  Simple interface to PGP subprocess via pipes PGPML
 DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
 MD5            RdcO  MD5 message digest algorithm                 NWINT
@@ -1388,7 +1391,7 @@ GSS            i     Generic Security Services API (RFC 1508/9)   MSHLD
 
 Crypt::
 ::DES          a     DES encryption (libdes)                      GARY
-::IDEA         a     International Data Encryption Algorithm      GARY  !
+::IDEA         a     International Data Encryption Algorithm      GARY
 ::PRSG         a     160 bit LFSR for pseudo random sequences     GARY
 
 
@@ -1531,7 +1534,7 @@ OpenGL         adcf  Interface to OpenGL drawing/imaging library  STANM
 PDL            cdcf  Perl Data Language - numeric analysis env    KGB
 PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
-VRML           cdpf  VRML primitives and ext. to create scenes    HPALM +
+VRML           cdpf  VRML primitives and ext. to create scenes    HPALM
 
 Graphics::
 ::Simple       idcO  Simple drawing primitives                    NEERI
@@ -1656,12 +1659,12 @@ Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN
 
 Penguin::
-::Easy         RdpO  Provides quick, easy access to Penguin API   JDUNCAN +
+::Easy         RdpO  Provides quick, easy access to Penguin API   JDUNCAN
 
-CreditCard     Rdpf  Credit card number check digit test          JONO  +
+CreditCard     Rdpf  Credit card number check digit test          JONO
 
 Business::
-::CreditCard   Rdpf  Deprecated name for Creditcard.pm            JONO  !
+::CreditCard   Rdpf  Deprecated name for Creditcard.pm            JONO
 
 Print::
 ::Label        i     Format address labels                        JONO
@@ -1670,7 +1673,7 @@ BarCode::
 ::UPC          i     Produce PostScript UPC barcodes              JONO
 
 Audio::
-::Sox          i     sox sound library as one or more modules     NI-S  +
+::Sox          i     sox sound library as one or more modules     NI-S
 
 =======================================================================
 
