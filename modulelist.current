@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.57 $Date: 1999/06/08 04:11:56 $
+The Perl 5 Module List       Revision: 2.57 $Date: 1999/06/08 04:15:53 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -691,7 +691,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.131 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.132 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1062,7 +1062,7 @@ VCS::
 ::RCE           idcf Perl layer over RCE C API                    RJRAY
 
 Rcs             adcf Alternate RCS interface (see VCS::RCS)       CFRETER
-ClearCase::*   idcf  Environment for ClearCase revision control   BRADAPP
+ClearCase::*    idcf  Environment for ClearCase revision control  BRADAPP
 Include         adpO Parse C header files for use in XS           GBARR
 Make            adpO Makefile parsing, and 'make' replacement     NI-S
 
@@ -1108,6 +1108,10 @@ Sys::
 ::Hostname      Supf Implements a portable hostname function      P5P
 ::Sysconf       bdpf Defines constants for POSIX::sysconf()       NI-S
 ::Syslog        Supf Provides same functionality as BSD syslog    P5P
+
+    Note: The Sys:: namespace is considered harmful as it is giving no
+    clue about which system. Placing additional modules into this
+    namespace is discouraged.
 
 Platform Specific Modules
 
@@ -1183,6 +1187,7 @@ Solaris::
 ::NDD           idcO Access network device statistics             ABURLISON
 
 Unix::
+::ConfigFile    adpO Abstract interfaces to Unix config files     SSNODGRA
 ::UserAdmin     Rdpf Interface to Unix Account Information        JZAWODNY
 
 VMS::
@@ -1201,7 +1206,10 @@ PDA::
 ::Pilot         amcO Interface to pilot-link library              KJALB
 ::PilotDesktop  i    Managing Pilot Desktop databases software    JWIEGLEY
 
-Hardware Drivers
+Hardware related modules
+
+Hardware::
+::Simulator     adpf Simulate different pieces of hardware        GBARTELS
 
 Device::
 ::SVGA          c    SVGA Graphic card driver                     SCOTTVR
@@ -1270,6 +1278,7 @@ IPC::
 ::Mmap          i    Interface to Unix's mmap() shared memory     MICB
 ::Open2         Supf Open a process for both reading and writing  P5P
 ::Open3         Supf Like IPC::Open2 but with error handling      P5P
+::Session       adpO remote shell session mgr; wraps open3()      STEVEGT
 ::Signal        cdpf Translate signal names to/from numbers       ROSCH
 ::SysV          adcr shared memory, semaphores, messages etc      JACKS
 
@@ -1307,6 +1316,9 @@ ToolTalk        adcr Interface to the ToolTalk messaging service  MARCP
 
 SNMP::
 ::Monitor       adpO Accounting and graphical display             JWIED
+
+Mon::
+::*             RdpO Network monitoring suite                     TROCKIJ
 
 Parallel::
 ::Pvm           bdcf Interface to the PVM messaging service       EWALKER
@@ -1442,6 +1454,7 @@ Date::
 ::Time          idpO Lightweight normalised datetime data type    TIMB
 
 Time::
+::Avail         Rdpf Calculate min. remaining in time interval    PSANTORO
 ::CTime         Rdpf Format Times ala ctime(3) with many formats  MUIR
 ::DaysInMonth   Rdpf Returns the number of days in a month        MUIR
 ::HiRes         Rdcf High resolution time, sleep, and alarm       DEWEG
@@ -1744,6 +1757,12 @@ Clips           adpO Interface to the Expert System Clips         MSULLIVAN
 ShellScript::
 ::Env           adpO Simple sh and csh script generator           SVENH
 
+Verilog::
+::Pli           Rdch Access to simulator functions                WSNYDER
+::Language      Rdpf Language support, number parsing, etc        WSNYDER
+::Parser        RdpO Language parsing                             WSNYDER
+::SigParser     RdpO Signal and module extraction                 WSNYDER
+
 _______________________________________________________________________
 
 10) File Names, File Systems and File Locking (see also File Handles)
@@ -1895,8 +1914,11 @@ SGMLS           RdpO A Post-Processor for SGMLS and NSGMLS        INGOMACH
 
 XML             RmhO Large collection of XML related modules      XMLML
 
-    See the XML module list at
+    The namespace for low level-level interface modules below XML is
+    documented in a separate XML module list that is available at
     http://www.perl.com/CPAN/modules/by-module/XML/perl-xml-modules.html
+    It is discouraged to put higher level XML modules into the XML
+    namespace to avoid bloat.
 
 RTF::
 ::Base          i    Classes for Microsoft Rich Text Format       NI-S
@@ -2136,7 +2158,7 @@ MIME::
 
 Apache          RdcO Interface to the Apache server API           DOUGM
 
-   For Apache see also
+   For a concise listing of Apache modules see
    http://www.perl.com/CPAN/modules/by-module/Apache/apache-modlist.html
 
 Netscape::
@@ -2154,11 +2176,12 @@ WebFS::
 WebCache::
 ::Digest        bdpf Internet Cache Protocol (RFCs 2186 and 2187) MHAMILTON
 
+Authorizenet    bdpf Get Credit Card Info from authorizenet       DLINCOLN
 Catalog         bmpO Manage/display resources catalog (URLs etc.) LDACHARY
 CGI_Lite        MnpO Light-weight interface for fast apps         SHGUN
 FCGI            Rdcr Fast CGI                                     SKIMO
 WING            RmhO Apache based IMAP/NNTP Gateway               MICB
-Authorizenet    bdpf Get Credit Card Info from authorizenet       DLINCOLN
+WOMP            cdpO CGI App Dev Suite: authen/state/html         SPADKINS
 
 _______________________________________________________________________
 
