@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.98 $ $Date: 2001/05/05 06:12:03 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.99 $ $Date: 2001/05/05 06:17:44 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.98 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.99 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -749,9 +749,10 @@ Where the 'DSLIP' characters have the following meanings:
 
   P - Public License
     p   - Standard-Perl: user may choose between GPL and Artistic
-    b   - BSD: The BSD License
     g   - GPL: GNU General Public License
-    l   - LPGL: GNU Library Public License, 
+    l   - LGPL: "GNU Lesser General Public License" (previously known as "GNU Library
+         General Public License")
+    b   - BSD: The BSD License
     a   - Artistic license alone
     o   - other (but distribution allowed without restrictions)
 
@@ -862,7 +863,7 @@ Safe               SdcO? Restrict eval'd code to safe subset of ops   MICB
 Softref            bdcf? Extension for weak/soft referenced SVs       ILYAZ
 
 Attribute::
-::Handlers
+::Handlers         RdpO? Simpler definition of attribute handlers     DCONWAY
 
 Exporter::
 ::Import           Rdpn? Alternate symbol exporter                    GARROW
@@ -879,8 +880,8 @@ Inline::
 
 Regexp             adcO? An OO interface to regular expressions       GBARR
 Regexp::
-::Common
-::Shellish
+::Common           RdpO? Provide commonly requested regular expr.     DCONWAY
+::Shellish         RdpO? Shell-like regular expressions               RBS
 
 Safe::
 ::Hole             bdcO? Exec subs in the original package from Safe  SEYN
@@ -912,7 +913,7 @@ Filter::
 ::cpp              bdcf? Filters script through C preprocessor        PMQS
 ::tee              bdcf? Copies to file perl source being compiled    PMQS
 ::decrypt          bdcf? Template for a perl source decryption filter PMQS
-::Simple
+::Simple           RdpO? Simplified source filtering                  DCONWAY
 
 Thread support (note that these are experimental, i.e. pre-alpha)
 
@@ -969,6 +970,7 @@ _______________________________________________________________________
 Name               DSLIP Description                                  Info
 ------------       ----- -------------------------------------------- ----
 AutoSplit          Supf? Splits modules into files for AutoLoader     P5P
+Bleach             RdpO? For really clean programs                    DCONWAY
 Continuus          adpO? Interface to Continuus Code Management tool  HENKE
 Coy                Rdpn? Like Carp - only prettier                    DCONWAY
 FindBin            adpf? Locate current script bin directory          GBARR
@@ -1047,8 +1049,6 @@ VCS::
 ::PVCS             i   ? PVCS Version Manager (intersolv.com)         BMIDD
 ::RCS              idpf? Interface layer over RCS (See also Rcs)      RJRAY
 ::RCE              idcf? Perl layer over RCE C API                    RJRAY
-
-Bleach
 
 _______________________________________________________________________
 
@@ -1764,7 +1764,7 @@ Data::
 ::Iterator         RupO? Simple iteration over complex data strucures HCAMP
 ::Buffer           bdpO? Read/write buffer class                      BTROTT
 ::Lazy             Rdpr? provides "lazy" scalars, arrays and hashes   JENDA
-::Denter
+::Denter           RdpO? An alternative to Data::Dumper and Storable. INGY
 
 Tree::
 ::Base             cdpO? Defines a basic binary search tree           MSCHWERN
@@ -1814,7 +1814,7 @@ DBIx::
 ::DBSchema         bmpO? Database-independent schema objects          IVAN
 ::XMLMEssage       bnpf? Exchange of XML messages between DBI sources ANDREIN
 ::Browse           idpO? A class to browse related tables via CGI/Web EJDRS
-::XHTML_Table
+::XHTML_Table      cdpOp Methods to create an XHTML table from SQL    JEFFA
 
 DBD::
 ::ASAny            adcO? Adaptive Server Anywhere Driver for DBI      SMIRNIOS
@@ -2068,7 +2068,8 @@ Tk::
 ::XMLViewer        adpO? Tk widget to display XML                     SREZIC
 ::ObjEditor        bdpO? Tk widget to edit data or objects            DDUMONT
 ::ObjEditorDialog  bdpO? Tk popup dialog to edit data or objects      DDUMONT
-::Pgplot
+::Pgplot           bdcfp Pgplot widget for Tk                         CPHIL
+::PathEntry
 
 Modules in the realm of Tk but with a separate namespace
 
@@ -2176,7 +2177,7 @@ Shockwave::
 ::Lingo            i???? Collection of modules for Lingo processing   MARTIN
 
 SystemC::
-::Netlist          adpO? Build and lint netlist structures, AUTOs     WSNYDER
+::Netlist          adpOp Build and lint netlist structures, AUTOs     WSNYDER
 ::Parser           adpO? Parse SystemC files                          WSNYDER
 ::Vregs            adpO? Build Registers, Classes, Enums from HTML    WSNYDER
 
@@ -2316,7 +2317,7 @@ Text::
 ::xSV              bdpO? Read CSV files, handling embedded returns    TILLY
 ::Header           bdpf? Content-independent RFC 822 header functions NWIGER
 ::BarGraph         RdpO? Generate text bar graph from data in a hash  KBAUCOM
-::EtText
+::EtText           RmpO? editable-text format for HTML output         JMASON
 
 Text::PDF::
 ::API              Rmhh? Allows creation of nifty PDF-files.          AREIBENS
@@ -2374,7 +2375,7 @@ Lingua::EN::Numbers::
 ::Ordinate         Rdpf? go from cardinal (53) to ordinal (53rd)      SBURKE
 
 Lingua::Romana::
-::Perligata
+::Perligata        RdpO? Perl in Latin                                DCONWAY
 
 Lingua::RU::
 ::Charset          anpf? Detect/Convert russian character sets.       FARBER
@@ -2647,7 +2648,7 @@ Crypt::
 ::Rot13            cdpO? simple encryption often seen on usenet       AYRNIEU
 ::RSA              bdpO? RSA public-key cryptosystem.                 VIPUL
 ::Solitaire        Rdpf? A very simple encryption system              SIFUKURT
-::Twofish          RdcO? The Twofish Encryption Algorithm             AMS
+::Twofish          RdcOa The Twofish Encryption Algorithm             AMS
 ::UnixCrypt        Rdpf? Perl-only implementation of crypt(3)         MVORL
 ::RandPasswd       RdpO? Random password generator based on FIPS-181  JDPORTER
 ::Rijndael         bdch? AES/Rijndael Encryption Module               DIDO
@@ -2659,9 +2660,9 @@ Crypt::
 ::ECB              Mdph? ECB mode for Crypt::DES, Blowfish, etc.      APPEL
 ::CipherSaber      RdpO? OO module for CS-1 and CS-2 encryption       CHROMATIC
 ::PGPSimple        cdpO? Basic interface to PGP                       JHINKLE
-::TEA              RdcO? Tiny Encryption Algorithm                    AMS
+::TEA              RdcOa Tiny Encryption Algorithm                    AMS
 ::DSA              bdpO? DSA signatures and key generation            BTROTT
-::NULL             RdpO? NULL Encryption Algorithm                    AMS
+::NULL             RdpOa NULL Encryption Algorithm                    AMS
 ::DH               adpO? Diffie-Hellman key exchange system           BTROTT
 ::PassGen          adpf? Generate pronouncable passwords              TJENNESS
 ::GOST             bdpO? GOST encryption algorithm                    AMS
@@ -2777,7 +2778,7 @@ HTML::
 ::FormTemplate     bdpO? Store definition, make persist forms, report DUNCAND
 ::LoL              Rdpf? Construct HTML from Perl data structures     BOBG
 ::ActiveLink       bdpO? Dynamically activate HTML links based on URL NWIGER
-::WebMake
+::WebMake          RmpO? simple web site management system            JMASON
 
 HTML::Widgets::
 ::DateEntry        RdpO? Creates date entry widgets for HTML forms.   KENNEDYH
@@ -3241,7 +3242,7 @@ Convert::
 ::IBM390           bdhf? Convert data from/to S/390 representations   GROMMEL
 ::Morse            Rdpf? Convert from/to Morse code (.--. . .-. .-..) TELS
 ::RACE             bdpf? Conversion between Unicode and RACE          MIYAGAWA
-::Base
+::Base             adph? Convert integers to/from arbitrary bases.    VIPUL
 
 AppleII::
 ::Disk             bdpO? Read/write Apple II disk image files         CJM
@@ -3543,7 +3544,7 @@ Astro::
 ::MoonPhase        Rdpf? Information about the phase of the Moon.     RPIKKARA
 ::SLA              Rdcf? Interface to SLALIB positional astronomy lib TJENNESS
 ::SunTime          cdpf? Calculate sun rise/set times                 ROBF
-::Time             Rdpf? General time conversions for Astronomers     CPHIL
+::Time             Rdpfp General time conversions for Astronomers     CPHIL
 ::Sunrise          RdpO? Computes sunrise/sunset for a given day      RKHILL
 ::SkyCat           cd+O? Interface to ESO SkyCat library              TJENNESS
 
@@ -4483,6 +4484,7 @@ to a CGI script that lets you edit the database entries yourself.
   JDPORTER John D. Porter <jdporter@min.net>
   JDUNCAN  James A Duncan <j@mesduncan.co.uk>
   JEDWARDS Jim Edwards <inmet@altavista.com>
+  JEFFA    Jeffrey H. Anderson <captvanhalen@yahoo.com>
   JEFFH    Jeffrey Hulten <jeffh@premier1.net>
   JEFFMOCK Jeff Mock <jeff@mock.com>
   JEGAN    Joseph J. Egan <joseph_egan@hotmail.com>
