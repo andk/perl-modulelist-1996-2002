@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.60 $$Date: 2000/10/21 07:48:40 $
+The Perl 5 Module List       $Revision: 3.61 $$Date: 2000/10/22 15:13:06 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.60 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.61 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1316,7 +1316,7 @@ IPChains::
 SNMP              RdcO Interface to the UCD SNMP toolkit            GSM
 SNMP::
 ::Monitor         adpO Accounting and graphical display             JWIED
-::Util
+::Util            RdpO Perform SNMP set,get,walk,next,walk_hash,... WMARQ
 
 Mon::
 ::Client          RdpO Network monitoring client                    TROCKIJ
@@ -1393,7 +1393,7 @@ Statistics::
 ::MaxEntropy      Rdpf Maximum Entropy Modeling                     TERDOEST
 ::OLS             bdpO ordinary least squares (curve fitting)       SMORTON
 ::ROC             bdpf ROC curves with nonparametric conf. bounds   HAKESTLER
-::Distributions
+::Distributions   RdpO Perl module for calculating critical values  MIKEK
 
 Algorithm::
 ::Diff            Rdpf Diff (also Longest Common Subsequence)       NEDKONZ
@@ -1449,13 +1449,13 @@ Bit::
 ::Vector          RdcO Fast bit-vec, sets of int & big int math lib STBEY
 
 Set::
+::Bag             RdpO Bag (multiset) class                         JHI
 ::IntRange        RdcO Set of integers (arbitrary intervals, fast)  STBEY
 ::IntSpan         adpO Set of integers newsrc style '1,5-9,11' etc  SWMCD
+::NestedGroups    RdpO Grouped data eg ACL's, city/state/country    ABARCLAY
 ::Object          bdcO Set of Objects (smalltalkish: IdentitySet)   JLLEROY
 ::Scalar          adpO Set of scalars (inc references)              JHI
 ::Window          bdpO Manages an interval on the integer line      SWMCD
-::Bag
-::NestedGroups
 
 Graph::
 ::Element         RdpO Base class for element of directed graph     NEILB
@@ -1521,7 +1521,7 @@ Tie::
 ::OffsetArray     adpr Tie one array to another, with index offset  JDPORTER
 ::Persistent      Rdpr Persistent data structures via tie           RGIERSIG
 ::Quick           i    Simple way to create ties                    TIMB
-::RDBM
+::RDBM            RdpO Tie hashes to relational databases           LDS
 ::RndHash         bdpO choose a random key of a hash in O(1) time   DFAN
 ::SecureHash      RdpO Enforced encapsulation of Perl objects       DCONWAY
 ::SentientHash    bdpr Tracks changes to nested data structures     ANDREWF
@@ -1766,7 +1766,7 @@ Spreadsheet::
 ::Excel           i    Interface to Excel spreadsheets              RRAWLINGS
 ::Lotus           i    Interface to Lotus 1-2-3 spreadsheets        RRAWLINGS
 ::WriteExcel      bupO Write numbers & text in Excel binary format  JMCNAMARA
-::ParseExcel
+::ParseExcel      RdpO Get information from Excel file              KWITKNR
 
 X500::
 ::DN              Mdpo X500 Distinguished Name parser               RSAVAGE
@@ -1983,8 +1983,8 @@ String::
 ::Scanf           Rdpf Implementation of C sscanf function          JHI
 ::ShellQuote      Rdpf Quote string for safe passage through shells ROSCH
 ::Strip           Rdcf xs Module to remove white-space from strings BPOWERS
-::Random
-::Similarity
+::Random          RdpO Perl module to generate random strings based STEVE
+::Similarity      RdcO Calculate the similarity of two strings      MLEHMANN
 
 Language text related modules
 
@@ -2285,7 +2285,7 @@ Crypt::
 ::Solitaire       Rdpf A very simple encryption system              SIFUKURT
 ::Twofish         Rdpf Twofish Encryption Algorothm                 NISHANT
 ::UnixCrypt       Rdpf Perl-only implementation of crypt(3)         MVORL
-::RandPasswd
+::RandPasswd      RdpO Random password generator based on FIPS-181  JDPORTER
 
 Authen::
 ::ACE             adcO Interface to Security Dynamics ACE (SecurID) DCARRIGAN
@@ -2665,6 +2665,7 @@ Mail::
 ::MH              adcr MH mail interface                            MRG
 ::Mailer          adpO Simple mail agent interface (see Mail::Send) GBARR
 ::POP3Client      RdpO Support for clients of POP3 servers          SDOWD
+::Procmail        RdpO Procmail-like facility for creating easy mai JV
 ::Send            adpO Simple interface for sending mail            GBARR
 ::Sender          MdpO socket() based mail with attachments, SMTP   JENDA
 ::Sendmail        Rdpf Simple platform independent mailer           MIVKOVIC
@@ -3387,6 +3388,7 @@ to a CGI script that lets you edit the database entries yourself.
   DHARRIS  David Harris <dharris@drh.net>
   DHUDES   Dana Hudes <dhudes@hudes.org>
   DHUNT    Douglas Hunt <dhunt@ucar.edu>
+  DIDO     Rafael R. Sevilla <dido@pacific.net.ph>
   DIMRUB   Dmitry Rubinstein <dimrub@icomverse.com>
   DIONALM  Dion Almaer <dion@member.com>
   DIVERDI  Joseph DiVerdi <diverdi@XTRsystems.com>
@@ -3430,6 +3432,7 @@ to a CGI script that lets you edit the database entries yourself.
   DSHERER  Daniel Sherer <perl@salmonriver.com>
   DSLEWART Daniel S. Lewart <d-lewart@uiuc.edu>
   DSOUFLIS Dimitrios Souflis <dsouflis@altera.gr>
+  DSPARLING Douglas Sparling <doug@dougsparling.com>
   DSTALDER Darren Stalder <torin@daft.com>
   DSUGAL   Dan Sugalski <dan@sidhe.org>
   DTOWN    David M. Town <david.town@marconi.com>
@@ -3577,6 +3580,7 @@ to a CGI script that lets you edit the database entries yourself.
   HMNIELSEN Henning Michael Møller-Nielsen <hmn@datagraf.dk>
   HMUELLER Hanno Mueller <hmueller@mail.kabel.de>
   HOGGARTH Neil Hoggarth <njh@kernighan.demon.co.uk>
+  HOLT     Gary Holt <holt@alumni.caltech.edu>
   HORNBURG Stefan Hornburg <racke@linuxia.de>
   HORROCKS Sam Horrocks <sam@daemoninc.com>
   HOWEN    Howard Owen <hbo@egbok.com>
@@ -4228,6 +4232,7 @@ to a CGI script that lets you edit the database entries yourself.
   SOMMAR   Erland Sommarskog <sommar@algonet.se>
   SONDBERG Anders Sonderberg Mortensen <sondberg@indexdata.dk>
   SOOZ     Susan Lee Wilson <sooz@pobox.com>
+  SORO     Alexandre Sorokine <srk@users.sourceforge.net>
   SOVA     Vladimir Sovetov <sova@kpbank.ru>
   SPADKINS Stephen Adkins <spadkins@internetdynamics.com>
   SPANNRING Craig Spannring <cts@internetcds.com>
