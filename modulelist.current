@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.96 $ $Date: 2001/05/04 08:54:58 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.97 $ $Date: 2001/05/04 13:58:06 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.96 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.97 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -858,6 +858,7 @@ Error              adpO? Error/exception handling in an OO-ish way    GBARR
 NEXT               RdpO? Perl5 implementation of NEXT (RFC190)        DCONWAY
 Perl               adcO? Create Perl interpreters from within Perl    GSAR
 Protect            bdpf? declare subs private or member               JDUNCAN
+Regexp             adcO? An OO interface to regular expressions       GBARR
 Safe               SdcO? Restrict eval'd code to safe subset of ops   MICB
 Softref            bdcf? Extension for weak/soft referenced SVs       ILYAZ
 
@@ -912,7 +913,6 @@ Filter::
 ::cpp              bdcf? Filters script through C preprocessor        PMQS
 ::tee              bdcf? Copies to file perl source being compiled    PMQS
 ::decrypt          bdcf? Template for a perl source decryption filter PMQS
-::Simple
 
 Thread support (note that these are experimental, i.e. pre-alpha)
 
@@ -1764,7 +1764,6 @@ Data::
 ::Iterator         RupO? Simple iteration over complex data strucures HCAMP
 ::Buffer           bdpO? Read/write buffer class                      BTROTT
 ::Lazy             Rdpr? provides "lazy" scalars, arrays and hashes   JENDA
-::Denter
 
 Tree::
 ::Base             cdpO? Defines a basic binary search tree           MSCHWERN
