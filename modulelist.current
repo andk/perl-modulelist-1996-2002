@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.32 $Date: 1996/10/16 20:49:35 $
+The Perl 5 Module List       Revision: 2.33 $Date: 1996/10/17 14:10:57 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -107,6 +107,7 @@ currently registered CPAN sites:
             ftp://ftp.nuri.net/pub/CPAN/
         Taiwan
             ftp://dongpo.math.ncu.edu.tw/perl/CPAN/
+            ftp://ftp.wownet.net/pub2/PERL/
     Australasia
         Australia
             ftp://coombs.anu.edu.au/pub/perl/CPAN/
@@ -116,6 +117,8 @@ currently registered CPAN sites:
     Europe
         Austria
             ftp://ftp.tuwien.ac.at/pub/languages/perl/CPAN/
+        Belgium
+            ftp://ftp.kulnet.kuleuven.ac.be/pub/mirror/CPAN/
         Czech Republic
             ftp://sunsite.mff.cuni.cz/Languages/Perl/CPAN/
         Denmark
@@ -163,6 +166,7 @@ currently registered CPAN sites:
     North America
         Canada
             ftp://enterprise.ic.gc.ca/pub/perl/CPAN/
+            ftp://ftp.utilis.com/public/CPAN/
         USA
             ftp://ftp.cdrom.com/pub/perl/CPAN/
             ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
@@ -928,23 +932,8 @@ Proc::
 
 Platform Specific Modules
 
-MSDOS::
-::SysCalls     adcf  MSDOS interface (interrupts, port I/O)       DMO
-
 FreeBSD::
 ::SysCalls     cdcf  FreeBSD-specific system calls                GARY
-
-SGI::
-::SysCalls     cdcf  SGI-specific system calls                    AMOSS
-::GL           adcr  SGI's Iris GL library                        AMOSS
-::FM           adcr  SGI's Font Management library                AMOSS
-
-VMS::
-::SysCalls     i     VMS-specific system calls                    CBAIL
-::Filespec     Sdcf  VMS and Unix file name syntax                CBAIL
-
-NeXTStep::
-::NetInfo      idcO  NeXTStep's NetInfo (like ONC NIS)            PGUEN
 
 Mac::                Macintosh specific modules
 ::AppleEvents  bmcO  AppleEvent manager and AEGizmos              MCPL
@@ -958,12 +947,28 @@ Mac::                Macintosh specific modules
 ::Resources    bmcO  Resource manager                             MCPL
 ::Types        bmcO  (Un-)Packing of Macintosh specific types     MCPL
 
+MSDOS::
+::SysCalls     adcf  MSDOS interface (interrupts, port I/O)       DMO
+
+NeXTStep::
+::NetInfo      idcO  NeXTStep's NetInfo (like ONC NIS)            PGUEN
+
 OS2::
+::Attrib       bdcf  Get or set file attributes (not EAs)         CJM +
 ::ExtAttr      RdcO  (Tied) access to extended attributes         ILYAZ
+::FTP          bncf  Access to ftplib interface                   ILYAZ
 ::PrfDB        RdcO  (Tied) access to .INI-style databases        ILYAZ
 ::REXX         RdcO  Access to REXX DLLs and REXX runtime         ILYAZ
-::FTP          bncf  Access to ftplib interface                   ILYAZ
 ::UPM          bncf  User Profile Management                      ILYAZ
+
+SGI::
+::SysCalls     cdcf  SGI-specific system calls                    AMOSS
+::GL           adcr  SGI's Iris GL library                        AMOSS
+::FM           adcr  SGI's Font Management library                AMOSS
+
+VMS::
+::SysCalls     i     VMS-specific system calls                    CBAIL
+::Filespec     Sdcf  VMS and Unix file name syntax                CBAIL
 
 _______________________________________________________________________
 
@@ -1068,7 +1073,7 @@ Statistics::
 ::Descriptive  RdpO  Descriptive statistical methods              JKAST
 ::ChiSquare    Rdpf  Chi Square test - how random is your data?   JONO
 
-PDL            cdcf  Perl Data Language - numeric analysis env    KGB
+PDL            amcf  Perl Data Language - numeric analysis env    PERLDL !
 
 Array::
 ::Vec          idp   Implement array using vec()                  LWALL
@@ -1454,6 +1459,7 @@ HTTPD::
 
 WWW::
 ::RobotRules   ampO  Parse /robots.txt file                       LWWWP
+::Search       adpO  Front-end to Web search engines              JOHNH +
 
 LWP::                Libwww-perl-5
 ::MediaTypes   bmpf  Media types and mailcap processing           LWWWP
@@ -1526,6 +1532,12 @@ Compress::
 Convert::
 ::UU           bdpf  UUencode and UUdecode                        ANDK
 
+AppleII::
+::Disk         adpO  Read/write Apple II disk image files         CJM +
+::ProDOS       adpO  Manipulate files on ProDOS disk images       CJM +
+::DOS33        i     Manipulate files on DOS 3.3 disk images      CJM +
+::Pascal       i     Manipulate files on Apple Pascal disk images CJM +
+
 
 _______________________________________________________________________
 
@@ -1537,7 +1549,10 @@ GD             adcO  GIF editing/painting/manipulation            LDS
 OpenGL         adcf  Interface to OpenGL drawing/imaging library  STANM
 PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
-VRML           cdpf  VRML primitives and ext. to create scenes    HPALM
+
+VRML::         adpO  VRML primitives and ext. to create scenes    HPALM 
+::VRML1        adpO  VRML primitives and ext. with VRML 1.x       HPALM +
+::VRML2        idpO  VRML primitives and ext. with VRML 2.0       HPALM +
 
 Graphics::
 ::Simple       idcO  Simple drawing primitives                    NEERI
