@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.54 $$Date: 2000/06/16 23:02:24 $
+The Perl 5 Module List       $Revision: 3.55 $$Date: 2000/06/16 23:11:58 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.54 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.55 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -972,11 +972,13 @@ Devel::
 ::Poke            cdch Modify internal representation of Perl data  INGY
 ::RegExp          adcO Access perl internal regex functions         ILYAZ
 ::SmallProf       Rdpf Line-by-line profiler                        ASHTED
+::StackTrace      adpO Inspect stacktrace similar to Carp::confess  DROLSKY
 ::Symdump         RdpO Perl symbol table access and dumping         ANDK
 ::TraceFuncs      adpO Trace funcs by using object destructions     JOEHIL
 ::TraceLoad       Rdpf Traces the loading of perl source code       JPRIT
 
 Exception::
+::Class           adpO Declarative exception handling via objects   DROLSKY
 ::Cxx             Rd+f Cause perl to longjmp using C++ exceptions   JPRIT
 
 Perf::            Performance measurement other than benchmarks
@@ -1008,14 +1010,17 @@ Ioctl             adcf ioctl(2) constants                           JPRIT
 POSIX             SupO An interface to most (all?) of POSIX.1       P5P
 Shell             Supf Run shell commands transparently within perl P5P
 
+Async::
+::Group           adpO Deal with simultaneous asynchronous calls    DDUMONT
+::Process         i    class to run sub-processes                   DDUMONT
+
 BSD::
 ::HostIdent       i    s/gethostname(), s/gethostid()               JHI
 ::Ipfwgen         bdpf Generate ipfw(8) filters                     MUIR
 ::Resource        Rdcf getrusage(), s/getrlimit(), s/getpriority()  JHI
 
-Async::
-::Group           adpO Deal with simultaneous asynchronous calls    DDUMONT
-::Process         i    class to run sub-processes                   DDUMONT
+Env::
+::Path            adpO Advanced operations on path variables        DSB
 
 Proc::
 ::Background      RdpO OS independent background process objects    BZAJAC
@@ -1240,6 +1245,12 @@ Net::Daemon::
 
 Net::IMAP::
 ::Simple          bdpO Only implements the basic IMAP features      JPAF
+
+Net::Telnet::
+::Cisco           bdpO Net::Telnet wrapper for Cisco devices        JOSHUA
+
+NetAddr::
+::IP              a??? Easy manipulation of IP addresses            LUISMUNOZ
 
 IPC::
 ::Cache           adpO Shared-memory object cache                   DCLINTON
@@ -1498,6 +1509,7 @@ Tie::
 ::MmapArray       adcr Ties a file to an array                      ANDREWF
 ::Multidim        adpr "tie"-like multidimensional data structures  JDPORTER
 ::OffsetArray     adpr Tie one array to another, with index offset  JDPORTER
+::Persistent      Rdpr Persistent data structures via tie           RGIERSIG
 ::Quick           i    Simple way to create ties                    TIMB
 ::RndHash         bdpO choose a random key of a hash in O(1) time   DFAN
 ::SecureHash      RdpO Enforced encapsulation of Perl objects       DCONWAY
@@ -1523,6 +1535,7 @@ Class::
 ::ParmList        MdpO A named parameter list processor             SNOWHARE
 ::Singleton       bdpO Implementation of a "Singleton" class        ABW
 ::Template        Rdpr Struct/member template builder               DMR
+::Translucent     RdpO Translucent (ala perltootc) method creation  GED
 ::Tree            Mdpo C++ class hierarchies & disk directories     RSAVAGE
 ::TOM             RmpO Transportable Object Model for perl          JDUNCAN
 
@@ -1589,6 +1602,7 @@ DFA::
 ::Simple          cdpO An "augmented transition network"            RANDYM
 
 Boulder           MdpO Generalized tag/value data objects           LDS
+Thesaurus         RdpO Create associations between related things   DROLSKY
 
 _______________________________________________________________________
 
@@ -1603,11 +1617,13 @@ DBIx::            Extensions to the DBI
 ::AnyDBD          bdpO Module to make cross db applications easier  MSERGEANT
 ::CGITables       adpO Easy DB access from a CGI                    TOBIX
 ::Copy            adpO Copying databases                            TOBIX
+::FullTextSearch  a??? Index documents with MySQL as storage        TJMATHER
 ::glueHTML        bdpO CGI interface to DBI databases               JFURNESS
 ::HTMLView        cdpO Creating web userinterfaces to DBI dbs       HAKANARDO
 ::OracleSequence  adpO OO access to Oracle sequences via DBD-Oracle BLABES
 ::Recordset       bmpO Access/Modify DBI handles via Arrays/Hashs   GRICHTER
 ::Table           bdpO OO access to DBI database tables             DLOWE
+::TableAdapter    adpO An object-relational mapper for DBI tables   GED
 ::Tree            adpO Expand self-referential table into a tree    BJEPS
 
 DBD::
@@ -1737,8 +1753,6 @@ Spreadsheet::
 ::Lotus           i    Interface to Lotus 1-2-3 spreadsheets        RRAWLINGS
 ::WriteExcel      bupO Write numbers & text in Excel binary format  JMCNAMARA
 
-Thesaurus         RdpO Create associations between related things   DROLSKY
-
 X500::
 ::DN              Mdpo X500 Distinguished Name parser               RSAVAGE
 
@@ -1772,6 +1786,7 @@ Major Character User Interface Modules:
 
 Cdk               RdcO Collection of Curses widgets                 GLOVER
 Curses            adcO Character screen handling and windowing      WPS
+Dialog            bdch interface library to libdialog               UNCLE
 PV                bmpO PerlVision curses windowing (OO widgets etc) AGUL
 PerlMenu          Mdpf Curses-based menu and template system        SKUNZ
 
@@ -1978,6 +1993,7 @@ Text::
 ::Soundex         Sdhf Convert a string to a soundex value          MARKM
 ::Tabs            Sdpf Expand and contract tabs ala expand(1)       MUIR
 ::TeX             cdpO TeX typesetting language input parser        ILYAZ
+::Templar         RdpO An object-oriented templating system         GED
 ::Template        MdpO Expand template text with embedded perl      MJD
 ::Vpp             RdpO Versatile text pre-processor                 DDUMONT
 ::Wrap            Sdpf Wraps lines to make simple paragraphs        MUIR
@@ -2166,6 +2182,7 @@ Locale::
 ::Language        Rdpf ISO 639 two letter language codes            NEILB
 ::Msgcat          RdcO Access to XPG4 message catalog functions     CHRWOLF
 ::PGetText        bdpf What GNU gettext does, written in pure perl  MSHOYHER
+::SubCountry      RdpO ISO 3166-2 two letter subcountry codes       KIMRYAN
 ::gettext         Rdcf Multilanguage messages                       PVANDRY
 
 Unicode::
@@ -2296,6 +2313,7 @@ CGI::
 ::Session         cdpO Persistent storage of complex data in CGI    ZED
 ::SpeedyCGI       bdcn Run CGI scripts persistenly                  HORROCKS
 ::Validate        adpO Advanced CGI form parser                     ZENIN
+::WML             RdpO Subclass of CGI.pm for WML output            AWOOD
 ::XMLForm         adpO Create/query XML for forms                   MSERGEANT
 
 HTML::
@@ -2310,6 +2328,7 @@ HTML::
 ::ElementTable    RmpO Tables as easy HTML element structures       MSISK
 ::Embperl         Rmcf Embed Perl in HTML                           GRICHTER
 ::Entities        Rmpf Encode/decode HTML entities                  LWWWP
+::FillInForm      a??? Fill in HTML forms, separating HTML and code TJMATHER
 ::Formatter       ampO Convert HTML to plain text or Postscript     LWWWP
 ::HeadParser      RmpO  Parse <HEAD> section of HTML documents      LWWWP
 ::LinkExtor       RmpO  Extract links from HTML documents           LWWWP
@@ -2319,6 +2338,7 @@ HTML::
 ::QuickCheck      cdpf Fast simple validation of HMTL text          YLU
 ::Simple          bdpf Simple functions for generating HTML         TOMC
 ::SimpleParse     RdpO Bare-bones HTML parser                       KWILLIAMS
+::StickyForms     adpO HTML form generation for mod_perl/CGI        PMH
 ::Stream          RdpO HTML output stream                           ERYQ
 ::Subtext         adpO Text substitutions on an HTML template       KAELIN
 ::Table           bnpO Write HTML tables via spreadsheet metaphor   STLACY
@@ -2332,6 +2352,7 @@ HTTP::
 ::Browscap        cdpO Provides info on web browser capabilities    JAMESPO
 ::BrowserDetect   adph Detect browser, version, OS from UserAgent   LHS
 ::Cookies         RmpO Storage of cookies                           LWWWP
+::DAV             cmpO A client module for the WebDAV protocol      PCOLLINS
 ::Date            Rmpf Date conversion for HTTP date formats        LWWWP
 ::Daemon          RmpO Base class for simple HTTP servers           LWWWP
 ::Headers         RmpO Class encapsulating HTTP Message headers     LWWWP
@@ -2466,6 +2487,7 @@ Server::Mail::
 ::Object          cupO Basic mail object                            JACKS
 
 MailBot           cdpO Archive server, listserv, auto-responder     RHNELSON
+Mud               cdcO A multi-user online interactive game server  GED
 
 NetServer::
 ::Compiler        idph State machine compiler for TCP/IP servers    CHSTROSS
@@ -2581,6 +2603,7 @@ Xmms::
 ::Remote          bdcO Perl interface to the xmms_remote_* API      DOUGM
 ::Plugin          i    Perl interface to the xmms plugin APIs       DOUGM
 
+ElectricArc       RdpO Generic diagram manipulation toolset         SELKOVJR
 Gimp              Mmch Rich interface to write plugins for The Gimp MLEHMANN
 T3D               cdpO Realtime extensible 3D rendering             GJB
 ThreeD            i    Namespace root for all kinds of 3D modules   ADESC
@@ -2800,6 +2823,8 @@ Cisco::
 FAQ::
 ::OMatic          RdpO A CGI-based FAQ/help database maintainer     JHOWELL
 
+FestVox           i??? Build synthetic voices (cf. www.festvox.org) LENZO
+
 Finance::
 ::Quote           Rmph Fetch stock prices over the Internet         PJF
 ::QuoteHist       bdpO Historical stock quotes from multiple sites  MSISK
@@ -3000,6 +3025,8 @@ RFC2045-2049
            MIME - Multipurpose Internet Mail Extensions  MIME::*
 RFC2138    Terminal server authentification and accting  RADIUS
 RFC2229    Dictionary Server                             Net::Dict
+RFC2518    HTTP Extensions for Distributed Authoring     HTTP::DAV
+
 
 _______________________________________________________________________
 
