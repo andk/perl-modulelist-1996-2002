@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.50 $Date: 1998/09/23 20:49:20 $
+The Perl 5 Module List       Revision: 2.50 $Date: 1999/02/03 07:00:50 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -673,7 +673,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.105 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.106 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1057,7 +1057,7 @@ Name           DSLI  Description                                  Info
 Env            Supf  Alias environment variables as perl vars     P5P
 Errno          cdpf  Constants from errno.h EACCES, ENOENT etc    GBARR
 Fcntl          Sdcf  Defines fcntl() constants (see File::Lock)   JHI
-Ioctl          cdcf  Defines ioctl () constants                   KJALB
+Ioctl          cdcf  Defines ioctl() constants                    KJALB
 POSIX          SupO  An interface to most (all?) of POSIX.1       P5P
 Shell          Supf  Run shell commands transparently within perl P5P
 
@@ -1591,12 +1591,10 @@ Tk             bmcO  Object oriented version of Tk v4             TKML
 
 See the Tk module list at http://www.perl.com/CPAN/modules/by-module/Tk/tk-modlist.html
 
-Gtk            bdcO  Bindings to the Gtk Toolkit                  KJALB
-Gnome          bdcO  Bindings to the Gnome Desktop Toolkit        KJALB
-
 Other Major X Windows User Interface Modules:
 
-Gtk            cdcO  binding of the Gtk library used by GIMP      KJALB
+Gtk            bdcO  binding of the Gtk library used by GIMP      KJALB
+Gnome          bdcO  Bindings to the Gnome Desktop Toolkit        KJALB
 Gimp           bdcO  Interface to write plug-ins for The Gimp     MLEHMANN
 Sx             Rdcf  Simple Athena widget interface               FMC
 Fresco         cd+O  Interface to Fresco (post X11R6 version)     BPETH
@@ -1785,7 +1783,7 @@ SGML::
 ::SPGrove      bd+O  Load SGML, XML, and HTML files               KMACLEOD
 SGMLS          RdpO  A Post-Processor for SGMLS and NSGMLS        INGOMACH
 
-XML            Rmhh  Large collection of XML related modules
+XML            Rmhh  Large collection of XML related modules      XMLML
 
 Please visit the XML FAQ at
 http://www.perlxml.com/faq/perl-xml-faq.html for pointers to XML
@@ -2448,7 +2446,6 @@ Contacts: JHI
 
 =======================================================================
 
-
            Part 4 - Standards Cross-reference
            ==================================
 
@@ -2460,7 +2457,6 @@ It also aims to encourage module authors to consider any standards that
 might relate to the modules they are developing.
 
 1)   IETF - Internet Engineering Task Force (RFCs)
-
 
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
@@ -2494,16 +2490,14 @@ RFC2138    Terminal server authentification and accting  RADIUS
 RFC2229    Dictionary Server                             Net::Dict
 _______________________________________________________________________
 
-
 2)   ITU - International Telegraph Union (X.*)
 
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 X.209      Basic Encoding Rules for ASN.1                Convert::BER
 _______________________________________________________________________
+
 3)   ISO - International Standards Organization (ISO*)
-
-
 
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
@@ -2511,9 +2505,12 @@ ISO/R 2015-1971
            Date calculations for the Gregorian calendar  Date::DateCalc
 ISO639     Two letter codes for language identification  Locale::Language
 ISO3166    Two letter codes for country identification   Locale::Country
+
 =======================================================================
+
 			  Part 5 - Who's Who
 			  ==================
+
 1) Information / Contact Reference Details (in alphabetical order)
 
 The following list of email addresses is based on the credentials
@@ -3089,10 +3086,8 @@ to a CGI script that lets you edit the database entries yourself.
   The FAQ is available on all CPAN sites in the directory doc/FAQs
   (e.g., http://www.perl.com/CPAN/doc/FAQs/) as well as from the RTFM
   server where you can find all posted FAQs:
-
     ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/
     ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
-
   RTFM mirror sites:
 
   North America:
@@ -3106,4 +3101,3 @@ to a CGI script that lets you edit the database entries yourself.
     ftp://nctuccca.edu.tw/USENET/FAQ
     ftp://hwarang.postech.ac.kr/pub/usenet/news.answers
     ftp://ftp.hk.super.net/mirror/faqs
-
