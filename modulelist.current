@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.57 $Date: 1999/05/21 04:03:48 $
+The Perl 5 Module List       Revision: 2.57 $Date: 1999/06/08 04:11:56 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -691,7 +691,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.130 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.131 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1470,7 +1470,7 @@ Tie::
 ::File          adpr Tie hash to files in a directory             AMW
 ::Handle        RdpO Base class for implementing tied filehandles STBEY
 ::IxHash        RdpO Indexed hash (ordered array/hash composite)  GSAR
-::ListKeyedHash bdpr Use lists to key multi-level hashes          SNOWHARE
+::ListKeyedHash bdpr Use lists to key multi-level hashes          SNOWHARE +
 ::Mem           adcO Bind perl variables to memory addresses      PMQS
 ::Quick         i    Simple way to create ties                    TIMB
 ::RndHash       bdpO choose a random key of a hash in O(1) time   DFAN
@@ -2724,6 +2724,7 @@ to a CGI script that lets you edit the database entries yourself.
   ANDYD    Andy Dougherty <doughera@lafcol.lafayette.edu>
   ANDYDUNC Andy Duncan <andy_j_duncan@yahoo.com>
   ANDYGLEW Andy Glew <glew@cs.wisc.edu>
+  ANDYGROM Andrew Gromozdin <andygrom@zenon.net>
   ANTRO    Antonio Rosella <anface@yahoo.com>
   AOCINAR  Ali Onur Cinar <root@zdo.com>
   APML     The Perl/Apache Mailing List
@@ -2735,6 +2736,7 @@ to a CGI script that lets you edit the database entries yourself.
   ASANDSTRM Arved H Sandstrom <Arved_37@chebucto.ns.ca>
   ASHER    Aaron Sherman <ajs@ajs.com>
   ASHTED   Ted Ashton <ashted@southern.edu>
+  ASPA     Marko Asplund <aspa@hip.fi>
   ASPIDER  Brian Dellert <aspider@pobox.com>
   ASTEAM   ActiveState development team <dev@ActiveState.com>
   AUSCHUTZ Austin Schutz <tex@habit.com>
@@ -2911,6 +2913,7 @@ to a CGI script that lets you edit the database entries yourself.
   FORS     The "Friends of Randal Schwartz" mailing list
            Mail to majordomo@teleport.com with body "subscribe
            fors-discuss <your-address>"
+  FPAS     Francesco Pasqulini <francesco@webinit.com>
   FPIVARI  Fabrizio Pivari <pivari@geocities.com>
   FRAMM    Frederik Ramm <ramm@rz.uni-karlsruhe.de>
   FRANCOC  Franco Callari <franco@cim.mcgill.ca>
