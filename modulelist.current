@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.100 $ $Date: 2001/05/10 15:09:26 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.101 $ $Date: 2001/05/11 13:46:21 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.100 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.101 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -882,6 +882,7 @@ Regexp             adcO? An OO interface to regular expressions       GBARR
 Regexp::
 ::Common           RdpO? Provide commonly requested regular expr.     DCONWAY
 ::Shellish         RdpO? Shell-like regular expressions               RBS
+::Func
 
 Safe::
 ::Hole             bdcO? Exec subs in the original package from Safe  SEYN
@@ -1025,6 +1026,7 @@ Devel::
 ::TraceFuncs       adpO? Trace funcs by using object destructions     JOEHIL
 ::TraceLoad        Rdpf? Traces the loading of perl source code       PVERD
 ::Modlist          Rdpf? Collect module use information               RJRAY
+::Cover
 
 Exception::
 ::Class            RdpOp Declare exception class hierarchies          DROLSKY
@@ -1086,6 +1088,7 @@ Proc::
 ::Spawn            Rdpf? Run external programs                        GARROW
 ::SyncExec         Rdpf? Spawn processes but report exec() errors     ROSCH
 ::times            adpf? By-name interface to process times function  TOMC
+::Queue
 
 GTop               bdcO? Perl interface to libgtop                    DOUGM
 
@@ -1213,6 +1216,7 @@ VMS::
 ::SysCalls         i   ? VMS-specific system calls                    CBAIL
 ::System           Rdcf? VMS-specific system calls                    DSUGAL
 ::User             bdcr? Read access to system UAF data               DSUGAL
+::Mail
 
 VMS::Fileutils::
 ::Root             RdpO? Evade VMS's 8 level directory restrictions   CLANE
@@ -1235,6 +1239,10 @@ Device::
 
 Device::ISDN::
 ::OCLM             bd??? Perl interface to the 3com OCLM ISDN TA      MERLIN
+
+AudioCD
+AudioCD::
+::Mac
 
 _______________________________________________________________________
 
@@ -1321,6 +1329,9 @@ Net::
 ::ParseWhois       RmpO? Get+Parse "whois" domain data                ABEROHAM
 ::Server           adpO? Extensible (class) oriented internet server  RHANDOM
 ::Peep             RdpO? Clients for Peep: The Network Auralizer      STARKY
+::Hesiod
+::SMPP
+::DHCPClient
 
 Net::Daemon::
 ::SSL              RdpO? SSL extension for Net::Daemon                MKUL
@@ -1408,6 +1419,7 @@ SNMP               RdcO? Interface to the UCD SNMP toolkit            GSM
 SNMP::
 ::Monitor          adpO? Accounting and graphical display             JWIED
 ::Util             RdpO? Perform SNMP set,get,walk,next,walk_hash,... WMARQ
+::NPAdmin
 
 Mon::
 ::Client           RdpO? Network monitoring client                    TROCKIJ
@@ -1482,6 +1494,7 @@ Math::
 ::BigIntFast       RdcO? Efficient big integer arithmetic (in C)      STBEY
 ::QuadTree         cdpO? Quad Edge data structure for 2D manifolds    FRED
 ::Fleximal         adpO? Arithmetic with any base representation      TILLY
+::Project
 
 Math::Business::
 ::EMA              adcO? An Exponential Moving Average Calculator     JETTERO
@@ -1509,6 +1522,7 @@ Algorithm::
 ::Diff             Rdpf? Diff (also Longest Common Subsequence)       NEDKONZ
 ::Permute          bdcO? Handy and fast permutation with OO interface EDPRATOMO
 ::SISort           Rdcr? Select And Insert sorting algorithm          HRAFNKELL
+::LUHN
 
 Algorithm::Graphs::
 ::TransitiveClosure RdpO? Calculates the transitive closure           ABIGAIL
@@ -1617,6 +1631,8 @@ Time::
 ::localtime        Supf? A by-name interface for localtime            TOMC
 ::Seconds          RdcO? API to convert seconds to other date values  MSERGEANT
 ::Stopwatch        Rdpr? Use tied scalars as timers                   ILTZU
+::Unix
+::TAI64
 
 Calendar::
 ::CSA              adcO? interface with calenders such as Sun and CDE KJALB
@@ -1663,6 +1679,7 @@ Tie::
 ::RangeHash        bdph? Hashes with 'low,high' ranges as keys        RRWO
 ::RegexpHash       adph? Use regular expressions as hash keys         RRWO
 ::AliasHash        Rdpr? Hash with key aliases                        ACALPINI
+::WarnGlobal
 
 Tie::Scalar::
 ::Timeout          adpr? Scalar variables that time out               MARCEL
@@ -1696,6 +1713,9 @@ Class::
 ::Tree             MdpO? C++ class hierarchies & disk directories     RSAVAGE
 ::WhiteHole        RdpO? Treat unhandled method calls as errors       MSCHWERN
 ::Handler          bdpO? Make Apache-like pseudoclass event handlers  NWIGER
+::Loader
+::Date
+::ArrayObjects
 
 Class::ObjectTemplate::
 ::DB               bdpO? Template base class for DB objects           JASONS
@@ -1774,6 +1794,7 @@ Tree::
 ::Trie             bdpO? An implementation of the Trie data structure AVIF
 ::Nary             RdpO? Perl implementation of N-ary search trees    FSORIANO
 ::DAG_Node         MdpO? base class for trees                         SBURKE
+::M
 
 DFA::
 ::Command          MdpO? Discrete Finite Automata command processor   RSAVAGE
@@ -1792,6 +1813,9 @@ _______________________________________________________________________
 Name               DSLIP Description                                  Info
 ------------       ----- -------------------------------------------- ----
 DBI                amcO? Generic Database Interface (see DBD modules) DBIML
+
+DBI::
+::Format
 
 DBIx -- Extensions to the DBI
 
@@ -1814,6 +1838,9 @@ DBIx::
 ::XMLMEssage       bnpf? Exchange of XML messages between DBI sources ANDREIN
 ::Browse           idpO? A class to browse related tables via CGI/Web EJDRS
 ::XHTML_Table      adpOp Create XHTML tables from SQL queries         JEFFA
+::SchemaView
+::SystemCatalog
+::dbMan
 
 DBD::
 ::ASAny            adcO? Adaptive Server Anywhere Driver for DBI      SMIRNIOS
@@ -1844,6 +1871,8 @@ DBD::
 ::InterBase        amcO? DBI driver for InterBase RDBMS server        EDPRATOMO
 ::RDB              Rdof? DBI driver for Oracle RDB (OpenVMS only)     ASTILLER
 ::DtfSQLmac        RdpO? dtF/SQL (Mac OS edition) driver for DBI      TWEGNER
+::ADO
+::Excel
 
 Oraperl            Rmpf? Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl            bmpf? Ingperl emulation interface for DBD::Ingres  HTOUG
@@ -1907,6 +1936,7 @@ MLDBM::
 
 DB_File::
 ::Lock             RdpO? DB_File wrapper with flock-based locking     DHARRIS
+::DB_Database
 
 DBM::
 ::DBass            adpf? DBM with hashes, locking and XML records     SPIDERBOY
@@ -2122,6 +2152,8 @@ Abstract Graphical User Interfaces modules
 GUI::
 ::Guido            i   ? bd+O Communicate with objects in a GUI       TBRADFUTE
 
+Cmenu
+
 _______________________________________________________________________
 
 9) Interfaces to or Emulations of Other Programming Languages
@@ -2138,6 +2170,10 @@ Language::
 ::Prolog           adpO? An implementation of Prolog                  JACKS
 ::PGForth          i   ? Peter Gallasch's Forth implementation        PETERGAL
 ::ML               cdpf? Implementation of ML                         DSPARLING
+::VBParser
+
+Language::DATR::
+::DATR2XML
 
 Blatte             bdph? Utilities for Blatte language interpreters   BOBG
 Blatte::
@@ -2508,6 +2544,20 @@ Barcode::
 Syntax::Highlight::
 ::Perl             Rdph? Perform syntax highlighting of Perl code     JOHNSCA
 
+XMLI
+
+CSS::
+::SAC
+
+Whitespace
+
+PDF
+PDF::
+::Core
+::Parse
+::Create
+::Labels
+
 _______________________________________________________________________
 
 12) Option, Argument, Parameter and Configuration File Processing
@@ -2778,6 +2828,7 @@ HTML::
 ::LoL              Rdpf? Construct HTML from Perl data structures     BOBG
 ::ActiveLink       bdpO? Dynamically activate HTML links based on URL NWIGER
 ::WebMake          RmpO? simple web site management system            JMASON
+::Lint
 
 HTML::Widgets::
 ::DateEntry        RdpO? Creates date entry widgets for HTML forms.   KENNEDYH
@@ -2919,6 +2970,7 @@ Apache::
 ::ePerl            Rdpr? Fast emulated Embedded Perl (ePerl)          RSE
 ::iNcom            bdpf? An e-commerce framework                      FRAJULAC
 ::CVS              bdpO? Apache PerlContentHandler for CVS            BARBEE
+::Motd
 
 Apache::ASP::
 ::Lite             impO? Lightweight IIS emulation under Apache       FERGUSOR
@@ -3169,6 +3221,9 @@ EventServer        RupO? Triggers objects on i/o, timers & interrupts JACKS
 ::Gettimeofday     Rupr? gettimeofday syscall wrapper                 JACKS
 ::Signal           Rupr? signalhandler for the eventserver            JACKS
 
+FUSE::
+::Server
+
 NetServer::
 ::Compiler         idph? State machine compiler for TCP/IP servers    CHSTROSS
 ::Generic          RdpO? generic OOP class for internet servers       CHSTROSS
@@ -3242,6 +3297,7 @@ Convert::
 ::Morse            Rdpf? Convert from/to Morse code (.--. . .-. .-..) TELS
 ::RACE             bdpf? Conversion between Unicode and RACE          MIYAGAWA
 ::Base             adph? Convert integers to/from arbitrary bases.    VIPUL
+::PEM
 
 AppleII::
 ::Disk             bdpO? Read/write Apple II disk image files         CJM
@@ -3402,6 +3458,8 @@ Memoize            bdpr? Automatically cache results of functions     MJD
 Memoize::
 ::ExpireLRU        Rdpr? Provide LRU Expiration for Memoize           BPOWERS
 
+ReleaseAction
+
 _______________________________________________________________________
 
 21) File Handle, Directory Handle and Input/Output Stream Utilities
@@ -3429,6 +3487,7 @@ IO::
 ::Wrap             RdpO? Wrap old-style FHs in standard OO interface  ERYQ
 ::WrapTie          RdpO? Tie your handles & retain full OO interface  ERYQ
 ::Zlib             bdpO? IO:: style interface to Compress::Zlib       TOMHUGHES
+::Default
 
 FileHandle         SupO? File handle objects and methods              P5P
 FileCache          Supf? Keep more files open than the system permits P5P
@@ -3532,6 +3591,9 @@ AI::
 ::Fuzzy            RdpO? Perl extension for Fuzzy Logic               SABREN
 ::jNeural          RdcO? Jet's Neural Architecture                    JETTERO
 ::NeuralNet        RdpO? A simple back-prop neural net                JBRYAN
+
+AI::NeuralNet::
+::SOM
 
 AI::Gene::
 ::Sequence         RdpO? Base class of mutation methods +gene grammar AJGOUGH
@@ -3662,6 +3724,8 @@ Watchdog::
 ::Service          adpO? Look for service in process table            PSHARPE
 ::HTTPService      adpO? Test status of HTTP server                   PSHARPE
 ::MysqlService     adpO? Test status of Mysql server                  PSHARPE
+
+Hints
 
 _______________________________________________________________________
 
