@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.50 $$Date: 2000/05/25 14:13:46 $
+The Perl 5 Module List       $Revision: 3.51 $$Date: 2000/05/25 17:03:34 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.50 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.51 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1124,6 +1124,7 @@ Solaris::
 ::MIB             idcO Access STREAMS network statistics            ABURLISON
 ::MapDev          bdpf Maps sdNN disk names to cNtNdN disk names    ABURLISON
 ::NDD             idcO Access network device statistics             ABURLISON
+::Procfs          ad?? Solaris Procfs                               JNOLAN
 
 Unix::
 ::ConfigFile      adpO Abstract interfaces to Unix config files     SSNODGRA
@@ -1132,14 +1133,19 @@ Unix::
 ::UserAdmin       Rdpf Interface to Unix Account Information        JZAWODNY
 
 VMS::
+::Device          Rdcr Access info about any device on a VMS system DSUGAL
 ::Filespec        Sdcf VMS and Unix file name syntax                CBAIL
+::ICC             bdcr Interface to the ICC facilities in VMS 7.2+  DSUGAL
 ::Lock            cnco Object interface to $ENQ (VMS lock mgr)      BHUGHES
+::Misc            Rdcr Miscellaneous VMS utility routines           DSUGAL
+::Monitor         Rdcr Access VMS system performance info           DSUGAL
 ::Persona         Rdcf Interface to the VMS Persona services        DSUGAL
 ::Priv            Rdcf Access VMS Privileges for processes          DSUGAL
 ::Process         Rdcf Process management on VMS                    DSUGAL
 ::Queue           bdcf Manage queues and entries                    DSUGAL
 ::SysCalls        i    VMS-specific system calls                    CBAIL
 ::System          Rdcf VMS-specific system calls                    DSUGAL
+::User            bdcr Read access to system UAF data               DSUGAL
 
 Portable Digital Assistants
 
@@ -1536,6 +1542,7 @@ Sort::
 
 Data Type Marshaling (converting to/from strings) and Persistent Storage
 
+Clone             idch Recursive copy of nested objects             RDF
 FreezeThaw        bdpf Convert arbitrary objects to/from strings    ILYAZ
 Persistence::
 ::Object          adpO Store Object definitions with Data::Dumper   VIPUL
@@ -2014,6 +2021,7 @@ Lingua::EN::
 ::Infinitive      Mdpo Find infinitive of a conjugated word         RSAVAGE
 ::Inflect         Mdpf English singular->plural and "a"->"an"       DCONWAY
 ::MatchNames      bdpf Smart matching for human names               BRIANL
+::NameCase        Rdpf Convert NAMES and names to Correct Case      SUMMER
 ::NameParse       RdpO Manipulate persons name                      KIMRYAN
 ::Nickname        bdpf Genealogical nickname matching(Peggy=Midge)  BRIANL
 ::Ordinal         i    Convert numbers to words                     HIGHTOWE
@@ -2193,6 +2201,9 @@ PGP::
 ::Sign            bdpr Create/verify PGP/GnuPG signatures, securely RRA
 
 GnuPG             bdpO Perl interface to the GNU privacy guard.     FRAJULAC
+GnuPG::
+::Interface       bdpO OO interface to GNU Privacy Guard            FTOBIN
+
 DES               adcf DES encryption (libdes)                      EAYNG
 Des               adcf DES encryption (libdes)                      MICB
 GSS               adcO Generic Security Services API (RFC 2078)     MSHLD
@@ -2272,6 +2283,7 @@ CGI::
 ::Out             adpf Buffer CGI output and report errors          MUIR
 ::Persistent      adpO Transparent State Persistence in CGI scripts VIPUL
 ::Query           adpO Parse CGI quiry strings                      MPECK
+::QuickForm       Rdpf Easy & takes care of CGI form user interface SUMMER
 ::Request         RmpO Parse CGI request and handle form fields     CGIP
 ::Response        ampO Response construction for CGI applications   MGH
 ::Screen          adpO Create multi screen CGI-scripts              ULPFR
@@ -2575,6 +2587,7 @@ Name              DSLI Description                                  Info
 Mail::
 ::Address         adpf Manipulation of electronic mail addresses    GBARR
 ::Alias           adpO Reading/Writing/expanding of mail aliases    GBARR
+::Audit           RdpO Toolkit for constructing mail filters        SIMON
 ::Cap             adpO Parse mailcap files as specified in RFC 1524 GBARR
 ::Ezmlm           bdpO Object methods for ezmlm mailing lists       GHALSE
 ::Field           RdpO Base class for handling mail header fields   GBARR
