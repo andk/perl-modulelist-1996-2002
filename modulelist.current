@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.27 $$Date: 2000/01/25 09:43:25 $
+The Perl 5 Module List       $Revision: 3.28 $$Date: 2000/02/08 20:53:57 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -118,11 +118,10 @@ your work very useful. Please play your part and contribute to the Perl
 community where you can. [ end of sermon :-]
 
 Help save the world! Please submit new entries and updates to us so we
-can keep this list up-to-date. Send the new or corrected entry by email
-to modules@perl.org (or modules@franz.ww.tu-berlin.de in case the above
-doesn't work). Please do not send code to this address. Instead upload
-your module, once registered, to the PAUSE site for forwarding on to
-CPAN. See section 2, especially 2.6 and 2.11.
+can keep this list up-to-date. Send the new or corrected entry by
+email to modules@perl.org. Please do not send code to this address.
+Instead upload your module, once registered, to the PAUSE site for
+forwarding on to CPAN. See section 2, especially 2.6 and 2.11.
 
 How To Get a More Recent Copy of the List
 
@@ -521,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.27 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.28 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1538,6 +1537,7 @@ Sybase::
 ::Async           cdpO interact with a Sybase asynchronously        WORENKD
 ::BCP             RdcO Sybase BCP interface                         MEWP
 ::DBlib           RdcO Sybase DBlibrary interface                   MEWP
+::Simple          bdpO Simplified db access using Sybase::CTlib     MEWP
 ::Sybperl         Rdpf sybperl 1.0xx compatibility module           MEWP
 ::CTlib           RdcO Sybase CTlibrary interface                   MEWP
 
