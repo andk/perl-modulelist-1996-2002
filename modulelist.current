@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.21 $$Date: 1999/11/02 03:46:56 $
+The Perl 5 Module List       $Revision: 3.22 $$Date: 1999/11/03 21:22:09 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.21 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.22 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -797,7 +797,7 @@ Softref           bdcf Extension for weak/soft referenced SVs       ILYAZ
 Exporter::
 ::Import          Rdpn Alternate symbol exporter                    GARROW
 ::Options         adpO Extends Exporter to handle use-line options  YSTH
-::PkgAlias        i    Alias namespaces                             JDPORTER
+::PkgAlias        adpf Load a module into multiple namespaces       JDPORTER
 
 Symbol::
 ::Table           RdpO OO interface to package symbols              GARROW
@@ -805,7 +805,6 @@ Symbol::
 Test              Sdpf Utilities for writing test scripts           JPRIT
 
 Test::
-::Cases           cdpf Run group of tests, each with a new perl     DOMO
 ::Harness         Supf Executes perl-style tests                    P5P
 
 The Perl Compiler
@@ -997,11 +996,11 @@ Mac::                Macintosh specific modules
 ::Types           bmcO (Un-)Packing of Macintosh specific types     MCPL
 
 Mac::AppleEvents::
-::Simple          RdpO Simple access to Mac::AppleEvents            CNANDOR
+::Simple          Rdph Simple access to Mac::AppleEvents            CNANDOR
 
 Mac::Apps::
 ::Anarchie        RdpO Control Anarchie 2.01+                       CNANDOR
-::Launch          RdpO MacPerl module to launch / quit apps         CNANDOR
+::Launch          Rdpf MacPerl module to launch / quit apps         CNANDOR
 ::MacPGP          RdpO Control MacPGP 2.6.3                         CNANDOR
 ::PBar            RdpO Control Progress Bar 1.0.1                   CNANDOR
 
@@ -1009,10 +1008,10 @@ Mac::Comm::
 ::OT_PPP          RdpO Control Open Transport PPP / Remote Access   CNANDOR
 
 Mac::
-::Glue            adpO Control apps with AppleScript terminology    CNANDOR
+::Glue            bdpO Control apps with AppleScript terminology    CNANDOR
 
 Mac::OSA::
-::Simple          RdpO Simple access to Mac::OSA                    CNANDOR
+::Simple          Rdph Simple access to Mac::OSA                    CNANDOR
 
 MSDOS::
 ::Attrib          bdcf Get/set DOS file attributes in OS/2 or Win32 CJM
@@ -1418,6 +1417,7 @@ Marshal::
 ::Packed          cdpO Run-length coded version of Marshal module   MUIR
 ::Eval            cdpO Undo serialization with eval                 MUIR
 Tangram           bupO Object persistence in relational databases   JLLEROY
+WDDX              a    Marshaling via XML                           GUELICH
 
 Data::
 ::Check           cdpO Checks values for various data formats       KENHOLM
@@ -1426,7 +1426,7 @@ Data::
 ::Flow            RdpO Acquire data based on recipes                ILYAZ
 ::Locations       RdpO Handles nested insertion points in your data STBEY
 ::Reporter        RdpO Ascii Report Generator                       RVAZ
-::Walker          a    Navigating through Perl data structures      JNOLAN
+::Walker          adpO Navigate through Perl data structures        JNOLAN
 
 Tree::
 ::Base            cdpO Defines a basic binary search tree           MSCHWERN
@@ -1703,7 +1703,7 @@ File::
 ::Path            Supf File path and name utilities                 P5P
 ::Signature       cdpf Heuristics for file recognition              JHI
 ::Slurp           bdpf Read/write/append files quickly              MUIR
-::Sort            Rdpf Emulate some functions of sort(1)            CNANDOR
+::Sort            Rdpf Sort a file or merge sort multiple files     CNANDOR
 ::Spec            bdpO Handling files and directories portably      KJALB
 ::Sync            bdcf POSIX/*nix fsync() and sync()                CEVANS
 ::Tail            bdpO A more efficient tail -f                     MGRABNAR
@@ -1771,6 +1771,9 @@ Text::
 ::Template        bdpO Expand template text with embedded perl      MJD
 ::Vpp             RdpO Versatile text pre-processor                 DDUMONT
 ::Wrap            Sdpf Wraps lines to make simple paragraphs        MUIR
+
+Text::Wrap::
+::Hyphenate       a    Like Text::Wrap with ability to hyphenate    MJD
 
 Other Text:: modules (these should be under String:: but pre-date it)
 
@@ -2118,7 +2121,7 @@ MIME::
 ::Lite            RdpO Single module for composing simple MIME msgs ERYQ
 ::Parser          adpO Parses streams to create MIME entities       ERYQ
 ::ParserBase      adpO For building your own MIME parser            ERYQ
-::Types           i    returns the MIME type for a filename/suffix  OKAMOTO
+::Types           adpr Returns the MIME type for a filename/suffix  OKAMOTO
 ::Words           cdpf Encode/decode RFC1522-escaped header strings ERYQ
 
 Apache            RdcO Interface to the Apache server API           DOUGM
@@ -2279,7 +2282,7 @@ Chart::
 ::XMGR            Rdph interface to XMGR plotting package           TJENNESS
 
 MPEG::
-::MP3Info         bdpf Extract/edit tag information in MP3 files    CNANDOR
+::MP3Info         bdpf Manipulate / fetch info from MP3 audio files CNANDOR
 
 Xmms              bdcO Interactive remote control shell for xmms    DOUGM
 Xmms::
@@ -2443,7 +2446,7 @@ Archie            Rdpf Archie queries via Prospero ARDP protocol    GBOSS
 BnP               RdhO Build'n'Play all-purpose batch install. tool STBEY
 Bundle            i    Namespace reserved for modules collections   ANDK
 CPAN              RdpO Perl Archive browse and download             ANDK
-Gedcom            bdpO Interface to genealogy Gedcom files          PJCJ
+Gedcom            bmpO Interface to genealogy Gedcom files          PJCJ
 Neural            ad+O Generic simulation of neural networks        LUKKA
 Nexus             cdcO Interface to Nexus (threads/ipc/processes)   RDO
 Pcap              i    An interface for LBL's packet capture lib    AMOSS
@@ -3041,6 +3044,7 @@ to a CGI script that lets you edit the database entries yourself.
   HENRIK   Henrik Strom <henrik@computer.org>
   HFB      Elaine M. Ashton <elaine@chaos.wustl.edu>
   HIGHTOWE Lester Hightower <hightowe@united-railway.com>
+  HJHELGE  Hans Jorgen Helgesen <hjhelge@uswest.net>
   HLHAMILT Harlin L. Hamilton Jr. <hlhamilt@aud.alcatel.com>
   HMBRAND  H. Merijn Brand <h.m.brand@hccnet.nl>
   HMUELLER Hanno Mueller <hmueller@mail.kabel.de>
@@ -3140,6 +3144,7 @@ to a CGI script that lets you edit the database entries yourself.
   JOSERODR Jose A. Rodriguez <Jose.Rodriguez+cpan@ac.upc.es>
   JOSH     Josh Wilmes <perl@hitchhiker.org>
   JOSTEN   Geert Josten <gjosten@sci.kun.nl>
+  JPAF     Joao Fonseca <joao.fonseca@solsuni.pt>
   JPC      Jan-Pieter Cornet <johnpc@xs4all.nl>
   JPEACOCK John Peacock <JPeacock@UnivPress.com>
   JPETERSON Jon Peterson <jon@snowdrift.org>
@@ -3485,6 +3490,7 @@ to a CGI script that lets you edit the database entries yourself.
   SFINK    Steve A Fink <sfink@cs.berkeley.edu>
   SGEL     Sergio Gelato <gelato@oort.ap.sissa.it>
   SGMIANO  Stephen G. Miano <stevem@mindspring.com>
+  SGRANTZ  Steve Grantz <sgrantz@visi.com>
   SHARI    Davide Migliavacca <davide.migliavacca@inferentia.it>
   SHARRIS  Steve Harris <perl@nullspace.com>
   SHARYANTO Steven Haryanto <sh@bandung.pm.org>
@@ -3588,6 +3594,7 @@ to a CGI script that lets you edit the database entries yourself.
   VMSML    The VMSPerl Mailing list
            vmsperl-subscribe@perl.org
   WADG     Jeremy Wadsack <dgsupport@wadsack-allen.com>
+  WARRENM  Warren Matthews <warrenm@slac.stanford.edu>
   WATANABE WATANABE Hirofumi <eban@os.rim.or.jp>
   WAYNEDAV Wayne Davison <wayne@clari.net>
   WAYNEM   Wayne Myers <waz@easynet.co.uk>
