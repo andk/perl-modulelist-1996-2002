@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.38 $$Date: 2000/04/06 05:54:42 $
+The Perl 5 Module List       $Revision: 3.39 $$Date: 2000/04/09 13:57:20 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.38 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.39 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -823,7 +823,6 @@ Taint             bdpf Utilities related to tainting                PHOENIX
 
 Perl Pragmatic Modules
 
-builtin           adcf A selection of subs destined for the core    GBARR
 constant          Supf Define compile-time constants                P5P
 diagnostics       Sdpf For reporting perl diagnostics in full form  TOMC
 enum              cdpf resemble enumerated types in C               ZENIN
@@ -1344,7 +1343,7 @@ Statistics::
 
 Algorithm::
 ::Diff            bdpr Diff (also Longest Common Subsequence)       MJD
-::Permute         a    Easy and fast permutation                    EDPRATOMO
+::Permute         adcf Easy and fast permutation                    EDPRATOMO
 
 Algorithm::Numerical::
 ::Shuffle         Rdph Knuth's shuffle algorithm                    ABIGAIL
@@ -1366,6 +1365,9 @@ Array::
 ::Substr          idp  Implement array using substr()               LWALL
 ::Vec             idp  Implement array using vec()                  LWALL
 ::Virtual         idp  Implement array using a file                 LWALL
+
+Hash::
+::NoVivify        Rdcf Provide non-autovivifying hash functions     BPOWERS
 
 Heap              bdpO Define Heap interface                        JMM
 Heap::
@@ -1477,6 +1479,7 @@ Class::
 ::Eroot           RdpO Eternal Root - Object persistence            DMR
 ::Fields          bdph Inspect the fields of a class                MSCHWERN
 ::Multimethods    Rdpf A multiple dispatch mechanism for Perl       DCONWAY
+::Mutator         bdpO Dynamic polymorphism implemented in Perl     GMCCAR
 ::NamedParms      MdpO A named parameter accessor base class        SNOWHARE
 ::ParmList        MdpO A named parameter list processor             SNOWHARE
 ::Singleton       bdpO Implementation of a "Singleton" class        ABW
@@ -1730,6 +1733,10 @@ Tk                bmcO Object oriented version of Tk v4             TKML
    See the Tk module list at
    http://www.cpan.org/modules/by-module/Tk/tk-modlist.html
 
+Modules in the realm of Tk but with a separate namespace
+
+PPresenter        RdpO Create slideshows and presentations with Tk  MARKOV
+
 Other Major X Windows User Interface Modules:
 
 Gtk               bdcO binding of the Gtk library used by GIMP      KJALB
@@ -1819,6 +1826,7 @@ File::
 ::BSDGlob         bdcf Secure, csh-compatible filename globbing     GBACON
 ::Backup          bdpf Easy file backup & rotation automation       KWILLIAMS
 ::Basename        Supf Return basename of a filename                P5P
+::Cache           adpO Share data between processes via filesystem  DCLINTON
 ::CheckTree       Supf Check file/dir tree against a specification  P5P
 ::Compare         Supf Compare file contents quickly                P5P
 ::Copy            adpf Copying files or filehandles                 ASHER
@@ -1847,6 +1855,7 @@ Filesys::
 ::AFS             cdcO AFS Distributed File System interface        NOG
 ::Df              Rdpr Disk free based on Filesys::Statvfs          IGUTHRIE
 ::DiskFree        adpO OS independant parser of the df command      ABARCLAY
+::SamFS           adcf Interface to SamFS API                       LUPE
 ::Statvfs         Rdcf Interface to the statvfs() system call       IGUTHRIE
 ::dfent           adpf By-name interface                            TOMC
 ::mntent          adpf By-name interface                            TOMC
@@ -1976,6 +1985,9 @@ Font::
 
 Number::
 ::Format          adpO Package for formatting numbers for display   WRW
+
+Email::
+::Find            adpf Find RFC 822 email addresses in plain text   MSCHWERN
 
 Parse::
 ::ePerl           Rdcr Embedded Perl (ePerl) parser                 RSE
@@ -2203,6 +2215,7 @@ CGI::
 HTML::
 ::Base            adpO Object-oriented way to build pages of HTML   GAND
 ::CalendarMonth   bdpO Calendar Months as HTML::Element trees       MSISK
+::Demoroniser     adpO Correct moronic and incompatible HTML        JDPORTER
 ::EP              adpO Modular, extensible Perl embedding           JWIED
 ::Element         ampO Representation of a HTML parsing tree        LWWWP
 ::ElementGlob     bdpO Manipulate multiple elements at once         MSISK
@@ -2627,6 +2640,7 @@ Nexus             cdcO Interface to Nexus (threads/ipc/processes)   RDO
 Pcap              i    An interface for LBL's packet capture lib    AMOSS
 Roman             Rdpf Convert Roman numbers to and from Arabic     OZAWA
 SDDF              cd+O Interface to Pablo Self Defining Data Format FIS
+WAIT              adhO A rewrite of the freeWAIS-sf engine in Perl  ULPFR
 Wais              Rdcf Interface to the freeWAIS-sf libraries       ULPFR
 
 Astro::
@@ -2644,6 +2658,7 @@ Business::
 ::CreditCard      Rdpf Credit card number check digit test          JONO
 ::ISBN            RdpO Work with ISBN as objects                    BDFOY
 ::ISSN            adpO Object and functions to work with ISSN       SAPAPO
+::OnlinePayment   RdpO Ecommerce middleware                         JASONK
 ::UPC             ???? manipulating Universal Product Codes         ROBF
 
 Chemistry::
@@ -2651,7 +2666,7 @@ Chemistry::
 ::Isotopes        idpO extends Elements to deal with isotopes       BDFOY
 
 Finance::
-::Quote           bdpf Fetch stock prices over the Internet         PJF
+::Quote           bdph Fetch stock prices over the Internet         PJF
 ::QuoteHist       bdpO Historical stock quotes from multiple sites  MSISK
 
 Remedy::
