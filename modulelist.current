@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.79 $ $Date: 2000/11/18 10:26:07 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.80 $ $Date: 2000/11/18 11:10:31 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -507,7 +507,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.79 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.80 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -987,7 +987,7 @@ Rcs               adcf Alternate RCS interface (see VCS::RCS)       CFRETER
 VCS               ampO Generic interface to Version Control Systems LBROCARD
 
 VCS::
-::CVS             Rdpo Interface to GNU's CVS                       RSAVAGE
+::CVS             RdpO Interface to GNU's CVS                       RSAVAGE
 ::PVCS            i    PVCS Version Manager (intersolv.com)         BMIDD
 ::RCS             idpf Interface layer over RCS (See also Rcs)      RJRAY
 ::RCE             idcf Perl layer over RCE C API                    RJRAY
@@ -1153,7 +1153,7 @@ VMS::
 ::Device          Rdcr Access info about any device on a VMS system DSUGAL
 ::Filespec        Sdcf VMS and Unix file name syntax                CBAIL
 ::ICC             bdcr Interface to the ICC facilities in VMS 7.2+  DSUGAL
-::Lock            cnco Object interface to $ENQ (VMS lock mgr)      BHUGHES
+::Lock            cncO Object interface to $ENQ (VMS lock mgr)      BHUGHES
 ::Misc            Rdcr Miscellaneous VMS utility routines           DSUGAL
 ::Monitor         Rdcr Access VMS system performance info           DSUGAL
 ::Persona         Rdcf Interface to the VMS Persona services        DSUGAL
@@ -1577,7 +1577,7 @@ Class::
 ::Singleton       bdpO Implementation of a "Singleton" class        ABW
 ::Template        Rdpr Struct/member template builder               DMR
 ::Translucent     RdpO Translucent (ala perltootc) method creation  GED
-::Tree            Mdpo C++ class hierarchies & disk directories     RSAVAGE
+::Tree            MdpO C++ class hierarchies & disk directories     RSAVAGE
 ::TOM             RmpO Transportable Object Model for perl          JDUNCAN
 ::Contract        RdpO Design-by-Contract OO in Perl.               DCONWAY
 ::WhiteHole       RdpO Treat unhandled method calls as errors       MSCHWERN
@@ -1651,7 +1651,7 @@ Tree::
 ::DAG_Node        MdpO base class for trees                         SBURKE
 
 DFA::
-::Command         Mdpo Discrete Finite Automata command processor   RSAVAGE
+::Command         MdpO Discrete Finite Automata command processor   RSAVAGE
 ::Kleene          R    Kleene's Algorithm for DFA                   STBEY
 ::Simple          cdpO An "augmented transition network"            RANDYM
 
@@ -1680,6 +1680,7 @@ DBIx::            Extensions to the DBI
 ::Table           bdpO OO access to DBI database tables             DLOWE
 ::TableAdapter    adpO An object-relational mapper for DBI tables   GED
 ::Tree            adpO Expand self-referential table into a tree    BJEPS
+::XML_RDB         ???? Creates XML from DBI datasources             MSERGEANT
 
 DBD::
 ::ASAny           adcO Adaptive Server Anywhere Driver for DBI      SMIRNIOS
@@ -1752,7 +1753,7 @@ Xbase             bdpf Read Xbase files with simple IDX indexes     PRATP
 Tied Hash File Interfaces:
 
 AnyDBM_File       Sup  Uses first available *_File module above     P5P
-BerkeleyDB        Rdco Interface to Berkeley DB 2 & 3               PMQS
+BerkeleyDB        RdcO Interface to Berkeley DB 2 & 3               PMQS
 CDB_File          adc  Tie to CDB (Bernstein's constant DB) files   TIMPX
 DBZ_File          adc  Tie to dbz files (mainly for news history)   IANPX
 DWH_File          adpO DBM storage of complex data and objects      SUMUS
@@ -1817,7 +1818,7 @@ Spreadsheet::
 ::ParseExcel      RdpO Get information from Excel file              KWITKNR
 
 X500::
-::DN              Mdpo X500 Distinguished Name parser               RSAVAGE
+::DN              MdpO X500 Distinguished Name parser               RSAVAGE
 
 _______________________________________________________________________
 
@@ -1873,7 +1874,7 @@ Tk::
 ::CheckBox        RdpO A radio button widget that uses a checkmark  DKWILSON
 ::ChildNotification RdpO Alert widget when child is created         DKWILSON
 ::Clock           RdpO Canvas based Clock widget                    HMBRAND
-::Cloth           Rdpo Object interface to Tk::Canvas and items     ACH
+::Cloth           RdpO Object interface to Tk::Canvas and items     ACH
 ::Columns         RdpO Multi column lists w/ resizable borders      DKWILSON
 ::ComboEntry      RdpO Drop down list + entry widget                DKWILSON
 ::ContextHelp     cdpO A context-sensitive help system              SREZIC
@@ -1881,29 +1882,29 @@ Tk::
 ::Date            cdpO A date/time widget                           SREZIC
 ::Enscript        cdpf Create postscript from text files using Tk   SREZIC
 ::FcyEntry        adpO Entry with bg color depending on -state      ACH
-::FileDialog      Rdpo A highly configurable file selection widget  BPOWERS
+::FileDialog      RdpO A highly configurable file selection widget  BPOWERS
 ::FileEntry       adpO Primitive clone of Tix FileEntry widget      ACH
-::FireButton      Rdpo Keeps invoking callback when pressed         ACH
+::FireButton      RdpO Keeps invoking callback when pressed         ACH
 ::FlatCheckbox    cdpO A checkbox suitable for flat reliefs         SREZIC
 ::FontDialog      cdpO A font dialog widget for perl/Tk             SREZIC
 ::Getopt          adpO Configuration interface to Getopt::Long      SREZIC
 ::HistEntry       cdpO An entry widget with history capability      SREZIC
-::HTML            bdpo View HTML in a Tk Text widget                NI-S
+::HTML            bdpO View HTML in a Tk Text widget                NI-S
 ::IconCanvas      RdpO Canvas with movable iconic interface         DKWILSON
 ::JPEG            RdcO JPEG loader for Tk::Photo                    NI-S
 ::LockDisplay     RdpO Screen saver/lock widget with animation      LUSOL
-::Login           cdpo A Login widget (name, passwd, et al)         BPOWERS
+::Login           cdpO A Login widget (name, passwd, et al)         BPOWERS
 ::Menustrip       RdpO Another MenuBar                              DKWILSON
 ::More            adpO A more (or less) like text widget            ACH
 ::Multi           bdpO Manages several Text or Canvas widgets       DDUMONT
-::NumEntry        Rdpo Numerical entry widget with up/down buttons  ACH
+::NumEntry        RdpO Numerical entry widget with up/down buttons  ACH
 ::ObjScanner      bdpO A scanner to view an object's attribute      DDUMONT
 ::Olwm            RmpO Interface to OpenLook toplevels properties   TKML
-::Pane            Rdpo A Frame that can be scrolled                 TKML
+::Pane            RdpO A Frame that can be scrolled                 TKML
 ::PNG             RdcO PNG loader for Tk::Photo                     NI-S
 ::Pod             ?mpO POD browser toplevel widget                  TKML
-::ProgressBar     Rdpo Status/progress bar                          TKML
-::ProgressMeter   cdpo Simple thermometer-style widget w/callbacks  BPOWERS
+::ProgressBar     RdpO Status/progress bar                          TKML
+::ProgressMeter   cdpO Simple thermometer-style widget w/callbacks  BPOWERS
 ::RotCanvas       RdpO Canvas with arbitrary rotation support       AQUMSIEH
 ::SplitFrame      RdpO A sliding separator for two child widgets    DKWILSON
 ::TabFrame        RdpO A tabbed frame geometry manager              DKWILSON
@@ -1911,11 +1912,11 @@ Tk::
 ::TableEdit       RdpO Simplified interface to a flat file database DKWILSON
 ::TableMatrix     bdcO Display data in Table/Spreadsheet format     CERNEY
 ::TiedListbox     RmpO Gang together Listboxes                      TKML
-::TFrame          Rdpo A Frame with a title                         ACH
+::TFrame          RdpO A Frame with a title                         ACH
 ::TIFF            adpO TIFF loader for Tk::Photo                    SREZIC
 ::Tree            RdpO Create and manipulate Tree widgets           CTDEAN
 ::TreeGraph       RdpO Widget to draw a tree in a Canvas            DDUMONT
-::WaitBox         Rdpo A Wait dialog, of the "Please Wait" variety  BPOWERS
+::WaitBox         RdpO A Wait dialog, of the "Please Wait" variety  BPOWERS
 ::XMLViewer       adpO Tk widget to display XML                     SREZIC
 
 Modules in the realm of Tk but with a separate namespace
@@ -2175,7 +2176,7 @@ Lingua::EN::
 ::Cardinal        i    Convert numbers to words                     HIGHTOWE
 ::Fathom          RdpO Readability measurements of English text     KIMRYAN
 ::Hyphenate       Rdpf Syllable based hyphenation                   DCONWAY
-::Infinitive      Mdpo Find infinitive of a conjugated word         RSAVAGE
+::Infinitive      MdpO Find infinitive of a conjugated word         RSAVAGE
 ::Inflect         Mdpf English singular->plural and "a"->"an"       DCONWAY
 ::MatchNames      bdpf Smart matching for human names               BRIANL
 ::NameCase        Rdpf Convert NAMES and names to Correct Case      SUMMER
@@ -2244,11 +2245,22 @@ SGMLS             RdpO A Post-Processor for SGMLS and NSGMLS        INGOMACH
 
 XML               RmhO Large collection of XML related modules      XMLML
 
-    The namespace for low level-level interface modules below XML is
-    documented in a separate XML module list that is available at
-    http://www.cpan.org/modules/by-module/XML/perl-xml-modules.html
-    It is discouraged to put higher level XML modules into the XML
-    namespace to avoid bloat.
+XML::
+::DOM             bmpO Implements Level 1 of W3's DOM               ENNO  
+::Dumper          ampO Converts XML from/to Perl code               EISEN
+::Encoding        ???? Parses encoding map XML files                COOPERCL
+::Edifact         ???? Scripts for translating EDIFACT into XML     KRAEHE
+::Generator       adpn Generates XML documents                      BHOLZMAN
+::Grove           RmpO Flexible lightweight mid-level XML objects   KMACLEOD 
+::miniXQL         ???? Simplistic XQL-like search using streams     MSERGEANT
+::Parser          bmcO Flexible fast parser with plug-in styles     COOPERCL
+::QL              ???? Implements the XML Query Language            MSERGEANT
+::Registry        ampO Implements a generic XML registry            EISEN
+::Writer          ???? Module for writing XML documents             DMEGG
+::XQL             ampO Performs XQL queries on XML object trees     ENNO
+                       
+Frontier::             
+::RPC             ???? Performs Remote Procedure Calls using XML    KMACLEOD
 
 RDF::
 ::Service         ampO RDF API with DBI and other backends          JONAS
@@ -2477,7 +2489,7 @@ CGI::
 ::Debug           Mdph show CGI debugging data                      JONAS
 ::Deurl           Mdpr decode the CGI parameters                    JENDA
 ::Enurl           Mdpr encode the CGI parameters                    JENDA
-::Formalware      Mdpo Convert an XML file to a suite of CGI forms  RSAVAGE
+::Formalware      MdpO Convert an XML file to a suite of CGI forms  RSAVAGE
 ::Imagemap        Rdph Imagemap handling for specialized apps       MIKEH
 ::LogCarp         Rdph Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr         RmpO Fork CGI app as a per-session mini server    CGIP
@@ -2495,6 +2507,7 @@ CGI::
 ::SpeedyCGI       bdcn Run CGI scripts persistenly                  HORROCKS
 ::Validate        adpO Advanced CGI form parser                     ZENIN
 ::WML             RdpO Subclass of CGI.pm for WML output            AWOOD
+::XML             ampO Convert CGI.pm variables to/from XML         EISEN
 ::XMLForm         adpO Create/query XML for forms                   MSERGEANT
 
 HTML::
@@ -4460,7 +4473,7 @@ to a CGI script that lets you edit the database entries yourself.
   PARKER   Michael Parker <parkerm@null.net>
   PATM     Pat Martin <pat@bronco.advance.com>
   PAULG    Paul Gampe <paulg@apnic.net>
-  PAVELH   Pavel Hlavnicka <arrow@seznam.cz>
+  PAVELH   Pavel Hlavnicka <cpanuser@seznam.cz>
   PBRYANT  Patrick W. Bryant <pbryant@gsu.edu>
   PBWOLF   Phill Wolf <pbwolf@bellatlantic.net>
   PCOLLINS Patrick Collins <pcollins@web.fairfax.com.au>
