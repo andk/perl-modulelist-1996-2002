@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.51 $$Date: 2000/05/25 17:03:34 $
+The Perl 5 Module List       $Revision: 3.52 $$Date: 2000/05/25 20:27:39 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.51 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.52 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1185,6 +1185,7 @@ Net::
 ::Cmd             cdpO For command based protocols (FTP, SMTP etc)  GBARR
 ::DLookup         adpO Lookup domains on Internic and 2-letter TLDs DJASMINE
 ::DNS             bdpO Interface to the DNS resolver                MFUHR
+::Daemon          adpO Abstract base class for portable servers     JWIED
 ::Dict            cdpO Client of Dictionary Server Protocol (DICT)  ABIGAIL
 ::Dnet            cdcO DECnet-specific socket usage                 SPIDB
 ::Domain          adpf Try to determine TCP domain name of system   GBARR
@@ -1223,15 +1224,19 @@ Net::
 ::TCP             RdcO TCP-specific socket usage                    SPIDB
 ::TFTP            cdpf Interface to Trivial File Transfer Protocol  GSM
 ::TN3270          cdcO Communicate with IBM terminal devices        INGY
-::Telnet          adpO Interact with TELNET port or other TCP ports JROGERS
+::Telnet          adpO Interact with TELNET port or other TCP ports MAHEX
 ::Time            adpf Obtain time from remote machines             GBARR
 ::Traceroute      bdpO Trace routes                                 HAG
 ::UDP             RdcO UDP-specific socket usage                    SPIDB
+::VNC             i??? Interface VNC remote frame buffer protocol   BRONG
 ::hostent         adpf A by-name interface for hosts functions      TOMC
 ::netent          adpf A by-name interface for networks functions   TOMC
 ::protoent        adpf A by-name interface for protocols functions  TOMC
 ::servent         adpf A by-name interface for services functions   TOMC
 ::xAP             adpO Interface to IMAP,ACAP,ICAP substrate        KJOHNSON
+
+Net::Daemon::
+::SSL             RdpO SSL extension for Net::Daemon                MKUL
 
 Net::IMAP::
 ::Simple          bdpO Only implements the basic IMAP features      JPAF
@@ -1768,7 +1773,6 @@ Major Character User Interface Modules:
 
 Cdk               RdcO Collection of Curses widgets                 GLOVER
 Curses            adcO Character screen handling and windowing      WPS
-NCurses           cdcO Curses using the ncurses package             WPS
 PV                bmpO PerlVision curses windowing (OO widgets etc) AGUL
 PerlMenu          Mdpf Curses-based menu and template system        SKUNZ
 
@@ -2504,6 +2508,8 @@ AppleII::
 Archive::
 ::Tar             adpO Read, write and manipulate tar files         CDYBED
 ::Zip             adpO Provides an interface to ZIP archive files   NEDKONZ
+
+PPM               Rdpf Perl Package Manager                         MURRAY
 
 RPM               adcO RPM package management                       RJRAY
 RPM::
