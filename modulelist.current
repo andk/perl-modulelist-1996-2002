@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.35 $$Date: 2000/04/01 15:17:44 $
+The Perl 5 Module List       $Revision: 3.36 $$Date: 2000/04/02 15:16:09 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.35 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.36 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1090,8 +1090,7 @@ OS2::
 ::REXX            RdcO Access to REXX DLLs and REXX runtime         ILYAZ
 ::UPM             bncf User Profile Management                      ILYAZ
 
-Riscos::
-::*               i    Namespace for Risc-OS (Acorn et.al.)         RISCOSML
+Riscos            i    Namespace for Risc-OS (Acorn et.al.)         RISCOSML
 
 SGI::
 ::SysCalls        cdcf SGI-specific system calls                    AMOSS
@@ -1187,7 +1186,7 @@ Net::
 ::SNPP            cdpO Client interface to SNPP protocol            GBARR
 ::SOCKS           cdcf TCP/IP access through firewalls using SOCKS  SCOOPER
 ::SSLeay          bmhf Secure Socket Layer (based on OpenSSL)       SAMPO
-::Syslog          cdpO Forwarded syslog protocol                    LHOWARD
+::Syslog          RdpO Forwarded syslog protocol                    LHOWARD
 ::TCP             RdcO TCP-specific socket usage                    SPIDB
 ::TFTP            cdpf Interface to Trivial File Transfer Protocol  GSM
 ::Telnet          adpO Interact with TELNET port or other TCP ports JROGERS
@@ -1477,9 +1476,8 @@ POE::             Perl Object Environment
 ::Session         RdpO state machine running on POE::Kernel events  RCAPUTO
 
 MOP               i    Meta Object Protocol (Tool collection)       ORTALO
-SOOP              RdpO Safe Object Oriented Programming             GARROW
-
 Ref               RdpO Print, compare, and copy perl structures     MUIR
+SOOP              RdpO Safe Object Oriented Programming             GARROW
 
 Sort::
 ::ArbBiLex        Rdpf sort functions for arbitrary sort orders     SBURKE
@@ -1906,14 +1904,14 @@ Lingua::
 ::PT              bupf Namespace for Portugese language modules     EGROSS
 
 Lingua::EN::
-::AddressParse    ???? Manipulate geographical addresses            KIMRYAN
+::AddressParse    bdpO Manipulate geographical addresses            KIMRYAN
 ::Cardinal        i    Convert numbers to words                     HIGHTOWE
-::Fathom          ???? Readability measurements of English text     KIMRYAN
+::Fathom          RdpO Readability measurements of English text     KIMRYAN
 ::Hyphenate       Rdpf Syllable based hyphenation                   DCONWAY
 ::Infinitive      Mdpo Find infinitive of a conjugated word         RSAVAGE
 ::Inflect         Mdpf English singular->plural and "a"->"an"       DCONWAY
 ::MatchNames      bdpf Smart matching for human names               BRIANL
-::NameParse       ???? Manipulate persons name                      KIMRYAN
+::NameParse       RdpO Manipulate persons name                      KIMRYAN
 ::Nickname        bdpf Genealogical nickname matching(Peggy=Midge)  BRIANL
 ::Ordinal         i    Convert numbers to words                     HIGHTOWE
 ::Squeeze         bdpf Shorten english text for Pagers/GSM phones   JARIAALTO
@@ -1996,8 +1994,7 @@ Chatbot::
 Quiz::
 ::Question        cdpO Questions and Answers wrapper                RFOLEY
 
-Template::
-::*               RdpO Extensive Toolkit for template processing    ABW
+Template          RdpO Extensive Toolkit for template processing    ABW
 
 _______________________________________________________________________
 
@@ -2124,8 +2121,7 @@ RADIUS::
 ::Packet          bdpO Object interface to RADIUS (rfc2138) packets CHRMASTO
 ::UserFile        bdpO Manipulate a RADIUS users file               OEVANS
 
-SSLeay::
-::*               cdcO Interface to SSLeay                          EAYNG
+SSLeay            cdcO Interface to SSLeay                          EAYNG
 
 _______________________________________________________________________
 
@@ -2181,7 +2177,7 @@ HTML::
 ::LinkExtor       RmpO  Extract links from HTML documents           LWWWP
 ::Mason           bdpO Build sites from modular Perl/HTML blocks    JSWARTZ
 ::ParseForm       i    Parse and handle HTML forms via templates    NMONNET
-::Parser          RmpO  Basic HTML Parser                           LWWWP
+::Parser          RmcO Basic HTML Parser                            LWWWP
 ::QuickCheck      cdpf Fast simple validation of HMTL text          YLU
 ::Simple          bdpf Simple functions for generating HTML         TOMC
 ::SimpleParse     RdpO Bare-bones HTML parser                       KWILLIAMS
@@ -2289,7 +2285,6 @@ Event::
 
 EventServer       RupO Triggers objects on i/o, timers & interrupts JACKS
 ::Functions       Rupf Utility functions for initializing servers   JACKS
-::*Wrapper        Rupf Bunch of wrappers for different server types JACKS
 ::Gettimeofday    Rupr gettimeofday syscall wrapper                 JACKS
 ::Signal          Rupr signalhandler for the eventserver            JACKS
 
@@ -2334,8 +2329,6 @@ Time::
 
 Spool::
 ::Queue           i    Generic printer spooling facilities          RAM
-
-
 
 _______________________________________________________________________
 
@@ -2602,8 +2595,7 @@ Astro::
 ::SunTime         cdpf Calculate sun rise/set times                 ROBF
 ::Time            Rdpf General time conversions for Astronomers     CPHIL
 
-Bio::
-::*               i    Utilities for molecular biology              SEB
+Bio               i    Utilities for molecular biology              SEB
 
 Business::
 ::Cashcow         i??? Internet payment with the Danish PBS         GKE
@@ -3353,6 +3345,7 @@ to a CGI script that lets you edit the database entries yourself.
   JOHNH    John Heidemann <johnh@isi.edu>
   JOHNL    Jonathan Leffler <j.leffler@acm.org>
   JONAS    Jonas Liljegren <jonas@paranormal.o.se>
+  JONB     Jonathan Bailey <jonb@flashbase.com>
   JONG     Jong Park <jong@mrc-lmb.cam.ac.uk>
   JONJAY   Jon Brandon <jon@powells.com>
   JONO     Jon Orwant <orwant@media.mit.edu>
@@ -3820,6 +3813,7 @@ to a CGI script that lets you edit the database entries yourself.
   STOLKIN  Steven Tolkin <tolkin@mediaone.net>
   STWIGGER Simon Twigger <simont@mcw.edu>
   SUMMER   Mark Summerfield <summer@perlpress.com>
+  SUMUS    Jakob Schmidt <sumus@aut.dk>
   SVANZOEST Sander van Zoest <svanzoest@cpan.org>
   SVENH    Sven Heinicke <sven@zen.org>
   SVINTO   Svante Sörmark <svinto@ita.chalmers.se>
