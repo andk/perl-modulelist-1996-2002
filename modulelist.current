@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.38 $Date: 1997/02/25 16:44:30 $
+The Perl 5 Module List       Revision: 2.38 $Date: 1997/02/25 17:01:52 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -1448,7 +1448,7 @@ Locale::
 ::gettext      Rdcf  Multilanguage messages                       PVANDRY
 
 Unicode::
-::UCS2         adp0  Unicode UCS-2 encoded strings                GAAS
+::UCS2         adpO  Unicode UCS-2 encoded strings                GAAS
 ::UCS4         i     Unicode UCS-4 encoded strings                GAAS
 ::CType        i     Classification of Unicode chars              GAAS
 
