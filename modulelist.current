@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.52 $Date: 1999/02/06 15:27:08 $
+The Perl 5 Module List       Revision: 2.53 $Date: 1999/02/06 15:39:29 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -686,7 +686,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.114 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.116 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1206,6 +1206,7 @@ Net::
 ::DummyInetd   RdpO  A dummy Inetd server                         GBARR
 ::FTP          adpf  Interface to File Transfer Protocol          GBARR
 ::Gen          adcO  Generic support for socket usage             SPIDB
+::Hotline      RdpO  Interface to the Hotline protocol            JSIRACUSA
 ::ICAP         adpO  Interface to ICAP Protocol (Internet-Draft)  KJOHNSON
 ::IMAP         adpO  Interface to IMAP Protocol (RFC2060)         KJOHNSON
 ::IRC          cdpO  Internet Relay Chat interface                DSHEPP
@@ -1523,6 +1524,7 @@ Sybase::
 ::Sybperl      Rdpf  sybperl 1.0xx compatibility module           MEWP
 ::CTlib        RdcO  Sybase CTlibrary interface                   MEWP
 
+Ace            i     Interface to ACEDB (Popular Genome DB)       LDS
 Datascope      Rdcf  Interface to Datascope RDBMS                 DANMQ
 LotusNotes     i     Interface to Lotus Notes C/C++ API           JONO
 Msql           RmcO  Mini-SQL database interface                  JWIED
@@ -1618,8 +1620,11 @@ Tk             bmcO  Object oriented version of Tk v4             TKML
 Other Major X Windows User Interface Modules:
 
 Gtk            bdcO  binding of the Gtk library used by GIMP      KJALB !
+
+Gtk::
+::Dialog       adph  Simple interface to create dialogs in Gtk    ALISTAIRC
+
 Gnome          bdcO  Bindings to the Gnome Desktop Toolkit        KJALB +
-Gimp           bdcO  Interface to write plug-ins for The Gimp     MLEHMANN
 Sx             Rdcf  Simple Athena widget interface               FMC
 Fresco         cd+O  Interface to Fresco (post X11R6 version)     BPETH
 Qt             ad+O  Interface to the Qt toolkit                  AWIN
@@ -1912,7 +1917,7 @@ User::
 ::utent        cdcO  Interface to utmp/utmpx/wtmp/wtmpx database  ROSCH
 
 PGP::          adpO  Simple interface to PGP subprocess via pipes PGPML
-::Sign         bdpr  Create and check PGP signatures, securely    RRA
+::Sign         bdpr  Create/verify PGP/GnuPG signatures, securely RRA
 
 DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
@@ -2058,6 +2063,7 @@ WebFS::
 CGI_Lite       MnpO  Light-weight interface for fast apps         SHGUN
 FCGI           Rdcr  Fast CGI                                     SKIMO
 WING           RmhO  Apache based IMAP/NNTP Gateway               MICB  +
+Authorizenet   bdpf  Get Credit Card Info from authorizenet       DLINCOLN
 
 _______________________________________________________________________
 
@@ -2174,6 +2180,7 @@ Chart::
 MPEG::
 ::MP3Info      bdpf  Extract/edit tag information in MP3 files    CNANDOR +
 
+Gimp           Mmch  Rich interface to write plugins for The Gimp MLEHMANN
 T3D            cdpO  Realtime extensible 3D rendering             GJB
 ThreeD         i     Namespace root for all kinds of 3D modules   ADESC
 RenderMan      a     Manipulate RenderMan objects                 GMLEWIS
@@ -2316,6 +2323,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Archie         Rdpf  Archie queries via Prospero ARDP protocol    GBOSS
+BnP            RdhO  Build'n'Play all-purpose batch install. tool STBEY
 Bundle         i     Namespace reserved for modules collections   ANDK
 CPAN           RdpO  Perl Archive browse and download             ANDK
 Neural         ad+O  Generic simulation of neural networks        LUKKA
