@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.43 $$Date: 2000/05/18 07:04:43 $
+The Perl 5 Module List       $Revision: 3.44 $$Date: 2000/05/21 19:01:03 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.43 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.44 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -3156,6 +3156,7 @@ to a CGI script that lets you edit the database entries yourself.
   CUNNINGT Tom Cunningham <cunningt@primenet.com>
   CWEVERITT Cass W. Everitt <cass@Objectecture.com>
   CXL      Chris Leach <leachcj@bp.com>
+  CYK      Philippe Chane You Kaye <philippe.cyk@wanadoo.fr>
   DALEAMON Dale Amon <amon@gpl.com>
   DALGL    Bob Dalgleish <bob.dalgleish@sk.sympatico.ca>
   DANB     Dan Bjorkegren <dan_b@mail.com>
@@ -3386,6 +3387,7 @@ to a CGI script that lets you edit the database entries yourself.
   ILYAZ    Ilya Zakharevich <ilya@math.ohio-state.edu>
   INFOFLEX Gerard Menicucci <gerard@infoflex.com>
   INGOMACH Ingo Macherius <Ingo.Macherius@tu-clausthal.de>
+  INGY     Brian Ingerson <b.ingerson@epixtech.com>
   INSTANTK jan giebels <j.giebels@instant-karma.de>
   IROBERTS Ian Robertson <ian@lugh.uchicago.edu>
   IVAN     Ivan Kohler <ivan-pause@sisd.com>
@@ -3597,7 +3599,7 @@ to a CGI script that lets you edit the database entries yourself.
   MARTINB  Martin Bartlett <martin@nitram.demon.co.uk>
   MATKIN   Matz Kindahl <matkin@docs.uu.se>
   MATTBM   Matthew Byng-Maddick <matthew@codix.net>
-  MATTMK   Matthew MacKenzie <matt@xmlglobal.com>
+  MATTMK   Matthew MacKenzie <matt@goxml.com>
   MATTW    Matthew M. Wright <mattw@worldwidemart.com>
   MAURICE  Maurice Aubrey <maurice@hevanet.com>
   MAXM     Max Muzi <maxim@comm2000.it>
@@ -3621,6 +3623,7 @@ to a CGI script that lets you edit the database entries yourself.
   MERGL    Edmund Mergl <E.Mergl@bawue.de>
   MERLIN   Merlin Hughes <merlin.cpan@merlin.org>
   MERLYN   Randal L. Schwartz <merlyn@stonehenge.com>
+  METZZO   Mark Ethan Trostler <mark@zzo.com>
   MEWILCOX Mark Wilcox <mewilcox@unt.edu>
   MEWP     Michael Peppler <mpeppler@peppler.org>
   MFUHR    Michael Fuhr <mfuhr@dimensional.com>
@@ -3795,6 +3798,7 @@ to a CGI script that lets you edit the database entries yourself.
   PROWELL  Peter Rowell <peter@thirdeye.com>
   PRYAN    Patrick Ryan <pgryan@geocities.com>
   PSANTORO Peter Santoro <peter@pscomp.com>
+  PSCM     PETsMART.com <anthonyp@petsmart.com>
   PSEIBEL  Peter Seibel <seibel@organic.com>
   PSHARPE  Paul Sharpe <paul@miraclefish.com>
   PTILL    Peter Tillemans <pti@pandora.be>
@@ -3819,6 +3823,7 @@ to a CGI script that lets you edit the database entries yourself.
   RCALEY   Richard Caley <R.Caley@ed.ac.uk>
   RCAPUTO  Rocco Caputo <troc@netrus.net>
   RCASHA   Ramon Casha <rcasha!megabyte.net>
+  RDF      Ray Finch <ray@classmates.com>
   RDO      Robert Olson <olson@mcs.anl.gov>
   REATMON  Ryan Eatmon <reatmon@ti.com>
   REDEN    Robert Eden <rmeden@yahoo.com>
@@ -3860,6 +3865,7 @@ to a CGI script that lets you edit the database entries yourself.
   RVAZ     Ricardo Vazquez Armenta <rvazquez_a@yahoo.com>
   RWALKER  Roland Walker <walker@ncbi.nlm.nih.gov>
   RYAN     Ryan Fischer <ryan@gigabee.com>
+  SAA      Stephen Mose Aaskov <stephen@netuni.dk>
   SABREN   Michal Wallace <sabren@manifestation.com>
   SAIT     Sami Itkonen <si@iki.fi>
   SALVA    Salvador Fandiño García <salvador@cesat.es>
@@ -3965,6 +3971,7 @@ to a CGI script that lets you edit the database entries yourself.
   SWETH    Sweth Chandramouli <sweth+pause@gwu.edu>
   SWILLIAM Steve Williams <swilliam@empress.com>
   SWMCD    Steven McDougall <swmcd@world.std.com>
+  SYP      Stanislaw Y. Pusep <>
   SZECK    Steve Zeck <saintly@innocent.com>
   TAIY     Taisuke Yamada <tai@imasy.or.jp>
   TAYERS   Tim Ayers <tayers@bridge.com>
@@ -3984,6 +3991,7 @@ to a CGI script that lets you edit the database entries yourself.
   TIMPOTTER Tim Potter <tpot@frungy.org>
   TIMPX    Tim Goodwin <tjg@star.le.ac.uk>
   TJENNESS Tim Jenness <t.jenness@jach.hawaii.edu>
+  TKISHEL  Thomas Kishel <tkishel@tdlc.com>
   TKML     The Tk Perl Mailing list
            Mail to majordomo@lists.stanford.edu with body "subscribe
            ptk <your-address>"
@@ -4052,6 +4060,7 @@ to a CGI script that lets you edit the database entries yourself.
   YLU      Luke Y. Lu <ylu@mail.utexas.edu>
   YSTH     Yitzchak Scott-Thoennes <sthoenna@efn.org>
   YVESP    Yves Paindaveine <yp@gr.osf.org>
+  ZED      Zed Lopez <zed@apricot.com>
   ZENIN    Byron Brummer <zenin@bawdycaste.org>
   ZTURK    Ziga TURK <ziga.turk@fagg.uni-lj.si>
 
