@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.32 $Date: 1996/09/17 21:27:48 $
+The Perl 5 Module List       Revision: 2.32 $Date: 1996/10/16 20:49:35 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -847,14 +847,14 @@ Pod::
 ::Index        cdpr  index generator                              KJALB
 ::Latex        cdpr  converter to LaTeX                           KJALB
 ::Man          cdpr  converter to man page                        KJALB
-::Parser       bdpO  Base class for parsing pod syntax            BRADAPP !
+::Parser       bdpO  Base class for parsing pod syntax            BRADAPP
 ::Pod          cdpr  converter to canonical pod                   KJALB
 ::RTF          cdpr  converter to RTF                             KJALB
-::Select       bdpf  Print only selected sections of pod docs     BRADAPP +
+::Select       bdpf  Print only selected sections of pod docs     BRADAPP
 ::Simplify     cdpr  Common pod parsing code                      KJALB
 ::Texinfo      cdpr  converter to texinfo                         KJALB
 ::Text         Supf  convert POD data to formatted ASCII text     TOMC
-::Usage        bdpf  Print Usage messages based on your own pod   BRADAPP !
+::Usage        bdpf  Print Usage messages based on your own pod   BRADAPP
 
 
 _______________________________________________________________________
@@ -992,7 +992,7 @@ Net::
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
 ::SNPP         cdpO  Client interface to SNPP protocol            GBARR
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
-::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   SAMPO !
+::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   SAMPO
 ::TCP          adcO  TCP-specific socket usage                    SPIDB
 ::Telnet       cdpO  Inheritable Telnet socket object protocol    GBARR
 ::Time         adpf  Obtain time from remote machines             GBARR
@@ -1068,7 +1068,7 @@ Statistics::
 ::Descriptive  RdpO  Descriptive statistical methods              JKAST
 ::ChiSquare    Rdpf  Chi Square test - how random is your data?   JONO
 
-PDL            cdcf  Perl Data Language - numeric analysis env    KGB +
+PDL            cdcf  Perl Data Language - numeric analysis env    KGB
 
 Array::
 ::Vec          idp   Implement array using vec()                  LWALL
@@ -1077,7 +1077,7 @@ Array::
 ::PrintCols    adpf  Print elements in vertically sorted columns  AKSTE
 
 List::
-::Extra        cdcf  Extra list/array manipulation functions      JNH +
+::Extra        cdcf  Extra list/array manipulation functions      JNH
 
 Set::
 ::Scalar       adpO  Set of scalars (inc references)              JHI
@@ -1271,7 +1271,7 @@ File::
 ::Attrib       idpO  Get/set file attributes (stat)               TYEMQ
 ::Basename     Supf  Return basename of a filename                P5P
 ::CheckTree    Supf  Check file/dir tree against a specification  P5P
-::Cmp          bdpf  Compare file contents quickly                JNH +
+::Cmp          bdpf  Compare file contents quickly                JNH
 ::Copy         adpf  Copying files or filehandles                 ASHER
 ::CounterFile  RdpO  Persistent counter class                     GAAS
 ::Find         Supf  Call func for every item in a directory tree P5P
@@ -1424,7 +1424,7 @@ CGI::
 Apache         bdcO  Interface to the Apache server API           DOUGM
 CCI            i     Common Client Interface for WWW browsers     DOUGM
 CGI_Lite       ampO  Light-weight interface for fast apps         SHGUN
-FCGI           Rdcf  Fast CGI (requires sfio)                     SKIMO +
+FCGI           Rdcf  Fast CGI (requires sfio)                     SKIMO
 
 HTML::
 ::QuickCheck   cdpf  Fast simple validation of HMTL text          YLU
@@ -1574,6 +1574,9 @@ News::
 NNTP::
 ::Server       i     Support for an NNTP server                   JOEHIL
 
+NNML::
+::Server       adpO  An simple RFC 977 NNTP server                ULPFR +
+
 _______________________________________________________________________
 
 20) Control Flow Utilities (callbacks and exceptions etc)
@@ -1677,8 +1680,8 @@ Audio::
 Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 
 SyslogScan::   
-::SyslogEntry  bdpO  Parse UNIX syslog                            RHNELSON +
-::SendmailLine bdpO  Summarize sendmail transactions              RHNELSON +
+::SyslogEntry  bdpO  Parse UNIX syslog                            RHNELSON
+::SendmailLine bdpO  Summarize sendmail transactions              RHNELSON
 
 =======================================================================
 
@@ -1818,12 +1821,12 @@ to a CGI script that lets you edit the database entries yourself.
   CBAIL    Charles Bailey <bailey@genetics.upenn.edu>
   CGIP     The CGI-Perl Developers mailing list
            Mail to CGI-perl-REQUEST@webstorm.com with body "subscribe"
-  CHIPS    Chip Salzenberg <chs@nando.net>
+  CHIPS    Chip Salzenberg <chip@atlantic.net>
   CHOWARTH Colin Howarth <colin@muc.de>
   CJM      Christopher J. Madsen <ac608@yfn.ysu.edu>
   CNANDOR  Chris Nandor <pudge@pcix.com>
   DALGL    Bob Dalgleish <bob.dalgleish@sk.sympatico.ca>
-  DANKOGAI Dan Kogai <dankogai@jms.jeton.or.jp>
+  DANKOGAI Dan Kogai <dankogai@dan.co.jp>
   DANMQ    Daniel M. Quinlan <danq@colorado.edu>
   DAVEROTH Dave Roth <rothd@roth.net>
   DBIML    The DBI Mailing Lists
@@ -1846,6 +1849,7 @@ to a CGI script that lets you edit the database entries yourself.
   EVANPRO  Evangelo Prodromou <evangelo@endcontsw.com>
   EWALKER  Edward Walker <edward@nsrc.nus.sg>
   FIS      Frank Ian Smith <frank@ns.array.ca>
+  FLEITNER Felix von Leitner <leitner@math.fu-berlin.de>
   FMC      Frederic Chauveau <fmc@pasteur.fr>
   FRANCOC  Franco Callari <franco@cim.mcgill.ca>
   FSG      Felix Sebastian Gallo <fsg@coriolan.amicus.com>
@@ -1873,13 +1877,16 @@ to a CGI script that lets you edit the database entries yourself.
   JDUNCAN  James Duncan <jduncan@hawk.igs.net>
   JFRIEDL  Jeffrey Friedl <jfriedl@omron.co.jp>
   JHI      Jarkko Hietaniemi <Jarkko.Hietaniemi@iki.fi>
+  JJDG     Hans de Graaff <J.J.deGraaff@twi.tudelft.nl>
   JKAST    Jason Kastner <jkastner@oboe.calpoly.edu>
   JKEGL    Jeffrey Kegler <jeffrey@best.com>
   JLEVAN   Jerry LeVan <levan@eagle.eku.edu>
   JMAHAN   J. Michael Mahan <mahanm@nextwork.rose-hulman.edu>
   JMURPHY  Joel Murphy <jmurphy@acsu.buffalo.edu>
+  JNH      Joseph N. Hall <joseph@5sigma.com>
   JOCASA   Joe Casadonte <joc@netaxs.com>
   JOEHIL   Joe Hildebrand <joe.hildebrand@twcable.com >
+  JOHNH    John Heidemann <johnh@isi.edu>
   JONG     Jong Park <jong@mrc-lmb.cam.ac.uk>
   JONO     Jon Orwant <orwant@media.mit.edu>
   JPC      Jan-Pieter Cornet <johnpc@xs4all.nl>
@@ -1916,7 +1923,7 @@ to a CGI script that lets you edit the database entries yourself.
            mailing list too with the subscription address
            mac-perl-announce-request@iis.ee.ethz.ch.
   MDARWIN  Matthew Darwin <darwin@loran.com>
-  MERGL    Edmund Mergl <mergl@nadia.s.bawue.de>
+  MERGL    Edmund Mergl <E.Mergl@.bawue.de>
   MERLYN   Randal L. Schwartz <merlyn@stonehenge.com>
   MEWP     Michael Peppler <mpeppler@bix.com>
   MGH      Marc Hedlund <hedlund@best.com>
@@ -1929,6 +1936,7 @@ to a CGI script that lets you edit the database entries yourself.
            Mail to makemaker-REQUEST@franz.ww.tu-berlin.de with body
            "subscribe"
   MRG      Matthew Green <mrg@mame.mu.oz.au>
+  MRJC     Martin RJ Cleaver <Martin.Cleaver@BCS.org.uk>
   MRKAE    Mark R. Kaehny <kaehny@execpc.com>
   MSCHILLI Michael Schilli <schilli@tep.e-technik.tu-muenchen.de>
   MSHLD    Michael Shields <shields@crosslink.net>
@@ -1946,8 +1954,8 @@ to a CGI script that lets you edit the database entries yourself.
            Mail to perl5-porters-REQUEST@nicoh.com with body
            "subscribe"
   PACKRATS The Packrats Mailing List
-           Mail to perl-packrats-REQUEST@metronet.com with body
-           "subscribe"
+           Mail to majordomo@cise.ufl.edu with body "subscribe
+           perl-packrats <your address>"
   PATM     Pat Martin <pat@bronco.advance.com>
   PEASE    Mark Pease <peasem@primenet.com>
   PEM      Peter Murray <pem@po.cwru.edu>
@@ -1965,6 +1973,7 @@ to a CGI script that lets you edit the database entries yourself.
   RAM      Raphael Manfredi <ram@hptnos02.grenoble.hp.com>
   RBOW     Richard Bowen <rbowen@rcbowen.com>
   RDO      Robert Olson <olson@mcs.anl.gov>
+  RHNELSON Rolf Harold Nelson <nelson@ultranet.com>
   RHOFER   Robert Hofer <hofer@informatik.uni-muenchen.de>
   RIK      Rik Harris <rik.harris@fulcrum.com.au>
   RJRAY    Randy J Ray <rjray@uswest.com>
@@ -1981,6 +1990,7 @@ to a CGI script that lets you edit the database entries yourself.
   SEMM     Steve Emmerson <support@unidata.ucar.edu>
   SGEL     Sergio Gelato <gelato@oort.ap.sissa.it>
   SHGUN    Shishir Gundavaram <shishir@acs.bu.edu>
+  SHIKONO  Shinji KONO <kono@ie.u-ryukyu.ac.jp>
   SHUTTON  Scott Hutton <shutton@pobox.com>
   SKIMO    Sven Verdoolaege <skimo@breughel.ufsia.ac.be>
   SKUNZ    Steven L. Kunz <skunz@iastate.edu>
