@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.61 $Date: 1999/10/20 13:42:54 $
+The Perl 5 Module List       Revision: 2.63 $Date: 1999/10/20 13:43:02 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.138 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.139 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1041,6 +1041,7 @@ Hardware::
 ::Simulator     adpf Simulate different pieces of hardware        GBARTELS
 
 Device::
+::SerialPort    bdpO POSIX clone of Win32::SerialPort             BBIRTH
 ::SVGA          c    SVGA Graphic card driver                     SCOTTVR
 
 _______________________________________________________________________
@@ -1158,6 +1159,10 @@ CORBA::
 
 Modem::
 Vgetty          bdpO Interface to voice modems using vgetty       YENYA
+
+ControlX10::
+::CM10          RmpO Control unit for X10 modules                 BBIRTH
+::CM17          RmpO inexpensive RF transmit-only X10             BBIRTH
 
 _______________________________________________________________________
 
@@ -1595,6 +1600,15 @@ Verilog::
 ::Parser        RdpO Language parsing                             WSNYDER
 ::SigParser     RdpO Signal and module extraction                 WSNYDER
 
+FFI             cdcf Low-level Foreign Function Interface         PMOORE
+
+FFI::
+::Library       cdcO Access to functions in shared libraries      PMOORE
+
+FFI::Win32::
+::Typelib       idcO FFI taking definitions from a type library   PMOORE
+::COM           idcO Access to COM using VTBL interface           PMOORE
+
 _______________________________________________________________________
 
 10) File Names, File Systems and File Locking (see also File Handles)
@@ -1718,10 +1732,14 @@ ERG             Rdpf An extensible report generator framework     PHOENIXL
 PostScript::
 ::Barcode       bdpf Various types of barcodes as PostScript      COLEMAN
 ::Basic         bdpO Basic methods for postscript generation      STWIGGER
+::Document      bdpO Generate multi-page PostScript               SHAWNPW
+::Elements      bdpO Objects for shapes, lines, images            SHAWNPW
 ::Font          Rdpf analyzes PostScript font files               JV
-::FontMetrics   Rdpf analyzes Adobe Font Metric files             JV
 ::FontInfo      Rdpf analyzes Windows font info files             JV
+::FontMetrics   Rdpf analyzes Adobe Font Metric files             JV
+::Metrics       bdpO Font metrics data used by PS::TextBlock      SHAWNPW
 ::Resources     Rdpf loads Unix PostScript Resources file         JV
+::TextBlock     bdpO Objects used by PS::Document                 SHAWNPW
 
 Font::
 ::AFM           RdpO Parse Adobe Font Metric files                GAAS
@@ -1735,7 +1753,7 @@ Parse::
 ::ePerl         Rdcr Embedded Perl (ePerl) parser                 RSE
 ::Lex           adpO Generator of lexical analysers               PVERD
 ::RecDescent    RdpO Recursive descent parser generator           DCONWAY
-::Yapp          bdpO Generates OO LALR parser modules             FDESAR
+::Yapp          RdpO Generates OO LALR parser modules             FDESAR
 
 Search::
 ::Dict          Supf Search a dictionary ordered text file        P5P
@@ -1871,6 +1889,8 @@ Crypt::
 ::ElGamal       bdpO ElGamal digital signatures and keys          VIPUL
 ::IDEA          a    International Data Encryption Algorithm      GARY
 ::Keys          adpO Management system for cryptographic keys     VIPUL
+::Passwd        bdc? Perl wrapper around the UFC Crypt            LUISMUNOZ
+::PasswdMD5     bdc? Interoperable MD5-based crypt() function     LUISMUNOZ
 ::PRSG          a    160 bit LFSR for pseudo random sequences     GARY
 ::Random        bdpO Cryptographically Strong Random Numbers      VIPUL
 ::Rot13         cdpO simple encryption often seen on usenet       AYRNIEU
@@ -2029,6 +2049,7 @@ FCGI            Rdcr Fast CGI                                     SKIMO
 WING            RmhO Apache based IMAP/NNTP Gateway               MICB
 WOMP            cdpO CGI App Dev Suite: authen/state/html         SPADKINS
 CIPP            RdpO Preprocessor for embedding Perl, SQL in HTML JRED
+
 _______________________________________________________________________
 
 16) Server and Daemon Utilities
@@ -2313,6 +2334,9 @@ Wais            Rdcf Interface to the freeWAIS-sf libraries       ULPFR
 
 Astro::
 ::SLA           Rdcf Interface to SLALIB positional astronomy lib TJENNESS
+::Time          cdpf General time conversions for Astronomers     CPHIL
+::Coord         cdpf Transform Telescope and source coordinates   CPHIL
+::Misc          cdpf Miscellaneous astronomical routines          CPHIL
 
 Bio::
 ::*             i    Utilities for molecular biology              SEB
@@ -2714,6 +2738,7 @@ to a CGI script that lets you edit the database entries yourself.
            in the body to cope-request@lunatech.com (See
            http://www.lunatech.com/cope)
   CORLISS  Arthur Corliss <corliss@odinicfoundation.org>
+  CPHIL    Chris Phillips <phillips@jive.nfra.nl>
   CTDEAN   Chris Dean <ctdean@aig.jpl.nasa.gov>
   CUNNINGT Tom Cunningham <cunningt@primenet.com>
   CWEVERITT Cass W. Everitt <cass@Objectecture.com>
@@ -3296,6 +3321,7 @@ to a CGI script that lets you edit the database entries yourself.
   RVA      Rodger V. Anderson <rodger@boi.hp.com>
   RVAZ     Ricardo Vazquez Armenta <rvazquez_a@yahoo.com>
   RWALKER  Roland Walker <walker@ncbi.nlm.nih.gov>
+  RYAN     Ryan Fischer <ryan@gigabee.com>
   SABREN   Michal Wallace <sabren@manifestation.com>
   SAIT     Sami Itkonen <si@iki.fi>
   SALVA    Salvador Fandiño García <salvador@cesat.es>
@@ -3452,6 +3478,7 @@ to a CGI script that lets you edit the database entries yourself.
   YASU     Yasushi Saito <yasushi@cs.washington.edu>
   YENYA    Jan "Yenya" Kasprzak <kas@informatics.muni.cz>
   YLU      Luke Y. Lu <ylu@mail.utexas.edu>
+  YSTH     Yitzchak Scott-Thoennes <sthoenna@efn.org>
   YVESP    Yves Paindaveine <yp@gr.osf.org>
   ZENIN    Byron Brummer <zenin@bawdycaste.org>
   ZTURK    Ziga TURK <ziga.turk@fagg.uni-lj.si>
