@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.40 $Date: 1997/03/25 00:15:37 $
+The Perl 5 Module List       Revision: 2.40 $Date: 1997/03/26 10:28:31 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -601,7 +601,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.66 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.67 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1326,12 +1326,13 @@ Motif          cdcf  Simple Motif and Xt interface                ERICA
 Wcl            i     Interface to the Widget Creation Library     TOMH
 Fresco         cd+O  Interface to Fresco (post X11R6 version)     BPETH
 Qt             cd+O  Interface to the Qt toolkit                  AWIN
-Xforms         bdcO  provides the binding to the xforms library   MARTINB
-XEvent         bdcO  provides perl OO acess to XEvent structures  MARTINB
-XFontStruct    bdcO  provides perl OO access to XFontStruct       MARTINB
+Xforms         bdcO  See X11::Xforms; namespace will move to X11  MARTINB
 
 X11::
 ::Fvwm         adcO  interface to the FVWM window manager API     RJRAY
+::XEvent       bdcO  provides perl OO acess to XEvent structures  MARTINB
+::XFontStruct  bdcO  provides perl OO access to XFontStruct       MARTINB
+::Xforms       bdcO  provides the binding to the xforms library   MARTINB
 
 _______________________________________________________________________
 
