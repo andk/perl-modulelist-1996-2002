@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.49 $Date: 1998/09/07 16:29:17 $
+The Perl 5 Module List       Revision: 2.49 $Date: 1998/09/14 17:33:39 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -672,7 +672,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.103 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.104 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1212,7 +1212,7 @@ Net::
 ::SOCKS        cdcf  TCP/IP access through firewalls using SOCKS  SCOOPER
 ::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   SAMPO
 ::TCP          adcO  TCP-specific socket usage                    SPIDB
-::TFTP         cdpf  Interface to Trivial File Transfer Protocol  GBARR
+::TFTP         cdpf  Interface to Trivial File Transfer Protocol  GSM
 ::Telnet       adpO  Interact with TELNET port or other TCP ports JROGERS
 ::Time         adpf  Obtain time from remote machines             GBARR
 ::UDP          cdcO  UDP-specific socket usage                    SPIDB
@@ -1251,8 +1251,9 @@ Proxy          i     Transport-independent remote processing      MICB
 Proxy::
 ::Tk           ?     Tk transport class for Proxy (part of Tk)    MICB
 
+SNMP           RdcO  Interface to the UCD SNMP toolkit            GSM
+TFTP           bdpO  Interface to TFTP (rfc1350)                  GSM
 ToolTalk       adcr  Interface to the ToolTalk messaging service  MARCP
-SNMP           RdcO  Interface to CMU's SNMPv2 libsnmp.a          GSM
 
 SNMP::
 ::Monitor      adpO  Accounting and graphical display             JWIED +
@@ -1468,7 +1469,7 @@ DBI            amcO  Generic Database Interface (see DBD modules) DBIML
 
 DBIx::               Extensions to the DBI
 ::Recordset    bmpO  Access/Modify DBI handles via Arrays/Hashs   GRICHTER
-::Tree         i     Expand self-referential table into a tree    BJEPS
+::Tree         adpO  Expand self-referential table into a tree    BJEPS
 
 DBD::
 ::Altera       bdpO  Altera SQL Server for DBI - pure Perl code   DSOUFLIS
@@ -1570,8 +1571,6 @@ Term::
 Term::ReadLine::
 ::Perl         RdpO  GNU Readline history and completion in Perl  ILYAZ
 ::Gnu          RdcO  GNU Readline XS library wrapper              HAYASHI
-
-Event          adpO  Perl event loop                              GBARR
 
 Major Character User Interface Modules:
 
@@ -2023,6 +2022,8 @@ _______________________________________________________________________
 
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
+Event          bdpO  Perl event loop                              JPRIT
+
 EventServer    RupO  Triggers objects on i/o, timers & interrupts JACKS
 ::Functions    Rupf  Utility functions for initializing servers   JACKS
 ::*Wrapper     Rupf  Bunch of wrappers for different server types JACKS
@@ -2348,6 +2349,10 @@ Resolute::
 AltaVista::
 ::SearchSDK    cdcf  Perl Wrapper for AltaVista SDK functionality JTURNER +
 
+Real::
+::Encode       i     Interface to Progressive Network's RealAudio KMELTZ
+
+
 =======================================================================
 
 
@@ -2456,9 +2461,10 @@ RFC1035, RFC1183, RFC1706
            Domain names, implementation & specification  Net::DNS
 RFC1123    Date conversion routines                      HTTP::Date
 RFC1321    MD5 Message-Digest Algorithm                  MD5
+RFC1350    Trivial File Transfer Protocol                TFTP, Net::TFTP
 RFC1413    Identification Protocol                       Net::Ident
 RFC1521    Encode/decode quoted-printable strings        MIME::QuotedPrint
-RFC1592    Simple Network Management Protocol            Net::SNMP
+RFC1592    Simple Network Management Protocol            SNMP, Net::SNMP
 RFC1738    Uniform Resource Locators                     URI::URL
 RFC1777    Lightweight Directory Access Protocol         Net::LDAP
 RFC1861    Simple Network Pager Protocol                 Net::SNPP
