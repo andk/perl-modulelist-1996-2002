@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.30 $Date: 1996/08/29 00:48:08 $
+The Perl 5 Module List       Revision: 2.30 $Date: 1996/08/29 01:23:20 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -931,7 +931,7 @@ MSDOS::
 ::SysCalls     adcf  MSDOS interface (interrupts, port I/O)       DMO
 
 FreeBSD::
-::SysCalls     cdcf  FreeBSD-specific system calls                GARY +
+::SysCalls     cdcf  FreeBSD-specific system calls                GARY  +
 
 SGI::
 ::SysCalls     cdcf  SGI-specific system calls                    AMOSS
@@ -1125,7 +1125,7 @@ Object::
 Ref            RdpO  Print, compare, and copy perl structures     MUIR
 
 Sort::
-::Versions     Rdpf   sorting of revision (and similar) numbers   KJALB
+::Versions     Rdpf  sorting of revision (and similar) numbers    KJALB
 ::PolySort     bdpO  general rules-based sorting of lists         DMACKS +
 
 Data Type Marshaling (converting to/from strings) and Persistent Storage
@@ -1388,7 +1388,7 @@ GSS            i     Generic Security Services API (RFC 1508/9)   MSHLD
 
 Crypt::
 ::DES          a     DES encryption (libdes)                      GARY
-::IDEA         a     International Data Encryption Algorithm      GARY !
+::IDEA         a     International Data Encryption Algorithm      GARY  !
 ::PRSG         a     160 bit LFSR for pseudo random sequences     GARY
 
 
@@ -1658,10 +1658,10 @@ Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN
 Penguin::
 ::Easy         RdpO  Provides quick, easy access to Penguin API   JDUNCAN +
 
-CreditCard     Rdpf  Credit card number check digit test          JONO +
+CreditCard     Rdpf  Credit card number check digit test          JONO  +
 
 Business::
-::CreditCard   Rdpf  Deprecated name for Creditcard.pm            JONO !
+::CreditCard   Rdpf  Deprecated name for Creditcard.pm            JONO  !
 
 Print::
 ::Label        i     Format address labels                        JONO
@@ -1670,7 +1670,7 @@ BarCode::
 ::UPC          i     Produce PostScript UPC barcodes              JONO
 
 Audio::
-::Sox          i     sox sound library as one or more modules     NI-S +
+::Sox          i     sox sound library as one or more modules     NI-S  +
 
 =======================================================================
 
@@ -1822,6 +1822,7 @@ to a CGI script that lets you edit the database entries yourself.
            that then mail to dbi-REQUEST@fugue.com and ask (the human,
            Ted Lemon) to subscribe you to one or more of dbi-announce,
            dbi-users, or dbi-dev.
+  DMACKS   Daniel Macks <dmacks@netspace.org>
   DMEGG    David Megginson <dmeggins@aix1.uottawa.ca>
   DMO      Darryl Okahata <darrylo@sr.hp.com>
   DMR      Dean Roehrich <roehrich@cray.com>
@@ -1851,6 +1852,7 @@ to a CGI script that lets you edit the database entries yourself.
   GSPAF    Gene Spafford <spaf@cs.purdue.edu>
   GUYDX    Guy Decoux <decoux@moulon.inra.fr>
   HALPOM   Hal Pomeranz <pomeranz@netcom.com>
+  HPALM    Hartmut Palm <palm@gfz-potsdam.de>
   IANPX    Ian Phillipps <ian@dial.pipex.com>
   ILYAZ    Ilya Zakharevich <ilya@math.ohio-state.edu>
   JACKS    Jack Shirazi <JackS@GemStone.com>
@@ -1864,6 +1866,7 @@ to a CGI script that lets you edit the database entries yourself.
   JKAST    Jason Kastner <jkastner@oboe.calpoly.edu>
   JKEGL    Jeffrey Kegler <jeffrey@best.com>
   JLEVAN   Jerry LeVan <levan@eagle.eku.edu>
+  JMAHAN   J. Michael Mahan <mahanm@nextwork.rose-hulman.edu>
   JMURPHY  Joel Murphy <jmurphy@acsu.buffalo.edu>
   JOCASA   Joe Casadonte <joc@netaxs.com>
   JOEHIL   Joe Hildebrand <joe.hildebrand@twcable.com >
@@ -1887,7 +1890,7 @@ to a CGI script that lets you edit the database entries yourself.
   LUKKA    Tuomas J. Lukka <Tuomas.Lukka@Helsinki.FI>
   LUSOL    Stephen O. Lidie <lusol@Lehigh.EDU>
   LUTHERH  Luther Huffman <lutherh@stratcom.com>
-  LWALL    Larry Wall. Author of Perl. Busy man. <lwall@sems.com>
+  LWALL    Larry Wall. Author of Perl. Busy man. <larry@wall.org>
   LWWWP    The libwww-perl mailing list
            Mail to libwww-perl-REQUEST@ics.uci.edu with body
            "subscribe"
@@ -1902,6 +1905,7 @@ to a CGI script that lets you edit the database entries yourself.
            "subscribe". There is an announcement-only low-volume
            mailing list too with the subscription address
            mac-perl-announce-request@iis.ee.ethz.ch.
+  MDARWIN  Matthew Darwin <darwin@loran.com>
   MERGL    Edmund Mergl <mergl@nadia.s.bawue.de>
   MERLYN   Randal L. Schwartz <merlyn@stonehenge.com>
   MEWP     Michael Peppler <mpeppler@bix.com>
@@ -1937,10 +1941,14 @@ to a CGI script that lets you edit the database entries yourself.
   PATM     Pat Martin <pat@bronco.advance.com>
   PEASE    Mark Pease <peasem@primenet.com>
   PEM      Peter Murray <pem@po.cwru.edu>
+  PGPML    The PGP Module Mailing List
+           Mail to majordomo@dbc-mifco.com with body "subscribe
+           perl-pgp <your-address>"
   PGUEN    Philip Guenther <guenther@gac.edu>
   PKUTS    Peter Kutschera <peter@zditr1.arcs.ac.at>
   PMQS     Paul Marquess <pmarquess@bfsec.bt.co.uk>
   PRATP    Pratap Pereira <pereira@ee.eng.ohio-state.edu>
+  PSEIBEL  Peter Seibel <seibel@organic.com>
   PVANDRY  Phillip Vandry <vandry@mlink.net>
   PVERD    Philippe Verdret <phd@eurolang.fr>
   PVHP     Peter Prymmer <pvhp@lns62.lns.cornell.edu>
@@ -1962,8 +1970,10 @@ to a CGI script that lets you edit the database entries yourself.
   SGEL     Sergio Gelato <gelato@oort.ap.sissa.it>
   SHGUN    Shishir Gundavaram <shishir@acs.bu.edu>
   SHUTTON  Scott Hutton <shutton@pobox.com>
+  SKIMO    Sven Verdoolaege <skimo@breughel.ufsia.ac.be>
   SKUNZ    Steven L. Kunz <skunz@iastate.edu>
   SPIDB    Spider Boardman <spider@orb.nashua.nh.us>
+  SPP      Stephen P Potter <spp@pencom.com>
   SRIRAM   Sriram Srinivasan <sriram@tcs.com>
   STANM    Stan Melax <stan@skyler.arc.ab.ca>
   STBEY    Steffen Beyer <sb@sdm.de>
@@ -1991,7 +2001,7 @@ to a CGI script that lets you edit the database entries yourself.
   WINKO    Winfried Koenig <win@in.rhein-main.de>
   WPS      William Setzer <William_Setzer@ncsu.edu>
   WSCOT    Wayne Scott <wscott@ichips.intel.com>
-  WTOMPSON Wayne Tompson <>
+  WTOMPSON Wayne Tompson <Wayne.Thompson@Ebay.Sun.COM>
   WYTAN    Wei-Yuen Tan <Wei-Yuen_Tan@hip.com>
   YASU     Yasushi Saito <yasushi@cs.washington.edu>
   YLU      Luke Y. Lu <ylu@mail.utexas.edu>
