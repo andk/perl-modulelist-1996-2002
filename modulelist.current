@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.17 $$Date: 1999/10/29 02:46:07 $
+The Perl 5 Module List       $Revision: 3.18 $$Date: 1999/10/31 17:32:55 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.17 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.18 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1416,7 +1416,7 @@ Data::
 Tree::
 ::Base            cdpO Defines a basic binary search tree           MSCHWERN
 ::Fat             Rdcf Embeddable F-Tree algorithm suite            JPRIT
-::Smart           cdpO Sorted hash-ish, becomes faster with use     MSCHWERN
+::Smart           cdpO Splay tree, fastest for commonly accessed ke MSCHWERN
 ::Trie            bdpO An implementation of the Trie data structure AVIF
 
 DFA::
@@ -1790,7 +1790,7 @@ Lingua::EN::
 ::Squeeze         bdpf Shorten english text for Pagers/GSM phones   JARIAALTO
 
 Lingua::RU::
-::Charset         i    Detect russian character sets                FARBER
+::Charset         anpf Detect/Convert russian character sets.       FARBER
 
 ERG               Rdpf An extensible report generator framework     PHOENIXL
 
@@ -1860,7 +1860,7 @@ FrameMaker::
 Marpa             cd+O Context Free Parser                          JKEGL
 
 Chatbot::
-::Eliza           adpO Eliza algorithm encapsulated in an object    JNOLAN
+::Eliza           Rdph Eliza algorithm encapsulated in an object    JNOLAN
 
 Quiz::
 ::Question        cdpO Questions and Answers wrapper                RFOLEY
@@ -2844,7 +2844,7 @@ to a CGI script that lets you edit the database entries yourself.
            To join the list, send a mail with just the word subscribe
            in the body to cope-request@lunatech.com (See
            http://www.lunatech.com/cope)
-  CORLISS  Arthur Corliss <corliss@odinicfoundation.org>
+  CORLISS  Arthur Corliss <corliss@gallanttech.com>
   CPHIL    Chris Phillips <phillips@jive.nfra.nl>
   CTDEAN   Chris Dean <ctdean@aig.jpl.nasa.gov>
   CUNNINGT Tom Cunningham <cunningt@primenet.com>
@@ -3197,7 +3197,7 @@ to a CGI script that lets you edit the database entries yourself.
   LUTHERH  Luther Huffman <lutherh@stratcom.com>
   LWALL    Larry Wall. Author of Perl. Busy man. <larry@wall.org>
   LWWWP    The libwww-perl mailing list
-           
+           Mail to libwww-subscribe@perl.org
   MACGYVER Habeeb J. Dihu <macgyver@tos.net>
   MADWOLF  Massimiliano Pala <madwolf@openca.org>
   MAHEX    Mark "Hex" Hershberger <mah@eecs.tulane.edu>
@@ -3295,6 +3295,7 @@ to a CGI script that lets you edit the database entries yourself.
   MTIRAMANI Mark Tiramani <markjt@fredo.co.uk>
   MUIR     David Muir Sharnoff <muir@idiom.com>
   MVERB    Martien Verbruggen <mgjv@comdyn.com.au>
+  MVORL    Martin Vorlaender <martin@radiogaga.harz.de>
   NEERI    Matthias Ulrich Neeracher <neeri@iis.ee.ethz.ch>
   NEILB    Neil Bowers <neilb@cre.canon.co.uk>
   NEMWS    Nem W Schlecht <nem@abattoir.cc.ndsu.nodak.edu>
@@ -3587,6 +3588,7 @@ to a CGI script that lets you edit the database entries yourself.
   WSNYDER  Wilson Snyder <wsnyder@ultranet.com>
   WTOMPSON Wayne Tompson <Wayne.Thompson@Ebay.Sun.COM>
   WYTAN    Wei-Yuen Tan <Wei-Yuen_Tan@hip.com>
+  XCALBET  Xavier Calbet <xcalbet@inm.es>
   XFIRE    Ilya Obshadko <x-fire@mail.ru>
   XMLML    Perl-XML Mailing List
            Send mail to subscribe-perl-xml@lyris.activestate.com
