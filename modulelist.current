@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.62 $$Date: 2000/10/22 17:30:38 $
+The Perl 5 Module List       $Revision: 3.63 $$Date: 2000/10/22 18:16:51 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.62 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.63 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1071,6 +1071,7 @@ Mac::             Macintosh specific modules
 ::Files           bmcO File manager                                 MCPL
 ::Gestalt         bmcO Gestalt manager: Environment enquiries       MCPL
 ::Glue            bdpO Control apps with AppleScript terminology    CNANDOR
+::Macbinary       bdpO Decodes MacBinary files.                     MIYAGAWA
 ::Memory          bmcO Memory manager                               MCPL
 ::MoreFiles       bmcO Further file management routines             MCPL
 ::OSA             bmcO Open Scripting Architecture                  MCPL
@@ -1222,6 +1223,7 @@ Net::
 ::Netrc           adpO Support for .netrc files                     GBARR
 ::PH              RdpO CCSO Nameserver Client class                 GBARR
 ::POP3            adpO Client interface to POP3 protocol            GBARR
+::Patricia        RdcO Patricia Trie perl module for fast IP addres PLONKA
 ::Pcap            adcr An interface for LBL's packet capture lib    PLISTER
 ::Ping            SupO TCP and ICMP ping                            RMOSE
 ::Printer         RdpO Direct to lpd printing                       CFUHRMAN
@@ -1323,6 +1325,7 @@ Mon::
 ::SNMP            RdpO Network monitoring suite                     TROCKIJ
 
 Parallel::
+::ForkManager     RdpO A simple parallel processing fork manager    DLUX
 ::Pvm             bdcf Interface to the PVM messaging service       DLECONTE
 
 CORBA::
@@ -1378,6 +1381,7 @@ Math::
 ::Polynomial      RdpO Polynomials as objects                       MATKIN
 ::Prime           i    Prime number testing                         GARY
 ::RandomPrime     i    Generates random primes of x bits            GARY
+::Round           RdpO Perl extension for rounding numbers          GROMMEL
 ::SigFigs         Rdpf Math using scientific significant figures    SBECK
 ::Spline          RdpO Cubic Spline Interpolation of data           JARW
 ::Trig            bdpf tan asin acos sinh cosh tanh sech cosech     JARW
@@ -1950,6 +1954,7 @@ Filesys::
 ::AFS             cdcO AFS Distributed File System interface        NOG
 ::Df              Rdpr Disk free based on Filesys::Statvfs          IGUTHRIE
 ::DiskFree        adpO OS independant parser of the df command      ABARCLAY
+::Ext2            RdpO Interface to e2fs filesystem attributes      JPIERCE
 ::SamFS           adcf Interface to SamFS API                       LUPE
 ::Statvfs         Rdcf Interface to the statvfs() system call       IGUTHRIE
 ::dfent           adpf By-name interface                            TOMC
@@ -2153,6 +2158,7 @@ Quiz::
 ::Question        cdpO Questions and Answers wrapper                RFOLEY
 
 Template          RdpO Extensive Toolkit for template processing    ABW
+dTemplate         bmpO Flexible templating system                   DLUX
 
 Barcode::
 ::Code128         adpO Generate CODE 128 bar codes                  WRW
@@ -2175,6 +2181,9 @@ Getopt::
 ::Simple          MdpO A simple-to-use interface to Getopt::Long    RSAVAGE
 ::Std             Supf Implements basic getopt and getopts          P5P
 ::Tabular         adpr Table-driven argument parsing with help text GWARD
+
+Getargs::
+::Long            cdpf Parses long function args f(-arg => value)   RAM
 
 Argv              bdph Provide an OO interface to an ARGV           DSB
 ConfigReader      cdpO Read directives from configuration file      AMW
@@ -2416,7 +2425,11 @@ WWW::
 ::BBSWatch        adpO email WWW bulletin board postings            TAYERS
 ::Robot           adpO Web traversal engine for robots & agents     NEILB
 ::RobotRules      ampO Parse /robots.txt file                       LWWWP
-::Search          adpO Front-end to Web search engines              JOHNH
+
+WWW::Search::     adpO Front-end to Web search engines              JOHNH
+::AlltheWeb       RdpO Class for searching AlltheWeb                JSMYSER
+::Deja            RdpO Class for www.deja.com searching             MTHURN
+::Go              RdpO Backend class for searching with go.com      ALIAN
 
 LWP               RmpO Libwww-perl                                  LWWWP
 LWP::
@@ -2588,6 +2601,7 @@ GIFgraph          RdpO Obsolete, see GD::Graph                      MVERB
 
 GD                adcO Interface to Gd Graphics Library             LDS
 GD::
+::Barcode         bdpO Create barcode image with GD                 KWITKNR
 ::Graph           RdpO Create charts using GD                       MVERB
 ::Text            RdpO Classes for string handling with GD          MVERB
 
