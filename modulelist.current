@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.49 $Date: 1998/07/14 08:00:09 $
+The Perl 5 Module List       Revision: 2.49 $Date: 1998/07/24 20:13:43 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -651,7 +651,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.97 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.98 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -891,7 +891,6 @@ SUPER          SucO  Internal class to access superclass methods  P5P
 DynaLoader     SucO  Dynamic loader for shared libraries          P5P
 AutoLoader     SupO  Automatic function loader (using AutoSplit)  P5P
 SelfLoader     SdpO  Automatic function loader (using __DATA__)   JACKS
-AutoReloader   Rdpf  Reloads files in %INC based on timestamps    JPRIT
 Exporter       SupO  Implements default import method for modules P5P
 Carp           Supf  Throw exceptions outside current package     P5P
 Config         Supf  Stores details of perl build configuration   P5P
@@ -919,6 +918,7 @@ Perl Language Extensions
 
 Alias          bdcf  Convenient access to data/code via aliases   GSAR
 Error          adpO  Error/exception handling in an OO-ish way    GBARR
+Perl           adcO  Create Perl interpreters from within Perl    GSAR
 Plthread       i     Multithreading at Perl level (not O/S level) MICB
 Protect        bdpf  declare subs private or member               JDUNCAN
 Safe           SdcO  Restrict eval'd code to safe subset of ops   MICB
@@ -929,7 +929,7 @@ B              aucO  The Perl Compiler                            MICB
 O              aucO  Perl Compiler frontends                      MICB
 
 B::
-::Graph        adpr  Perl Compiler backend to diagram OP trees    SMCCAM
+::Graph        bdpr  Perl Compiler backend to diagram OP trees    SMCCAM
 
 Source Code Filters
 
@@ -943,6 +943,11 @@ Filter::
 ::cpp          bdcf  Filters script through C preprocessor        PMQS
 ::tee          bdcf  Copies to file perl source being compiled    PMQS
 ::decrypt      bdcf  Template for a perl source decryption filter PMQS
+
+Module Support
+
+Module::
+::Reload       Rdpf  Reloads files in %INC based on timestamps    JPRIT
 
 Documentation Tools:
 
@@ -996,6 +1001,7 @@ Devel::
 ::DebugInit    i     Create a .gdbinit or similar file            JASONS
 ::DProf        Rdcf  Execution profiler                           DMR
 ::DumpStack    Rupf  Dumping of the current function stack        JACKS
+::Leak         Rdcf  Find perl objects that are not reclaimed     NI-S
 ::Peek         adcf  Peek at internal representation of Perl data ILYAZ
 ::RegExp       adcO  Access perl internal regex functions         ILYAZ
 ::SmallProf    a     Line-by-line profiler                        ASHTED
@@ -1593,6 +1599,9 @@ Fortran::
 
 Clips          adpO  Interface to the Expert System Clips         MSULLIVAN +
 
+ShellScript::
+::Env          adpO  Simple sh and csh script generator           SVENH
+
 _______________________________________________________________________
 
 10) File Names, File Systems and File Locking (see also File Handles)
@@ -1626,7 +1635,9 @@ File::
 ::stat         Supf  A by-name interface for the stat function    TOMC
 
 Filesys::
+::Df           Rdpr  Disk free based on Filesys::Statvfs          IGUTHRIE
 ::DiskFree     adpO  OS independant parser of the df command      ABARCLAY
+::Statvfs      Rdcf  Interface to the statvfs() system call       IGUTHRIE
 ::dfent        adpf  By-name interface                            TOMC
 ::mntent       adpf  By-name interface                            TOMC
 ::statfs       adpf  By-name interface                            TOMC
@@ -1674,7 +1685,7 @@ Text::
 ::Tabs         Sdpf  Expand and contract tabs ala expand(1)       MUIR
 ::TeX          cdpO  TeX typesetting language input parser        ILYAZ
 ::Template     bdpO  Expand template text with embedded perl      MJD
-::Vpp          bdpO  Versatile text pre-processor                 DDUMONT
+::Vpp          RdpO  Versatile text pre-processor                 DDUMONT
 ::Wrap         Sdpf  Wraps lines to make simple paragraphs        MUIR
 
 Other Text:: modules (these should be under String:: but pre-date it)
@@ -1715,6 +1726,7 @@ Parse::
 ::ePerl        Rdcr  Embedded Perl (ePerl) parser                 RSE
 ::Lex          adpO  Generator of lexical analysers               PVERD
 ::RecDescent   RdpO  Recursive descent parser generator           DCONWAY
+::Yapp         adpO  Generate Perl OO parsers from LALR1 grammars FDESAR
 
 Search::
 ::Dict         Supf  Search a dictionary ordered text file        P5P
@@ -1838,6 +1850,7 @@ Crypt::
 
 Authen::
 ::ACE          adcO  Interface to Security Dynamics ACE (SecurID) DCARRIGAN
+::Challenge    ad
 ::Krb5         cdcO  Interface to Kerberos API                    JHORWITZ
 ::PAM          adcf  Interface to PAM library                     NIKIP
 ::TacacsPlus   adcO  Authentication on tacacs+ server             MSHOYHER
@@ -2129,7 +2142,6 @@ Name           DSLI  Description                                  Info
 IO::
 ::AtomicFile   adpO  Write a file which is updated atomically     ERYQ
 ::Dir          cdpO  Directory handle objects and methods         GBARR
-::Expect       cdpO  Expect-like operations on an IO::Handle      GBARR
 ::File         cdpO  Methods for disk file based i/o handles      GBARR
 ::Format       adpO  Treat perl formats as objects                SBECK
 ::Handle       cdpO  Base class for input/output handles          GBARR
