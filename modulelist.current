@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.47 $$Date: 2000/05/22 12:29:23 $
+The Perl 5 Module List       $Revision: 3.48 $$Date: 2000/05/23 10:50:19 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.47 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.48 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -937,8 +937,12 @@ Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 AutoSplit         Supf Splits modules into files for AutoLoader     P5P
 Benchmark         Supf Easy way to time fragments of perl code      P5P
+Conjury           Rdp? Generic software construction toolset        JWOODYATT
+Coy               Rdpn Like Carp - only prettier                    DCONWAY
 FindBin           adpf Locate current script bin directory          GBARR
-DoWhatIWant       i    Does what you want without even asking
+Include           adpO Parse C header files for use in XS           GBARR
+Make              adpO Makefile parsing, and 'make' replacement     NI-S
+Usage             bupr Type and range checking on subroutine args   JACKS
 
 ExtUtils::
 ::DynaGlue        adcr Methods for generating Perl extension files  DOUGM
@@ -951,8 +955,6 @@ ExtUtils::
 Carp::
 ::Assert          adpf Stating the obvious to let the computer know MSCHWERN
 ::CheckArgs       Rdpf Check subroutine argument types              GARROW
-
-Coy               Rdpn Like Carp - only prettier                    DCONWAY
 
 Devel::
 ::API             cdch Expose the Perl API in script space          INGY
@@ -979,8 +981,6 @@ Exception::
 Perf::            Performance measurement other than benchmarks
 ::ARM             a    Application Response Measurement             BBACKER
 
-Usage             bupr Type and range checking on subroutine args   JACKS
-
 Rcs               adcf Alternate RCS interface (see VCS::RCS)       CFRETER
 VCS               ampO Generic interface to Version Control Systems LBROCARD
 
@@ -989,9 +989,6 @@ VCS::
 ::PVCS            i    PVCS Version Manager (intersolv.com)         BMIDD
 ::RCS             idpf Interface layer over RCS (See also Rcs)      RJRAY
 ::RCE             idcf Perl layer over RCE C API                    RJRAY
-
-Include           adpO Parse C header files for use in XS           GBARR
-Make              adpO Makefile parsing, and 'make' replacement     NI-S
 
 ClearCase         idcf Environment for ClearCase revision control   BRADAPP
 ClearCase::
@@ -1169,6 +1166,7 @@ _______________________________________________________________________
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 Socket            Smcf Defines socket-related constants             GNAT
+Socket6           adpf getaddrinfo/getnameinfo support module       UMEMOTO
 Ptty              adcf Pseudo terminal interface functions          NI-S
 
 Socket::
@@ -1445,7 +1443,7 @@ Date::
 ::Language        adpO Multi-language date support                  GBARR
 ::Manip           Rdpf Complete date/time manipulation package      SBECK
 ::Parse           Rdpf ASCII Date parser using regexp's             GBARR
-::Time            idpO Lightweight normalised datetime data type    TIMB
+::Time            idpO Lightweight normalised datetime data type    TOBIX
 
 Time::
 ::Avail           Rdpf Calculate min. remaining in time interval    PSANTORO
@@ -1617,6 +1615,7 @@ DBD::
 ::ODBC            amcO ODBC Driver for DBI                          DBIML
 ::Oracle          amcO Oracle Driver for DBI                        TIMB
 ::QBase           amcO QBase Driver for DBI                         BENLI
+::RAM             ampO DBI interface to in-memory data structures   JZUCKER
 ::Solid           amcO Solid Driver for DBI                         TWENRICH
 ::Sqlflex         RdcO SQLFLEX driver for DBI                       INFOFLEX
 ::Sybase          amcO Sybase Driver for DBI                        MEWP
@@ -1826,6 +1825,7 @@ _______________________________________________________________________
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 Clips             adpO Interface to the Expert System Clips         MSULLIVAN
+Java              bdoO A Front-end for JVM communication            METZZO
 Rc                cdcO Perl interface for the Rc shell              JPRIT
 SICStus           adcO Interface to SICStus Prolog Runtime          CBAIL
 
@@ -2077,6 +2077,7 @@ RTF::
 ::Parser          a    Base class for parsing RTF files             PVERD
 
 SQL::
+::Schema          bdpO Convert a data dictionary to SQL statements  TODD
 ::Statement       adcO Small SQL parser and engine                  JWIED
 ::Builder         adpO OO interface for creating SQL statements     ZENIN
 
@@ -2203,6 +2204,7 @@ Crypt::
 ::Blowfish        adcO XS-based implementation of Blowfish          DPARIS
 ::Blowfish_PP     adpO Blowfish encryption algorithm in Pure Perl   MATTBM
 ::CBC             adpO Cipherblock chaining for Crypt::DES/IDEA     LDS
+::CBCeasy         bdpf Easy things make really easy with Crypt::CBC MBLAZ
 ::DES             a    DES encryption (libdes)                      GARY
 ::ElGamal         bdpO ElGamal digital signatures and keys          VIPUL
 ::IDEA            a    International Data Encryption Algorithm      GARY
@@ -2302,6 +2304,7 @@ HTML::
 
 HTTP::
 ::Browscap        cdpO Provides info on web browser capabilities    JAMESPO
+::BrowserDetect   adph Detect browser, version, OS from UserAgent   LHS
 ::Cookies         RmpO Storage of cookies                           LWWWP
 ::Date            Rmpf Date conversion for HTTP date formats        LWWWP
 ::Daemon          RmpO Base class for simple HTTP servers           LWWWP
@@ -2461,7 +2464,7 @@ Compress::
 ::Zlib            RdcO Interface to the Info-Zip zlib library       PMQS
 
 Convert::
-::ASN1            adhO Standard en/decode of ASN.1 structures       GBARR
+::ASN1            adpO Standard en/decode of ASN.1 structures       GBARR
 ::BER             adpO Class for encoding/decoding BER messages     GBARR
 ::BinHex          cdpO Convert to/from RFC1741 HQX7 (Mac BinHex)    ERYQ
 ::EBCDIC          adpf ASCII to/from EBCDIC                         CXL
@@ -2683,6 +2686,7 @@ Win32::
 ::OLE             Rm+h Interface to OLE Automation                  JDB
 ::Pipe            Rd+O Named Pipes and assorted function            DAVEROTH
 ::Process         adcf Interface to Win32 Process functions         WIN32
+::RASE            Rdpf Dialup entries and connections on Win32      MBLAZ
 ::Registry        adcf Interface to Win32 Registry functions        WIN32
 ::Semaphore       bdcO Use Win32 semaphore objects for IPC          CJM
 ::SerialPort      RdpO Win32 Serial functions/constants/interface   BBIRTH
@@ -3428,6 +3432,7 @@ to a CGI script that lets you edit the database entries yourself.
   JAKE     Jake Donham <jaked@well.com>
   JAMCC    Jamie McCarthy <jamie@mccarthy.org>
   JAMES    James Tolley <james@jamestolley.com>
+  JAMESPO  James Powell <perl@jamespo.ukshells.co.uk>
   JANL     Nicolai Langfeldt <janl@math.uio.no>
   JANPAZ   Jan Pazdziora <adelton@fi.muni.cz>
   JARIAALTO Jari Aalto <jari.aalto@poboxes.com>
@@ -3609,7 +3614,7 @@ to a CGI script that lets you edit the database entries yourself.
   MADLINUX Lorance Stinson <lorance@madlinux.cx>
   MADWOLF  Massimiliano Pala <madwolf@openca.org>
   MAGNUS   Magnus Cedergren <datorer.program@esplanaden.lysator.liu.se>
-  MAHEX    Mark "Hex" Hershberger <mah@eecs.tulane.edu>
+  MAHEX    Mark A. Hershberger <mah@everybody.org>
   MAK      Martijn Koster <mak@surfski.webcrawler.com>
   MAKLER   Piotr Klaban <makler@man.torun.pl>
   MARAL    Peter Marelas <maral@phase-one.com.au>
