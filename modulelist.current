@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.37 $$Date: 2000/04/04 19:46:32 $
+The Perl 5 Module List       $Revision: 3.38 $$Date: 2000/04/06 05:54:42 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.37 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.38 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -860,6 +860,7 @@ Test              Sdpf Utilities for writing test scripts           JPRIT
 Test::
 ::Cmd             adpO Portable test infrastructure for commands    KNIGHT
 ::Harness         Supf Executes perl-style tests                    P5P
+::Unit            adpO simple framework for unit testing            CLEMBURG
 
 The Perl Compiler
 
@@ -1152,6 +1153,9 @@ Name              DSLI Description                                  Info
 Socket            Smcf Defines socket-related constants             GNAT
 Ptty              adcf Pseudo terminal interface functions          NI-S
 
+Socket::
+::PassAccessRights adcf Pass file descriptor via Unix domain socket  SAMPO
+
 Net::
 ::ACAP            adpO Interface to ACAP Protocol (Internet-Draft)  KJOHNSON
 ::Bind            adpO Interface to bind daemon files               KJOHNSON
@@ -1208,9 +1212,11 @@ Net::IMAP::
 ::Simple          bdpO Only implements the basic IMAP features      JPAF
 
 IPC::
+::Cache           adpO Shared-memory object cache                   DCLINTON
 ::Chat2           ?    Out-of-service during refit!                 GBARR
 ::ChildSafe       RdcO Control child process w/o risk of deadlock   DSB
 ::Globalspace     cdpO Multi-process shared hash and shared events  JACKS
+::LDT             adpf Implements a length based IPC protocol       JSTENZEL
 ::Locker          RdpO Shared semaphore locks across a network      WSNYDER
 ::Mmap            i    Interface to Unix's mmap() shared memory     MICB
 ::Open2           Supf Open a process for both reading and writing  P5P
@@ -1433,7 +1439,7 @@ Calendar::
 Tie::
 ::Hash            Supr Base class for implementing tied hashes      P5P
 ::Scalar          Supr Base class for implementing tied scalars     P5P
-::Array           c    Base class for implementing tied arrays      CHIPS
+::Array           Supr Base class for implementing tied arrays      P5P
 ::CPHash          bdpO Case preserving but case insensitive hash    CJM
 ::Cache           Mdpr In memory size limited LRU cache             CHAMAS
 ::DB_FileLock     Rdpr Locking access to Berkeley DB 1.x.           JMV
@@ -1446,7 +1452,7 @@ Tie::
 ::Handle          RdpO Base class for implementing tied filehandles STBEY
 ::HashDefaults    adpr Let a hash have default values               JDPORTER
 ::IxHash          RdpO Indexed hash (ordered array/hash composite)  GSAR
-::LLHash          Rdpr Fast & clean order-preserving hashes         KWILLIAMS
+::LLHash          Rdpr Fast ordered hashes via linked lists         KWILLIAMS
 ::ListKeyedHash   Rdpr Use lists to key multi-level hashes          SNOWHARE
 ::Mem             adcO Bind perl variables to memory addresses      PMQS
 ::MmapArray       i??? Ties a file to an array                      ANDREWF
@@ -1508,6 +1514,15 @@ Marshal::
 ::Packed          cdpO Run-length coded version of Marshal module   MUIR
 ::Eval            cdpO Undo serialization with eval                 MUIR
 Tangram           RmpO Object persistence in relational databases   JLLEROY
+
+Persistent::
+::Base            bdpO Persistent base classes (& DBM/File classes) DWINTERS
+::DBI             bdpO Persistent abstract class for DBI databases  DWINTERS
+::MySQL           bdpO Persistent class for MySQL databases         DWINTERS
+::Oracle          bdpO Persistent class for Oracle databases        DWINTERS
+::Sybase          bdpO Persistent class for Sybase databases        DWINTERS
+::mSQL            bdpO Persistent class for mSQL databases          DWINTERS
+::LDAP            bdpO Persistent class for LDAP directories        DWINTERS
 
 Data::
 ::Check           cdpO Checks values for various data formats       KENHOLM
@@ -1642,6 +1657,9 @@ Fame              adcO Interface to FAME database and language      TRIAS
 NetCDF            bmcr Interface to netCDF API for scientific data  SEMM
 Stanza            i    Text format database used by OSF and IBM     JHI
 VDBM              i    Client/server-layers on top of DBM files     RAM
+
+BTRIEVE::
+::SAVE            bdpO Read-write access to BTRIEVE SAVE files      DLANE
 
 MARC              bmpO MAchine Readable Catalog (library bib. data) PERL4LIB
 MARC::
@@ -1854,6 +1872,7 @@ String::
 ::BitCount        adpf Count number of "1" bits in strings          WINKO
 ::CRC             Rdcf Cyclic redundency check generation           MUIR
 ::CRC32           R?c? ZMODEM-like CRC32 generation of strings as w SOENKE
+::DiffLine        bdcf line # & position of first diff              ALLEN
 ::Edit            adpf Assorted handy string editing functions      TOMC
 ::Parity          adpf Parity (odd/even/mark/space) handling        WINKO
 ::RexxParse       Rdph Perl implementation of REXX 'parse' command  BLCKSMTH
@@ -2101,6 +2120,8 @@ GnuPG             bdpO Perl interface to the GNU privacy guard.     FRAJULAC
 DES               adcf DES encryption (libdes)                      EAYNG
 Des               adcf DES encryption (libdes)                      MICB
 GSS               adcO Generic Security Services API (RFC 2078)     MSHLD
+OpenCA            Rdpf Tools for running a Certification Authority  MADWOLF
+SMIMEUtil         amhf Sign, encrypt, verify, decrypt S/MIME mail   SAMPO
 
 Digest::
 ::MD5             Rdch  MD5 message digest algorithm                GAAS
@@ -2109,6 +2130,8 @@ Digest::
 ::HMAC            Rdph  HMAC message integrity check                GAAS
 
 Crypt::
+::Blowfish        adcO XS-based implementation of Blowfish          DPARIS
+::Blowfish_PP     adpO Blowfish encryption algorithm in Pure Perl   MATTBM
 ::CBC             adpO Cipherblock chaining for Crypt::DES/IDEA     LDS
 ::DES             a    DES encryption (libdes)                      GARY
 ::ElGamal         bdpO ElGamal digital signatures and keys          VIPUL
@@ -2122,8 +2145,6 @@ Crypt::
 ::RSA             bdpO RSA encryption, decryption, key generation   VIPUL
 ::Twofish         Rdpf Twofish Encryption Algorothm                 NISHANT
 ::UnixCrypt       Rdpf Perl-only implementation of crypt(3)         MVORL
-
-OpenCA            Rdpf Tools for running a Certification Authority  MADWOLF
 
 Authen::
 ::ACE             adcO Interface to Security Dynamics ACE (SecurID) DCARRIGAN
@@ -2149,6 +2170,7 @@ Name              DSLI Description                                  Info
 URI::
 ::Attr            ampO Stores attributes in the URI name space      LWWWP
 ::Escape          Rmpf General URI escaping/unescaping functions    LWWWP
+::Find            adpf Find URIs in plain text                      MSCHWERN
 ::URL             RmpO Uniform Resource Locator objects             LWWWP
 
 CGI::
@@ -2201,6 +2223,7 @@ HTML::
 ::Stream          RdpO HTML output stream                           ERYQ
 ::Subtext         adpO Text substitutions on an HTML template       KAELIN
 ::Table           bnpO Write HTML tables via spreadsheet metaphor   STLACY
+::TableExtract    adpf Flexible HTML table extraction               MSISK
 ::TableLayout     bdpO an extensible OO layout manager              SFARRELL
 ::Template        RmpO A simple templating system allow Perl to con SAMTREGAR
 ::TokeParser      RmpO  Alternative HTML::Parser interface          LWWWP
@@ -2376,6 +2399,7 @@ AppleII::
 
 Archive::
 ::Tar             adpO Read, write and manipulate tar files         CDYBED
+::Zip             adpO Provides an interface to ZIP archive files   NEDKONZ
 
 _______________________________________________________________________
 
@@ -2628,6 +2652,7 @@ Chemistry::
 
 Finance::
 ::Quote           bdpf Fetch stock prices over the Internet         PJF
+::QuoteHist       bdpO Historical stock quotes from multiple sites  MSISK
 
 Remedy::
 ::AR              adcO Interface to Remedy's Action Request API     RIK
@@ -3148,7 +3173,7 @@ to a CGI script that lets you edit the database entries yourself.
   EBUSBOOM Eric Busboom <ericbusboom@yahoo.com>
   EDLIU    Edward Liu <dhliu@solar.csie.ntu.edu.tw>
   EDMONSON Michael Edmonson <edmonson@poboxes.com>
-  EDPRATOMO Edwin Pratomo <ed.pratomo@computer.org>
+  EDPRATOMO Edwin Pratomo <edwin@satunet.com>
   EESTABROO Eric Estabrooks <eric@urbanrage.com>
   EGROSS   Etienne Grossmann <etienne@isr.isr.ist.utl.pt>
   EHOOD    Earl Hood <ehood@cpan.org>
@@ -3299,7 +3324,7 @@ to a CGI script that lets you edit the database entries yourself.
   JASONK   Jason Kohles <jason@mediabang.com>
   JASONS   Jason E. Stewart <jasons@cs.unm.edu>
   JBAKER   Jeffrey Baker <jwb@cp.net>
-  JBODNAR  Jason Bodnar <jbodnar@tivoli.com>
+  JBODNAR  Jason Bodnar <jason@shakabuku.org>
   JBRIGGS  James Briggs <james@rf.net>
   JCHRIS   Juergen Christoffel <jc@gmd.de>
   JCMURPHY Jeff Murphy <jcmurphy@smurfland.cit.buffalo.edu>
@@ -3363,7 +3388,7 @@ to a CGI script that lets you edit the database entries yourself.
   JOHNH    John Heidemann <johnh@isi.edu>
   JOHNL    Jonathan Leffler <j.leffler@acm.org>
   JONAS    Jonas Liljegren <jonas@paranormal.o.se>
-  JONB     Jonathan Bailey <jonb@flashbase.com>
+  JONB     Jonathan Bailey <jonb@cs.stanford.edu>
   JONG     Jong Park <jong@mrc-lmb.cam.ac.uk>
   JONJAY   Jon Brandon <jon@powells.com>
   JONO     Jon Orwant <orwant@media.mit.edu>
@@ -3557,6 +3582,7 @@ to a CGI script that lets you edit the database entries yourself.
   MRKAE    Mark R. Kaehny <kaehny@execpc.com>
   MROGASKI Mark Rogaski <wendigo@pobox.com>
   MSCHILLI Michael Schilli <michael@perlmeister.com>
+  MSCHLUE  Michael Schlüter <>
   MSCHWARTZ Martin Schwartz <schwartz@cs.tu-berlin.de>
   MSCHWERN Michael G Schwern <schwern@pobox.com>
   MSCROGGIN Monty Scroggins <Monty.Scroggins@wcom.com>
@@ -3597,6 +3623,7 @@ to a CGI script that lets you edit the database entries yourself.
   NVPAT    Nathan V. Patwardhan <nvp@ora.com>
   NWALSH   Norman Walsh <norm@berkshire.net>
   NWCLARK  Nicholas Clark <nick@talking.bollo.cx>
+  NWIGER   Nathan Wiger <nate@wiger.org>
   NWINT    Neil Winton <winton_neil@jpmorgan.com>
   NWRIGHT  Nigel Wright <nwright@hmc.edu>
   OCROW    Owen Crow <ocrow@crl.com>
