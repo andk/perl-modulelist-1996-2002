@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.51 $Date: 1999/02/05 08:18:21 $
+The Perl 5 Module List       Revision: 2.51 $Date: 1999/02/05 20:31:41 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -66,8 +66,10 @@ Part 5 - Who's Who and What's Where
 2)   Perl Frequently Asked Questions (FAQ) Files
 3)   Other Perl Archive Sites
 
-Key: '+' indicates a new section or item,
-     '!' indicates a changed section or item (typically new modules).
+Key:
+
+ '+' indicates a recently added section or item,
+ '!' indicates a recently changed section or item (typically new modules).
 
 
 ======================================================================
@@ -684,7 +686,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.109 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.110 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -2146,7 +2148,7 @@ Image::
 ::Magick       RdcO  Read, query, transform, and write images     JCRISTY
 ::Size         Rdpf  Measure size of images in common formats     RJRAY
 
-Chart
+Chart::
 ::Base         RdpO  Business chart widget collection             NINJAZ
 ::GnuPlot      RdpO  Access to gnuplot library                    NPESKETT
 ::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTON
@@ -3209,6 +3211,7 @@ The FAQ is available on all CPAN sites in the directory doc/FAQs
 server where you can find all posted FAQs:
   ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/
   ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
+
 RTFM mirror sites:
 
 North America:
