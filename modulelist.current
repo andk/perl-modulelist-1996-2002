@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.49 $Date: 1998/07/14 07:26:13 $
+The Perl 5 Module List       Revision: 2.49 $Date: 1998/07/14 07:26:23 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -105,6 +105,8 @@ currently registered CPAN sites:
             ftp://ftp.is.co.za/programming/perl/CPAN/
             ftp://ftpza.co.za/pub/mirrors/cpan/
     Asia
+        Armenia
+            ftp://sunsite.aua.am/pub/CPAN/
         China
             ftp://freesoft.cei.gov.cn/pub/languages/perl/CPAN/
         Hong Kong
@@ -121,17 +123,18 @@ currently registered CPAN sites:
             ftp://ftp.bora.net/pub/CPAN/
             ftp://ftp.nuri.net/pub/CPAN/
         Taiwan
-            ftp://dongpo.math.ncu.edu.tw/perl/CPAN/
             ftp://ftp.wownet.net/pub2/PERL/
         Thailand
-            ftp://ftp.riubon.ac.th/pub/mirrors/perl/CPAN/
+            ftp://ftp.cs.riubon.ac.th/pub/mirrors/CPAN/
+            ftp://ftp.nectec.or.th/pub/mirrors/CPAN/
     Australasia
         Australia
             ftp://cpan.topend.com.au/pub/CPAN/
-            ftp://ftp.motd.com/pub/CPAN/
-            ftp://ftp.netinfo.com.au/pub/perl/CPAN/
+            ftp://ftp.sage-au.org.au/pub/compilers/perl/CPAN/
+            ftp://mirror.aarnet.edu.au/pub/perl/CPAN/
         New Zealand
-            ftp://ftp.tekotago.ac.nz/pub/perl/CPAN/
+            ftp://ftp.auckland.ac.nz/pub/perl/CPAN/
+            ftp://sunsite.net.nz/pub/languages/perl/CPAN/
     Central America
         Costa Rica
             ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/
@@ -140,6 +143,8 @@ currently registered CPAN sites:
             ftp://ftp.tuwien.ac.at/pub/languages/perl/CPAN/
         Belgium
             ftp://ftp.kulnet.kuleuven.ac.be/pub/mirror/CPAN/
+        Croatia
+            ftp://ftp.linux.hr/pub/CPAN/
         Czech Republic
             ftp://ftp.fi.muni.cz/pub/perl/
             ftp://sunsite.mff.cuni.cz/Languages/Perl/CPAN/
@@ -152,13 +157,15 @@ currently registered CPAN sites:
         France
             ftp://ftp.lip6.fr/pub/perl/CPAN/
             ftp://ftp.oleane.net/pub/mirrors/CPAN/
-            ftp://ftp.pasteur.fr/pub/computing/unix/perl/CPAN/
+            ftp://ftp.pasteur.fr/pub/computing/CPAN/
         Germany
+            ftp://ftp.archive.de.uu.net/pub/CPAN/
             ftp://ftp.gmd.de/packages/CPAN/
+            ftp://ftp.gwdg.de/pub/languages/perl/CPAN/
             ftp://ftp.leo.org/pub/comp/programming/languages/script/perl/CPAN/
             ftp://ftp.mpi-sb.mpg.de/pub/perl/CPAN/
             ftp://ftp.rz.ruhr-uni-bochum.de/pub/CPAN/
-            ftp://ftp.uni-erlangen.de/pub/source/Perl/CPAN/
+            ftp://ftp.uni-erlangen.de/pub/source/CPAN/
             ftp://ftp.uni-hamburg.de/pub/soft/lang/perl/CPAN/
         Greece
             ftp://ftp.ntua.gr/pub/lang/perl/
@@ -167,44 +174,51 @@ currently registered CPAN sites:
         Ireland
             ftp://sunsite.compapp.dcu.ie/pub/perl/
         Italy
-            ftp://cis.utovrm.it/CPAN/
+            ftp://cis.uniRoma2.it/CPAN/
+            ftp://ftp.flashnet.it/pub/CPAN/
+        Netherlands
+            ftp://ftp.cs.ruu.nl/pub/PERL/CPAN/
+            ftp://ftp.EU.net/packages/cpan/
         Norway
             ftp://ftp.uit.no/pub/languages/perl/cpan/
             ftp://sunsite.uio.no/pub/languages/perl/CPAN/
         Poland
+            ftp://ftp.man.szczecin.pl/pub/perl/CPAN/
+            ftp://ftp.man.torun.pl/pub/CPAN/
             ftp://ftp.pk.edu.pl/pub/lang/perl/CPAN/
             ftp://sunsite.icm.edu.pl/pub/CPAN/
         Portugal
             ftp://ftp.ci.uminho.pt/pub/lang/perl/
-            ftp://ftp.telepac.pt/pub/CPAN/
+            ftp://ftp.ua.pt/pub/CPAN/
         Romania
             ftp://ftp.dntis.ro/pub/mirrors/perl-cpan/
             ftp://ftp.dnttm.ro/pub/CPAN/
         Russia
+            ftp://cpan.npi.msu.su/CPAN/
             ftp://ftp.sai.msu.su/pub/lang/perl/CPAN/
+        Slovakia
+            ftp://ftp.entry.sk/pub/languages/perl/CPAN/
         Slovenia
             ftp://ftp.arnes.si/software/perl/CPAN/
         Spain
-            ftp://ftp.etse.urv.es/pub/mirror/perl/
+            ftp://ftp.etse.urv.es/pub/perl/
             ftp://ftp.rediris.es/mirror/CPAN/
         Sweden
             ftp://ftp.sunet.se/pub/lang/perl/CPAN/
         Switzerland
             ftp://sunsite.cnlab-switch.ch/mirror/CPAN/
-        the Netherlands
-            ftp://ftp.cs.ruu.nl/pub/PERL/CPAN/
-            ftp://ftp.EU.net/packages/cpan/
-        UK
+        United Kingdom
             ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/
             ftp://ftp.flirble.org/pub/languages/perl/CPAN/
+            ftp://ftp.plig.org/pub/CPAN/
             ftp://sunsite.doc.ic.ac.uk/packages/CPAN/
             ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/
     North America
         Canada
-            ftp://enterprise.ic.gc.ca/pub/perl/CPAN/
+            ftp://ftp.crc.ca/pub/packages/perl/CPAN/
             ftp://ftp.utilis.com/public/CPAN/
             ftp://theory.uwinnipeg.ca/pub/CPAN/
-        USA
+        United States
             ftp://cpan.if.usp.br/pub/mirror/CPAN/
             ftp://ftp.ccs.neu.edu/net/mirrors/ftp.funet.fi/pub/languages/perl/CPAN/
             ftp://ftp.cdrom.com/pub/perl/CPAN/
@@ -220,7 +234,7 @@ currently registered CPAN sites:
             ftp://ftp.rge.com/pub/languages/perl/
             ftp://ftp.sedl.org/pub/mirrors/CPAN/
             ftp://ftp.spu.edu/pub/CPAN/
-            ftp://ftp.sterling.com/CPAN/
+            ftp://ftp.uwsg.indiana.edu/pub/perl/CPAN/
             ftp://uiarchive.uiuc.edu/pub/lang/perl/CPAN/
     South America
         Brazil
@@ -665,7 +679,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.95 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.96 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
