@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.39 $Date: 1997/03/11 19:37:59 $
+The Perl 5 Module List       Revision: 2.39 $Date: 1997/03/13 10:43:49 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -601,7 +601,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.63 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.64 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1496,7 +1496,6 @@ DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
 MD5            RdcO  MD5 message digest algorithm                 NWINT
 SHA            adcO  NIST SHA message digest algorithm            UWEH
-Kerberos       i     Kerberos IV authentication                   MICB
 GSS            adcO  Generic Security Services API (RFC 2078)     MSHLD !
 
 Crypt::
@@ -1504,8 +1503,8 @@ Crypt::
 ::IDEA         a     International Data Encryption Algorithm      GARY
 ::PRSG         a     160 bit LFSR for pseudo random sequences     GARY
 
-Auth::
-::Kerberos     cdcO  Interface to Kerberos API                    DOUGM
+Authen::
+::Krb5         cdcO  Interface to Kerberos API                    DOUGM
 
 
 _______________________________________________________________________
