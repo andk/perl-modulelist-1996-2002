@@ -1,6 +1,7 @@
-The Perl 5 Module List       Maintained by Tim Bunce <Tim.Bunce@ig.co.uk>
-======================       $Revision: 2.22 $$Date: 1996/04/09 17:54:53 $
+The Perl 5 Module List       $Revision: 2.23 $$Date: 1996/04/23 06:10:21 $
+======================
 
+Maintained by Tim Bunce and Andreas Koenig <modules@franz.ww.tu-berlin.de>
 
 Contents
 
@@ -8,7 +9,7 @@ Contents
      Where Are The Modules Kept?
      Playing Your Part
      How To Get a More Recent Copy of the List
-     Editorial Information and Copyright
+   ! Editorial Information and Copyright
 
 Part 1 - Modules: Creation, Use and Abuse
 
@@ -22,9 +23,9 @@ Part 2 - The Perl 5 Module List
 1)   Module Listing Format
 2)   Perl Core Modules, Perl Language Extensions and Documentation Tools 
 3)   Development Support
-4)   Operating System Interfaces
-5)   Networking, Device Control (modems) and InterProcess Communication
-6) ! Data Types and Data Type Utilities
+4) ! Operating System Interfaces
+5) ! Networking, Device Control (modems) and InterProcess Communication
+6)   Data Types and Data Type Utilities
 7)   Database Interfaces
 8)   User Interfaces
 9)   Interfaces to or Emulations of Other Programming Languages
@@ -39,7 +40,7 @@ Part 2 - The Perl 5 Module List
 18)  Images, Pixmap and Bitmap Manipulation, Drawing and Graphing
 19)  Mail and Usenet News
 20)  Control Flow Utilities (callbacks and exceptions etc)
-21)  File Handle and Input/Output Stream Utilities
+21)! File Handle and Input/Output Stream Utilities
 22)  Microsoft Windows Modules
 23)  Miscellaneous Modules
 
@@ -53,8 +54,7 @@ Part 3 - Big Projects Registry
 6)   Expand Tied Array Interface
 7)   Tied File Handles
 8)   Extend Yacc To Write XS Code
-9)   Updatable Module List via WWW Forms
-10)  Approximate Matching Regular Expressions
+9)   Approximate Matching Regular Expressions
 
 Part 4 - Who's Who and What's Where
 
@@ -93,9 +93,10 @@ including how to name them.
 
 Where Are The Modules Kept?
 
-A Comprehensive Perl Archive Network (CPAN) of mirrored FTP sites is
-being developed. Within the CPAN scheme the modules described in this
-list can be found in a modules/ directory below the CPAN root directory.
+Most, but not all, of the modules can be found within CPAN, the
+Comprehensive Perl Archive Network of mirrored FTP sites. Within the
+CPAN scheme the modules described in this list can be found in a
+modules/ directory below the CPAN root directory.
 
 Try one of these places first:
 
@@ -109,16 +110,20 @@ Try one of these places first:
             ftp://dongpo.math.ncu.edu.tw/perl/CPAN/
     Australasia
         Australia
-            ftp://coombs.anu.edu.au/pub/perl/
+            ftp://coombs.anu.edu.au/pub/perl/CPAN/
             ftp://ftp.mame.mu.oz.au/pub/perl/CPAN/
         New Zealand
             ftp://ftp.tekotago.ac.nz/pub/perl/CPAN/
     Canada
         British Columbia
-            ftp://mango.pinc.com/pub/perl/CPAN/
+            ftp://mango.pinc.com/pub/mirrors/CPAN/
     Europe
+        Austria
+            ftp://ftp.tuwien.ac.at/pub/languages/perl/CPAN/
         Czech Republic
-            ftp://sunsite.mff.cuni.cz/Languages/Perl/CPAN/
+            ftp://sunsite.mff.cuni.cz/MIRRORS/ftp.funet.fi/pub/languages/perl/CPAN/
+        Denmark
+            ftp://sunsite.auc.dk/pub/languages/perl/CPAN/
         Finland
             ftp://ftp.funet.fi/pub/languages/perl/CPAN/
         France
@@ -127,12 +132,19 @@ Try one of these places first:
         Germany
             ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/
             ftp://ftp.rz.ruhr-uni-bochum.de/pub/CPAN/
+        Greece
+            ftp://ftp.ntua.gr/pub/lang/perl/
+        Hungary
+            ftp://ftp.kfki.hu/pub/packages/perl/
         Poland
             ftp://ftp.pk.edu.pl/pub/lang/perl/CPAN/
+            ftp://sunsite.icm.edu.pl/pub/CPAN/
         Portugal
             ftp://ftp.ci.uminho.pt/pub/lang/perl/
         Slovenia
             ftp://ftp.arnes.si/software/perl/CPAN/
+        Spain
+            ftp://ftp.rediris.es/mirror/CPAN/
         Sweden
             ftp://ftp.sunet.se/pub/lang/perl/CPAN/
         Switzerland
@@ -142,9 +154,12 @@ Try one of these places first:
         UK
             ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/
             ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/
-    USA
-        Florida
+    North America
+        USA
             ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
+    USA
+        California
+            ftp://ftp.cdrom.com/pub/perl/CPAN/
         Illinois
             ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
         Massachusetts
@@ -161,12 +176,13 @@ identical at all these sites since they are all automatically
 maintained mirrors of the master CPAN site. Please use which ever
 site is 'nearest' you.
 
-If you can't find what you want, or wish to check that what you've
-found is the latest version, you can contact the person associated with
-the module.  Contact details are given at the start of Part 4.
+NOTE: If you can't find what you want, or wish to check that what
+you've found is the latest version, you should contact the person
+associated with the module (and not the maintainers of the archives or
+this list).  Contact details are given at the start of Part 4.
 
-I don't record per-module archive addresses because it would take more
-time and effort than I can spare (this list would also be much bigger).
+We don't record per-module archive addresses because it would take more
+time and effort than we can spare (this list would also be much bigger).
 Hopefully all Perl modules will find their way into the CPAN in time.
 
 You should find a webified version of this modulelist a few days after
@@ -185,11 +201,12 @@ modules could be extracted.  There may be many people who would find
 your work very useful.  Please play you part and contribute to the Perl
 community where you can. [ end of sermon :-]
 
-Help save the world! Please submit new entries and updates to me so I
-can keep this list up-to-date. I would prefer changes to be submitted
+Help save the world! Please submit new entries and updates to us so we
+can keep this list up-to-date. We would prefer changes to be submitted
 as context diff's (or just plain diff if your diff does not have a
-context diff option) by email to Tim.Bunce@ig.co.uk. No tabs please.
-Don't forget to upload your module to an archive site. See section 2.9.
+context diff option) by email to modules@franz.ww.tu-berlin.de.
+No tabs please.  Don't forget to upload your module to the PAUSE site
+for forwarding on to CPAN. See section 2.9.
 
 
 How To Get a More Recent Copy of the List
@@ -208,18 +225,30 @@ You should be able to get a copy from one of these places:
 
 Editorial Information and Copyright
 
-This document is Copyright (c) 1996 by Tim Bunce. All rights reserved.
-Permission to distribute this document, in full or part, via electronic
-means (emailed, posted or archived) or printed copy is granted
-providing that no charges are involved, reasonable attempt is made to
-use the most current version, and all credits and copyright notices are
-retained.  Requests for other distribution rights, including
-incorporation in commercial products, such as books, magazine articles,
-or CD-ROMs should be made to Tim.Bunce@ig.co.uk.
+This document is Copyright (c) 1996 by Tim Bunce and Andreas Koenig.
+All rights reserved.  Permission to distribute this document, in full
+or part, via electronic means (emailed, posted or archived) or printed
+copy is granted providing that no charges are involved, reasonable
+attempt is made to use the most current version, and all credits and
+copyright notices are retained.  Requests for other distribution
+rights, including incorporation in commercial products, such as books,
+magazine articles, or CD-ROMs should be made to Tim.Bunce@ig.co.uk
+and Andreas.Koenig@mind.de.
 
 Disclaimer: The content of this document is simply a collection of
 information gathered from many sources with little or no checking.
 There are NO warranties with regard to this information or its use.
+
+A little background information... I (Tim) created the Module List in
+August 1994 and maintained it manually till April 1996. By that time
+Andreas had implemented the Perl Authors Upload Server (PAUSE) and it
+was happily feeding modules through to the CPAN archive sites (see
+http://franz.ww.tu-berlin.de/modulelist for details). Since PAUSE held
+a database of module information which could be maintained by module
+authors it made sense for the module listing part of the Module List to
+be built from that database. In April 1996 Andreas took over the
+automatic posting of the Module List and I now maintain the other parts
+of the text. We plan to add value to the automation over time.
 
 
 
@@ -432,16 +461,21 @@ exist.
    This name should be as descriptive, accurate and complete as
    possible.  Avoid any risk of ambiguity. Always try to use two or
    more whole words.  Generally the name should reflect what is special
-   about what the module does rather than how it does it.  Please use
-   nested module names to informally group or categorise a module.
-   A module should have a very good reason not to have a nested name.
-   Module names should begin with a capital letter. Lowercase names are
-   reserved for special modules such as pragmas (e.g., lib and strict).
+   about what the module does rather than how it does it.
 
    Having 57 modules all called Sort will not make life easy for anyone
    (though having 23 called Sort::Quick is only marginally better :-).
    Imagine someone trying to install your module alongside many others.
    If in any doubt ask for suggestions in comp.lang.perl.misc.
+
+   Please use a nested module name to informally group or categorise
+   a module, e.g., placing a sorting module into a Sort:: category.
+   A module should have a very good reason not to have a nested name.
+   Please avoid using more than one level of nesting for module names
+   (packages or classes within modules can, of course, use any number).
+
+   Module names should begin with a capital letter. Lowercase names are
+   reserved for special modules such as pragmas (e.g., lib and strict).
 
    Note that module names are not related to class hierarchies.
    A module name Foo::Bar does not in any way imply that Foo::Bar
@@ -470,8 +504,9 @@ exist.
    you picked the most appropriate name? Do you have any questions?
 
    The best way to know for sure, and pick up many helpful suggestions,
-   is to ask someone who knows. Comp.lang.perl.misc is read by just about
-   all the people who develop modules and it's the best place to ask.
+   is to ask someone who knows. The comp.lang.perl.misc and
+   comp.lang.perl.modules Usenet newsgroups are read by just about all
+   the people who develop modules and they are the best place to ask.
 
    All you need to do is post a short summary of the module, its
    purpose and interfaces. A few lines on each of the main methods is
@@ -532,7 +567,7 @@ exist.
    variable called $VERSION.  This should be a valid floating point 
    number with at least two digits after the decimal (ie hundredths,
    e.g, $VERSION = "0.01").  Don't use a "1.3.2" style version.
-   See Exporter.pm in Perl5.001m or later for details.
+   See Exporter.pm for details.
 
    It may be handy to add a function or method to retrieve the number.
    Use the number in announcements and archive file names when
@@ -640,12 +675,10 @@ exist.
 4.4 Take the opportunity to reconsider and redesign the interfaces.
 
 4.5 In some cases the 'application' can then be reduced to a small
-    fragment of code built on top of the reusable modules. In these cases
-    the application could invoked as:
+    fragment of code built on top of the reusable modules. In these
+    cases the application could invoked as:
 
-         perl -e 'use Module::Name; method(@ARGV)' ...
-    or   
-         perl -mModule::Name ...    (in perl5.002?)
+         perl -MModule::Name -e 'func(@ARGV)'
 
 
 =======================================================================
@@ -660,11 +693,11 @@ section deals with a particular topic and lists all known modules
 related to that topic.  Modules are only listed in one section so
 check all sections that might related to your particular needs.
 
-All the information corresponds to the latest updates I have received.
-I don't record the version number or release dates of the listed
-Modules. Nor do I record the locations of these Modules. Consult the
-contact, try the usual perl archive sites or ask in comp.lang.perl.misc.
-Please do *not* ask me directly, I simply don't have the time. Sorry.
+All the information corresponds to the latest updates we have received.
+We don't record the version number or release dates of the listed
+Modules. Nor do we record the locations of these Modules. Consult the
+contact, try the usual perl CPAN sites or ask in comp.lang.perl.misc.
+Please do *not* ask us directly, we simply don't have the time. Sorry.
 
 
 1) Module Listing Format
@@ -682,7 +715,7 @@ Fcntl          Sdcf  Defines fcntl() constants (see File::Lock)   JHI
 
 Where the 'DSLI' characters have the following meanings:
 
-  D - Development Stage  (Note: *NO IMPLIED TIMESCALES*!):
+  D - Development Stage  (Note: *NO IMPLIED TIMESCALES*):
     i   - Idea, listed to gain consensus or as a placeholder
     c   - under construction but pre-alpha (not yet released)
     a/b - Alpha/Beta testing
@@ -723,7 +756,7 @@ Ideas For Adoption
 
 Modules listed as in the 'i' Development Stage with no contact
 reference are ideas without an owner. Feel free to 'adopt' these but
-please let me know so that I can update the list and thus inform anyone
+please let me know so that we can update the list and thus inform anyone
 else who might be interested. Adoption simply means that you either
 hope to implement the module one day or would like to cooperate with
 anyone else who might be interested in implementing it.
@@ -765,6 +798,7 @@ Carp           Supf  Throw exceptions outside current package
 Config         Supf  Stores details of perl build configuration
 English        Supf  Defines English names for special variables
 Symbol         SupO  Create 'anonymous' symbol (typeglobs) refs   CHIPS
+Opcode         adpf  Disable named opcodes when compiling code    TIMB
 
 Perl Pragmatic Modules
 
@@ -776,6 +810,7 @@ vars           Supf  predeclare variable names
 lib            Supf  Simple way to add/delete directories in @INC
 sigtrap        Supf  For trapping an abort and giving a traceback
 diagnostics    Sdpf  For reporting perl diagnostics in full form  TOMC
+overload       SdpO  Overload perl operators for new data types   ILYAZ
 
 Perl Language Extensions
 
@@ -848,6 +883,8 @@ POSIX          SupO  An interface to most (all?) of POSIX.1
 Fcntl          Sdcf  Defines fcntl() constants (see File::Lock)   JHI
 Ioctl          cdcf  Defines ioctl() constants                    KJALB
 Errno          i     Constants from <errno.h> EACCES, ENOENT etc  JHI
+Env            Supf  Alias environment variables as perl vars
+Shell          Supf  Run shell commands transparently within perl
 
 BSD::
 ::HostIdent    i     s/gethostname(), s/gethostid()               JHI
@@ -857,11 +894,11 @@ Sys::
 ::Hostname     Supf  Implements a portable hostname function
 ::Syslog       Supf  Provides same functionality as BSD syslog
 ::AlarmCall    Rupf  Timeout on any sub. Allows nested alarms     JACKS
-::Fork         Rdpf  Simple lwall-style fork wrapper              MUIR
 ::Quota        adcf  Disk quota system functions, local & remote  TOMZO
 
 Proc::
 ::times        adpf  By-name interface to process times function  TOMC
+::Forkfunc     Rdpf  Simple lwall-style fork wrapper              MUIR  !
 
 Platform Specific Modules
 
@@ -901,7 +938,7 @@ Net::
 ::Domain       adpf  Try to determine TCP domain name of system   GBARR
 ::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
 ::IRC          i     Internet Relay Chat interface                MRG
-::Telnet       i                                                  GBARR
+::Telnet       cdpO  Inheritable Telnet socket object protocol    GBARR +
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
 ::NIS          adcO  Interface to Sun's NIS                       RIK
 ::NISPlus      adcO  Interface to Sun's NIS+                      RIK
@@ -912,9 +949,10 @@ Net::
 ::Inet         adcO  Internet (IP) socket usage                   SPIDB
 ::TCP          adcO  TCP-specific socket usage                    SPIDB
 ::UDP          cdcO  UDP-specific socket usage                    SPIDB
+::Dnet         cdcO  DECnet-specific socket usage                 SPIDB
 ::FTP          adpf  Interface to File Transfer Protocol          GBARR
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
-::Dnet         cdcO  DECnet-specific socket usage                 SPIDB
+::Cmd          cdpO  For command based protocols (FTP, SMTP etc)  GBARR +
 
 IPC::
 ::Open2        Supf  Open a process for both reading and writing
@@ -947,12 +985,12 @@ Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Math::
 ::BigInt       SupO  Arbitrary size integer math package          MARKB
-::BigFloat     ?
-::BigRat       ?
-::Complex      adpO  Complex number data type                     DNAD
+::BigFloat     SupO  Arbitrary size floating point math package
+::BigRat       ?     Arbitrary size rational numbers (fractions)
+::Complex      SdpO  Complex number data type                     DNAD
 ::IEEE         i     Interface to ANSI/IEEE Std 754-1985 funcs
 ::Pari         adcf  Interface to the powerful PARI library       ILYAZ
-::Mathematica  adcO  Interface to the powerful Mathematica system ULPFR
+::ematica      adcO  Interface to the powerful Mathematica system ULPFR
 ::Matrix       adpO  Matrix data type (transpose, multiply etc)   ULPFR
 ::Approx       adpO  Approximate x,y-values by a function         ULPFR
 ::LinearProg   idp   Linear programming utilities                 JONO
@@ -973,7 +1011,7 @@ Array::
 ::Vec          idp   Implement array using vec()                  LWALL
 ::Substr       idp   Implement array using substr()               LWALL
 ::Virtual      idp   Implement array using a file                 LWALL
-::PrintCols    adpf  Print elements in vertically sorted columns  AKSTE +
+::PrintCols    adpf  Print elements in vertically sorted columns  AKSTE
 
 Set::
 ::Scalar       adpO  Set of scalars (inc references)              JHI
@@ -994,7 +1032,7 @@ Time::
 ::Local        Supf  Implements timelocal() and timegm()
 ::HiRes        i     High resolution timers and time-of-day       JHI
 ::CTime        Rdpf  Format Times ala ctime(3) with many formats  MUIR
-::parseDate    Rdpf  Parses many forms of dates and times         MUIR
+::ParseDate    Rdpf  Parses many forms of dates and times         MUIR  !
 ::JulianDay    Rdpf  Converts y/m/d into seconds                  MUIR
 ::Timezone     Rdpf  Figures out timezone offsets                 MUIR
 ::DaysInMonth  Rdpf  Returns the number of days in a month        MUIR
@@ -1003,8 +1041,9 @@ Tie::
 ::Hash         Supr  Base class for implementing tied hashes
 ::Scalar       Supr  Base class for implementing tied scalars
 ::Array        i
-::SubstrHash   RdpO  Very compact hash stored in a string         LWALL
+::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
 ::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
+::Cache        adpO  In memory size limited LRU cache             MIKEH
 ::Mem          adcO  Bind perl variables to memory addresses      PMQS
 ::File         adpr  Tie hash to files in a directory             AMW
 ::IxHash       RdpO  Indexed hash (ordered array/hash composite)  GSAR
@@ -1094,7 +1133,7 @@ Term::
 ::Cap          Supf  Basic termcap: Tgetent, Tputs, Tgoto
 ::Screen       RdpO  Basic screen + input class (uses Term::Cap)  MRKAE
 ::Info         adpf  Terminfo interface (currently just Tput)     KJALB
-::ReadLine     adcf  GNU Readline, history and completion         ILYAZ
+::ReadLine     Sdcf  GNU Readline, history and completion         ILYAZ
 ::Control      idpf  Basic curses-type screen controls (gotxy)    KJALB
 ::Gnuplot      adcf  Draw vector graphics on terminals etc        ILYAZ
 ::Query        Rdpf  Intelligent user prompt/response driver      AKSTE
@@ -1188,11 +1227,12 @@ Text::
 ::ParseWords   Supf  Parse strings containing shell-style quoting
 ::Soundex      Supf  Convert a string to a soundex value
 ::TeX          cdpO  TeX typesetting language input parser        ILYAZ
+::Bib          RdpO  Parse refer(1)-style bibliography files      ERYQ  !
 ::Stem         bdpf  Porter algorithm for stemming English words  IANPX
 ::Tabs         Sdpf  Expand and contract tabs ala expand(1)       MUIR
-::Wrap         Rdpf  Wraps lines to make simple paragraphs        MUIR
+::Wrap         Sdpf  Wraps lines to make simple paragraphs        MUIR
 ::Template     bdpO  Expand template text with embedded perl      MJD
-::German       adpf  German language stemming                     ULPFR +
+::German       adpf  German language stemming                     ULPFR
 
 Search::
 ::Dict         Supf  Search a dictionary ordered text file
@@ -1256,7 +1296,7 @@ User::
 PGP            adpO  Simple interface to PGP subprocess via pipes GEHIC
 DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
-MD5            RdcO  MD5 message digest algorithm                 NWINT !
+MD5            RdcO  MD5 message digest algorithm                 NWINT
 SHA            adcO  NIST SHA message digest algorithm            UWEH
 Kerberos       adcf  Kerberos IV authentication                   MICB
 GSS            i     Generic Security Services API (RFC 1508/9)   MSHLD
@@ -1440,7 +1480,17 @@ _______________________________________________________________________
 
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
+IO::
+::Handle       cdpO  Base class for input/output handles          GBARR +
+::Pipe         cdpO  Methods for pipe handles                     GBARR +
+::Socket       cdpO  Methods for socket input/output handles      GBARR +
+::Seekable     cdpO  Methods for seekable input/output handles    GBARR +
+::File         cdpO  Methods for disk file based i/o handles      GBARR +
+::Pty          cdpO  Methods for pseudo-terminal allocation etc   PEASE +
+::STREAMS      i cO  Methods for System V style STREAMS control         +
+
 FileHandle     SupO  File handle objects and methods
+FileCache      Supf  Keep more files open than the system permits       +
 DirHandle      SupO  Directory handle objects and methods         CHIPS
 SelectSaver    SupO  Save and restore selected file handle        CHIPS
 Selectable     cdpO  Event-driven I/O streams                     MUIR
@@ -1484,7 +1534,7 @@ SDDF           cd+O  Interface to Pablo Self Defining Data Format FIS
 IXO            i     IXO alphanumeric pager protocol
 Roman          Rdpf  Convert Roman numbers to and from Arabic     OZAWA
 Gann           ad+O  Generic simulation of neural networks        LUKKA
-CreditCard     i     Credit card number check digit test          
+CreditCard     i     Credit card number check digit test
 
 Bio::
 ::*            i     Utilities for molecular biology              SEB
@@ -1515,7 +1565,7 @@ These are ideas for people with very strong skills and lots of time.
 Please talk, and listen, to Larry _before_ starting to do any work on
 projects which relate to the core implementation of Perl.
 
-Ask not when these will be implemented but ask how you can help
+Ask not when these will be implemented, ask instead how you can help
 implement them.
 
 
@@ -1530,15 +1580,12 @@ Contacts: LWALL P5P
 3) Perl Compiler
 
 Part of the design of Perl 5 was to make it possible to write a
-compiler for it. It's a possible master's thesis topic.
+C compiler for it.  Related to this is the ability to save and load a
+'flat' byte-code representation of the compiled perl code. It would be
+translated back into Perl's own internal form for speed.
 
-Related to this is the ability to save and load a 'flat' byte-code
-representation of the compiled perl code. It would be translated back
-into Perl's own internal form for speed.
-
-Note that three different prototype Tcl compilers have been announced
-in the comp.lang.tcl group! Anyone interested in this should also take
-a good look at the Java language from Sun http://java.sun.com/.
+Malcolm Beattie <mbeattie@sable.ox.ac.uk> is currently developing a
+perl compiler with backends for C and byte-code.
 
 Contacts: MICB LWALL P5P
 
@@ -1550,6 +1597,9 @@ independant perl interpreter structures and simple timeslicing of
 'tasks' within a single perl interpreter. True threads requires
 operating system support or an external thread library, simple
 timeslicing does not (and should be portable to all platforms).
+
+Malcolm Beattie <mbeattie@sable.ox.ac.uk> has done extensive work
+in this area.
 
 Contacts: LWALL MICB P5P
 
@@ -1604,17 +1654,7 @@ out an OO .xs and .pm implementing a parser.
 Contacts: NI-S P5P LWALL
 
 
-9) Updatable Module List via WWW Forms
-
-The Module List should be built from some form of database. The
-database should be updatable using WWW forms by the owners of the
-Modules. The database should store extra information such as links to
-the latest version.  Andreas Koenig (ANDK) is working on this.
-
-Contacts: ANDK TIMB
-
-
-10) + Approximate Matching Regular Expressions
+9) + Approximate Matching Regular Expressions
 
 Add support for approximate matching (like the agrep utility).
 
@@ -1647,7 +1687,7 @@ to a CGI script that lets you edit the database entries yourself.
   AMW    Andrew Wilcox <awilcox@world.std.com>
   ANDK   Andreas Koenig <a.koenig@franz.ww.TU-Berlin.DE>
   ANDYD  Andy Dougherty <doughera@lafcol.lafayette.edu>
-  ASHER  Aaron Sherman <asherman@world.std.com>
+  ASHER  Aaron Sherman <ajs@openmarket.com>
   BARTS  Bart Schuller <P.B.Schuller@cuci.nl>
   BBUM   Bill Bumgarner <bbum@friday.com>
   BENLI  Ben Lindstrom <mouring@netnet.net>
@@ -1659,11 +1699,13 @@ to a CGI script that lets you edit the database entries yourself.
          Mail to CGI-perl-REQUEST@webstorm.com with body "subscribe"
   CHIPS  Chip Salzenberg <chs@nando.net>
   CJM    Christopher J. Madsen <ac608@yfn.ysu.edu>
+  DANKOGAI Dan Kogai <dankogai@jms.jeton.or.jp>
   DANMQ  Daniel M. Quinlan <danq@colorado.edu>
+  DAVEROTH Dave Roth <rothd@infowire.com>
   DBIML  The DBI mailing lists: subscribe via http://www.fugue.com/dbi
-         if you can't do that then mail to dbi-REQUEST@fugue.com and ask
-         (the human, Ted Lemon) to subscribe you to one or more of
-         dbi-announce, dbi-users, dbi-dev.
+         if you can't do that then mail to dbi-users-REQUEST@fugue.com
+         and ask (the human, Ted Lemon) to subscribe you to one or more
+         of dbi-announce, dbi-users, dbi-dev.
   DMEGG  David Megginson <dmeggins@aix1.uottawa.ca>
   DMO    Darryl Okahata <darrylo@sr.hp.com>
   DMR    Dean Roehrich <roehrich@cray.com>
@@ -1687,7 +1729,7 @@ to a CGI script that lets you edit the database entries yourself.
   GSM    Joe Marzot <gmarzot@baynetworks.com>
   GSPAF  Gene Spafford <spaf@cs.purdue.edu>
   GUYDX  Guy Decoux <decoux@moulon.inra.fr>
-  IANPX  Ian Phillipps <ian@unipalm.pipex.com>
+! IANPX  Ian Phillipps <ian@dial.pipex.com>
   ILYAZ  Ilya Zakharevich <ilya@math.ohio-state.edu>
   JACKS  Jack Shirazi <JackS@GemStone.com>
   JAMCC  Jamie McCarthy <jamie@voyager.net>
@@ -1695,20 +1737,23 @@ to a CGI script that lets you edit the database entries yourself.
   JHI    Jarkko Hietaniemi <Jarkko.Hietaniemi@iki.fi>
   JKAST  Jason Kastner <jkastner@oboe.calpoly.edu>
   JKEGL  Jeffrey Kegler <jeffrey@best.com>
+  JLEVAN Jerry LeVan <levan@eagle.eku.edu>
   JONG   Jong Park <jong@mrc-lmb.cam.ac.uk>
   JONO   Jon Orwant <orwant@media.mit.edu>
   JPC    Jan-Pieter Cornet <johnpc@xs4all.nl>
+  JSTOF  John Stoffel <john@wpi.edu>
   JV     Johan Vromans <jvromans@squirrel.nl>
   JWAT   John Watson <jwatson@cnj.digex.net>
   KGB    Karl Glazebrook <kgb@aaoepp.aao.gov.au>
   KJALB  Kenneth Albanowski <kjahds@kjahds.com>
+  KONDO  Yoshiyuki KONDO <cond@lsi-j.co.jp>
   KSB    Simon Berg <karl@it.kth.se>
   LDS    Lincoln D. Stein <lstein@genome.wi.mit.edu>
   LFINI  Luca Fini <lfini@arcetri.astro.it>
   LSTAF  Lennart Staflin <lenst@lysator.liu.se>
   LUKKA  Tuomas J. Lukka <Tuomas.Lukka@Helsinki.FI>
++ LUSOL  Stephen O. Lidie <lusol@Turkey.CC.Lehigh.EDU>
   LWALL  Larry Wall. Author of Perl. Busy man. <lwall@sems.com>
-  LUKKA  Tuomas J. Lukka <Tuomas.Lukka@Helsinki.FI>
   LWWWP  The libwww-perl mailing list
          Mail to libwww-perl-REQUEST@ics.uci.edu with body "subscribe"
   MAK    Martijn Koster <mak@surfski.webcrawler.com>
@@ -1717,12 +1762,12 @@ to a CGI script that lets you edit the database entries yourself.
   MCPL   The MacPerl mailing list
          Mail to mac-perl-REQUEST@iis.ee.ethz.ch with body "subscribe"
   MERGL  Edmund Mergl <mergl@nadia.s.bawue.de>
-+ MERLYN Randal L. Schwartz <merlyn@stonehenge.com>
-  MEWP   Michael Peppler <mpeppler@itf.ch>
+  MERLYN Randal L. Schwartz <merlyn@stonehenge.com>
+  MEWP   Michael Peppler <mpeppler@bix.com>
   MGH    Marc Hedlund <hedlund@best.com>
   MHM    Mike Moran <mhm@austin.ibm.com>
   MICB   Malcolm Beattie <mbeattie@sable.ox.ac.uk>
-  MIKEH  Mark Heins <mikeh@iac.net>
+  MIKEH  Mike Heins <mikeh@iac.net>
   MJD    Mark-Jason Dominus <mjd@plover.com>
   MMML   The MakeMaker mailing list
          Mail to makemaker-REQUEST@franz.ww.tu-berlin.de with body "subscribe"
@@ -1785,6 +1830,7 @@ to a CGI script that lets you edit the database entries yourself.
   WPS    William Setzer <William_Setzer@ncsu.edu>
   WSCOT  Wayne Scott <wscott@ichips.intel.com>
   WYTAN  Wei-Yuen Tan <Wei-Yuen_Tan@hip.com>
+  YASU   Yasushi Saito <yasushi@cs.washington.edu>
   YLU    Luke Y. Lu <ylu@mail.utexas.edu>
   YVESP  Yves Paindaveine <yp@gr.osf.org>
 
