@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 2.64 $$Date: 1999/10/21 20:05:18 $
+The Perl 5 Module List       $Revision: 3.1 $$Date: 1999/10/22 03:45:16 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.141 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.1 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -800,6 +800,7 @@ B               aucO The Perl Compiler                            MICB
 O               aucO Perl Compiler frontends                      MICB
 
 B::
+::Fathom        bdpO Estimate the readability of Perl code        KSTAR
 ::Graph         bdpr Perl Compiler backend to diagram OP trees    SMCCAM
 
 Source Code Filters
@@ -1313,9 +1314,12 @@ Tie::
 ::Dir           adpr Tie hash for reading directories             GBARR
 ::File          adpr Tie hash to files in a directory             AMW
 ::Handle        RdpO Base class for implementing tied filehandles STBEY
+::HashDefaults  i    N/A                                          JDPORTER
 ::IxHash        RdpO Indexed hash (ordered array/hash composite)  GSAR
 ::ListKeyedHash bdpr Use lists to key multi-level hashes          SNOWHARE
 ::Mem           adcO Bind perl variables to memory addresses      PMQS
+::Multidim      i    N/A                                          JDPORTER
+::OffsetArray   i    N/A                                          JDPORTER
 ::Quick         i    Simple way to create ties                    TIMB
 ::RndHash       bdpO choose a random key of a hash in O(1) time   DFAN
 ::SentientHash  cdpr Tracks changes to nested data structures     ANDREWF
@@ -1689,6 +1693,7 @@ Text::
 ::Format        RdpO Advanced paragraph formatting                GABOR
 ::Graphics      RdpO Graphics rendering toolkit with text output  SFARRELL
 ::Invert        cdpO Create/query inv. index of text entities     NNEUL
+::Macros        i    N/A                                          JDPORTER
 ::Metaphone     bdcf A modern soundex. Phonetic encoding of words MSCHWERN
 ::MetaText      bdpO Text processing/markup meta-language         ABW
 ::Morse         cdpf convert text to/from Morse code              JONO
