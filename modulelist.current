@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.34 $Date: 1996/11/04 22:34:09 $
+The Perl 5 Module List       Revision: 2.34 $Date: 1996/12/04 23:56:51 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -102,12 +102,12 @@ currently registered CPAN sites:
         Hong Kong
             ftp://ftp.hkstar.com/pub/CPAN/
         Japan
+            ftp://ftp.jaist.ac.jp/pub/lang/perl/CPAN/
             ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/
         South Korea
             ftp://ftp.nuri.net/pub/CPAN/
         Taiwan
             ftp://dongpo.math.ncu.edu.tw/perl/CPAN/
-            ftp://ftp.wownet.net/pub2/PERL/
     Australasia
         Australia
             ftp://coombs.anu.edu.au/pub/perl/CPAN/
@@ -126,7 +126,6 @@ currently registered CPAN sites:
         Finland
             ftp://ftp.funet.fi/pub/languages/perl/CPAN/
         France
-            ftp://ftp.ibp.fr/pub/perl/CPAN/
             ftp://ftp.pasteur.fr/pub/computing/unix/perl/CPAN/
         Germany
             ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/
@@ -159,6 +158,7 @@ currently registered CPAN sites:
             ftp://ftp.switch.ch/mirror/CPAN/
         the Netherlands
             ftp://ftp.cs.ruu.nl/pub/PERL/CPAN/
+            ftp://ftp.EU.net/packages/cpan/
         UK
             ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/
             ftp://sunsite.doc.ic.ac.uk/packages/CPAN/
@@ -183,7 +183,6 @@ currently registered CPAN sites:
     South America
         Chile
             ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
-
 
 All the files under each of the directories listed above should be
 identical at all these sites since they are all automatically
