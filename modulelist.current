@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.49 $$Date: 2000/05/23 14:20:16 $
+The Perl 5 Module List       $Revision: 3.50 $$Date: 2000/05/25 14:13:46 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.49 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.50 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -920,6 +920,7 @@ Pod::
 ::Man             cdpr converter to man page                        KJALB
 ::MIF             adpO converter to FrameMaker MIF                  JNH
 ::Parser          bdpO Base class for parsing pod syntax            BRADAPP
+::Pdf             bdpf Converter to PDF                             AJFRY
 ::Pod             cdpr converter to canonical pod                   KJALB
 ::RTF             cdpr converter to RTF                             KJALB
 ::Sdf             cdpf converter to SDF                             IANC
@@ -1063,11 +1064,13 @@ Mac::             Macintosh specific modules
 ::Components      bmcO (QuickTime) Component manager                MCPL
 ::Files           bmcO File manager                                 MCPL
 ::Gestalt         bmcO Gestalt manager: Environment enquiries       MCPL
+::Glue            bdpO Control apps with AppleScript terminology    CNANDOR
 ::Memory          bmcO Memory manager                               MCPL
 ::MoreFiles       bmcO Further file management routines             MCPL
 ::OSA             bmcO Open Scripting Architecture                  MCPL
 ::Processes       bmcO Process manager                              MCPL
 ::Resources       bmcO Resource manager                             MCPL
+::Serial          i??? OOP interface to Macintosh serial ports      DIVERDI
 ::Types           bmcO (Un-)Packing of Macintosh specific types     MCPL
 
 Mac::AppleEvents::
@@ -1081,9 +1084,6 @@ Mac::Apps::
 
 Mac::Comm::
 ::OT_PPP          RdpO Control Open Transport PPP / Remote Access   CNANDOR
-
-Mac::
-::Glue            bdpO Control apps with AppleScript terminology    CNANDOR
 
 Mac::OSA::
 ::Simple          Rdph Simple access to Mac::OSA                    CNANDOR
@@ -1294,7 +1294,7 @@ Mon::
 ::SNMP            RdpO Network monitoring suite                     TROCKIJ
 
 Parallel::
-::Pvm             bdcf Interface to the PVM messaging service       EWALKER
+::Pvm             bdcf Interface to the PVM messaging service       DLECONTE
 
 CORBA::
 ::IOP::IOR        adpO Decode, munge, and re-encode CORBA IORs      PHILIPA
@@ -1615,7 +1615,7 @@ DBD::
 ::ODBC            amcO ODBC Driver for DBI                          DBIML
 ::Oracle          amcO Oracle Driver for DBI                        TIMB
 ::QBase           amcO QBase Driver for DBI                         BENLI
-::RAM             ampO DBI interface to in-memory data structures   JZUCKER
+::RAM             bmpO a DBI driver for files and data structures   JZUCKER
 ::Solid           amcO Solid Driver for DBI                         TWENRICH
 ::Sqlflex         RdcO SQLFLEX driver for DBI                       INFOFLEX
 ::Sybase          amcO Sybase Driver for DBI                        MEWP
@@ -1941,6 +1941,7 @@ String::
 ::RexxParse       Rdph Perl implementation of REXX 'parse' command  BLCKSMTH
 ::Scanf           Rdpf Implementation of C sscanf function          JHI
 ::ShellQuote      adpf Quote string for safe passage through shells ROSCH
+::Strip           Rdcf xs Module to remove white-space from strings BPOWERS
 
 Language text related modules
 
@@ -2042,7 +2043,7 @@ Font::
 ::TTF             bdpO TrueType font manipulation module            MHOSKEN
 
 Number::
-::Format          adpO Package for formatting numbers for display   WRW
+::Format          RdpO Package for formatting numbers for display   WRW
 
 Email::
 ::Find            adpf Find RFC 822 email addresses in plain text   MSCHWERN
@@ -2101,6 +2102,9 @@ Quiz::
 ::Question        cdpO Questions and Answers wrapper                RFOLEY
 
 Template          RdpO Extensive Toolkit for template processing    ABW
+
+Barcode::
+::Code128         adpO Generate CODE 128 bar codes                  WRW
 
 _______________________________________________________________________
 
@@ -2242,6 +2246,8 @@ Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 URI::
 ::Attr            ampO Stores attributes in the URI name space      LWWWP
+::Bookmark        bdpO A Class for bookmarks                        ASPIERS
+::Bookmarks       bdpO A Class for bookmark collections             ASPIERS
 ::Escape          Rmpf General URI escaping/unescaping functions    LWWWP
 ::Find            adpf Find URIs in plain text                      MSCHWERN
 ::URL             RmpO Uniform Resource Locator objects             LWWWP
@@ -2333,6 +2339,7 @@ HTTPD::
 ::Access          cdpO Management of server access control files    LDS
 
 WWW::
+::BBSWatch        adpO email WWW bulletin board postings            TAYERS
 ::Robot           adpO Web traversal engine for robots & agents     NEILB
 ::RobotRules      ampO Parse /robots.txt file                       LWWWP
 ::Search          adpO Front-end to Web search engines              JOHNH
@@ -2584,6 +2591,9 @@ Mail::
 ::UCEResponder    i    Spamfilter                                   CHSTROSS
 ::Util            adpf Mail utilities (for by some Mail::* modules) GBARR
 
+Mail::Field::
+::Received        RdpO Parses Received headers as per RFC822        ASPIERS
+
 News::
 ::Article         adpO Module for handling Usenet articles          AGIERTH
 ::Gateway         ampO Mail/news gatewaying, moderation support     RRA
@@ -2608,11 +2618,14 @@ Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 AtExit            Rdpr atexit() function to register exit-callbacks BRADAPP
 Callback          RdpO Define easy to use function callback objects MUIR
-Memoize           bdpr Automatically cache results of functions     MJD
 Religion          adpr Control where you go when you die()/warn()   KJALB
 
 Hook::
 ::PrePostCall     adpO Add actions before and after a routine       PVERD
+
+Memoize           bdpr Automatically cache results of functions     MJD
+Memoize::
+::ExpireLRU       Rdpr Provide LRU Expiration for Memoize           BPOWERS
 
 _______________________________________________________________________
 
@@ -2714,6 +2727,7 @@ _______________________________________________________________________
 
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
+ARS               Mmhh Interface to Remedy's Action Request API     JMURPHY
 Agent             cdpO Transportable Agent module                   SPURKIS
 Archie            Rdpf Archie queries via Prospero ARDP protocol    GBOSS
 BnP               RdhO Build'n'Play all-purpose batch install. tool STBEY
@@ -2769,6 +2783,17 @@ Finance::
 ::Quote           Rmph Fetch stock prices over the Internet         PJF
 ::QuoteHist       bdpO Historical stock quotes from multiple sites  MSISK
 
+Games::
+::Cards           adpO Tools to write card games in Perl            AKARGER
+::Dice            cdpf Simulates rolling dice                       PNE
+::Hex             cdpO Object library for hexmap-based board games  JHKIM
+::WordFind        bdpO Generate word-find type puzzles              AJOHNSON
+
+Geo::
+::METAR           Rdpf Process Aviation Weather (METAR) Data        JZAWODNY
+::Storm_Tracker   i    Retrieves tropical storm advisories          CARPENTER
+::WeatherNOAA     Rdpf Current/forecast weather from NOAA           MSOLOMON
+
 HP200LX::
 ::DB              cdpO Handle HP 200LX palmtop computer database    GGONTER
 ::DBgui           cdpO Tk base GUI for HP 200LX db files            GGONTER
@@ -2790,31 +2815,21 @@ Psion::
 Remedy::
 ::AR              adcO Interface to Remedy's Action Request API     RIK
 
-ARS               Mmhh Interface to Remedy's Action Request API     JMURPHY
-
-Video::Capture::
-::V4l             Rdch Video4linux framegrabber interface           MLEHMANN
-
-SyslogScan::   
-::SyslogEntry     bdpO Parse UNIX syslog                            RHNELSON
-::SendmailLine    bdpO Summarize sendmail transactions              RHNELSON
-
-Geo::
-::METAR           Rdpf Process Aviation Weather (METAR) Data        JZAWODNY
-::Storm_Tracker   i    Retrieves tropical storm advisories          CARPENTER
-::WeatherNOAA     Rdpf Current/forecast weather from NOAA           MSOLOMON
-
-Games::
-::Cards           adpO Tools to write card games in Perl            AKARGER
-::Dice            cdpf Simulates rolling dice                       PNE
-::Hex             cdpO Object library for hexmap-based board games  JHKIM
-::WordFind        bdpO Generate word-find type puzzles              AJOHNSON
+Router::
+::LG              bdpO Exec commands on routers (based on lg.pl)    CHRISJ
 
 Schedule::        See also Schedule:: in chapter 4
 ::Match           adpf Pattern-based crontab-like schedule          TAIY
 
 Silly::
 ::StringMaths     adpf Do maths with letters and strings            SKINGTON
+
+SyslogScan::   
+::SyslogEntry     bdpO Parse UNIX syslog                            RHNELSON
+::SendmailLine    bdpO Summarize sendmail transactions              RHNELSON
+
+Video::Capture::
+::V4l             Rdch Video4linux framegrabber interface           MLEHMANN
 
 Watchdog::
 ::Service         adpO Look for service in process table            PSHARPE
@@ -3019,6 +3034,7 @@ to a CGI script that lets you edit the database entries yourself.
   AGIERTH  Andrew P. J. Gierth <andrew@erlenstar.demon.co.uk>
   AGUL     Ashish Gulhati <hash@netropolis.org>
   AJACKSON Alan K. Jackson <alanj@ajackson.org>
+  AJFRY    Alan J. Fry <afj@afco.demon.co.uk>
   AJOHNSON Andrew L Johnson <andrew-johnson@home.com>
   AKARGER  Amir Karger <karger@post.harvard.edu>
   AKIRA    Akira Hangai <akira@hangai.net>
@@ -3247,7 +3263,7 @@ to a CGI script that lets you edit the database entries yourself.
   DKUEBLER Daniel Kuebler <dkuebler@mobile-net.ch>
   DKWILSON Damion K. Wilson <dkw@rcm.bm>
   DLANE    Derek Lane <dereklane@pobox.com>
-  DLECONTE Denis Leconte <denis_leconte@yahoo.com>
+  DLECONTE Denis Leconte <denis_leconte@geocities.com>
   DLINCOLN Dan Lincoln <dan@galaxymall.com>
   DLOWE    J. David Lowe <dlowe@pootpoot.com>
   DMACKS   Daniel Macks <dmacks@netspace.org>
@@ -3455,7 +3471,7 @@ to a CGI script that lets you edit the database entries yourself.
   JDB      Jan Dubois <jand@activestate.com>
   JDPORTER John D. Porter <jdporter@min.net>
   JDUNCAN  James A Duncan <jduncan@hawk.igs.net>
-  JEDWARDS Jim Edwards <jedwards@inmet.gov.br>
+  JEDWARDS Jim Edwards <inmet@altavista.com>
   JEFFH    Jeffrey Hulten <jeffh@premier1.net>
   JEGAN    Joseph J. Egan <joseph_egan@hotmail.com>
   JENDA    Jan Krynicky <Jenda@Krynicky.cz>
@@ -3896,6 +3912,7 @@ to a CGI script that lets you edit the database entries yourself.
   RSI      Rajappa Iyer <rsi@earthling.net>
   RSPIER   Robert Spier <rspier+cpan@seas.upenn.edu>
   RURBAN   Reini Urban <rurban@sbox.tu-graz.ac.at>
+  RUSCHER  Paul Ruscher <ruscher@met.fsu.edu>
   RVA      Rodger V. Anderson <rodger@boi.hp.com>
   RVAZ     Ricardo Vazquez Armenta <rvazquez_a@yahoo.com>
   RWALKER  Roland Walker <walker@ncbi.nlm.nih.gov>
@@ -4110,7 +4127,7 @@ RTFM mirror sites:
 North America:
   ftp://ftp.uu.net/usenet/news.answers
   ftp://mirrors.aol.com/pub/rtfm/usenet
-  ftp://ftp.seas.gwu.edu/pub/rtfm
+  ftp://mirror.seas.gwu.edu/pub/rtfm
 Europe:
   ftp://ftp.uni-paderborn.de/pub/FAQ
   ftp://ftp.sunet.se/pub/usenet
