@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.14 $$Date: 1999/10/27 06:01:33 $
+The Perl 5 Module List       $Revision: 3.15 $$Date: 1999/10/27 19:12:55 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.14 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.15 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -795,8 +795,18 @@ Safe              SdcO Restrict eval'd code to safe subset of ops   MICB
 Softref           bdcf Extension for weak/soft referenced SVs       ILYAZ
 
 Exporter::
+::Import          Rdpn Alternate symbol exporter                    GARROW
 ::Options         adpO Extends Exporter to handle use-line options  YSTH
 ::PkgAlias        i    Alias namespaces                             JDPORTER
+
+Symbol::
+::Table           RdpO OO interface to package symbols              GARROW
+
+Test              adcf Utility for writing test scripts             JPRIT
+
+Test::
+::Cases           cdpf Run group of tests, each with a new perl     DOMO
+::Harness         Supf Executes perl-style tests                    P5P
 
 The Perl Compiler
 
@@ -867,14 +877,9 @@ ExtUtils::
 ::Embed           Sdpf Utilities for embedding Perl in C/C++ apps   DOUGM
 ::F77             RdpO Facilitate use of FORTRAN from Perl/XS code  KGB
 
-Test              adcf Utility for writing test scripts             JPRIT
-
-Test::
-::Cases           cdpf Run group of tests, each with a new perl     DOMO
-::Harness         Supf Executes perl-style tests                    ANDK
-
 Carp::
 ::Assert          adpf Stating the obvious to let the computer know MSCHWERN
+::CheckArgs       Rdpf Check subroutine argument types              GARROW
 
 Coy               RdpO like Carp only prettier                      DCONWAY
 
@@ -940,6 +945,7 @@ Proc::
 ::ProcessTable    adcO Unix process table information               DURIST
 ::SafePipe        cdpf popen() and `` without calling the shell     ROSCH
 ::Simple          adpO Fork wrapper with objects                    MSCHILLI
+::Spawn           Rdpf Run external programs                        GARROW
 ::SyncExec        cdpf Spawn processes but report exec() errors     ROSCH
 ::times           adpf By-name interface to process times function  TOMC
 
@@ -1322,7 +1328,6 @@ Time::
 ::ParseDate       Rdpf Parses many forms of dates and times         MUIR
 ::Period          Rdpf Code to deal with time periods               PRYAN
 ::Timezone        Rdpf Figures out timezone offsets                 MUIR
-::Warp            adcf Change the current and speed of time         JPRIT
 ::Zone            Rdpf Timezone info and translation routines       GBARR
 ::gmtime          Supf A by-name interface for gmtime               TOMC
 ::localtime       Supf A by-name interface for localtime            TOMC
@@ -1373,6 +1378,7 @@ POE::                Perl Object Environment
 ::Session         RdpO state machine running on POE::Kernel events  RCAPUTO
 
 MOP               i    Meta Object Protocol (Tool collection)       ORTALO
+SOOP              RdpO Safe Object Oriented Programming             GARROW
 
 Ref               RdpO Print, compare, and copy perl structures     MUIR
 
@@ -1404,7 +1410,7 @@ Data::
 
 Tree::
 ::Base            cdpO Defines a basic binary search tree           MSCHWERN
-::Fat             adcO Embeddable F-Tree Algorithm Suite            JPRIT
+::Fat             Rdcf Embeddable F-Tree Algorithm Suite            JPRIT
 ::Smart           cdpO Sorted hash-ish, becomes faster with use     MSCHWERN
 ::Trie            bdpO An implementation of the Trie data structure AVIF
 
@@ -1553,11 +1559,12 @@ Term::ReadLine::
 
 Major Character User Interface Modules:
 
+Cdk               RdcO Collection of Curses widgets                 GLOVER
 Curses            adcO Character screen handling and windowing      WPS
 NCurses           cdcO Curses using the ncurses package             WPS
-PerlMenu          Mdpf Curses-based menu and template system        SKUNZ
-Cdk               RdcO Collection of Curses widgets                 GLOVER
 PV                bmpO PerlVision curses windowing (OO widgets etc) AGUL
+PerlMenu          Mdpf Curses-based menu and template system        SKUNZ
+Rc                adpf Perl interface for the Rc shell              JPRIT
 
 Emacs             cdcf Support for Perl embedded in GNU Emacs       JTOBEY
 Emacs::
@@ -2115,7 +2122,7 @@ _______________________________________________________________________
 
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
-Event             bdpO Perl event loop                              JPRIT
+Event             bmch fast, generic event loop                     JPRIT
 
 Event::
 ::Stats           adcf Collects statistics for Event                JPRIT
@@ -2162,6 +2169,9 @@ MailBot           cdpO Archive server, listserv, auto-responder     RHNELSON
 NetServer::
 ::Generic         adpO generic OOP class for internet servers       CHSTROSS
 ::ProcessTop      adcf Adds a top-like screen for Event loops       JPRIT
+
+Time::
+::Warp            adcf Change the current and speed of time         JPRIT
 
 _______________________________________________________________________
 
@@ -2322,6 +2332,7 @@ IO::
 ::Pipe            cdpO Methods for pipe handles                     GBARR
 ::Ptty            adcf Pseudo terminal interface functions          GBARR
 ::Pty             cdpO Methods for pseudo-terminal allocation etc   PEASE
+::React           RdpO OO Expect-like communication                 GARROW
 ::STREAMS         cdcO Methods for System V style STREAMS control   NI-S
 ::Scalar          RdpO I/O handle to read/write to a string         ERYQ
 ::ScalarArray     RdpO I/O handle to read/write to array of scalars ERYQ
@@ -2746,6 +2757,7 @@ to a CGI script that lets you edit the database entries yourself.
   BGINGERY Bruce Gingery <bgingery@gtcs.com>
   BHOLZMAN Benjamin Holzman <bholzman@earthlink.net>
   BHUGHES  Brad Hughes <brad@tgsmc.com>
+  BIJUA    Biju A <bijua@wipinfo.soft.net>
   BILLH    William Herrera <wherrera@lynxview.com>
   BINKLEY  B. K. Oxley (binkley) <binkley@bigfoot.com>
   BIRNEY   Ewan Birney <birney@sanger.ac.uk>
@@ -3152,6 +3164,7 @@ to a CGI script that lets you edit the database entries yourself.
   KTHOMAS  Kenny Thomas <adminkt@flint.umich.edu>
   KTORP    Kristian Torp <torp@cs.auc.dk>
   KWILLIAMS Ken Williams <ken@forum.swarthmore.edu>
+  LAXEN    Henry Laxen <nadine.and.henry@pobox.com>
   LBORGMAN Lennart Borgman <Lennart.Borgman@draco.se.astra.com>
   LBROCARD Leon Brocard <leon@astray.com>
   LDACHARY Loic Dachary <loic@ceic.com>
