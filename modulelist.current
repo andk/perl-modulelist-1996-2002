@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.51 $Date: 1999/02/05 20:31:41 $
+The Perl 5 Module List       Revision: 2.51 $Date: 1999/02/05 20:58:27 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -686,7 +686,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.110 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.111 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -958,7 +958,7 @@ Perl           adcO  Create Perl interpreters from within Perl    GSAR
 Plthread       i     Multithreading at Perl level (not O/S level) MICB
 Protect        bdpf  declare subs private or member               JDUNCAN
 Safe           SdcO  Restrict eval'd code to safe subset of ops   MICB
-Softref        bdcf  Extension for weak/soft referenced SVs       ILYAZ
+Softref        bdcf  Extension for weak/soft referenced SVs       ILYAZ +
 
 The Perl Compiler
 
@@ -1120,22 +1120,22 @@ Mac::                Macintosh specific modules
 ::Types        bmcO  (Un-)Packing of Macintosh specific types     MCPL
 
 Mac::AppleEvents::
-::Simple       RdpO  Simple access to Mac::AppleEvents            CNANDOR
+::Simple       RdpO  Simple access to Mac::AppleEvents            CNANDOR +
 
 Mac::Apps::
-::Anarchie     RdpO  Control Anarchie 2.01+                       CNANDOR
-::Launch       RdpO  MacPerl module to launch / quit apps         CNANDOR
-::MacPGP       RdpO  Control MacPGP 2.6.3                         CNANDOR
-::PBar         RdpO  Control Progress Bar 1.0.1                   CNANDOR
+::Anarchie     RdpO  Control Anarchie 2.01+                       CNANDOR !
+::Launch       RdpO  MacPerl module to launch / quit apps         CNANDOR !
+::MacPGP       RdpO  Control MacPGP 2.6.3                         CNANDOR !
+::PBar         RdpO  Control Progress Bar 1.0.1                   CNANDOR !
 
 Mac::Comm::
-::OT_PPP       RdpO  Control Open Transport PPP / Remote Access   CNANDOR
+::OT_PPP       RdpO  Control Open Transport PPP / Remote Access   CNANDOR !
 
 Mac::
-::Glue         adpO  Control apps with AppleScript terminology    CNANDOR
+::Glue         adpO  Control apps with AppleScript terminology    CNANDOR +
 
 Mac::OSA::
-::Simple       RdpO  Simple access to Mac::OSA                    CNANDOR
+::Simple       RdpO  Simple access to Mac::OSA                    CNANDOR +
 
 MSDOS::
 ::Attrib       bdcf  Get/set DOS file attributes in OS/2 or Win32 CJM
@@ -1458,7 +1458,7 @@ Sort::
 Data Type Marshaling (converting to/from strings) and Persistent Storage
 
 FreezeThaw     bdpf  Convert arbitrary objects to/from strings    ILYAZ
-Opal           i     Object Persistence Abstraction Layer (WIP)   JLLEROY
+Opal           i     Object Persistence Abstraction Layer (WIP)   JLLEROY +
 Persistent     adpO  (not supported anymore, placeholder)         JPC
 Storable       bdcr  Persistent data structure mechanism          RAM
 Marshal::
@@ -1690,7 +1690,7 @@ File::
 ::Lock         adcf  File locking using flock() and lockf()       JHI
 ::Path         Supf  File path and name utilities                 P5P
 ::Slurp        bdpf  Read/write/append files quickly              MUIR
-::Sort         Rdpf  Emulate some functions of sort(1)            CNANDOR
+::Sort         Rdpf  Emulate some functions of sort(1)            CNANDOR !
 ::Spec         bdpO  Handling files and directories portably      KJALB
 ::Sync         bdcf  POSIX/*nix fsync() and sync()                CEVANS
 ::Tail         bdpO  A more efficient tail -f                     MGRABNAR
@@ -2149,8 +2149,8 @@ Image::
 ::Size         Rdpf  Measure size of images in common formats     RJRAY
 
 Chart::
-::Base         RdpO  Business chart widget collection             NINJAZ
-::GnuPlot      RdpO  Access to gnuplot library                    NPESKETT
+::Base         RdpO  Business chart widget collection             NINJAZ !
+::GnuPlot      RdpO  Access to gnuplot library                    NPESKETT +
 ::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTON
 
 MPEG::
@@ -2383,7 +2383,6 @@ AltaVista::
 Real::
 ::Encode       i     Interface to Progressive Network's RealAudio KMELTZ +
 
-
 =======================================================================
 
 
@@ -2561,6 +2560,7 @@ to a CGI script that lets you edit the database entries yourself.
   AKSTE    Alan K. Stebbens <aks@software.com>
   ALANCITT Alan Citterman <alan@mfgrtl.com>
   ALANSZ   Alan Schwartz <alansz@uic.edu>
+  ALEXIOB  Alessandro Iob <alexiob@iname.com>
   ALLENS   E. Allen Smith <easmith@beatrice.rutgers.edu>
   ALSCH    Alan Scheinine <scheinin@crs4.it>
   ALTITUDE Alex Tang <altitude@cic.net>
@@ -2572,6 +2572,7 @@ to a CGI script that lets you edit the database entries yourself.
   ANDK     Andreas König <andreas.koenig@anima.de>
   ANDREWF  Andrew Ford <andrew@icarus.demon.co.uk>
   ANDYD    Andy Dougherty <doughera@lafcol.lafayette.edu>
+  ANDYDUNC Andy Duncan <andy_j_duncan@yahoo.com>
   ANDYGLEW Andy Glew <glew@cs.wisc.edu>
   ANTRO    Antonio Rosella <anface@yahoo.com>
   AOCINAR  Ali Onur Cinar <root@zdo.com>
@@ -2617,6 +2618,7 @@ to a CGI script that lets you edit the database entries yourself.
   BRIANSP  Brian W. Spolarich <briansp@ans.net>
   BROCSEIB Broc Seib <bseib@purdue.edu>
   BSUGARS  Benjamin Sugars <bsugars@canoe.ca>
+  BWEILER  Bernard Weiler <Bernard.Weiler@icn.siemens.de>
   BZAJAC   Blair Zajac <bzajac@geostaff.com>
   CAADAMS  Clifford A. Adams <caadams@zynet.com>
   CARL     Carl Declerck <carl@miskatonic.inbe.net>
@@ -2814,6 +2816,7 @@ to a CGI script that lets you edit the database entries yourself.
   JBRIGGS  James Briggs <71022.3700@compuserve.com>
   JCHRIS   Juergen Christoffel <jc@gmd.de>
   JCMURPHY Jeff Murphy <jcmurphy@smurfland.cit.buffalo.edu>
+  JCO      Joshua Colvin <jco@acm.org>
   JCOSTOM  Jason Costomiris <jcostom@sjis.com>
   JCRISTY  John Cristy <cristy@sympatico.org>
   JCTEBBAL Jean-Claude Tebbal <jct@tebbal.demon.co.uk>
@@ -2864,7 +2867,7 @@ to a CGI script that lets you edit the database entries yourself.
   JSIRACUSA John Siracusa <siracusa@mindspring.com>
   JSTOF    John Stoffel <john@wpi.edu>
   JSWARTZ  Jonathan Swartz <jswartz@cmp.com>
-  JTOBEY   John Tobey <jtobey@user1.channel1.com>
+  JTOBEY   John Tobey <spam@john-edwin-tobey.org>
   JTURNER  James Turner <james@csmonitor.com>
   JV       Johan Vromans <jvromans@squirrel.nl>
   JVENIER  John Venier <venier@odin.mdacc.tmc.edu>
@@ -2990,6 +2993,7 @@ to a CGI script that lets you edit the database entries yourself.
   NICO     Nick Gianniotis <nico@acm.org>
   NIGELM   Nigel Metheringham <nigel@pobox.com>
   NIKIP    Nikolay Pelov <nikip@iname.com>
+  NINJAZ   Peter Clark <ninjaz@webexpress.com>
   NJENSEN  Neil Jensen <njensen@habaneros.com>
   NJLEON   Nicholas J. Leon <nicholas@binary9.net>
   NMONNET  Nicolas Monnet <nico@idnet.fr>
@@ -3211,7 +3215,6 @@ The FAQ is available on all CPAN sites in the directory doc/FAQs
 server where you can find all posted FAQs:
   ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/
   ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
-
 RTFM mirror sites:
 
 North America:
