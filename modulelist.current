@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.55 $Date: 1999/04/20 07:21:30 $
+The Perl 5 Module List       Revision: 2.55 $Date: 1999/05/02 10:08:59 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -687,7 +687,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.126 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.127 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1107,8 +1107,9 @@ Sys::
 
 Platform Specific Modules
 
-BeOS::
-::base         a     Base perl5 functionality for the BeOS        TSPIN
+Be::
+::Attribute    Rd+f  Manipulate BeOS BFS MIME file attributes     TSPIN
+::Query        Rd+f  Query a BeOS file system                     TSPIN
 
 FreeBSD::
 ::SysCalls     cdcf  FreeBSD-specific system calls                GARY
@@ -1282,6 +1283,15 @@ DCE::                Distributed Computing Environment (OSF)
 ::Registry     bdcO  DCE registry functions                       PHENSON
 ::Status       bdpr  Make sense of DCE status codes               PHENSON
 ::UUID         bdcf  Misc uuid functions                          PHENSON
+
+NetPacket::
+::ARP          adpO   Address Resolution Protocol                 TIMPOTTER
+::Ethernet     adpO   Ethernet framed data                        TIMPOTTER
+::IGMP         adp0   Internet Group Management Protocol          TIMPOTTER
+::IP           adpO   Internet Protocol                           TIMPOTTER
+::TCP          adp0   Transmission Control Protocol               TIMPOTTER
+::TCP          adpO   Transmission Control Protocol               TIMPOTTER
+::UDP          adp0   User Datagram Protocol                      TIMPOTTER
 
 Proxy          i     Transport-independent remote processing      MICB
 Proxy::
@@ -1789,6 +1799,7 @@ Language text related modules
 
 Text::
 ::Abbrev       Supf  Builds hash of all possible abbreviations    P5P
+::Bastardize   cdpO  corrupts text in various ways                AYRNIEU
 ::Bib          RdpO  Module moved to Text::Refer                  ERYQ
 ::BibTeX       adcO  Parse BibTeX files                           GWARD
 ::CSV          adpO  Manipulate comma-separated value strings     ALANCITT
@@ -1989,6 +2000,8 @@ Crypt::
 ::IDEA         a     International Data Encryption Algorithm      GARY
 ::Keys         adpO  Management system for cryptographic keys     VIPUL
 ::PRSG         a     160 bit LFSR for pseudo random sequences     GARY
+::Random       bdpO  Cryptographically Strong Random Numbers      VIPUL
+::Rot13        cdpO  simple encryption often seen on usenet       AYRNIEU
 ::RSA          bdpO  RSA encryption, decryption, key generation   VIPUL
 
 OpenCA         Rdpf  Tools for running a Certification Authority  MADWOLF
@@ -2024,6 +2037,7 @@ CGI::
 ::CList        bdpO  Manages hierarchical collapsible lists       PEARCEC
 ::Cache        adpf  Speed up slow CGI scripts by caching         BROCSEIB
 ::Carp         cmpf  Drop-in Carp replacement for CGI scripts     CGIP
+::Debug        adpn  show CGI debugging data                      JONAS
 ::Deurl        Mdpr  decode the CGI parameters                    JENDA
 ::Enurl        Mdpr  encode the CGI parameters                    JENDA
 ::Formalware   Mdpo  Convert an XML file to a suite of CGI forms  RSAVAGE +
@@ -2031,6 +2045,7 @@ CGI::
 ::LogCarp      adpf  Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr      RmpO  Fork CGI app as a per-session mini server    CGIP
 ::Out          adpf  Buffer CGI output and report errors          MUIR
+::Persistent   adpO  Transparent State Persistence in CGI scripts VIPUL
 ::Query        adpO  Parse CGI quiry strings                      MPECK
 ::Request      RmpO  Parse CGI request and handle form fields     CGIP
 ::Response     ampO  Response construction for CGI applications   CGIP
@@ -2198,6 +2213,7 @@ Convert::
 ::SciEng       bdpO  Convert numbers with scientific notation     COLINK
 ::Translit     MdpO  String conversion among many character sets  GENJISCH
 ::UU           bdpf  UUencode and UUdecode                        ANDK
+::UUlib        adcr  Intelligent de- and encode (B64, UUE...)     MLEHMANN
 
 AppleII::
 ::Disk         bdpO  Read/write Apple II disk image files         CJM
@@ -2246,6 +2262,7 @@ Chart::
 ::Pie          adpO  Implements "new Chart::Pie()"                KARLON
 ::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTON
 ::XMGR         Rdph  interface to XMGR plotting package           TJENNESS
+::Gdchart      bdch  based on Bruce V's C gdchart distribution    MHEMPEL
 
 MPEG::
 ::MP3Info      bdpf  Extract/edit tag information in MP3 files    CNANDOR
@@ -2376,7 +2393,7 @@ Win32::
 ::Process      adcf  Interface to Win32 Process functions         WIN32
 ::Registry     adcf  Interface to Win32 Registry functions        WIN32
 ::Semaphore    bdcO  Use Win32 semaphore objects for IPC          CJM
-::SerialPort   adpO  Win32 Serial functions/constants/interface   BBIRTH
+::SerialPort   RdpO  Win32 Serial functions/constants/interface   BBIRTH
 ::WinError     adcf  Interface to Win32 WinError functions        WIN32
 
 WinNT          cdcf  Interface to Windows NT specific functions   WIN32
@@ -2385,11 +2402,12 @@ NT             cdcf  Old name for WinNT - being phased out        WIN32
 Win95          i     Interface to Windows 95 specific functions   WIN32
 
 Win32API::
-::Registry     adcf  Win32 Registry functions/constants           TYEMQ
-::File         cdcf  Win32 file/dir functions/constants           TYEMQ
-::Window       cdcf  Win32 Windowing functions/constants          TYEMQ
-::WinStruct    cdcf  Routines for Win32 Windowing data structures TYEMQ
+::CommPort     RdpO  Win32 Serial functions/constants/interface   BBIRTH
 ::Console      cdcf  Win32 Console Window functions/consts        TYEMQ
+::File         cdcf  Win32 file/dir functions/constants           TYEMQ
+::Registry     adcf  Win32 Registry functions/constants           TYEMQ
+::WinStruct    cdcf  Routines for Win32 Windowing data structures TYEMQ
+::Window       cdcf  Win32 Windowing functions/constants          TYEMQ
 
 _______________________________________________________________________
 
