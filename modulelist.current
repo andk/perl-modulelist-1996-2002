@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.6 $$Date: 1999/10/22 06:27:25 $
+The Perl 5 Module List       $Revision: 3.7 $$Date: 1999/10/22 08:16:53 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.6 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.7 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -803,7 +803,7 @@ B::
 ::Fathom          bdpO Estimate the readability of Perl code        KSTAR
 ::Graph           bdpr Perl Compiler backend to diagram OP trees    SMCCAM
 ::LexInfo         bdcO Show info about subroutine lexical variables DOUGM
-::Size            bdc0 Measure size of Perl OPs and SVs             DOUGM
+::Size            bdcO Measure size of Perl OPs and SVs             DOUGM
 ::TerseSize       bdpO Info about ops and their (estimated) size    DOUGM
 
 Source Code Filters
@@ -1982,7 +1982,7 @@ HTML::
 ::CalendarMonth   bdpO Calendar Months as HTML::Element trees       MSISK
 ::EP              adpO Modular, extensible Perl embedding           JWIED
 ::Element         ampO Representation of a HTML parsing tree        LWWWP
-::ElementGlob     bdp0 Manipulate multiple elements at once         MSISK
+::ElementGlob     bdpO Manipulate multiple elements at once         MSISK
 ::ElementRaw      bdpO Graft HTML strings on an HTML::Element       MSISK
 ::ElementSuper    bdpO Various HTML::Element extensions             MSISK
 ::ElementTable    bdpO HTML::Element table manipulation             MSISK
@@ -3341,6 +3341,8 @@ to a CGI script that lets you edit the database entries yourself.
   RHNELSON Rolf Harold Nelson <rolf@usa.healthnet.org>
   RHOFER   Robert Hofer <hofer@informatik.uni-muenchen.de>
   RIK      Rik Harris <rik.harris@fulcrum.com.au>
+  RISCOSML The Risc-OS perl porters mailing list
+           Mail to riscos-request@perl.org with body subscribe
   RJRAY    Randy J Ray <rjray@tsoft.com>
   RJS      Robert J Seymour <rseymour@rseymour.com>
   RKOBES   Randy Kobes <randy@theory.uwinnipeg.ca>
