@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.36 $$Date: 2000/04/02 15:16:09 $
+The Perl 5 Module List       $Revision: 3.37 $$Date: 2000/04/04 19:46:32 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.36 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.37 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -850,6 +850,9 @@ Exporter::
 ::Options         adpO Extends Exporter to handle use-line options  YSTH
 ::PkgAlias        adpf Load a module into multiple namespaces       JDPORTER
 
+Safe::
+::Hole            bdcO Exec subs in the original package from Safe  SEYN
+
 Symbol::
 ::Table           RdpO OO interface to package symbols              GARROW
 
@@ -1015,6 +1018,7 @@ Schedule::        See also Schedule:: in chapter 23
 ::At              Rd   OS independent interface to the at command   JOSERODR
 ::ByClock         adpO Return at given times                        SCHAFFTER
 ::Cron            adpO cron-like scheduler for perl subroutines     ROLAND
+::Load            RdpO Remote system load, processes, scheduling    WSNYDER
 
 Quota             Rdcf Disk quota system functions, local & remote  TOMZO
 
@@ -1098,10 +1102,11 @@ SGI::
 ::FM              adcr SGI's Font Management library                AMOSS
 
 Solaris::
-::MapDev          bdpf Maps sdNN disk names to cNtNdN disk names    ABURLISON
-::Kstat           adcO Access kernel performance statistics         ABURLISON
+::ACL             adch Provides access to ACLs in Solaris           IROBERTS
 ::Kmem            idcf Read values from the running kernel          ABURLISON
+::Kstat           adcO Access kernel performance statistics         ABURLISON
 ::MIB             idcO Access STREAMS network statistics            ABURLISON
+::MapDev          bdpf Maps sdNN disk names to cNtNdN disk names    ABURLISON
 ::NDD             idcO Access network device statistics             ABURLISON
 
 Unix::
@@ -1275,6 +1280,11 @@ ControlX10::
 ::CM10            RmpO Control unit for X10 modules                 BBIRTH
 ::CM17            RmpO inexpensive RF transmit-only X10             BBIRTH
 
+RAS::
+::PortMaster      RdpO Interface to Livingston PortMaster           STIGMATA
+::AS5200          RdpO Interface to Cisco AS5200 dialup server      STIGMATA
+::HiPerARC        RdpO Interface to 3Com TotalControl HiPerARC      STIGMATA
+
 _______________________________________________________________________
 
 6) Data Types and Data Type Utilities (see also Database Interfaces)
@@ -1430,6 +1440,7 @@ Tie::
 ::DB_Lock         Rdpr Tie DB_File with automatic locking           KWILLIAMS
 ::DBI             RdpO Tie hash to a DBI handle                     LDS
 ::Dir             adpr Tie hash for reading directories             GBARR
+::Discovery       Rdpr Discover data by caching sub results         SIMON
 ::File            adpr Tie hash to files in a directory             AMW
 ::FileLRUCache    bdph File based persistent LRU cache              SNOWHARE
 ::Handle          RdpO Base class for implementing tied filehandles STBEY
@@ -1481,6 +1492,7 @@ SOOP              RdpO Safe Object Oriented Programming             GARROW
 
 Sort::
 ::ArbBiLex        Rdpf sort functions for arbitrary sort orders     SBURKE
+::ByCompatMatrix  idpO Sort objects by attribute compatibility      ICKHABOD
 ::Fields          bdpf sort text lines by alpha or numeric fields   JNH
 ::PolySort        bdpO general rules-based sorting of lists         DMACKS
 ::Versions        Rdpf sorting of revision (and similar) numbers    KJALB
@@ -1579,6 +1591,7 @@ Mysql             RmcO mysql database interface                     JWIED
 ObjStore          Rm+O ObjectStore OODBMS Interface                 JPRIT
 Pg                Rdcf PostgreSQL SQL database interface            MERGL
 PgSQL             adpO "Pure perl" interface to PostgreSQL          GTHYNI
+Pogo              ad+O Interface for GOODS object database          SEYN
 Postgres          RncO PostgreSQL interface with Perl5 coding style VKHERA
 Sprite            RdpO Limited SQL interface to flat file databases SHGUN
 Xbase             bdpf Read Xbase files with simple IDX indexes     PRATP
@@ -1600,6 +1613,9 @@ SDBM_File         Suc  Tie to SDBM files                            P5P
 
 DB_File::
 ::Lock            RdpO DB_File wrapper with flock-based locking     DHARRIS
+
+DBM::
+::DBass           adpf DBM with hashes, locking and XML records     SPIDERBOY
 
 AsciiDB::
 ::Parse           i    Generic text database parsing                MICB
@@ -2003,6 +2019,7 @@ _______________________________________________________________________
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 Getopt::
+::ArgvFile        bdpf Take options from files                      JSTENZEL
 ::Declare         MdpO An easy-to-use WYSIWYG command-line parser   DCONWAY
 ::EvaP            Mdpr Long/short options, multilevel help          LUSOL
 ::Gnu             adcf GNU form of long option handling             WSCOT
@@ -2591,6 +2608,7 @@ Wais              Rdcf Interface to the freeWAIS-sf libraries       ULPFR
 Astro::
 ::Coord           Rdpf Transform telescope and source coordinates   CPHIL
 ::Misc            Rdpf Miscellaneous astronomical routines          CPHIL
+::MoonPhase       Rdpf Information about the phase of the Moon.     RPIKKARA
 ::SLA             Rdcf Interface to SLALIB positional astronomy lib TJENNESS
 ::SunTime         cdpf Calculate sun rise/set times                 ROBF
 ::Time            Rdpf General time conversions for Astronomers     CPHIL
