@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.53 $Date: 1999/02/16 12:05:12 $
+The Perl 5 Module List       Revision: 2.53 $Date: 1999/03/01 22:57:48 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -687,7 +687,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.118 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.119 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1699,6 +1699,7 @@ File::
 ::Glob         adpf  Filename globing (ksh style)                 TYEMQ
 ::Listing      bdpf  Parse directory listings                     GAAS
 ::Lock         adcf  File locking using flock() and lockf()       JHI
+::MVS_VB       bdpf  Read MVS VB (variable-length) files          GROMMEL
 ::Path         Supf  File path and name utilities                 P5P
 ::Slurp        bdpf  Read/write/append files quickly              MUIR
 ::Sort         Rdpf  Emulate some functions of sort(1)            CNANDOR !
