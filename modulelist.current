@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.40 $Date: 1997/03/26 10:28:31 $
+The Perl 5 Module List       Revision: 2.40 $Date: 1997/03/26 10:32:42 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -202,12 +202,15 @@ this list is not on CPAN, you should contact the person associated with
 the module (and not the maintainers of the archives or this list).
 Contact details are given at the start of Part 4.
 
-For navigating through CPAN you may find the file
-http://www.perl.com/CPAN/modules/01modules.index.html a useful
-starting place. Or you may prefer a webified version of this modulelist
-in the file http://www.perl.com/CPAN/modules/00modlist.long.html on the
-CPAN servers. Note that http://www.perl.com/CPAN/ is a smart redirector
-which will connect you to a reasonably 'near' CPAN site.
+For the navigation through the modules collected on the CPAN there are
+sevaral entry points: http://www.perl.com/CPAN/CPAN.html provides
+verbose descriptions for each and every module. If you prefer a simple
+clickable list you may prefer
+http://www.perl.com/CPAN/modules/01modules.index.html. The file you're
+currently reading is also available on CPAN in a webified version,
+http://www.perl.com/CPAN/modules/00modlist.long.html . Note that
+http://www.perl.com/CPAN/ is a smart redirector which will connect you
+to a reasonably 'near' CPAN site.
 
 Playing Your Part
 
@@ -601,7 +604,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.67 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.68 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -853,15 +856,16 @@ Taint          idpf  Utilities related to tainting                PHOENIX +
 
 Perl Pragmatic Modules
 
-strict         Supf  Controls averments (similar to pragmas)      P5P
+constant       adpf  Define compile-time constants                PHOENIX
+diagnostics    Sdpf  For reporting perl diagnostics in full form  TOMC
 integer        Supf  Controls float vs. integer arithmetic        P5P
 less           Supf  Controls optimisations: 'use less memory;'   P5P
+lib            Supf  Simple way to add/delete directories in @INC P5P
+overload       SdpO  Overload perl operators for new data types   ILYAZ
+sigtrap        Supf  For trapping an abort and giving a traceback P5P
+strict         Supf  Controls averments (similar to pragmas)      P5P
 subs           Supf  use subs qw(x y); is short for sub x; sub y; P5P
 vars           Supf  predeclare variable names                    P5P
-lib            Supf  Simple way to add/delete directories in @INC P5P
-sigtrap        Supf  For trapping an abort and giving a traceback P5P
-diagnostics    Sdpf  For reporting perl diagnostics in full form  TOMC
-overload       SdpO  Overload perl operators for new data types   ILYAZ
 
 Perl Language Extensions
 
@@ -1039,6 +1043,7 @@ Net::
 ::IRC          i     Internet Relay Chat interface                DSHEPP
 ::Ident        RdpO  Performs ident (rfc1413) lookups             JPC
 ::Inet         adcO  Internet (IP) socket usage                   SPIDB
+::LDAP         adpO  Interface to LDAP Protocol (RFC1777)         PLDAP
 ::NIS          adcO  Interface to Sun's NIS                       RIK
 ::NISPlus      adcO  Interface to Sun's NIS+                      RIK
 ::NNTP         adpO  Client interface to NNTP protocol            GBARR
@@ -1270,7 +1275,7 @@ ODBM_File      Suc   Tie to ODBM files                            P5P
 AnyDBM_File    Sup   Uses first available *_File module above     P5P
 DBZ_File       adc   Tie to dbz files (mainly for news history)   IANPX
 MLDBM          bdpO  Transparently store multi-level data in DBM  GSAR
-CDB_File       cdc   Tie to CDB (Bernstein's constant DB) files   TIMPX
+CDB_File       adc   Tie to CDB (Bernstein's constant DB) files   TIMPX
 
 AsciiDB        i     Generic text database parsing                MICB
 MARC           i     Interface to MARC format (bibliography)      PEM
@@ -1325,7 +1330,7 @@ Sx             Rdcf  Simple Athena widget interface               FMC
 Motif          cdcf  Simple Motif and Xt interface                ERICA
 Wcl            i     Interface to the Widget Creation Library     TOMH
 Fresco         cd+O  Interface to Fresco (post X11R6 version)     BPETH
-Qt             cd+O  Interface to the Qt toolkit                  AWIN
+Qt             ad+O  Interface to the Qt toolkit                  AWIN
 Xforms         bdcO  See X11::Xforms; namespace will move to X11  MARTINB
 
 X11::
@@ -1608,12 +1613,10 @@ Netscape::
 CCI            i     Common Client Interface for WWW browsers     DOUGM
 CGI_Lite       MnpO  Light-weight interface for fast apps         SHGUN
 FCGI           Rdcf  Fast CGI (requires sfio)                     SKIMO
-
-Apache modules are listed in Doug MacEachern's module list, available
-from his CPAN directory
-http://www.perl.com/CPAN/authors/id/DOUGM/apache-modlist.html
-
 Apache         bdcO  Interface to the Apache server API           DOUGM
+
+For Apache see also http:by-module/Apache/apache-modlist.html
+
 
 _______________________________________________________________________
 
@@ -1668,6 +1671,7 @@ Compress::
 ::Zlib         adcO  Interface to the Info-Zip zlib library       PMQS
 
 Convert::
+::BER          adpO  Class for encoding/decoding BER messages     GBARR
 ::BinHex       cdpO  Convert to/from RFC1741 HQX7 (Mac BinHex)    ERYQ
 ::UU           bdpf  UUencode and UUdecode                        ANDK
 
