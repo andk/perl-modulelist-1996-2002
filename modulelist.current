@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.54 $Date: 1999/03/09 08:01:20 $
+The Perl 5 Module List       Revision: 2.55 $Date: 1999/04/20 07:19:02 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -688,7 +688,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.123 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.124 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
