@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.88 $ $Date: 2001/05/01 12:17:56 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.89 $ $Date: 2001/05/03 08:51:45 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.88 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.89 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -919,30 +919,30 @@ Documentation Tools:
 
 Pod::
 ::Diff            cdpf compare two POD files and report diff        IANC
+::DocBook         adpO convert POD to and from DocBook              MBERENDS
 ::HTML            cdpr converter to HTML                            KJALB
+::HTML2Pod        RdpO Translate HTML into POD                      SBURKE
+::Hlp             RdpO Convert POD to formatted VMS Help text       PVHP
 ::Index           cdpr index generator                              KJALB
-::Latex           cdpr converter to LaTeX                           KJALB
 ::LaTeX           bdpO Converts pod to latex with Pod::Parser       TJENNESS
+::Latex           cdpr converter to LaTeX                           KJALB
 ::Lint            cdpO Lint-style validator for pod                 NEILB
 ::Lyx             adpO A pod to LyX format conversion class         RICHARDJ
-::Man             cdpr converter to man page                        KJALB
 ::MIF             adpO converter to FrameMaker MIF                  JNH
+::Man             cdpr converter to man page                        KJALB
+::PP              adpO A Pod pre-processor                          RAM
 ::Parser          bdpO Base class for parsing pod syntax            BRADAPP
 ::Pdf             bdpf Converter to PDF                             AJFRY
 ::Pod             cdpr converter to canonical pod                   KJALB
 ::RTF             cdpr converter to RTF                             KJALB
+::Rtf             RdpO Converter from POD to Rich Text Format       PVHP
 ::Sdf             cdpf converter to SDF                             IANC
 ::Select          bdpf Print only selected sections of pod docs     BRADAPP
 ::Simplify        cdpr Common pod parsing code                      KJALB
 ::Texinfo         cdpr converter to texinfo                         KJALB
 ::Text            Supf convert POD data to formatted ASCII text     TOMC
 ::Usage           bdpf Print Usage messages based on your own pod   BRADAPP
-::Rtf             RdpO Converter from POD to Rich Text Format       PVHP
-::Hlp             RdpO Convert POD to formatted VMS Help text       PVHP
 ::XML             RdpO Generate XML from POD                        MSERGEANT
-::PP              adpO A Pod pre-processor                          RAM
-::HTML2Pod        RdpO Translate HTML into POD                      SBURKE
-::DocBook         adpO convert POD to and from DocBook              MBERENDS
 
 NEXT              RdpO Perl5 implementation of NEXT (RFC190)        DCONWAY
 
@@ -3084,11 +3084,11 @@ Apache::
 ::Upload          amcO File upload class                            APML
 
 Netscape::
+::Bookmarks       bdp? Netscape bookmarks                           BDFOY
 ::Cache           bdpO Access Netscape cache files                  SREZIC
 ::History         bdpO Class for accessing Netscape history DB      NEILB
 ::HistoryURL      bdpO Like a URI::URL, but with visit time         NEILB
 ::Server          adcO Perl interface to Netscape httpd API         BSUGARS
-::Bookmarks       bdp? Netscape bookmarks                           BDFOY
 
 HyperWave::
 ::CSP             cdpO Interface to HyperWave's HCI protocol        GOSSAMER
