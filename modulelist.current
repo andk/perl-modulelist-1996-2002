@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.92 $ $Date: 2001/05/03 09:40:43 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.93 $ $Date: 2001/05/03 09:43:05 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.92 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.93 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -961,12 +961,15 @@ _______________________________________________________________________
 Name               DSLIP Description                                  Info
 ------------       ----- -------------------------------------------- ----
 AutoSplit          Supf? Splits modules into files for AutoLoader     P5P
-Conjury            Rdph? Generic software construction toolset        JWOODYATT
+Continuus          adpO? Interface to Continuus Code Management tool  HENKE
 Coy                Rdpn? Like Carp - only prettier                    DCONWAY
 FindBin            adpf? Locate current script bin directory          GBARR
 Include            adpO? Parse C header files for use in XS           GBARR
 Make               adpO? Makefile parsing, and 'make' replacement     NI-S
+Perlbug            RdpO? Database driven bug tracking system          RFOLEY
+Rcs                adcf? Alternate RCS interface (see VCS::RCS)       CFRETER
 Usage              bupr? Type and range checking on subroutine args   JACKS
+VCS                ampO? Generic interface to Version Control Systems LBROCARD
 
 Benchmark          Supf? Easy way to time fragments of perl code      P5P
 Benchmark::
@@ -984,6 +987,15 @@ Carp::
 ::Assert           adpf? Stating the obvious to let the computer know MSCHWERN
 ::CheckArgs        Rdpf? Check subroutine argument types              GARROW
 ::Datum            adpf? Debugging And Tracing Ultimate Module        RAM
+
+ClearCase          idcf? Environment for ClearCase revision control   BRADAPP
+ClearCase::
+::Ct               Mnpf? Generic cleartool wrapper                    DSB
+
+Conjury::
+::C                Rdph? Generic software construction toolset        JWOODYATT
+::Core             Rdph? Generic software construction toolset        JWOODYATT
+::Stage            Rdph? Generic software construction toolset        JWOODYATT
 
 Devel::
 ::CallerItem       RupO? 'caller()' Object wrapper + useful methods   JACKS
@@ -1011,8 +1023,8 @@ Exception::
 Perf::            Performance measurement other than benchmarks
 ::ARM              adcf? Application Response Measurement             BBACKER
 
-Rcs                adcf? Alternate RCS interface (see VCS::RCS)       CFRETER
-VCS                ampO? Generic interface to Version Control Systems LBROCARD
+Sub::
+::Curry            Rdpf? Perl module to curry functions ((á la Lisp)) DAVIDH
 
 Test               Sdpf? Utilities for writing test scripts           JPRIT
 Test::
@@ -1027,17 +1039,6 @@ VCS::
 ::PVCS             i   ? PVCS Version Manager (intersolv.com)         BMIDD
 ::RCS              idpf? Interface layer over RCS (See also Rcs)      RJRAY
 ::RCE              idcf? Perl layer over RCE C API                    RJRAY
-
-ClearCase          idcf? Environment for ClearCase revision control   BRADAPP
-ClearCase::
-::Ct               Mnpf? Generic cleartool wrapper                    DSB
-
-Sub::
-::Curry            Rdpf? Perl module to curry functions ((á la Lisp)) DAVIDH
-
-Perlbug            RdpO? Database driven bug tracking system          RFOLEY
-
-Continuus          adpO? Interface to Continuus Code Management tool  HENKE
 
 _______________________________________________________________________
 
