@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.9 $$Date: 1999/10/23 07:37:54 $
+The Perl 5 Module List       $Revision: 3.10 $$Date: 1999/10/24 13:35:14 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.9 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.10 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1031,6 +1031,7 @@ Solaris::
 
 Unix::
 ::ConfigFile      adpO Abstract interfaces to Unix config files     SSNODGRA
+::Syslog          i    Interface to syslog functions in a C-library MHARNISCH
 ::UserAdmin       Rdpf Interface to Unix Account Information        JZAWODNY
 
 VMS::
@@ -1560,10 +1561,11 @@ Gtk               bdcO binding of the Gtk library used by GIMP      KJALB
 Gtk::
 ::Dialog          adph Simple interface to create dialogs in Gtk    ALISTAIRC
 
-Gnome             bdcO Bindings to the Gnome Desktop Toolkit        KJALB
-Sx                Rdcf Simple Athena widget interface               FMC
 Fresco            cd+O Interface to Fresco (post X11R6 version)     BPETH
+Glade             a    Interface to Gtk+/Gnome UI builder           DMUSGR
+Gnome             bdcO Bindings to the Gnome Desktop Toolkit        KJALB
 Qt                ad+O Interface to the Qt toolkit                  AWIN
+Sx                Rdcf Simple Athena widget interface               FMC
 
 X11::
 ::Auth            adpO Read and handle X11 '.Xauthority' files      SMCCAM
@@ -2196,6 +2198,7 @@ Image::
 ::Colorimetry     cdpO transform colors between colorspaces         JONO
 ::Grab            RdpO Grabbing images off the Internet             MAHEX
 ::Magick          RdcO Read, query, transform, and write images     JCRISTY
+::ParseGIF        a    Parse GIF header information                 BENL
 ::Size            Rdpf Measure size of images in common formats     RJRAY
 
 Chart::
@@ -2689,7 +2692,7 @@ to a CGI script that lets you edit the database entries yourself.
   ASPIERS  Adam Spiers <adam@spiers.net>
   ASTEAM   ActiveState development team <dev@ActiveState.com>
   AUSCHUTZ Austin Schutz <tex@habit.com>
-  AVIF     Avi Finkel <avi@lycos.com>
+  AVIF     Avi Finkel <avi@finkel.org>
   AWIN     Ashley Winters <jql@accessone.com>
   AWRIGLEY Ave Wrigley <wrigley@cre.canon.co.uk>
   AYRNIEU  julian fondren <julian@imaji.net>
@@ -3031,6 +3034,7 @@ to a CGI script that lets you edit the database entries yourself.
   JKEGL    Jeffrey Kegler <jeffrey@best.com>
   JKODIS   John Kodis <kodis@jagunet.com>
   JLAPEYRE John Lapeyre <lapeyre@physics.arizona.edu>
+  JLATHAN  Jeff Lathan <jlathan@deja.com>
   JLBEC    Joel Becker <jlbec@ocala.cs.miami.edu>
   JLEVAN   Jerry LeVan <levan@eagle.eku.edu>
   JLLEROY  Jean-Louis Leroy <jll@skynet.be>
