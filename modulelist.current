@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.35 $Date: 1996/12/24 00:00:00 $
+The Perl 5 Module List       Revision: 2.36 $Date: 1997/01/07 21:19:53 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -199,9 +199,10 @@ the module (and not the maintainers of the archives or this list).
 Contact details are given at the start of Part 4.
 
 For navigating through CPAN you may find the file
-modules/01modules.index.html a useful starting place. Or you may prefer
-a webified version of this modulelist in the file
-modules/00modlist.long.html on the CPAN servers.
+http://www.perl.com/CPAN/modules/01modules.index.html a useful
+starting place. Or you may prefer a webified version of this
+modulelist in the file modules/00modlist.long.html on the CPAN
+servers.
 
 Playing Your Part
 
@@ -853,6 +854,7 @@ Pod::
 ::Index        cdpr  index generator                              KJALB
 ::Latex        cdpr  converter to LaTeX                           KJALB
 ::Man          cdpr  converter to man page                        KJALB
+::MIF          adpO  converter to FrameMaker MIF                  JNH
 ::Parser       bdpO  Base class for parsing pod syntax            BRADAPP
 ::Pod          cdpr  converter to canonical pod                   KJALB
 ::RTF          cdpr  converter to RTF                             KJALB
@@ -988,14 +990,15 @@ Net::
 ::FTP          adpf  Interface to File Transfer Protocol          GBARR
 ::Gen          adcO  Generic support for socket usage             SPIDB
 ::IRC          i     Internet Relay Chat interface                DSHEPP
+::Ident        RdpO  Performs ident (rfc1413) lookups             JPC
 ::Inet         adcO  Internet (IP) socket usage                   SPIDB
 ::NIS          adcO  Interface to Sun's NIS                       RIK
 ::NISPlus      adcO  Interface to Sun's NIS+                      RIK
 ::NNTP         adpO  Client interface to NNTP protocol            GBARR
 ::Netrc        adpO  Support for .netrc files                     GBARR
 ::POP3         adpO  Client interface to POP3 protocol            GBARR
-::Ping         Supf  TCP ping (only echo, will be replaced soon)  PMQS  !
-::Ping         RdpO  TCP and ICMP ping implementation             RMOSE !
+::Ping         Supf  TCP ping (only echo, will be replaced soon)  PMQS
+::Ping         RdpO  TCP and ICMP ping implementation             RMOSE
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
 ::SNPP         cdpO  Client interface to SNPP protocol            GBARR
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
@@ -1061,6 +1064,8 @@ Math::
 ::IEEE         i     Interface to ANSI/IEEE Std 754-1985 funcs
 ::LinearProg   idp   Linear programming utilities                 JONO
 ::Matrix       adpO  Matrix data type (transpose, multiply etc)   ULPFR
+::MatrixCplx   idpO  Matrix data type for Complex Numbers         STBEY
+::MatrixReal   RdpO  Everything you ever wanted to do with Matr.  STBEY
 ::Pari         adcf  Interface to the powerful PARI library       ILYAZ
 ::Prime        i     Prime number testing                         GARY
 ::RandomPrime  i     Generates random primes of x bits            GARY
@@ -1095,6 +1100,12 @@ Set::
 ::Scalar       adpO  Set of scalars (inc references)              JHI
 ::IntegerFast  RdcO  Set of integers (algorithmical computations) STBEY
 ::IntSpan      adpO  Set of integers newsrc style '1,5-9,11' etc  SWMCD
+
+Graph::
+::Element      RdpO  Base class for element of directed graph     NEILB
+::Node         RdpO  A node in a directed graph                   NEILB
+::Edge         RdpO  An edge in a directed graph                  NEILB
+::Kruskal      RdcO  Kruskal Algorithm for Minimal Spanning Trees STBEY
 
 Date::
 ::CTime        adpf  Updated ctime.pl with mods for timezones     GBARR
@@ -1132,6 +1143,9 @@ Tie::
 ::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
 ::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
 ::Watch        bdpO  Watch variables, run code when read/written  LUSOL !
+
+Tie::Hash::
+::Overlay      idpr  General base-class to overlayed hashes       AWIN
 
 Class::
 ::Eroot        RdpO  Eternal Root - Object persistence            DMR
@@ -1202,6 +1216,7 @@ ODBM_File      Suc   Tie to ODBM files                            P5P
 AnyDBM_File    Sup   Uses first available *_File module above     P5P
 DBZ_File       adc   Tie to dbz files (mainly for news history)   IANPX
 MLDBM          bdpO  Transparently store multi-level data in DBM  GSAR
+CDB_File       cdc   Tie to CDB (Bernstein's constant DB) files   TIMPX
 
 AsciiDB        i     Generic text database parsing                MICB
 MARC           i     Interface to MARC format (bibliography)      PEM
@@ -1218,15 +1233,16 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Term::
-::Complete     Supf  Tab word completion using stty raw           WTOMPSON
-::ReadKey      Rdcf  Read keystrokes and change terminal modes    KJALB
+::ANSIColor    bdpf  Color output using ANSI escape sequences     RRA
 ::Cap          Supf  Basic termcap: Tgetent, Tputs, Tgoto         TSANDERS
-::Screen       RdpO  Basic screen + input class (uses Term::Cap)  MRKAE
-::Info         adpf  Terminfo interface (currently just Tput)     KJALB
-::ReadLine     Sdcf  GNU Readline, history and completion         ILYAZ
+::Complete     Supf  Tab word completion using stty raw           WTOMPSON
 ::Control      idpf  Basic curses-type screen controls (gotxy)    KJALB
 ::Gnuplot      adcf  Draw vector graphics on terminals etc        ILYAZ
+::Info         adpf  Terminfo interface (currently just Tput)     KJALB
 ::Query        Rdpf  Intelligent user prompt/response driver      AKSTE
+::ReadKey      Rdcf  Read keystrokes and change terminal modes    KJALB
+::ReadLine     Sdcf  GNU Readline, history and completion         ILYAZ
+::Screen       RdpO  Basic screen + input class (uses Term::Cap)  MRKAE
 
 Major Character User Interface Modules:
 
@@ -1250,6 +1266,7 @@ Sx             Rdcf  Simple Athena widget interface               FMC
 Motif          cdcf  Simple Motif and Xt interface                ERICA
 Wcl            i     Interface to the Widget Creation Library     TOMH
 Fresco         cd+O  Interface to Fresco (post X11R6 version)     BPETH
+Qt             cd+O  Interface to the Qt toolkit                  AWIN
 
 
 _______________________________________________________________________
@@ -1371,6 +1388,7 @@ Getopt::
 ::Regex        ad    Option handling using regular expressions    JARW
 ::Mixed        Rdpf  Supports both long and short options         CJM
 ::Help         bdpf  Yet another getopt, has help and defaults    IANPX
+::EvaP         Mdpr  Long/short options, multilevel help          LUSOL
 
 ConfigReader   cdpO  Read directives from configuration file      AMW
 Resources      bdpf  Application defaults management in Perl      FRANCOC
@@ -1406,7 +1424,7 @@ Des            adcf  DES encryption (libdes)                      MICB
 MD5            RdcO  MD5 message digest algorithm                 NWINT
 SHA            adcO  NIST SHA message digest algorithm            UWEH
 Kerberos       i     Kerberos IV authentication                   MICB
-GSS            i     Generic Security Services API (RFC 1508/9)   MSHLD
+GSS            cdcO  Generic Security Services API (RFC 1508/9)   MSHLD
 
 Crypt::
 ::DES          a     DES encryption (libdes)                      GARY
