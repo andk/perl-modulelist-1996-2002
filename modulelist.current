@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.44 $Date: 1997/08/14 13:22:01 $
+The Perl 5 Module List       Revision: 2.45 $Date: 1997/08/14 20:00:38 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -102,13 +102,20 @@ currently registered CPAN sites:
     Africa
         South Africa
             ftp://ftp.is.co.za/programming/perl/CPAN/
+            ftp://ftpza.co.za/pub/mirrors/cpan/
     Asia
+        China
+            ftp://freesoft.cei.gov.cn/pub/languages/perl/CPAN/
         Hong Kong
             ftp://ftp.hkstar.com/pub/CPAN/
+        Israel
+            ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/
         Japan
             ftp://ftp.dti.ad.jp/pub/lang/CPAN/
             ftp://ftp.jaist.ac.jp/pub/lang/perl/CPAN/
             ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/
+        Singapore
+            ftp://ftp.nus.edu.sg/pub/unix/perl/CPAN/
         South Korea
             ftp://ftp.bora.net/pub/CPAN/
             ftp://ftp.nuri.net/pub/CPAN/
@@ -119,6 +126,8 @@ currently registered CPAN sites:
             ftp://ftp.riubon.ac.th/pub/mirrors/perl/CPAN/
     Australasia
         Australia
+            ftp://cpan.topend.com.au/pub/CPAN/
+            ftp://ftp.motd.com/pub/CPAN/
             ftp://ftp.netinfo.com.au/pub/perl/CPAN/
         New Zealand
             ftp://ftp.tekotago.ac.nz/pub/perl/CPAN/
@@ -144,7 +153,6 @@ currently registered CPAN sites:
             ftp://ftp.oleane.net/pub/mirrors/CPAN/
             ftp://ftp.pasteur.fr/pub/computing/unix/perl/CPAN/
         Germany
-            ftp://ftp.Germany.EU.net/pub/programming/perl/CPAN
             ftp://ftp.gmd.de/packages/CPAN/
             ftp://ftp.leo.org/pub/comp/programming/languages/script/perl/CPAN/
             ftp://ftp.mpi-sb.mpg.de/pub/perl/CPAN/
@@ -161,6 +169,7 @@ currently registered CPAN sites:
             ftp://cis.utovrm.it/CPAN/
         Norway
             ftp://ftp.uit.no/pub/languages/perl/cpan/
+            ftp://sunsite.uio.no/pub/languages/perl/CPAN/
         Poland
             ftp://ftp.pk.edu.pl/pub/lang/perl/CPAN/
             ftp://sunsite.icm.edu.pl/pub/CPAN/
@@ -169,7 +178,7 @@ currently registered CPAN sites:
             ftp://ftp.telepac.pt/pub/CPAN/
         Romania
             ftp://ftp.dntis.ro/pub/mirrors/perl-cpan/
-            ftp://ftp.dnttm.ro/pub/CPAN
+            ftp://ftp.dnttm.ro/pub/CPAN/
         Russia
             ftp://ftp.sai.msu.su/pub/lang/perl/CPAN/
         Slovenia
@@ -637,7 +646,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.80 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.81 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -853,7 +862,7 @@ Similarly, if an idea that interests you has been adopted by someone
 please contact them so you can share ideas.  Just because an idea has
 been adopted does NOT imply that it's going to be implemented. Just
 because a module is listed and being implemented does NOT mean it'll
-get finised. Waiting silently in the hope that the Module will appear
+get finished. Waiting silently in the hope that the Module will appear
 one day is unlikely to be fruitful! Offer to help. Cooperate. Pool your
 efforts. Go on, try it!
 
@@ -884,15 +893,16 @@ Carp           Supf  Throw exceptions outside current package     P5P
 Config         Supf  Stores details of perl build configuration   P5P
 English        Supf  Defines English names for special variables  P5P
 Symbol         SupO  Create 'anonymous' symbol (typeglobs) refs   CHIPS
-Opcode         adpf  Disable named opcodes when compiling code    TIMB
+Opcode         Supf  Disable named opcodes when compiling code    TIMB
 Taint          idpf  Utilities related to tainting                PHOENIX
 
 Perl Pragmatic Modules
 
+builtin        adcf  A selection of subs destined for the core    GBARR
 constant       adpf  Define compile-time constants                PHOENIX
 diagnostics    Sdpf  For reporting perl diagnostics in full form  TOMC
 integer        Supf  Controls float vs. integer arithmetic        P5P
-less           Supf  Controls optimisations: 'use less memory;'   P5P
+less           Supf  Controls optimisations (yet unimplemented)   P5P
 lib            Supf  Simple way to add/delete directories in @INC P5P
 overload       SdpO  Overload perl operators for new data types   ILYAZ
 sigtrap        Supf  For trapping an abort and giving a traceback P5P
@@ -902,9 +912,11 @@ vars           Supf  predeclare variable names                    P5P
 
 Perl Language Extensions
 
-Safe           SdcO  Restrict eval'd code to safe subset of ops   MICB
 Alias          bdcf  Convenient access to data/code via aliases   GSAR
+Error          adpO  Error/exception handling in an OO-ish way    GBARR
 Plthread       i     Multithreading at Perl level (not O/S level) MICB
+Protect        bdpf  declare subs private or member               JDUNCAN
+Safe           SdcO  Restrict eval'd code to safe subset of ops   MICB
 
 The Perl Compiler
 
@@ -959,8 +971,6 @@ DoWhatIWant    i     Does what you want without even asking
 
 ExtUtils::
 ::DynaGlue     adcr  Methods for generating Perl extension files  DOUGM !
-::DynaLib      adcO  Allows direct calls to dynamic libraries     JTOBEY
-::GDBinit      i     Create a .gdbinit file                       JASONS +
 ::MakeMaker    SupO  Writes Makefiles for extensions              MMML
 ::Manifest     Supf  Utilities for managing MANIFEST files        MMML
 ::Typemap      i     xsubpp typemap handling                      WPS
@@ -968,15 +978,19 @@ ExtUtils::
 ::F77          RdpO  Facilitate use of FORTRAN from Perl/XS code  KGB
 
 Test::
+::Cases        cdpf  Run group of tests, each with a new perl     DOMO
 ::Harness      Supf  Executes perl-style tests                    ANDK
 
 Devel::
 ::CallerItem   RupO  'caller()' Object wrapper + useful methods   JACKS
 ::CoreStack    adpf  generate a stack dump from a core file       ADESC
+::Coverage     adpf  Coverage analysis for Perl code              RJRAY
+::DebugInit    i     Create a .gdbinit or similar file            JASONS +
 ::DProf        Rdcf  Execution profiler                           DMR
 ::DumpStack    Rupf  Dumping of the current function stack        JACKS
 ::Peek         adcf  Peek at internal representation of Perl data ILYAZ
 ::RegExp       adcO  Access perl internal regex functions         ILYAZ
+::SmallProf    a     Line-by-line profiler                        ASHTED
 ::Symdump      RdpO  Perl symbol table access and dumping         ANDK
 ::TraceFuncs   adpO  Trace funcs by using object destructions     JOEHIL
 
@@ -1014,7 +1028,7 @@ Proc::
 ::SyncExec     cdpf  Spawn processes but report exec() errors     ROSCH
 ::times        adpf  By-name interface to process times function  TOMC
 
-Quota          adcf  Disk quota system functions, local & remote  TOMZO
+Quota          Rdcf  Disk quota system functions, local & remote  TOMZO
 
 Sys::
 ::AlarmCall    Rupf  Timeout on any sub. Allows nested alarms     JACKS
@@ -1023,6 +1037,9 @@ Sys::
 ::Syslog       Supf  Provides same functionality as BSD syslog    P5P
 
 Platform Specific Modules
+
+BeOS::
+::base         a     Base perl5 functionality for the BeOS        TSPIN
 
 FreeBSD::
 ::SysCalls     cdcf  FreeBSD-specific system calls                GARY
@@ -1048,13 +1065,13 @@ Mac::Comm::
 ::OT_PPP       RdpO  Interface to Open Transport/PPP              CNANDOR
 
 MSDOS::
+::Attrib       bdcf  Get/set DOS file attributes in OS/2 or Win32 CJM
 ::SysCalls     adcf  MSDOS interface (interrupts, port I/O)       DMO
 
 NeXTStep::
 ::NetInfo      idcO  NeXTStep's NetInfo (like ONC NIS)            PGUEN
 
 OS2::
-::Attrib       Rdcf  Get or set file attributes (not EAs)         CJM
 ::ExtAttr      RdcO  (Tied) access to extended attributes         ILYAZ
 ::FTP          bncf  Access to ftplib interface                   ILYAZ
 ::PrfDB        RdcO  (Tied) access to .INI-style databases        ILYAZ
@@ -1067,13 +1084,15 @@ SGI::
 ::FM           adcr  SGI's Font Management library                AMOSS
 
 VMS::
-::SysCalls     i     VMS-specific system calls                    CBAIL
 ::Filespec     Sdcf  VMS and Unix file name syntax                CBAIL
+::Priv         Rdcf  Access VMS Privileges for processes          DSUGAL
+::SysCalls     i     VMS-specific system calls                    CBAIL
 
 Portable Digital Assistants
 
 PDA::
 ::Pilot        amcO  Interface to pilot-link library              KJALB
+::PilotDesktop i     Managing Pilot Desktop databases software    JWIEGLEY
 
 _______________________________________________________________________
 
@@ -1091,6 +1110,7 @@ Net::
 ::DNS          adpO  Interface to the DNS resolver                MFUHR
 ::Dnet         cdcO  DECnet-specific socket usage                 SPIDB
 ::Domain       adpf  Try to determine TCP domain name of system   GBARR
+::DummyInetd   RdpO  A dummy Inetd server                         GBARR
 ::FTP          adpf  Interface to File Transfer Protocol          GBARR
 ::Gen          adcO  Generic support for socket usage             SPIDB
 ::ICAP         adpO  Interface to ICAP Protocol (Internet-Draft)  KJOHNSON
@@ -1104,10 +1124,10 @@ Net::
 ::NISPlus      adcO  Interface to Sun's NIS+                      RIK
 ::NNTP         adpO  Client interface to NNTP protocol            GBARR
 ::Netrc        adpO  Support for .netrc files                     GBARR
+::PH           RdpO  CCSO Nameserver Client class                 GBARR
 ::POP3         adpO  Client interface to POP3 protocol            GBARR
 ::Pcap         adcr  An interface for LBL's packet capture lib    PLISTER +
-::Ping         SupO  TCP and ICMP ping (will come with perl5.004) RMOSE
-::Ping         Supf  TCP ping (comes with with perl5.003)         PMQS
+::Ping         SupO  TCP and ICMP ping                            RMOSE
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
 ::SNMP         adpO  Interface to SNMP Protocol (RFC1157)         GBARR
 ::SNPP         cdpO  Client interface to SNPP protocol            GBARR
@@ -1154,6 +1174,10 @@ SNMP           RdcO  Interface to CMU's SNMPv2 libsnmp.a          GSM
 Parallel::
 ::Pvm          bdcf  Interface to the PVM messaging service       EWALKER
 
+RADIUS::
+::Dictionary   bdpO  Object interface to RADIUS dictionaries      CHRMASTO
+::Packet       bdpO  Object interface to RADIUS (rfc2138) packets CHRMASTO
+
 _______________________________________________________________________
 
 6) Data Types and Data Type Utilities (see also Database Interfaces)
@@ -1173,11 +1197,13 @@ Math::
 ::Fortran      Rdpf  Implements Fortran log10 & sign functions    JARW
 ::Fraction     adpO  Fraction Manipulation                        KEVINA
 ::IEEE         i     Interface to ANSI/IEEE Std 754-1985 funcs
+::Interpolate  Rdpr  Polynomial interpolation of data             MATKIN
 ::LinearProg   idp   Linear programming utilities                 JONO
 ::Matrix       adpO  Matrix data type (transpose, multiply etc)   ULPFR
 ::MatrixCplx   idpO  Matrix data type for Complex Numbers         STBEY
 ::MatrixReal   RdpO  Everything you ever wanted to do with Matr.  STBEY
 ::Pari         adcf  Interface to the powerful PARI library       ILYAZ
+::Polynomial   RdpO  Polynomials as objects                       MATKIN
 ::Prime        i     Prime number testing                         GARY
 ::RandomPrime  i     Generates random primes of x bits            GARY
 ::SigFigs      bdpf  Math using scientific significant figures    SBECK
@@ -1232,7 +1258,7 @@ Date::
 ::DateCalc     Rdcf  Gregorian calendar date calculations         STBEY
 ::Format       Rdpf  Date formatter ala strftime                  GBARR
 ::GetDate      adcf  Yacc based free-format date parser in C      TOMC
-::Interval     idpO  Lightweight normalised interval data type    TIMB
+::Interval     idpO  Lightweight normalised interval data type    KTORP
 ::Language     adpO  Multi-language date support                  GBARR
 ::Manip        Rdpf  Manipulate/parse international dates/times   SBECK
 ::Parse        Rdpf  ASCII Date parser using regexp's             GBARR
@@ -1250,6 +1276,9 @@ Time::
 ::Zone         Rdpf  Timezone info and translation routines       GBARR
 ::gmtime       Supf  A by-name interface for gmtime               TOMC  !
 ::localtime    Supf  A by-name interface for localtime            TOMC  !
+
+Calendar::
+::CSA          adcO  interface with calenders such as Sun and CDE KJALB
 
 Tie::
 ::Hash         Supr  Base class for implementing tied hashes      P5P
@@ -1296,7 +1325,7 @@ Data::
 
 Tree::
 ::Base         cdpO  Defines a basic binary search tree           MSCHWERN +
-::Balanced     cdpO  Internally sorted hash-like ADT              MSCHWERN +
+::Balanced     Rdpf  Extract balanced-delimiter substrings        DCONWAY
 ::Smart        cdpO  Sorted hash-ish, becomes faster with use     MSCHWERN +
 
 _______________________________________________________________________
@@ -1310,12 +1339,15 @@ DBD::
 ::DB2          adcO  DB2 Driver for DBI                           MHM
 ::Fulcrum      cdcO  Fulcrum SearchServer Driver for DB           SHARI
 ::Informix     amcO  Informix Driver for DBI                      JOHNL
+::Informix4    amcO  DBI driver for Informix SE 4.10              GTHYNI
 ::Ingres       amcO  Ingres Driver for DBI                        HTOUG
 ::Oracle       amcO  Oracle Driver for DBI                        TIMB
 ::QBase        amcO  QBase Driver for DBI                         BENLI
 ::Solid        amcO  Solid Driver for DBI                         TWENRICH
 ::Sybase       cdpO  Sybase Driver for DBI (uses Sybase::CTlib)   MEWP
-::mSQL         amcO  Msql Driver for DBI                          ANDK  !
+::XBase        cmcO  Complete XBase support: read, write, index   JANPAZ
+::mSQL         amcO  Msql Driver for DBI                          JWIED
+::pNET         amcO  DBD proxy driver                             JWIED
 
 Oraperl        Rmpf  Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl        i     Ingperl emulation interface for DBD::Ingres  TIMB
@@ -1326,12 +1358,14 @@ Sybase::
 ::CTlib        bdcO  Sybase CTlibrary interface                   MEWP
 
 Datascope      Rdcf  Interface to Datascope RDBMS                 DANMQ
-Msql           RmcO  Mini-SQL, a light weight SQL database        ANDK
+LotusNotes     i     Interface to Lotus Notes C/C++ API           JONO
+Msql           RmcO  Mini-SQL, a light weight SQL database        JWIED
 ObjStore       ad+O  ObjectStore DBMS Interface                   JPRIT !
 Pg             Rdcf  Postgres95 SQL database interface            MERGL
 Postgres       Rdcr  PostgreSQL interface with Perl5 coding style VKHERA
 Sprite         RdpO  Limited SQL interface to flat file databases SHGUN
 Xbase          bdpf  Read Xbase files with simple IDX indexes     PRATP
+XBase          bdpO  Complete XBase support: read, write, index   JANPAZ
 
 Tied Hash File Interfaces:
 
@@ -1346,12 +1380,19 @@ MLDBM          bdpO  Transparently store multi-level data in DBM  GSAR
 CDB_File       adc   Tie to CDB (Bernstein's constant DB) files   TIMPX
 
 AsciiDB        i     Generic text database parsing                MICB
+AsciiDB::
+::TagFile      adpO  Tie class for a simple ASCII database        JOSERODR
+
 MARC           i     Interface to MARC format (bibliography)      PEM
 NetCDF         bmcr  Interface to netCDF API for scientific data  SEMM
 Stanza         i     Text format database used by OSF and IBM     JHI
 
 DTREE          cdcf  Interface to Faircom DTREE multikey ISAM db  JWAT
 Fame           adcO  Interface to FAME database and language      TRIAS
+
+OLE::
+::PropertySet  aupO  Property Set interface                       MSCHWARTZ
+::Storage      aupO  Structured Storage / OLE document interface  MSCHWARTZ
 
 _______________________________________________________________________
 
@@ -1390,25 +1431,35 @@ Tk             bmcO  Object oriented version of Tk v4             TKML
 Tkperldb       bmpf  Graphical perl debugger interface            TKML
 
 Tk::
-::Getopt       adpO  User configuration interface to Getopt::Long SREZIC
+::Axis         RmpO  Canvas with Axes
+::Dial         RmpO  Dial widget, alternative to the Scale widget TKML
 ::FileSelector bmpO  A Fileselectorbox for choosing files         TKML
+::Getopt       adpO  User configuration interface to Getopt::Long SREZIC
+::Multi        adpo  Manages several text widgets under Tk        DDUMONT
+::ObjScanner   adpo  Tk widget to display object attribute values DDUMONT
+::OlWm         RmpO  Access OpenLook toplevel widget properties   TKML
+::Pod          RmpO  POD browser toplevel widget                  TKML
+::TiedListbox  RmpO  gang together Listboxes                      TKML
 
 Other Major X Windows User Interface Modules:
 
+Gtk            cdcO  binding of the Gtk library used by GIMP      KJALB
 Sx             Rdcf  Simple Athena widget interface               FMC
-Motif          cdcf  Simple Motif and Xt interface                ERICA
 Fresco         cd+O  Interface to Fresco (post X11R6 version)     BPETH
 Qt             ad+O  Interface to the Qt toolkit                  AWIN
 
 X11::
-::Fvwm         adcO  interface to the FVWM window manager API     RJRAY
+::Auth         adpO  Read and handle X11 '.Xauthority' files      SMCCAM +
+::Fvwm         RdcO  interface to the FVWM window manager API     RJRAY
+::Keysyms      adpf  X11 key symbols (translation of keysymdef.h) SMCCAM +
+::Lib          adcO  X11 library interface                        KENFOX
+::Motif        adcO  Motif widget set interface                   KENFOX
+::Protocol     adpO  Raw interface to X Window System servers     SMCCAM +
+::Toolkit      adcO  X11 Toolkit library interface                KENFOX
+::Wcl          cdcO  Interface to the Widget Creation Library     JHPB  +
 ::XEvent       bdcO  provides perl OO acess to XEvent structures  MARTINB
 ::XFontStruct  bdcO  provides perl OO access to XFontStruct       MARTINB
 ::Xforms       bdcO  provides the binding to the xforms library   MARTINB
-::Protocol     adpO  Raw interface to X Window System servers     SMCCAM +
-::Keysyms      adpf  X11 key symbols (translation of keysymdef.h) SMCCAM +
-::Auth         adpO  Read and handle X11 '.Xauthority' files      SMCCAM +
-::Wcl          cdcO  Interface to the Widget Creation Library     JHPB  +
 
 _______________________________________________________________________
 
@@ -1417,6 +1468,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 C::
+::DynaLib      bdcO  Allows direct calls to dynamic libraries     JTOBEY
 ::Scan         RdpO  Heuristic parse of C files                   ILYAZ
 
 Tcl            RdcO  Complete access to Tcl                       MICB
@@ -1453,6 +1505,7 @@ File::
 ::Lock         adcf  File locking using flock() and lockf()       JHI
 ::Path         Supf  File path and name utilities                 P5P
 ::Slurp        bdpf  Read/write/append files quickly              MUIR
+::Spec         bdpO  Handling files and directories portably      KJALB
 ::Sync         bdcf  POSIX/*nix fsync() and sync()                CEVANS
 ::lockf        bdcf  Interface to lockf system call               PHENSON
 ::stat         Supf  A by-name interface for the stat function    TOMC  !
@@ -1484,9 +1537,12 @@ Language text related modules
 Text::
 ::Abbrev       Supf  Builds hash of all possible abbreviations    P5P
 ::Bib          RdpO  Module moved to Text::Refer                  ERYQ
+::BibTeX       adcO  Parse BibTeX files                           GWARD
 ::CSV          adpO  Manipulate comma-separated value strings     ALANCITT !
 ::DelimMatch   RdpO  Match (possibly nested) delimited strings    NWALSH
 ::Invert       cdpO  Create/query inv. index of text entities     NNEUL
+::Metaphone    cdpf  Convert a string to a metaphone value        MIKESTOK
+::Morse        cdpf  convert text to/from Morse code              JONO
 ::ParseWords   Supf  Parse strings containing shell-style quoting HALPOM
 ::Refer        RdpO  Parse refer(1)-style bibliography files      ERYQ
 ::Soundex      Supf  Convert a string to a soundex value          MIKESTOK
@@ -1513,8 +1569,9 @@ Font::
 ::TFM          adpO  Read info from TeX font metric files         JANPAZ
 
 Parse::
+::ePerl        Rdcr  Embedded Perl (ePerl) parser                 RSE
 ::Lex          adpO  Generator of lexical analysers               PVERD
-::RecDescent   cnpO  Recursive descent parser generator           DCONWAY
+::RecDescent   RdpO  Recursive descent parser generator           DCONWAY
 
 SGML::
 ::Element      cdpO  Build a SGML element structure tree          LSTAF
@@ -1531,6 +1588,8 @@ Text::
 Marpa          cd+O  Context Free Parser                          JKEGL
 Anagram        adcf  Anangram generator                           ASHER
 
+Chatbot::
+::Eliza        adpO  Eliza algorithm encapsulated in an object    JNOLAN
 
 _______________________________________________________________________
 
@@ -1539,17 +1598,22 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Getopt::
-::Std          Supf  Implements basic getopt and getopts          P5P
-::Long         Supf  Advanced option handling                     JV
-::Gnu          adcf  GNU form of long option handling             WSCOT
-::Regex        ad    Option handling using regular expressions    JARW
-::Mixed        Rdpf  Supports both long and short options         CJM
-::Help         bdpf  Yet another getopt, has help and defaults    IANPX
 ::EvaP         Mdpr  Long/short options, multilevel help          LUSOL
+::Gnu          adcf  GNU form of long option handling             WSCOT
+::Help         bdpf  Yet another getopt, has help and defaults    IANPX
+::Long         Supf  Advanced option handling                     JV
+::Mixed        Rdpf  Supports both long and short options         CJM
+::Regex        ad    Option handling using regular expressions    JARW
+::Simple       RdpO  A simplified interface to Getopt::Long       RSAVAGE
+::Std          Supf  Implements basic getopt and getopts          P5P
+::Tabular      adpr  Table-driven argument parsing with help text GWARD
 
 ConfigReader   cdpO  Read directives from configuration file      AMW
 Resources      bdpf  Application defaults management in Perl      FRANCOC
 IniConf        bdpO  Read/Write INI-Style configuration files     SHUTTON
+
+App::                General application development tools
+::Config       bdpO  Configuration file mgmt                      ABW
 
 
 _______________________________________________________________________
@@ -1631,6 +1695,7 @@ CGI::
 ::Carp         cmpf  Drop-in Carp replacement for CGI scripts     CGIP
 ::ErrorWrap    bdpf  Trap warnings and die and convert into HTML  TOMC
 ::Imagemap     adpO  Imagemap handling for specialized apps       MIKEH
+::LogCarp      adpf  Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr      RmpO  Fork CGI app as a per-session mini server    CGIP
 ::Out          adpf  Buffer CGI output and report errors          MUIR
 ::Request      RmpO  Parse CGI request and handle form fields     CGIP
@@ -1646,7 +1711,9 @@ HTML::
 ::Entities     bmpf  Encode/decode HTML entities                  LWWWP
 ::Formatter    ampO  Convert HTML to plain text or Postscript     LWWWP
 ::Parse        ampO  Parse HTML documents                         LWWWP
+::ParseForm    i     Parse and handle HTML forms via templates    LMONNET
 ::Stream       RdpO  HTML output stream                           ERYQ
+::TableLayout  bdpO  an extensible OO layout manager              SFARRELL
 
 HTTP::
 ::Date         bmpf  Date conversion for HTTP date formats        LWWWP
@@ -1685,7 +1752,7 @@ MIME::
 ::Head         adpO  A parsed MIME header                         ERYQ
 ::IO           adpO  Simple I/O handles for filehandles/scalars   ERYQ
 ::Latin1       adpO  Encoding 8-bit Latin-1 as 7-bit ASCII        ERYQ
-::Lite         bdpO  Single module for composing simple MIME msgs ERYQ
+::Lite         RdpO  Single module for composing simple MIME msgs ERYQ
 ::Parser       adpO  Parses streams to create MIME entities       ERYQ
 ::ParserBase   adpO  For building your own MIME parser            ERYQ
 ::Words        cdpf  Encode/decode RFC1522-escaped header strings ERYQ
@@ -1694,6 +1761,7 @@ Netscape::
 ::Cache        bdpO  Access Netscape cache files                  SREZIC
 ::History      bdpO  Class for accessing Netscape history DB      NEILB
 ::HistoryURL   bdpO  Like a URI::URL, but with visit time         NEILB
+::Server       adcO  Perl interface to Netscape httpd API         BSUGARS
 
 CCI            i     Common Client Interface for WWW browsers     DOUGM
 CGI_Lite       MnpO  Light-weight interface for fast apps         SHGUN
@@ -1754,11 +1822,14 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Compress::
-::Zlib         adcO  Interface to the Info-Zip zlib library       PMQS
+::Zlib         RdcO  Interface to the Info-Zip zlib library       PMQS
 
 Convert::
 ::BER          adpO  Class for encoding/decoding BER messages     GBARR
 ::BinHex       cdpO  Convert to/from RFC1741 HQX7 (Mac BinHex)    ERYQ
+::EBCDIC       adpf  ASCII to/from EBCDIC                         CXL
+::Recode       ?     Mapping functions between character sets     GAAS
+::Translit     MdpO  String conversion among many character sets  GENJISCH
 ::UU           bdpf  UUencode and UUdecode                        ANDK
 
 AppleII::
@@ -1791,7 +1862,7 @@ Graphics::
 ::Turtle       idp   Turtle graphics package                      NEERI
 
 Image::
-::ColorSpace   id    transform colors between colorspaces         JONO
+::Colorimetry  cdpO  transform colors between colorspaces         JONO
 ::Magick       RdcO  Read, query, transform, and write images     JCRISTY
 ::Size         Rdpf  Measure size of images in common formats     RJRAY
 
@@ -1809,22 +1880,24 @@ Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Mail::
 ::Address      adpf  Manipulation of electronic mail addresses    GBARR
-::Internet     adpO  Functions for RFC822 address manipulations   GBARR
-::MIME         adpO  Extends Mail::Internet to understand MIME    GBARR
-::Cap          adpO  Parse mailcap files as specified in RFC 1524 GBARR
-::Send         adpO  Simple interface for sending mail            GBARR
-::Mailer       adpO  Simple mail agent interface (see Mail::Send) GBARR
 ::Alias        adpO  Reading/Writing/expanding of mail aliases    GBARR
-::Util         adpf  Mail utilities (for by some Mail::* modules) GBARR
-::MH           adcr  MH mail interface                            MRG
-::POP3Client   bdpO  Support for clients of POP3 servers          SDOWD
+::Cap          adpO  Parse mailcap files as specified in RFC 1524 GBARR
+::Field        RdpO  Base class for handling mail header fields   GBARR
 ::Folder       adpO  Base-class for mail folder handling          KJOHNSON
+::Header       RdpO  Manipulate mail RFC822 compliant headers     GBARR
+::Internet     adpO  Functions for RFC822 address manipulations   GBARR
+::MH           adcr  MH mail interface                            MRG
+::Mailer       adpO  Simple mail agent interface (see Mail::Send) GBARR
+::POP3Client   bdpO  Support for clients of POP3 servers          SDOWD
+::Send         adpO  Simple interface for sending mail            GBARR
+::Util         adpf  Mail utilities (for by some Mail::* modules) GBARR
 
 
 News::
 ::Gateway      cdpO  Mail-to-news gateway and robomoderator       RRA
 ::NNTPClient   bdpO  Support for clients of NNTP servers          RVA
 ::Newsrc       adpO  Manage .newsrc files                         SWMCD
+::Scan         cdpO  Gathers and reports newsgroup statistics     GBACON
 
 NNTP::
 ::Server       i     Support for an NNTP server                   JOEHIL
@@ -1858,14 +1931,14 @@ IO::
 ::Pipe         cdpO  Methods for pipe handles                     GBARR
 ::Ptty         adcf  Pseudo terminal interface functions          GBARR
 ::Pty          cdpO  Methods for pseudo-terminal allocation etc   PEASE
-::STREAMS      i cO  Methods for System V style STREAMS control
-::Scalar       idpO  An I/O handle on a scalar                    ERYQ
-::ScalarArray  idpO  An I/O handle on a ref to array of scalars   ERYQ
+::STREAMS      cdcO  Methods for System V style STREAMS control   NI-S
+::Scalar       adpO  An I/O handle to read/write a string buffer  ERYQ
+::ScalarArray  adpO  An I/O handle on a ref to array of scalars   ERYQ
 ::Seekable     cdpO  Methods for seekable input/output handles    GBARR
 ::Select       adpO  Object interface to system select call       GBARR
 ::Socket       cdpO  Methods for socket input/output handles      GBARR
-::Tee          RdpO  Multiplex output to multiple handles         CCSHAN +
-::WrapHandle   idpO  Wrap old-style FHs in IO::-like interface    ERYQ
+::Tee          RdpO  Multiplex output to multiple handles         KENSHAN +
+::Wrap	       adpO  Wrap old-style FHs in IO::-like interface    ERYQ
 
 FileHandle     SupO  File handle objects and methods              P5P
 FileCache      Supf  Keep more files open than the system permits P5P
@@ -1902,6 +1975,12 @@ NT             cdcf  Old name for WinNT - being phased out        WIN32
 
 Win95          i     Interface to Windows 95 specific functions   WIN32
 
+Win32API
+::Registry     adcf  Win32 Registry functions/constants           TYEMQ
+::File         cdcf  Win32 file/dir functions/constants           TYEMQ
+::Window       cdcf  Win32 Windowing functions/constants          TYEMQ
+::WinStruct    cdcf  Routines for Win32 Windowing data structures TYEMQ
+::Console      cdcf  Win32 Console Window functions/consts        TYEMQ
 
 _______________________________________________________________________
 
@@ -1937,9 +2016,6 @@ NetObj         adpO  Module loading in real time over TCP/IP      JDUNCAN
 Penguin::
 ::Easy         RdpO  Provides quick, easy access to Penguin API   JDUNCAN
 
-Print::
-::Label        i     Format address labels                        JONO
-
 BarCode::
 ::UPC          i     Produce PostScript UPC barcodes              JONO
 
@@ -1951,6 +2027,11 @@ Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 SyslogScan::   
 ::SyslogEntry  bdpO  Parse UNIX syslog                            RHNELSON
 ::SendmailLine bdpO  Summarize sendmail transactions              RHNELSON
+
+Chemistry::
+::Elements     RdpO  Working with Chemical Elements               BDFOY
+::Isotopes     idpO  extends Elements to deal with isotopes       BDFOY
+
 
 =======================================================================
 
@@ -2014,9 +2095,11 @@ Contacts: P5P CHIPS
 
 5) Extend Yacc To Write XS Code
 
-Some version of yacc, like byacc, should be converted to spit out an OO
-.xs and .pm implementing a parser. Jake Donham's work so far is
-available in his CPAN directory http://www.perl.com/CPAN/authors/id/JAKE.
+To quote Larry, "The right way to integrate yacc with Perl would be to
+have it spit out an XS module, presumably." Some version of yacc, like
+byacc, should be converted to spit out an OO .xs and .pm implementing
+a parser. Jake Donham's work so far is available in his CPAN directory
+http://www.perl.com/CPAN/authors/id/JAKE.
 
 Contacts: JAKE NI-S P5P
 
@@ -2068,8 +2151,12 @@ RFC1777    Lightweight Directory Access Protocol         Net::LDAP
 RFC1861    Simple Network Pager Protocol                 Net::SNPP
 RFC1866    Encode/decode HTML entities in a string       HTML::Entities
 RFC1939    Post Office Protocol 3                        Net::POP3
+RFC1950-1952
+           ZLIB, DEFLATE, GZIP                           Compress::Zlib
 RFC1960    String Representation of LDAP Search Filters  Net::LDAP::Filter
-RFC2045    Base64 encoding                               MIME::Base64
+RFC2045-2049
+           MIME - Multipurpose Internet Mail Extensions  MIME::*
+RFC2138    Terminal server authentification and accting  RADIUS
 _______________________________________________________________________
 
 2)   ITU - International Telegraph Union (X.*)
