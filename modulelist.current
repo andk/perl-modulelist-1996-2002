@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.52 $$Date: 2000/05/25 20:27:39 $
+The Perl 5 Module List       $Revision: 3.53 $$Date: 2000/06/16 20:01:59 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.52 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.53 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1539,7 +1539,6 @@ Ref               RdpO Print, compare, and copy perl structures     MUIR
 SOOP              RdpO Safe Object Oriented Programming             GARROW
 
 Sort::
-::ArbBiLex        Rdpf sort functions for arbitrary sort orders     SBURKE
 ::ByCompatMatrix  idpO Sort objects by attribute compatibility      ICKHABOD
 ::Fields          bdpf sort text lines by alpha or numeric fields   JNH
 ::PolySort        bdpO general rules-based sorting of lists         DMACKS
@@ -2187,6 +2186,9 @@ Cz::
 
 Geography::
 ::States          Rdp? Map states and provinces to their codes      ABIGAIL
+
+Sort::
+::ArbBiLex        Rdpf sort functions for arbitrary sort orders     SBURKE
 
 _______________________________________________________________________
 
