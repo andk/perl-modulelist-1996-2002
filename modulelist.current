@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.26 $Date: 1996/05/25 15:25:48 $
+The Perl 5 Module List       Revision: 2.26 $Date: 1996/06/09 19:19:31 $
 ======================
 
 Maintained by Tim Bunce and Andreas Koenig <modules@perl.com>
@@ -796,7 +796,7 @@ UNIVERSAL      SucO  Internal universal base-class                JACKS
 SUPER          SucO  Internal class to access superclass methods
 DynaLoader     SucO  Dynamic loader for shared libraries
 AutoLoader     SupO  Automatic function loader (using AutoSplit)
-SelfLoader     SdpO  Automatic function loader (using __DATA__)   JACKS !
+SelfLoader     SdpO  Automatic function loader (using __DATA__)   JACKS 
 Exporter       SupO  Implements default import method for modules
 Carp           Supf  Throw exceptions outside current package
 Config         Supf  Stores details of perl build configuration
@@ -824,8 +824,8 @@ Plthread       i     Multithreading at Perl level (not O/S level) MICB
 
 The Perl Compiler
 
-B              aucO  The Perl Compiler                            MICB +
-O              aucO  Perl Compiler frontends                      MICB +
+B              aucO  The Perl Compiler                            MICB 
+O              aucO  Perl Compiler frontends                      MICB 
 
 Source Code Filters
 
@@ -858,10 +858,11 @@ FindBin        adpf  Locate current script bin directory          GBARR
 DoWhatIWant    i     Does what you want without even asking
 
 ExtUtils::
+::DynaGlue     i     Utilities/glue code for C<->Perl interfaces
 ::MakeMaker    SupO  Writes Makefiles for extensions              MMML
 ::Manifest     Supf  Utilities for managing MANIFEST files        MMML
 ::Typemap      i     xsubpp typemap handling                      WPS
-::DynaGlue     i     Utilities/glue code for C<->Perl interfaces
+::embed        bdpf  Utilities for embedding Perl in C/C++ apps   DOUGM +
 
 Test::
 ::Harness      Supf  Executes perl-style tests                    ANDK
@@ -871,10 +872,9 @@ Devel::
 ::DProf        Rdcf  Execution profiler                           DMR
 ::DumpStack    Rupf  Dumping of the current function stack        JACKS
 ::Peek         adcf  Peek at internal representation of Perl data ILYAZ
-::RegExp       adcO  Access perl internal regex functions         ILYAZ +
-::Symdump      RdpO  Perl symbol table access and dumping         ANDK !
-::TraceFuncs   adpO  Trace funcs by using object destructions     JOEHIL !
-::embed        bdpf  Utilities for embedding Perl in C/C++ apps   DOUGM
+::RegExp       adcO  Access perl internal regex functions         ILYAZ 
+::Symdump      RdpO  Perl symbol table access and dumping         ANDK  
+::TraceFuncs   adpO  Trace funcs by using object destructions     JOEHIL 
 
 Usage          bupr  Type and range checking on subroutine args   JACKS
 
@@ -963,7 +963,7 @@ Net::
 ::Gen          adcO  Generic support for socket usage             SPIDB
 ::IRC          i     Internet Relay Chat interface                MRG
 ::Inet         adcO  Internet (IP) socket usage                   SPIDB
-::LDAP         i     Lightweight Directory Access Protocol                +
+::LDAP         i     Lightweight Directory Access Protocol              
 ::NIS          adcO  Interface to Sun's NIS                       RIK
 ::NISPlus      adcO  Interface to Sun's NIS+                      RIK
 ::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
@@ -983,7 +983,7 @@ IPC::
 ::Open3        Supf  Like IPC::Open2 but with error handling
 ::Chat2        ?     Out-of-service during refit!                 GBARR
 ::SysV         adcr  shared memory, semaphores, messages etc      JACKS
-::Mmap         i     Interface to Unix's mmap() shared memory     MICB !
+::Mmap         i     Interface to Unix's mmap() shared memory     MICB  
 ::Globalspace  cdpO  Multi-process shared hash and shared events  JACKS
 
 RPC::
@@ -991,11 +991,11 @@ RPC::
 ::DCE          i     Distributed Computing Environment (OSF) RPCs
 
 DCE::
-::Registry     cdcf  DCE registry functions                       DOUGM !
+::Registry     cdcf  DCE registry functions                       DOUGM 
 
-Proxy          i     Transport-independent remote processing      MICB !
+Proxy          i     Transport-independent remote processing      MICB  
 Proxy::
-::Tk           ?     Tk transport class for Proxy (part of Tk)    MICB !
+::Tk           ?     Tk transport class for Proxy (part of Tk)    MICB  
 
 ToolTalk       adcr  Interface to the ToolTalk messaging service  MARCP
 SNMP           RdcO  Interface to CMU's SNMPv2 libsnmp.a          GSM
@@ -1070,7 +1070,7 @@ Time::
 Tie::
 ::Hash         Supr  Base class for implementing tied hashes
 ::Scalar       Supr  Base class for implementing tied scalars
-::Array        c     Base class for implementing tied arrays      CHIPS !
+::Array        c     Base class for implementing tied arrays      CHIPS 
 ::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
 ::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
 ::Cache        adpO  In memory size limited LRU cache             MIKEH
@@ -1143,7 +1143,7 @@ AnyDBM_File    Sup   Uses first available *_File module above
 DBZ_File       adc   Tie to dbz files (mainly for news history)   IANPX
 MLDBM          bdpO  Transparently store multi-level data in DBM  GSAR
 
-AsciiDB        i     Generic text database parsing                MICB !
+AsciiDB        i     Generic text database parsing                MICB  
 MARC           i     Interface to MARC format (bibliography)      PEM
 NetCDF         bmcr  Interface to netCDF API for scientific data  SEMM
 Stanza         i     Text format database used by OSF and IBM     JHI
@@ -1173,7 +1173,7 @@ Major Character User Interface Modules:
 Curses         adcO  Character screen handling and windowing      WPS
 NCurses        cdcO  Curses using the ncurses package             WPS
 Perlmenu       Mdpf  Curses-based menu and template system        SKUNZ
-Cdk            RdcO  Collection of Curses widgets                 GLOVER +
+Cdk            RdcO  Collection of Curses widgets                 GLOVER 
 PV             bmpO  PerlVision curses windowing (OO widgets etc) AGUL
 
 Tk X Windows User Interface Modules:
@@ -1270,7 +1270,7 @@ Text::
 Stemming algorithms
 
 Text::
-::English      adpf  English language stemming                    IANPX +
+::English      adpf  English language stemming                    IANPX 
 ::German       adpf  German language stemming                     ULPFR
 ::Stem         bdpf  Porter algorithm for stemming English words  IANPX
 
@@ -1339,7 +1339,7 @@ DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
 MD5            RdcO  MD5 message digest algorithm                 NWINT
 SHA            adcO  NIST SHA message digest algorithm            UWEH
-Kerberos       i     Kerberos IV authentication                   MICB !
+Kerberos       i     Kerberos IV authentication                   MICB  
 GSS            i     Generic Security Services API (RFC 1508/9)   MSHLD
 
 Crypt::
@@ -1522,7 +1522,7 @@ News::
 ::Newsrc       adpO  Manage .newsrc files                         SWMCD
 
 NNTP::
-::Server       i     Support for an NNTP server                   JOEHIL +
+::Server       i     Support for an NNTP server                   JOEHIL 
 
 _______________________________________________________________________
 
@@ -1574,7 +1574,7 @@ Win32::
 ::WinError     adcf  Interface to Win32 WinError functions        WIN32
 ::Registry     adcf  Interface to Win32 Registry functions        WIN32
 ::Process      adcf  Interface to Win32 Process functions         WIN32
-::FUtils       bdcf  Implements missing File Utility functions    JOCASA +
+::FUtils       bdcf  Implements missing File Utility functions    JOCASA 
 
 WinNT          cdcf  Interface to Windows NT specific functions   WIN32
 NT             cdcf  Old name for WinNT - being phased out        WIN32
@@ -1604,14 +1604,14 @@ Bio::
 Remedy::
 ::AR           adcO  Interface to Remedy's Action Request API     RIK
 
-ARS            Rd??  Interface to Remedy's Action Request API     JMURPHY +
+ARS            Rd??  Interface to Remedy's Action Request API     JMURPHY 
 
 Psion::
 ::Db           idpO  Handle Psion palmtop computer database files IANPX
 
 Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 
-Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN +
+Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN 
 
 =======================================================================
 
@@ -1738,7 +1738,7 @@ to a CGI script that lets you edit the database entries yourself.
   ALSCH    Alan Scheinine <scheinin@crs4.it>
   AMOSS    Amos Shapira <amoss@cs.huji.ac.il>
   AMW      Andrew Wilcox <awilcox@world.std.com>
-  ANDK     Andreas Koenig <a.koenig@franz.ww.TU-Berlin.DE>
+  ANDK     Andreas König <a.koenig@franz.ww.TU-Berlin.DE>
   ANDYD    Andy Dougherty <doughera@lafcol.lafayette.edu>
   ASHER    Aaron Sherman <ajs@openmarket.com>
   BARTS    Bart Schuller <P.B.Schuller@cuci.nl>
@@ -1747,6 +1747,7 @@ to a CGI script that lets you edit the database entries yourself.
   BJEPS    Brian Jepson <bjepson@conan.ids.net>
   BMIDD    William J. Middleton <wjm@best.com>
   BPETH    Bill Petheram <petheram@acm.org>
+  BPOWERS  Brent B. Powers <powers@ml.com>
   CBAIL    Charles Bailey <bailey@genetics.upenn.edu>
   CGIP     The CGI-Perl Developers mailing list
            Mail to CGI-perl-REQUEST@webstorm.com with body "subscribe"
@@ -1755,10 +1756,11 @@ to a CGI script that lets you edit the database entries yourself.
   DANKOGAI Dan Kogai <dankogai@jms.jeton.or.jp>
   DANMQ    Daniel M. Quinlan <danq@colorado.edu>
   DAVEROTH Dave Roth <rothd@infowire.com>
-  DBIML    The DBI mailing lists: subscribe via http://www.fugue.com/dbi
-           if you can't do that then mail to dbi-REQUEST@fugue.com and
-           ask (the human, Ted Lemon) to subscribe you to one or more
-           of dbi-announce, dbi-users, dbi-dev.
+  DBIML    The DBI Mailing Lists
+           Subscribe via http://www.fugue.com/dbi. If you can't do
+           that then mail to dbi-REQUEST@fugue.com and ask (the human,
+           Ted Lemon) to subscribe you to one or more of dbi-announce,
+           dbi-users, or dbi-dev.
   DMEGG    David Megginson <dmeggins@aix1.uottawa.ca>
   DMO      Darryl Okahata <darrylo@sr.hp.com>
   DMR      Dean Roehrich <roehrich@cray.com>
@@ -1773,12 +1775,13 @@ to a CGI script that lets you edit the database entries yourself.
   FMC      Frederic Chauveau <fmc@pasteur.fr>
   FRANCOC  Franco Callari <franco@cim.mcgill.ca>
   FSG      Felix Sebastian Gallo <fsg@coriolan.amicus.com>
-  GAAS     Gisle Aas <aas@oslonett.no>
+  GAAS     Gisle Aas <aas@sn.no>
   GAND     Greg Anderson <greg@ftp.netgate.net>
   GARY     Gary Howland <gary@systemics.com>
   GBARR    Graham Barr <Graham.Barr@tiuk.ti.com>
   GBOSS    Greg Bossert <bossert@ecto.org>
   GEHIC    Gerard Hickey <hickey@ctron.com>
+  GLOVER   Mike Glover <glover@credit.erin.utoronto.ca>
   GREGG    Gregg Helt <gregg@fruitfly.berkeley.edu>
   GSAR     Gurusamy Sarathy <gsar@umich.edu>
   GSM      Joe Marzot <gmarzot@baynetworks.com>
@@ -1790,12 +1793,16 @@ to a CGI script that lets you edit the database entries yourself.
   JAMCC    Jamie McCarthy <jamie@voyager.net>
   JARW     John A.R. Williams <J.A.R.Williams@aston.ac.uk>
   JCMURPHY Jeff Murphy <jcmurphy@smurfland.cit.buffalo.edu>
+  JDALLMAN John Dallman <jgd@cix.compulink.co.uk>
   JDUNCAN  James Duncan <jduncan@hawk.igs.net>
+  JFRIEDL  Jeffrey Friedl <jfriedl@omron.co.jp>
   JHI      Jarkko Hietaniemi <Jarkko.Hietaniemi@iki.fi>
   JKAST    Jason Kastner <jkastner@oboe.calpoly.edu>
   JKEGL    Jeffrey Kegler <jeffrey@best.com>
   JLEVAN   Jerry LeVan <levan@eagle.eku.edu>
   JMURPHY  Joel Murphy <jmurphy@acsu.buffalo.edu>
+  JOCASA   Joe Casadonte <joc@netaxs.com>
+  JOEHIL   Joe Hildebrand <joe.hildebrand@twcable.com >
   JONG     Jong Park <jong@mrc-lmb.cam.ac.uk>
   JONO     Jon Orwant <orwant@media.mit.edu>
   JPC      Jan-Pieter Cornet <johnpc@xs4all.nl>
@@ -1840,11 +1847,15 @@ to a CGI script that lets you edit the database entries yourself.
   MUIR     David Muir Sharnoff <muir@idiom.com>
   NEERI    Matthias Ulrich Neeracher <neeri@iis.ee.ethz.ch>
   NEILB    Neil Bowers <neilb@khoral.com>
+  NEMWS    Nem W Schlecht <nem@abattoir.cc.ndsu.nodak.edu>
   NI-S     Nick Ing-Simmons <nik@tiuk.ti.com>
   NWINT    Neil Winton <nwinton@axion.bt.co.uk>
   OZAWA    OZAWA Sakuro <ozawa@prince.pe.u-tokyo.ac.jp>
   P5P      The Perl5 Porters Mailing List
            Mail to perl5-porters-REQUEST@nicoh.com with body
+           "subscribe"
+  PACKRATS The Packrats Mailing List
+           Mail to perl-packrats-REQUEST@metronet.com with body
            "subscribe"
   PATM     Pat Martin <pat@bronco.advance.com>
   PEASE    Mark Pease <peasem@primenet.com>
@@ -1872,6 +1883,7 @@ to a CGI script that lets you edit the database entries yourself.
   SHGUN    Shishir Gundavaram <shishir@acs.bu.edu>
   SKUNZ    Steven L. Kunz <skunz@iastate.edu>
   SPIDB    Spider Boardman <spider@orb.nashua.nh.us>
+  SRIRAM   Sriram Srinivasan <sriram@tcs.com>
   STANM    Stan Melax <stan@skyler.arc.ab.ca>
   STBEY    Steffen Beyer <sb@sdm.de>
   SWMCD    Steven McDougall <swm@cric.com>
