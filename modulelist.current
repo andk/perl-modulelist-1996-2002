@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.46 $$Date: 2000/05/22 04:22:49 $
+The Perl 5 Module List       $Revision: 3.47 $$Date: 2000/05/22 12:29:23 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.46 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.47 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1592,6 +1592,8 @@ DBI               amcO Generic Database Interface (see DBD modules) DBIML
 DBIx::            Extensions to the DBI
 ::Abstract        RmpO Wrapper for DBI that generates SQL           TURNERA
 ::AnyDBD          bdpO Module to make cross db applications easier  MSERGEANT
+::CGITables       adpO Easy DB access from a CGI                    TOBIX
+::Copy            adpO Copying databases                            TOBIX
 ::glueHTML        bdpO CGI interface to DBI databases               JFURNESS
 ::HTMLView        cdpO Creating web userinterfaces to DBI dbs       HAKANARDO
 ::OracleSequence  adpO OO access to Oracle sequences via DBD-Oracle BLABES
@@ -1972,8 +1974,7 @@ Text::
 Text::Wrap::
 ::Hyphenate       a    Like Text::Wrap with ability to hyphenate    MJD
 
-Other Text:: modules (these should be under String:: but pre-date it
-or accidentally slipped in)
+Other Text:: modules (these should be under String:: but pre-date it)
 
 Text::
 ::Balanced        Mdpf Extract balanced-delimiter substrings        DCONWAY
@@ -2300,6 +2301,7 @@ HTML::
 ::Validator       bdpO HTML validator utilizing nsgmls and libwww   SAIT
 
 HTTP::
+::Browscap        cdpO Provides info on web browser capabilities    JAMESPO
 ::Cookies         RmpO Storage of cookies                           LWWWP
 ::Date            Rmpf Date conversion for HTTP date formats        LWWWP
 ::Daemon          RmpO Base class for simple HTTP servers           LWWWP
@@ -2459,6 +2461,7 @@ Compress::
 ::Zlib            RdcO Interface to the Info-Zip zlib library       PMQS
 
 Convert::
+::ASN1            adhO Standard en/decode of ASN.1 structures       GBARR
 ::BER             adpO Class for encoding/decoding BER messages     GBARR
 ::BinHex          cdpO Convert to/from RFC1741 HQX7 (Mac BinHex)    ERYQ
 ::EBCDIC          adpf ASCII to/from EBCDIC                         CXL
@@ -2477,6 +2480,12 @@ AppleII::
 Archive::
 ::Tar             adpO Read, write and manipulate tar files         CDYBED
 ::Zip             adpO Provides an interface to ZIP archive files   NEDKONZ
+
+RPM               adcO RPM package management                       RJRAY
+RPM::
+::Constants       adcO Constants for RPM package management         RJRAY
+::Database        adcO DB interface for RPM package management      RJRAY
+::Headers         adcO Headers for RPM package management           RJRAY
 
 _______________________________________________________________________
 
@@ -3232,6 +3241,7 @@ to a CGI script that lets you edit the database entries yourself.
   DKUEBLER Daniel Kuebler <dkuebler@mobile-net.ch>
   DKWILSON Damion K. Wilson <dkw@rcm.bm>
   DLANE    Derek Lane <dereklane@pobox.com>
+  DLECONTE Denis Leconte <denis_leconte@yahoo.com>
   DLINCOLN Dan Lincoln <dan@galaxymall.com>
   DLOWE    J. David Lowe <dlowe@pootpoot.com>
   DMACKS   Daniel Macks <dmacks@netspace.org>
@@ -3857,7 +3867,7 @@ to a CGI script that lets you edit the database entries yourself.
   RIK      Rik Harris <rik.harris@fulcrum.com.au>
   RISCOSML The Risc-OS perl porters mailing list
            Mail to riscos-request@perl.org with body subscribe
-  RJRAY    Randy J Ray <rjray@tsoft.com>
+  RJRAY    Randy J Ray <rjray@blackperl.com>
   RJS      Robert J Seymour <rseymour@rseymour.com>
   RKOBES   Randy Kobes <randy@theory.uwinnipeg.ca>
   RLBJR    Richard Burkholder Jr. <rlb_jr@hotmail.com>
