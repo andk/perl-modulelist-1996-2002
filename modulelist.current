@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.19 $$Date: 1999/10/31 17:43:14 $
+The Perl 5 Module List       $Revision: 3.20 $$Date: 1999/11/01 21:00:07 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.19 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.20 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1869,7 +1869,7 @@ FrameMaker::
 Marpa             cd+O Context Free Parser                          JKEGL
 
 Chatbot::
-::Eliza           Rdph Eliza algorithm encapsulated in an object    JNOLAN
+::Eliza           RdpO Eliza algorithm encapsulated in an object    JNOLAN
 
 Quiz::
 ::Question        cdpO Questions and Answers wrapper                RFOLEY
@@ -3335,8 +3335,7 @@ to a CGI script that lets you edit the database entries yourself.
   OTISG    Otis Gospodnetic <Otis.Gospodnetic@middlebury.edu>
   OZAWA    OZAWA Sakuro <crouton@po.shiojiri.ne.jp>
   P5P      The Perl5 Porters Mailing List
-           Mail to perl5-porters-REQUEST@perl.org with body
-           "subscribe"
+           Mail perl5-porters-subscribe@perl.org
   PACKRATS The Packrats Mailing List
            Mail to majordomo@cise.ufl.edu with body "subscribe
            perl-packrats <your address>"
@@ -3353,7 +3352,7 @@ to a CGI script that lets you edit the database entries yourself.
            To subscribe to the list send the command "subscribe
            perl4lib yourname" as the body of your message to
            listproc@vims.edu. Please visit
-           http://www.vims.edu/perl4lib for details. 
+           http://www.vims.edu/perl4lib for details.
   PERLDL   The Perl Data Language Mailing List
            Mail subscription requests to
            perldl-request@jach.hawaii.edu with body "subscribe"
@@ -3574,8 +3573,7 @@ to a CGI script that lets you edit the database entries yourself.
   VIZDOM   Gennis Emerson <gemerson@vizdom.com>
   VKHERA   Vivek Khera <vivek@khera.org>
   VMSML    The VMSPerl Mailing list
-           Mail subscription requests to maintainer at
-           <bailey@genetics.upenn.edu>
+           vmsperl-subscribe@perl.org
   WADG     Jeremy Wadsack <dgsupport@wadsack-allen.com>
   WATANABE WATANABE Hirofumi <eban@os.rim.or.jp>
   WAYNEDAV Wayne Davison <wayne@clari.net>
