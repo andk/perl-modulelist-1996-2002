@@ -1,7 +1,7 @@
-The Perl 5 Module List       $Revision: 2.23 $$Date: 1996/04/23 06:10:21 $
+The Perl 5 Module List       Revision: 2.25 $Date: 1996/05/24 18:05:29 $
 ======================
 
-Maintained by Tim Bunce and Andreas Koenig <modules@franz.ww.tu-berlin.de>
+Maintained by Tim Bunce and Andreas Koenig <modules@perl.com>
 
 Contents
 
@@ -9,7 +9,7 @@ Contents
      Where Are The Modules Kept?
      Playing Your Part
      How To Get a More Recent Copy of the List
-   ! Editorial Information and Copyright
+     Editorial Information and Copyright
 
 Part 1 - Modules: Creation, Use and Abuse
 
@@ -21,10 +21,10 @@ Part 1 - Modules: Creation, Use and Abuse
 Part 2 - The Perl 5 Module List
 
 1)   Module Listing Format
-2)   Perl Core Modules, Perl Language Extensions and Documentation Tools 
+2)   Perl Core Modules, Perl Language Extensions and Documentation Tools
 3)   Development Support
-4) ! Operating System Interfaces
-5) ! Networking, Device Control (modems) and InterProcess Communication
+4)   Operating System Interfaces
+5)   Networking, Device Control (modems) and InterProcess Communication
 6)   Data Types and Data Type Utilities
 7)   Database Interfaces
 8)   User Interfaces
@@ -40,7 +40,7 @@ Part 2 - The Perl 5 Module List
 18)  Images, Pixmap and Bitmap Manipulation, Drawing and Graphing
 19)  Mail and Usenet News
 20)  Control Flow Utilities (callbacks and exceptions etc)
-21)! File Handle and Input/Output Stream Utilities
+21)  File Handle and Input/Output Stream Utilities
 22)  Microsoft Windows Modules
 23)  Miscellaneous Modules
 
@@ -58,8 +58,8 @@ Part 3 - Big Projects Registry
 
 Part 4 - Who's Who and What's Where
 
-1) ! Information / Contact Reference Details
-2)   Perl Frequently Asked Questions (FAQ) Files 
+1)   Information / Contact Reference Details
+2)   Perl Frequently Asked Questions (FAQ) Files
 3)   Other Perl Archive Sites
 
 
@@ -78,7 +78,7 @@ form of reusable software component has been defined: the Module.
 Perl 5 Modules typically conform to certain guidelines which make them
 easier to use, reuse, integrate and extend.
 
-This list will be posted to comp.lang.perl.announce and comp.answers on 
+This list will be posted to comp.lang.perl.announce and comp.answers on
 a semi-regular basis.  It has two key aims:
 
  1. FOR DEVELOPERS: To change duplication of effort into cooperation.
@@ -95,15 +95,16 @@ Where Are The Modules Kept?
 
 Most, but not all, of the modules can be found within CPAN, the
 Comprehensive Perl Archive Network of mirrored FTP sites. Within the
-CPAN scheme the modules described in this list can be found in a
-modules/ directory below the CPAN root directory.
-
-Try one of these places first:
+CPAN scheme the modules described in this list can be found in the
+modules/ directory below the CPAN root directory. These are the
+currently registered CPAN sites:
 
     Africa
         South Africa
             ftp://ftp.is.co.za/programming/perl/CPAN/
     Asia
+        Hong Kong
+            ftp://ftp.hkstar.com/pub/CPAN/
         Japan
             ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/
         Taiwan
@@ -135,7 +136,7 @@ Try one of these places first:
         Greece
             ftp://ftp.ntua.gr/pub/lang/perl/
         Hungary
-            ftp://ftp.kfki.hu/pub/packages/perl/
+            ftp://ftp.kfki.hu/pub/packages/perl/CPAN/
         Poland
             ftp://ftp.pk.edu.pl/pub/lang/perl/CPAN/
             ftp://sunsite.icm.edu.pl/pub/CPAN/
@@ -153,17 +154,23 @@ Try one of these places first:
             ftp://ftp.cs.ruu.nl/pub/PERL/CPAN/
         UK
             ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/
+            ftp://sunsite.doc.ic.ac.uk/packages/CPAN/
             ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/
-    North America
-        USA
-            ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
+    South America
+        Chile
+            ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
     USA
         California
             ftp://ftp.cdrom.com/pub/perl/CPAN/
+            ftp://ftp.digital.com/pub/plan/perl/CPAN/
+        Colorado
+            ftp://ftp.cs.colorado.edu/pub/perl/CPAN/
+        Florida
+            ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
         Illinois
             ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
         Massachusetts
-            ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/
+            ftp://ftp.iguide.com/pub/mirrors/packages/perl/CPAN/
         Oklahoma
             ftp://ftp.uoknor.edu/mirrors/CPAN/
         Texas
@@ -177,16 +184,16 @@ maintained mirrors of the master CPAN site. Please use which ever
 site is 'nearest' you.
 
 NOTE: If you can't find what you want, or wish to check that what
-you've found is the latest version, you should contact the person
-associated with the module (and not the maintainers of the archives or
-this list).  Contact details are given at the start of Part 4.
+you've found is the latest version, or wonder why a module mentioned
+in this list is not on CPAN, you should contact the person associated
+with the module (and not the maintainers of the archives or this
+list).  Contact details are given at the start of Part 4.
 
-We don't record per-module archive addresses because it would take more
-time and effort than we can spare (this list would also be much bigger).
-Hopefully all Perl modules will find their way into the CPAN in time.
-
-You should find a webified version of this modulelist a few days after
-it is posted in the file modules/00modlist.long.html on the CPAN servers.
+For navigating through CPAN you may find the file
+modules/01modules.index.html a useful starting place. Or you may
+prefer a webified version of this modulelist in the file
+modules/00modlist.long.html on the CPAN servers. There's more than one
+way to do it :-)
 
 
 Playing Your Part
@@ -204,7 +211,7 @@ community where you can. [ end of sermon :-]
 Help save the world! Please submit new entries and updates to us so we
 can keep this list up-to-date. We would prefer changes to be submitted
 as context diff's (or just plain diff if your diff does not have a
-context diff option) by email to modules@franz.ww.tu-berlin.de.
+context diff option) by email to modules@perl.com.
 No tabs please.  Don't forget to upload your module to the PAUSE site
 for forwarding on to CPAN. See section 2.9.
 
@@ -218,10 +225,11 @@ spool area.
 
 You should be able to get a copy from one of these places:
   ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/module-list
-  ftp://ftp.demon.co.uk/pub/perl/db/mod/module-list.txt
-  ftp://ftp.wpi.edu/perl5/Modules/module_list.txt
-(The rtfm.mit.edu site is automatically updated, try that first.)
+  ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
 
+An HTML version that is usually in sync with the posted version can be
+obtained at
+  http://www.perl.com/CPAN/modules/00modlist.long.html
 
 Editorial Information and Copyright
 
@@ -303,7 +311,7 @@ exist.
    into the class name given as the first parameter of the constructor,
    e.g.:
 
-     sub new { 
+     sub new {
          my $class = shift;
          return bless {}, $class;
      }
@@ -311,7 +319,7 @@ exist.
    or even this if you'd like it to be used as either a static
    or a virtual method.
 
-     sub new { 
+     sub new {
          my $self  = shift;
          my $class = ref($self) || $self;
          return bless {}, $class;
@@ -348,7 +356,7 @@ exist.
 
    Always use -w. Try to "use strict;" (or "use strict qw(...);").
    Remember that you can add "no strict qw(...);" to individual blocks
-   of code which need less strictness. Always use -w. Always use -w! 
+   of code which need less strictness. Always use -w. Always use -w!
    Follow the guidelines in the perlstyle(1) manual.
 
 
@@ -434,8 +442,8 @@ exist.
 
 2.4 Select what to export.
 
-   Do NOT export method names! 
-   Do NOT export anything else by default without a good reason! 
+   Do NOT export method names!
+   Do NOT export anything else by default without a good reason!
 
    Exports pollute the namespace of the module user.  If you must
    export try to use @EXPORT_OK in preference to @EXPORT and avoid
@@ -515,7 +523,7 @@ exist.
 
    Don't worry about posting if you can't say when the module will be
    ready - just say so in the message. It might be worth inviting
-   others to help you, they may be able to complete it for you! 
+   others to help you, they may be able to complete it for you!
 
 
 2.7 README and other Additional Files.
@@ -564,7 +572,7 @@ exist.
 
    To be fully compatible with the Exporter and MakeMaker modules you
    should store your module's version number in a non-my package
-   variable called $VERSION.  This should be a valid floating point 
+   variable called $VERSION.  This should be a valid floating point
    number with at least two digits after the decimal (ie hundredths,
    e.g, $VERSION = "0.01").  Don't use a "1.3.2" style version.
    See Exporter.pm for details.
@@ -600,18 +608,18 @@ exist.
 
        http://franz.ww.tu-berlin.de/modulelist
 
-   or upload to one of these sites: 
+   or upload to one of these sites:
 
        ftp://franz.ww.tu-berlin.de/incoming
-       ftp://ftp.cis.ufl.edu/incoming  
+       ftp://ftp.cis.ufl.edu/incoming
 
    and notify upload@franz.ww.tu-berlin.de.
 
    By using the WWW interface you can ask the Upload Server to mirror
    your modules from your ftp or WWW site into your own directory on
-   CPAN! 
+   CPAN!
 
-   Please remember to send me an updated entry for the Module list! 
+   Please remember to send me an updated entry for the Module list!
 
 
 2.11 Take care when changing a released module.
@@ -657,7 +665,7 @@ exist.
    - Several other minor changes
    Being a mechanical process pl2pm is not bullet proof. The converted
    code will need careful checking, especially any package statements.
-   Don't delete the original .pl file till the new .pm one works! 
+   Don't delete the original .pl file till the new .pm one works!
 
 
 
@@ -733,7 +741,7 @@ Where the 'DSLI' characters have the following meanings:
     p   - Perl-only, no compiler needed, should be platform independent
     c   - C and perl, a C compiler will be needed
     +   - C++ and perl, a C++ compiler will be needed
-    o   - perl and another language other than C or C++ 
+    o   - perl and another language other than C or C++
 
   I - Interface Style
     f   - plain Functions, no references used
@@ -770,7 +778,7 @@ been adopted does NOT imply that it's going to be implemented. Just
 because a module is listed and being implemented does NOT mean it'll
 get finised. Waiting silently in the hope that the Module will appear
 one day is unlikely to be fruitful! Offer to help. Cooperate. Pool your
-efforts. Go on, try it! 
+efforts. Go on, try it!
 
 The same applies to modules in all states. Most modules are developed
 in limited spare time. If you're interested in a module don't just wait
@@ -778,7 +786,7 @@ for it to happen, offer to help.
 
 Module developers should feel free to announce incomplete work early.
 If you're not going to be able to spend much time on something then say
-so. If you invite cooperation maybe someone will implement it for you! 
+so. If you invite cooperation maybe someone will implement it for you!
 
 
 _______________________________________________________________________
@@ -861,17 +869,20 @@ Devel::
 ::DProf        Rdcf  Execution profiler                           DMR
 ::DumpStack    Rupf  Dumping of the current function stack        JACKS
 ::CallerItem   RupO  'caller()' Object wrapper + useful methods   JACKS
-::Usage        bupr  Type and range checking on subroutine args   JACKS
 ::Symdump      bdpf  Perl symbol table access and dumping         ANDK
 ::TraceFuncs   adpO  Trace funcs by using object destructions     MUIR
-::Peek         adcf  Interface to internal sv_dump and sv_peek    ILYAZ
+::Peek         adcf  Peek at internal representation of Perl data ILYAZ
+::embed        bdpf  Utilities for embedding Perl in C/C++ apps   DOUGM
+
+Usage          bupr  Type and range checking on subroutine args   JACKS
 
 VCS::
 ::RCS          idpf  Interface layer over RCS functionality       RJRAY
 ::RCE          idcf  Perl layer over RCE C API                    RJRAY
 
+Include        adpO  Parse C header files for use in XS           GBARR
 Make           adpO  Makefile parsing, and 'make' replacement     NI-S
-
+DataFlow       RdpO  Acquire data based on recipes                ILYAZ
 
 _______________________________________________________________________
 
@@ -894,11 +905,13 @@ Sys::
 ::Hostname     Supf  Implements a portable hostname function
 ::Syslog       Supf  Provides same functionality as BSD syslog
 ::AlarmCall    Rupf  Timeout on any sub. Allows nested alarms     JACKS
-::Quota        adcf  Disk quota system functions, local & remote  TOMZO
+
+Quota          adcf  Disk quota system functions, local & remote  TOMZO
 
 Proc::
 ::times        adpf  By-name interface to process times function  TOMC
-::Forkfunc     Rdpf  Simple lwall-style fork wrapper              MUIR  !
+::Forkfunc     Rdpf  Simple lwall-style fork wrapper              MUIR
+::Simple       adpO  Fork wrapper with objects                    MSCHILLI +
 
 Platform Specific Modules
 
@@ -917,9 +930,19 @@ VMS::
 NeXTStep::
 ::NetInfo      idcO  NeXTStep's NetInfo (like ONC NIS)            PGUEN
 
-Mac::
-::*            i     Macintosh specific library modules           MCPL
+Mac::                Macintosh specific modules
+::Memory       bmcO  MacOS memory management primitives           MCPL
+::Resources    bmcO  MacOS Resource manager                       MCPL
+::AppleEvents  bmcO  MacOS AppleEvent manager and AEGizmos        MCPL
+::Files        imcO  MacOS File manager                           MCPL
+::Processes    imcO  MacOS Process manager                        MCPL
 
+OS2::
+::ExtAttr      RdcO  (Tied) access to extended attributes         ILYAZ
+::PrfDB        RdcO  (Tied) access to .INI-style databases        ILYAZ
+::REXX         RdcO  Access to REXX DLLs and REXX runtime         ILYAZ
+::FTP          bncf  Access to ftplib interface                   ILYAZ
+::UPM          bncf  User Profile Management                      ILYAZ
 
 _______________________________________________________________________
 
@@ -931,28 +954,26 @@ Socket         Sucf  Defines all socket-related constants         JACKS
 Ptty           adcf  Pseudo terminal interface functions          NI-S
 
 Net::
+::Cmd          cdpO  For command based protocols (FTP, SMTP etc)  GBARR
+::Dnet         cdcO  DECnet-specific socket usage                 SPIDB
+::Domain       adpf  Try to determine TCP domain name of system   GBARR
+::FTP          adpf  Interface to File Transfer Protocol          GBARR
+::Gen          adcO  Generic support for socket usage             SPIDB
+::IRC          i     Internet Relay Chat interface                MRG
+::Inet         adcO  Internet (IP) socket usage                   SPIDB
+::NIS          adcO  Interface to Sun's NIS                       RIK
+::NISPlus      adcO  Interface to Sun's NIS+                      RIK
+::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
+::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
+::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
+::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   ADESC
+::TCP          adcO  TCP-specific socket usage                    SPIDB
+::Telnet       cdpO  Inheritable Telnet socket object protocol    GBARR
+::UDP          cdcO  UDP-specific socket usage                    SPIDB
 ::hostent      adpf  A by-name interface for hosts functions      TOMC
 ::netent       adpf  A by-name interface for networks functions   TOMC
 ::protoent     adpf  A by-name interface for protocols functions  TOMC
 ::servent      adpf  A by-name interface for services functions   TOMC
-::Domain       adpf  Try to determine TCP domain name of system   GBARR
-::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
-::IRC          i     Internet Relay Chat interface                MRG
-::Telnet       cdpO  Inheritable Telnet socket object protocol    GBARR +
-::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
-::NIS          adcO  Interface to Sun's NIS                       RIK
-::NISPlus      adcO  Interface to Sun's NIS+                      RIK
-::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   ADESC
-
-Net::
-::Gen          adcO  Generic support for socket usage             SPIDB
-::Inet         adcO  Internet (IP) socket usage                   SPIDB
-::TCP          adcO  TCP-specific socket usage                    SPIDB
-::UDP          cdcO  UDP-specific socket usage                    SPIDB
-::Dnet         cdcO  DECnet-specific socket usage                 SPIDB
-::FTP          adpf  Interface to File Transfer Protocol          GBARR
-::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
-::Cmd          cdpO  For command based protocols (FTP, SMTP etc)  GBARR +
 
 IPC::
 ::Open2        Supf  Open a process for both reading and writing
@@ -984,23 +1005,27 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Math::
-::BigInt       SupO  Arbitrary size integer math package          MARKB
-::BigFloat     SupO  Arbitrary size floating point math package
-::BigRat       ?     Arbitrary size rational numbers (fractions)
-::Complex      SdpO  Complex number data type                     DNAD
-::IEEE         i     Interface to ANSI/IEEE Std 754-1985 funcs
-::Pari         adcf  Interface to the powerful PARI library       ILYAZ
-::ematica      adcO  Interface to the powerful Mathematica system ULPFR
-::Matrix       adpO  Matrix data type (transpose, multiply etc)   ULPFR
-::Approx       adpO  Approximate x,y-values by a function         ULPFR
-::LinearProg   idp   Linear programming utilities                 JONO
-::Trig         bdpf  tan asin acos sinh cosh tanh sech cosech     JARW
 ::Amoeba       Rdpr  Multidimensional Function Minimisation       JARW
+::Approx       adpO  Approximate x,y-values by a function         ULPFR
+::BigFloat     SupO  Arbitrary size floating point math package   MARKB
+::BigInt       SupO  Arbitrary size integer math package          MARKB
+::BigInteger   adc   Arbitrary size integer as XS extension       GARY
+::BigRat       ?     Arbitrary size rational numbers (fractions)  MARKB
 ::Brent        Rdpr  One-dimensional Function Minimisation        JARW
+::Complex      SdpO  Complex number data type                     DNAD
 ::Derivative   Rdpr  1st and 2nd order differentiation of data    JARW
 ::Fortran      Rdpf  Implements Fortran log10 & sign functions    JARW
+::IEEE         i     Interface to ANSI/IEEE Std 754-1985 funcs
+::LinearProg   idp   Linear programming utilities                 JONO
+::Matrix       adpO  Matrix data type (transpose, multiply etc)   ULPFR
+::Pari         adcf  Interface to the powerful PARI library       ILYAZ
+::Prime        i     Prime number testing                         GARY
+::RandomPrime  i     Generates random primes of x bits            GARY
 ::Spline       RdpO  Cubic Spline Interpolation of data           JARW
+::Trig         bdpf  tan asin acos sinh cosh tanh sech cosech     JARW
+::TrulyRandom  i     based on interrupt timing discrepancies      GARY
 ::VecStat      Rdpr  Some basic numeric stats on vectors          JARW
+::ematica      adcO  Interface to the powerful Mathematica system ULPFR
 
 Statistics::
 ::LTU          RdpO  Implements Linear Threshold Units            TOMFA
@@ -1020,11 +1045,12 @@ Set::
 
 Date::
 ::GetDate      adcf  Yacc based free-format date parser in C      TOMC
-::GetDate      adpf  Byacc based free-format date parser in Perl  GBARR
 ::CTime        adpf  Updated ctime.pl with mods for timezones     GBARR
 ::DateCalc     Rdcf  Various standards based date calculations    STBEY
 ::Time         idpO  Lightweight normalised datetime data type    TIMB
 ::Interval     idpO  Lightweight normalised interval data type    TIMB
+::Parse        Rdpf  ASCII Date parser using regexp's             GBARR
+::Format       Rdpf  Date formatter ala strftime                  GBARR
 
 Time::
 ::gmtime       adpf  A by-name interface for gmtime               TOMC
@@ -1032,10 +1058,11 @@ Time::
 ::Local        Supf  Implements timelocal() and timegm()
 ::HiRes        i     High resolution timers and time-of-day       JHI
 ::CTime        Rdpf  Format Times ala ctime(3) with many formats  MUIR
-::ParseDate    Rdpf  Parses many forms of dates and times         MUIR  !
+::ParseDate    Rdpf  Parses many forms of dates and times         MUIR
 ::JulianDay    Rdpf  Converts y/m/d into seconds                  MUIR
 ::Timezone     Rdpf  Figures out timezone offsets                 MUIR
 ::DaysInMonth  Rdpf  Returns the number of days in a month        MUIR
+::Zone         Rdpf  Timezone info and translation routines       GBARR
 
 Tie::
 ::Hash         Supr  Base class for implementing tied hashes
@@ -1114,12 +1141,12 @@ DBZ_File       adc   Tie to dbz files (mainly for news history)   IANPX
 MLDBM          bdpO  Transparently store multi-level data in DBM  GSAR
 
 AsciiDB        adp   Generic text database parsing                MICB
-Stanza         i     Text format database used by OSF and IBM     JHI
+MARC           i     Interface to MARC format (bibliography)      PEM   +
 NetCDF         bmcr  Interface to netCDF API for scientific data  SEMM
+Stanza         i     Text format database used by OSF and IBM     JHI
 
 DTREE          cdcf  Interface to Faircom DTREE multikey ISAM db  JWAT
 Fame           adcO  Interface to FAME database and language      TRIAS
-
 
 _______________________________________________________________________
 
@@ -1141,6 +1168,7 @@ Term::
 Major Character User Interface Modules:
 
 Curses         adcO  Character screen handling and windowing      WPS
+NCurses        cdcO  Curses using the ncurses package             WPS
 Perlmenu       Mdpf  Curses-based menu and template system        SKUNZ
 PV             bmpO  PerlVision curses windowing (OO widgets etc) AGUL
 
@@ -1166,6 +1194,9 @@ _______________________________________________________________________
 
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
+C::
+::Scan         RdpO  Heuristic parse of C files                   ILYAZ
+
 Tcl            RdcO  Complete access to Tcl                       MICB
 ::Tk           RdcO  Complete access to Tk *via Tcl*              MICB
 
@@ -1222,12 +1253,12 @@ String::
 
 Language text related modules
 
-Text::   
+Text::
 ::Abbrev       Supf  Builds hash of all possible abbreviations
 ::ParseWords   Supf  Parse strings containing shell-style quoting
 ::Soundex      Supf  Convert a string to a soundex value
 ::TeX          cdpO  TeX typesetting language input parser        ILYAZ
-::Bib          RdpO  Parse refer(1)-style bibliography files      ERYQ  !
+::Bib          RdpO  Parse refer(1)-style bibliography files      ERYQ
 ::Stem         bdpf  Porter algorithm for stemming English words  IANPX
 ::Tabs         Sdpf  Expand and contract tabs ala expand(1)       MUIR
 ::Wrap         Sdpf  Wraps lines to make simple paragraphs        MUIR
@@ -1270,6 +1301,7 @@ Getopt::
 ::Help         bdpf  Yet another getopt, has help and defaults    IANPX
 
 ConfigReader   cdpO  Read directives from configuration file      AMW
+Resources      bdpf  Application defaults management in Perl      FRANCOC +
 
 
 _______________________________________________________________________
@@ -1301,6 +1333,11 @@ SHA            adcO  NIST SHA message digest algorithm            UWEH
 Kerberos       adcf  Kerberos IV authentication                   MICB
 GSS            i     Generic Security Services API (RFC 1508/9)   MSHLD
 
+Crypt::
+::DES          a     DES encryption (libdes)                      GARY
+::IDEA         a     ???                                          GARY
+::PRSG         a     160 bit LFSR for pseudo random sequences     GARY
+
 
 _______________________________________________________________________
 
@@ -1318,11 +1355,12 @@ CGI::
 ::Carp         cmpf  Drop-in Carp replacement for CGI scripts     CGIP
 ::ErrorWrap    bdpf  Trap warnings and die and convert into HTML  TOMC
 ::Imagemap     adpO  Imagemap handling for specialized apps       MIKEH
-::Lite         ampO  Light-weight interface for fast apps         SHGUN
 ::MiniSvr      RmpO  Fork CGI app as a per-session mini server    CGIP
 ::Request      RmpO  Parse CGI request and handle form fields     CGIP
 ::Response     ampO  Response construction for CGI applications   CGIP
 ::Session      cmpO  Maintain session/state information           MGH
+
+CGI_Lite       ampO  Light-weight interface for fast apps         SHGUN
 
 HTML::
 ::QuickCheck   cdpf  Fast simple validation of HMTL text          YLU
@@ -1343,12 +1381,14 @@ HTTP::
 ::Negotiate    bmpf  HTTP content negotiation                     LWWWP
 
 HTTPD::
-::UserAdmin    adpO  Management of server user and group files    DOUGM
-::Access       cdp   Management of server access control files    DOUGM
+::UserAdmin    bdpO  Management of server user databases          DOUGM
+::GroupAdmin   bdpO  Management of server group databases         DOUGM
+::Authen       bdpO  Preform HTTP Basic and Digest Authentication DOUGM
+::Config       cdpO  Management of server configuration files     DOUGM
+::Access       cdpO  Management of server access control files    DOUGM
 
 WWW::
 ::RobotRules   ampO  Parse /robots.txt file                       LWWWP
-::Log          i     Parse Common Log File Format
 
 LWP::                Libwww-perl-5
 ::MediaTypes   bmpf  Media types and mailcap processing           LWWWP
@@ -1360,9 +1400,14 @@ LWP::                Libwww-perl-5
 MIME::
 ::Base64       Rdpf  Encode/decode Base 64 (RFC 1521)             GAAS
 ::QuotedPrint  Rdpf  Encode/decode Quoted-Printable               GAAS
+::Decoder      adpO  OO interface to existing MIME decoders       ERYQ
+::Entity       adpO  An extracted and decoded MIME entity         ERYQ
+::Head         adpO  A parsed MIME header                         ERYQ
+::Parser       adpO  Parses streams to create MIME entities       ERYQ
 ::Handler      i     Base class for MIME content handlers
 ::Object       i     Base class for MIME decoded objects
 
+Apache         bdcO  Interface to the Apache server API           DOUGM
 CCI            i     Common Client Interface for WWW browsers     DOUGM
 
 
@@ -1425,7 +1470,7 @@ Compress::
 ::Zlib         adcO  Interface to the Info-Zip zlib library       PMQS
 
 Convert::
-::UU           i     UUencode and UUdecode
+::UU           bdpf  UUencode and UUdecode                        ANDK  !
 
 
 _______________________________________________________________________
@@ -1434,11 +1479,15 @@ _______________________________________________________________________
 
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
-PixDraw        adcO  Drawing and manipulating true color images   KSB
 GD             adcO  GIF editing/painting/manipulation            LDS
-PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 OpenGL         adcf  Interface to OpenGL drawing/imaging library  STANM
+PDL            cdcf  Perl Data Language - numeric analysis env    KGB
+PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
+PixDraw        adcO  Drawing and manipulating true color images   KSB
 
+Graphics::
+::Simple       idcO  Simple drawing primitives                    NEERI
+::Turtle       idp   Turtle graphics package                      NEERI
 
 _______________________________________________________________________
 
@@ -1481,16 +1530,17 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 IO::
-::Handle       cdpO  Base class for input/output handles          GBARR +
-::Pipe         cdpO  Methods for pipe handles                     GBARR +
-::Socket       cdpO  Methods for socket input/output handles      GBARR +
-::Seekable     cdpO  Methods for seekable input/output handles    GBARR +
-::File         cdpO  Methods for disk file based i/o handles      GBARR +
-::Pty          cdpO  Methods for pseudo-terminal allocation etc   PEASE +
-::STREAMS      i cO  Methods for System V style STREAMS control         +
+::Handle       cdpO  Base class for input/output handles          GBARR
+::Pipe         cdpO  Methods for pipe handles                     GBARR
+::Socket       cdpO  Methods for socket input/output handles      GBARR
+::Seekable     cdpO  Methods for seekable input/output handles    GBARR
+::File         cdpO  Methods for disk file based i/o handles      GBARR
+::Pty          cdpO  Methods for pseudo-terminal allocation etc   PEASE
+::STREAMS      i cO  Methods for System V style STREAMS control
+::FastCGI      i                                                        +
 
 FileHandle     SupO  File handle objects and methods
-FileCache      Supf  Keep more files open than the system permits       +
+FileCache      Supf  Keep more files open than the system permits
 DirHandle      SupO  Directory handle objects and methods         CHIPS
 SelectSaver    SupO  Save and restore selected file handle        CHIPS
 Selectable     cdpO  Event-driven I/O streams                     MUIR
@@ -1526,15 +1576,15 @@ _______________________________________________________________________
 
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
-Wais           Rdcf  Interface to the freeWAIS-sf libraries       ULPFR
 Archie         Rdpf  Archie queries via Prospero ARDP protocol    GBOSS
-Pcap           i     An interface for LBL's packet capture lib    AMOSS
-Nexus          cdcO  Interface to Nexus (threads/ipc/processes)   RDO
-SDDF           cd+O  Interface to Pablo Self Defining Data Format FIS
-IXO            i     IXO alphanumeric pager protocol
-Roman          Rdpf  Convert Roman numbers to and from Arabic     OZAWA
-Gann           ad+O  Generic simulation of neural networks        LUKKA
 CreditCard     i     Credit card number check digit test
+IXO            i     IXO alphanumeric pager protocol
+Neural         ad+O  Generic simulation of neural networks        LUKKA
+Nexus          cdcO  Interface to Nexus (threads/ipc/processes)   RDO
+Pcap           i     An interface for LBL's packet capture lib    AMOSS
+Roman          Rdpf  Convert Roman numbers to and from Arabic     OZAWA
+SDDF           cd+O  Interface to Pablo Self Defining Data Format FIS
+Wais           Rdcf  Interface to the freeWAIS-sf libraries       ULPFR
 
 Bio::
 ::*            i     Utilities for molecular biology              SEB
@@ -1545,6 +1595,7 @@ Remedy::
 Psion::
 ::Db           idpO  Handle Psion palmtop computer database files IANPX
 
+Logfile        RdpO  Generic methods to analyze logfiles          ULPFR +
 
 
 =======================================================================
@@ -1654,7 +1705,7 @@ out an OO .xs and .pm implementing a parser.
 Contacts: NI-S P5P LWALL
 
 
-9) + Approximate Matching Regular Expressions
+9) Approximate Matching Regular Expressions
 
 Add support for approximate matching (like the agrep utility).
 
@@ -1677,163 +1728,177 @@ the details is not up to date, you're requested to visit
 http://franz.ww.tu-berlin.de/modulelist, where you will find a pointer
 to a CGI script that lets you edit the database entries yourself.
 
-  Ref    Contact Details
-  -----  --------------------------------------------------------------
-  ADESC  Alligator Descartes <descarte@mcqueen.com>
-  AGUL   Ashish Gulhati <hash@netropolis.org>
-  AKSTE  Alan K. Stebbens <aks@hub.ucsb.edu>
-  ALSCH  Alan Scheinine <scheinin@crs4.it>
-  AMOSS  Amos Shapira <amoss@cs.huji.ac.il>
-  AMW    Andrew Wilcox <awilcox@world.std.com>
-  ANDK   Andreas Koenig <a.koenig@franz.ww.TU-Berlin.DE>
-  ANDYD  Andy Dougherty <doughera@lafcol.lafayette.edu>
-  ASHER  Aaron Sherman <ajs@openmarket.com>
-  BARTS  Bart Schuller <P.B.Schuller@cuci.nl>
-  BBUM   Bill Bumgarner <bbum@friday.com>
-  BENLI  Ben Lindstrom <mouring@netnet.net>
-  BJEPS  Brian Jepson <bjepson@conan.ids.net>
-  BMIDD  William J. Middleton <wjm@best.com>
-  BPETH  Bill Petheram <petheram@acm.org>
-  CBAIL  Charles Bailey <bailey@genetics.upenn.edu>
-  CGIP   The CGI-Perl Developers mailing list
-         Mail to CGI-perl-REQUEST@webstorm.com with body "subscribe"
-  CHIPS  Chip Salzenberg <chs@nando.net>
-  CJM    Christopher J. Madsen <ac608@yfn.ysu.edu>
+  Ref      Contact Details
+  -----    --------------------------------------------------------------
+  ADESC    Alligator Descartes <descarte@mcqueen.com>
+  AGUL     Ashish Gulhati <hash@netropolis.org>
+  AKSTE    Alan K. Stebbens <aks@hub.ucsb.edu>
+  ALSCH    Alan Scheinine <scheinin@crs4.it>
+  AMOSS    Amos Shapira <amoss@cs.huji.ac.il>
+  AMW      Andrew Wilcox <awilcox@world.std.com>
+  ANDK     Andreas Koenig <a.koenig@franz.ww.TU-Berlin.DE>
+  ANDYD    Andy Dougherty <doughera@lafcol.lafayette.edu>
+  ASHER    Aaron Sherman <ajs@openmarket.com>
+  BARTS    Bart Schuller <P.B.Schuller@cuci.nl>
+  BBUM     Bill Bumgarner <bbum@friday.com>
+  BENLI    Ben Lindstrom <mouring@netnet.net>
+  BJEPS    Brian Jepson <bjepson@conan.ids.net>
+  BMIDD    William J. Middleton <wjm@best.com>
+  BPETH    Bill Petheram <petheram@acm.org>
+  CBAIL    Charles Bailey <bailey@genetics.upenn.edu>
+  CGIP     The CGI-Perl Developers mailing list
+           Mail to CGI-perl-REQUEST@webstorm.com with body "subscribe"
+  CHIPS    Chip Salzenberg <chs@nando.net>
+  CJM      Christopher J. Madsen <ac608@yfn.ysu.edu>
   DANKOGAI Dan Kogai <dankogai@jms.jeton.or.jp>
-  DANMQ  Daniel M. Quinlan <danq@colorado.edu>
+  DANMQ    Daniel M. Quinlan <danq@colorado.edu>
   DAVEROTH Dave Roth <rothd@infowire.com>
-  DBIML  The DBI mailing lists: subscribe via http://www.fugue.com/dbi
-         if you can't do that then mail to dbi-users-REQUEST@fugue.com
-         and ask (the human, Ted Lemon) to subscribe you to one or more
-         of dbi-announce, dbi-users, dbi-dev.
-  DMEGG  David Megginson <dmeggins@aix1.uottawa.ca>
-  DMO    Darryl Okahata <darrylo@sr.hp.com>
-  DMR    Dean Roehrich <roehrich@cray.com>
-  DNAD   Dave Nadler <nadler@ug.eds.com>
-  DOUGM  Doug MacEachern <dougm@osf.org>
-  EAYNG  Eric Young <eay@mincom.oz.au>
-  EHOOD  Earl Hood <ehood@convex.convex.com>
-  ELMAR  Elmar Schalueck <Elmar.Schalueck@rz.ruhr-uni-bochum.de>
-  ERICA  Eric Arnold <Eric.Arnold@corp.sun.com>
-  ERYQ   Eryq <eryq@rhine.gsfc.nasa.gov>
-  FIS    Frank Ian Smith <frank@ns.array.ca>
-  FMC    Frederic Chauveau <fmc@pasteur.fr>
-  FSG    Felix Sebastian Gallo <fsg@coriolan.amicus.com>
-  GAAS   Gisle Aas <aas@oslonett.no>
-  GAND   Greg Anderson <greg@ftp.netgate.net>
-  GBARR  Graham Barr <Graham.Barr@tiuk.ti.com>
-  GBOSS  Greg Bossert <bossert@ecto.org>
-  GEHIC  Gerard Hickey <hickey@ctron.com>
-  GREGG  Gregg Helt <gregg@fruitfly.berkeley.edu>
-  GSAR   Gurusamy Sarathy <gsar@umich.edu>
-  GSM    Joe Marzot <gmarzot@baynetworks.com>
-  GSPAF  Gene Spafford <spaf@cs.purdue.edu>
-  GUYDX  Guy Decoux <decoux@moulon.inra.fr>
-! IANPX  Ian Phillipps <ian@dial.pipex.com>
-  ILYAZ  Ilya Zakharevich <ilya@math.ohio-state.edu>
-  JACKS  Jack Shirazi <JackS@GemStone.com>
-  JAMCC  Jamie McCarthy <jamie@voyager.net>
-  JARW   John A.R. Williams <J.A.R.Williams@aston.ac.uk>
-  JHI    Jarkko Hietaniemi <Jarkko.Hietaniemi@iki.fi>
-  JKAST  Jason Kastner <jkastner@oboe.calpoly.edu>
-  JKEGL  Jeffrey Kegler <jeffrey@best.com>
-  JLEVAN Jerry LeVan <levan@eagle.eku.edu>
-  JONG   Jong Park <jong@mrc-lmb.cam.ac.uk>
-  JONO   Jon Orwant <orwant@media.mit.edu>
-  JPC    Jan-Pieter Cornet <johnpc@xs4all.nl>
-  JSTOF  John Stoffel <john@wpi.edu>
-  JV     Johan Vromans <jvromans@squirrel.nl>
-  JWAT   John Watson <jwatson@cnj.digex.net>
-  KGB    Karl Glazebrook <kgb@aaoepp.aao.gov.au>
-  KJALB  Kenneth Albanowski <kjahds@kjahds.com>
-  KONDO  Yoshiyuki KONDO <cond@lsi-j.co.jp>
-  KSB    Simon Berg <karl@it.kth.se>
-  LDS    Lincoln D. Stein <lstein@genome.wi.mit.edu>
-  LFINI  Luca Fini <lfini@arcetri.astro.it>
-  LSTAF  Lennart Staflin <lenst@lysator.liu.se>
-  LUKKA  Tuomas J. Lukka <Tuomas.Lukka@Helsinki.FI>
-+ LUSOL  Stephen O. Lidie <lusol@Turkey.CC.Lehigh.EDU>
-  LWALL  Larry Wall. Author of Perl. Busy man. <lwall@sems.com>
-  LWWWP  The libwww-perl mailing list
-         Mail to libwww-perl-REQUEST@ics.uci.edu with body "subscribe"
-  MAK    Martijn Koster <mak@surfski.webcrawler.com>
-  MARCP  Marc Paquette <Marc.Paquette@crim.ca>
-  MARKB  Mark Biggar <mab@wdl.loral.com>
-  MCPL   The MacPerl mailing list
-         Mail to mac-perl-REQUEST@iis.ee.ethz.ch with body "subscribe"
-  MERGL  Edmund Mergl <mergl@nadia.s.bawue.de>
-  MERLYN Randal L. Schwartz <merlyn@stonehenge.com>
-  MEWP   Michael Peppler <mpeppler@bix.com>
-  MGH    Marc Hedlund <hedlund@best.com>
-  MHM    Mike Moran <mhm@austin.ibm.com>
-  MICB   Malcolm Beattie <mbeattie@sable.ox.ac.uk>
-  MIKEH  Mike Heins <mikeh@iac.net>
-  MJD    Mark-Jason Dominus <mjd@plover.com>
-  MMML   The MakeMaker mailing list
-         Mail to makemaker-REQUEST@franz.ww.tu-berlin.de with body "subscribe"
-  MRG    Matthew Green <mrg@mame.mu.oz.au>
-  MRKAE  Mark R. Kaehny <kaehny@execpc.com>
-  MSHLD  Michael Shields <shields@crosslink.net>
-  MUIR   David Muir Sharnoff <muir@idiom.com>
-  NEERI  Matthias Ulrich Neeracher <neeri@iis.ee.ethz.ch>
-  NEILB  Neil Bowers <neilb@khoral.com>
-  NI-S   Nick Ing-Simmons <nik@tiuk.ti.com>
-  NWINT  Neil Winton <nwinton@axion.bt.co.uk>
-  OZAWA  OZAWA Sakuro <ozawa@prince.pe.u-tokyo.ac.jp>
-  P5P    The Perl5 Porters Mailing List
-         Mail to perl5-porters-REQUEST@nicoh.com with body "subscribe"
-  PATM   Pat Martin <pat@bronco.advance.com>
-  PEASE  Mark Pease <peasem@primenet.com>
-  PGUEN  Philip Guenther <guenther@gac.edu>
-  PKUTS  Peter Kutschera <peter@zditr1.arcs.ac.at>
-  PMQS   Paul Marquess <pmarquess@bfsec.bt.co.uk>
-  PRATP  Pratap Pereira <pereira@ee.eng.ohio-state.edu>
-  PVERD  Philippe Verdret <phd@eurolang.fr>
-  RAM    Raphael Manfredi <ram@hptnos02.grenoble.hp.com>
-  RBOW   Richard Bowen <rbowen@aiclex.com>
-  RDO    Robert Olson <olson@mcs.anl.gov>
-  RIK    Rik Harris <rik.harris@fulcrum.com.au>
-  RJRAY  Randy J Ray <rjray@uswest.com>
-  RJS    Robert J Seymour <rseymour@rseymour.com>
-  ROSCH  Roderick Schertler <roderick@gate.net>
-  RVA    Rodger Anderson <rodger@boi.hp.com>
-  SBECK  Sullivan Beck <beck@qtp.ufl.edu>
-  SDOWD  Sean Dowd <ssd@mmts.eds.com>
-  SEB    Steven Brenner <S.E.Brenner@bioc.cam.ac.uk>
-  SEMM   Steve Emmerson <support@unidata.ucar.edu>
-  SGEL   Sergio Gelato <gelato@oort.ap.sissa.it>
-  SHGUN  Shishir Gundavaram <shishir@acs.bu.edu>
-  SKUNZ  Steven L. Kunz <skunz@iastate.edu>
-  SPIDB  Spider Boardman <spider@orb.nashua.nh.us>
-  STANM  Stan Melax <stan@skyler.arc.ab.ca>
-  STBEY  Steffen Beyer <sb@sdm.de>
-  SWMCD  Steven McDougall <swm@cric.com>
-  TIMB   Tim Bunce <Tim.Bunce@ig.co.uk>
-  TKML   The Tk Perl Mailing list
-         Mail to majordomo@wpi.edu with body "subscribe ptk <your-address>"
-  TLP    Travis L Priest <T.L.Priest@LaRC.NASA.GOV>
-  TOMC   Tom Christiansen <tchrist@mox.perl.com>
-  TOMFA  Tom Fawcett <fawcett@nynexst.com>
-  TOMH   Tom Horsley <tom@ssd.csd.harris.com>
-  TOMZO  Tom Zoerner <Tom.Zoerner@informatik.uni-erlangen.de>
-  TRIAS  Fernando Trias <ftrias@helix.fmrco.com>
-  TYEMQ  Tye McQueen <tye@metronet.com>
-  ULPFR  Ulrich Pfeifer <pfeifer@ls6.informatik.uni-dortmund.de>
-  UWEH   Uwe Hollerbach <uweh@bu.edu>
-  VMSML  The VMSPerl Mailing list
-         Mail subscription requests to maintainer at
-         <bailey@genetics.upenn.edu>
-  WIN32  The Perl for Win32 Mailing list
-         Mail to majordomo@mail.hip.com with body "subscribe Perl-Win32
-         <your-address>"
-  WINKO  Winfried Koenig <win@in.rhein-main.de>
-  WPS    William Setzer <William_Setzer@ncsu.edu>
-  WSCOT  Wayne Scott <wscott@ichips.intel.com>
-  WYTAN  Wei-Yuen Tan <Wei-Yuen_Tan@hip.com>
-  YASU   Yasushi Saito <yasushi@cs.washington.edu>
-  YLU    Luke Y. Lu <ylu@mail.utexas.edu>
-  YVESP  Yves Paindaveine <yp@gr.osf.org>
-
+  DBIML    The DBI mailing lists: subscribe via http://www.fugue.com/dbi
+           if you can't do that then mail to dbi-REQUEST@fugue.com and
+           ask (the human, Ted Lemon) to subscribe you to one or more
+           of dbi-announce, dbi-users, dbi-dev.
+  DMEGG    David Megginson <dmeggins@aix1.uottawa.ca>
+  DMO      Darryl Okahata <darrylo@sr.hp.com>
+  DMR      Dean Roehrich <roehrich@cray.com>
+  DNAD     Dave Nadler <nadler@ug.eds.com>
+  DOUGM    Doug MacEachern <dougm@osf.org>
+  EAYNG    Eric Young <eay@mincom.oz.au>
+  EHOOD    Earl Hood <ehood@convex.convex.com>
+  ELMAR    Elmar Schalueck <Elmar.Schalueck@rz.ruhr-uni-bochum.de>
+  ERICA    Eric Arnold <Eric.Arnold@corp.sun.com>
+  ERYQ     Eryq <eryq@rhine.gsfc.nasa.gov>
+  FIS      Frank Ian Smith <frank@ns.array.ca>
+  FMC      Frederic Chauveau <fmc@pasteur.fr>
++ FRANCOC  Franco Callari <franco@cim.mcgill.ca>
+  FSG      Felix Sebastian Gallo <fsg@coriolan.amicus.com>
+  GAAS     Gisle Aas <aas@oslonett.no>
+  GAND     Greg Anderson <greg@ftp.netgate.net>
+  GARY     Gary Howland <gary@systemics.com>
+  GBARR    Graham Barr <Graham.Barr@tiuk.ti.com>
+  GBOSS    Greg Bossert <bossert@ecto.org>
+  GEHIC    Gerard Hickey <hickey@ctron.com>
+  GREGG    Gregg Helt <gregg@fruitfly.berkeley.edu>
+  GSAR     Gurusamy Sarathy <gsar@umich.edu>
+  GSM      Joe Marzot <gmarzot@baynetworks.com>
+  GSPAF    Gene Spafford <spaf@cs.purdue.edu>
+  GUYDX    Guy Decoux <decoux@moulon.inra.fr>
+  IANPX    Ian Phillipps <ian@dial.pipex.com>
+  ILYAZ    Ilya Zakharevich <ilya@math.ohio-state.edu>
+  JACKS    Jack Shirazi <JackS@GemStone.com>
+  JAMCC    Jamie McCarthy <jamie@voyager.net>
+  JARW     John A.R. Williams <J.A.R.Williams@aston.ac.uk>
+  JCMURPHY Jeff Murphy <jcmurphy@smurfland.cit.buffalo.edu>
++ JDUNCAN  James Duncan <jduncan@hawk.igs.net>
+  JHI      Jarkko Hietaniemi <Jarkko.Hietaniemi@iki.fi>
+  JKAST    Jason Kastner <jkastner@oboe.calpoly.edu>
+  JKEGL    Jeffrey Kegler <jeffrey@best.com>
+  JLEVAN   Jerry LeVan <levan@eagle.eku.edu>
+  JMURPHY  Joel Murphy <jmurphy@acsu.buffalo.edu>
+  JONG     Jong Park <jong@mrc-lmb.cam.ac.uk>
+  JONO     Jon Orwant <orwant@media.mit.edu>
+  JPC      Jan-Pieter Cornet <johnpc@xs4all.nl>
+  JSTOF    John Stoffel <john@wpi.edu>
+  JV       Johan Vromans <jvromans@squirrel.nl>
+  JWAT     John Watson <jwatson@cnj.digex.net>
+  KGB      Karl Glazebrook <kgb@aaoepp.aao.gov.au>
+  KJALB    Kenneth Albanowski <kjahds@kjahds.com>
+  KONDO    Yoshiyuki KONDO <cond@lsi-j.co.jp>
+  KSB      Simon Berg <karl@it.kth.se>
+  LDS      Lincoln D. Stein <lstein@genome.wi.mit.edu>
+  LFINI    Luca Fini <lfini@arcetri.astro.it>
+  LSTAF    Lennart Staflin <lenst@lysator.liu.se>
+  LUKKA    Tuomas J. Lukka <Tuomas.Lukka@Helsinki.FI>
+  LUSOL    Stephen O. Lidie <lusol@Turkey.CC.Lehigh.EDU>
+  LWALL    Larry Wall. Author of Perl. Busy man. <lwall@sems.com>
+  LWWWP    The libwww-perl mailing list
+           Mail to libwww-perl-REQUEST@ics.uci.edu with body
+           "subscribe"
+  MAK      Martijn Koster <mak@surfski.webcrawler.com>
+  MARCP    Marc Paquette <Marc.Paquette@crim.ca>
+  MARKB    Mark Biggar <mab@wdl.loral.com>
++ MATTW    Matthew M. Wright <mattw@worldwidemart.com>
+  MCPL     The MacPerl mailing list
+           Mail to mac-perl-REQUEST@iis.ee.ethz.ch with body
+           "subscribe"
+  MERGL    Edmund Mergl <mergl@nadia.s.bawue.de>
+  MERLYN   Randal L. Schwartz <merlyn@stonehenge.com>
+  MEWP     Michael Peppler <mpeppler@bix.com>
+  MGH      Marc Hedlund <hedlund@best.com>
+  MHM      Mike Moran <mhm@austin.ibm.com>
+  MICB     Malcolm Beattie <mbeattie@sable.ox.ac.uk>
+  MIKEH    Mike Heins <mikeh@iac.net>
+  MJD      Mark-Jason Dominus <mjd@plover.com>
+  MMML     The MakeMaker mailing list
+           Mail to makemaker-REQUEST@franz.ww.tu-berlin.de with body
+           "subscribe"
+  MRG      Matthew Green <mrg@mame.mu.oz.au>
+  MRKAE    Mark R. Kaehny <kaehny@execpc.com>
++ MSCHILLI Michael Schilli <schilli@tep.e-technik.tu-muenchen.de>
+  MSHLD    Michael Shields <shields@crosslink.net>
+  MUIR     David Muir Sharnoff <muir@idiom.com>
+  NEERI    Matthias Ulrich Neeracher <neeri@iis.ee.ethz.ch>
+  NEILB    Neil Bowers <neilb@khoral.com>
+  NI-S     Nick Ing-Simmons <nik@tiuk.ti.com>
+  NWINT    Neil Winton <nwinton@axion.bt.co.uk>
+  OZAWA    OZAWA Sakuro <ozawa@prince.pe.u-tokyo.ac.jp>
+  P5P      The Perl5 Porters Mailing List
+           Mail to perl5-porters-REQUEST@nicoh.com with body
+           "subscribe"
+  PATM     Pat Martin <pat@bronco.advance.com>
+  PEASE    Mark Pease <peasem@primenet.com>
++ PEM      Peter Murray <pem@po.cwru.edu>
+  PGUEN    Philip Guenther <guenther@gac.edu>
+  PKUTS    Peter Kutschera <peter@zditr1.arcs.ac.at>
+  PMQS     Paul Marquess <pmarquess@bfsec.bt.co.uk>
+  PRATP    Pratap Pereira <pereira@ee.eng.ohio-state.edu>
+  PVERD    Philippe Verdret <phd@eurolang.fr>
++ PVHP     Peter Prymmer <pvhp@lns62.lns.cornell.edu>
+  RAM      Raphael Manfredi <ram@hptnos02.grenoble.hp.com>
+  RBOW     Richard Bowen <rbowen@databeam.com>
+  RDO      Robert Olson <olson@mcs.anl.gov>
+  RIK      Rik Harris <rik.harris@fulcrum.com.au>
+  RJRAY    Randy J Ray <rjray@uswest.com>
+  RJS      Robert J Seymour <rseymour@rseymour.com>
+  ROSCH    Roderick Schertler <roderick@gate.net>
+  RURBAN   Reini Urban <rurban@sbox.tu-graz.ac.at>
+  RVA      Rodger Anderson <rodger@boi.hp.com>
+  SBECK    Sullivan Beck <beck@qtp.ufl.edu>
+  SDOWD    Sean Dowd <ssd@mmts.eds.com>
+  SEB      Steven Brenner <S.E.Brenner@bioc.cam.ac.uk>
+  SEMM     Steve Emmerson <support@unidata.ucar.edu>
+  SGEL     Sergio Gelato <gelato@oort.ap.sissa.it>
+  SHGUN    Shishir Gundavaram <shishir@acs.bu.edu>
+  SKUNZ    Steven L. Kunz <skunz@iastate.edu>
+  SPIDB    Spider Boardman <spider@orb.nashua.nh.us>
+  STANM    Stan Melax <stan@skyler.arc.ab.ca>
+  STBEY    Steffen Beyer <sb@sdm.de>
+  SWMCD    Steven McDougall <swm@cric.com>
+  TIMB     Tim Bunce <Tim.Bunce@ig.co.uk>
+! TKML     The Tk Perl Mailing list
+!          Mail to majordomo@lists.stanford.edu with body "subscribe
+!          ptk <your-address>"
+  TLP      Travis L Priest <T.L.Priest@LaRC.NASA.GOV>
+  TOMC     Tom Christiansen <tchrist@mox.perl.com>
+  TOMFA    Tom Fawcett <fawcett@nynexst.com>
+  TOMH     Tom Horsley <tom@ssd.csd.harris.com>
+  TOMZO    Tom Zoerner <Tom.Zoerner@informatik.uni-erlangen.de>
+  TRIAS    Fernando Trias <ftrias@helix.fmrco.com>
+  TYEMQ    Tye McQueen <tye@metronet.com>
+  ULPFR    Ulrich Pfeifer <pfeifer@ls6.informatik.uni-dortmund.de>
+  UWEH     Uwe Hollerbach <uweh@bu.edu>
+  VMSML    The VMSPerl Mailing list
+           Mail subscription requests to maintainer at
+           <bailey@genetics.upenn.edu>
+  WIN32    The Perl for Win32 Mailing list
+           Mail to majordomo@mail.hip.com with body "subscribe
+           Perl-Win32 <your-address>"
+  WINKO    Winfried Koenig <win@in.rhein-main.de>
+  WPS      William Setzer <William_Setzer@ncsu.edu>
+  WSCOT    Wayne Scott <wscott@ichips.intel.com>
+  WYTAN    Wei-Yuen Tan <Wei-Yuen_Tan@hip.com>
+  YASU     Yasushi Saito <yasushi@cs.washington.edu>
+  YLU      Luke Y. Lu <ylu@mail.utexas.edu>
+  YVESP    Yves Paindaveine <yp@gr.osf.org>
 
 2) Perl Frequently Asked Questions (FAQ) and Other Resources
 
