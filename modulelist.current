@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.28 $Date: 1996/07/24 17:49:28 $
+The Perl 5 Module List       Revision: 2.28 $Date: 1996/07/25 17:25:34 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -851,12 +851,12 @@ Documentation Tools:
 Pod::
 ::HTML         cdpr  converter to HTML                            KJALB +
 ::Index        cdpr  index generator                              KJALB +
-::Latex        cdpr  converter to LaTeX				  KJALB +
-::Man          cdpr  converter to man page			  KJALB +
+::Latex        cdpr  converter to LaTeX                           KJALB +
+::Man          cdpr  converter to man page                        KJALB +
 ::Parse        cdpr  Common pod parsing code                      KJALB +
-::Pod          cdpr  converter to canonical pod			  KJALB +
+::Pod          cdpr  converter to canonical pod                   KJALB +
 ::RTF          cdpr  converter to RTF                             KJALB +
-::Texinfo      cdpr  converter to texinfo			  KJALB +
+::Texinfo      cdpr  converter to texinfo                         KJALB +
 ::Text         Supf  convert POD data to formatted ASCII text     TOMC
 
 _______________________________________________________________________
@@ -951,13 +951,13 @@ Mac::                Macintosh specific modules
 ::Components   bmcO  (QuickTime) Component manager                MCPL +
 ::Files        bmcO  File manager                                 MCPL
 ::Gestalt      bmcO  Gestalt manager: Environment enquiries       MCPL +
-::Memory       bmcO  Memory manager				  MCPL
-::MoreFiles    bmcO  Further file management routines		  MCPL +
-::OSA          bmcO  Open Scripting Architecture		  MCPL +
-::Processes    bmcO  Process manager				  MCPL
-::Resources    bmcO  Resource manager				  MCPL
-::Types        bmcO  (Un-)Packing of Macintosh specific types	  MCPL +
-								  
+::Memory       bmcO  Memory manager                               MCPL
+::MoreFiles    bmcO  Further file management routines             MCPL +
+::OSA          bmcO  Open Scripting Architecture                  MCPL +
+::Processes    bmcO  Process manager                              MCPL
+::Resources    bmcO  Resource manager                             MCPL
+::Types        bmcO  (Un-)Packing of Macintosh specific types     MCPL +
+                                                                  
 OS2::
 ::ExtAttr      RdcO  (Tied) access to extended attributes         ILYAZ
 ::PrfDB        RdcO  (Tied) access to .INI-style databases        ILYAZ
@@ -984,17 +984,17 @@ Net::
 ::Inet         adcO  Internet (IP) socket usage                   SPIDB
 ::NIS          adcO  Interface to Sun's NIS                       RIK
 ::NISPlus      adcO  Interface to Sun's NIS+                      RIK
-::NNTP         adpO  Client interface to NNTP protocol         	  GBARR 
-::Netrc        adpO  Support for .netrc files                  	  GBARR 
-::POP3         adpO  Client interface to POP3 protocol         	  GBARR 
+::NNTP         adpO  Client interface to NNTP protocol            GBARR 
+::Netrc        adpO  Support for .netrc files                     GBARR 
+::POP3         adpO  Client interface to POP3 protocol            GBARR 
 ::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
-::SNPP         cdpO  Client interface to SNPP protocol         	  GBARR 
+::SNPP         cdpO  Client interface to SNPP protocol            GBARR 
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
 ::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   ADESC
 ::TCP          adcO  TCP-specific socket usage                    SPIDB
 ::Telnet       cdpO  Inheritable Telnet socket object protocol    GBARR
-::Time         adpf  Obtain time from remote machines          	  GBARR 
+::Time         adpf  Obtain time from remote machines             GBARR 
 ::UDP          cdcO  UDP-specific socket usage                    SPIDB
 ::hostent      adpf  A by-name interface for hosts functions      TOMC
 ::netent       adpf  A by-name interface for networks functions   TOMC
