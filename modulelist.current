@@ -1,7 +1,7 @@
-The Perl 5 Module List       $Revision: 3.66 $$Date: 2000/11/06 08:55:07 $
+The Perl 5 Module List       $Revision: 3.67 $$Date: 2000/11/06 14:49:40 $
 ======================
 
-Maintained by Tim Bunce and Andreas König <modules@perl.org>
+Maintained by Tim Bunce and Andreas KÃ¶nig <modules@perl.org>
 
 Contents
 
@@ -79,8 +79,7 @@ form of reusable software component has been defined: the Module.
 Perl 5 Modules typically conform to certain guidelines which make them
 easier to use, reuse, integrate and extend.
 
-This list will be posted to comp.lang.perl.announce and comp.answers on
-a semi-regular basis. It has two key aims:
+This list has two key aims:
 
    - FOR DEVELOPERS: To change duplication of effort into cooperation.
    - FOR USERS: To quickly locate existing software which can be reused.
@@ -125,31 +124,20 @@ forwarding on to CPAN. See section 2, especially 2.6 and 2.11.
 
 How To Get a More Recent Copy of the List
 
-This Module List is posted to comp.lang.perl.modules, comp.answers and
-news.answers bi-weekly with a long expiry time (over a month). The
-first place to look for a more recent copy is therefore your own Usenet
-spool area.
-
-You should be able to get a copy from one of these places:
-
-  1.) ASCII version:
-        ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/module-list
-        ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
-  2.) HTML version:
-        http://www.cpan.org/modules/00modlist.long.html
-
+This Module List is fed into CPAN on a semi-regular basis. Its
+relative path within a CPAN mirror is in modules/00modlist.long.html .
 
 Editorial Information and Copyright
 
-This document is Copyright (c) 1997 by Tim Bunce and Andreas König. All
-rights reserved. Permission to distribute this document, in full or
-part, via electronic means (emailed, posted or archived) or printed
-copy is granted providing that no charges are involved, reasonable
-attempt is made to use the most current version, and all credits and
-copyright notices are retained. Requests for other distribution rights,
-including incorporation in commercial products, such as books, magazine
-articles, or CD-ROMs should be made to Tim.Bunce@ig.co.uk and
-Andreas.Koenig@mind.de.
+This document is Copyright (c) 1997-2000 by Tim Bunce and Andreas
+KÃ¶nig. All rights reserved. Permission to distribute this document, in
+full or part, via electronic means (emailed, posted or archived) or
+printed copy is granted providing that no charges are involved,
+reasonable attempt is made to use the most current version, and all
+credits and copyright notices are retained. Requests for other
+distribution rights, including incorporation in commercial products,
+such as books, magazine articles, or CD-ROMs should be made to
+Tim.Bunce@ig.co.uk and Andreas.Koenig@mind.de.
 
 Disclaimer: The content of this document is simply a collection of
 information gathered from many sources with little or no checking.
@@ -520,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.66 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.67 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -838,8 +826,8 @@ vars              Supf predeclare variable names                    P5P
 Experimental pragmatic modules live in the ex:: namespace
 
 ex::
-::implements
-::interface
+::implements      RdpO Study in Polymorphism                        PDCAWLEY
+::interface       RdpO Another study in polymorphism                PDCAWLEY
 
 Perl Language Extensions
 
@@ -1005,7 +993,7 @@ ClearCase::
 ::Ct              Mnpf Generic cleartool wrapper                    DSB
 
 Sub::
-::Curry
+::Curry           Rdpf Perl module to curry functions ((Ã¡ la Lisp) DAVIDH
 
 _______________________________________________________________________
 
@@ -1611,7 +1599,7 @@ Data::
 ::Locations       RdpO Insert data into other data w/o temp files   STBEY
 ::Reporter        RdcO Ascii Report Generator                       RVAZ
 ::Walker          RdpO Navigate through Perl data structures        JNOLAN
-::Random
+::Random          adpf Generate random sets of data                 ADEO
 
 Tree::
 ::Base            cdpO Defines a basic binary search tree           MSCHWERN
@@ -1620,7 +1608,7 @@ Tree::
 ::Ternary         bdpO Perl implementation of ternary search trees  MROGASKI
 ::Ternary_XS      adcO XS implementation of ternary search trees    LBROCARD
 ::Trie            bdpO An implementation of the Trie data structure AVIF
-::Nary
+::Nary            RdpO Perl implementation of N-ary search trees    FSORIANO
 
 DFA::
 ::Command         Mdpo Discrete Finite Automata command processor   RSAVAGE
@@ -1745,7 +1733,7 @@ Db::
 ::Ctree           Rdcr Faircom's CTREE+ database interface          REDEN
 ::Documentum      Rdcf Documentum EDMS Perl client interface        MSROTH
 ::dmObject        cdpO Object-based interface to Documentum EDMS    JGARRISON
-::DFC
+::DFC             cdpO OO Interface to Documentum's DFC             MSROTH
 
 DbFramework::
 ::Attribute       adpO Relational attribute class                   PSHARPE
@@ -2307,7 +2295,7 @@ Crypt::
 ::Twofish         Rdpf Twofish Encryption Algorothm                 NISHANT
 ::UnixCrypt       Rdpf Perl-only implementation of crypt(3)         MVORL
 ::RandPasswd      RdpO Random password generator based on FIPS-181  JDPORTER
-::Rijndael
+::Rijndael        bdch AES/Rijndael Encryption Module               DIDO
 
 Authen::
 ::ACE             adcO Interface to Security Dynamics ACE (SecurID) DCARRIGAN
@@ -2471,7 +2459,6 @@ MIME::
 
 MIME::Lite::
 ::HTML            bmpO Provide routine to transform HTML to MIME    ALIAN
-
 
 Apache            RmcO Interface to the Apache server API           DOUGM
 
@@ -2661,7 +2648,7 @@ MPEG::
 
 MP3::
 ::Info            bdpf Manipulate / fetch info from MP3 audio files CNANDOR
-::Tag
+::Tag             bdpO Tag - Module for reading tags of mp3 files   THOGEE
 
 Xmms              bdcO Interactive remote control shell for xmms    DOUGM
 Xmms::
@@ -2705,7 +2692,7 @@ Mail::
 ::Sendmail        Rdpf Simple platform independent mailer           MIVKOVIC
 ::UCEResponder    i    Spamfilter                                   CHSTROSS
 ::Util            adpf Mail utilities (for by some Mail::* modules) GBARR
-::IMAPClient
+::IMAPClient      RdpO An IMAP Client API                           DJKERNEN
 
 Mail::Field::
 ::Received        RdpO Parses Received headers as per RFC822        ASPIERS
@@ -2787,7 +2774,7 @@ Log::
 ::TraceMessages   Rdpf Print developer's trace messages             EDAVIS
 
 Log::Agent::
-::Logger          cdpr Application-level logging interface          RAM
+::Logger          cdpO Application-level logging interface          RAM
 
 Expect            RdpO Close relative of Don Libes' Expect in perl  RGIERSIG
 
@@ -4458,3 +4445,7 @@ Asia:
   ftp://nctuccca.edu.tw/USENET/FAQ
   ftp://hwarang.postech.ac.kr/pub/usenet/news.answers
   ftp://ftp.hk.super.net/mirror/faqs
+
+
+### Local Variables: ###
+### coding: utf-8 ###
