@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.13 $$Date: 1999/10/26 16:42:23 $
+The Perl 5 Module List       $Revision: 3.14 $$Date: 1999/10/27 06:01:33 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.13 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.14 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -867,6 +867,8 @@ ExtUtils::
 ::Embed           Sdpf Utilities for embedding Perl in C/C++ apps   DOUGM
 ::F77             RdpO Facilitate use of FORTRAN from Perl/XS code  KGB
 
+Test              adcf Utility for writing test scripts             JPRIT
+
 Test::
 ::Cases           cdpf Run group of tests, each with a new perl     DOMO
 ::Harness         Supf Executes perl-style tests                    ANDK
@@ -891,6 +893,7 @@ Devel::
 ::SmallProf       Rdpf Line-by-line profiler                        ASHTED
 ::Symdump         RdpO Perl symbol table access and dumping         ANDK
 ::TraceFuncs      adpO Trace funcs by using object destructions     JOEHIL
+::TraceLoad       adcf Traces the loading of perl source code       JPRIT
 
 Usage             bupr Type and range checking on subroutine args   JACKS
 
@@ -917,7 +920,7 @@ Name              DSLI Description                                  Info
 Env               Supf Alias environment variables as perl vars     P5P
 Errno             cdpf Constants from errno.h EACCES, ENOENT etc    GBARR
 Fcntl             Sdcf Defines fcntl() constants (see File::Lock)   JHI
-Ioctl             cdcf Defines ioctl() constants                    KJALB
+Ioctl             adcf ioctl(2) constants                           JPRIT
 POSIX             SupO An interface to most (all?) of POSIX.1       P5P
 Shell             Supf Run shell commands transparently within perl P5P
 
@@ -1161,6 +1164,7 @@ Proxy             i    Transport-independent remote processing      MICB
 Proxy::
 ::Tk              ?    Tk transport class for Proxy (part of Tk)    MICB
 
+IPChains          RdcO Create and Manipulate ipchains               JESSICAQ
 SNMP              RdcO Interface to the UCD SNMP toolkit            GSM
 TFTP              bdpO Interface to TFTP (rfc1350)                  GSM
 ToolTalk          adcr Interface to the ToolTalk messaging service  MARCP
@@ -1169,7 +1173,8 @@ SNMP::
 ::Monitor         adpO Accounting and graphical display             JWIED
 
 Mon::
-::*               RdpO Network monitoring suite                     TROCKIJ
+::Client          RdpO Network monitoring client                    TROCKIJ
+::SNMP            RdpO Network monitoring suite                     TROCKIJ
 
 Parallel::
 ::Pvm             bdcf Interface to the PVM messaging service       EWALKER
@@ -1205,7 +1210,7 @@ Math::
 ::Fortran         Rdpf Implements Fortran log10 & sign functions    JARW
 ::Fourier         i    Fast Fourier Transforms                      AQUMSIEH
 ::Fraction        bdpO Fraction Manipulation                        KEVINA
-::Geometry        i    2D and 3D algorithms                         GMCCAR
+::Geometry        adpf 2D and 3D algorithms                         GMCCAR
 ::IEEE            i    Interface to ANSI/IEEE Std 754-1985 funcs
 ::Integral        i    Integration of data                          AQUMSIEH
 ::Interpolate     Rdpr Polynomial interpolation of data             MATKIN
@@ -1317,6 +1322,7 @@ Time::
 ::ParseDate       Rdpf Parses many forms of dates and times         MUIR
 ::Period          Rdpf Code to deal with time periods               PRYAN
 ::Timezone        Rdpf Figures out timezone offsets                 MUIR
+::Warp            adcf Change the current and speed of time         JPRIT
 ::Zone            Rdpf Timezone info and translation routines       GBARR
 ::gmtime          Supf A by-name interface for gmtime               TOMC
 ::localtime       Supf A by-name interface for localtime            TOMC
@@ -1459,6 +1465,7 @@ Msql              RmcO Mini-SQL database interface                  JWIED
 Mysql             RmcO mysql database interface                     JWIED
 ObjStore          Rm+O ObjectStore OODBMS Interface                 JPRIT
 Pg                Rdcf PostgreSQL SQL database interface            MERGL
+PgSQL             adpO "Pure perl" interface to PostgreSQL          GTHYNI
 Postgres          Rdcr PostgreSQL interface with Perl5 coding style VKHERA
 Sprite            RdpO Limited SQL interface to flat file databases SHGUN
 Xbase             bdpf Read Xbase files with simple IDX indexes     PRATP
@@ -2110,6 +2117,10 @@ Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 Event             bdpO Perl event loop                              JPRIT
 
+Event::
+::Stats           adcf Collects statistics for Event                JPRIT
+::tcp             adcf TCP session layer library                    JPRIT
+
 EventServer       RupO Triggers objects on i/o, timers & interrupts JACKS
 ::Functions       Rupf Utility functions for initializing servers   JACKS
 ::*Wrapper        Rupf Bunch of wrappers for different server types JACKS
@@ -2150,6 +2161,7 @@ MailBot           cdpO Archive server, listserv, auto-responder     RHNELSON
 
 NetServer::
 ::Generic         adpO generic OOP class for internet servers       CHSTROSS
+::ProcessTop      adcf Adds a top-like screen for Event loops       JPRIT
 
 _______________________________________________________________________
 
@@ -2287,6 +2299,9 @@ AtExit            Rdpr atexit() function to register exit-callbacks BRADAPP
 Callback          RdpO Define easy to use function callback objects MUIR
 Memoize           adpr Cache results of individual function calls   MJD
 Religion          adpr Control where you go when you die()/warn()   KJALB
+
+Exception::
+::Cxx             adcf Make perl use C++ exceptions                 JPRIT
 
 Hook::
 ::PrePostCall     adpO Add actions before and after a routine       PVERD
@@ -2944,7 +2959,7 @@ to a CGI script that lets you edit the database entries yourself.
   GENJISCH Genji Schmeder <genji@jps.net>
   GFLOHR   Guido Flohr <gufl0000@stud.uni-sb.de>
   GGONTER  Gerhard Gonter <gonter@wu-wien.ac.at>
-  GHALSE   Guy Antony Halse <guy@rucus.ru.ac.za>
+  GHALSE   Guy Antony Halse <guy-japh@rucus.ru.ac.za>
   GHOARE   Graydon Hoare <graydon@groveware.com>
   GHUTCHIS Geoffrey Hutchison <ghutchis@wso.williams.edu>
   GJB      Geoffrey Broadwell <habusan2@sprynet.com>
