@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.53 $Date: 1999/02/16 11:57:44 $
+The Perl 5 Module List       Revision: 2.53 $Date: 1999/02/16 12:05:12 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -687,7 +687,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.117 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.118 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -956,7 +956,6 @@ Perl Language Extensions
 Alias          bdcf  Convenient access to data/code via aliases   GSAR
 Error          adpO  Error/exception handling in an OO-ish way    GBARR
 Perl           adcO  Create Perl interpreters from within Perl    GSAR
-Plthread       i     Multithreading at Perl level (not O/S level) MICB
 Protect        bdpf  declare subs private or member               JDUNCAN
 Safe           SdcO  Restrict eval'd code to safe subset of ops   MICB
 Softref        bdcf  Extension for weak/soft referenced SVs       ILYAZ +
@@ -1398,7 +1397,6 @@ Date::
 ::Convert      cdpO  Conversion between Gregorian, Hebrew, more?  MORTY
 ::CTime        adpf  Updated ctime.pl with mods for timezones     GBARR
 ::Format       Rdpf  Date formatter ala strftime                  GBARR
-::GetDate      adcf  Yacc based free-format date parser in C      TOMC
 ::Interval     idpO  Lightweight normalised interval data type    KTORP
 ::Language     adpO  Multi-language date support                  GBARR
 ::Manip        Rdpf  Manipulate/parse international dates/times   SBECK
@@ -1502,6 +1500,7 @@ DBD::
 ::Altera       bdpO  Altera SQL Server for DBI - pure Perl code   DSOUFLIS
 ::CSV          adcO  SQL engine and DBI driver for CSV files      JWIED
 ::DB2          adcO  DB2 Driver for DBI                           MHM
+::FreeTDS      adcO  DBI driver for MS SQLServer and Sybase       SPANNRING
 ::Fulcrum      cdcO  Fulcrum SearchServer Driver for DB           SHARI
 ::Informix     amcO  Informix Driver for DBI                      JOHNL
 ::Informix4    amcO  DBI driver for Informix SE 4.10              GTHYNI
@@ -1792,6 +1791,11 @@ Lingua::EN::
 
 ERG            Rdpf  An extensible report generator framework     PHOENIXL
 
+PostScript::
+::Font         Rdpf  analyzes PostScript font files               JV
+::FontMetrics  Rdpf  analyzes Adobe Font Metric files             JV
+::FontInfo     Rdpf  analyzes Windows font info files             JV
+
 Font::
 ::AFM          RdpO  Parse Adobe Font Metric files                GAAS
 ::TFM          adpO  Read info from TeX font metric files         JANPAZ
@@ -1868,6 +1872,9 @@ IniConf        bdpO  Read/Write INI-Style configuration files     SHUTTON
 App::                General application development tools
 ::Config       bdpO  Configuration file mgmt                      ABW
 
+CfgTie         adph  Framework for tieing system admin tasks      RANDYM
+
+
 _______________________________________________________________________
 
 13) Internationalization and Locale
@@ -1885,6 +1892,7 @@ Locale::
 ::Langinfo     cdcf  The <langinfo.h> API                         JHI
 ::Language     Rdpf  ISO 639 two letter language codes            NEILB
 ::Msgcat       RdcO  Access to XPG4 message catalog functions     CHRWOLF
+::PGetText     bdpf  What GNU gettext does, written in pure perl  MSHOYHER
 ::gettext      Rdcf  Multilanguage messages                       PVANDRY
 
 Unicode::
@@ -2175,6 +2183,7 @@ Image::
 Chart::
 ::Base         RdpO  Business chart widget collection             NINJAZ !
 ::GnuPlot      RdpO  Access to gnuplot library                    NPESKETT +
+::Pie          adpO  Implements "new Chart::Pie()"                KARLON
 ::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTON
 ::XMGR         Rdph  interface to XMGR plotting package           TJENNESS +
 
