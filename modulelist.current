@@ -245,7 +245,6 @@ currently registered CPAN sites:
             ftp://ftp.ing.puc.cl/pub/unix/perl/CPAN/
         Chile
             ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
-
 All the files under each of the directories listed above should be
 identical at all these sites since they are all automatically
 maintained mirrors of the master CPAN site. Please use which ever site
@@ -2390,6 +2389,7 @@ might relate to the modules they are developing.
 
 
 
+
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 RFC821     Simple Mail Transfer Protocol                 Net::SMTP
@@ -2440,8 +2440,8 @@ ISO3166    Two letter codes for country identification   Locale::Country
 =======================================================================
 			  Part 5 - Who's Who
 			  ==================
-
 1) Information / Contact Reference Details (in alphabetical order)
+
 
   Ref      Contact Details
   -----    --------------------------------------------------------------
@@ -3005,4 +3005,3 @@ ISO3166    Two letter codes for country identification   Locale::Country
   YVESP    Yves Paindaveine <yp@gr.osf.org>
   ZENIN    Byron Brummer <zenin@bawdycaste.org>
 
-End Of Module List
