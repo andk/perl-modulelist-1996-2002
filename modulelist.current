@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.40 $Date: 1997/03/13 10:43:49 $
+The Perl 5 Module List       Revision: 2.40 $Date: 1997/03/25 00:15:37 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -601,7 +601,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.64 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.66 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1326,6 +1326,9 @@ Motif          cdcf  Simple Motif and Xt interface                ERICA
 Wcl            i     Interface to the Widget Creation Library     TOMH
 Fresco         cd+O  Interface to Fresco (post X11R6 version)     BPETH
 Qt             cd+O  Interface to the Qt toolkit                  AWIN
+Xforms         bdcO  provides the binding to the xforms library   MARTINB
+XEvent         bdcO  provides perl OO acess to XEvent structures  MARTINB
+XFontStruct    bdcO  provides perl OO access to XFontStruct       MARTINB
 
 X11::
 ::Fvwm         adcO  interface to the FVWM window manager API     RJRAY
@@ -1548,6 +1551,7 @@ HTML::
 ::Base         adpO  Object-oriented way to build pages of HTML   GAND
 ::Simple       bdpf  Simple functions for generating HTML         TOMC
 ::Element      ampO  Representation of a HTML parsing tree        LWWWP
+::Embperl      bdcf  Embed Perl in HTML                           GRICHTER
 ::Entities     bmpf  Encode/decode HTML entities                  LWWWP
 ::Formatter    ampO  Convert HTML to plain text or Postscript     LWWWP
 ::Parse        ampO  Parse HTML documents                         LWWWP
@@ -1694,8 +1698,9 @@ Graphics::
 ::Turtle       idp   Turtle graphics package                      NEERI
 
 Image::
-::Size         Rdpf  Measure size of images in common formats     RJRAY
 ::ColorSpace   id    transform colors between colorspaces         JONO  +
+::Magick       RdcO  Read, query, transform, and write images     JCRISTY
+::Size         Rdpf  Measure size of images in common formats     RJRAY
 
 _______________________________________________________________________
 
@@ -1804,6 +1809,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Archie         Rdpf  Archie queries via Prospero ARDP protocol    GBOSS
+Bundle         i     Namespace reserved for modules collections   ANDK
 CPAN           RdpO  Perl Archive browse and download             ANDK
 CreditCard     Rdpf  Credit card number check digit test          JONO
 Neural         ad+O  Generic simulation of neural networks        LUKKA
