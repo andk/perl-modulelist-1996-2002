@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.49 $Date: 1998/09/14 17:33:39 $
+The Perl 5 Module List       Revision: 2.50 $Date: 1998/09/23 20:49:20 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -245,6 +245,7 @@ currently registered CPAN sites:
             ftp://ftp.ing.puc.cl/pub/unix/perl/CPAN/
         Chile
             ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
+
 All the files under each of the directories listed above should be
 identical at all these sites since they are all automatically
 maintained mirrors of the master CPAN site. Please use which ever site
@@ -589,7 +590,7 @@ but this is also transparent. Only the .pm file is required to exist.
    that will never be released to the public, then you should ensure
    that their names will not clash with any future public module. You
    can do this either by using the reserved Local::* category or by
-   using a category name that includes an underscore like Foo_Corp::*.
+   using an underscore in the top level name like Foo_Corp::*.
 
    To be portable each component of a module name should be limited to
    11 characters. If it might be used on DOS then try to ensure each is
@@ -672,7 +673,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.104 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.105 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1056,7 +1057,7 @@ Name           DSLI  Description                                  Info
 Env            Supf  Alias environment variables as perl vars     P5P
 Errno          cdpf  Constants from errno.h EACCES, ENOENT etc    GBARR
 Fcntl          Sdcf  Defines fcntl() constants (see File::Lock)   JHI
-Ioctl          cdcf  Defines ioctl() constants                    KJALB
+Ioctl          cdcf  Defines ioctl () constants                   KJALB
 POSIX          SupO  An interface to most (all?) of POSIX.1       P5P
 Shell          Supf  Run shell commands transparently within perl P5P
 
@@ -1468,6 +1469,7 @@ Name           DSLI  Description                                  Info
 DBI            amcO  Generic Database Interface (see DBD modules) DBIML
 
 DBIx::               Extensions to the DBI
+::HTMLView     cdpO  Creating web userinterfaces to DBI dbs       HAKANARDO
 ::Recordset    bmpO  Access/Modify DBI handles via Arrays/Hashs   GRICHTER
 ::Tree         adpO  Expand self-referential table into a tree    BJEPS
 
@@ -1588,6 +1590,9 @@ Tk X Windows User Interface Modules:
 Tk             bmcO  Object oriented version of Tk v4             TKML
 
 See the Tk module list at http://www.perl.com/CPAN/modules/by-module/Tk/tk-modlist.html
+
+Gtk            bdcO  Bindings to the Gtk Toolkit                  KJALB
+Gnome          bdcO  Bindings to the Gnome Desktop Toolkit        KJALB
 
 Other Major X Windows User Interface Modules:
 
@@ -1752,10 +1757,11 @@ Lingua::
 ::PT           bupf  Namespace for Portugese language modules     EGROSS
 
 Lingua::EN::
-::Inflect      Rdpf  English singular->plural and "a"->"an"       DCONWAY
 ::Cardinal     i     Convert numbers to words                     HIGHTOWE
+::Inflect      Rdpf  English singular->plural and "a"->"an"       DCONWAY
 ::Ordinal      i     Convert numbers to words                     HIGHTOWE
-
+::Squeeze      bdpf  Shorten english text for Pagers/GSM phones   JARIAALTO
+    
 ERG            Rdpf  An extensible report generator framework     PHOENIXL +
 
 Font::
@@ -1769,7 +1775,7 @@ Parse::
 ::ePerl        Rdcr  Embedded Perl (ePerl) parser                 RSE
 ::Lex          adpO  Generator of lexical analysers               PVERD
 ::RecDescent   RdpO  Recursive descent parser generator           DCONWAY
-::Yapp         adpO  Generate Perl OO parsers from LALR1 grammars FDESAR +
+::Yapp         bdpO  Generates OO LALR parser modules             FDESAR +
 
 Search::
 ::Dict         Supf  Search a dictionary ordered text file        P5P
@@ -1778,6 +1784,12 @@ SGML::
 ::Element      cdpO  Build a SGML element structure tree          LSTAF
 ::SPGrove      bd+O  Load SGML, XML, and HTML files               KMACLEOD
 SGMLS          RdpO  A Post-Processor for SGMLS and NSGMLS        INGOMACH
+
+XML            Rmhh  Large collection of XML related modules
+
+Please visit the XML FAQ at
+http://www.perlxml.com/faq/perl-xml-faq.html for pointers to XML
+modules. A separate module list for XML is in preparation.
 
 RTF::
 ::Base         i     Classes for Microsoft Rich Text Format       NI-S
@@ -1882,7 +1894,7 @@ PGP::          adpO  Simple interface to PGP subprocess via pipes PGPML
 
 DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
-MD5            RdcO  MD5 message digest algorithm                 NWINT
+MD5            RdcO  MD5 message digest algorithm                 GAAS
 SHA            adcO  NIST SHA message digest algorithm            UWEH
 GSS            adcO  Generic Security Services API (RFC 2078)     MSHLD
 
@@ -1895,7 +1907,7 @@ Crypt::
 Authen::
 ::ACE          adcO  Interface to Security Dynamics ACE (SecurID) DCARRIGAN
 ::Krb5         cdcO  Interface to Kerberos API                    JHORWITZ
-::PAM          adcf  Interface to PAM library                     NIKIP
+::PAM          bdch  Interface to PAM library                     NIKIP
 ::TacacsPlus   adcO  Authentication on tacacs+ server             MSHOYHER
 
 RADIUS::
@@ -1922,7 +1934,6 @@ CGI::
 ::CList        bdpO  Manages hierarchical collapsible lists       PEARCEC
 ::Cache        adpf  Speed up slow CGI scripts by caching         BROCSEIB
 ::Carp         cmpf  Drop-in Carp replacement for CGI scripts     CGIP
-::ErrorWrap    bdpf  Trap warnings and die and convert into HTML  TOMC
 ::Imagemap     adpO  Imagemap handling for specialized apps       MIKEH
 ::LogCarp      adpf  Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr      RmpO  Fork CGI app as a per-session mini server    CGIP
@@ -1964,11 +1975,11 @@ HTTP::Request::
 ::Form         RdpO  Generates HTTP::Request objects out of forms GBAUER
 
 HTTPD::
-::UserAdmin    bdpO  Management of server user databases          DOUGM
-::GroupAdmin   bdpO  Management of server group databases         DOUGM
-::Authen       bdpO  Preform HTTP Basic and Digest Authentication DOUGM
-::Config       cdpO  Management of server configuration files     DOUGM
-::Access       cdpO  Management of server access control files    DOUGM
+::UserAdmin    bdpO  Management of server user databases          LDS
+::GroupAdmin   bdpO  Management of server group databases         LDS
+::Authen       bdpO  Preform HTTP Basic and Digest Authentication LDS
+::Config       cdpO  Management of server configuration files     LDS
+::Access       cdpO  Management of server access control files    LDS
 
 WWW::
 ::Robot        adpO  Web traversal engine for robots & agents     NEILB
@@ -2008,7 +2019,6 @@ HyperWave::
 WebFS::
 ::FileCopy     bdpf  Get, put, copy, delete files located by URL  BZAJAC
 
-CCI            i     Common Client Interface for WWW browsers     DOUGM
 CGI_Lite       MnpO  Light-weight interface for fast apps         SHGUN
 FCGI           Rdcr  Fast CGI                                     SKIMO
 Apache         RdcO  Interface to the Apache server API           DOUGM
@@ -2336,6 +2346,11 @@ Cisco::
 
 Silly::
 ::StringMaths  adpf  Do maths with letters and strings            SKINGTON +
+
+Watchdog::
+::Service      adpO  Look for service in process table            PSHARPE
+::HTTPService  adpO  Test status of HTTP server                   PSHARPE
+::MysqlService adpO  Test status of Mysql server                  PSHARPE
 
 _______________________________________________________________________
 
@@ -3086,7 +3101,6 @@ to a CGI script that lets you edit the database entries yourself.
     ftp://ftp.seas.gwu.edu/pub/rtfm
   Europe:
     ftp://ftp.uni-paderborn.de/pub/FAQ
-    ftp://ftp.Germany.EU.net/pub/newsarchive/news.answers
     ftp://ftp.sunet.se/pub/usenet
   Asia:
     ftp://nctuccca.edu.tw/USENET/FAQ
