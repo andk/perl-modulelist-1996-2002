@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.30 $Date: 1996/08/12 22:50:53 $
+The Perl 5 Module List       Revision: 2.30 $Date: 1996/08/29 00:48:08 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -65,7 +65,7 @@ Key: '+' indicates a new section or item,
      '!' indicates a changed section or item (typically new modules).
 
 
-=======================================================================
+======================================================================
 
 Introduction
 
@@ -77,17 +77,16 @@ Perl 5 Modules typically conform to certain guidelines which make them
 easier to use, reuse, integrate and extend.
 
 This list will be posted to comp.lang.perl.announce and comp.answers on
-a semi-regular basis.  It has two key aims:
+a semi-regular basis. It has two key aims:
 
- 1. FOR DEVELOPERS: To change duplication of effort into cooperation.
+  1.) FOR DEVELOPERS: To change duplication of effort into cooperation.
+  2.) FOR USERS: To quickly locate existing software which can be
+      reused.
 
- 2. FOR USERS: To quickly locate existing software which can be reused.
-
-This list includes the Perl 5 standard modules, other completed modules,
-work-in-progress modules and would-be-nice-to-have ideas for modules.
-It also includes guidelines for those wishing to create new modules
-including how to name them.
-
+This list includes the Perl 5 standard modules, other completed
+modules, work-in-progress modules and would-be-nice-to-have ideas for
+modules. It also includes guidelines for those wishing to create new
+modules including how to name them.
 
 Where Are The Modules Kept?
 
@@ -136,6 +135,8 @@ currently registered CPAN sites:
             ftp://ftp.kfki.hu/pub/packages/perl/CPAN/
         Italy
             ftp://cis.utovrm.it/CPAN/
+        Norway
+            ftp://ftp.uit.no/pub/languages/perl/cpan/
         Poland
             ftp://ftp.pk.edu.pl/pub/lang/perl/CPAN/
             ftp://sunsite.icm.edu.pl/pub/CPAN/
@@ -167,13 +168,14 @@ currently registered CPAN sites:
             ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
             ftp://ftp.cs.colorado.edu/pub/perl/CPAN/
             ftp://ftp.digital.com/pub/plan/perl/CPAN/
+            ftp://ftp.duke.edu/pub/perl/
             ftp://ftp.iguide.com/pub/mirrors/packages/perl/CPAN/
             ftp://ftp.metronet.com/pub/perl/
             ftp://ftp.orst.edu/pub/packages/CPAN/
+            ftp://ftp.ou.edu/mirrors/CPAN/
             ftp://ftp.rge.com/pub/languages/perl/CPAN/
             ftp://ftp.sedl.org/pub/mirrors/CPAN/
             ftp://ftp.sterling.com/CPAN/
-            ftp://ftp.uoknor.edu/mirrors/CPAN/
             ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
     South America
         Chile
@@ -181,21 +183,19 @@ currently registered CPAN sites:
 
 All the files under each of the directories listed above should be
 identical at all these sites since they are all automatically
-maintained mirrors of the master CPAN site. Please use which ever
-site is 'nearest' you.
+maintained mirrors of the master CPAN site. Please use which ever site
+is 'nearest' you.
 
 NOTE: If you can't find what you want, or wish to check that what
-you've found is the latest version, or wonder why a module mentioned
-in this list is not on CPAN, you should contact the person associated
-with the module (and not the maintainers of the archives or this
-list).  Contact details are given at the start of Part 4.
+you've found is the latest version, or wonder why a module mentioned in
+this list is not on CPAN, you should contact the person associated with
+the module (and not the maintainers of the archives or this list).
+Contact details are given at the start of Part 4.
 
 For navigating through CPAN you may find the file
-modules/01modules.index.html a useful starting place. Or you may
-prefer a webified version of this modulelist in the file
-modules/00modlist.long.html on the CPAN servers. There's more than one
-way to do it :-)
-
+modules/01modules.index.html a useful starting place. Or you may prefer
+a webified version of this modulelist in the file
+modules/00modlist.long.html on the CPAN servers.
 
 Playing Your Part
 
@@ -203,46 +203,45 @@ Perl is a huge collaborative effort. Everyone who uses perl is
 benefiting from the contributions of many hundreds, maybe thousands, of
 people. How much time has perl saved you since you started using it?
 
-Do you have any modules you could share with others?  For example, you
+Do you have any modules you could share with others? For example, you
 may have some perl4 scripts from which generally useful, and reusable,
-modules could be extracted.  There may be many people who would find
-your work very useful.  Please play you part and contribute to the Perl
+modules could be extracted. There may be many people who would find
+your work very useful. Please play you part and contribute to the Perl
 community where you can. [ end of sermon :-]
 
 Help save the world! Please submit new entries and updates to us so we
-can keep this list up-to-date. Send the new or corrected entry by
-email to modules@perl.com (or modules@franz.ww.tu-berlin.de in case
-the above doesn't work).  Please do not send code to this
-address. Instead upload your module to the PAUSE site for forwarding
-on to CPAN. See section 2.9.
-
+can keep this list up-to-date. Send the new or corrected entry by email
+to modules@perl.com (or modules@franz.ww.tu-berlin.de in case the above
+doesn't work). Please do not send code to this address. Instead upload
+your module to the PAUSE site for forwarding on to CPAN. See section
+2.9.
 
 How To Get a More Recent Copy of the List
 
-This Module List is posted to comp.lang.perl.announce, comp.answers and
+This Module List is posted to comp.lang.perl.modules, comp.answers and
 news.answers bi-weekly with a long expiry time (over a month). The
 first place to look for a more recent copy is therefore your own Usenet
 spool area.
 
 You should be able to get a copy from one of these places:
-  ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/module-list
-  ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
 
-An HTML version that is usually in sync with the posted version can be
-obtained at
-  http://www.perl.com/CPAN/modules/00modlist.long.html
+  1.) ASCII version:
+        ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/module-list
+        ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
+  2.) HTML version:
+        http://www.perl.com/CPAN/modules/00modlist.long.html
 
 Editorial Information and Copyright
 
-This document is Copyright (c) 1996 by Tim Bunce and Andreas König.
-All rights reserved.  Permission to distribute this document, in full
-or part, via electronic means (emailed, posted or archived) or printed
+This document is Copyright (c) 1996 by Tim Bunce and Andreas König. All
+rights reserved. Permission to distribute this document, in full or
+part, via electronic means (emailed, posted or archived) or printed
 copy is granted providing that no charges are involved, reasonable
 attempt is made to use the most current version, and all credits and
-copyright notices are retained.  Requests for other distribution
-rights, including incorporation in commercial products, such as books,
-magazine articles, or CD-ROMs should be made to Tim.Bunce@ig.co.uk
-and Andreas.Koenig@mind.de.
+copyright notices are retained. Requests for other distribution rights,
+including incorporation in commercial products, such as books, magazine
+articles, or CD-ROMs should be made to Tim.Bunce@ig.co.uk and
+Andreas.Koenig@mind.de.
 
 Disclaimer: The content of this document is simply a collection of
 information gathered from many sources with little or no checking.
@@ -252,13 +251,12 @@ A little background information... I (Tim) created the Module List in
 August 1994 and maintained it manually till April 1996. By that time
 Andreas had implemented the Perl Authors Upload Server (PAUSE) and it
 was happily feeding modules through to the CPAN archive sites (see
-http://www.perl.com/CPAN/modules/04pause.html for details). Since PAUSE held
-a database of module information which could be maintained by module
-authors it made sense for the module listing part of the Module List to
-be built from that database. In April 1996 Andreas took over the
-automatic posting of the Module List and I now maintain the other parts
-of the text. We plan to add value to the automation over time.
-
+http://www.perl.com/CPAN/modules/04pause.html for details). Since PAUSE
+held a database of module information which could be maintained by
+module authors it made sense for the module listing part of the Module
+List to be built from that database. In April 1996 Andreas took over
+the automatic posting of the Module List and I now maintain the other
+parts of the text. We plan to add value to the automation over time.
 
 
 =======================================================================
@@ -1658,7 +1656,7 @@ Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN
 
 Penguin::
-::Easy	       RdpO  Provides quick, easy access to Penguin API   JDUNCAN +
+::Easy         RdpO  Provides quick, easy access to Penguin API   JDUNCAN +
 
 CreditCard     Rdpf  Credit card number check digit test          JONO +
 
@@ -1807,15 +1805,18 @@ to a CGI script that lets you edit the database entries yourself.
   BOBSIDE  Bob Sidebotham <rns@fore.com>
   BPETH    Bill Petheram <petheram@acm.org>
   BPOWERS  Brent B. Powers <powers@ml.com>
+  BRADAPP  Brad Appleton <Brad_Appleton-GBDA001@email.mot.com>
   CAADAMS  Clifford A. Adams <caadams@zynet.com>
   CBAIL    Charles Bailey <bailey@genetics.upenn.edu>
   CGIP     The CGI-Perl Developers mailing list
            Mail to CGI-perl-REQUEST@webstorm.com with body "subscribe"
   CHIPS    Chip Salzenberg <chs@nando.net>
+  CHOWARTH Colin Howarth <colin@muc.de>
   CJM      Christopher J. Madsen <ac608@yfn.ysu.edu>
+  DALGL    Bob Dalgleish <bob.dalgleish@sk.sympatico.ca>
   DANKOGAI Dan Kogai <dankogai@jms.jeton.or.jp>
   DANMQ    Daniel M. Quinlan <danq@colorado.edu>
-  DAVEROTH Dave Roth <rothd@infowire.com>
+  DAVEROTH Dave Roth <rothd@roth.net>
   DBIML    The DBI Mailing Lists
            Subscribe via http://www.fugue.com/dbi. If you can't do
            that then mail to dbi-REQUEST@fugue.com and ask (the human,
@@ -1869,6 +1870,7 @@ to a CGI script that lets you edit the database entries yourself.
   JONG     Jong Park <jong@mrc-lmb.cam.ac.uk>
   JONO     Jon Orwant <orwant@media.mit.edu>
   JPC      Jan-Pieter Cornet <johnpc@xs4all.nl>
+  JPRAVETZ Jim Pravetz <jpravetz@adobe.com>
   JROGERS  Jay Rogers <jay@ampersand.com>
   JSTOF    John Stoffel <john@wpi.edu>
   JV       Johan Vromans <jvromans@squirrel.nl>
@@ -1877,7 +1879,7 @@ to a CGI script that lets you edit the database entries yourself.
   KJALB    Kenneth Albanowski <kjahds@kjahds.com>
   KJOHNSON Kevin Johnson <kjj@primenet.com>
   KONDO    Yoshiyuki KONDO <cond@lsi-j.co.jp>
-  KRISHPL  Krishna Shamu Sethuraman <krishpl@shamu.csd.sgi.com>
+  KRISHPL  Krishna Shamu Sethuraman <krishpl@shamu.studio.sgi.com>
   KSB      Simon Berg <karl@it.kth.se>
   LDS      Lincoln D. Stein <lstein@genome.wi.mit.edu>
   LFINI    Luca Fini <lfini@arcetri.astro.it>
@@ -1889,7 +1891,7 @@ to a CGI script that lets you edit the database entries yourself.
   LWWWP    The libwww-perl mailing list
            Mail to libwww-perl-REQUEST@ics.uci.edu with body
            "subscribe"
-  MAHEX    Mark Hex Hershberger <mah@cs.tulane.edu>
+  MAHEX    Mark "Hex" Hershberger <mah@cs.tulane.edu>
   MAK      Martijn Koster <mak@surfski.webcrawler.com>
   MARCP    Marc Paquette <Marc.Paquette@crim.ca>
   MARKB    Mark Biggar <mab@wdl.loral.com>
@@ -1897,7 +1899,9 @@ to a CGI script that lets you edit the database entries yourself.
   MATTW    Matthew M. Wright <mattw@worldwidemart.com>
   MCPL     The MacPerl mailing list
            Mail to mac-perl-REQUEST@iis.ee.ethz.ch with body
-           "subscribe"
+           "subscribe". There is an announcement-only low-volume
+           mailing list too with the subscription address
+           mac-perl-announce-request@iis.ee.ethz.ch.
   MERGL    Edmund Mergl <mergl@nadia.s.bawue.de>
   MERLYN   Randal L. Schwartz <merlyn@stonehenge.com>
   MEWP     Michael Peppler <mpeppler@bix.com>
@@ -1946,6 +1950,7 @@ to a CGI script that lets you edit the database entries yourself.
   RIK      Rik Harris <rik.harris@fulcrum.com.au>
   RJRAY    Randy J Ray <rjray@uswest.com>
   RJS      Robert J Seymour <rseymour@rseymour.com>
+  RMOSE    Russell Mosemann <mose@ns.ccsn.edu>
   ROSCH    Roderick Schertler <roderick@gate.net>
   RURBAN   Reini Urban <rurban@sbox.tu-graz.ac.at>
   RVA      Rodger Anderson <rodger@boi.hp.com>
@@ -1956,6 +1961,7 @@ to a CGI script that lets you edit the database entries yourself.
   SEMM     Steve Emmerson <support@unidata.ucar.edu>
   SGEL     Sergio Gelato <gelato@oort.ap.sissa.it>
   SHGUN    Shishir Gundavaram <shishir@acs.bu.edu>
+  SHUTTON  Scott Hutton <shutton@pobox.com>
   SKUNZ    Steven L. Kunz <skunz@iastate.edu>
   SPIDB    Spider Boardman <spider@orb.nashua.nh.us>
   SRIRAM   Sriram Srinivasan <sriram@tcs.com>
@@ -1985,6 +1991,7 @@ to a CGI script that lets you edit the database entries yourself.
   WINKO    Winfried Koenig <win@in.rhein-main.de>
   WPS      William Setzer <William_Setzer@ncsu.edu>
   WSCOT    Wayne Scott <wscott@ichips.intel.com>
+  WTOMPSON Wayne Tompson <>
   WYTAN    Wei-Yuen Tan <Wei-Yuen_Tan@hip.com>
   YASU     Yasushi Saito <yasushi@cs.washington.edu>
   YLU      Luke Y. Lu <ylu@mail.utexas.edu>
