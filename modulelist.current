@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.82 $ $Date: 2000/11/27 21:54:32 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.83 $ $Date: 2000/12/08 11:34:44 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -507,7 +507,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.82 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.83 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -829,17 +829,26 @@ ex::
 ::interface       RdpO Another study in polymorphism                PDCAWLEY
 ::override        Rdpf perl pragma to override core functions       CTWETEN
 
+ex::constant::
+::vars
+
 Perl Language Extensions
 
 Alias             bdcf Convenient access to data/code via aliases   GSAR
 End               RdpO Generalized END {}.                          ABIGAIL
 Error             adpO Error/exception handling in an OO-ish way    GBARR
-Inline            RdpO Making C extensions easy to write in Perl    INGY
 Perl              adcO Create Perl interpreters from within Perl    GSAR
 Protect           bdpf declare subs private or member               JDUNCAN
 Regexp            adcO An OO interface to regular expressions       GBARR
 Safe              SdcO Restrict eval'd code to safe subset of ops   MICB
 Softref           bdcf Extension for weak/soft referenced SVs       ILYAZ
+
+Inline            RdpO Making C extensions easy to write in Perl    INGY
+Inline::
+::CPR
+::C
+::CPP
+::Python
 
 Exporter::
 ::Import          Rdpn Alternate symbol exporter                    GARROW
@@ -857,6 +866,8 @@ Test::
 ::Cmd             RdpO Portable test infrastructure for commands    KNIGHT
 ::Harness         Supf Executes perl-style tests                    P5P
 ::Unit            adpO simple framework for unit testing            CLEMBURG
+::Suite
+::Case
 
 The Perl Compiler
 
@@ -926,6 +937,8 @@ Pod::
 ::Usage           bdpf Print Usage messages based on your own pod   BRADAPP
 ::Rtf             RdpO Converter from POD to Rich Text Format       PVHP
 ::Hlp             RdpO Convert POD to formatted VMS Help text       PVHP
+::XML
+::PP
 
 _______________________________________________________________________
 
@@ -1000,6 +1013,8 @@ Sub::
 ::Curry           Rdpf Perl module to curry functions ((á la Lisp)) DAVIDH
 
 Perlbug           RdpO Database driven bug tracking system          RFOLEY
+
+Continuus
 
 _______________________________________________________________________
 
@@ -1523,6 +1538,7 @@ Time::
 ::Zone            Rdpf Timezone info and translation routines       GBARR
 ::gmtime          Supf A by-name interface for gmtime               TOMC
 ::localtime       Supf A by-name interface for localtime            TOMC
+::Seconds
 
 Calendar::
 ::CSA             adcO interface with calenders such as Sun and CDE KJALB
@@ -1690,6 +1706,7 @@ DBIx::
 ::TableAdapter    adpO An object-relational mapper for DBI tables   GED
 ::Tree            adpO Expand self-referential table into a tree    BJEPS
 ::XML_RDB         ???? Creates XML from DBI datasources             MSERGEANT
+::DBSchema
 
 DBD::
 ::ASAny           adcO Adaptive Server Anywhere Driver for DBI      SMIRNIOS
@@ -1768,10 +1785,13 @@ DBZ_File          adc  Tie to dbz files (mainly for news history)   IANPX
 DWH_File          adpO DBM storage of complex data and objects      SUMUS
 DB_File           Suc  Tie to DB files                              PMQS
 GDBM_File         Suc  Tie to GDBM files                            P5P
-MLDBM             RdpO Transparently store multi-level data in DBM  GSAR
 NDBM_File         Suc  Tie to NDBM files                            P5P
 ODBM_File         Suc  Tie to ODBM files                            P5P
 SDBM_File         Suc  Tie to SDBM files                            P5P
+
+MLDBM             RdpO Transparently store multi-level data in DBM  GSAR
+MLDBM::
+::Sync
 
 DB_File::
 ::Lock            RdpO DB_File wrapper with flock-based locking     DHARRIS
@@ -2069,6 +2089,10 @@ File::
 ::lockf           bdcf Interface to lockf system call               PHENSON
 ::stat            Supf A by-name interface for the stat function    TOMC
 ::BasicFlock      Rdpf Simple flock() wrapper                       MUIR
+::Searcher
+
+File::Searcher::
+::Interactive
 
 Dir::
 ::Purge           Rdpf Delete files in directory based on timestamp JV
@@ -2146,6 +2170,7 @@ Text::
 ::Wrap            Sdpf Wraps lines to make simple paragraphs        MUIR
 ::iPerl           adpf Bring text-docs to life via embedded Perl    PFEIFFER
 ::DoubleMetaphone adcf Convert string to phonetic encoding          MAURICE
+::FastTemplate
 
 Text::Wrap::
 ::Hyphenate       a    Like Text::Wrap with ability to hyphenate    MJD
@@ -2267,6 +2292,17 @@ XML::
 ::Registry        ampO Implements a generic XML registry            EISEN
 ::Writer          ???? Module for writing XML documents             DMEGG
 ::XQL             ampO Performs XQL queries on XML object trees     ENNO
+::XPath
+::PYX
+::XSLT
+::TreeBuilder
+::Sablotron
+::PPD
+::Element
+::Doctype
+::Catalog
+::AutoWriter
+::CSV
 
 Frontier::             
 ::RPC             ???? Performs Remote Procedure Calls using XML    KMACLEOD
@@ -2456,6 +2492,7 @@ Crypt::
 ::PGP             cdpO Unified OO Interface to PGP and GnuPG        AGUL
 ::GPG             bdpO An Object Oriented Interface to GnuPG        AGUL
 ::ECB             Mdph ECB mode for Crypt::DES, Blowfish, etc.      APPEL
+::CipherSaber
 
 Authen::
 ::ACE             adcO Interface to Security Dynamics ACE (SecurID) DCARRIGAN
@@ -2570,6 +2607,7 @@ HTTP::
 ::Request         RmpO Class encapsulating HTTP Requests            LWWWP
 ::Response        RmpO Class encapsulating HTTP Responses           LWWWP
 ::Status          Rmpf HTTP Status code processing                  LWWWP
+::GHTTP
 
 HTTP::Request::
 ::Common          Rmpf Functions that generate HTTP::Requests       LWWWP
@@ -2681,6 +2719,8 @@ Apache::
 ::VhostSandwich   cdpf Virtual host layered document maker          MARKC
 ::WDB             bdpf Database query/edit tool using DBI           JROWE
 ::WebSQL          cdpO Adaptation of Sybase's WebSQL                GUNTHER
+::AxKit
+::Reload
 
 Apache PerlInitHandler modules
 
@@ -2894,11 +2934,14 @@ BizTalk           RdpO Microsoft BizTalk Framework Toolkit          SIMONJ
 CGI_Lite          MnpO Light-weight interface for fast apps         SHGUN
 CIPP              RdpO Preprocessor for embedding Perl, SQL in HTML JRED
 Catalog           bmpO Manage/display resources catalog (URLs etc.) LDACHARY
-FCGI              Rdcr Fast CGI                                     SKIMO
 PApp              adch Multi-page-state-preserving web applications MLEHMANN
 WDDX              RdpO Allows distributed data exchange via XML     GUELICH
 WING              RmhO Apache based IMAP/NNTP Gateway               MICB
 WOMP              cdpO CGI App Dev Suite: authen/state/html         SPADKINS
+
+FCGI              Rdcr Fast CGI                                     SKIMO
+FCGI::
+::ProcManager
 
 _______________________________________________________________________
 
