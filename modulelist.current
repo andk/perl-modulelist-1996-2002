@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.15 $$Date: 1999/10/27 19:12:55 $
+The Perl 5 Module List       $Revision: 3.16 $$Date: 1999/10/28 06:10:41 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.15 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.16 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -802,7 +802,7 @@ Exporter::
 Symbol::
 ::Table           RdpO OO interface to package symbols              GARROW
 
-Test              adcf Utility for writing test scripts             JPRIT
+Test              Sdpf Utilities for writing test scripts           JPRIT
 
 Test::
 ::Cases           cdpf Run group of tests, each with a new perl     DOMO
@@ -881,7 +881,7 @@ Carp::
 ::Assert          adpf Stating the obvious to let the computer know MSCHWERN
 ::CheckArgs       Rdpf Check subroutine argument types              GARROW
 
-Coy               RdpO like Carp only prettier                      DCONWAY
+Coy               Rdpn Like Carp - only prettier                    DCONWAY
 
 Devel::
 ::CallerItem      RupO 'caller()' Object wrapper + useful methods   JACKS
@@ -898,7 +898,7 @@ Devel::
 ::SmallProf       Rdpf Line-by-line profiler                        ASHTED
 ::Symdump         RdpO Perl symbol table access and dumping         ANDK
 ::TraceFuncs      adpO Trace funcs by using object destructions     JOEHIL
-::TraceLoad       adcf Traces the loading of perl source code       JPRIT
+::TraceLoad       Rdpf Traces the loading of perl source code       JPRIT
 
 Usage             bupr Type and range checking on subroutine args   JACKS
 
@@ -1356,6 +1356,7 @@ Tie::
 ::OffsetArray     adpr Tie one array to another, with index offset  JDPORTER
 ::Quick           i    Simple way to create ties                    TIMB
 ::RndHash         bdpO choose a random key of a hash in O(1) time   DFAN
+::SecureHash      RdpO Enforced encapsulation of Perl objects       DCONWAY
 ::SentientHash    cdpr Tracks changes to nested data structures     ANDREWF
 ::ShadowHash      adpO Merge multiple data sources into a hash      RRA
 ::ShiftSplice     i    Defines shift et al in terms of splice       LWALL
@@ -1365,6 +1366,7 @@ Tie::
 
 Class::
 ::Eroot           RdpO Eternal Root - Object persistence            DMR
+::Multimethods    Rdpf A multiple dispatch mechanism for Perl       DCONWAY
 ::Singleton       bdpO Implementation of a "Singleton" class        ABW
 ::Template        Rdpr Struct/member template builder               DMR
 ::Tree            Mdpo C++ class hierarchies & disk directories     RSAVAGE
@@ -1410,7 +1412,7 @@ Data::
 
 Tree::
 ::Base            cdpO Defines a basic binary search tree           MSCHWERN
-::Fat             Rdcf Embeddable F-Tree Algorithm Suite            JPRIT
+::Fat             Rdcf Embeddable F-Tree algorithm suite            JPRIT
 ::Smart           cdpO Sorted hash-ish, becomes faster with use     MSCHWERN
 ::Trie            bdpO An implementation of the Trie data structure AVIF
 
@@ -1564,7 +1566,6 @@ Curses            adcO Character screen handling and windowing      WPS
 NCurses           cdcO Curses using the ncurses package             WPS
 PV                bmpO PerlVision curses windowing (OO widgets etc) AGUL
 PerlMenu          Mdpf Curses-based menu and template system        SKUNZ
-Rc                adpf Perl interface for the Rc shell              JPRIT
 
 Emacs             cdcf Support for Perl embedded in GNU Emacs       JTOBEY
 Emacs::
@@ -1617,6 +1618,10 @@ _______________________________________________________________________
 
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
+Clips             adpO Interface to the Expert System Clips         MSULLIVAN
+Rc                adpf Perl interface for the Rc shell              JPRIT
+SICStus           adcO Interface to SICStus Prolog Runtime          CBAIL
+
 C::
 ::DynaLib         bdcO Allows direct calls to dynamic libraries     JTOBEY
 ::Scan            RdpO Heuristic parse of C files                   ILYAZ
@@ -1628,12 +1633,8 @@ Language::
 ::Prolog          adpO An implementation of Prolog                  JACKS
 ::PGForth         i    Peter Gallasch's Forth implementation        PETERGAL
 
-SICStus           adcO Interface to SICStus Prolog Runtime          CBAIL
-
 Fortran::
 ::NameList        adpf Interface to FORTRAN NameList data           SGEL
-
-Clips             adpO Interface to the Expert System Clips         MSULLIVAN
 
 ShellScript::
 ::Env             adpO Simple sh and csh script generator           SVENH
@@ -1751,7 +1752,7 @@ Text::
 Other Text:: modules (these should be under String:: but pre-date it)
 
 Text::
-::Balanced        Rdpf Extract balanced-delimiter substrings        DCONWAY
+::Balanced        Mdpf Extract balanced-delimiter substrings        DCONWAY
 ::Parser          adpO String parser using patterns and states      PATM
 ::Trie            adpf Find common heads and tails from strings     ILYAZ
 
@@ -1776,9 +1777,9 @@ Lingua::
 
 Lingua::EN::
 ::Cardinal        i    Convert numbers to words                     HIGHTOWE
-::Infinitive      Mdpo Find infinitive of a conjugated word         RSAVAGE
 ::Hyphenate       Rdpf Syllable based hyphenation                   DCONWAY
-::Inflect         Rdpf English singular->plural and "a"->"an"       DCONWAY
+::Infinitive      Mdpo Find infinitive of a conjugated word         RSAVAGE
+::Inflect         Mdpf English singular->plural and "a"->"an"       DCONWAY
 ::Ordinal         i    Convert numbers to words                     HIGHTOWE
 ::Squeeze         bdpf Shorten english text for Pagers/GSM phones   JARIAALTO
 
@@ -1810,7 +1811,7 @@ Number::
 Parse::
 ::ePerl           Rdcr Embedded Perl (ePerl) parser                 RSE
 ::Lex             adpO Generator of lexical analysers               PVERD
-::RecDescent      RdpO Recursive descent parser generator           DCONWAY
+::RecDescent      MdpO Recursive descent parser generator           DCONWAY
 ::Yapp            RdpO Generates OO LALR parser modules             FDESAR
 
 Search::
@@ -1861,7 +1862,7 @@ _______________________________________________________________________
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 Getopt::
-::Declare         RdpO An easy-to-use WYSIWYG command-line parser   DCONWAY
+::Declare         MdpO An easy-to-use WYSIWYG command-line parser   DCONWAY
 ::EvaP            Mdpr Long/short options, multilevel help          LUSOL
 ::Gnu             adcf GNU form of long option handling             WSCOT
 ::Help            bdpf Yet another getopt, has help and defaults    IANPX
@@ -2125,8 +2126,8 @@ Name              DSLI Description                                  Info
 Event             bmch fast, generic event loop                     JPRIT
 
 Event::
-::Stats           adcf Collects statistics for Event                JPRIT
-::tcp             adcf TCP session layer library                    JPRIT
+::Stats           Rmcf Collects statistics for Event                JPRIT
+::tcp             bmpO TCP session layer library                    JPRIT
 
 EventServer       RupO Triggers objects on i/o, timers & interrupts JACKS
 ::Functions       Rupf Utility functions for initializing servers   JACKS
@@ -2168,10 +2169,10 @@ MailBot           cdpO Archive server, listserv, auto-responder     RHNELSON
 
 NetServer::
 ::Generic         adpO generic OOP class for internet servers       CHSTROSS
-::ProcessTop      adcf Adds a top-like screen for Event loops       JPRIT
+::ProcessTop      Rmpf Gives a top-like control screen for Event    JPRIT
 
 Time::
-::Warp            adcf Change the current and speed of time         JPRIT
+::Warp            Rmcf Change the start and speed of Event time     JPRIT
 
 _______________________________________________________________________
 
@@ -2311,7 +2312,7 @@ Memoize           adpr Cache results of individual function calls   MJD
 Religion          adpr Control where you go when you die()/warn()   KJALB
 
 Exception::
-::Cxx             adcf Make perl use C++ exceptions                 JPRIT
+::Cxx             Rd+f Cause perl to longjmp using C++ exceptions   JPRIT
 
 Hook::
 ::PrePostCall     adpO Add actions before and after a routine       PVERD
