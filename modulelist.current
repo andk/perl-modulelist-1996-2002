@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.55 $Date: 1999/04/20 07:19:02 $
+The Perl 5 Module List       Revision: 2.55 $Date: 1999/04/20 07:21:30 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -687,7 +687,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.124 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.126 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1029,6 +1029,9 @@ ExtUtils::
 Test::
 ::Cases        cdpf  Run group of tests, each with a new perl     DOMO
 ::Harness      Supf  Executes perl-style tests                    ANDK
+
+Carp::
+::Assert       adpf  Stating the obvious to let the computer know MSCHWERN
 
 Devel::
 ::CallerItem   RupO  'caller()' Object wrapper + useful methods   JACKS
@@ -1486,7 +1489,8 @@ Sort::
 Data Type Marshaling (converting to/from strings) and Persistent Storage
 
 FreezeThaw     bdpf  Convert arbitrary objects to/from strings    ILYAZ
-Persistent     adpO  (not supported anymore, placeholder)         JPC
+Persistence::
+::Object       adpO  Store Object definitions with Data::Dumper   VIPUL
 Storable       bdcr  Persistent data structure mechanism          RAM
 Marshal::
 ::Dispatch     cdpO  Convert arbitrary objects to/from strings    MUIR
@@ -1746,6 +1750,7 @@ File::
 ::Sync         bdcf  POSIX/*nix fsync() and sync()                CEVANS
 ::Tail         bdpO  A more efficient tail -f                     MGRABNAR
 ::MultiTail    adpO  Tail multiple files                          SGMIANO
+::chmod        adpf  Symbolic chmod                               PINYAN
 ::lockf        bdcf  Interface to lockf system call               PHENSON
 ::stat         Supf  A by-name interface for the stat function    TOMC
 
@@ -1793,7 +1798,7 @@ Text::
 ::Format       RdpO  Advanced paragraph formatting                GABOR
 ::Graphics     RdpO  Graphics rendering toolkit with text output  SFARRELL
 ::Invert       cdpO  Create/query inv. index of text entities     NNEUL
-::Metaphone    adpf  Phonetic encoding.  A modern Soundex         MSCHWERN
+::Metaphone    bdcf  A modern soundex. Phonetic encoding of words MSCHWERN
 ::MetaText     bdpO  Text processing/markup meta-language         ABW
 ::Morse        cdpf  convert text to/from Morse code              JONO
 ::ParseWords   Supf  Parse strings containing shell-style quoting HALPOM
@@ -1865,9 +1870,8 @@ SGMLS          RdpO  A Post-Processor for SGMLS and NSGMLS        INGOMACH
 
 XML            RmhO  Large collection of XML related modules      XMLML
 
-    Please visit the XML FAQ at
-    http://www.perlxml.com/faq/perl-xml-faq.html for pointers to XML
-    modules. A separate module list for XML is in preparation.
+    The Perl-XML module list is available at
+    http://www.perlxml.com/modules/perl-xml-modules.html
 
 RTF::
 ::Base         i     Classes for Microsoft Rich Text Format       NI-S
@@ -2237,6 +2241,7 @@ Image::
 
 Chart::
 ::Base         RdpO  Business chart widget collection             NINJAZ
+::Graph        Rmpr  front-end to gnuplot and XRT                 MHYOUNG
 ::GnuPlot      RdpO  Access to gnuplot library                    NPESKETT
 ::Pie          adpO  Implements "new Chart::Pie()"                KARLON
 ::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTON
