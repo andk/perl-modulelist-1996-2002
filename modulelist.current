@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.23 $$Date: 1999/11/06 09:51:10 $
+The Perl 5 Module List       $Revision: 3.24 $$Date: 1999/11/09 08:31:07 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -17,6 +17,7 @@ Part 1 - Modules: Creation, Use and Abuse
 2)   Guidelines for Module Creation
 3)   Guidelines for Converting Perl 4 Library Scripts into Modules
 4)   Guidelines for Reusing Application Code
+5)   Namespace Coordination
 
 Part 2 - The Perl 5 Module List
 
@@ -520,7 +521,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.23 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.24 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -644,6 +645,57 @@ but this is also transparent. Only the .pm file is required to exist.
     cases the application could invoked as:
 
          perl -MModule::Name -e 'func(@ARGV)'
+
+
+5) Namespace Coordination
+
+The maintainers of the module list are not the Internic for perl
+namespaces. They do neither sell namespaces nor can they establish
+property rights. What they try to do is to minimize namespace clashes
+and maximize usablility of the CPAN archive by setting up a catalogue
+of modules and control the indexers. Time permitting, they will also
+try to give advice for what they think is a proper usage of the
+namespace.
+
+It is an important part of the namespace concept that the module list
+maintainers do not guarantee to you that somebody else won't use the,
+say, Foo::Bar namespace. The upload area is not censored except for
+abuse. People are free to upload any modules they like. Instead, there
+are several levels of protection for your namespaces:
+
+a) The most important is the module list which actually lists and
+   proclaims your namespace.
+
+b) The second is the indexing mechanism of the CPAN. Modules are
+   indexed on a first-come-first-serve basis. The module namespace
+   that is uploaded for the first time ever gets indexed, but not the
+   module of the second one who tries to use the same namespace.
+
+c) As the whole process is trying to benefit the community, all
+   parties are subject to a wider monitoring within the community.
+   This is sometimes referred to as security by visibility.
+
+d) So the next level of namespace protection is the common sense. Your
+   own common sense. Help to save the world. If you get the impression
+   that something goes wrong with regard to namespaces, please write
+   to modules@perl.org and let them know.
+
+e) The perhaps most interesting namespace protection is provided by
+   the perl symbol table itself. A namespace Foo:: is just a package
+   name and its relationship to a namespace Foo::Bar:: is not
+   predetermined whatsoever. The two namespaces can be closely or
+   loosely related or not related at all, but what's most important,
+   they can be writen by different authors who may work rather
+   independently from each other. So if you have registered any
+   namespace, it does not mean that you own the whole namespace tree
+   that starts there. If you are registered as the contact for
+   Foo::Bar, you are not necessarily also associated with
+   Foo::Bar::Baz.
+
+f) In a few rare cases the module list people restrict indexing of
+   certain categories. For example:
+     DBI::* under the control of Tim Bunce
+     Sun::* under the control of Sun Microsystems
 
 
 =======================================================================
@@ -921,7 +973,7 @@ Make              adpO Makefile parsing, and 'make' replacement     NI-S
 
 ClearCase         idcf Environment for ClearCase revision control   BRADAPP
 ClearCase::
-::Ct              a    Generic cleartool wrapper                    DSB
+::Ct              Rdpf Generic cleartool wrapper                    DSB
 
 _______________________________________________________________________
 
@@ -1052,6 +1104,7 @@ Solaris::
 
 Unix::
 ::ConfigFile      adpO Abstract interfaces to Unix config files     SSNODGRA
+::Processors      bdcO Interface to per-processor information       WSNYDER
 ::Syslog          i    Interface to syslog functions in a C-library MHARNISCH
 ::UserAdmin       Rdpf Interface to Unix Account Information        JZAWODNY
 
@@ -1146,6 +1199,7 @@ IPC::
 ::Chat2           ?    Out-of-service during refit!                 GBARR
 ::ChildSafe       RdcO Control child process w/o risk of deadlock   DSB
 ::Globalspace     cdpO Multi-process shared hash and shared events  JACKS
+::Locker          RdpO Shared semaphore locks across a network      WSNYDER
 ::Mmap            i    Interface to Unix's mmap() shared memory     MICB
 ::Open2           Supf Open a process for both reading and writing  P5P
 ::Open3           Supf Like IPC::Open2 but with error handling      P5P
@@ -1304,7 +1358,7 @@ Bit::
 Set::
 ::IntRange        RdcO Set of integers (arbitrary intervals, fast)  STBEY
 ::IntSpan         adpO Set of integers newsrc style '1,5-9,11' etc  SWMCD
-::Object          RdcO Set of Objects (smalltalkish: IdentitySet)   JLLEROY
+::Object          bdcO Set of Objects (smalltalkish: IdentitySet)   JLLEROY
 ::Scalar          adpO Set of scalars (inc references)              JHI
 ::Window          bdpO Manages an interval on the integer line      SWMCD
 
@@ -1390,6 +1444,7 @@ Class::
 
 Object::
 ::Info            Rupf General info about objects (is-a, ...)       JACKS
+::Transaction     bdpO Transactions on serialized HASH files        MUIR
 
 POE::                Perl Object Environment
 ::Kernel          RdpO An event queue that dispatches events        RCAPUTO
@@ -1417,7 +1472,7 @@ Marshal::
 ::Packed          cdpO Run-length coded version of Marshal module   MUIR
 ::Eval            cdpO Undo serialization with eval                 MUIR
 Tangram           bupO Object persistence in relational databases   JLLEROY
-WDDX              a    Marshaling via XML                           GUELICH
+WDDX              RdpO Allows distributed data exchange via XML     GUELICH
 
 Data::
 ::Check           cdpO Checks values for various data formats       KENHOLM
@@ -1454,6 +1509,7 @@ DBIx::               Extensions to the DBI
 ::Tree            adpO Expand self-referential table into a tree    BJEPS
 
 DBD::
+::ASAny           adcO Adaptive Server Anywhere Driver for DBI      SMIRNIOS
 ::Altera          bdpO Altera SQL Server for DBI - pure Perl code   DSOUFLIS
 ::CSV             adcO SQL engine and DBI driver for CSV files      JWIED
 ::DB2             adcO DB2 Driver for DBI                           MHM
@@ -1574,6 +1630,7 @@ Term::
 ::ReadLine        Sdcf Common interface for various implementations ILYAZ
 ::Screen          RdpO Basic screen + input class (uses Term::Cap)  MRKAE
 ::Size            adcf Simple way to get terminal size              TIMPX
+::TUI             i    User interface based on Term::ReadLine       SBECK
 
 Term::ReadLine::
 ::Perl            RdpO GNU Readline history and completion in Perl  ILYAZ
@@ -1589,6 +1646,7 @@ PerlMenu          Mdpf Curses-based menu and template system        SKUNZ
 
 Curses::
 ::Forms           cdph Form management for Curses::Widgets          CORLISS
+::Widgets         cdpr Assorted widgets for rapid interfaces        CORLISS
 
 Emacs             cdcf Support for Perl embedded in GNU Emacs       JTOBEY
 Emacs::
@@ -1768,7 +1826,7 @@ Text::
 ::Soundex         Supf Convert a string to a soundex value          MARKM
 ::Tabs            Sdpf Expand and contract tabs ala expand(1)       MUIR
 ::TeX             cdpO TeX typesetting language input parser        ILYAZ
-::Template        bdpO Expand template text with embedded perl      MJD
+::Template        MdpO Expand template text with embedded perl      MJD
 ::Vpp             RdpO Versatile text pre-processor                 DDUMONT
 ::Wrap            Sdpf Wraps lines to make simple paragraphs        MUIR
 
@@ -1988,6 +2046,7 @@ Crypt::
 ::Random          bdpO Cryptographically Strong Random Numbers      VIPUL
 ::Rot13           cdpO simple encryption often seen on usenet       AYRNIEU
 ::RSA             bdpO RSA encryption, decryption, key generation   VIPUL
+::Twofish         Rdpf Twofish Encryption Algorothm                 NISHANT
 ::UnixCrypt       Rdpf Perl-only implementation of crypt(3)         MVORL
 
 OpenCA            Rdpf Tools for running a Certification Authority  MADWOLF
@@ -2146,6 +2205,7 @@ WebCache::
 ::Digest          bdpf Internet Cache Protocol (RFCs 2186 and 2187) MHAMILTON
 
 Authorizenet      bdpf Get Credit Card Info from authorizenet       DLINCOLN
+BizTalk           RdpO Microsoft BizTalk Framework Toolkit          SIMONJ
 Catalog           bmpO Manage/display resources catalog (URLs etc.) LDACHARY
 CGI_Lite          MnpO Light-weight interface for fast apps         SHGUN
 FCGI              Rdcr Fast CGI                                     SKIMO
@@ -2308,9 +2368,10 @@ Mail::
 ::Address         adpf Manipulation of electronic mail addresses    GBARR
 ::Alias           adpO Reading/Writing/expanding of mail aliases    GBARR
 ::Cap             adpO Parse mailcap files as specified in RFC 1524 GBARR
-::Ezmlm           cdlO Object methods for ezmlm mailing lists       GHALSE
+::Ezmlm           bdpO Object methods for ezmlm mailing lists       GHALSE
 ::Field           RdpO Base class for handling mail header fields   GBARR
 ::Folder          adpO Base-class for mail folder handling          KJOHNSON
+::Freshmeat       RdpO Parses newsletters from http://freshmeat.net ASPIERS
 ::Header          RdpO Manipulate mail RFC822 compliant headers     GBARR
 ::Internet        adpO Functions for RFC822 address manipulations   GBARR
 ::MH              adcr MH mail interface                            MRG
@@ -2346,7 +2407,7 @@ Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 AtExit            Rdpr atexit() function to register exit-callbacks BRADAPP
 Callback          RdpO Define easy to use function callback objects MUIR
-Memoize           adpr Cache results of individual function calls   MJD
+Memoize           bdpr Automatically cache results of functions     MJD
 Religion          adpr Control where you go when you die()/warn()   KJALB
 
 Hook::
@@ -2362,7 +2423,6 @@ IO::
 ::AtomicFile      adpO Write a file which is updated atomically     ERYQ
 ::Dir             cdpO Directory handle objects and methods         GBARR
 ::File            cdpO Methods for disk file based i/o handles      GBARR
-::Format          adpO Treat perl formats as objects                SBECK
 ::Handle          cdpO Base class for input/output handles          GBARR
 ::Lines           bdpO I/O handle to read/write to array of lines   ERYQ
 ::Pipe            cdpO Methods for pipe handles                     GBARR
@@ -2551,7 +2611,7 @@ Real::
 ::Encode          i    Interface to Progressive Network's RealAudio KMELTZ
 
 MQSeries          Rdch IBM's MQSeries messaging product interface   WPMOORE
-
+PQI               cdcO Perl Queuing Interface, to MQSeries, MSMQ    SIMONJ
 R3                adcO Interface to SAP R/3 using SAP\'s RFCSDK     SCHOEN
 
 =======================================================================
