@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.30 $$Date: 2000/02/19 10:20:06 $
+The Perl 5 Module List       $Revision: 3.31 $$Date: 2000/02/19 10:26:29 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.30 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.31 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1202,7 +1202,7 @@ IPC::
 ::Mmap            i    Interface to Unix's mmap() shared memory     MICB
 ::Open2           Supf Open a process for both reading and writing  P5P
 ::Open3           Supf Like IPC::Open2 but with error handling      P5P
-::Session         adpO remote shell session mgr; wraps open3()      STEVEGT
+::Session         anpO remote shell session mgr; wraps open3()      STEVEGT
 ::Signal          Rdpf Translate signal names to/from numbers       ROSCH
 ::SysV            adcr shared memory, semaphores, messages etc      JACKS
 
@@ -1305,7 +1305,7 @@ Statistics::
 ::LTU             RdpO Implements Linear Threshold Units            TOMFA
 ::MaxEntropy      Rdpf Maximum Entropy Modeling                     TERDOEST
 ::OLS             bdpO ordinary least squares (curve fitting)       SMORTON
-::ROC             bdpO ROC curves with nonparametric conf. bounds   HAKESTLER
+::ROC             bdpf ROC curves with nonparametric conf. bounds   HAKESTLER
 
 Algorithm::
 ::Diff            bdpr Diff (also Longest Common Subsequence)       MJD
@@ -1320,7 +1320,7 @@ PDL               amcf Perl Data Language - numeric analysis env    PERLDL
 PDL::
 ::PP              amcf Automatically generate C code for PDL        PERLDL
 ::Meschach        amcf Links PDL to meschach matrix library         EGROSS
-::NetCDF          adcr Reads/Writes NetCDF files from/to PDL objs   DHUNT
+::NetCDF          bdhO Reads/Writes NetCDF files from/to PDL objs   DHUNT
 ::Options         Rdph Provides hash options handling for PDL       TJENNESS
 ::Slatec          amof Interface to slatec (linpack+eispack) lib.   PERLDL
 
@@ -1471,7 +1471,6 @@ Marshal::
 ::Packed          cdpO Run-length coded version of Marshal module   MUIR
 ::Eval            cdpO Undo serialization with eval                 MUIR
 Tangram           RmpO Object persistence in relational databases   JLLEROY
-WDDX              RdpO Allows distributed data exchange via XML     GUELICH
 
 Data::
 ::Check           cdpO Checks values for various data formats       KENHOLM
@@ -1479,7 +1478,7 @@ Data::
 ::Dumper          RdpO Convert data structure into perl code        GSAR
 ::Flow            RdpO Acquire data based on recipes                ILYAZ
 ::Locations       RdpO Handles nested insertion points in your data STBEY
-::Reporter        RdpO Ascii Report Generator                       RVAZ
+::Reporter        RdcO Ascii Report Generator                       RVAZ
 ::Walker          adpO Navigate through Perl data structures        JNOLAN
 
 Tree::
@@ -1517,7 +1516,7 @@ DBD::
 ::SearchServer    cdcO PCDOCS/Fulcrum SearchServer Driver for DB    SHARI
 ::Illustra        bmcO Illustra Driver for DBI                      PMH
 ::Informix        amcO Informix Driver for DBI                      JOHNL
-::Informix4       amcO DBI driver for Informix SE 4.10              GTHYNI
+::Informix4       adcO DBI driver for Informix SE 4.10              GTHYNI
 ::Ingres          bmcO Ingres Driver for DBI                        HTOUG
 ::Multiplex       a    Spreading database load acrross servers      TIMB
 ::ODBC            amcO ODBC Driver for DBI                          DBIML
@@ -1542,7 +1541,7 @@ Sybase::
 ::CTlib           RdcO Sybase CTlibrary interface                   MEWP
 
 Ace               i    Interface to ACEDB (Popular Genome DB)       LDS
-BBDB              a    Insiduous big brother database               LAXEN
+BBDB              Rdph Insiduous big brother database               LAXEN
 Datascope         Rdcf Interface to Datascope RDBMS                 DANMQ
 LotusNotes        i    Interface to Lotus Notes C/C++ API           MBRECH
 Msql              RmcO Mini-SQL database interface                  JWIED
@@ -1550,7 +1549,7 @@ Mysql             RmcO mysql database interface                     JWIED
 ObjStore          Rm+O ObjectStore OODBMS Interface                 JPRIT
 Pg                Rdcf PostgreSQL SQL database interface            MERGL
 PgSQL             adpO "Pure perl" interface to PostgreSQL          GTHYNI
-Postgres          Rdcr PostgreSQL interface with Perl5 coding style VKHERA
+Postgres          RncO PostgreSQL interface with Perl5 coding style VKHERA
 Sprite            RdpO Limited SQL interface to flat file databases SHGUN
 Xbase             bdpf Read Xbase files with simple IDX indexes     PRATP
 XBase             bdpO Read/write interface to XBase files          JANPAZ
@@ -1775,7 +1774,7 @@ File::
 ::stat            Supf A by-name interface for the stat function    TOMC
 
 Filesys::
-::AFS             RucO AFS Distributed File System interface        NOG
+::AFS             cdcO AFS Distributed File System interface        NOG
 ::Df              Rdpr Disk free based on Filesys::Statvfs          IGUTHRIE
 ::DiskFree        adpO OS independant parser of the df command      ABARCLAY
 ::Statvfs         Rdcf Interface to the statvfs() system call       IGUTHRIE
@@ -1784,9 +1783,9 @@ Filesys::
 ::statfs          adpf By-name interface                            TOMC
 
 LockFile::             Application-level locking facilities
-::Lock            i    Lock handles created by LockFile::* schemes  RAM
-::Manager         i    Records locks created by LockFile::*         RAM
-::Scheme          i    Abstract superclass for locking modules      RAM
+::Lock            adpO Lock handles created by LockFile::* schemes  RAM
+::Manager         adpO Records locks created by LockFile::*         RAM
+::Scheme          adpO Abstract superclass for locking modules      RAM
 ::Simple          adpr Simple file locking mechanism                RAM
 
 Stat::
@@ -1967,7 +1966,7 @@ Getopt::
 ::EvaP            Mdpr Long/short options, multilevel help          LUSOL
 ::Gnu             adcf GNU form of long option handling             WSCOT
 ::Help            bdpf Yet another getopt, has help and defaults    IANPX
-::Long            Sdpr Advanced option handling                     JV
+::Long            Sdpr Advanced handling of command line options    JV
 ::Mixed           Rdpf Supports both long and short options         CJM
 ::Regex           ad   Option handling using regular expressions    JARW
 ::Simple          MdpO A simple-to-use interface to Getopt::Long    RSAVAGE
@@ -2099,7 +2098,7 @@ CGI::
 ::Deurl           Mdpr decode the CGI parameters                    JENDA
 ::Enurl           Mdpr encode the CGI parameters                    JENDA
 ::Formalware      Mdpo Convert an XML file to a suite of CGI forms  RSAVAGE
-::Imagemap        adpO Imagemap handling for specialized apps       MIKEH
+::Imagemap        Rdph Imagemap handling for specialized apps       MIKEH
 ::LogCarp         Rdph Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr         RmpO Fork CGI app as a per-session mini server    CGIP
 ::Minimal         MdpO A micro-sized CGI handler                    SNOWHARE
@@ -2217,12 +2216,13 @@ WebCache::
 
 Authorizenet      bdpf Get Credit Card Info from authorizenet       DLINCOLN
 BizTalk           RdpO Microsoft BizTalk Framework Toolkit          SIMONJ
-Catalog           bmpO Manage/display resources catalog (URLs etc.) LDACHARY
 CGI_Lite          MnpO Light-weight interface for fast apps         SHGUN
+CIPP              RdpO Preprocessor for embedding Perl, SQL in HTML JRED
+Catalog           bmpO Manage/display resources catalog (URLs etc.) LDACHARY
 FCGI              Rdcr Fast CGI                                     SKIMO
+WDDX              RdpO Allows distributed data exchange via XML     GUELICH
 WING              RmhO Apache based IMAP/NNTP Gateway               MICB
 WOMP              cdpO CGI App Dev Suite: authen/state/html         SPADKINS
-CIPP              RdpO Preprocessor for embedding Perl, SQL in HTML JRED
 
 _______________________________________________________________________
 
@@ -2833,6 +2833,7 @@ to a CGI script that lets you edit the database entries yourself.
   ANDYGLEW Andy Glew <glew@cs.wisc.edu>
   ANDYGROM Andrew Gromozdin <andygrom@zenon.net>
   ANH      Anh Nguyen-Tuong <nguyen@virginia.edu>
+  ANNO     Anno Siegel <siegel@zrz.tu-berlin.de>
   ANTRO    Antonio Rosella <anface@yahoo.com>
   AOCINAR  Ali Onur Cinar <root@zdo.com>
   APML     The Perl/Apache Mailing List
@@ -2877,6 +2878,7 @@ to a CGI script that lets you edit the database entries yourself.
   BETUL    Rajiv Pant <betul@rajiv.org>
   BEWEGEN  Bertram Wegener <bertram@island.free.de>
   BGINGERY Bruce Gingery <bgingery@gtcs.com>
+  BHILTON  Brand Hilton <bhilton@home.com>
   BHOLZMAN Benjamin Holzman <bholzman@earthlink.net>
   BHUGHES  Brad Hughes <brad@tgsmc.com>
   BIJUA    Biju A <bijua@wipinfo.soft.net>
@@ -2932,6 +2934,7 @@ to a CGI script that lets you edit the database entries yourself.
            Mailing list is temporarily closed
   CHAMAS   Joshua Chamas <chamas@alumni.stanford.org>
   CHANG-LIU Chang Liu <liu@ics.uci.edu>
+  CHAOS    Matthew R. Sheahan <chaos@crystal.palace.net>
   CHDAG    Chris Dagdigian <cdagdigian@genetics.com>
   CHGEUER  Christian H. Geuer-Pollmann <christian.geuer-pollmann@nue.et-inf.uni-siegen.de>
   CHGOETZE Christian Goetze <perl@resolute.com>
@@ -2963,7 +2966,7 @@ to a CGI script that lets you edit the database entries yourself.
            in the body to cope-request@lunatech.com (See
            http://www.lunatech.com/cope)
   CORLISS  Arthur Corliss <corliss@odinicfoundation.org>
-  CPHIL    Chris Phillips <phillips@jive.nfra.nl>
+  CPHIL    Chris Phillips <phillips@jive.nl>
   CTDEAN   Chris Dean <ctdean@aig.jpl.nasa.gov>
   CUNNINGT Tom Cunningham <cunningt@primenet.com>
   CWEVERITT Cass W. Everitt <cass@Objectecture.com>
@@ -2974,6 +2977,7 @@ to a CGI script that lets you edit the database entries yourself.
   DANIEL   Daniel Sully <daniel-cpan@electricrain.com>
   DANKOGAI Dan Kogai <dankogai@dan.co.jp>
   DANMQ    Daniel M. Quinlan <danq@colorado.edu>
+  DAVEL    Dave Lorand <davel@NOSPAM.src.uchicago.edu>
   DAVEROTH Dave Roth <rothd@roth.net>
   DAVIDNICO David Nicol <DavidNicol@acm.org>
   DAVIDRA  David Ranvig <davidra@ifi.uio.no>
@@ -3001,6 +3005,7 @@ to a CGI script that lets you edit the database entries yourself.
   DENWA    Dennis Watson <dwatson@netguide.com>
   DEP      Demetrios E. Paneras <dep@media.mit.edu>
   DESIMINER Richard DeSimine <richd@centralsoft.com>
+  DEUSX    Leslie Michael Orchard <deus_x@ninjacode.com>
   DEVEN    Deven T. Corzine <deven@ties.org>
   DEVONJ   Devon Jones <soulcatcher@evilsoft.org>
   DEWEG    Douglas E. Wegscheid <wegscd@whirlpool.com>
@@ -3011,6 +3016,7 @@ to a CGI script that lets you edit the database entries yourself.
   DHUNT    Douglas Hunt <dhunt@ucar.edu>
   DIMRUB   Dmitry Rubinstein <dimrub@icomverse.com>
   DIONALM  Dion Almaer <dion@member.com>
+  DJASMINE D. Jasmine Merced <djasmine@tnsgroup.com>
   DJBECKETT Dave Beckett <D.J.Beckett@ukc.ac.uk>
   DJKERNEN David J. Kernen <David.__no.soliciting__Kernen@erols.com>
   DJPADZ   Dj Padzensky <djpadz@padz.net>
@@ -3029,7 +3035,7 @@ to a CGI script that lets you edit the database entries yourself.
   DNAD     Dave Nadler <nadler@ug.eds.com>
   DOMO     Dominic Dunlop <domo@computer.org>
   DONS     Don Schwarz <dons@xnet.com>
-  DOUGB    Doug Bagley <doug@bagley.org>
+  DOUGB    Doug Bagley <cpan@bagley.org>
   DOUGL    Douglas Lankshear <DougL@ActiveState.com>
   DOUGM    Doug MacEachern <dougm@pobox.com>
   DOUGW    Douglas Wilson <dwilson@gtemail.net>
@@ -3081,6 +3087,7 @@ to a CGI script that lets you edit the database entries yourself.
   FIRASZ   Firas Zureiqat <firasz@hotmail.com>
   FIS      Frank Ian Smith <frank@ns.array.ca>
   FISCH    Thomas Fischbacher <tf@cip.physik.uni-muenchen.de>
+  FIVE     v <five@mailroom.com>
   FIXLER   Eric Fixler <fix@fixler.com>
   FJH      Frederick Hirsch <fjh@alum.mit.edu>
   FKOLODNY Fila Kolodny <fila@ibi.com>
@@ -3100,7 +3107,7 @@ to a CGI script that lets you edit the database entries yourself.
   FRANKIE  Francesc Guasch <frankie@etsetb.upc.es>
   FSG      Felix Sebastian Gallo <fsg@ultranet.com>
   FTASSIN  Fabien Tassin <fta@oleane.net>
-  FTOBIN   Frank J. Tobin <ftobin@uiuc.edu>
+  FTOBIN   Frank J. Tobin <ftobin@cpan.org>
   GAAS     Gisle Aas <gisle@aas.no>
   GABOR    Gábor Egressy <gabor@vmunix.com>
   GAND     Greg Anderson <greg@ftp.netgate.net>
@@ -3115,6 +3122,7 @@ to a CGI script that lets you edit the database entries yourself.
   GDR      Gareth D. Rees <garethr@cre.canon.co.uk>
   GEHIC    Gerard Hickey <hickey@ctron.com>
   GENJISCH Genji Schmeder <genji@jps.net>
+  GEOFF    Geoffrey Young <XgyoungX@laserlink.net>
   GFLOHR   Guido Flohr <gufl0000@stud.uni-sb.de>
   GGONTER  Gerhard Gonter <gonter@wu-wien.ac.at>
   GHALSE   Guy Antony Halse <guy-japh@rucus.ru.ac.za>
@@ -3141,7 +3149,7 @@ to a CGI script that lets you edit the database entries yourself.
   GSM      Joe Marzot <gmarzot@baynetworks.com>
   GSPAF    Gene Spafford <spaf@cs.purdue.edu>
   GSPIVEY  Gary Spivey <spivey@romulus.ncsc.mil>
-  GTHYNI   Göran Thyni <goran@bildbasen.se>
+  GTHYNI   Göran Thyni <goran@kirra.net>
   GUELICH  Scott Guelich <scott@scripted.com>
   GUYDX    Guy Decoux <decoux@moulon.inra.fr>
   GWARD    Greg Ward <gward@python.net>
@@ -3151,6 +3159,7 @@ to a CGI script that lets you edit the database entries yourself.
   HAGANK   Ken Hagan <ken.hagan+no.spam+@louisville.edu>
   HAKANARDO Hakan Ardo <hakan@debian.org>
   HAKESTLER Hans A. Kestler <hans.kestler@medizin.uni-ulm.de>
+  HALLECK  John Halleck <John.Halleck@utah.edu>
   HALPOM   Hal Pomeranz <pomeranz@netcom.com>
   HARLEY   James Harley Gorrell <harley@bcm.tmc.edu>
   HASANT   Hasanuddin Tamir <hasant@trabas.co.id>
@@ -3163,13 +3172,14 @@ to a CGI script that lets you edit the database entries yourself.
   HMBRAND  H. Merijn Brand <h.m.brand@hccnet.nl>
   HMNIELSEN Henning Michael Møller-Nielsen <hmn@datagraf.dk>
   HMUELLER Hanno Mueller <hmueller@mail.kabel.de>
+  HOGGARTH Neil Hoggarth <njh@kernighan.demon.co.uk>
   HORNBURG Stefan Hornburg <racke@linuxia.net>
   HORROCKS Sam Horrocks <sam@daemoninc.com>
   HOWEN    Howard Owen <hbo@egbok.com>
   HPALM    Hartmut Palm <palm@gfz-potsdam.de>
   HTCHAPMAN H. Todd Chapman <htchapma@oakland.edu>
   HTOUG    Henrik Tougaard <htoug@hotmail.com>
-  HVDS     Hugo van der Sanden <hv@crypt.compulink.co.uk>
+  HVDS     Hugo van der Sanden <hv@crypt0.demon.co.uk>
   IANC     Ian Clatworthy <ianc@mincom.co>
   IANPX    Ian Phillipps <ian@dial.pipex.com>
   IBMTORDB2 Robert Indrigo <indrigo@ca.ibm.com>
@@ -3180,8 +3190,10 @@ to a CGI script that lets you edit the database entries yourself.
   IKLUFT   Ian Kluft <ikluft@cisco.com>
   ILIAL    Ilia Lobsanov <ilia@lobsanov.com>
   ILYAZ    Ilya Zakharevich <ilya@math.ohio-state.edu>
+  INFOFLEX Gerard Menicucci <gerard@infoflex.com>
   INGOMACH Ingo Macherius <Ingo.Macherius@tu-clausthal.de>
-  IROBERTS Ian Robertson <ian@lush.uchicago.edu>
+  INSTANTK jan giebels <j.giebels@instant-karma.de>
+  IROBERTS Ian Robertson <ian@lugh.uchicago.edu>
   IVAN     Ivan Kohler <ivan-pause@sisd.com>
   IWOODHEAD Ira Joseph Woodhead <ira@iatlas.com>
   IX       Brian Moseley <ix@maz.org>
@@ -3228,7 +3240,7 @@ to a CGI script that lets you edit the database entries yourself.
   JGOFF    Jeff Goff <jgoff@babcom.cx>
   JGROENVEL John D Groenveld <groenveld@acm.org>
   JHA      John Aughey <jha@aughey.com>
-  JHI      Jarkko Hietaniemi <spammers.eat@flaming.death>
+  JHI      Jarkko Hietaniemi <jhi@iki.fi>
   JHKIM    John Hanju Kim <jhkim@fnal.gov>
   JHORWITZ Jeff Horwitz <jeff@laserlink.net>
   JHOWELL  Jon Howell <jonh@cs.dartmouth.edu>
@@ -3272,8 +3284,10 @@ to a CGI script that lets you edit the database entries yourself.
   JPC      Jan-Pieter Cornet <johnpc@xs4all.nl>
   JPEACOCK John Peacock <JPeacock@UnivPress.com>
   JPETERSON Jon Peterson <jon@snowdrift.org>
+  JPIERCE  Jerrad Pierce <belg4mit@mit.edu>
   JPRAVETZ Jim Pravetz <jpravetz@adobe.com>
   JPRIT    Joshua N. Pritikin <jpritikin@pobox.com>
+  JQUILLAN John C. Quillan <quillan@doitnow.com>
   JRED     Joern Reder <joern@netcologne.de>
   JRENNIE  Jason Rennie <jrennie@ai.mit.edu>
   JROGERS  Jay Rogers <jay@rgrs.com>
@@ -3297,6 +3311,7 @@ to a CGI script that lets you edit the database entries yourself.
   JWIEGLEY John Wiegley <johnw@oneworld.new-era.com>
   JWOODYATT james h. woodyatt <jhw@wetware.com>
   JZAWODNY Jeremy D. Zawodny <jzawodn@wcnet.org>
+  JZUCKER  Jeff Zucker <jeff@vpservices.com>
   KAELIN   Kaelin Colclasure <kaelin@acm.org>
   KAHUNA   Andy Finkenstadt <andy@finkenstadt.com>
   KAIH     Kai Henningsen <kai-cpan@khms.westfalen.de>
@@ -3337,10 +3352,12 @@ to a CGI script that lets you edit the database entries yourself.
   LEAKIN   Lee Eakin <leakin@dfw.nostrum.com>
   LEIFHED  Leif Hedstrom <leif@netscape.com>
   LEITE    Pedro Leite <leite@ua.pt>
+  LENNY    Lenny Brenner <lenny@cpan.org>
   LENZO    Kevin Lenzo <lenzo@cs.cmu.edu>
   LEON     Leon Avery <leon@eatworms.swmed.edu>
   LFINI    Luca Fini <lfini@arcetri.astro.it>
   LHOWARD  Les Howard <les@lesandchris.com>
+  LHS      Lee Semel <lee@semel.net>
   LINDNER  Paul Lindner <paul.lindner@itu.int>
   LIRAZ    Liraz Siri <liraz_siri@usa.net>
   LMJM     Lee McLoughlin <lmjm@icparc.ic.ac.uk>
@@ -3357,6 +3374,7 @@ to a CGI script that lets you edit the database entries yourself.
   LWWWP    The libwww-perl mailing list
            Mail to libwww-subscribe@perl.org
   MACGYVER Habeeb J. Dihu <macgyver@tos.net>
+  MADLINUX Lorance Stinson <lorance@madlinux.cx>
   MADWOLF  Massimiliano Pala <madwolf@openca.org>
   MAHEX    Mark "Hex" Hershberger <mah@eecs.tulane.edu>
   MAK      Martijn Koster <mak@surfski.webcrawler.com>
@@ -3372,6 +3390,7 @@ to a CGI script that lets you edit the database entries yourself.
   MARKOV   Mark Overmeer <gpp@dhp.nl>
   MARKPRIOR Mark Prior <mrp@connect.com.au>
   MARMS    Mike Arms <marms@sandia.gov>
+  MARTIN   Martin Langhoff <martin@scim.net>
   MARTINB  Martin Bartlett <martin@nitram.demon.co.uk>
   MATKIN   Matz Kindahl <matkin@docs.uu.se>
   MATTBM   Matthew Byng-Maddick <matthew@codix.net>
@@ -3379,6 +3398,7 @@ to a CGI script that lets you edit the database entries yourself.
   MATTW    Matthew M. Wright <mattw@worldwidemart.com>
   MAURICE  Maurice Aubrey <maurice@hevanet.com>
   MAXM     Max Muzi <maxim@comm2000.it>
+  MBLAZ    Mike Blazer <blazer@mail.nevalink.ru>
   MBRECH   Martin Brech <Martin.Brech@erl11.siemens.de>
   MCAFEE   Sean McAfee <mcafee@umich.edu>
   MCKAY    Steve McKay <sm@colgreen.com>
@@ -3398,6 +3418,7 @@ to a CGI script that lets you edit the database entries yourself.
   MERGL    Edmund Mergl <E.Mergl@bawue.de>
   MERLIN   Merlin Hughes <merlin.cpan@merlin.org>
   MERLYN   Randal L. Schwartz <merlyn@stonehenge.com>
+  MEWILCOX Mark Wilcox <mewilcox@unt.edu>
   MEWP     Michael Peppler <mpeppler@peppler.org>
   MFUHR    Michael Fuhr <mfuhr@dimensional.com>
   MFX      Markus F.X.J. Oberhumer <markus.oberhumer@jk.uni-linz.ac.at>
@@ -3416,7 +3437,7 @@ to a CGI script that lets you edit the database entries yourself.
   MIJIT    michael j. talarczyk <mjt@mijit.com>
   MIKEC    Mike Carpenter <mikec@internet-software.com>
   MIKEDLR  Michael De La Rue <miked@ed.ac.uk>
-  MIKEH    Mike Heins <mikeh@iac.net>
+  MIKEH    Mike Heins <mikeh@minivend.com>
   MIKEKING Michael King <mike808@mo.net>
   MIKESTOK Mike Stok <mike@stok.co.uk>
   MILSO    Milan Sorm <sorm@fi.muni.cz>
@@ -3431,13 +3452,15 @@ to a CGI script that lets you edit the database entries yourself.
   MKUL     Michael Kulakov <mkul@zenon.net>
   MLEHMANN Marc Lehmann <pcg@goof.com>
   MLEWINSK Matthew Lewinski <mlewinsk@umich.edu>
+  MLFISHER Mark Leighton Fisher <fisherm@tce.com>
   MMML     The MakeMaker mailing list
            Mail to makemaker-REQUEST@franz.ww.tu-berlin.de with body
            "subscribe"
   MMORENO  Marco Moreno <Marco.Moreno@pobox.com>
+  MOND     Franz Schaefer <schaefer@mond.at>
   MORTY    Mordechai Abzug <mabzug1@gl.umbc.edu>
   MPECK    Martyn Peck <mwp@mwpnet.com>
-  MPIOTR   Michael Piotrowski <mxp@linguistik.uni-erlangen.de>
+  MPIOTR   Michael Piotrowski <mxp@dynalabs.de>
   MPOCOCK  Matthew Pocock <mrp@sanger.ac.uk>
   MRG      Matthew Green <mrg@mame.mu.oz.au>
   MRJC     Martin R.J. Cleaver <Martin.Cleaver@BCS.org.uk>
@@ -3457,10 +3480,12 @@ to a CGI script that lets you edit the database entries yourself.
   MTHURN   Martin Thurn <MartinThurn@iname.com>
   MTIRAMANI Mark Tiramani <markjt@fredo.co.uk>
   MUIR     David Muir Sharnoff <muir@idiom.com>
+  MULL     Colin Muller <colin@durbanet.co.za>
   MUNSINGER Doug Munsinger <doug.munsinger@usa.net>
   MVERB    Martien Verbruggen <mgjv@comdyn.com.au>
   MVORL    Martin Vorlaender <martin@radiogaga.harz.de>
   NANDU    Nandu Shah <nandu@cimedia.com>
+  NEDKONZ  Ned Konz <perl@bike-nomad.com>
   NEERI    Matthias Ulrich Neeracher <neeri@iis.ee.ethz.ch>
   NEILB    Neil Bowers <neilb@cre.canon.co.uk>
   NEMWS    Nem W Schlecht <nem@abattoir.cc.ndsu.nodak.edu>
@@ -3475,6 +3500,7 @@ to a CGI script that lets you edit the database entries yourself.
   NMONNET  Nicolas Monnet <nico@monnet.to>
   NNEUL    Nathan Neulinger <nneul@umr.edu>
   NOG      Norbert Gruener <nog@MPA-Garching.MPG.DE>
+  NPADGEN  Neil Padgen <nrp@i.am>
   NPESKETT Nick Peskett <nick@peskett.com>
   NREICHEN Nils Reichen <eicndhcpd@worldcom.ch>
   NTHIERY  Nicolas Thiéry <Nicolas.Thiery@ens.fr>
@@ -3535,15 +3561,16 @@ to a CGI script that lets you edit the database entries yourself.
   PHOENIXL Scott <Phoenixl@aol.com>
   PHOTO    Daniel M. Lipton <photo@tiac.net>
   PINYAN   Jeff Pinyan <japhy+perl@pobox.com>
-  PJCJ     Paul Johnson <pjcj@transeda.com>
+  PJCJ     Paul Johnson <pjcj@pjcj.fsnet.co.uk>
   PJONES   Peter J Jones <p@dancris.com>
-  PJORDAN  Pete Jordan <pjordan1@email.mot.com>
+  PJORDAN  Pete Jordan <japh@horus.cix.co.uk>
   PKUTS    Peter Kutschera <peter@zditr1.arcs.ac.at>
   PLDAP    Perl LDAP mailing list
            Mail subscription requests to
            perl-ldap-REQUEST@mail.med.cornell.edu with body
            "subscribe"
   PLISTER  Peter Lister <p.lister@cranfield.ac.uk>
+  PLONKA   Dave Plonka <plonka@doit.wisc.edu>
   PMAGNUS  P.D. Magnus <pmagnus@fecundity.com>
   PMH      Peter Haworth <pmh@edison.ioppublishing.com>
   PMKANE   Patrick Michael Kane <modus-cpan@pr.es.to>
@@ -3575,7 +3602,7 @@ to a CGI script that lets you edit the database entries yourself.
   RAVN     Thorbjoern Ravn Andersen <ravn@mip.ou.dk>
   RBERJON  Robin Berjon <robin@knowscape.com>
   RBOW     Rich Bowen <rbowen@rcbowen.com>
-  RBS      Barrie Slaymaker <rbs@telerama.com>
+  RBS      Barrie Slaymaker <barries@slaysys.com>
   RCALEY   Richard Caley <R.Caley@ed.ac.uk>
   RCAPUTO  Rocco Caputo <troc@netrus.net>
   RCASHA   Ramon Casha <rcasha!megabyte.net>
@@ -3588,6 +3615,7 @@ to a CGI script that lets you edit the database entries yourself.
   RGIERSIG Roland Giersig <rgiersig@cpan.org>
   RHNELSON Rolf Harold Nelson <rolf@usa.healthnet.org>
   RHOFER   Robert Hofer <hofer@informatik.uni-muenchen.de>
+  RICHARDC Craig Richards <cpan@CraigRichards.com>
   RIK      Rik Harris <rik.harris@fulcrum.com.au>
   RISCOSML The Risc-OS perl porters mailing list
            Mail to riscos-request@perl.org with body subscribe
@@ -3599,8 +3627,9 @@ to a CGI script that lets you edit the database entries yourself.
   RMOSE    Russell Mosemann <mose@ns.ccsn.edu>
   RNAIMA   Reza Naima <reza@reza.net>
   ROBF     Rob Fugina <robf@geeks.com>
-  ROBVANSON Rob van Son <rob@fon.hum.uva.nl>
+  ROBVANSON Rob van Son <Rob.van.Son@hum.uva.nl>
   ROLAND   Roland Huß <roland@consol.de>
+  RONALDWS Ronald Schmidt <RonaldWS@software-path.com>
   ROOTLEVEL Joe Lauer <joelauer@rootlevel.com>
   ROSCH    Roderick Schertler <roderick@argon.org>
   RPIKKARA Raino Pikkarainen <raino.pikkarainen@saunalahti.fi>
@@ -3624,7 +3653,7 @@ to a CGI script that lets you edit the database entries yourself.
   SAMTREGAR Sam Tregar <sam@tregar.com>
   SANFACE  SANFACE Sofware <sanface@sanface.com>
   SAPAPO   Sami Poikonen <sp@iki.fi>
-  SARGIE   Peter Sergeant <sargie@hotmail.com>
+  SARGIE   Peter Sergeant <pete_sergeant@hotmail.com>
   SBALA    S Balamurugan <sbm@india.ti.com>
   SBECK    Sullivan Beck <sbeck@cise.ufl.edu>
   SBERKHOLZ Scott Berkholz <scottb@streamsoftware.com>
@@ -3649,6 +3678,7 @@ to a CGI script that lets you edit the database entries yourself.
   SGMIANO  Stephen G. Miano <stevem@mindspring.com>
   SGRANTZ  Steve Grantz <sgrantz@visi.com>
   SHARI    Davide Migliavacca <davide.migliavacca@inferentia.it>
+  SHARKEY  Nick 'Sharkey' Moore <sharkey@netizen.com.au>
   SHARRIS  Steve Harris <perl@nullspace.com>
   SHARYANTO Steven Haryanto <sh@bandung.pm.org>
   SHAWNPW  Shawn P. Wallace <shawn@as220.org>
@@ -3662,6 +3692,7 @@ to a CGI script that lets you edit the database entries yourself.
   SILVER   silver Harloe <silver@silverchat.com>
   SIMON    Simon Cozens <simon@brecon.co.uk>
   SIMONJ   Simon Johnston <simonj@microsoft.com>
+  SIMONW   Simon Wistow <simon@twoshortplanks.com>
   SIMRAN   Simran <simran@cse.unsw.edu.au>
   SKANE    Steve Kane <skane@cse.psu.edu>
   SKIMO    Sven Verdoolaege <skimo@kotnet.org>
@@ -3696,11 +3727,12 @@ to a CGI script that lets you edit the database entries yourself.
   SRZ      Stephen Zander <gibreel@pobox.com>
   SSNODGRA Steve Snodgrass <ssnodgra@fore.com>
   STANM    Stan Melax <melax@bioware.com>
-  STAS     Stas Bekman <sbekman@iname.com>
+  STAS     Stas Bekman <stas@stason.org>
   STBEY    Steffen Beyer <sb@engelschall.com>
   STCHER   Steve Chervitz <sac@neomorphic.com>
   STEPHEN  Stephen Nelson <steven-cpan@jubal.com>
   STEVE    Steven Pritchard <steve@silug.org>
+  STEVEC   Steve Campbell <steve@computurn.com>
   STEVEGT  Steve Traugott <stevegt@TerraLuna.Org>
   STEVENSL Steven Slegel <stevensl@ccpl.carr.lib.md.us>
   STIGMATA Gregor Mosheh <stigmata@blackangel.net>
@@ -3717,7 +3749,7 @@ to a CGI script that lets you edit the database entries yourself.
   SWMCD    Steven McDougall <swmcd@world.std.com>
   SZECK    Steve Zeck <saintly@innocent.com>
   TAIY     Taisuke Yamada <tai@imasy.or.jp>
-  TBONE    Terrence Brannon <tbrannon@end70.com>
+  TBONE    Terrence Brannon <princepawn@yahoo.com>
   TBOUTELL Thomas Boutell <boutell@boutell.com>
   TBRADFUTE Todd Bradfute <bradfute@pflugerville.org>
   TEKE     Torsten Ekedahl <teke@matematik.su.se>
@@ -3728,6 +3760,8 @@ to a CGI script that lets you edit the database entries yourself.
   TGUMMELS Travis Gummels <travis@gummels.com>
   TIBBS    Jason Tibbitts <tibbs@hpc.uh.edu>
   TIMB     Tim Bunce <Tim.Bunce@ig.co.uk>
+  TIMM     Tim Meadowcroft <tim@schmerg.com>
+  TIMMY    Tim Hammerquist <tim@dichosoft.com>
   TIMPOTTER Tim Potter <tpot@acsys.anu.edu.au>
   TIMPX    Tim Goodwin <tjg@star.le.ac.uk>
   TJENNESS Tim Jenness <t.jenness@jach.hawaii.edu>
@@ -3749,12 +3783,14 @@ to a CGI script that lets you edit the database entries yourself.
   TRUESDALE James Truesdale <jtruesdale@primary.net>
   TSANDERS Tony Sanders <sanders@bsdi.com>
   TSPIN    Tom Spindler <dogcow@redback.com>
+  TURNERA  Andrew Turner <turner@mikomi.org>
   TWENRICH Thomas Wenrich <wenrich@ping.at>
   TYEMQ    Tye McQueen <tye@metronet.com>
   TYPO     Johnny Lee <typo_pl@hotmail.com>
   UGANSERT Uwe Gansert <ug@suse.de>
   UGEN     Ugen Antsilevitch <ugen@xonix.com>
   ULPFR    Ulrich Pfeifer <pfeifer@wait.de>
+  UMEMOTO  Hajimu Umemoto <ume@mahoroba.org>
   URI      Uri Guttman <uri@sysarch.com>
   UWEH     Uwe Hollerbach <uweh@bu.edu>
   VALERIE  Valerie Delane <valerie@savina.com>
