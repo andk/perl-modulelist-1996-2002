@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.42 $Date: 1997/06/07 02:50:29 $
+The Perl 5 Module List       Revision: 2.42 $Date: 1997/06/25 05:32:05 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -46,20 +46,24 @@ Part 2 - The Perl 5 Module List
 
 Part 3 - Big Projects Registry
 
-1)   Introduction
-2)   Items in the Todo File
-3)   Multi-threading
-4)   Object Management Group CORBA & IDL
-5)   Expand Tied Array Interface
-6)   Extend Yacc To Write XS Code
-7)   Approximate Matching Regular Expressions
+1)   Items in the Todo File
+2)   Multi-threading
+3)   Object Management Group CORBA & IDL
+4)   Expand Tied Array Interface
+5)   Extend Yacc To Write XS Code
+6)   Approximate Matching Regular Expressions
 
-Part 4 - Who's Who and What's Where
+Part 4 - Standards Cross-reference
+
+1)   IETF - Internet Engineering Task Force (RFCs)
+2)   ITU - International Telegraph Union (X.*)
+3)   ISO - International Standards Organization (ISO*)
+
+Part 5 - Who's Who and What's Where
 
 1)   Information / Contact Reference Details
 2)   Perl Frequently Asked Questions (FAQ) Files
 3)   Other Perl Archive Sites
-
 
 Key: '+' indicates a new section or item,
      '!' indicates a changed section or item (typically new modules).
@@ -207,7 +211,7 @@ NOTE: If you can't find what you want, or wish to check that what
 you've found is the latest version, or wonder why a module mentioned in
 this list is not on CPAN, you should contact the person associated with
 the module (and not the maintainers of the archives or this list).
-Contact details are given at the start of Part 4.
+Contact details are given at the start of Part 5.
 
 For the navigation through the modules collected on the CPAN there are
 several entry points: http://www.perl.com/CPAN/CPAN.html provides
@@ -617,7 +621,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.75 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.76 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1905,30 +1909,29 @@ SyslogScan::
            ==============================
 
 
-1) Introduction
-
 This section of the Module List is devoted to listing "Big Projects".
-I don't want to define Big (or even Project) here. I hope the items
+I don't want to define Big (or even Project) here. Hopefully the items
 below speak for themselves. Almost all are just ideas, though some have
-been dabbled with.
+been dabbled with and some are active projects.
 
 These are ideas for people with very strong skills and lots of time.
-Please talk, and listen, to Larry _before_ starting to do any work on
-projects which relate to the core implementation of Perl.
+Please talk, and listen, to Larry and the perl5-porters _before_
+starting to do any work on projects which relate to the core
+implementation of Perl.
 
 Ask not when these will be implemented, ask instead how you can help
 implement them.
 
 
-2) Items in the Todo File
+1) Items in the Todo File
 
 The Todo supplied with Perl lists over 50 items in categories ranging
 from "Would be nice to have" to "Vague possibilities".
 
-Contacts: LWALL P5P
+Contacts: P5P
 
 
-3) Multi-threading
+2) Multi-threading
 
 This is really two projects. True threads (e.g., POSIX) using multiple
 independant perl interpreter structures and simple timeslicing of
@@ -1937,58 +1940,38 @@ operating system support or an external thread library, simple
 timeslicing does not (and should be portable to all platforms).
 
 Malcolm Beattie <mbeattie@sable.ox.ac.uk> has done extensive work in
-this area and will probably be folding this work into Perl around
-version 5.005 or 5.006.
+this area and is folding this work into Perl now for version 5.005 or
+5.006.
 
-Contacts: MICB P5P LWALL
-
-
-4) Object Management Group CORBA & IDL
-
-OMG's (Object Management Group) CORBA (Common Object Request Broker
-Architecture) specification provides the standard interface definition
-between OMG-compliant objects.  IDL (Interface Definition Language) is
-the base mechanism for object interaction. Perhaps an extended IDL
-compiler which can write XS code would be a good way forward.
-
-Contacts: ASHER, JACKS, DMR
-Also:
-    ftp://omg.org/pub/OMG_IDL/
-    http://www.cs.cornell.edu/Info/People/maffeis/electra.html
-    http://www.faslab.com/fresco/HomePage.html (re DISH Tcl+CORBA DII)
-    ftp://ftp.isi.edu (ORBeline)
-    ftp://labrea.stanford.edu
-    ftp://parcftp.parc.xerox.com/pub/ilu/ilu.html
-    ftp://ftp.th-darmstadt.de/pub/networking/platforms/CORBA/
-    idl-cfe@sun.com
-
-Inter-Language Unification system (ILU).  Similar to a CORBA ORB, with some
-omissions and extensions.  Supports OMG CORBA IDL.
-
-Contacts: DMR
-Also:
-    ftp://parcftp.parc.xerox.com/pub/ilu/ilu.html
+Contacts: MICB P5P
 
 
-5) Expand Tied Array Interface
+3) Object Management Group CORBA & IDL
+
+Work is underway on the COPE mailing list, led by Bart Schuller, to
+implement a Perl binding for CORBA. See http://www.lunatech.com/cope/
+
+Contacts: COPEML BARTS
+
+
+4) Expand Tied Array Interface
 
 LEN, PUSH, POP, SHIFT, UNSHIFT and a fallback to SPLICE are needed.
 Complicated by very widespread use of arrays within perl internals.
 
-Contacts: P5P CHIPS LWALL
+Contacts: P5P CHIPS
 
 
-6) Extend Yacc To Write XS Code
+5) Extend Yacc To Write XS Code
 
-Some version of yacc, like byacc or bison, should be converted to spit
-out an OO .xs and .pm implementing a parser. Jake Donham's work so far
-is available in his CPAN directory
-http://www.perl.com/CPAN/authors/id/JAKE.
+Some version of yacc, like byacc, should be converted to spit out an OO
+.xs and .pm implementing a parser. Jake Donham's work so far is
+available in his CPAN directory http://www.perl.com/CPAN/authors/id/JAKE.
 
-Contacts: JAKE NI-S P5P LWALL
+Contacts: JAKE NI-S P5P
 
 
-7) Approximate Matching Regular Expressions
+6) Approximate Matching Regular Expressions
 
 Add support for approximate matching m/.../a (like the agrep utility).
 
@@ -1998,7 +1981,69 @@ Contacts: JHI
 =======================================================================
 
 
-           Part 4 - Who's Who and What's Where
+           Part 4 - Standards Cross-reference
+           ==================================
+
+This section aims to provide a cross reference between standards that
+exist in the computing world and perl modules which have been written
+to implement or interface to those standards.
+
+It also aims to encourage module authors to consider any standards that
+might relate to the modules they are developing.
+
+_______________________________________________________________________
+
+1)   IETF - Internet Engineering Task Force (RFCs)
+
+Standard   Description                                   Module Name
+--------   -----------                                   -----------
+RFC821     Simple Mail Transfer Protocol                 Net::SMTP
+RFC822     Internet Mail Header                          Mail::Header
+RFC822     Internet Mail addresses                       Mail::Address
+RFC867     Daytime Protocol                              Net::Time
+RFC868     Time Protocol                                 Net::Time
+RFC959     File Transfer Protocol                        Net::FTP
+RFC977     A minimal NNTP Server                         NNML::Server
+RFC977     Network News Transfer Protocol                Net::NNTP
+RFC1035, RFC1183, RFC1706
+           Domain names, implementation & specification  Net::DNS
+RFC1123    Date conversion routines                      HTTP::Date
+RFC1321    MD5 Message-Digest Algorithm                  MD5
+RFC1413    Identification Protocol                       Net::Ident
+RFC1521    Encode/decode quoted-printable strings        MIME::QuotedPrint
+RFC1592    Simple Network Management Protocol            Net::SNMP
+RFC1738    Uniform Resource Locators                     URI::URL
+RFC1777    Lightweight Directory Access Protocol         Net::LDAP
+RFC1861    Simple Network Pager Protocol                 Net::SNPP
+RFC1866    Encode/decode HTML entities in a string       HTML::Entities
+RFC1939    Post Office Protocol 3                        Net::POP3
+RFC1960    String Representation of LDAP Search Filters  Net::LDAP::Filter
+RFC2045    Base64 encoding                               MIME::Base64
+
+_______________________________________________________________________
+
+2)   ITU - International Telegraph Union (X.*)
+
+Standard   Description                                   Module Name
+--------   -----------                                   -----------
+X.209      Basic Encoding Rules for ASN.1                Convert::BER
+
+_______________________________________________________________________
+
+3)   ISO - International Standards Organization (ISO*)
+
+Standard   Description                                   Module Name
+--------   -----------                                   -----------
+ISO/R 2015-1971
+           Date calculations for the Gregorian calendar  Date::DateCalc
+ISO639     Two letter codes for language identification  Locale::Language
+ISO3166    Two letter codes for country identification   Locale::Country
+
+
+=======================================================================
+
+
+           Part 5 - Who's Who and What's Where
            ===================================
 
 
