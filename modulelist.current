@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.28 $Date: 1996/07/11 22:23:50 $
+The Perl 5 Module List       Revision: 2.28 $Date: 1996/07/24 17:49:28 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -53,7 +53,6 @@ Part 3 - Big Projects Registry
 5)   Expand Tied Array Interface             
 6)   Tied File Handles                       
 7)   Extend Yacc To Write XS Code            
-8)   Approximate Matching Regular Expressions
 
 Part 4 - Who's Who and What's Where
 
@@ -101,6 +100,77 @@ currently registered CPAN sites:
     Africa
         South Africa
             ftp://ftp.is.co.za/programming/perl/CPAN/
+    Asia
+        Hong Kong
+            ftp://ftp.hkstar.com/pub/CPAN/
+        Japan
+            ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/
+        Taiwan
+            ftp://dongpo.math.ncu.edu.tw/perl/CPAN/
+    Australasia
+        Australia
+            ftp://coombs.anu.edu.au/pub/perl/CPAN/
+            ftp://ftp.mame.mu.oz.au/pub/perl/CPAN/
+        New Zealand
+            ftp://ftp.tekotago.ac.nz/pub/perl/CPAN/
+    Europe
+        Austria
+            ftp://ftp.tuwien.ac.at/pub/languages/perl/CPAN/
+        Belgium
+            ftp://ftp.kulnet.kuleuven.ac.be/pub/mirror/CPAN/
+        Czech Republic
+            ftp://sunsite.mff.cuni.cz/Languages/Perl/CPAN/
+        Denmark
+            ftp://sunsite.auc.dk/pub/languages/perl/CPAN/
+        Finland
+            ftp://ftp.funet.fi/pub/languages/perl/CPAN/
+        France
+            ftp://ftp.ibp.fr/pub/perl/CPAN/
+            ftp://ftp.pasteur.fr/pub/computing/unix/perl/CPAN/
+        Germany
+            ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/
+            ftp://ftp.rz.ruhr-uni-bochum.de/pub/CPAN/
+        Greece
+            ftp://ftp.ntua.gr/pub/lang/perl/
+        Hungary
+            ftp://ftp.kfki.hu/pub/packages/perl/CPAN/
+        Italy
+            ftp://cis.utovrm.it/CPAN/
+        Poland
+            ftp://ftp.pk.edu.pl/pub/lang/perl/CPAN/
+            ftp://sunsite.icm.edu.pl/pub/CPAN/
+        Portugal
+            ftp://ftp.ci.uminho.pt/pub/lang/perl/
+            ftp://ftp.telepac.pt/pub/CPAN/
+        Russia
+            ftp://ftp.sai.msu.su/pub/lang/perl/CPAN/
+        Slovenia
+            ftp://ftp.arnes.si/software/perl/CPAN/
+        Spain
+            ftp://ftp.etse.urv.es/pub/mirror/perl/
+            ftp://ftp.rediris.es/mirror/CPAN/
+        Sweden
+            ftp://ftp.sunet.se/pub/lang/perl/CPAN/
+        Switzerland
+            ftp://ftp.switch.ch/mirror/CPAN/
+        the Netherlands
+            ftp://ftp.cs.ruu.nl/pub/PERL/CPAN/
+        UK
+            ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/
+            ftp://sunsite.doc.ic.ac.uk/packages/CPAN/
+            ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/
+    North America
+        Canada
+            ftp://enterprise.ic.gc.ca/pub/perl/CPAN/
+        USA
+            ftp://ftp.cdrom.com/pub/perl/CPAN/
+            ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
+            ftp://ftp.cs.colorado.edu/pub/perl/CPAN/
+            ftp://ftp.digital.com/pub/plan/perl/CPAN/
+            ftp://ftp.iguide.com/pub/mirrors/packages/perl/CPAN/
+            ftp://ftp.metronet.com/pub/perl/
+            ftp://ftp.rge.com/pub/languages/perl/CPAN/
+            ftp://ftp.sedl.org/pub/mirrors/CPAN/
             ftp://ftp.sterling.com/CPAN/
             ftp://ftp.uoknor.edu/mirrors/CPAN/
             ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
@@ -881,7 +951,6 @@ Mac::                Macintosh specific modules
 ::Components   bmcO  (QuickTime) Component manager                MCPL +
 ::Files        bmcO  File manager                                 MCPL
 ::Gestalt      bmcO  Gestalt manager: Environment enquiries       MCPL +
-::InetConfig   bmcO  Internet Configuration system                MCPL +
 ::Memory       bmcO  Memory manager				  MCPL
 ::MoreFiles    bmcO  Further file management routines		  MCPL +
 ::OSA          bmcO  Open Scripting Architecture		  MCPL +
@@ -1127,7 +1196,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Term::
-::Complete     Supf  Tab word completion using stty raw              Wayne Tompson me@anywhere.EBay.Sun.COM
+::Complete     Supf  Tab word completion using stty raw           WTOMPSON
 ::ReadKey      Rdcf  Read keystrokes and change terminal modes    KJALB
 ::Cap          Supf  Basic termcap: Tgetent, Tputs, Tgoto         TSANDERS
 ::Screen       RdpO  Basic screen + input class (uses Term::Cap)  MRKAE
@@ -1229,7 +1298,7 @@ Language text related modules
 
 Text::
 ::Abbrev       Supf  Builds hash of all possible abbreviations    P5P
-::ParseWords   Supf  Parse strings containing shell-style quoting    pomeranz@netcom.com
+::ParseWords   Supf  Parse strings containing shell-style quoting HALPOM
 ::Soundex      Supf  Convert a string to a soundex value          MIKESTOK
 ::TeX          cdpO  TeX typesetting language input parser        ILYAZ
 ::Bib          RdpO  Parse refer(1)-style bibliography files      ERYQ
@@ -1293,6 +1362,8 @@ I18N::
 ::Collate      Sdpr  Locale based comparisons                     JHI
 ::WideMulti    i     Wide and multibyte character string          JHI
 
+Locale::
+::gettext      Rdcf  Multilanguage messages                       PVANDRY +
 
 _______________________________________________________________________
 
@@ -1578,11 +1649,11 @@ Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN
 Business::
 ::CreditCard   Rdpf  Credit card number check digit test          JONO +
 
-XXX::
+Print::
 ::Label        i     Format address labels                        JONO +
+
+BarCode::
 ::UPC          i     Produce PostScript UPC barcodes              JONO +
-LOCALE::gettext PVANDRY +++
-PP...:: NEERI
 
 =======================================================================
 
@@ -1660,7 +1731,7 @@ Also:
 LEN, PUSH, POP, SHIFT, UNSHIFT and a fallback to SPLICE are needed.
 Complicated by very widespread use of arrays within perl internals.
 
-Contacts: P5P LWALL
+Contacts: P5P CHIPS LWALL
 
 
 6) Tied File Handles
@@ -1668,7 +1739,7 @@ Contacts: P5P LWALL
 It is a long term goal to allow perl file handles to be tied. This will
 probably be based on the sfio (Safe Fast IO) library.
 
-Contacts: PMQS TIMB P5P LWALL NI-S
+Contacts: PMQS TIMB P5P LWALL NI-S GBARR
 
 
 7) Extend Yacc To Write XS Code
@@ -1677,13 +1748,6 @@ Some version of yacc, like byacc or bison, should be converted to spit
 out an OO .xs and .pm implementing a parser.
 
 Contacts: NI-S P5P LWALL
-
-
-8) Approximate Matching Regular Expressions
-
-Add support for approximate matching (like the agrep utility).
-
-Contacts: JHI
 
 
 
