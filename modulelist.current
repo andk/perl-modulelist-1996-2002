@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.106 $ $Date: 2002/04/17 16:45:39 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.107 $ $Date: 2002/04/17 16:49:41 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -508,7 +508,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.106 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.107 $=~/\d+/g);
                     sprintf "%d."."%03d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1093,7 +1093,8 @@ Test::
 ::Mail             bdpOp Test framework for email applications        SKUD
 ::Simple           bmpfp Basic utilities for writing tests            MSCHWERN
 ::Exception        Rdpfp Functions for testing exception-based code   ADIE
-::More
+::More             RdpOp Yet another framework for writing test scrip MSCHWERN
+::Litmus
 
 VCS::
 ::CVS              RdpO? Interface to GNU's CVS                       RSAVAGE
@@ -1514,6 +1515,9 @@ Mon::
 ::Client           RdpO? Network monitoring client                    TROCKIJ
 ::SNMP             RdpO? Network monitoring suite                     TROCKIJ
 
+Openview::
+::Message
+
 Parallel::
 ::ForkManager      RdpOp A simple parallel processing fork manager    DLUX
 ::Pvm              bdcf? Interface to the PVM messaging service       DLECONTE
@@ -1534,11 +1538,6 @@ RAS::
 ::PortMaster       RdpO? Interface to Livingston PortMaster           STIGMATA
 ::AS5200           RdpO? Interface to Cisco AS5200 dialup server      STIGMATA
 ::HiPerARC         RdpO? Interface to 3Com TotalControl HiPerARC      STIGMATA
-
-Replication::Recall::
-::Client           adhfo Recall replication library client interface  AGUL
-::Server           adhfo Recall replication library server interface  AGUL
-::DBServer         adpOp Database replication server using Recall     AGUL
 
 IPTables::IPv4::
 ::IPQueue          RdcOg IPTables userspace packet queuing            JMORRIS
@@ -1596,6 +1595,9 @@ Math::
 ::RPN              Rdpf? Reverse Polish Notation Expression Evaluator OWEN
 ::SimpleInterest   Rnpfp Functions for Simple Interest calculations   BYOURTH
 ::Random           Rdcfd Random Number Generators                     GROMMEL
+
+Math::Bezier::
+::Convert
 
 Math::BigInt::
 ::BitVect          Rdphp Use Bit::Vector for Math::BigInt routines    TELS
@@ -1758,6 +1760,7 @@ Date::
 ::Ethiopic         impOp Calculations in the Ethiopic calendar        RBOW
 ::Egyptian         impOp Calculations in the Egyptian calendar        RBOW
 ::Gregorian        bdpOp Gregorian calendar                           MHASCH
+::Roman
 
 Date::Convert::
 ::French_Rev       adpOp From/to French Revolutionary Calendar        JFORGET
@@ -2077,6 +2080,7 @@ DBD::
 ::Recall           adpOp Transparent database replication layer       AGUL
 ::Sprite           RdpO? Sprite driver                                TURNERJW
 ::PrimeBase        bmc?p A primeBase database interface               PRIMEBASE
+::mysqlPP
 
 Oraperl            Rmpf? Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl            bmpf? Ingperl emulation interface for DBD::Ingres  HTOUG
@@ -2162,10 +2166,7 @@ AsciiDB::
 
 Db::
 ::Ctree            Rdcrp Faircom's CTREE+ database interface          REDEN
-::Documentum       Rdcfa Documentum EDMS API - Perl interface         MSROTH
 ::dmObject         cdpO? Object-based interface to Documentum EDMS    JGARRISON
-::DFC              adpOa OO Interface to Documentum's DFC using JPL   MSROTH
-::Mediasurface     bdpOp API and I/O modules for Mediasurface CMS     NWETTERS
 
 DbFramework::
 ::Attribute        adpO? Relational attribute class                   PSHARPE
@@ -2206,6 +2207,10 @@ Spreadsheet::
 
 X500::
 ::DN               MdpO? X500 Distinguished Name parser               RSAVAGE
+::RDN
+
+X500::DN::
+::Parser
 
 Alzabo             RdpOp A data modelling tool and RDBMS-OO mapper    DROLSKY
 
@@ -2225,6 +2230,11 @@ Palm::
 ::ThinkDB          cdpOa Manipulate ThinkDB TinyBytes for PalmOS      EARNESON
 
 Relations          adphp Database, CGI, and Graph Interfunctionality  GAFFER
+
+Replication::Recall::
+::Client           adhfo Recall replication library client interface  AGUL
+::Server           adhfo Recall replication library server interface  AGUL
+::DBServer         adpOp Database replication server using Recall     AGUL
 
 _______________________________________________________________________
 
@@ -2249,6 +2259,7 @@ Term::
 ::Size             adcf? Simple way to get terminal size              TIMPX
 ::TUI              bdpfp User interface based on Term::ReadLine       SBECK
 ::VT102            cdpOa Emulates a colour VT102 terminal in memory   AJWOOD
+::Interact
 
 Term::ReadLine::
 ::Perl             RdpO? GNU Readline history and completion in Perl  ILYAZ
@@ -2516,6 +2527,8 @@ File::
 ::Repl             bdpOp file/dir structure replication               DROBERTS
 ::Touch            Rdphp Update timestamps, create nonexistent files  NWETTERS
 ::Data             RdpO? Prepend, insert, append data into files      RFOLEY
+::Which
+::ManualFlock
 
 File::Searcher::
 ::Interactive      bdpO? Interactive search do search/replace regexes ASTUBBS
@@ -2757,7 +2770,7 @@ XML::
 ::Catalog          RdpO? Resolve public identifiers and remap system  EBOHLMAN
 ::Checker          ampOp Validates XML against DTD                    TJMATHER
 ::Clean            adpfa XMLized text.                                PKUBANEK
-::Comma
+::Comma            RmpOg Toolkit for managing large "doc" collections KWINDLA
 ::DOM              bmpOp Implements Level 1 of W3's DOM               TJMATHER
 ::Directory        RdpOp Returns a content of directory as XML        PCIMPRICH
 ::Doctype          RdpO? A DTD object class                           RBS
@@ -2766,11 +2779,11 @@ XML::
 ::Element          RdpOp XML elements with the same interface as HTML SBURKE
 ::Encoding         ????? Parses encoding map XML files                COOPERCL
 ::Excel            RmpOa Transform Excel spreadsheet data into XML    ISTERIN
-::GDOME
+::GDOME            amcOp Interface to Level 2 DOM gdome library       TJMATHER
 ::GXML             MdpOp XML transformation and XML->HTML conv.       JCARTER
 ::Generator        bdpO? Generates XML documents                      BHOLZMAN
 ::Grove            RmpO? Flexible lightweight mid-level XML objects   KMACLEOD
-::NamespaceSupport
+::NamespaceSupport RmpOp Generic namespace helpers (ported from SAX2) RBERJON
 ::PPD              RdpO? PPD file format and XML parsing elements     MURRAY
 ::PYX              RdpO? XML to PYX generator                         MSERGEANT
 ::Parser           bmcO? Flexible fast parser with plug-in styles     COOPERCL
@@ -2780,7 +2793,7 @@ XML::
 ::Registry         ampO? Implements a generic XML registry            EISEN
 ::Sablotron        RdcOo Interface to the Sablotron XSLT processor    PAVELH
 ::Simple           Rdphp Easy API to maintain XML (esp config files)  GRANTM
-::Stream
+::Stream           RdpOp Module for handling XML Streams              REATMON
 ::TreeBuilder      RdpOp Build a tree of XML::Element objects         SBURKE
 ::UM               ampOp Convert UTF-8 strings to any encoding        TJMATHER
 ::Writer           ????? Module for writing XML documents             DMEGG
@@ -2788,11 +2801,12 @@ XML::
 ::XQL              ampOp Performs XQL queries on XML object trees     TJMATHER
 ::XSLT             RdcO? Process XSL Transformational sheets          JSTOWE
 ::Xalan            ad+O? Interface to Xalan (Apache XSLT processor)   EDPRATOMO
-::Xerces
+::Xerces           Rm+Oo Perl API to Apache Xerces XML Parser         JASONS
 ::miniXQL          ????? Simplistic XQL-like search using streams     MSERGEANT
+::STX
 
 XML::GDOME::
-::XSLT
+::XSLT             amcOp XSLT using libxslt and XML::GDOME            TJMATHER
 
 XML::Handler::
 ::Composer         ampOp Another XML printer/writer/generator         TJMATHER
@@ -2868,6 +2882,10 @@ PDF::
 ::Parse            RdpO? parsing functions for PDF library            ANTRO
 ::Create           RmpOd Create PDF files                             FTASSIN
 ::Labels           RdpOp Produce sheets of mailing labels in PDF      OWEN
+::PlainLayout
+
+PCL::
+::Simple
 
 _______________________________________________________________________
 
@@ -3068,6 +3086,7 @@ Authen::
 
 Authen::Krb5::
 ::KDB              adpOp Parse Kerberos5 database files               DKS
+::Easy
 
 Authen::SASL::
 ::Cyrus            adpOg XS Interface to Cyrus SASL                   ADAMSON
@@ -3184,6 +3203,7 @@ HTML::
 ::Processor        RdpOp OO Template Processing Library for HTML,Text PSCHNELL
 ::ParseBrowser     bdpOp OO User Agent string parser                  DODGER
 ::CalendarMonthDB  adpfn Module Generating Persistant HTML Calendars  MCVELLA
+::GenToc
 
 HTML::Entities::
 ::ImodePictogram   bdpfp encode / decode i-mode pictogram             MIYAGAWA
@@ -3211,6 +3231,7 @@ HTTP::
 ::QuickBase        RdpO? Wraps the QuickBase HTTP API                 CVONROES
 ::Webdav           amhOp Interface to Neon HTTP and WebDAV library    GRICHTER
 ::Test             idpOa Web application regression testing framework RAM
+::Size
 
 HTTP::Request::
 ::Common           Rmpf? Functions that generate HTTP::Requests       LWWWP
@@ -3276,6 +3297,7 @@ WWW::Search::
 ::Magellan         RdpO? search on Magellan                           MTHURN
 ::Yahoo            RdpO? search various flavors of www.yahoo.com      MTHURN
 ::RpmFind          RmpOp Search interface for rpmfind.net             ALIAN
+::Google
 
 MIME::
 ::Base64           Rdhf? Encode/decode Base 64 (RFC 2045)             GAAS
@@ -3361,6 +3383,8 @@ Apache::
 ::ParseControl     cdpOp control the parsing of server-side scripts   DAPATRICK
 ::HTMLView         bmpfl A mod_perl module for compiled HTMLView page BJORNARDO
 ::ACEProxy         bdpOp IDN compatible ACE proxy server              MIYAGAWA
+::LogIgnore
+::UploadMeter
 
 Apache::ASP::
 ::Lite             impO? Lightweight IIS emulation under Apache       FERGUSOR
@@ -3801,7 +3825,7 @@ Image::GD::
 Chart::
 ::Base             RdpO? Business chart widget collection             NINJAZ
 ::Gdchart          bdch? based on Bruce V's C gdchart distribution    MHEMPEL
-::Graph            Rmpr? front-end to gnuplot and XRT                 MHYOUNG
+::Graph            Rmpr? front-end to gnuplot and XRT                 CAIDAPERL
 ::PNGgraph         RdpO? Package to generate PNG graphs, uses GD.pm   SBONDS
 ::Pie              adpO? Implements "new Chart::Pie()"                KARLON
 ::Plot             bdcO? Graph two-dimensional data (uses GD.pm)      SMORTON
@@ -4243,7 +4267,7 @@ RT                 RmpOg RT, a trouble ticketing system               JESSE
 
 System2            bdpfb like system(), but with STDOUT, STDERR avail REICHERT
 
-CompBio
+CompBio            bdphp basic Comp. Biology (bioinformatics) library SEANQ
 
 _______________________________________________________________________
 
@@ -4258,13 +4282,21 @@ AltaVista::
 ::SearchSDK        cdcf? Perl Wrapper for AltaVista SDK functionality JTURNER
 ::PerlSDK          adcf? Utilize the AltaVista Search Developer's Kit BWILLIAM
 
+Db::
+::Documentum       Rdcfa Documentum EDMS API - Perl interface         MSROTH
+::DFC              adpOa OO Interface to Documentum's DFC using JPL   MSROTH
+::Mediasurface     bdpOp API and I/O modules for Mediasurface CMS     NWETTERS
+
 Real::
 ::Encode           i   ? Interface to Progressive Network's RealAudio KMELTZ
 
 HtDig              RdpO? Interface for the HtDig indexing system      JTILLMAN
+JUNOS
 MQSeries           RdcO? IBM's MQSeries messaging product interface   HBIERSMA
+NexTrieve
 PQI                cdcO? Perl Queuing Interface, to MQSeries, MSMQ    SIMONJ
 R3                 bdcO? Interface to SAP R/3 using RFCSDK            SCHOEN
+Tivoli
 
 NexTrieve::
 ::Collection       RmpOp logical collection object                    ELIZABETH
@@ -4295,11 +4327,11 @@ NexTrieve::Collection::
 NexTrieve::Hitlist::
 ::Hit              RmpOp a single hit of the result                   ELIZABETH
 
-P4::
-::Client           Rd+Ob Client interface to the Perforce SCM system  SMEE
-
 Messaging::
 ::TIBCO            cdhha Interfacing to TIBCO/Rendezvous(RVRD)        BWMCADAMS
+
+P4::
+::Client           Rd+Ob Client interface to the Perforce SCM system  SMEE
 
 SAP::
 ::Rfc              MdhOp SAP RFC Interface                            PIERS
@@ -4834,6 +4866,7 @@ to a CGI script that lets you edit the database entries yourself.
            To join the list, send a mail with just the word subscribe
            in the body to cope-request@lunatech.com (See
            http://www.lunatech.com/cope)
+  CORION   Max Maischein <>
   CORLISS  Arthur Corliss <corliss@digitalmages.com>
   CORRIS   Corris Randall <corris@cpan.org>
   COSIMO   Cosimo Streppone <cosimo@cpan.org>
@@ -4844,6 +4877,7 @@ to a CGI script that lets you edit the database entries yourself.
   CRAIC    Robert Jones <jones@craic.com>
   CRAMIREZ Carlos Ramirez <carlos@quantumfx.com>
   CREIN    Chris Reinhardt <ctriv@dyndns.org>
+  CRITTER  Charles Ritter <critter@aixadm.org>
   CROMIS   Jacob Davies <jacob@well.com>
   CSELLEG  Gabor Cselle <gaborcselle@yahoo.de>
   CSOE     Christian Soeller <soellermail@excite.com>
@@ -5570,6 +5604,7 @@ to a CGI script that lets you edit the database entries yourself.
   KENNEDYH Hugh Kennedy <kennedyh@engin.umich.edu>
   KENSHAN  單中杰 <ken@digitas.harvard.edu>
   KERMAGO  Jean-Christophe Kermagoret <jck@BabelObjects.Org>
+  KERW     Wim Kerkhoff <wim@nyetwork.org>
   KEVINA   Kevin Atkinson <kevina@clark.net>
   KEVINRICE Kevin J. Rice <ricekevin@hotmail.com>
   KFOGEL   Karl Fogel <kfogel@red-bean.com>
@@ -6133,6 +6168,7 @@ to a CGI script that lets you edit the database entries yourself.
   RBDAVISON R Bernard Davison <bernard@gondwana.com.au>
   RBERJON  Robin Berjon <robin@knowscape.com>
   RBOW     Rich Bowen <rbowen@rcbowen.com>
+  RBROOM   Rodney Broom <perl@rbroom.com>
   RBS      Barrie Slaymaker <barries@slaysys.com>
   RCALEY   Richard Caley <R.Caley@ed.ac.uk>
   RCAPUTO  Rocco Caputo <troc+cpan@pobox.com>
@@ -6179,6 +6215,7 @@ to a CGI script that lets you edit the database entries yourself.
   RIZAPN   Riza Purwo Nugroho <rizapn@ratelindo.co.id>
   RJBS     Ricardo Signes <rsignes-cpan@manxome.org>
   RJENKS   Robert Jenks <rjenks@cvsroot.org>
+  RJOOP    Robert Joop <yaph-020416@timesink.de>
   RJRAY    Randy J Ray <rjray@blackperl.com>
   RJS      Robert J Seymour <rseymour@rseymour.com>
   RKHILL   Ron Hill <rkhill@firstlight.net>
@@ -6264,6 +6301,7 @@ to a CGI script that lets you edit the database entries yourself.
   SBOSS    Scott Boss <scott at sboss dot net>
   SBURKE   Sean M. Burke <sburke@cpan.org>
   SCHAFFTER Gustav Schaffter <gschaffter@cyberjunkie.com>
+  SCHALLEE Ed Schaller <schallee@darkmist.net>
   SCHINDER Paul Schinder <schinder@pobox.com>
   SCHMICKL Thomas Schmickl <schmickl@nextra.at>
   SCHMUKER Martin Schmuker <martin@schmuker.de>
