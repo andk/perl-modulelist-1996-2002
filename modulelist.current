@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.28 $Date: 1996/07/11 12:34:44 $
+The Perl 5 Module List       Revision: 2.28 $Date: 1996/07/11 22:23:50 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -801,6 +801,7 @@ FindBin        adpf  Locate current script bin directory          GBARR
 DoWhatIWant    i     Does what you want without even asking       :-)
 
 ExtUtils::
+::DynaGlue     i     Utilities/glue code for C<->Perl interfaces  DOUGM !
 ::MakeMaker    SupO  Writes Makefiles for extensions              MMML
 ::Manifest     Supf  Utilities for managing MANIFEST files        MMML
 ::Typemap      i     xsubpp typemap handling                      WPS
@@ -876,12 +877,18 @@ NeXTStep::
 ::NetInfo      idcO  NeXTStep's NetInfo (like ONC NIS)            PGUEN
 
 Mac::                Macintosh specific modules
-::Memory       bmcO  MacOS memory management primitives           MCPL
-::Resources    bmcO  MacOS Resource manager                       MCPL
-::AppleEvents  bmcO  MacOS AppleEvent manager and AEGizmos        MCPL
-::Files        imcO  MacOS File manager                           MCPL
-::Processes    imcO  MacOS Process manager                        MCPL
-
+::AppleEvents  bmcO  AppleEvent manager and AEGizmos              MCPL
+::Components   bmcO  (QuickTime) Component manager                MCPL +
+::Files        bmcO  File manager                                 MCPL
+::Gestalt      bmcO  Gestalt manager: Environment enquiries       MCPL +
+::InetConfig   bmcO  Internet Configuration system                MCPL +
+::Memory       bmcO  Memory manager				  MCPL
+::MoreFiles    bmcO  Further file management routines		  MCPL +
+::OSA          bmcO  Open Scripting Architecture		  MCPL +
+::Processes    bmcO  Process manager				  MCPL
+::Resources    bmcO  Resource manager				  MCPL
+::Types        bmcO  (Un-)Packing of Macintosh specific types	  MCPL +
+								  
 OS2::
 ::ExtAttr      RdcO  (Tied) access to extended attributes         ILYAZ
 ::PrfDB        RdcO  (Tied) access to .INI-style databases        ILYAZ
@@ -933,11 +940,19 @@ IPC::
 ::Mmap         i     Interface to Unix's mmap() shared memory     MICB  
 ::Globalspace  cdpO  Multi-process shared hash and shared events  JACKS
 
-RPC::
+RPC::                Remote Procedure Calls (see also DCE::RPC)
 ::ONC          i     Open Network Computing (Sun) RPC interface   PKUTS
 
-DCE::
+DCE::                Distributed Computing Environment (OSF)
 ::Registry     cdcf  DCE registry functions                       DOUGM 
+::rgybase      bdcO  Constants from rgybase.h,rgynbase.h          DOUGM +
+::Login        bdcO  Interface to login functions                 DOUGM + 
+::login_base   bdcO  Constants from sec_login.h,sec_login_base.h  DOUGM +
+::Status       bdpr  Tie to *sts.h files                          DOUGM +
+::UUID         bdcf  Misc uuid functions                          DOUGM +
+::ACL          cdcO  Interface to Access Control List protocol    DOUGM +
+::aclbase      cdcO  Constants from aclbase.h                     DOUGM +
+::RPC          c     Remote Procedure Calls                       DOUGM +
 
 Proxy          i     Transport-independent remote processing      MICB  
 Proxy::
@@ -1001,6 +1016,7 @@ Date::
 ::GetDate      adcf  Yacc based free-format date parser in C      TOMC
 ::Interval     idpO  Lightweight normalised interval data type    TIMB
 ::Language     adpO  Multi-language date support                  GBARR 
+::Manip        Rdpf  Manipulate/parse international dates/times   SBECK
 ::Parse        Rdpf  ASCII Date parser using regexp's             GBARR
 ::Time         idpO  Lightweight normalised datetime data type    TIMB
 
@@ -1113,7 +1129,7 @@ Name           DSLI  Description                                  Info
 Term::
 ::Complete     Supf  Tab word completion using stty raw              Wayne Tompson me@anywhere.EBay.Sun.COM
 ::ReadKey      Rdcf  Read keystrokes and change terminal modes    KJALB
-::Cap          Supf  Basic termcap: Tgetent, Tputs, Tgoto            sanders@bsdi.com
+::Cap          Supf  Basic termcap: Tgetent, Tputs, Tgoto         TSANDERS
 ::Screen       RdpO  Basic screen + input class (uses Term::Cap)  MRKAE
 ::Info         adpf  Terminfo interface (currently just Tput)     KJALB
 ::ReadLine     Sdcf  GNU Readline, history and completion         ILYAZ
@@ -1559,6 +1575,15 @@ Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 
 Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN 
 
+Business::
+::CreditCard   Rdpf  Credit card number check digit test          JONO +
+
+XXX::
+::Label        i     Format address labels                        JONO +
+::UPC          i     Produce PostScript UPC barcodes              JONO +
+LOCALE::gettext PVANDRY +++
+PP...:: NEERI
+
 =======================================================================
 
 
@@ -1619,6 +1644,7 @@ Also:
     ftp://ftp.isi.edu (ORBeline)
     ftp://labrea.stanford.edu
     ftp://parcftp.parc.xerox.com/pub/ilu/ilu.html
+    ftp://ftp.th-darmstadt.de/pub/networking/platforms/CORBA/
     idl-cfe@sun.com
 
 Inter-Language Unification system (ILU).  Similar to a CORBA ORB, with some
