@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.27 $Date: 1996/07/08 07:36:39 $
+The Perl 5 Module List       Revision: 2.28 $Date: 1996/07/10 21:43:42 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -798,14 +798,14 @@ ExtUtils::
 ::MakeMaker    SupO  Writes Makefiles for extensions              MMML
 ::Manifest     Supf  Utilities for managing MANIFEST files        MMML
 ::Typemap      i     xsubpp typemap handling                      WPS
-::embed        bdpf  Utilities for embedding Perl in C/C++ apps   DOUGM +
+::embed        bdpf  Utilities for embedding Perl in C/C++ apps   DOUGM
 
 Test::
 ::Harness      Supf  Executes perl-style tests                    ANDK
 
 Devel::
 ::CallerItem   RupO  'caller()' Object wrapper + useful methods   JACKS
-::CoreStack    adpf  generate a stack dump from a core file       ADESC +
+::CoreStack    adpf  generate a stack dump from a core file       ADESC 
 ::DProf        Rdcf  Execution profiler                           DMR
 ::DumpStack    Rupf  Dumping of the current function stack        JACKS
 ::Peek         adcf  Peek at internal representation of Perl data ILYAZ
@@ -903,17 +903,17 @@ Net::
 ::LDAP         i     Lightweight Directory Access Protocol              
 ::NIS          adcO  Interface to Sun's NIS                       RIK
 ::NISPlus      adcO  Interface to Sun's NIS+                      RIK
-::NNTP         adpO  Client interface to NNTP protocol         	  GBARR +
-::Netrc        adpO  Support for .netrc files                  	  GBARR +
-::POP3         adpO  Client interface to POP3 protocol         	  GBARR +
+::NNTP         adpO  Client interface to NNTP protocol         	  GBARR 
+::Netrc        adpO  Support for .netrc files                  	  GBARR 
+::POP3         adpO  Client interface to POP3 protocol         	  GBARR 
 ::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
-::SNPP         cdpO  Client interface to SNPP protocol         	  GBARR +
+::SNPP         cdpO  Client interface to SNPP protocol         	  GBARR 
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
 ::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   ADESC
 ::TCP          adcO  TCP-specific socket usage                    SPIDB
 ::Telnet       cdpO  Inheritable Telnet socket object protocol    GBARR
-::Time         adpf  Obtain time from remote machines          	  GBARR +
+::Time         adpf  Obtain time from remote machines          	  GBARR 
 ::UDP          cdcO  UDP-specific socket usage                    SPIDB
 ::hostent      adpf  A by-name interface for hosts functions      TOMC
 ::netent       adpf  A by-name interface for networks functions   TOMC
@@ -943,7 +943,7 @@ ToolTalk       adcr  Interface to the ToolTalk messaging service  MARCP
 SNMP           RdcO  Interface to CMU's SNMPv2 libsnmp.a          GSM
 
 Parallel::
-::Pvm          bdcf  Interface to the PVM messaging service       EWALKER +
+::Pvm          bdcf  Interface to the PVM messaging service       EWALKER 
 
 _______________________________________________________________________
 
@@ -996,7 +996,7 @@ Date::
 ::Format       Rdpf  Date formatter ala strftime                  GBARR
 ::GetDate      adcf  Yacc based free-format date parser in C      TOMC
 ::Interval     idpO  Lightweight normalised interval data type    TIMB
-::Language     adpO  Multi-language date support                  GBARR +
+::Language     adpO  Multi-language date support                  GBARR 
 ::Parse        Rdpf  ASCII Date parser using regexp's             GBARR
 ::Time         idpO  Lightweight normalised datetime data type    TIMB
 
@@ -1017,14 +1017,14 @@ Tie::
 ::Scalar       Supr  Base class for implementing tied scalars
 ::Array        c     Base class for implementing tied arrays      CHIPS 
 ::Cache        adpO  In memory size limited LRU cache             MIKEH
-::Dir          adpr  Tie hash for reading directories             GBARR +
+::Dir          adpr  Tie hash for reading directories             GBARR 
 ::File         adpr  Tie hash to files in a directory             AMW
 ::IxHash       RdpO  Indexed hash (ordered array/hash composite)  GSAR
 ::Mem          adcO  Bind perl variables to memory addresses      PMQS
 ::Quick        i     Simple way to create ties                    TIMB
 ::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
 ::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
-::Watch        bdpO  Uses Tie::Quick to watch a variable          LUSOL !
+::Watch        bdpO  Uses Tie::Quick to watch a variable          LUSOL
 
 Class::
 ::Eroot        RdpO  Eternal Root - Object persistence            DMR
@@ -1034,6 +1034,9 @@ Object::
 ::Info         Rupf  General info about objects (is-a, ...)       JACKS
 
 Ref            RdpO  Print, compare, and copy perl structures     MUIR
+
+Sort::
+::Versions     Rdpf   sorting of revision (and similar) numbers   KJALB +
 
 Data Type Marshaling (converting to/from strings) and Persistent Storage
 
@@ -1174,12 +1177,12 @@ File::
 ::Copy         adpf  Copying files or filehandles                 ASHER
 ::CounterFile  RdpO  Persistent counter class                     GAAS
 ::Find         Supf  Call func for every item in a directory tree
-::Flock        adpf  flock() wrapper.  Auto-create locks          MUIR +
+::Flock        adpf  flock() wrapper.  Auto-create locks          MUIR 
 ::Glob         adpf  Filename globing (ksh style)                 TYEMQ
 ::Listing      bdpf  Parse directory listings                     GAAS
 ::Lock         adcf  File locking using flock() and lockf()       JHI
 ::Path         Supf  File path and name utilities
-::Slurp        bdpf  Read/write/append files quickly              MUIR +
+::Slurp        bdpf  Read/write/append files quickly              MUIR 
 ::stat         adpf  A by-name interface for the stat function    TOMC
 
 Filesys::
@@ -1208,7 +1211,7 @@ Language text related modules
 Text::
 ::Abbrev       Supf  Builds hash of all possible abbreviations
 ::ParseWords   Supf  Parse strings containing shell-style quoting
-::Soundex      Supf  Convert a string to a soundex value
+::Soundex      Supf  Convert a string to a soundex value          MIKESTOK
 ::TeX          cdpO  TeX typesetting language input parser        ILYAZ
 ::Bib          RdpO  Parse refer(1)-style bibliography files      ERYQ
 ::Tabs         Sdpf  Expand and contract tabs ala expand(1)       MUIR
@@ -1313,7 +1316,7 @@ CGI::
 ::ErrorWrap    bdpf  Trap warnings and die and convert into HTML  TOMC
 ::Imagemap     adpO  Imagemap handling for specialized apps       MIKEH
 ::MiniSvr      RmpO  Fork CGI app as a per-session mini server    CGIP
-::Out          adpf  Buffer CGI output and report errors          MUIR +
+::Out          adpf  Buffer CGI output and report errors          MUIR 
 ::Request      RmpO  Parse CGI request and handle form fields     CGIP
 ::Response     ampO  Response construction for CGI applications   CGIP
 ::Session      cmpO  Maintain session/state information           MGH
@@ -1465,7 +1468,7 @@ Mail::
 ::SMTP         i     Protocol support including expn
 ::MH           adcr  MH mail interface                            MRG
 ::POP3Client   bdpO  Support for clients of POP3 servers          SDOWD
-::Folder       adpO  Base-class for mail folder handling          KJOHNSON +
+::Folder       adpO  Base-class for mail folder handling          KJOHNSON 
 
 
 News::
@@ -1496,7 +1499,7 @@ IO::
 ::Pipe         cdpO  Methods for pipe handles                     GBARR
 ::Socket       cdpO  Methods for socket input/output handles      GBARR
 ::Seekable     cdpO  Methods for seekable input/output handles    GBARR
-::Select       adpO  Object interface to system select call       GBARR +
+::Select       adpO  Object interface to system select call       GBARR 
 ::File         cdpO  Methods for disk file based i/o handles      GBARR
 ::Pty          cdpO  Methods for pseudo-terminal allocation etc   PEASE
 ::STREAMS      i cO  Methods for System V style STREAMS control
