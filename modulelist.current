@@ -1,7 +1,7 @@
-The Perl 5 Module List       Revision: 2.27 $Date: 1996/07/07 21:26:21 $
+The Perl 5 Module List       Revision: 2.27 $Date: 1996/07/08 07:36:39 $
 ======================
 
-Maintained by Tim Bunce and Andreas Koenig <modules@perl.com>
+Maintained by Tim Bunce and Andreas König <modules@perl.com>
 
 Contents
 
@@ -101,70 +101,6 @@ currently registered CPAN sites:
     Africa
         South Africa
             ftp://ftp.is.co.za/programming/perl/CPAN/
-    Asia
-        Hong Kong
-            ftp://ftp.hkstar.com/pub/CPAN/
-        Japan
-            ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/
-        Taiwan
-            ftp://dongpo.math.ncu.edu.tw/perl/CPAN/
-    Australasia
-        Australia
-            ftp://coombs.anu.edu.au/pub/perl/CPAN/
-            ftp://ftp.mame.mu.oz.au/pub/perl/CPAN/
-        New Zealand
-            ftp://ftp.tekotago.ac.nz/pub/perl/CPAN/
-    Europe
-        Austria
-            ftp://ftp.tuwien.ac.at/pub/languages/perl/CPAN/
-        Belgium
-            ftp://ftp.kulnet.kuleuven.ac.be/pub/mirror/CPAN/
-        Czech Republic
-            ftp://sunsite.mff.cuni.cz/MIRRORS/ftp.funet.fi/pub/languages/perl/CPAN/
-        Denmark
-            ftp://sunsite.auc.dk/pub/languages/perl/CPAN/
-        Finland
-            ftp://ftp.funet.fi/pub/languages/perl/CPAN/
-        France
-            ftp://ftp.ibp.fr/pub/perl/CPAN/
-            ftp://ftp.pasteur.fr/pub/computing/unix/perl/CPAN/
-        Germany
-            ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/
-            ftp://ftp.rz.ruhr-uni-bochum.de/pub/CPAN/
-        Greece
-            ftp://ftp.ntua.gr/pub/lang/perl/
-        Hungary
-            ftp://ftp.kfki.hu/pub/packages/perl/CPAN/
-        Poland
-            ftp://ftp.pk.edu.pl/pub/lang/perl/CPAN/
-            ftp://sunsite.icm.edu.pl/pub/CPAN/
-        Portugal
-            ftp://ftp.ci.uminho.pt/pub/lang/perl/
-        Slovenia
-            ftp://ftp.arnes.si/software/perl/CPAN/
-        Spain
-            ftp://ftp.etse.urv.es/pub/mirror/perl/
-            ftp://ftp.rediris.es/mirror/CPAN/
-        Sweden
-            ftp://ftp.sunet.se/pub/lang/perl/CPAN/
-        Switzerland
-            ftp://ftp.switch.ch/mirror/CPAN/
-        the Netherlands
-            ftp://ftp.cs.ruu.nl/pub/PERL/CPAN/
-        UK
-            ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/
-            ftp://sunsite.doc.ic.ac.uk/packages/CPAN/
-            ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/
-    North America
-        USA
-            ftp://ftp.cdrom.com/pub/perl/CPAN/
-            ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
-            ftp://ftp.cs.colorado.edu/pub/perl/CPAN/
-            ftp://ftp.digital.com/pub/plan/perl/CPAN/
-            ftp://ftp.iguide.com/pub/mirrors/packages/perl/CPAN/
-            ftp://ftp.metronet.com/pub/perl/
-            ftp://ftp.rge.com/pub/languages/perl/CPAN/
-            ftp://ftp.sedl.org/pub/mirrors/CPAN/
             ftp://ftp.sterling.com/CPAN/
             ftp://ftp.uoknor.edu/mirrors/CPAN/
             ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/
@@ -228,7 +164,7 @@ obtained at
 
 Editorial Information and Copyright
 
-This document is Copyright (c) 1996 by Tim Bunce and Andreas Koenig.
+This document is Copyright (c) 1996 by Tim Bunce and Andreas König.
 All rights reserved.  Permission to distribute this document, in full
 or part, via electronic means (emailed, posted or archived) or printed
 copy is granted providing that no charges are involved, reasonable
@@ -967,12 +903,17 @@ Net::
 ::LDAP         i     Lightweight Directory Access Protocol              
 ::NIS          adcO  Interface to Sun's NIS                       RIK
 ::NISPlus      adcO  Interface to Sun's NIS+                      RIK
+::NNTP         adpO  Client interface to NNTP protocol         	  GBARR +
+::Netrc        adpO  Support for .netrc files                  	  GBARR +
+::POP3         adpO  Client interface to POP3 protocol         	  GBARR +
 ::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
+::SNPP         cdpO  Client interface to SNPP protocol         	  GBARR +
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
 ::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   ADESC
 ::TCP          adcO  TCP-specific socket usage                    SPIDB
 ::Telnet       cdpO  Inheritable Telnet socket object protocol    GBARR
+::Time         adpf  Obtain time from remote machines          	  GBARR +
 ::UDP          cdcO  UDP-specific socket usage                    SPIDB
 ::hostent      adpf  A by-name interface for hosts functions      TOMC
 ::netent       adpf  A by-name interface for networks functions   TOMC
@@ -1050,13 +991,14 @@ Set::
 ::IntSpan      adpO  Set of integers newsrc style '1,5-9,11' etc  SWMCD
 
 Date::
-::GetDate      adcf  Yacc based free-format date parser in C      TOMC
 ::CTime        adpf  Updated ctime.pl with mods for timezones     GBARR
 ::DateCalc     Rdcf  Various standards based date calculations    STBEY
-::Time         idpO  Lightweight normalised datetime data type    TIMB
-::Interval     idpO  Lightweight normalised interval data type    TIMB
-::Parse        Rdpf  ASCII Date parser using regexp's             GBARR
 ::Format       Rdpf  Date formatter ala strftime                  GBARR
+::GetDate      adcf  Yacc based free-format date parser in C      TOMC
+::Interval     idpO  Lightweight normalised interval data type    TIMB
+::Language     adpO  Multi-language date support                  GBARR +
+::Parse        Rdpf  ASCII Date parser using regexp's             GBARR
+::Time         idpO  Lightweight normalised datetime data type    TIMB
 
 Time::
 ::gmtime       adpf  A by-name interface for gmtime               TOMC
@@ -1074,13 +1016,14 @@ Tie::
 ::Hash         Supr  Base class for implementing tied hashes
 ::Scalar       Supr  Base class for implementing tied scalars
 ::Array        c     Base class for implementing tied arrays      CHIPS 
-::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
-::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
 ::Cache        adpO  In memory size limited LRU cache             MIKEH
-::Mem          adcO  Bind perl variables to memory addresses      PMQS
+::Dir          adpr  Tie hash for reading directories             GBARR +
 ::File         adpr  Tie hash to files in a directory             AMW
 ::IxHash       RdpO  Indexed hash (ordered array/hash composite)  GSAR
+::Mem          adcO  Bind perl variables to memory addresses      PMQS
 ::Quick        i     Simple way to create ties                    TIMB
+::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
+::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
 ::Watch        bdpO  Uses Tie::Quick to watch a variable          LUSOL !
 
 Class::
@@ -1231,7 +1174,7 @@ File::
 ::Copy         adpf  Copying files or filehandles                 ASHER
 ::CounterFile  RdpO  Persistent counter class                     GAAS
 ::Find         Supf  Call func for every item in a directory tree
-::Flock	       adpf  flock() wrapper.  Auto-create locks          MUIR +
+::Flock        adpf  flock() wrapper.  Auto-create locks          MUIR +
 ::Glob         adpf  Filename globing (ksh style)                 TYEMQ
 ::Listing      bdpf  Parse directory listings                     GAAS
 ::Lock         adcf  File locking using flock() and lockf()       JHI
@@ -1522,6 +1465,8 @@ Mail::
 ::SMTP         i     Protocol support including expn
 ::MH           adcr  MH mail interface                            MRG
 ::POP3Client   bdpO  Support for clients of POP3 servers          SDOWD
+::Folder       adpO  Base-class for mail folder handling          KJOHNSON +
+
 
 News::
 ::NNTPClient   bdpO  Support for clients of NNTP servers          RVA
@@ -1551,6 +1496,7 @@ IO::
 ::Pipe         cdpO  Methods for pipe handles                     GBARR
 ::Socket       cdpO  Methods for socket input/output handles      GBARR
 ::Seekable     cdpO  Methods for seekable input/output handles    GBARR
+::Select       adpO  Object interface to system select call       GBARR +
 ::File         cdpO  Methods for disk file based i/o handles      GBARR
 ::Pty          cdpO  Methods for pseudo-terminal allocation etc   PEASE
 ::STREAMS      i cO  Methods for System V style STREAMS control
@@ -1940,21 +1886,3 @@ to a CGI script that lets you edit the database entries yourself.
     ftp://ftp.cs.ruu.nl/pub/NEWS.ANSWERS/perl-faq/
     ftp://ftp.funet.fi/pub/languages/perl/doc/faq
     ftp://src.doc.ic.ac.uk/packages/perl/FAQ
-
-
-3) Other Perl Archive Sites
-
-    ftp://ftp.delphi.com/pub/mirrors/packages/ftp.perl.com/
-    ftp://ftp.delphi.com/pub/mirrors/packages/perl/
-    ftp://ftp.cdrom.com/pub/perl
-    ftp://coombs.anu.edu.au/pub/perl
-    ftp://ftp.cbi.tamucc.edu/pub/duff/Perl
-    ftp://ftp.demon.co.uk/pub/perl
-    ftp://ftp.khoros.unm.edu/pub/perl
-    ftp://ftp.metronet.com/pub/perl
-    ftp://ftp.uu.net/languages/perl
-    ftp://ftp.wpi.edu/perl5
-    ftp://perl.com/pub/perl
-    ftp://src.doc.ic.ac.uk/packages/perl
-    ftp://src.doc.ic.ac.uk/packages/perl5
-    ftp://sungear.mame.mu.oz.au/pub/perl
