@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.50 $Date: 1999/02/03 08:12:53 $
+The Perl 5 Module List       Revision: 2.51 $Date: 1999/02/05 08:18:21 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -684,7 +684,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.107 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.109 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -956,7 +956,7 @@ Perl           adcO  Create Perl interpreters from within Perl    GSAR
 Plthread       i     Multithreading at Perl level (not O/S level) MICB
 Protect        bdpf  declare subs private or member               JDUNCAN
 Safe           SdcO  Restrict eval'd code to safe subset of ops   MICB
-Softref        bdcf  Experimental extension for weak/soft refs    ILYAZ
+Softref        bdcf  Extension for weak/soft referenced SVs       ILYAZ
 
 The Perl Compiler
 
@@ -1117,14 +1117,23 @@ Mac::                Macintosh specific modules
 ::Resources    bmcO  Resource manager                             MCPL
 ::Types        bmcO  (Un-)Packing of Macintosh specific types     MCPL
 
+Mac::AppleEvents::
+::Simple       RdpO  Simple access to Mac::AppleEvents            CNANDOR
+
 Mac::Apps::
-::Anarchie     RdpO  Interface to Anarchie with AppleEvents       CNANDOR
-::Launch       RdpO  Launch/Quit Mac OS Apps by creator ID        CNANDOR
-::MacPGP       RdpO  Interface to MacPGP 2.6.3 with AppleEvents   CNANDOR
-::PBar         RdpO  AppleEvent module for Progress Bar           CNANDOR
+::Anarchie     RdpO  Control Anarchie 2.01+                       CNANDOR
+::Launch       RdpO  MacPerl module to launch / quit apps         CNANDOR
+::MacPGP       RdpO  Control MacPGP 2.6.3                         CNANDOR
+::PBar         RdpO  Control Progress Bar 1.0.1                   CNANDOR
 
 Mac::Comm::
-::OT_PPP       RdpO  Interface to Open Transport/PPP              CNANDOR
+::OT_PPP       RdpO  Control Open Transport PPP / Remote Access   CNANDOR
+
+Mac::
+::Glue         adpO  Control apps with AppleScript terminology    CNANDOR
+
+Mac::OSA::
+::Simple       RdpO  Simple access to Mac::OSA                    CNANDOR
 
 MSDOS::
 ::Attrib       bdcf  Get/set DOS file attributes in OS/2 or Win32 CJM
@@ -1679,7 +1688,7 @@ File::
 ::Lock         adcf  File locking using flock() and lockf()       JHI
 ::Path         Supf  File path and name utilities                 P5P
 ::Slurp        bdpf  Read/write/append files quickly              MUIR
-::Sort         adpf  Emulate some functions of sort(1)            CNANDOR
+::Sort         Rdpf  Emulate some functions of sort(1)            CNANDOR
 ::Spec         bdpO  Handling files and directories portably      KJALB
 ::Sync         bdcf  POSIX/*nix fsync() and sync()                CEVANS
 ::Tail         bdpO  A more efficient tail -f                     MGRABNAR
@@ -2137,12 +2146,13 @@ Image::
 ::Magick       RdcO  Read, query, transform, and write images     JCRISTY
 ::Size         Rdpf  Measure size of images in common formats     RJRAY
 
-Chart::
-::Base         a     Business charts                              MKRUSE
+Chart
+::Base         RdpO  Business chart widget collection             NINJAZ
+::GnuPlot      RdpO  Access to gnuplot library                    NPESKETT
 ::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTON
 
 MPEG::
-::MP3Tag       bdpf  Extract/edit tag information in MP3 files    CNANDOR +
+::MP3Info      bdpf  Extract/edit tag information in MP3 files    CNANDOR +
 
 T3D            cdpO  Realtime extensible 3D rendering             GJB
 ThreeD         i     Namespace root for all kinds of 3D modules   ADESC
