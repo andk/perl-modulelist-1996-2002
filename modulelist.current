@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.33 $$Date: 2000/03/31 13:53:59 $
+The Perl 5 Module List       $Revision: 3.34 $$Date: 2000/04/01 05:43:01 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.33 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.34 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1012,6 +1012,7 @@ GTop              bdcO Perl interface to libgtop                    DOUGM
 
 Schedule::        See also Schedule:: in chapter 23
 ::At              Rd   OS independent interface to the at command   JOSERODR
+::ByClock         adpO Return at given times                        SCHAFFTER
 
 Quota             Rdcf Disk quota system functions, local & remote  TOMZO
 
@@ -1133,6 +1134,9 @@ Device::
 ::SerialPort      bdpO POSIX clone of Win32::SerialPort             BBIRTH
 ::SVGA            c    SVGA Graphic card driver                     SCOTTVR
 
+Device::ISDN::
+::OCLM            bd?? Perl interface to the 3com OCLM ISDN TA      MERLIN
+
 _______________________________________________________________________
 
 5) Networking, Device Control (modems) and InterProcess Communication
@@ -1234,10 +1238,14 @@ Proxy             i    Transport-independent remote processing      MICB
 Proxy::
 ::Tk              ?    Tk transport class for Proxy (part of Tk)    MICB
 
-IPChains          RdcO Create and Manipulate ipchains               JESSICAQ
+Fwctl             bmpO Interface to Linux packet filtering firewall FRAJULAC
 SNMP              RdcO Interface to the UCD SNMP toolkit            GSM
 TFTP              bdpO Interface to TFTP (rfc1350)                  GSM
 ToolTalk          adcr Interface to the ToolTalk messaging service  MARCP
+
+IPChains          RdcO Create and Manipulate ipchains               JESSICAQ
+IPChains::
+::PortFW          bdpO Interface to ipmasqadm portfw command        FRAJULAC
 
 SNMP::
 ::Monitor         adpO Accounting and graphical display             JWIED
@@ -1254,7 +1262,7 @@ CORBA::
 ::IDLtree         adpf IDL to symbol tree translator                OMKELLOGG
 
 Modem::
-::VBox            i    ....                                         ANDK
+::VBox            cdpO Perl module for creation of voiceboxes       MLEHMANN
 ::Vgetty          bdpO Interface to voice modems using vgetty       YENYA
 
 ControlX10::
@@ -1270,6 +1278,7 @@ Name              DSLI Description                                  Info
 Math::
 ::Amoeba          Rdpr Multidimensional Function Minimisation       JARW
 ::Approx          adpO Approximate x,y-values by a function         ULPFR
+::BaseCalc        RdpO Convert numbers between various bases        KWILLIAMS
 ::BigFloat        SupO Arbitrary size floating point math package   MARKB
 ::BigInt          SupO Arbitrary size integer math package          MARKB
 ::BigInteger      adc  Arbitrary size integer as XS extension       GARY
@@ -1321,7 +1330,7 @@ Algorithm::Numerical::
 PDL               amcf Perl Data Language - numeric analysis env    PERLDL
 
 PDL::
-::Audio           ???? ....                                         ANDK
+::Audio           ???? Sound synthesis and editing with PDL         MLEHMANN
 ::Meschach        amcf Links PDL to meschach matrix library         EGROSS
 ::NetCDF          bdhO Reads/Writes NetCDF files from/to PDL objs   DHUNT
 ::Options         Rdph Provides hash options handling for PDL       TJENNESS
@@ -1418,6 +1427,7 @@ Tie::
 ::Handle          RdpO Base class for implementing tied filehandles STBEY
 ::HashDefaults    adpr Let a hash have default values               JDPORTER
 ::IxHash          RdpO Indexed hash (ordered array/hash composite)  GSAR
+::LLHash          Rdpr Fast & clean order-preserving hashes         KWILLIAMS
 ::ListKeyedHash   Rdpr Use lists to key multi-level hashes          SNOWHARE
 ::Mem             adcO Bind perl variables to memory addresses      PMQS
 ::Multidim        adpr "tie"-like multidimensional data structures  JDPORTER
@@ -1498,6 +1508,8 @@ DFA::
 ::Kleene          R    Kleene's Algorithm for DFA                   STBEY
 ::Simple          cdpO An "augmented transition network"            RANDYM
 
+Boulder           MdpO Generalized tag/value data objects           LDS
+
 _______________________________________________________________________
 
 7) Database Interfaces (see also Data Types)
@@ -1508,6 +1520,7 @@ DBI               amcO Generic Database Interface (see DBD modules) DBIML
 
 DBIx::            Extensions to the DBI
 ::HTMLView        cdpO Creating web userinterfaces to DBI dbs       HAKANARDO
+::OracleSequence  adpO OO access to Oracle sequences via DBD-Oracle BLABES
 ::Recordset       bmpO Access/Modify DBI handles via Arrays/Hashs   GRICHTER
 ::Table           bdpO OO access to DBI database tables             DLOWE
 ::Tree            adpO Expand self-referential table into a tree    BJEPS
@@ -1754,6 +1767,7 @@ Cwd               Supf Current working directory functions          P5P
 File::
 ::Attrib          idpO Get/set file attributes (stat)               TYEMQ
 ::BSDGlob         bdcf Secure, csh-compatible filename globbing     GBACON
+::Backup          bdpf Easy file backup & rotation automation       KWILLIAMS
 ::Basename        Supf Return basename of a filename                P5P
 ::CheckTree       Supf Check file/dir tree against a specification  P5P
 ::Compare         Supf Compare file contents quickly                P5P
@@ -1877,6 +1891,8 @@ Lingua::EN::
 ::Hyphenate       Rdpf Syllable based hyphenation                   DCONWAY
 ::Infinitive      Mdpo Find infinitive of a conjugated word         RSAVAGE
 ::Inflect         Mdpf English singular->plural and "a"->"an"       DCONWAY
+::MatchNames      bdpf Smart matching for human names               BRIANL
+::Nickname        bdpf Genealogical nickname matching(Peggy=Midge)  BRIANL
 ::Ordinal         i    Convert numbers to words                     HIGHTOWE
 ::Squeeze         bdpf Shorten english text for Pagers/GSM phones   JARIAALTO
 ::Syllable        a    Estimate syllable count in words             GREGFAST
@@ -1985,7 +2001,7 @@ IniConf                Read/Write INI-Style configuration files     RBOW
 
 App::             General application development tools
 ::Config          bdpO Configuration file mgmt                      ABW
-::Manager         ???? ....                                         ANDK
+::Manager         cdch Installing/Managing/Uninstalling Software    MLEHMANN
 
 CfgTie            adph Framework for tieing system admin tasks      RANDYM
 
@@ -2041,6 +2057,7 @@ PGP               adpO Simple interface to PGP subprocess via pipes PGPML
 PGP::
 ::Sign            bdpr Create/verify PGP/GnuPG signatures, securely RRA
 
+GnuPG             bdpO Perl interface to the GNU privacy guard.     FRAJULAC
 DES               adcf DES encryption (libdes)                      EAYNG
 Des               adcf DES encryption (libdes)                      MICB
 GSS               adcO Generic Security Services API (RFC 2078)     MSHLD
@@ -2328,14 +2345,17 @@ _______________________________________________________________________
 
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
-GD                adcO GIF editing/painting/manipulation            LDS
 OpenGL            adcf Interface to OpenGL drawing/imaging library  FIJI
 PGPLOT            Rdof PGPLOT plotting library - scientific graphs  KGB
 PixDraw           adcO Drawing and manipulating true color images   KSB
 GIFgraph          RdpO Package to generate GIF charts, uses GD      MVERB
 
-VRML              RdpO VRML methods independent of specification    HPALM
+GD                adcO GIF editing/painting/manipulation            LDS
+GD::
+::Graph           i??? Create graphs perusing GD::Image objects     MVERB
+::Text            i??? Base class for string handling               MVERB
 
+VRML              RdpO VRML methods independent of specification    HPALM
 VRML::
 ::VRML1           RdpO VRML methods with the VRML 1.0 standard      HPALM
 ::VRML2           RdpO VRML methods with the VRML 2.0 standard      HPALM
@@ -2470,7 +2490,7 @@ SelectSaver       SupO Save and restore selected file handle        CHIPS
 Selectable        cdpO Event-driven I/O streams                     MUIR
 
 Log::
-::Agent           i    A general logging framework                  RAM
+::Agent           adpr A general logging framework                  RAM
 ::Topics          Rdpf Control flow of topic based logging messages JARW
 
 Expect            RdpO Close relative of Don Libes' Expect in perl  AUSCHUTZ
@@ -2548,6 +2568,7 @@ Bio::
 ::*               i    Utilities for molecular biology              SEB
 
 Business::
+::Cashcow         i??? Internet payment with the Danish PBS         GKE
 ::CreditCard      Rdpf Credit card number check digit test          JONO
 ::ISBN            RdpO Work with ISBN as objects                    BDFOY
 ::ISSN            adpO Object and functions to work with ISSN       SAPAPO
@@ -2585,12 +2606,14 @@ Audio::
 ::CD              bdcO Perl interface to libcdaudio (cd + cddb)     DOUGM
 ::Sox             i    sox sound library as one or more modules     NI-S
 Audio::Play::
-::MPG123          ???? ....                                         ANDK
+::MPG123          ???? Generic frontend for MPG123                  MLEHMANN
 
 Video::Capture::
-::V4l             ???? ....                                         ANDK
+::V4l             ???? Video4linux framegrabber interface           MLEHMANN
 
 MIDI              RdpO Object interface to MIDI files               SBURKE
+MIDI::
+::Realtime        cdpO Interacts with MIDI devices in realtime      FOOCHRE
 
 Logfile           RdpO Generic methods to analyze logfiles          ULPFR
 
@@ -3137,7 +3160,7 @@ to a CGI script that lets you edit the database entries yourself.
   GDR      Gareth D. Rees <garethr@cre.canon.co.uk>
   GEHIC    Gerard Hickey <hickey@ctron.com>
   GENJISCH Genji Schmeder <genji@jps.net>
-  GEOFF    Geoffrey Young <XgyoungX@laserlink.net>
+  GEOFF    Geoffrey Young <geoff@cpan.org>
   GFLOHR   Guido Flohr <gufl0000@stud.uni-sb.de>
   GGONTER  Gerhard Gonter <gonter@wu-wien.ac.at>
   GHALSE   Guy Antony Halse <guy-japh@rucus.ru.ac.za>
@@ -3577,6 +3600,7 @@ to a CGI script that lets you edit the database entries yourself.
   PHOTO    Daniel M. Lipton <photo@tiac.net>
   PINYAN   Jeff Pinyan <japhy+perl@pobox.com>
   PJCJ     Paul Johnson <pjcj@pjcj.fsnet.co.uk>
+  PJF      Paul Jamieson Fenwick <pjf@schools.net.au>
   PJONES   Peter J Jones <p@dancris.com>
   PJORDAN  Pete Jordan <japh@horus.cix.co.uk>
   PKUTS    Peter Kutschera <peter@zditr1.arcs.ac.at>
