@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.27 $Date: 1996/06/11 08:45:42 $
+The Perl 5 Module List       Revision: 2.27 $Date: 1996/07/07 21:26:21 $
 ======================
 
 Maintained by Tim Bunce and Andreas Koenig <modules@perl.com>
@@ -869,6 +869,7 @@ Test::
 
 Devel::
 ::CallerItem   RupO  'caller()' Object wrapper + useful methods   JACKS
+::CoreStack    adpf  generate a stack dump from a core file       ADESC +
 ::DProf        Rdcf  Execution profiler                           DMR
 ::DumpStack    Rupf  Dumping of the current function stack        JACKS
 ::Peek         adcf  Peek at internal representation of Perl data ILYAZ
@@ -1000,6 +1001,8 @@ Proxy::
 ToolTalk       adcr  Interface to the ToolTalk messaging service  MARCP
 SNMP           RdcO  Interface to CMU's SNMPv2 libsnmp.a          GSM
 
+Parallel::
+::Pvm          bdcf  Interface to the PVM messaging service       EWALKER +
 
 _______________________________________________________________________
 
