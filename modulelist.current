@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.31 $Date: 1996/09/11 04:39:49 $
+The Perl 5 Module List       Revision: 2.31 $Date: 1996/09/12 02:42:42 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -1636,6 +1636,8 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Archie         Rdpf  Archie queries via Prospero ARDP protocol    GBOSS
+CPAN           adpO  Perl Archive browse and download             ANDK +
+CreditCard     Rdpf  Credit card number check digit test          JONO
 Neural         ad+O  Generic simulation of neural networks        LUKKA
 Nexus          cdcO  Interface to Nexus (threads/ipc/processes)   RDO
 Pcap           i     An interface for LBL's packet capture lib    AMOSS
@@ -1660,11 +1662,6 @@ Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN
 
 Penguin::
 ::Easy         RdpO  Provides quick, easy access to Penguin API   JDUNCAN
-
-CreditCard     Rdpf  Credit card number check digit test          JONO
-
-Business::
-::CreditCard   Rdpf  Deprecated name for Creditcard.pm            JONO
 
 Print::
 ::Label        i     Format address labels                        JONO
@@ -2010,40 +2007,27 @@ to a CGI script that lets you edit the database entries yourself.
   YLU      Luke Y. Lu <ylu@mail.utexas.edu>
   YVESP    Yves Paindaveine <yp@gr.osf.org>
 
-2) Perl Frequently Asked Questions (FAQ) and Other Resources
-
+2) Perl Frequently Asked Questions (FAQ)
 
   The FAQ and the Meta-FAQ are available on all CPAN sites in the directory
-  doc/FAQs as well as in these places:
+  doc/FAQs as well as from the RTFM server where you can find all
+  posted FAQs:
 
-  Perl Meta-FAQ
-    http://www.khoros.unm.edu/staff/neilb/perl/metaFAQ
-    http://web.nexor.co.uk/perl/Meta-FAQ.txt
-
-  Perl FAQ
-    http://mox.perl.com/perl/faq
     ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/
-    ftp://ftp.uu.net/usenet/news.answers/perl-faq/
-    ftp://ftp.cis.ufl.edu/pub/perl/doc/FAQ
-    ftp://ftp.khoros.unm.edu/pub/perl/faq.gz
-    ftp://ftp.cs.ruu.nl/pub/NEWS.ANSWERS/perl-faq/
-    ftp://ftp.funet.fi/pub/languages/perl/doc/faq
-    ftp://src.doc.ic.ac.uk/packages/perl/FAQ
-
-  Remember, FAQ are always avaiable from the fine rtfm server
-    ftp://rtfm.mit.edu/pub/usenet/news.answers/perl-faq/module-list
     ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/lang/perl/
 
-If you want to retrieve a FAQ from the *.answers archives, you might
-also like to try the following archive sites:
+  RTFM mirror sites:
 
-North America: ftp.uu.net                     /usenet/news.answers
-               mirrors.aol.com                /pub/rtfm/usenet
-               ftp.seas.gwu.edu               /pub/rtfm
-Europe:        ftp.uni-paderborn.de           /pub/FAQ
-               ftp.Germany.EU.net             /pub/newsarchive/news.answers
-               ftp.sunet.se                   /pub/usenet
-Asia:          nctuccca.edu.tw                /USENET/FAQ
-               hwarang.postech.ac.kr          /pub/usenet/news.answers
-               ftp.hk.super.net               /mirror/faqs
+  North America:
+    ftp://ftp.uu.net/usenet/news.answers
+    ftp://mirrors.aol.com/pub/rtfm/usenet
+    ftp://ftp.seas.gwu.edu/pub/rtfm
+  Europe:
+    ftp://ftp.uni-paderborn.de/pub/FAQ
+    ftp://ftp.Germany.EU.net/pub/newsarchive/news.answers
+    ftp://ftp.sunet.se/pub/usenet
+  Asia:
+    ftp://nctuccca.edu.tw/USENET/FAQ
+    ftp://hwarang.postech.ac.kr/pub/usenet/news.answers
+    ftp://ftp.hk.super.net/mirror/faqs
 
