@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.20 $$Date: 1999/11/01 21:00:07 $
+The Perl 5 Module List       $Revision: 3.21 $$Date: 1999/11/02 03:46:56 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.20 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.21 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -903,7 +903,13 @@ Devel::
 Exception::
 ::Cxx             Rd+f Cause perl to longjmp using C++ exceptions   JPRIT
 
+Perf::               Performance measurement other than benchmarks
+::ARM             a    Application Response Measurement             BBACKER
+
 Usage             bupr Type and range checking on subroutine args   JACKS
+
+Rcs               adcf Alternate RCS interface (see VCS::RCS)       CFRETER
+VCS               ampO Generic interface to Version Control Systems LBROCARD
 
 VCS::
 ::CVS             Rdpo Interface to GNU's CVS                       RSAVAGE
@@ -911,7 +917,6 @@ VCS::
 ::RCS             idpf Interface layer over RCS (See also Rcs)      RJRAY
 ::RCE             idcf Perl layer over RCE C API                    RJRAY
 
-Rcs               adcf Alternate RCS interface (see VCS::RCS)       CFRETER
 Include           adpO Parse C header files for use in XS           GBARR
 Make              adpO Makefile parsing, and 'make' replacement     NI-S
 
@@ -1135,6 +1140,9 @@ Net::
 ::servent         adpf A by-name interface for services functions   TOMC
 ::xAP             adpO Interface to IMAP,ACAP,ICAP substrate        KJOHNSON
 
+Net::IMAP::
+::Simple          bdpO Only implements the basic IMAP features      JPAF
+
 IPC::
 ::Chat2           ?    Out-of-service during refit!                 GBARR
 ::ChildSafe       RdcO Control child process w/o risk of deadlock   DSB
@@ -1350,11 +1358,11 @@ Tie::
 ::DBI             RdpO Tie hash to a DBI handle                     LDS
 ::Dir             adpr Tie hash for reading directories             GBARR
 ::File            adpr Tie hash to files in a directory             AMW
-::FileLRUCache    a    N/A                                          SNOWHARE
+::FileLRUCache    bdph File based persistent LRU cache              SNOWHARE
 ::Handle          RdpO Base class for implementing tied filehandles STBEY
 ::HashDefaults    adpr Let a hash have default values               JDPORTER
 ::IxHash          RdpO Indexed hash (ordered array/hash composite)  GSAR
-::ListKeyedHash   bdpr Use lists to key multi-level hashes          SNOWHARE
+::ListKeyedHash   Rdpr Use lists to key multi-level hashes          SNOWHARE
 ::Mem             adcO Bind perl variables to memory addresses      PMQS
 ::Multidim        adpr "tie"-like multidimensional data structures  JDPORTER
 ::OffsetArray     adpr Tie one array to another, with index offset  JDPORTER
@@ -1374,8 +1382,8 @@ Tie::Cache::
 Class::
 ::Eroot           RdpO Eternal Root - Object persistence            DMR
 ::Multimethods    Rdpf A multiple dispatch mechanism for Perl       DCONWAY
-::NamedParms      a    N/A                                          SNOWHARE
-::ParmList        a    N/A                                          SNOWHARE
+::NamedParms      MdpO A named parameter accessor base class        SNOWHARE
+::ParmList        MdpO A named parameter list processor             SNOWHARE
 ::Singleton       bdpO Implementation of a "Singleton" class        ABW
 ::Template        Rdpr Struct/member template builder               DMR
 ::Tree            Mdpo C++ class hierarchies & disk directories     RSAVAGE
@@ -1452,6 +1460,7 @@ DBD::
 ::Empress         adcO Empress RDBMS Driver                         SWILLIAM
 ::FreeTDS         adcO DBI driver for MS SQLServer and Sybase       SPANNRING
 ::SearchServer    cdcO PCDOCS/Fulcrum SearchServer Driver for DB    SHARI
+::Illustra        bmcO Illustra Driver for DBI                      PMH
 ::Informix        amcO Informix Driver for DBI                      JOHNL
 ::Informix4       amcO DBI driver for Informix SE 4.10              GTHYNI
 ::Ingres          amcO Ingres Driver for DBI                        HTOUG
@@ -1477,6 +1486,7 @@ Sybase::
 ::CTlib           RdcO Sybase CTlibrary interface                   MEWP
 
 Ace               i    Interface to ACEDB (Popular Genome DB)       LDS
+BBDB              a    Insiduous big brother database               LAXEN
 Datascope         Rdcf Interface to Datascope RDBMS                 DANMQ
 LotusNotes        i    Interface to Lotus Notes C/C++ API           MBRECH
 Msql              RmcO Mini-SQL database interface                  JWIED
@@ -1781,7 +1791,7 @@ Natural Languages
 Lingua::
 ::DetectCharset   a    Heuristics to detect coded character sets    JNEYSTADT
 ::Ispell          adpf Interface to the Ispell spellchecker         JDPORTER
-::Stem            a    N/A                                          SNOWHARE
+::Stem            Rdph Word stemmer with localization               SNOWHARE
 
 Specific Natural Languages
 
@@ -1796,6 +1806,7 @@ Lingua::EN::
 ::Inflect         Mdpf English singular->plural and "a"->"an"       DCONWAY
 ::Ordinal         i    Convert numbers to words                     HIGHTOWE
 ::Squeeze         bdpf Shorten english text for Pagers/GSM phones   JARIAALTO
+::Syllable        a    Estimate syllable count in words             GREGFAST
 
 Lingua::RU::
 ::Charset         anpf Detect/Convert russian character sets.       FARBER
@@ -1830,7 +1841,7 @@ Parse::
 
 Search::
 ::Dict            Supf Search a dictionary ordered text file        P5P
-::InvertedIndex   a    N/A                                          SNOWHARE
+::InvertedIndex   bdpO Inverted index database support              SNOWHARE
 
 SGML::
 ::Element         cdpO Build a SGML element structure tree          LSTAF
@@ -2019,7 +2030,7 @@ CGI::
 ::Imagemap        adpO Imagemap handling for specialized apps       MIKEH
 ::LogCarp         adpf Error, log, bug streams, httpd style format  MIKEKING
 ::MiniSvr         RmpO Fork CGI app as a per-session mini server    CGIP
-::Minimal         a    N/A                                          SNOWHARE
+::Minimal         MdpO A micro-sized CGI handler                    SNOWHARE
 ::Out             adpf Buffer CGI output and report errors          MUIR
 ::Persistent      adpO Transparent State Persistence in CGI scripts VIPUL
 ::Query           adpO Parse CGI quiry strings                      MPECK
@@ -2371,6 +2382,7 @@ SelectSaver       SupO Save and restore selected file handle        CHIPS
 Selectable        cdpO Event-driven I/O streams                     MUIR
 
 Log::
+::Agent           i    A general logging framework                  RAM
 ::Topics          Rdpf Control flow of topic based logging messages JARW
 
 Expect            RdpO Close relative of Don Libes' Expect in perl  AUSCHUTZ
@@ -2393,6 +2405,7 @@ Win32::
 ::FileType        RdpO modify Win32 fily type mapping               JENDA
 ::FUtils          bdcf Implements missing File Utility functions    JOCASA
 ::GD              RdcO Win32 port of the GD extension (gif module)  DAVEROTH
+::GuiTest         adcf Tests for SendKeys and more                  ERNGUI
 ::IPC             bdcO Base class for Win32 synchronization objects CJM
 ::Message         bdcf Network based message passing                DAVEROTH
 ::Mutex           bdcO Use Win32 mutex objects for IPC              CJM
