@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.49 $Date: 1998/08/15 11:39:32 $
+The Perl 5 Module List       Revision: 2.49 $Date: 1998/09/07 16:29:17 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -672,7 +672,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.102 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.103 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1264,6 +1264,9 @@ CORBA::
 ::IOP::IOR     adpO  Decode, munge, and re-encode CORBA IORs      PHILIPA
 ::IDLtree      adpf  IDL to symbol tree translator                OMKELLOGG +
 
+Modem::
+Vgetty         bdpO  Interface to voice modems using vgetty       YENYA
+
 _______________________________________________________________________
 
 6) Data Types and Data Type Utilities (see also Database Interfaces)
@@ -1310,6 +1313,9 @@ Statistics::
 ::MaxEntropy   Rdpf  Maximum Entropy Modeling                     TERDOEST +
 ::OLS          bdpO  ordinary least squares (curve fitting)       SMORTON +
 ::ROC          bdpO  ROC curves with nonparametric conf. bounds   HAKESTLER
+
+Algorithms::
+::LCS          bdpr  Longest Common Subsequence / diff            MJD
 
 Algorithms::Numerical::
 ::Shuffle      Rdph  Knuth's shuffle algorithm                    ABIGAIL !
@@ -1409,6 +1415,7 @@ Tie::
 ::IxHash       RdpO  Indexed hash (ordered array/hash composite)  GSAR
 ::Mem          adcO  Bind perl variables to memory addresses      PMQS
 ::Quick        i     Simple way to create ties                    TIMB
+::SentientHash cdpr  Tracks changes to nested data structures     ANDREWF
 ::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
 ::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
 ::TextDir      rdpO  ties a hash to a directory of textfiles      KWILLIAMS !
@@ -1458,7 +1465,11 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 DBI            amcO  Generic Database Interface (see DBD modules) DBIML
-DBD::
+
+DBIx::               Extensions to the DBI
+::Recordset    bmpO  Access/Modify DBI handles via Arrays/Hashs   GRICHTER
+::Tree         i     Expand self-referential table into a tree    BJEPS
+
 DBD::
 ::Altera       bdpO  Altera SQL Server for DBI - pure Perl code   DSOUFLIS
 ::CSV          adcO  SQL engine and DBI driver for CSV files      JWIED
@@ -1533,6 +1544,10 @@ OLE::
 ::PropertySet  aupO  Property Set interface                       MSCHWARTZ
 ::Storage      aupO  Structured Storage / OLE document interface  MSCHWARTZ
 
+Spreadsheet::
+::Excel        i     Interface to Excel spreadsheets              RRAWLINGS
+::Lotus        i     Interface to Lotus 1-2-3 spreadsheets        RRAWLINGS
+
 _______________________________________________________________________
 
 8) User Interfaces (Character and Graphical)
@@ -1587,14 +1602,17 @@ X11::
 ::Auth         adpO  Read and handle X11 '.Xauthority' files      SMCCAM
 ::Fvwm         RdcO  interface to the FVWM window manager API     RJRAY
 ::Keysyms      adpf  X11 key symbols (translation of keysymdef.h) SMCCAM
-::Lib          adcO  X11 library interface                        KENFOX
+::Lib          bdcO  X11 library interface                        KENFOX
 ::Motif        bdcO  Motif widget set interface                   KENFOX
 ::Protocol     adpO  Raw interface to X Window System servers     SMCCAM
-::Toolkit      adcO  X11 Toolkit library interface                KENFOX
+::Toolkit      bdcO  X11 Toolkit library interface                KENFOX
 ::Wcl          bdcO  Interface to the Widget Creation Library     JHPB
 ::XEvent       bdcO  provides perl OO acess to XEvent structures  MARTINB
 ::XFontStruct  bdcO  provides perl OO access to XFontStruct       MARTINB
+::XRT          adcO  XRT widget set (commercial) interface        KENFOX
+::Xbae         adcO  Xbae matrix (spreadsheet like) interface     KENFOX
 ::Xforms       bdcO  provides the binding to the xforms library   MARTINB
+::Xpm          adcf  X Pixmap library interface                   KENFOX
 
 Abstract Graphical User Interfaces modules
 
@@ -1793,6 +1811,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Getopt::
+::Declare      RdpO  An easy-to-use WYSIWYG command-line parser   DCONWAY
 ::EvaP         Mdpr  Long/short options, multilevel help          LUSOL
 ::Gnu          adcf  GNU form of long option handling             WSCOT
 ::Help         bdpf  Yet another getopt, has help and defaults    IANPX
@@ -1809,7 +1828,6 @@ IniConf        bdpO  Read/Write INI-Style configuration files     SHUTTON
 
 App::                General application development tools
 ::Config       bdpO  Configuration file mgmt                      ABW
-
 
 _______________________________________________________________________
 
@@ -1845,8 +1863,9 @@ No::
 ::Telenor      adpf  Norwegian stuff                              GAAS
 
 Cz::
-::Sort         adpO  Czech sorting                                JANPAZ
 ::Cstocs       adpO  Charset reencoding                           JANPAZ
+::Sort         adpO  Czech sorting                                JANPAZ
+::Speak        bdpf  number, etc. convertor to the Czech language YENYA
 
 _______________________________________________________________________
 
@@ -1922,7 +1941,7 @@ HTML::
 ::Simple       bdpf  Simple functions for generating HTML         TOMC
 ::EP           adpO  Modular, extensible Perl embedding           JWIED +
 ::Element      ampO  Representation of a HTML parsing tree        LWWWP
-::Embperl      bdcf  Embed Perl in HTML                           GRICHTER
+::Embperl      Rmcf  Embed Perl in HTML                           GRICHTER
 ::Entities     bmpf  Encode/decode HTML entities                  LWWWP
 ::Formatter    ampO  Convert HTML to plain text or Postscript     LWWWP
 ::Mason        bdpO  Build sites from modular Perl/HTML blocks    JSWARTZ
@@ -2052,6 +2071,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Compress::
+::LZO          Rdcf  Interface to the LZO compression library     MFX
 ::Zlib         RdcO  Interface to the Info-Zip zlib library       PMQS
 
 Convert::
@@ -2059,7 +2079,7 @@ Convert::
 ::BinHex       cdpO  Convert to/from RFC1741 HQX7 (Mac BinHex)    ERYQ
 ::EBCDIC       adpf  ASCII to/from EBCDIC                         CXL
 ::Recode       ?     Mapping functions between character sets     GAAS
-::SciEng       i     Convert scientific postfix scale factors     COLINK
+::SciEng       bdpO  Convert numbers with scientific notation     COLINK
 ::Translit     MdpO  String conversion among many character sets  GENJISCH
 ::UU           bdpf  UUencode and UUdecode                        ANDK
 
@@ -2079,7 +2099,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 GD             adcO  GIF editing/painting/manipulation            LDS
-OpenGL         adcf  Interface to OpenGL drawing/imaging library  ADESC
+OpenGL         adcf  Interface to OpenGL drawing/imaging library  CWEVERITT
 PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
 GIFgraph       RdpO  Package to generate GIF graphs, uses GD.pm   MVERB
@@ -2104,6 +2124,9 @@ Image::
 Chart::
 ::Base         a     Business charts                              MKRUSE
 ::Plot         bdcO  Graph two-dimensional data (uses GD.pm)      SMORTON
+
+MPEG::
+::MP3Tag       bdpf  Extract/edit tag information in MP3 files    CNANDOR
 
 T3D            cdpO  Realtime extensible 3D rendering             GJB
 ThreeD         i     Namespace root for all kinds of 3D modules   ADESC
@@ -2204,6 +2227,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 Win32::
+::ASP          Rdpr  Makes PerlScript ASP development easier      MSERGEANT
 ::AdminMisc    Rdcf  Misc admin and net functions                 DAVEROTH
 ::ChangeNotify bdcO  Monitor changes to files and directories     CJM
 ::Event        bdcO  Use Win32 event objects for IPC              CJM
@@ -2223,7 +2247,6 @@ Win32::
 ::Semaphore    bdcO  Use Win32 semaphore objects for IPC          CJM
 ::SerialPort   adpO  Win32 Serial functions/constants/interface   BBIRTH
 ::WinError     adcf  Interface to Win32 WinError functions        WIN32
-
 
 WinNT          cdcf  Interface to Windows NT specific functions   WIN32
 NT             cdcf  Old name for WinNT - being phased out        WIN32
@@ -2285,7 +2308,7 @@ BarCode::
 Audio::
 ::Sox          i     sox sound library as one or more modules     NI-S
 
-MIDI           cdpO  Object interface to MIDI files               SBURKE +
+MIDI           RdpO  Object interface to MIDI files               SBURKE
 
 Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 
