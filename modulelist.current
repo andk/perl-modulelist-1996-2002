@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.16 $$Date: 1999/10/28 06:10:41 $
+The Perl 5 Module List       $Revision: 3.17 $$Date: 1999/10/29 02:46:07 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.16 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.17 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1364,6 +1364,9 @@ Tie::
 ::TextDir         rdpO ties a hash to a directory of textfiles      KWILLIAMS
 ::Watch           bdpO Watch variables, run code when read/written  LUSOL
 
+Tie::Cache::
+::LRU             adpr A Least-Recently Used cache                  MSCHWERN
+
 Class::
 ::Eroot           RdpO Eternal Root - Object persistence            DMR
 ::Multimethods    Rdpf A multiple dispatch mechanism for Perl       DCONWAY
@@ -1468,7 +1471,7 @@ Sybase::
 
 Ace               i    Interface to ACEDB (Popular Genome DB)       LDS
 Datascope         Rdcf Interface to Datascope RDBMS                 DANMQ
-LotusNotes        i    Interface to Lotus Notes C/C++ API           JONO
+LotusNotes        i    Interface to Lotus Notes C/C++ API           MBRECH
 Msql              RmcO Mini-SQL database interface                  JWIED
 Mysql             RmcO mysql database interface                     JWIED
 ObjStore          Rm+O ObjectStore OODBMS Interface                 JPRIT
@@ -1567,6 +1570,9 @@ NCurses           cdcO Curses using the ncurses package             WPS
 PV                bmpO PerlVision curses windowing (OO widgets etc) AGUL
 PerlMenu          Mdpf Curses-based menu and template system        SKUNZ
 
+Curses::
+::Forms           cdph Form management for Curses::Widgets          CORLISS
+
 Emacs             cdcf Support for Perl embedded in GNU Emacs       JTOBEY
 Emacs::
 ::Lisp            bdch Perl-to-Emacs-Lisp glue                      JTOBEY
@@ -1619,7 +1625,7 @@ _______________________________________________________________________
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 Clips             adpO Interface to the Expert System Clips         MSULLIVAN
-Rc                adpf Perl interface for the Rc shell              JPRIT
+Rc                cdcO Perl interface for the Rc shell              JPRIT
 SICStus           adcO Interface to SICStus Prolog Runtime          CBAIL
 
 C::
@@ -1832,6 +1838,10 @@ XML               RmhO Large collection of XML related modules      XMLML
 
 RTF::
 ::Base            i    Classes for Microsoft Rich Text Format       NI-S
+::Document        a    Generate Rich Text (RTF) Files               RRWO
+::Generator       i    Next Generation of RTF::Document             RRWO
+::Group           a    Base class for manipulating Rich Text Format RRWO
+::Parser          a    Base class for parsing RTF files             PVERD
 
 SQL::
 ::Statement       adcO Small SQL parser and engine                  JWIED
@@ -1866,7 +1876,7 @@ Getopt::
 ::EvaP            Mdpr Long/short options, multilevel help          LUSOL
 ::Gnu             adcf GNU form of long option handling             WSCOT
 ::Help            bdpf Yet another getopt, has help and defaults    IANPX
-::Long            Supf Advanced option handling                     JV
+::Long            Sdpr Advanced option handling                     JV
 ::Mixed           Rdpf Supports both long and short options         CJM
 ::Regex           ad   Option handling using regular expressions    JARW
 ::Simple          MdpO A simple-to-use interface to Getopt::Long    RSAVAGE
@@ -1955,6 +1965,7 @@ Crypt::
 ::Random          bdpO Cryptographically Strong Random Numbers      VIPUL
 ::Rot13           cdpO simple encryption often seen on usenet       AYRNIEU
 ::RSA             bdpO RSA encryption, decryption, key generation   VIPUL
+::UnixCrypt       Rdpf Perl-only implementation of crypt(3)         MVORL
 
 OpenCA            Rdpf Tools for running a Certification Authority  MADWOLF
 
@@ -3186,8 +3197,7 @@ to a CGI script that lets you edit the database entries yourself.
   LUTHERH  Luther Huffman <lutherh@stratcom.com>
   LWALL    Larry Wall. Author of Perl. Busy man. <larry@wall.org>
   LWWWP    The libwww-perl mailing list
-           Mail to libwww-perl-REQUEST@ics.uci.edu with body
-           "subscribe"
+           
   MACGYVER Habeeb J. Dihu <macgyver@tos.net>
   MADWOLF  Massimiliano Pala <madwolf@openca.org>
   MAHEX    Mark "Hex" Hershberger <mah@eecs.tulane.edu>
@@ -3210,6 +3220,7 @@ to a CGI script that lets you edit the database entries yourself.
   MATTW    Matthew M. Wright <mattw@worldwidemart.com>
   MAURICE  Maurice Aubrey <maurice@hevanet.com>
   MAXM     Max Muzi <maxim@comm2000.it>
+  MBRECH   Martin Brech <Martin.Brech@erl11.siemens.de>
   MCAFEE   Sean McAfee <mcafee@umich.edu>
   MCPL     The MacPerl mailing list
            Mail to macperl-REQUEST@macperl.org with body "subscribe".
