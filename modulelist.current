@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.25 $$Date: 1999/11/19 02:58:18 $
+The Perl 5 Module List       $Revision: 3.26 $$Date: 1999/11/19 03:12:32 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -521,7 +521,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.25 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.26 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1759,6 +1759,7 @@ File::
 ::Lock            adcf File locking using flock() and lockf()       JHI
 ::LckPwdF         adcf Lock and unlock the passwd file              ALLENS
 ::Path            Supf File path and name utilities                 P5P
+::Rsync           i    Copy efficiently over the net and locally    LEAKIN
 ::Signature       cdpf Heuristics for file recognition              JHI
 ::Slurp           bdpf Read/write/append files quickly              MUIR
 ::Sort            Rdpf Sort a file or merge sort multiple files     CNANDOR
@@ -1945,6 +1946,9 @@ Chatbot::
 
 Quiz::
 ::Question        cdpO Questions and Answers wrapper                RFOLEY
+
+Template::
+::*               RdpO Extensive Toolkit for template processing    ABW
 
 _______________________________________________________________________
 
