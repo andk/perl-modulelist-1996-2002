@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.41 $Date: 1997/05/06 12:04:39 $
+The Perl 5 Module List       Revision: 2.41 $Date: 1997/05/06 13:05:42 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -207,7 +207,7 @@ the module (and not the maintainers of the archives or this list).
 Contact details are given at the start of Part 4.
 
 For the navigation through the modules collected on the CPAN there are
-sevaral entry points: http://www.perl.com/CPAN/CPAN.html provides
+several entry points: http://www.perl.com/CPAN/CPAN.html provides
 verbose descriptions for each and every module. If you prefer a simple
 clickable list you may prefer
 http://www.perl.com/CPAN/modules/01modules.index.html. The file you're
@@ -225,7 +225,7 @@ people. How much time has perl saved you since you started using it?
 Do you have any modules you could share with others? For example, you
 may have some perl4 scripts from which generally useful, and reusable,
 modules could be extracted. There may be many people who would find
-your work very useful. Please play you part and contribute to the Perl
+your work very useful. Please play your part and contribute to the Perl
 community where you can. [ end of sermon :-]
 
 Help save the world! Please submit new entries and updates to us so we
@@ -614,7 +614,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.72 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.73 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -967,28 +967,31 @@ _______________________________________________________________________
 
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
-POSIX          SupO  An interface to most (all?) of POSIX.1       P5P
+Env            Supf  Alias environment variables as perl vars     P5P
+Errno          cdpf  Constants from errno.h EACCES, ENOENT etc    GBARR !
 Fcntl          Sdcf  Defines fcntl() constants (see File::Lock)   JHI
 Ioctl          cdcf  Defines ioctl() constants                    KJALB
-Errno          cdpf  Constants from errno.h EACCES, ENOENT etc    GBARR !
-Env            Supf  Alias environment variables as perl vars     P5P
+POSIX          SupO  An interface to most (all?) of POSIX.1       P5P
 Shell          Supf  Run shell commands transparently within perl P5P
 
 BSD::
 ::HostIdent    i     s/gethostname(), s/gethostid()               JHI
 ::Resource     Rdcf  getrusage(), s/getrlimit(), s/getpriority()  JHI
 
+Proc::
+::ExitStatus   cdpf  Interpret and act on wait() status values    ROSCH
+::Forkfunc     Rdpf  Simple lwall-style fork wrapper              MUIR
+::SafePipe     cdpf  popen() and `` without calling the shell     ROSCH
+::Simple       adpO  Fork wrapper with objects                    MSCHILLI
+::SyncExec     cdpf  Spawn processes but report exec() errors     ROSCH
+::times        adpf  By-name interface to process times function  TOMC
+
+Quota          adcf  Disk quota system functions, local & remote  TOMZO
+
 Sys::
 ::Hostname     Supf  Implements a portable hostname function      P5P
 ::Syslog       Supf  Provides same functionality as BSD syslog    P5P
 ::AlarmCall    Rupf  Timeout on any sub. Allows nested alarms     JACKS
-
-Quota          adcf  Disk quota system functions, local & remote  TOMZO
-
-Proc::
-::times        adpf  By-name interface to process times function  TOMC
-::Forkfunc     Rdpf  Simple lwall-style fork wrapper              MUIR
-::Simple       adpO  Fork wrapper with objects                    MSCHILLI
 
 Platform Specific Modules
 
@@ -1037,6 +1040,11 @@ VMS::
 ::SysCalls     i     VMS-specific system calls                    CBAIL
 ::Filespec     Sdcf  VMS and Unix file name syntax                CBAIL
 
+Portable Digital Assistants
+
+PDA::
+::Pilot        amcO  Interface to pilot-link library              KJALB
+
 _______________________________________________________________________
 
 5) Networking, Device Control (modems) and InterProcess Communication
@@ -1069,6 +1077,7 @@ Net::
 ::Ping         SupO  TCP and ICMP ping (will come with perl5.004) RMOSE !
 ::Ping         Supf  TCP ping (comes with with perl5.003)         PMQS  !
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
+::SNMP         adpO  Interface to SNMP Protocol (RFC1157)         GBARR
 ::SNPP         cdpO  Client interface to SNPP protocol            GBARR
 ::SOCKS        cdcf  TCP/IP access through firewalls using SOCKS  SCOOPER
 ::SSLeay       adcf  Secure Socket Layer (Eric Young's version)   SAMPO
@@ -1089,20 +1098,19 @@ IPC::
 ::SysV         adcr  shared memory, semaphores, messages etc      JACKS
 ::Mmap         i     Interface to Unix's mmap() shared memory     MICB
 ::Globalspace  cdpO  Multi-process shared hash and shared events  JACKS
+::Signal       cdpf  Translate signal names to/from numbers       ROSCH
 
 RPC::                Remote Procedure Calls (see also DCE::RPC)
 ::ONC          adcO  ONC RPC interface (works with perlrpcgen)    JAKE  !
 
 DCE::                Distributed Computing Environment (OSF)
-::Registry     bdcO  DCE registry functions                       DOUGM
-::rgybase      bdcO  Constants from rgybase.h,rgynbase.h          DOUGM
+::ACL          bdcO  Interface to Access Control List protocol    DOUGM
+::DFS          bdcO  DCE Distributed File System interface        PHENSON
 ::Login        bdcO  Interface to login functions                 DOUGM
-::login_base   bdcO  Constants from sec_login.h,sec_login_base.h  DOUGM
+::RPC          c     Remote Procedure Calls                       DOUGM
+::Registry     bdcO  DCE registry functions                       DOUGM
 ::Status       bdpr  Make sense of DCE status codes               DOUGM
 ::UUID         bdcf  Misc uuid functions                          DOUGM
-::ACL          bdcO  Interface to Access Control List protocol    DOUGM
-::aclbase      cdcO  Constants from aclbase.h                     DOUGM
-::RPC          c     Remote Procedure Calls                       DOUGM
 
 Proxy          i     Transport-independent remote processing      MICB
 Proxy::
@@ -1149,7 +1157,7 @@ Math::
 
 Statistics::
 ::LTU          RdpO  Implements Linear Threshold Units            TOMFA
-::Descriptive  RdpO  Descriptive statistical methods              JKAST
+::Descriptive  RdpO  Descriptive statistical methods              COLINK
 ::ChiSquare    Rdpf  Chi Square test - how random is your data?   JONO
 
 PDL            amcf  Perl Data Language - numeric analysis env    PERLDL
@@ -1171,7 +1179,7 @@ List::
 
 Bit::
 ::ShiftReg     Rdcf  Rotate/shift registers (all C integer types) STBEY
-::Vector       RdcO  Efficient bit vector base class              STBEY !
+::Vector       RdcO  Efficient bit vector and set base class      STBEY !
 
 Set::
 ::IntRange     RdcO  Set of integers (arbitrary intervals, fast)  STBEY +
@@ -1231,6 +1239,7 @@ Class::
 
 Object::
 ::Info         Rupf  General info about objects (is-a, ...)       JACKS
+::Store        ad+O  ObjectStore DBMS Interface                   JPRIT
 
 Ref            RdpO  Print, compare, and copy perl structures     MUIR
 
@@ -1353,7 +1362,6 @@ Motif          cdcf  Simple Motif and Xt interface                ERICA
 Wcl            i     Interface to the Widget Creation Library     TOMH
 Fresco         cd+O  Interface to Fresco (post X11R6 version)     BPETH
 Qt             ad+O  Interface to the Qt toolkit                  AWIN
-Xforms         bdcO  See X11::Xforms; namespace will move to X11  MARTINB
 
 X11::
 ::Fvwm         adcO  interface to the FVWM window manager API     RJRAY
@@ -1405,6 +1413,7 @@ File::
 ::Path         Supf  File path and name utilities                 P5P
 ::Slurp        bdpf  Read/write/append files quickly              MUIR
 ::Sync         bdcf  POSIX/*nix fsync() and sync()                CEVANS
+::lockf        bdcf  Interface to lockf system call               PHENSON
 ::stat         adpf  A by-name interface for the stat function    TOMC
 
 Filesys::
@@ -1421,12 +1430,13 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 String::
-::Edit         adpf  Assorted handy string editing functions      TOMC
 ::Approx       Rdpf  Approximate string matching and substitution JHI
-::Scanf        Rdpf  Implementation of C sscanf function          JHI
-::Parity       adpf  Parity (odd/even/mark/space) handling        WINKO
 ::BitCount     adpf  Count number of "1" bits in strings          WINKO
+::Edit         adpf  Assorted handy string editing functions      TOMC
 ::MatchMany    adpf  Build fast code to match many patterns       TOMC
+::Parity       adpf  Parity (odd/even/mark/space) handling        WINKO
+::Scanf        Rdpf  Implementation of C sscanf function          JHI
+::ShellQuote   adpf  Quote string for safe passage through shells ROSCH
 
 Language text related modules
 
@@ -1510,8 +1520,8 @@ I18N::
 ::WideMulti    i     Wide and multibyte character string          JHI
 
 Locale::
-::Country      cdpf  ISO 3166 two letter country codes            NEILB +
-::Language     cdpf  ISO 639 two letter language codes            NEILB +
+::Country      Rdpf  ISO 3166 two letter country codes            NEILB +
+::Language     Rdpf  ISO 639 two letter language codes            NEILB +
 ::gettext      Rdcf  Multilanguage messages                       PVANDRY
 
 Unicode::
@@ -1756,6 +1766,7 @@ Mail::
 
 
 News::
+::Gateway      cdpO  Mail-to-news gateway and robomoderator       RRA
 ::NNTPClient   bdpO  Support for clients of NNTP servers          RVA
 ::Newsrc       adpO  Manage .newsrc files                         SWMCD
 
