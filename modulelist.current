@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.10 $$Date: 1999/10/24 13:35:14 $
+The Perl 5 Module List       $Revision: 3.11 $$Date: 1999/10/25 06:21:47 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.10 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.11 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1424,6 +1424,7 @@ DBD::
 ::Informix        amcO Informix Driver for DBI                      JOHNL
 ::Informix4       amcO DBI driver for Informix SE 4.10              GTHYNI
 ::Ingres          amcO Ingres Driver for DBI                        HTOUG
+::Multiplex       a    Spreading database load acrross servers      TIMB
 ::ODBC            amcO ODBC Driver for DBI                          DBIML
 ::Oracle          amcO Oracle Driver for DBI                        TIMB
 ::QBase           amcO QBase Driver for DBI                         BENLI
@@ -1939,6 +1940,7 @@ Authen::
 ::Krb5            RdcO Interface to Kerberos 5 API                  JHORWITZ
 ::PAM             bdch Interface to PAM library                     NIKIP
 ::TacacsPlus      adcO Authentication on tacacs+ server             MSHOYHER
+::Ticket          i    Suite consisting of master/client/tools      JSMITH
 
 RADIUS::
 ::Dictionary      bdpO Object interface to RADIUS dictionaries      CHRMASTO
@@ -2060,6 +2062,7 @@ MIME::
 ::Lite            RdpO Single module for composing simple MIME msgs ERYQ
 ::Parser          adpO Parses streams to create MIME entities       ERYQ
 ::ParserBase      adpO For building your own MIME parser            ERYQ
+::Types           i    returns the MIME type for a filename/suffix  OKAMOTO
 ::Words           cdpf Encode/decode RFC1522-escaped header strings ERYQ
 
 Apache            RdcO Interface to the Apache server API           DOUGM
@@ -2470,6 +2473,9 @@ Real::
 ::Encode          i    Interface to Progressive Network's RealAudio KMELTZ
 
 MQSeries          Rdch IBM's MQSeries messaging product interface   WPMOORE
+
+R3                i    SAP R/3 interface                            SCHOEN
+
 
 =======================================================================
 
@@ -2931,6 +2937,7 @@ to a CGI script that lets you edit the database entries yourself.
   GKNOPS   Gerd Knops <gerti@BITart.com>
   GLENNWOOD Glenn Wood <glenn@savesmart.com>
   GLOVER   Mike Glover <glover@credit.erin.utoronto.ca>
+  GMCCAR   Greg McCarroll <greg@mccarroll.demon.co.uk>
   GMLEWIS  Glenn M. Lewis <glenn@gmlewis.com>
   GNAT     Nathan Torkington <gnat@frii.com>
   GOSSAMER Gossamer <gossamer@tertius.net.au>
@@ -3130,7 +3137,7 @@ to a CGI script that lets you edit the database entries yourself.
   LMOLNAR  Laszlo Molnar <molnarl@cdata.tvnet.hu>
   LSTAF    Lennart Staflin <lenst@lysator.liu.se>
   LUISMUNOZ Luis Munoz <lem@cantv.net>
-  LUKKA    Tuomas J. Lukka <Tuomas.Lukka@Helsinki.FI>
+  LUKKA    Tuomas J. Lukka <lukka@iki.fi>
   LUSOL    Stephen O. Lidie <sol0@Lehigh.EDU>
   LUTHERH  Luther Huffman <lutherh@stratcom.com>
   LWALL    Larry Wall. Author of Perl. Busy man. <larry@wall.org>
@@ -3182,6 +3189,7 @@ to a CGI script that lets you edit the database entries yourself.
   MGRABNAR Matija Grabnar <matija.grabnar@arnes.si>
   MHALLGREN Michael Hallgren <m.hallgren@free.fr>
   MHAMILTON Martin Hamilton <martin@net.lut.ac.uk>
+  MHARNISCH Marcus Harnisch <marcus@harnisch.isdn.cs.tu-berlin.de>
   MHEMPEL  Matt Hempel <matt@aestus.net>
   MHM      Mike Moran <db2perl@ca.ibm.com>
   MHOSKEN  Martin Hosken <martin_hosken@sil.org>
