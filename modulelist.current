@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.108 $ $Date: 2002/05/06 10:10:47 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.109 $ $Date: 2002/08/27 21:09:56 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -499,7 +499,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.108 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.109 $=~/\d+/g);
                     sprintf "%d."."%03d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -826,6 +826,7 @@ enum               cdpf? resemble enumerated types in C               ZENIN
 integer            Supf? Controls float vs. integer arithmetic        P5P
 less               Supf? Controls optimisations (yet unimplemented)   P5P
 lib                Supf? Simple way to add/delete directories in @INC P5P
+namespace
 overload           SdpO? Overload perl operators for new data types   ILYAZ
 sigtrap            Supf? For trapping an abort and giving a traceback P5P
 strict             Supf? Controls averments (similar to pragmas)      P5P
@@ -1068,10 +1069,6 @@ Devel::
 ::TraceMethods     bdpOp Perl module for tracing module calls         CHROMATIC
 ::Constants        bdpfp Resolve Constants back to their names        CHROMATIC
 ::Messenger        bdpfp Let Your Code Talk to You                    KOLIBRIE
-
-Exception::
-::Class            RdpOp Declare exception class hierarchies          DROLSKY
-::Cxx              Rd+f? Cause perl to longjmp using C++ exceptions   JPRIT
 
 Perf::            Performance measurement other than benchmarks
 ::ARM              adcf? Application Response Measurement             BBACKER
@@ -1475,6 +1472,11 @@ IPC::
 ::SysV             Sucr? shared memory, semaphores, messages etc      P5P
 ::XPA              adch? Interface to SAO XPA messaging system        DJERIUS
 
+Replication::Recall::
+::Client           adhfo Recall replication library client interface  AGUL
+::Server           adhfo Recall replication library server interface  AGUL
+::DBServer         adpOp Database replication server using Recall     AGUL
+
 RPC::             Remote Procedure Calls (see also DCE::RPC)
 ::PlServer         RdpO? Interface for building Perl Servers          JWIED
 ::PlClient         RdpO? Interface for building pServer Clients       JWIED
@@ -1523,9 +1525,6 @@ SNMP::
 Mon::
 ::Client           RdpO? Network monitoring client                    TROCKIJ
 ::SNMP             RdpO? Network monitoring suite                     TROCKIJ
-
-Openview::
-::Message          Rdchp OO and function access to Openview opcmsg()  LBAXTER
 
 Parallel::
 ::ForkManager      RdpOp A simple parallel processing fork manager    DLUX
@@ -2016,13 +2015,17 @@ DFA::
 ::Kleene           Rdpfp Kleene's Algorithm for DFA                   STBEY
 ::Simple           cdpO? An "augmented transition network"            RANDYM
 
+X500::
+::DN               adpOp Handle X.500 DNs (Distinguished Names)       RJOOP
+::RDN              adpOp handle X.500 Relative Distinguished Names    RJOOP
+
+X500::DN::
+::Parser           MdpO? X500 Distinguished Name parser               RSAVAGE
+
 Boulder            MdpO? Generalized tag/value data objects           LDS
 Thesaurus          RdpOp Create associations between related things   DROLSKY
-
 BabelObjects       cdpf? Web Service Framework                        KERMAGO
-
 YAML               adphp YAML Ain't Markup Language (tm)              INGY
-
 GDS2               bdpOa manipulate GDS2 stream format files          SCHUMACK
 
 ADT
@@ -2232,13 +2235,6 @@ Spreadsheet::
 ::Excel
 ::Lotus
 
-X500::
-::DN               adpOp Handle X.500 DNs (Distinguished Names)       RJOOP
-::RDN              adpOp handle X.500 Relative Distinguished Names    RJOOP
-
-X500::DN::
-::Parser           MdpO? X500 Distinguished Name parser               RSAVAGE
-
 Alzabo             RdpOp A data modelling tool and RDBMS-OO mapper    DROLSKY
 
 Gemstone           RdpO? Interface to a GemStone object database      YOUD
@@ -2257,11 +2253,6 @@ Palm::
 ::ThinkDB          cdpOa Manipulate ThinkDB TinyBytes for PalmOS      EARNESON
 
 Relations          adphp Database, CGI, and Graph Interfunctionality  GAFFER
-
-Replication::Recall::
-::Client           adhfo Recall replication library client interface  AGUL
-::Server           adhfo Recall replication library server interface  AGUL
-::DBServer         adpOp Database replication server using Recall     AGUL
 
 Stanza
 
@@ -2379,7 +2370,6 @@ Modules in the realm of Tk but with a separate namespace
 Log::Dispatch::
 ::ToTk             RdpOp Interface class between Log::Dispatch and Tk DDUMONT
 ::TkText           RdpOp Text widget to log Log::Dispatch messages    DDUMONT
-::Win32EventLog
 
 Puppet::
 ::Body             adpO? Base class for persistent data               DDUMONT
@@ -2447,11 +2437,11 @@ Java::JVM::
 
 Language::
 ::Basic            adpO? Implementation of BASIC                      AKARGER
-::Prolog           anpO? An implementation of Prolog                  JACKS
-::PGForth          i   ? Peter Gallasch's Forth implementation        PETERGAL
 ::ML               cdpf? Implementation of ML                         DSPARLING
-::VBParser         i???? Visual Basic 6 source parser                 FRETT
+::PGForth          i   ? Peter Gallasch's Forth implementation        PETERGAL
+::Prolog           anpO? An implementation of Prolog                  JACKS
 ::Style            cdcOa Interpreter/Compiler for the Style Language  EKMETT
+::VBParser         i???? Visual Basic 6 source parser                 FRETT
 
 Language::DATR::
 ::DATR2XML         RdpOp Convert DATR to XML and back, wth XSLT & DTD LGODDARD
@@ -2614,6 +2604,10 @@ String::
 ::Similarity       MdcOg Calculate the similarity of two strings      MLEHMANN
 ::Buffer           bdpOp A simple string buffer class.                MCKAY
 ::Multibyte        RdpOp manipulate multibyte character strings       SADAHIRO
+
+Silly::
+::StringMaths      adpf? Do maths with letters and strings            SKINGTON
+::Werder           RdpO? Meaningless gibberish generator              CXREG
 
 Language text related modules
 
@@ -4005,6 +3999,10 @@ Strict::
 
 Coro               Rdchp create an manage coroutines                  MLEHMANN
 
+Exception::
+::Class            RdpOp Declare exception class hierarchies          DROLSKY
+::Cxx              Rd+f? Cause perl to longjmp using C++ exceptions   JPRIT
+
 _______________________________________________________________________
 
 21) File Handle, Directory Handle and Input/Output Stream Utilities
@@ -4124,6 +4122,9 @@ Win32API::
 
 WinNT              cdcf? Interface to Windows NT specific functions   WIN32
 NT                 cdcf? Old name for WinNT - being phased out        WIN32
+
+Log::Dispatch::
+::Win32EventLog
 
 _______________________________________________________________________
 
@@ -4295,10 +4296,6 @@ Router::
 Schedule::        See also Schedule:: in chapter 4
 ::Match            adpf? Pattern-based crontab-like schedule          TAIY
 
-Silly::
-::StringMaths      adpf? Do maths with letters and strings            SKINGTON
-::Werder           RdpO? Meaningless gibberish generator              CXREG
-
 Speech::
 ::EST              cd+h? Interface to the Edinburgh Speech Tools lib  DJHD
 ::Festival         RdpO? Communicate with a festival server process.  RCALEY
@@ -4348,8 +4345,13 @@ _______________________________________________________________________
 
 Name               DSLIP Description                                  Info
 ------------       ----- -------------------------------------------- ----
-Resolute::
-::RAPS             cd+O? Interface to Resolute Software's RAPS        CHGOETZE
+HtDig              RdpO? Interface for the HtDig indexing system      JTILLMAN
+JUNOS              RmpOb Perl interface to Juniper Inc. routers       METZZO
+MQSeries           RdcO? IBM's MQSeries messaging product interface   HBIERSMA
+NexTrieve          RmpOp Interface to the NexTrieve search engine     ELIZABETH
+PQI                cdcO? Perl Queuing Interface, to MQSeries, MSMQ    SIMONJ
+R3                 bdcO? Interface to SAP R/3 using RFCSDK            SCHOEN
+Tivoli             Smpfp Tivoli TME10 - Perl Interface                RHASE
 
 AltaVista::
 ::SearchSDK        cdcf? Perl Wrapper for AltaVista SDK functionality JTURNER
@@ -4360,16 +4362,8 @@ Db::
 ::DFC              adpOa OO Interface to Documentum's DFC using JPL   MSROTH
 ::Mediasurface     bdpOp API and I/O modules for Mediasurface CMS     NWETTERS
 
-Real::
-::Encode           i   ? Interface to Progressive Network's RealAudio KMELTZ
-
-HtDig              RdpO? Interface for the HtDig indexing system      JTILLMAN
-JUNOS              RmpOb Perl interface to Juniper Inc. routers       METZZO
-MQSeries           RdcO? IBM's MQSeries messaging product interface   HBIERSMA
-NexTrieve          RmpOp Interface to the NexTrieve search engine     ELIZABETH
-PQI                cdcO? Perl Queuing Interface, to MQSeries, MSMQ    SIMONJ
-R3                 bdcO? Interface to SAP R/3 using RFCSDK            SCHOEN
-Tivoli             Smpfp Tivoli TME10 - Perl Interface                RHASE
+Messaging::
+::TIBCO            cdhha Interfacing to TIBCO/Rendezvous(RVRD)        BWMCADAMS
 
 NexTrieve::
 ::Collection       RmpOp logical collection object                    ELIZABETH
@@ -4400,11 +4394,17 @@ NexTrieve::Collection::
 NexTrieve::Hitlist::
 ::Hit              RmpOp a single hit of the result                   ELIZABETH
 
-Messaging::
-::TIBCO            cdhha Interfacing to TIBCO/Rendezvous(RVRD)        BWMCADAMS
+Openview::
+::Message          Rdchp OO and function access to Openview opcmsg()  LBAXTER
 
 P4::
 ::Client           Rd+Ob Client interface to the Perforce SCM system  SMEE
+
+Real::
+::Encode           i   ? Interface to Progressive Network's RealAudio KMELTZ
+
+Resolute::
+::RAPS             cd+O? Interface to Resolute Software's RAPS        CHGOETZE
 
 SAP::
 ::Rfc              MdhOp SAP RFC Interface                            PIERS
