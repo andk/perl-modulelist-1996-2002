@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.5 $$Date: 1999/10/22 05:57:47 $
+The Perl 5 Module List       $Revision: 3.6 $$Date: 1999/10/22 06:27:25 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.5 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.6 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -802,6 +802,9 @@ O                 aucO Perl Compiler frontends                      MICB
 B::
 ::Fathom          bdpO Estimate the readability of Perl code        KSTAR
 ::Graph           bdpr Perl Compiler backend to diagram OP trees    SMCCAM
+::LexInfo         bdcO Show info about subroutine lexical variables DOUGM
+::Size            bdc0 Measure size of Perl OPs and SVs             DOUGM
+::TerseSize       bdpO Info about ops and their (estimated) size    DOUGM
 
 Source Code Filters
 
@@ -931,6 +934,8 @@ Proc::
 ::SyncExec        cdpf Spawn processes but report exec() errors     ROSCH
 ::times           adpf By-name interface to process times function  TOMC
 
+GTop              bdcO Perl interface to libgtop                    DOUGM
+
 Schedule::
 ::At              Rd   OS independent interface to the at command   JOSERODR
 
@@ -1006,6 +1011,9 @@ OS2::
 ::PrfDB           RdcO (Tied) access to .INI-style databases        ILYAZ
 ::REXX            RdcO Access to REXX DLLs and REXX runtime         ILYAZ
 ::UPM             bncf User Profile Management                      ILYAZ
+
+Riscos::
+::*               i    Namespace for Risc-OS (Acorn et.al.)         RISCOSML
 
 SGI::
 ::SysCalls        cdcf SGI-specific system calls                    AMOSS
@@ -1638,6 +1646,7 @@ File::
 ::Glob            adpf Filename globing (ksh style)                 TYEMQ
 ::Listing         Rdpf Parse directory listings                     GAAS
 ::Lock            adcf File locking using flock() and lockf()       JHI
+::LckPwdF         adcf Lock and unlock the passwd file              ALLENS
 ::Path            Supf File path and name utilities                 P5P
 ::Signature       cdpf Heuristics for file recognition              JHI
 ::Slurp           bdpf Read/write/append files quickly              MUIR
@@ -1800,7 +1809,8 @@ TeX::
 ::DVI             adpO Methods for writing DVI (DeVice Independent) JANPAZ
 ::Hyphen          adpO Hyphenate words using TeX's patterns         JANPAZ
 
-FrameMaker::   cdpO  Top level FrameMaker interface               PEASE
+FrameMaker        cdpO Top level FrameMaker interface               PEASE
+FrameMaker::
 ::FDK             idcO Interface to Adobe FDK                       PEASE
 ::MIF             cdpO Parse and Manipulate FrameMaker MIF files    PEASE
 ::Control         cdpO Control a FrameMaker session                 PEASE
@@ -1968,11 +1978,14 @@ CGI::
 ::XMLForm         adpO Create/query XML for forms                   MSERGEANT
 
 HTML::
-::QuickCheck      cdpf Fast simple validation of HMTL text          YLU
 ::Base            adpO Object-oriented way to build pages of HTML   GAND
-::Simple          bdpf Simple functions for generating HTML         TOMC
+::CalendarMonth   bdpO Calendar Months as HTML::Element trees       MSISK
 ::EP              adpO Modular, extensible Perl embedding           JWIED
 ::Element         ampO Representation of a HTML parsing tree        LWWWP
+::ElementGlob     bdp0 Manipulate multiple elements at once         MSISK
+::ElementRaw      bdpO Graft HTML strings on an HTML::Element       MSISK
+::ElementSuper    bdpO Various HTML::Element extensions             MSISK
+::ElementTable    bdpO HTML::Element table manipulation             MSISK
 ::Embperl         Rmcf Embed Perl in HTML                           GRICHTER
 ::Entities        Rmpf Encode/decode HTML entities                  LWWWP
 ::Formatter       ampO Convert HTML to plain text or Postscript     LWWWP
@@ -1981,6 +1994,8 @@ HTML::
 ::Mason           bdpO Build sites from modular Perl/HTML blocks    JSWARTZ
 ::ParseForm       i    Parse and handle HTML forms via templates    NMONNET
 ::Parser          RmpO  Basic HTML Parser                           LWWWP
+::QuickCheck      cdpf Fast simple validation of HMTL text          YLU
+::Simple          bdpf Simple functions for generating HTML         TOMC
 ::SimpleParse     bdpO Bare-bones HTML parser                       KWILLIAMS
 ::Stream          RdpO HTML output stream                           ERYQ
 ::Subtext         adpO Text substitutions on an HTML template       KAELIN
@@ -2190,6 +2205,12 @@ Chart::
 MPEG::
 ::MP3Info         bdpf Extract/edit tag information in MP3 files    CNANDOR
 
+Xmms              bdcO Interactive remote control shell for xmms    DOUGM
+Xmms::
+::Config          bdcO Perl interface to the xmms_cfg_* API         DOUGM
+::Remote          bdcO Perl interface to the xmms_remote_* API      DOUGM
+::Plugin          i    Perl interface to the xmms plugin APIs       DOUGM
+
 Gimp              Mmch Rich interface to write plugins for The Gimp MLEHMANN
 T3D               cdpO Realtime extensible 3D rendering             GJB
 ThreeD            i    Namespace root for all kinds of 3D modules   ADESC
@@ -2391,6 +2412,7 @@ BarCode::
 ::UPC             i    Produce PostScript UPC barcodes              JONO
 
 Audio::
+::CD              bdcO Perl interface to libcdaudio (cd + cddb)     DOUGM
 ::Sox             i    sox sound library as one or more modules     NI-S
 
 MIDI              RdpO Object interface to MIDI files               SBURKE
