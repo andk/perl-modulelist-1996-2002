@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.48 $$Date: 2000/05/23 10:50:19 $
+The Perl 5 Module List       $Revision: 3.49 $$Date: 2000/05/23 14:20:16 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.48 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.49 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1884,9 +1884,10 @@ File::
 ::Find            Supf Call func for every item in a directory tree P5P
 ::Flock           adpf flock() wrapper.  Auto-create locks          MUIR
 ::Glob            adpf Filename globing (ksh style)                 TYEMQ
+::LckPwdF         adcf Lock and unlock the passwd file              ALLENS
 ::Listing         Rdpf Parse directory listings                     GAAS
 ::Lock            adcf File locking using flock() and lockf()       JHI
-::LckPwdF         adcf Lock and unlock the passwd file              ALLENS
+::MultiTail       adpO Tail multiple files                          SGMIANO
 ::Path            Supf File path and name utilities                 P5P
 ::Remote          Rdph Read/write/edit remote files transparently   NWIGER
 ::Rsync           bdpO Copy efficiently over the net and locally    LEAKIN
@@ -1896,7 +1897,7 @@ File::
 ::Spec            bdpO Handling files and directories portably      KJALB
 ::Sync            bdcf POSIX/*nix fsync() and sync()                CEVANS
 ::Tail            bdpO A more efficient tail -f                     MGRABNAR
-::MultiTail       adpO Tail multiple files                          SGMIANO
+::Temp            adpf Create temporary files safely                TJENNESS
 ::chmod           Mdpf Allows for symbolic chmod notation           PINYAN
 ::lockf           bdcf Interface to lockf system call               PHENSON
 ::stat            Supf A by-name interface for the stat function    TOMC
@@ -2246,6 +2247,7 @@ URI::
 ::URL             RmpO Uniform Resource Locator objects             LWWWP
 
 CGI::
+::ArgChecker      bdpO Consistent, extensible CGI param validation  DLOWE
 ::Authent         Mdpf request the HTTP authentification            JENDA
 ::Base            RmpO Complete HTTPD CGI Interface class           CGIP
 ::BasePlus        RmpO Extra CGI::Base methods (incl file-upload)   CGIP
@@ -2443,7 +2445,7 @@ MailBot           cdpO Archive server, listserv, auto-responder     RHNELSON
 NetServer::
 ::Compiler        idph State machine compiler for TCP/IP servers    CHSTROSS
 ::Generic         RdpO generic OOP class for internet servers       CHSTROSS
-::ProcessTop      Rmpf Gives a top-like control screen for Event    JPRIT
+::Portal          bmpO Sets up a mini-server accessible via telnet  JPRIT
 
 Time::
 ::Warp            Rmcf Change the start and speed of Event time     JPRIT
