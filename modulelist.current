@@ -809,7 +809,7 @@ check all sections that might related to your particular needs.
 All the information corresponds to the latest updates we have received.
 We don't record the version number or release dates of the listed
 Modules. Nor do we record the locations of these Modules. Consult the
-contact, try the usual perl CPAN sites or ask in comp.lang.perl.misc.
+contact, try the usual perl CPAN sites or ask in comp.lang.perl.modules.
 Please do *not* ask us directly, we simply don't have the time. Sorry.
 
 
@@ -839,26 +839,29 @@ Where the 'DSLI' characters have the following meanings:
   S - Support Level:
     m   - Mailing-list
     d   - Developer
-    u   - Usenet newsgroup comp.lang.perl.misc
-    n   - None known, try comp.lang.perl.misc
+    u   - Usenet newsgroup comp.lang.perl.modules
+    n   - None known, try comp.lang.perl.modules
 
   L - Language Used:
     p   - Perl-only, no compiler needed, should be platform independent
     c   - C and perl, a C compiler will be needed
+    h   - Hybrid, written in perl with optional C code, no compiler needed
     +   - C++ and perl, a C++ compiler will be needed
     o   - perl and another language other than C or C++
 
   I - Interface Style
     f   - plain Functions, no references used
+    h   - hybrid, object and function interfaces available
     r   - some use of unblessed References or ties
     O   - Object oriented using blessed references and/or inheritance
 
 Where letters are missing they can usually be inferred from the
 others.  For example 'i' implies 'id', 'S' implies 'Su'.
 
-The Info column gives a contact reference 'tag'. Lookup this tag in the
-"Information / Contact Reference Details" section in Pert 3 of this
-document.  If no contact is given always try asking in comp.lang.perl.misc.
+The Info column gives a contact reference 'tag'. Lookup this tag in
+the "Information / Contact Reference Details" section in Pert 3 of
+this document. If no contact is given always try asking in
+comp.lang.perl.modules.
 
 Most Modules are nested in categories such as IPC::Open2 and IPC::Open3.
 These are shown as 'IPC::' on one line then each module listed below
@@ -918,7 +921,7 @@ Taint          bdpf  Utilities related to tainting                PHOENIX
 Perl Pragmatic Modules
 
 builtin        adcf  A selection of subs destined for the core    GBARR
-constant       adpf  Define compile-time constants                PHOENIX
+constant       Supf  Define compile-time constants                P5P
 diagnostics    Sdpf  For reporting perl diagnostics in full form  TOMC
 enum           cdpf  resemble enumerated types in C               ZENIN +
 integer        Supf  Controls float vs. integer arithmetic        P5P
@@ -1047,7 +1050,12 @@ BSD::
 ::Ipfwgen      bdpf  Generate ipfw(8) filters                     MUIR  +
 ::Resource     Rdcf  getrusage(), s/getrlimit(), s/getpriority()  JHI
 
+Async::
+::Group        adpO  Deal with simultaneous asynchronous calls    DDUMONT
+::Process      i     class to run sub-processes                   DDUMONT
+
 Proc::
+::Background   bdpO  OS independent background process objects    BZAJAC
 ::ExitStatus   cdpf  Interpret and act on wait() status values    ROSCH
 ::Forkfunc     Rdpf  Simple lwall-style fork wrapper              MUIR
 ::SafePipe     cdpf  popen() and `` without calling the shell     ROSCH
@@ -1120,6 +1128,9 @@ SGI::
 ::GL           adcr  SGI's Iris GL library                        AMOSS
 ::FM           adcr  SGI's Font Management library                AMOSS
 
+Unix::
+::UserAdmin    Rdpf  Interface to Unix Account Information        JZAWODNY
+
 VMS::
 ::Filespec     Sdcf  VMS and Unix file name syntax                CBAIL
 ::Lock         cnco  Object interface to $ENQ (VMS lock mgr)      BHUGHES
@@ -1156,7 +1167,7 @@ Net::
 ::CDDB         cdpr  Interface to the CDDB (CD Database)          DSTALDER +
 ::Cmd          cdpO  For command based protocols (FTP, SMTP etc)  GBARR
 ::DNS          bdpO  Interface to the DNS resolver                MFUHR !
-::Dict         i     Client of Dictionary Server Protocol (DICT)  ABIGAIL +
+::Dict         cdpO  Client of Dictionary Server Protocol (DICT)  ABIGAIL +
 ::Dnet         cdcO  DECnet-specific socket usage                 SPIDB
 ::Domain       adpf  Try to determine TCP domain name of system   GBARR
 ::DummyInetd   RdpO  A dummy Inetd server                         GBARR
@@ -1236,6 +1247,7 @@ RADIUS::
 
 CORBA::
 ::IOP::IOR     adpO  Decode, munge, and re-encode CORBA IORs      PHILIPA +
+::IDLtree      adpf  IDL to symbol tree translator                OMKELLOGG
 
 _______________________________________________________________________
 
@@ -1255,11 +1267,14 @@ Math::
 ::Derivative   Rdpr  1st and 2nd order differentiation of data    JARW
 ::Expr         adpO  Parses agebraic expressions                  HAKANARDO +
 ::Fortran      Rdpf  Implements Fortran log10 & sign functions    JARW
+::Fourier      i     Fast Fourier Transforms                      AQUMSIEH
 ::Fraction     bdpO  Fraction Manipulation                        KEVINA
 ::IEEE         i     Interface to ANSI/IEEE Std 754-1985 funcs
+::Integral     i     Integration of data                          AQUMSIEH
 ::Interpolate  Rdpr  Polynomial interpolation of data             MATKIN
 ::LinearProg   idp   Linear programming utilities                 JONO
 ::Matrix       adpO  Matrix data type (transpose, multiply etc)   ULPFR
+::MatrixBool   RdcO  Matrix of booleans (Boolean Algebra)         STBEY +
 ::MatrixCplx   idpO  Matrix data type for Complex Numbers         STBEY
 ::MatrixReal   RdpO  Everything you ever wanted to do with Matr.  STBEY
 ::Pari         adcf  Interface to the powerful PARI library       ILYAZ
@@ -1277,11 +1292,13 @@ Statistics::
 ::ChiSquare    Rdpf  Chi Square test - how random is your data?   JONO
 ::Descriptive  RdpO  Descriptive statistical methods              COLINK
 ::LTU          RdpO  Implements Linear Threshold Units            TOMFA
+::MaxEntropy   Rdpf  Maximum Entropy Modeling                     TERDOEST
+::OLS          bdpO  ordinary least squares (curve fitting)       SMORTON
 ::ROC          bdpO  ROC curves with nonparametric conf. bounds   HAKESTLER +
 
 Algorithms::Numerical::
-::Shuffle      Rd??  Knuth's shuffle algorithm                    ABIGAIL +
-::Sample       RD??  Knuth's sample algorithm                     ABIGAIL +
+::Shuffle      Rdph  Knuth's shuffle algorithm                    ABIGAIL +
+::Sample       RDph  Knuth's sample algorithm                     ABIGAIL +
 
 PDL            amcf  Perl Data Language - numeric analysis env    PERLDL
 
@@ -1316,13 +1333,11 @@ List::
 ::Utils        cdcf  Extra list/array manipulation functions      JNH
 
 Bit::
-::ShiftReg     Rdcf  Rotate/shift registers (all C integer types) STBEY
 ::Vector       RdcO  Efficient bit vector and set base class      STBEY
 
 Set::
 ::IntRange     RdcO  Set of integers (arbitrary intervals, fast)  STBEY
 ::IntSpan      adpO  Set of integers newsrc style '1,5-9,11' etc  SWMCD
-::IntegerFast  RdcO  Set of integers (algorithmical computations) STBEY
 ::Object       bdcO  Set of Objects (smalltalkish: IdentitySet)   JLLEROY +
 ::Scalar       adpO  Set of scalars (inc references)              JHI
 ::Window       bdpO  Manages an interval on the integer line      SWMCD
@@ -1368,7 +1383,7 @@ Tie::
 ::Array        c     Base class for implementing tied arrays      CHIPS
 ::CPHash       bdpO  Case preserving but case insensitive hash    CJM
 ::Cache        adpO  In memory size limited LRU cache             CHAMAS !
-::DB_Lock      i     Tie DB_File with automatic locking           KWILLIAMS +
+::DB_Lock      rdpO  Tie DB_File with automatic locking           KWILLIAMS +
 ::DBI          RdpO  Tie hash to a DBI handle                     LDS   !
 ::Dir          adpr  Tie hash for reading directories             GBARR
 ::File         adpr  Tie hash to files in a directory             AMW
@@ -1378,7 +1393,7 @@ Tie::
 ::Quick        i     Simple way to create ties                    TIMB
 ::ShiftSplice  i     Defines shift et al in terms of splice       LWALL
 ::SubstrHash   SdpO  Very compact hash stored in a string         LWALL
-::TextDir      i     ties a hash to a directory of textfiles      KWILLIAMS +
+::TextDir      rdpO  ties a hash to a directory of textfiles      KWILLIAMS +
 ::Watch        bdpO  Watch variables, run code when read/written  LUSOL
 
 Class::
@@ -1411,7 +1426,7 @@ Data::
 ::Check        cdpO  Checks values for various data formats       KENHOLM
 ::Dumper       RdpO  Convert data structure into perl code        GSAR
 ::Flow         RdpO  Acquire data based on recipes                ILYAZ
-::Locations    RdpO  Store data in "drawers", nest these at will! STBEY
+::Locations    RdpO  Handles nested insertion points in your data STBEY
 
 Tree::
 ::Base         cdpO  Defines a basic binary search tree           MSCHWERN
@@ -1434,6 +1449,7 @@ DBD::
 ::Informix     amcO  Informix Driver for DBI                      JOHNL
 ::Informix4    amcO  DBI driver for Informix SE 4.10              GTHYNI
 ::Ingres       amcO  Ingres Driver for DBI                        HTOUG
+::ODBC         amcO  ODBC Driver for DBI                          DBIML
 ::Oracle       amcO  Oracle Driver for DBI                        TIMB
 ::QBase        amcO  QBase Driver for DBI                         BENLI
 ::Solid        amcO  Solid Driver for DBI                         TWENRICH
@@ -1588,6 +1604,7 @@ SICStus        adcO  Interface to SICStus Prolog Runtime          CBAIL
 Fortran::
 ::NameList     adpf  Interface to FORTRAN NameList data           SGEL
 
+Clips          adpO  Interface to the Expert System Clips         MSULLIVAN
 
 _______________________________________________________________________
 
@@ -1655,8 +1672,9 @@ Text::
 ::CSV          adpO  Manipulate comma-separated value strings     ALANCITT
 ::CSV_XS       adpO  Fast 8bit clean version of Text::CSV         JWIED +
 ::DelimMatch   RdpO  Match (possibly nested) delimited strings    NWALSH
+::FillIn       i     Template Parsing and filling in              KWILLIAMS
 ::Format       RdpO  Advanced paragraph formatting                GABOR
-::Graphics     RdpO  Layout Helper for non-graphical terminals    SFARRELL +
+::Graphics     RdpO  Graphics rendering toolkit with text output  SFARRELL +
 ::Invert       cdpO  Create/query inv. index of text entities     NNEUL
 ::Metaphone    adpf  Phonetic encoding.  A modern Soundex         MSCHWERN
 ::MetaText     bdpO  Text processing/markup meta-language         ABW   !
@@ -1720,6 +1738,7 @@ RTF::
 
 SQL::
 ::Statement    adcO  Small SQL parser and engine                  JWIED +
+::Builder      adpO  OO interface for creating SQL statements     ZENIN
 
 TeX::
 ::DVI          adpO  Methods for writing DVI (DeVice Independent) JANPAZ
@@ -1831,9 +1850,6 @@ Authen::
 ::PAM          adcf  Interface to PAM library                     NIKIP +
 ::TacacsPlus   adcO  Authentication on tacacs+ server             MSHOYHER
 
-Authcard::
-::SDI          RdcO  SecurityDynamics SecurID cards interface     NIGELM +
-
 SSLeay::
 ::*            cdcO  Interface to SSLeay                          EAYNG
 
@@ -1876,6 +1892,7 @@ HTML::
 ::Mason        bdpO  Build sites from modular Perl/HTML blocks    JSWARTZ +
 ::Parse        ampO  Parse HTML documents                         LWWWP
 ::ParseForm    i     Parse and handle HTML forms via templates    NMONNET
+::SimpleParse  bdpO  Bare-bones HTML parser                       KWILLIAMS
 ::Stream       RdpO  HTML output stream                           ERYQ
 ::Table        bnpO  Write HTML tables via spreadsheet metaphor   STLACY
 ::TableLayout  bdpO  an extensible OO layout manager              SFARRELL
@@ -1900,7 +1917,6 @@ HTTPD::
 ::Access       cdpO  Management of server access control files    DOUGM
 
 WWW::
-::References   cdpf  Manage a collection of reference items       JJDG
 ::Robot        adpO  Web traversal engine for robots & agents     NEILB
 ::RobotRules   ampO  Parse /robots.txt file                       LWWWP
 ::Search       adpO  Front-end to Web search engines              JOHNH
@@ -2141,6 +2157,8 @@ Selectable     cdpO  Event-driven I/O streams                     MUIR
 Log::
 ::Topics       Rdpf  Control flow of topic based logging messages JARW
 
+Expect         RdpO  Close relative of Don Libes' Expect in perl  AUSCHUTZ
+
 _______________________________________________________________________
 
 22) Microsoft Windows Modules
@@ -2219,6 +2237,7 @@ HP200LX::
 Agent          cdpO  Transportable Agent module                   SPURKIS
 NetObj         adpO  Module loading in real time over TCP/IP      JDUNCAN
 
+Penguin        RdpO  Remote Perl in Secure Environment            AMERZKY
 Penguin::
 ::Easy         RdpO  Provides quick, easy access to Penguin API   JDUNCAN
 
@@ -2227,6 +2246,8 @@ BarCode::
 
 Audio::
 ::Sox          i     sox sound library as one or more modules     NI-S
+
+MIDI           cdpO  Object interface to MIDI files               SBURKE
 
 Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 
@@ -2245,13 +2266,17 @@ Decision::
 ::Markov       i     ?                                            ALANSZ +
 
 Geo::
-WeatherNOAA    Rdpf  Current/forecast weather from NOAA           MSOLOMON +
+::METAR        Rdpf  Process Aviation Weather (METAR) Data        JZAWODNY
+::WeatherNOAA  Rdpf  Current/forecast weather from NOAA           MSOLOMON +
 
 Games::
 ::WordFind     bdpO  Generate word-find type puzzles              AJOHNSON +
 
 Cisco::
 ::Conf         adpO  Cisco router administratian via TFTP         JWIED +
+
+Silly::
+::StringMaths  adpf  Do maths with letters and strings            SKINGTON
 
 _______________________________________________________________________
 
@@ -2263,7 +2288,7 @@ Resolute::
 ::RAPS         cd+O  Interface to Resolute Software's RAPS        CHGOETZE +
 
 AltaVista::
-::SDK          cdcf  Perl Wrapper for AltaVista SDK functionality JTURNER +
+::SearchSDK    cdcf  Perl Wrapper for AltaVista SDK functionality JTURNER +
 
 =======================================================================
 
@@ -2358,9 +2383,6 @@ might relate to the modules they are developing.
 
 1)   IETF - Internet Engineering Task Force (RFCs)
 
-
-
-
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 RFC821     Simple Mail Transfer Protocol                 Net::SMTP
@@ -2391,18 +2413,16 @@ RFC2045-2049
 RFC2138    Terminal server authentification and accting  RADIUS
 RFC2229    Dictionary Server                             Net::Dict
 _______________________________________________________________________
+
+
 2)   ITU - International Telegraph Union (X.*)
-
-
-
-
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 X.209      Basic Encoding Rules for ASN.1                Convert::BER
 _______________________________________________________________________
+
+
 3)   ISO - International Standards Organization (ISO*)
-
-
 
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
@@ -2411,8 +2431,10 @@ ISO/R 2015-1971
 ISO639     Two letter codes for language identification  Locale::Language
 ISO3166    Two letter codes for country identification   Locale::Country
 =======================================================================
+
            Part 5 - Who's Who and What's Where
            ===================================
+
 1) Information / Contact Reference Details (in alphabetical order)
 
 The following list of email addresses is based on the credentials
