@@ -1,4 +1,4 @@
-The Perl 5 Module List $Revision: 3.78 $ $Date: 2000/11/18 09:53:02 $ -*- coding:utf-8 -*-
+The Perl 5 Module List $Revision: 3.79 $ $Date: 2000/11/18 10:26:07 $ -*- coding:utf-8 -*-
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -507,7 +507,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.78 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.79 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1193,7 +1193,7 @@ Socket6           adcf getaddrinfo/getnameinfo support module       UMEMOTO
 Ptty              adcf Pseudo terminal interface functions          NI-S
 
 Socket::
-::PassAccessRights adcf Pass file descriptor via Unix domain socket  SAMPO
+::PassAccessRights adcf Pass file descriptor via Unix domain socket SAMPO
 
 Net::
 ::ACAP            adpO Interface to ACAP Protocol (Internet-Draft)  KJOHNSON
@@ -1864,7 +1864,7 @@ Emacs::
 
 Tk X Windows User Interface Modules
 
-Tk                bmcO The Tk module                                TKML
+Tk                bmcO Object oriented version of Tk v4             TKML
 
 Tk::
 ::TextANSIColor   bdpO use ANSI color codes in Text widget          TJENNESS
@@ -1877,7 +1877,7 @@ Tk::
 ::Columns         RdpO Multi column lists w/ resizable borders      DKWILSON
 ::ComboEntry      RdpO Drop down list + entry widget                DKWILSON
 ::ContextHelp     cdpO A context-sensitive help system              SREZIC
-::Dial            Rmp0 An alternative to the Scale widget           TKML
+::Dial            RmpO An alternative to the Scale widget           TKML
 ::Date            cdpO A date/time widget                           SREZIC
 ::Enscript        cdpf Create postscript from text files using Tk   SREZIC
 ::FcyEntry        adpO Entry with bg color depending on -state      ACH
@@ -1898,25 +1898,25 @@ Tk::
 ::Multi           bdpO Manages several Text or Canvas widgets       DDUMONT
 ::NumEntry        Rdpo Numerical entry widget with up/down buttons  ACH
 ::ObjScanner      bdpO A scanner to view an object's attribute      DDUMONT
-::Olwm            Rmp0 Interface to OpenLook toplevels properties   TKML
+::Olwm            RmpO Interface to OpenLook toplevels properties   TKML
 ::Pane            Rdpo A Frame that can be scrolled                 TKML
 ::PNG             RdcO PNG loader for Tk::Photo                     NI-S
-::Pod             ?mpO POD browser toplevel widget                  TKML 
-::ProgressBar     Rdpo Status/progress bar                          TKML        
+::Pod             ?mpO POD browser toplevel widget                  TKML
+::ProgressBar     Rdpo Status/progress bar                          TKML
 ::ProgressMeter   cdpo Simple thermometer-style widget w/callbacks  BPOWERS
 ::RotCanvas       RdpO Canvas with arbitrary rotation support       AQUMSIEH
 ::SplitFrame      RdpO A sliding separator for two child widgets    DKWILSON
 ::TabFrame        RdpO A tabbed frame geometry manager              DKWILSON
 ::TabbedForm      RdpO Ext. TabFrame, allowing managed subwidgets   DKWILSON
 ::TableEdit       RdpO Simplified interface to a flat file database DKWILSON
-::TableMatrix     bdcO Display data in Table/Spreadsheet format     CERNEY  
+::TableMatrix     bdcO Display data in Table/Spreadsheet format     CERNEY
 ::TiedListbox     RmpO Gang together Listboxes                      TKML
 ::TFrame          Rdpo A Frame with a title                         ACH
 ::TIFF            adpO TIFF loader for Tk::Photo                    SREZIC
 ::Tree            RdpO Create and manipulate Tree widgets           CTDEAN
-::TreeGraph       RdpO Widget to draw a tree in a Canvas            DDUMONT 
+::TreeGraph       RdpO Widget to draw a tree in a Canvas            DDUMONT
 ::WaitBox         Rdpo A Wait dialog, of the "Please Wait" variety  BPOWERS
-::XMLViewer       adpO Tk widget to display XML                     SREZIC  
+::XMLViewer       adpO Tk widget to display XML                     SREZIC
 
 Modules in the realm of Tk but with a separate namespace
 
@@ -1926,12 +1926,12 @@ Log::Dispatch::
 
 Puppet::
 ::Body            adpO Base class for persistent data               DDUMONT
-::Log             bdpO Logging facility based on Tk                 DDUMONT 
-::Any             adpO Base class for an optionnal GUI              DDUMONT 
+::Log             bdpO Logging facility based on Tk                 DDUMONT
+::Any             adpO Base class for an optionnal GUI              DDUMONT
 
 Puppet::VcsTools::
-::History         bdpO VCS (RCS HMS) history viewer based on Canvas DDUMONT 
-::File            adpO VCS (RCS HMS) file manager                   DDUMONT 
+::History         bdpO VCS (RCS HMS) history viewer based on Canvas DDUMONT
+::File            adpO VCS (RCS HMS) file manager                   DDUMONT
 
 Orac              RdpO DBA GUI tool for Oracle, Informix and Sybase ANDYDUNC
 PPresenter        MdpO Create presentations with Tk in Perl or XML  MARKOV
