@@ -117,6 +117,7 @@ currently registered CPAN sites:
             ftp://ftp.dti.ad.jp/pub/lang/CPAN/
             ftp://ftp.jaist.ac.jp/pub/lang/perl/CPAN/
             ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/
+            ftp://mirror.nucba.ac.jp/mirror/Perl/
         Singapore
             ftp://ftp.nus.edu.sg/pub/unix/perl/CPAN/
         South Korea
@@ -143,6 +144,8 @@ currently registered CPAN sites:
             ftp://ftp.tuwien.ac.at/pub/languages/perl/CPAN/
         Belgium
             ftp://ftp.kulnet.kuleuven.ac.be/pub/mirror/CPAN/
+        Bulgaria
+            ftp://ftp.ntrl.net/pub/mirrors/CPAN/
         Croatia
             ftp://ftp.linux.hr/pub/CPAN/
         Czech Republic
@@ -207,6 +210,8 @@ currently registered CPAN sites:
             ftp://ftp.sunet.se/pub/lang/perl/CPAN/
         Switzerland
             ftp://sunsite.cnlab-switch.ch/mirror/CPAN/
+        Turkeya
+            ftp://sunsite.bilkent.edu.tr/pub/languages/CPAN/
         United Kingdom
             ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/
             ftp://ftp.flirble.org/pub/languages/perl/CPAN/
@@ -216,13 +221,12 @@ currently registered CPAN sites:
     North America
         Canada
             ftp://ftp.crc.ca/pub/packages/perl/CPAN/
-            ftp://ftp.utilis.com/public/CPAN/
             ftp://theory.uwinnipeg.ca/pub/CPAN/
         United States
             ftp://cpan.if.usp.br/pub/mirror/CPAN/
             ftp://ftp.ccs.neu.edu/net/mirrors/ftp.funet.fi/pub/languages/perl/CPAN/
             ftp://ftp.cdrom.com/pub/perl/CPAN/
-            ftp://ftp.cis.ufl.edu/pub/perl/CPAN/
+            ftp://ftp.cise.ufl.edu/pub/perl/CPAN/
             ftp://ftp.cs.colorado.edu/pub/perl/CPAN/
             ftp://ftp.digital.com/pub/plan/perl/CPAN/
             ftp://ftp.duke.edu/pub/perl/
@@ -241,7 +245,6 @@ currently registered CPAN sites:
             ftp://ftp.ing.puc.cl/pub/unix/perl/CPAN/
         Chile
             ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
-
 
 All the files under each of the directories listed above should be
 identical at all these sites since they are all automatically
@@ -920,7 +923,7 @@ Perl Language Extensions
 
 Alias          bdcf  Convenient access to data/code via aliases   GSAR
 Error          adpO  Error/exception handling in an OO-ish way    GBARR
-Perl           adcO  Create Perl interpreters from within Perl    GSAR
+Perl           adcO  Create Perl interpreters from within Perl    GSAR  +
 Plthread       i     Multithreading at Perl level (not O/S level) MICB
 Protect        bdpf  declare subs private or member               JDUNCAN
 Safe           SdcO  Restrict eval'd code to safe subset of ops   MICB
@@ -931,7 +934,7 @@ B              aucO  The Perl Compiler                            MICB
 O              aucO  Perl Compiler frontends                      MICB
 
 B::
-::Graph        bdpr  Perl Compiler backend to diagram OP trees    SMCCAM
+::Graph        bdpr  Perl Compiler backend to diagram OP trees    SMCCAM !
 
 Source Code Filters
 
@@ -949,7 +952,7 @@ Filter::
 Module Support
 
 Module::
-::Reload       Rdpf  Reloads files in %INC based on timestamps    JPRIT
+::Reload       Rdpf  Reloads files in %INC based on timestamps    JPRIT +
 
 Documentation Tools:
 
@@ -1003,7 +1006,7 @@ Devel::
 ::DebugInit    i     Create a .gdbinit or similar file            JASONS
 ::DProf        Rdcf  Execution profiler                           DMR
 ::DumpStack    Rupf  Dumping of the current function stack        JACKS
-::Leak         Rdcf  Find perl objects that are not reclaimed     NI-S
+::Leak         Rdcf  Find perl objects that are not reclaimed     NI-S  +
 ::Peek         adcf  Peek at internal representation of Perl data ILYAZ
 ::RegExp       adcO  Access perl internal regex functions         ILYAZ
 ::SmallProf    a     Line-by-line profiler                        ASHTED
@@ -1014,7 +1017,7 @@ Devel::
 Usage          bupr  Type and range checking on subroutine args   JACKS
 
 VCS::
-::PVCS         i     PVCS Version Manager (intersolv.com)         BMIDD
+::PVCS         i     PVCS Version Manager (intersolv.com)         BMIDD +
 ::RCS          idpf  Interface layer over RCS (See also Rcs)      RJRAY
 ::RCE          idcf  Perl layer over RCE C API                    RJRAY
 
@@ -1049,7 +1052,7 @@ Proc::
 ::Background   bdpO  OS independent background process objects    BZAJAC +
 ::ExitStatus   cdpf  Interpret and act on wait() status values    ROSCH
 ::Forkfunc     Rdpf  Simple lwall-style fork wrapper              MUIR
-::ProcessTable adc0  Unix process table information               DURIST
+::ProcessTable adcO  Unix process table information               DURIST +
 ::SafePipe     cdpf  popen() and `` without calling the shell     ROSCH
 ::Simple       adpO  Fork wrapper with objects                    MSCHILLI
 ::SyncExec     cdpf  Spawn processes but report exec() errors     ROSCH
@@ -1231,7 +1234,7 @@ ToolTalk       adcr  Interface to the ToolTalk messaging service  MARCP
 SNMP           RdcO  Interface to CMU's SNMPv2 libsnmp.a          GSM
 
 SNMP::
-::Monitor      adpO  Accounting and graphical display             JWIED
+::Monitor      adpO  Accounting and graphical display             JWIED +
 
 Parallel::
 ::Pvm          bdcf  Interface to the PVM messaging service       EWALKER
@@ -1340,7 +1343,7 @@ Graph::
 ::Kruskal      Rdpf  Kruskal Algorithm for Minimal Spanning Trees STBEY
 
 Decision::
-::Markov       bdpO  Build/evaluate Markov models for decisions   ALANSZ
+::Markov       bdpO  Build/evaluate Markov models for decisions   ALANSZ !
 
 Date::
 ::Calc         Rdcf  Gregorian calendar date calculations         STBEY
@@ -1492,7 +1495,7 @@ AsciiDB::
 Db::
 ::Ctree        bdcr  Faircom's CTREE+ database interface          REDEN
 ::Documentum   bdcf  Documentum EDMS Perl client interface        BRIANSP
-::dmObject     cdpO  Object-based interface to Documentum EDMS    JGARRISON
+::dmObject     cdpO  Object-based interface to Documentum EDMS    JGARRISON +
 
 DTREE          cdcf  Interface to Faircom DTREE multikey ISAM db  JWAT
 Fame           adcO  Interface to FAME database and language      TRIAS
@@ -1602,7 +1605,7 @@ Fortran::
 Clips          adpO  Interface to the Expert System Clips         MSULLIVAN +
 
 ShellScript::
-::Env          adpO  Simple sh and csh script generator           SVENH
+::Env          adpO  Simple sh and csh script generator           SVENH +
 
 _______________________________________________________________________
 
@@ -1614,13 +1617,13 @@ Cwd            Supf  Current working directory functions          P5P
 
 File::
 ::Attrib       idpO  Get/set file attributes (stat)               TYEMQ
-::BSDGlob      bdcf  Secure, csh-compatible filename globbing     GBACON
+::BSDGlob      bdcf  Secure, csh-compatible filename globbing     GBACON +
 ::Basename     Supf  Return basename of a filename                P5P
 ::CheckTree    Supf  Check file/dir tree against a specification  P5P
 ::Compare      Supf  Compare file contents quickly                P5P
 ::Copy         adpf  Copying files or filehandles                 ASHER
 ::CounterFile  RdpO  Persistent counter class                     GAAS
-::Df           adpf  Free disk space utilities (h2ph required)    FTASSIN
+::Df           adpf  Free disk space utilities (h2ph required)    FTASSIN +
 ::Find         Supf  Call func for every item in a directory tree P5P
 ::Flock        adpf  flock() wrapper.  Auto-create locks          MUIR
 ::Glob         adpf  Filename globing (ksh style)                 TYEMQ
@@ -1637,9 +1640,9 @@ File::
 ::stat         Supf  A by-name interface for the stat function    TOMC
 
 Filesys::
-::Df           Rdpr  Disk free based on Filesys::Statvfs          IGUTHRIE
-::DiskFree     adpO  OS independant parser of the df command      ABARCLAY
-::Statvfs      Rdcf  Interface to the statvfs() system call       IGUTHRIE
+::Df           Rdpr  Disk free based on Filesys::Statvfs          IGUTHRIE !
+::DiskFree     adpO  OS independant parser of the df command      ABARCLAY +
+::Statvfs      Rdcf  Interface to the statvfs() system call       IGUTHRIE +
 ::dfent        adpf  By-name interface                            TOMC
 ::mntent       adpf  By-name interface                            TOMC
 ::statfs       adpf  By-name interface                            TOMC
@@ -1687,7 +1690,7 @@ Text::
 ::Tabs         Sdpf  Expand and contract tabs ala expand(1)       MUIR
 ::TeX          cdpO  TeX typesetting language input parser        ILYAZ
 ::Template     bdpO  Expand template text with embedded perl      MJD
-::Vpp          RdpO  Versatile text pre-processor                 DDUMONT
+::Vpp          RdpO  Versatile text pre-processor                 DDUMONT !
 ::Wrap         Sdpf  Wraps lines to make simple paragraphs        MUIR
 
 Other Text:: modules (these should be under String:: but pre-date it)
@@ -1715,7 +1718,7 @@ Lingua::EN::
 ::Cardinal     i     Convert numbers to words                     HIGHTOWE
 ::Ordinal      i     Convert numbers to words                     HIGHTOWE
 
-ERG            Rdpf  An extensible report generator framework     PHOENIXL
+ERG            Rdpf  An extensible report generator framework     PHOENIXL +
 
 Font::
 ::AFM          RdpO  Parse Adobe Font Metric files                GAAS
@@ -1728,7 +1731,7 @@ Parse::
 ::ePerl        Rdcr  Embedded Perl (ePerl) parser                 RSE
 ::Lex          adpO  Generator of lexical analysers               PVERD
 ::RecDescent   RdpO  Recursive descent parser generator           DCONWAY
-::Yapp         adpO  Generate Perl OO parsers from LALR1 grammars FDESAR
+::Yapp         adpO  Generate Perl OO parsers from LALR1 grammars FDESAR +
 
 Search::
 ::Dict         Supf  Search a dictionary ordered text file        P5P
@@ -1794,7 +1797,7 @@ _______________________________________________________________________
 Name           DSLI  Description                                  Info
 -----------    ----  -------------------------------------------- -----
 I18N::
-::Charset      Rdpf  Character set names and aliases              MTHURN
+::Charset      Rdpf  Character set names and aliases              MTHURN +
 ::Collate      Sdpr  Locale based comparisons                     JHI
 ::LangTags     Rdpf  compare & extract language tags (RFC1766)    SBURKE
 ::WideMulti    i     Wide and multibyte character string          JHI
@@ -1857,9 +1860,9 @@ Authen::
 ::TacacsPlus   adcO  Authentication on tacacs+ server             MSHOYHER
 
 RADIUS::
-::Dictionary   bdpO  Object interface to RADIUS dictionaries      CHRMASTO
-::Packet       bdpO  Object interface to RADIUS (rfc2138) packets CHRMASTO
-::UserFile     bdpO  Manipulate a RADIUS users file               OEVANS
+::Dictionary   bdpO  Object interface to RADIUS dictionaries      CHRMASTO !
+::Packet       bdpO  Object interface to RADIUS (rfc2138) packets CHRMASTO !
+::UserFile     bdpO  Manipulate a RADIUS users file               OEVANS +
 
 SSLeay::
 ::*            cdcO  Interface to SSLeay                          EAYNG
@@ -1896,7 +1899,7 @@ HTML::
 ::QuickCheck   cdpf  Fast simple validation of HMTL text          YLU
 ::Base         adpO  Object-oriented way to build pages of HTML   GAND
 ::Simple       bdpf  Simple functions for generating HTML         TOMC
-::EP           adpO  Modular, extensible Perl embedding           JWIED
+::EP           adpO  Modular, extensible Perl embedding           JWIED +
 ::Element      ampO  Representation of a HTML parsing tree        LWWWP
 ::Embperl      bdcf  Embed Perl in HTML                           GRICHTER
 ::Entities     bmpf  Encode/decode HTML entities                  LWWWP
@@ -2019,7 +2022,7 @@ Server::Mail::
 MailBot        cdpO  Archive server, listserv, auto-responder     RHNELSON
 
 NetServer::
-::Generic      adpO  generic OOP class for internet servers       CHSTROSS
+::Generic      adpO  generic OOP class for internet servers       CHSTROSS +
 
 _______________________________________________________________________
 
@@ -2386,6 +2389,7 @@ might relate to the modules they are developing.
 1)   IETF - Internet Engineering Task Force (RFCs)
 
 
+
 Standard   Description                                   Module Name
 --------   -----------                                   -----------
 RFC821     Simple Mail Transfer Protocol                 Net::SMTP
@@ -2423,8 +2427,8 @@ Standard   Description                                   Module Name
 --------   -----------                                   -----------
 X.209      Basic Encoding Rules for ASN.1                Convert::BER
 _______________________________________________________________________
-
 3)   ISO - International Standards Organization (ISO*)
+
 
 
 Standard   Description                                   Module Name
@@ -2434,14 +2438,14 @@ ISO/R 2015-1971
 ISO639     Two letter codes for language identification  Locale::Language
 ISO3166    Two letter codes for country identification   Locale::Country
 =======================================================================
-           Part 5 - Who's Who and What's Where
-           ===================================
+			  Part 5 - Who's Who
+			  ==================
 
 1) Information / Contact Reference Details (in alphabetical order)
 
-
   Ref      Contact Details
   -----    --------------------------------------------------------------
+  ABARCLAY Alan Barclay <gorilla@elaine.drink.com>
   ABH      Ask Bjørn Hansen <ask@netcetera.dk>
   ABIGAIL  Abigail <abigail@fnx.com>
   ABURLISON Alan Burlison <Alan.Burlison@UK.Sun.COM>
@@ -2449,6 +2453,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   ACALPINI Aldo Calpini <dada@divinf.it>
   ACH      Achim Bohnet <ach@mpe.mpg.de>
   ADESC    Alligator Descartes <descarte@arcana.co.uk>
+  AEPAGE   Andrew E Page <aep@world.std.com>
   AGENTML  Mailing List For Perl5 Agents
            Send email to perl5-agentr@epitome.hawk.igs.net with the
            body "subscribe <emailaddr>"
@@ -2465,6 +2470,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   AMOSS    Amos Shapira <amoss@cs.huji.ac.il>
   AMW      Andrew Wilcox <andrew_wilcox@gwi.net>
   ANDK     Andreas König <a.koenig@franz.ww.TU-Berlin.DE>
+  ANDREWF  Andrew Ford <andrew@icarus.demon.co.uk>
   ANDYD    Andy Dougherty <doughera@lafcol.lafayette.edu>
   ANDYGLEW Andy Glew <glew@cs.wisc.edu>
   ANTRO    Antonio Rosella <anface@yahoo.com>
@@ -2475,6 +2481,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
            See http://arsinfo.cit.buffalo.edu/ for mor info.
   ASHER    Aaron Sherman <ajs@ajs.com>
   ASHTED   Ted Ashton <ashted@southern.edu>
+  ASTEAM   ActiveState development team <dev@ActiveState.com>
   AUSCHUTZ Austin Schutz <tex@habit.com>
   AWIN     Ashley Winters <jql@accessone.com>
   AWRIGLEY Ave Wrigley <wrigley@cre.canon.co.uk>
@@ -2485,11 +2492,12 @@ ISO3166    Two letter codes for country identification   Locale::Country
   BBUM     Bill Bumgarner <bbum@friday.com>
   BDFOY    brian d foy <comdog@computerdog.com>
   BENLI    Ben Lindstrom <mouring@netnet.net>
+  BHOLZMAN Benjamin Holzman <bholzman@bender.com>
   BHUGHES  Brad Hughes <brad@tgsmc.com>
   BJEPS    Brian Jepson <bjepson@conan.ids.net>
   BLANTREWI Boris Lantrewitz <lantrewi@do.isst.fhg.de>
   BMEEKINGS Brian Meekings <meekings@idi-middleware.com>
-  BMIDD    William J. Middleton <William.Middleton@oslo.mobil.telenor.no>
+  BMIDD    William J. Middleton <wjm@metronet.com>
   BMORGAN  Bruce Morgan <morgan@networks.curtin.edu.au>
   BOADLER  Bo Adler <thumper@ugcs.caltech.edu>
   BOBSIDE  Bob Sidebotham <rns@fore.com>
@@ -2506,6 +2514,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   CARL     Carl Declerck <carl@miskatonic.inbe.net>
   CARLADLER Carl Adler <carl_adler@idx.com>
   CBAIL    Charles Bailey <bailey@genetics.upenn.edu>
+  CCWF     Charles C. Fu <ccwf@bacchus.com>
   CDONLEY  Clayton Donley <donley@wwa.com>
   CDYBED   Calle Dybedahl <calle@lysator.liu.se>
   CEVANS   Carey Evans <c.evans@clear.net.nz>
@@ -2516,11 +2525,13 @@ ISO3166    Two letter codes for country identification   Locale::Country
   CHGEUER  Christian H. Geuer <christian.geuer@crypto.gun.de>
   CHGOETZE Christian Goetze <perl@resolute.com>
   CHIPS    Chip Salzenberg <chip@pobox.com>
+  CHOUPT   Chuck Houpt <choupt@world.std.com>
   CHOWARTH Colin Howarth <colin@muc.de>
   CHRISCHU Christian Schultze <Christian_Schultze@b.maus.de>
   CHRMASTO Christopher Masto <chris@netmonger.net>
   CHRWOLF  Christophe Wolfhugel <wolf@pasteur.fr>
-  CHSTROSS Charlie Stross <charlie@public.antipope.org>
+  CHSTROSS Charlie Stross <charlie@antipope.org>
+  CHTHORMAN Chris Thorman <chris@thorman.com>
   CHTTRAX  Christoph T. Traxler <Christoph.T.Traxler@theo.physik.uni-giessen.de>
   CJM      Christopher J. Madsen <ac608@yfn.ysu.edu>
   CLINTDW  Clinton Wong <clintdw@netcom.com>
@@ -2568,12 +2579,14 @@ ISO3166    Two letter codes for country identification   Locale::Country
   DNAD     Dave Nadler <nadler@ug.eds.com>
   DOMO     Dominic Dunlop <domo@slipper.ip.lu>
   DOUGB    Doug Bagley <doug@bagley.org>
+  DOUGL    Douglas Lankshear <DougL@ActiveState.com>
   DOUGM    Doug MacEachern <dougm@pobox.com>
   DSB      David Boyce <dsb@world.std.com>
   DSHEPP   Doug "Sirilyan" Sheppard <sirilyan@link.ca>
   DSOUFLIS Dimitrios Souflis <dsouflis@altera.gr>
   DSTALDER Darren Stalder <torin@daft.com>
   DSUGAL   Dan Sugalski <sugalskd@osshe.edu>
+  DTOWN    David M. Town <dtown@fore.com>
   DURIST   Dan Urist <durist@world.std.com>
   DVKLEIN  Daniel V. Klein <dan@klein.com>
   EAYNG    Eric Young <eay@mincom.oz.au>
@@ -2589,6 +2602,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   ESR      Eric S. Raymond <esr@snark.thyrsus.com>
   EVANPRO  Evangelo Prodromou <evangelo@endcontsw.com>
   EWALKER  Edward Walker <ewalker@platform.com>
+  FDESAR   Francois Desarmenien <desar@club-internet.fr>
   FIMM     Dennis Taylor <corbeau@execpc.com>
   FIS      Frank Ian Smith <frank@ns.array.ca>
   FJH      Frederick Hirsch <fjh@alum.mit.edu>
@@ -2609,7 +2623,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   GARY     Gary Howland <gary@hotlava.com>
   GBACON   Greg Bacon <gbacon@cs.uah.edu>
   GBARR    Graham Barr <gbarr@pobox.com>
-  GBAUER   Georg Bauer <Georg_Bauer@muensterland.org>
+  GBAUER   Georg Bauer <gb@hugo.westfalen.de>
   GBOSS    Greg Bossert <bossert@ecto.org>
   GDAMORE  Garrett D'Amore <garrett@yavin.org>
   GEHIC    Gerard Hickey <hickey@ctron.com>
@@ -2623,7 +2637,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   GMLEWIS  Glenn M. Lewis <glenn@gmlewis.com>
   GNAT     Nathan Torkington <gnat@frii.com>
   GOSSAMER Gossamer <gossamer@tertius.net.au>
-  GREGFAST Greg Fast <g-fast@advancenet.net>
+  GREGFAST Greg Fast <gdf@imsa.edu>
   GREGG    Gregg Helt <gregg@fruitfly.berkeley.edu>
   GRICHTER Gerald Richter <richter@ecos.de>
   GSAR     Gurusamy Sarathy <gsar@umich.edu>
@@ -2638,6 +2652,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   HALPOM   Hal Pomeranz <pomeranz@netcom.com>
   HAYASHI  Hiroo HAYASHI <hiroo.hayashi@computer.org>
   HIGHTOWE Lester Hightower <hightowe@united-railway.com>
+  HMBRAND  H. Merijn Brand <PROCURA_BV@CompuServe.com>
   HMUELLER Hanno Mueller <hmueller@mail.kabel.de>
   HPALM    Hartmut Palm <palm@gfz-potsdam.de>
   HTCHAPMAN H. Todd Chapman <htchapma@oakland.edu>
@@ -2659,7 +2674,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   JARW     John A.R. Williams <J.A.R.Williams@aston.ac.uk>
   JASONS   Jason E. Stewart <jasons@cs.unm.edu>
   JBAKER   Jeffrey Baker <jeff@godzilla.tamu.edu>
-  JBODNAR  Jason Bodnar <jason@cimedia.com>
+  JBODNAR  Jason Bodnar <jbodnar@tivoli.com>
   JCMURPHY Jeff Murphy <jcmurphy@smurfland.cit.buffalo.edu>
   JCOSTOM  Jason Costomiris <jcostom@sjis.com>
   JCRISTY  John Cristy <cristy@sympatico.org>
@@ -2668,6 +2683,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   JENDA    Jan Krynicky <Jenda@McCann.cz>
   JFITZ    James FitzGibbon <james@ican.net>
   JFRIEDL  Jeffrey Friedl <jfriedl@omron.co.jp>
+  JGARRISON Jim Garrison <jhg@acm.org>
   JGBISHOP Jeremy G. Bishop <jeremy@evolution.com>
   JGLICK   Jesse N. Glick <jglick@sig.bsh.com>
   JGROENVEL John D Groenveld <groenveld@acm.org>
@@ -2697,7 +2713,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   JOSERODR Jose A. Rodriguez <Jose.Rodriguez@ac.upc.es>
   JPC      Jan-Pieter Cornet <johnpc@xs4all.nl>
   JPRAVETZ Jim Pravetz <jpravetz@adobe.com>
-  JPRIT    Joshua Pritikin <pritikin@interramp.com>
+  JPRIT    Joshua N. Pritikin <bitset@mindspring.com>
   JROGERS  Jay Rogers <jay@rgrs.com>
   JROWE    Jeff Rowe <j.p.rowe@larc.nasa.gov>
   JSIRACUSA John Siracusa <siracusa@mindspring.com>
@@ -2799,9 +2815,9 @@ ISO3166    Two letter codes for country identification   Locale::Country
   MSHOYHER Mike Shoyher <msh@apache.lexa.ru>
   MSOLOMON Mark Solomon <msolomon@seva.net>
   MSULLIVAN Michael P. Sullivan <mps@discomsys.com>
+  MTHURN   Martin Thurn <MartinThurn@iname.com>
   MUIR     David Muir Sharnoff <muir@idiom.com>
   MVERB    Martien Verbruggen <mgjv@comdyn.com.au>
-  NCLARK   Nicholas.Clark <Nicholas.Clark@liverpool.ac.uk>
   NEERI    Matthias Ulrich Neeracher <neeri@iis.ee.ethz.ch>
   NEILB    Neil Bowers <neilb@cre.canon.co.uk>
   NEMWS    Nem W Schlecht <nem@abattoir.cc.ndsu.nodak.edu>
@@ -2817,8 +2833,10 @@ ISO3166    Two letter codes for country identification   Locale::Country
   NTHIERY  Nicolas Thiéry <Nicolas.Thiery@ens.fr>
   NVPAT    Nathan V. Patwardhan <nvp@ora.com>
   NWALSH   Norman Walsh <norm@berkshire.net>
+  NWCLARK  Nicholas.Clark <Nicholas.Clark@liverpool.ac.uk>
   NWINT    Neil Winton <winton_neil@jpmorgan.com>
   OCROW    Owen Crow <ocrow@crl.com>
+  OEVANS   O'Shaughnessy Evans <oevans@acm.org>
   OKAMOTO  Jeff Okamoto <okamoto@corp.hp.com>
   OMKELLOGG Oliver M. Kellogg <Oliver.Kellogg@vs.dasa.de>
   ORENBK   Oren Ben-Kiki <oren@capella.co.il>
@@ -2849,6 +2867,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   PHILIPA  Philip Aston <philipa@parallax.co.uk>
   PHILIPM  Philip Mikal <ventolin@earthlink.net>
   PHOENIX  Tom Phoenix <rootbeer@teleport.com>
+  PHOENIXL Scott <Phoenixl@aol.com>
   PKUTS    Peter Kutschera <peter@zditr1.arcs.ac.at>
   PLDAP    Perl LDAP mailing list
            Mail subscription requests to
@@ -2856,9 +2875,10 @@ ISO3166    Two letter codes for country identification   Locale::Country
            "subscribe"
   PLISTER  Peter Lister <p.lister@cranfield.ac.uk>
   PMH      Peter Haworth <pmh@edison.ioppublishing.com>
-  PMKANE   Patrick Michael Kane <modus@enews.com>
+  PMKANE   Patrick Michael Kane <modus-cpan@pr.es.to>
   PMQS     Paul Marquess <pmarquess@bfsec.bt.co.uk>
   PRATP    Pratap Pereira <pereira@ee.eng.ohio-state.edu>
+  PROWELL  Peter Rowell <peter@thirdeye.com>
   PRYAN    Patrick Ryan <pgryan@geocities.com>
   PSEIBEL  Peter Seibel <seibel@organic.com>
   PSHARPE  Paul Sharpe <paul@miraclefish.com>
@@ -2871,6 +2891,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   RAM      Raphael Manfredi <Raphael_Manfredi@grenoble.hp.com>
   RAP      Ryan Alyn Porter <rap@endymion.com>
   RAVN     Thorbjoern Ravn Andersen <ravn@mip.ou.dk>
+  RBERJON  Robin Berjon <robin@idl-net.com>
   RBOW     Richard Bowen <rbowen@rcbowen.com>
   RCAPUTO  Rocco Caputo <troc@shadow.net>
   RDO      Robert Olson <olson@mcs.anl.gov>
@@ -2907,6 +2928,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   SGEL     Sergio Gelato <gelato@oort.ap.sissa.it>
   SGMIANO  Stephen G. Miano <stevem@mindspring.com>
   SHARI    Davide Migliavacca <davide.migliavacca@inferentia.it>
+  SHAWNPW  Shawn P. Wallace <shawn@as220.org>
   SHERWOOD Steve Sherwood <pariah@netcomuk.co.uk>
   SHGUN    Shishir Gundavaram <shishir@ruby.ora.com>
   SHIGIO   Shigio Yamaguchi <shigio@wafu.netgate.net>
@@ -2925,11 +2947,14 @@ ISO3166    Two letter codes for country identification   Locale::Country
   SPP      Stephen P Potter <spp@colltech.com>
   SPURKIS  Steve Purkis <spurkis@engsoc.carleton.ca>
   SREZIC   Slaven Rezic <eserte@cs.tu-berlin.de>
+  SRIEHM   Stephen Riehm <Stephen.Riehm@pc-plus.de>
   SRIRAM   Sriram Srinivasan <sriram@weblogic.com>
   SRZ      Stephen Zander <gibreel@pobox.com>
   STANM    Stan Melax <melax@bioware.com>
   STBEY    Steffen Beyer <sb@engelschall.com>
+  STEVENSL Steven Slegel <stevensl@ccpl.carr.lib.md.us>
   STLACY   Stacy Lacy <stacy-lacy@worldnet.att.net>
+  SVENH    Sven Heinicke <sven@zen.org>
   SWMCD    Steven McDougall <swmcd@world.std.com>
   SZECK    Steve Zeck <saintly@innocent.com>
   TBOUTELL Thomas Boutell <boutell@boutell.com>
@@ -2938,6 +2963,7 @@ ISO3166    Two letter codes for country identification   Locale::Country
   TERDOEST Hugo WL ter Doest <terdoest@cs.utwente.nl>
   TIBBS    Jason Tibbitts <tibbs@hpc.uh.edu>
   TIMB     Tim Bunce <Tim.Bunce@ig.co.uk>
+  TIMPOTTER Tim Potter <tpot@acsys.anu.edu.au>
   TIMPX    Tim Goodwin <tim@uunet.pipex.com>
   TKML     The Tk Perl Mailing list
            Mail to majordomo@lists.stanford.edu with body "subscribe
@@ -2979,7 +3005,4 @@ ISO3166    Two letter codes for country identification   Locale::Country
   YVESP    Yves Paindaveine <yp@gr.osf.org>
   ZENIN    Byron Brummer <zenin@bawdycaste.org>
 
-2) Perl Frequently Asked Questions (FAQ)
-
-  RTFM mirror sites:
-
+End Of Module List
