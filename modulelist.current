@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.49 $Date: 1998/07/24 20:13:43 $
+The Perl 5 Module List       Revision: 2.49 $Date: 1998/08/15 08:53:26 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -241,6 +241,8 @@ currently registered CPAN sites:
             ftp://ftp.ing.puc.cl/pub/unix/perl/CPAN/
         Chile
             ftp://sunsite.dcc.uchile.cl/pub/Lang/perl/CPAN/
+
+
 All the files under each of the directories listed above should be
 identical at all these sites since they are all automatically
 maintained mirrors of the master CPAN site. Please use which ever site
@@ -651,7 +653,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.98 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.99 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1850,7 +1852,6 @@ Crypt::
 
 Authen::
 ::ACE          adcO  Interface to Security Dynamics ACE (SecurID) DCARRIGAN
-::Challenge    ad
 ::Krb5         cdcO  Interface to Kerberos API                    JHORWITZ
 ::PAM          adcf  Interface to PAM library                     NIKIP
 ::TacacsPlus   adcO  Authentication on tacacs+ server             MSHOYHER
