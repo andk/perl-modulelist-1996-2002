@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.29 $Date: 1996/08/12 22:50:42 $
+The Perl 5 Module List       Revision: 2.30 $Date: 1996/08/12 22:50:53 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.com>
@@ -874,7 +874,7 @@ ExtUtils::
 ::MakeMaker    SupO  Writes Makefiles for extensions              MMML
 ::Manifest     Supf  Utilities for managing MANIFEST files        MMML
 ::Typemap      i     xsubpp typemap handling                      WPS
-::Embed        Rdpf  Utilities for embedding Perl in C/C++ apps   DOUGM !
+::Embed        Rdpf  Utilities for embedding Perl in C/C++ apps   DOUGM
 
 Test::
 ::Harness      Supf  Executes perl-style tests                    ANDK
@@ -897,7 +897,6 @@ VCS::
 
 Include        adpO  Parse C header files for use in XS           GBARR
 Make           adpO  Makefile parsing, and 'make' replacement     NI-S
-DataFlow       RdpO  Acquire data based on recipes                ILYAZ
 
 _______________________________________________________________________
 
@@ -932,6 +931,9 @@ Platform Specific Modules
 
 MSDOS::
 ::SysCalls     adcf  MSDOS interface (interrupts, port I/O)       DMO
+
+FreeBSD::
+::SysCalls     cdcf  FreeBSD-specific system calls                GARY +
 
 SGI::
 ::SysCalls     cdcf  SGI-specific system calls                    AMOSS
@@ -987,6 +989,7 @@ Net::
 ::Netrc        adpO  Support for .netrc files                     GBARR
 ::POP3         adpO  Client interface to POP3 protocol            GBARR
 ::Ping         Supf  Implements TCP/IP ping (currently only echo) PMQS
+::Ping         bdpO  Enhanced redesign of the above               RMOSE !
 ::SMTP         adpf  Interface to Simple Mail Transfer Protocol   GBARR
 ::SNPP         cdpO  Client interface to SNPP protocol            GBARR
 ::SOCKS        i     TCP/IP access through firewalls using SOCKS  WSCOT
@@ -1012,7 +1015,7 @@ RPC::                Remote Procedure Calls (see also DCE::RPC)
 ::ONC          i     Open Network Computing (Sun) RPC interface   PKUTS
 
 DCE::                Distributed Computing Environment (OSF)
-::Registry     bdcO  DCE registry functions                       DOUGM !
+::Registry     bdcO  DCE registry functions                       DOUGM
 ::rgybase      bdcO  Constants from rgybase.h,rgynbase.h          DOUGM
 ::Login        bdcO  Interface to login functions                 DOUGM
 ::login_base   bdcO  Constants from sec_login.h,sec_login_base.h  DOUGM
@@ -1125,6 +1128,7 @@ Ref            RdpO  Print, compare, and copy perl structures     MUIR
 
 Sort::
 ::Versions     Rdpf   sorting of revision (and similar) numbers   KJALB
+::PolySort     bdpO  general rules-based sorting of lists         DMACKS +
 
 Data Type Marshaling (converting to/from strings) and Persistent Storage
 
@@ -1138,6 +1142,7 @@ Marshal::
 
 Data::
 ::Dumper       RdpO  Convert data structure into perl code        GSAR
+::Flow         RdpO  Acquire data based on recipes                ILYAZ !
 
 
 _______________________________________________________________________
@@ -1156,7 +1161,7 @@ DBD::
 ::Sybase       cdpO  Sybase Driver for DBI (uses Sybase::CTlib)   MEWP
 ::QBase        amcO  QBase Driver for DBI                         BENLI
 
-Oraperl        Rmpf  Oraperl emulation interface for DBD::Oracle  DBIML !
+Oraperl        Rmpf  Oraperl emulation interface for DBD::Oracle  DBIML
 Ingperl        i     Ingperl emulation interface for DBD::Ingres  TIMB
 
 Sybase::
@@ -1349,7 +1354,7 @@ Getopt::
 
 ConfigReader   cdpO  Read directives from configuration file      AMW
 Resources      bdpf  Application defaults management in Perl      FRANCOC
-IniConf        bdpO  Read/Write INI-Style configuration files     SHUTTON +
+IniConf        bdpO  Read/Write INI-Style configuration files     SHUTTON
 
 
 _______________________________________________________________________
@@ -1375,7 +1380,7 @@ User::
 ::pwent        adpf  A by-name interface to password database     TOMC
 ::grent        adpf  A by-name interface to groups database       TOMC
 
-PGP            adpO  Simple interface to PGP subprocess via pipes GEHIC
+PGP            adpO  Simple interface to PGP subprocess via pipes PGPML !
 DES            adcf  DES encryption (libdes)                      EAYNG
 Des            adcf  DES encryption (libdes)                      MICB
 MD5            RdcO  MD5 message digest algorithm                 NWINT
@@ -1385,7 +1390,7 @@ GSS            i     Generic Security Services API (RFC 1508/9)   MSHLD
 
 Crypt::
 ::DES          a     DES encryption (libdes)                      GARY
-::IDEA         a     ???                                          GARY
+::IDEA         a     International Data Encryption Algorithm      GARY !
 ::PRSG         a     160 bit LFSR for pseudo random sequences     GARY
 
 
@@ -1421,7 +1426,7 @@ HTML::
 ::Entities     bmpf  Encode/decode HTML entities                  LWWWP
 ::Formatter    ampO  Convert HTML to plain text or Postscript     LWWWP
 ::Parse        ampO  Parse HTML documents                         LWWWP
-::Stream       adpO  HTML output stream                           ERYQ +
+::Stream       adpO  HTML output stream                           ERYQ
 
 HTTP::
 ::Date         bmpf  Date conversion for HTTP date formats        LWWWP
@@ -1528,6 +1533,7 @@ OpenGL         adcf  Interface to OpenGL drawing/imaging library  STANM
 PDL            cdcf  Perl Data Language - numeric analysis env    KGB
 PGPLOT         Rdof  PGPLOT plotting library - scientific graphs  KGB
 PixDraw        adcO  Drawing and manipulating true color images   KSB
+VRML           cdpf  VRML primitives and ext. to create scenes    HPALM +
 
 Graphics::
 ::Simple       idcO  Simple drawing primitives                    NEERI
@@ -1651,14 +1657,22 @@ Logfile        RdpO  Generic methods to analyze logfiles          ULPFR
 
 Agent          bdpO  Supplies Agentspace methods for perl         JDUNCAN
 
+Penguin::
+::Easy	       RdpO  Provides quick, easy access to Penguin API   JDUNCAN +
+
+CreditCard     Rdpf  Credit card number check digit test          JONO +
+
 Business::
-::CreditCard   Rdpf  Credit card number check digit test          JONO
+::CreditCard   Rdpf  Deprecated name for Creditcard.pm            JONO !
 
 Print::
 ::Label        i     Format address labels                        JONO
 
 BarCode::
 ::UPC          i     Produce PostScript UPC barcodes              JONO
+
+Audio::
+::Sox          i     sox sound library as one or more modules     NI-S +
 
 =======================================================================
 
