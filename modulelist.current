@@ -1,4 +1,4 @@
-The Perl 5 Module List       Revision: 2.64 $Date: 1999/10/21 11:29:06 $
+The Perl 5 Module List       $Revision: 2.64 $$Date: 1999/10/21 20:05:18 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 2.140 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 2.141 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -1109,7 +1109,7 @@ IPC::
 ::Open2         Supf Open a process for both reading and writing  P5P
 ::Open3         Supf Like IPC::Open2 but with error handling      P5P
 ::Session       adpO remote shell session mgr; wraps open3()      STEVEGT
-::Signal        cdpf Translate signal names to/from numbers       ROSCH
+::Signal        Rdpf Translate signal names to/from numbers       ROSCH
 ::SysV          adcr shared memory, semaphores, messages etc      JACKS
 
 RPC::                Remote Procedure Calls (see also DCE::RPC)
@@ -1735,11 +1735,11 @@ PostScript::
 ::Basic         bdpO Basic methods for postscript generation      STWIGGER
 ::Document      bdpO Generate multi-page PostScript               SHAWNPW
 ::Elements      bdpO Objects for shapes, lines, images            SHAWNPW
-::Font          Rdpf analyzes PostScript font files               JV
-::FontInfo      Rdpf analyzes Windows font info files             JV
-::FontMetrics   Rdpf analyzes Adobe Font Metric files             JV
+::Font          RdpO analyzes PostScript font files               JV
+::FontInfo      RdpO analyzes Windows font info files             JV
+::FontMetrics   RdpO analyzes Adobe Font Metric files             JV
 ::Metrics       bdpO Font metrics data used by PS::TextBlock      SHAWNPW
-::Resources     Rdpf loads Unix PostScript Resources file         JV
+::Resources     RdpO loads Unix PostScript Resources file         JV
 ::TextBlock     bdpO Objects used by PS::Document                 SHAWNPW
 
 Font::
@@ -2336,7 +2336,7 @@ Wais            Rdcf Interface to the freeWAIS-sf libraries       ULPFR
 Astro::
 ::SLA           Rdcf Interface to SLALIB positional astronomy lib TJENNESS
 ::Time          cdpf General time conversions for Astronomers     CPHIL
-::Coord         cdpf Transform Telescope and source coordinates   CPHIL
+::Coord         cdpf Transform telescope and source coordinates   CPHIL
 ::Misc          cdpf Miscellaneous astronomical routines          CPHIL
 
 Bio::
@@ -2898,7 +2898,7 @@ to a CGI script that lets you edit the database entries yourself.
   GSPAF    Gene Spafford <spaf@cs.purdue.edu>
   GSPIVEY  Gary Spivey <spivey@romulus.ncsc.mil>
   GTHYNI   Göran Thyni <goran@bildbasen.se>
-  GUELICH  Scott Guelich <support@scripted.com>
+  GUELICH  Scott Guelich <scott@scripted.com>
   GUYDX    Guy Decoux <decoux@moulon.inra.fr>
   GWARD    Greg Ward <gward@ase.com>
   GWELCH   Gerad Welch <welch.119@osu.edu>
