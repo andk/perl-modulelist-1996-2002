@@ -1,4 +1,4 @@
-The Perl 5 Module List       $Revision: 3.64 $$Date: 2000/10/27 07:12:33 $
+The Perl 5 Module List       $Revision: 3.65 $$Date: 2000/11/05 20:42:28 $
 ======================
 
 Maintained by Tim Bunce and Andreas König <modules@perl.org>
@@ -520,7 +520,7 @@ but this is also transparent. Only the .pm file is required to exist.
    similar system which supports multilevel versions/branches you can
    use this (but put it all on one line for MakeMaker VERSION_FROM):
 
-    $VERSION = do { my @r=(q$Revision: 3.64 $=~/\d+/g);
+    $VERSION = do { my @r=(q$Revision: 3.65 $=~/\d+/g);
                     sprintf "%d."."%02d"x$#r,@r };
 
    It may be handy to add a function or method to retrieve the number.
@@ -983,7 +983,7 @@ Exception::
 ::Cxx             Rd+f Cause perl to longjmp using C++ exceptions   JPRIT
 
 Perf::            Performance measurement other than benchmarks
-::ARM             a    Application Response Measurement             BBACKER
+::ARM             adcf Application Response Measurement             BBACKER
 
 Rcs               adcf Alternate RCS interface (see VCS::RCS)       CFRETER
 VCS               ampO Generic interface to Version Control Systems LBROCARD
@@ -1136,7 +1136,7 @@ Solaris::
 
 Unix::
 ::ConfigFile      adpO Abstract interfaces to Unix config files     SSNODGRA
-::Processors      bdcO Interface to per-processor information       WSNYDER
+::Processors      RdcO Interface to per-processor information       WSNYDER
 ::Syslog          i    Interface to syslog functions in a C-library MHARNISCH
 ::UserAdmin       Rdpf Interface to Unix Account Information        JZAWODNY
 
@@ -1206,7 +1206,6 @@ Net::
 ::Hotline         RdpO Interface to the Hotline protocol            JSIRACUSA
 ::ICAP            adpO Interface to ICAP Protocol (Internet-Draft)  KJOHNSON
 ::ICB             bdpO ICB style chat server interface              JMV
-::ICQ             cmpO NEVER FINISHED - NOT UNDER DEVELOPMENT       GOSSAMER
 ::IMAP            adpO Interface to IMAP Protocol (RFC2060)         KJOHNSON
 ::IRC             cdpO Internet Relay Chat interface                DSHEPP
 ::Ident           RdpO Performs ident (rfc1413) lookups             JPC
@@ -1264,7 +1263,7 @@ IPC::
 ::Chat2           ?    Out-of-service during refit!                 GBARR
 ::ChildSafe       RdcO Control child process w/o risk of deadlock   DSB
 ::Globalspace     cdpO Multi-process shared hash and shared events  JACKS
-::LDT             adpf Implements a length based IPC protocol       JSTENZEL
+::LDT             Rdpf Implements a length based IPC protocol       JSTENZEL
 ::Locker          RdpO Shared semaphore locks across a network      WSNYDER
 ::Mmap            i    Interface to Unix's mmap() shared memory     MICB
 ::Open2           Supf Open a process for both reading and writing  P5P
@@ -1450,7 +1449,7 @@ List::
 ::Util            bdcf List utilities (eg min, max, reduce)         GBARR
 
 Bit::
-::Vector          RdcO Fast bit-vec, sets of int & big int math lib STBEY
+::Vector          RdcO Virtual (arbitrary machineword size) CPU     STBEY
 
 Set::
 ::Bag             RdpO Bag (multiset) class                         JHI
@@ -1520,7 +1519,7 @@ Tie::
 ::LLHash          Rdpr Fast ordered hashes via linked lists         KWILLIAMS
 ::ListKeyedHash   Rdpr Use lists to key multi-level hashes          SNOWHARE
 ::Mem             adcO Bind perl variables to memory addresses      PMQS
-::MmapArray       adcr Ties a file to an array                      ANDREWF
+::MmapArray       bdcr Ties a file to an array                      ANDREWF
 ::Multidim        adpr "tie"-like multidimensional data structures  JDPORTER
 ::OffsetArray     adpr Tie one array to another, with index offset  JDPORTER
 ::Persistent      Rdpr Persistent data structures via tie           RGIERSIG
@@ -1788,6 +1787,7 @@ Term::
 ::Control         idpf Basic curses-type screen controls (gotxy)    KJALB
 ::Gnuplot         adcf Draw vector graphics on terminals etc        ILYAZ
 ::Info            adpf Terminfo interface (currently just Tput)     KJALB
+::ProgressBar
 ::Prompt          adpf Prompt a user                                ALLENS
 ::Query           Rdpf Intelligent user prompt/response driver      AKSTE
 ::ReadKey         Rdcf Read keystrokes and change terminal modes    KJALB
@@ -1806,7 +1806,7 @@ Major Character User Interface Modules:
 Cdk               RdcO Collection of Curses widgets                 GLOVER
 Curses            adcO Character screen handling and windowing      WPS
 Dialog            bdch interface library to libdialog               UNCLE
-PV                bmpO PerlVision curses windowing (OO widgets etc) AGUL
+PV                bdpO Text-mode User Interface Widgets             AGUL
 PerlMenu          Mdpf Curses-based menu and template system        SKUNZ
 
 Curses::
@@ -2170,7 +2170,7 @@ _______________________________________________________________________
 Name              DSLI Description                                  Info
 ------------      ---- -------------------------------------------- ----
 Getopt::
-::ArgvFile        bdpf Take options from files                      JSTENZEL
+::ArgvFile        Rdpf Take options from files                      JSTENZEL
 ::Declare         MdpO An easy-to-use WYSIWYG command-line parser   DCONWAY
 ::EvaP            Mdpr Long/short options, multilevel help          LUSOL
 ::Gnu             adcf GNU form of long option handling             WSCOT
@@ -2425,8 +2425,9 @@ WWW::
 ::BBSWatch        adpO email WWW bulletin board postings            TAYERS
 ::Robot           adpO Web traversal engine for robots & agents     NEILB
 ::RobotRules      ampO Parse /robots.txt file                       LWWWP
+::Search          adpO Front-end to Web search engines              JOHNH
 
-WWW::Search::     adpO Front-end to Web search engines              JOHNH
+WWW::Search::
 ::AlltheWeb       RdpO Class for searching AlltheWeb                JSMYSER
 ::Deja            RdpO Class for www.deja.com searching             MTHURN
 ::Go              RdpO Backend class for searching with go.com      ALIAN
@@ -2630,7 +2631,6 @@ Image::
 Chart::
 ::Base            RdpO Business chart widget collection             NINJAZ
 ::Gdchart         bdch based on Bruce V's C gdchart distribution    MHEMPEL
-::GnuPlot         RdpO Access to gnuplot library                    NPESKETT
 ::Graph           Rmpr front-end to gnuplot and XRT                 MHYOUNG
 ::PNGgraph        RdpO Package to generate PNG graphs, uses GD.pm   SBONDS
 ::Pie             adpO Implements "new Chart::Pie()"                KARLON
@@ -2656,6 +2656,9 @@ Gimp              Mmch Rich interface to write plugins for The Gimp MLEHMANN
 T3D               cdpO Realtime extensible 3D rendering             GJB
 ThreeD            i    Namespace root for all kinds of 3D modules   ADESC
 RenderMan         a    Manipulate RenderMan objects                 GMLEWIS
+
+Flash::
+::SWF
 
 _______________________________________________________________________
 
@@ -2764,6 +2767,9 @@ Log::
 ::Topics          Rdpf Control flow of topic based logging messages JARW
 ::TraceMessages   Rdpf Print developer's trace messages             EDAVIS
 
+Log::Agent::
+::Logger          cdpr Application-level logging interface          RAM
+
 Expect            RdpO Close relative of Don Libes' Expect in perl  RGIERSIG
 
 _______________________________________________________________________
@@ -2806,6 +2812,7 @@ Win32::
 ::Shortcut        Rd+O Manipulate Windows Shortcut files            ACALPINI
 ::Sound           Rdch An extension to play with Windows sounds     ACALPINI
 ::WinError        adcf Interface to Win32 WinError functions        WIN32
+::SystemInfo
 
 WinNT             cdcf Interface to Windows NT specific functions   WIN32
 NT                cdcf Old name for WinNT - being phased out        WIN32
@@ -2839,6 +2846,11 @@ Nexus             cdcO Interface to Nexus (threads/ipc/processes)   RDO
 Pcap              i    An interface for LBL's packet capture lib    AMOSS
 Roman             Rdpf Convert Roman numbers to and from Arabic     OZAWA
 SDDF              cd+O Interface to Pablo Self Defining Data Format FIS
+
+AI::
+::Fuzzy           RdpO Perl extension for Fuzzy Logic               SABREN
+::jNeural
+::NeuralNet
 
 Astro::
 ::Coord           Rdpf Transform telescope and source coordinates   CPHIL
@@ -3116,6 +3128,7 @@ to a CGI script that lets you edit the database entries yourself.
   Ref      Contact Details
   -----    --------------------------------------------------------------
   ABARCLAY Alan Barclay <gorilla@elaine.drink.com>
+  ABEROHAM Abraham Ingersoll <abe-cpan@honestabe.net>
   ABH      Ask BjÃ¸rn Hansen <ask-cpan@perl.org>
   ABIGAIL  Abigail <abigail@foad.org>
   ABURLISON Alan Burlison <Alan.Burlison@UK.Sun.COM>
@@ -3177,6 +3190,7 @@ to a CGI script that lets you edit the database entries yourself.
   AOCINAR  Ali Onur Cinar <root@zdo.com>
   APML     The Perl/Apache Mailing List
            Mail to majordomo@apache.org with body "subscribe modperl"
+  APPEL    Christoph Appel <cappel@debis.com>
   AQUMSIEH Ala Qumsieh <aqumsieh@hyperchip.com>
   AQUTIV   Idan Robbins <aqutiv@softhome.net>
   AREIBENS Alfred Reibenschuh <alfredreibenschuh@yahoo.com>
@@ -3226,6 +3240,7 @@ to a CGI script that lets you edit the database entries yourself.
   BGINGERY Bruce Gingery <bgingery@gtcs.com>
   BHILTON  Brand Hilton <bhilton@home.com>
   BHOLZMAN Benjamin Holzman <bholzman@earthlink.net>
+  BHORAN   Brian Horan <bhoran@gate.net>
   BHUGHES  Brad Hughes <brad@tgsmc.com>
   BIJUA    Biju A <bijuarjunan@mailcity.com>
   BILLH    William Herrera <wherrera@lynxview.com>
@@ -3238,6 +3253,7 @@ to a CGI script that lets you edit the database entries yourself.
   BLACKSTAR BlackStar <marty@blackstar.co.uk>
   BLANTREWI Boris Lantrewitz <lantrewi@do.isst.fhg.de>
   BLCKSMTH Dan Campbell <parser@danofsteel.com>
+  BMAVT    Bruno Tavares <bmavt_pause@clix.pt>
   BMEEKINGS Brian Meekings <meekings@idi-middleware.com>
   BMIDD    William J. Middleton <wjm@metronet.com>
   BMORGAN  Bruce Morgan <morgan@networks.curtin.edu.au>
@@ -3750,7 +3766,7 @@ to a CGI script that lets you edit the database entries yourself.
   JSTOF    John Stoffel <john@wpi.edu>
   JSWARTZ  Jonathan Swartz <swartz@transbay.net>
   JTILLMAN James Tillman <jtillman@bigfoot.com>
-  JTOBEY   John Tobey <spam@john-edwin-tobey.org>
+  JTOBEY   John Tobey <jtobey@john-edwin-tobey.org>
   JTURNER  James Turner <james@csmonitor.com>
   JURL     Jeff Urlwin <jurlwin@iamdigex.net>
   JV       Johan Vromans <jvromans@squirrel.nl>
@@ -3776,11 +3792,13 @@ to a CGI script that lets you edit the database entries yourself.
   KENFOX   Ken Fox <fox@vulpes.com>
   KENHOLM  Kenneth Alexander Holm III <rets@meta3.com>
   KENMACF  Ken MacFarlane <ksm+cpan@universal.dca.net>
+  KENNEDYH Hugh Kennedy <kennedyh@engin.umich.edu>
   KENSHAN  Chung-chieh Shan <ken@digitas.harvard.edu>
   KEVINA   Kevin Atkinson <kevina@clark.net>
   KFOGEL   Karl Fogel <kfogel@red-bean.com>
   KGB      Karl Glazebrook <karlglazebrook@yahoo.com>
   KGREENE  Kevin Greene <kevin@weblab.com>
+  KHAMPTON Kip Hampton <khampton@totalcinema.com>
   KIMRYAN  Kim Ryan <kimaryan@ozemail.com.au>
   KJALB    Kenneth Albanowski <kjahds@kjahds.com>
   KJOHNSON Kevin Johnson <kjj@pobox.com>
@@ -3846,6 +3864,7 @@ to a CGI script that lets you edit the database entries yourself.
   MALPOETA Javier Viveros <smetafora@hotmail.com>
   MALVARO  Mariana Alvaro <mariana@alvaro.com.ar>
   MARAL    Peter Marelas <maral@phase-one.com.au>
+  MARCEL   Marcel Grunauer <marcel@codewerk.com>
   MARCIN   Marcin Kolbuszewski <marcin@capitalnet.com>
   MARCLANG Marc Langheinrich <marclang@cs.washington.edu>
   MARCP    Marc Paquette <Marc.Paquette@crim.ca>
@@ -3933,6 +3952,7 @@ to a CGI script that lets you edit the database entries yourself.
   MLEHMANN Marc Lehmann <pcg@goof.com>
   MLEWINSK Matthew Lewinski <mlewinsk@umich.edu>
   MLFISHER Mark Leighton Fisher <fisherm@tce.com>
+  MMACHADO Mike Machado <mike@innercite.com>
   MMML     The MakeMaker mailing list
            Mail to makemaker-REQUEST@perl.org with body "subscribe"
   MMORENO  Marco Moreno <Marco.Moreno@pobox.com>
@@ -3971,6 +3991,7 @@ to a CGI script that lets you edit the database entries yourself.
   MVORL    Martin Vorlaender <martin@radiogaga.harz.de>
   MWARD    Martin Ward <Martin.Ward@durham.ac.uk>
   MWARWICK Michael Warwick <mwarwick@pobox.com>
+  MWS      Markus Winand <mws@cpan.org>
   NANDU    Nandu Shah <nandu@cimedia.com>
   NEDKONZ  Ned Konz <perl@bike-nomad.com>
   NEERI    Matthias Ulrich Neeracher <neeri@iis.ee.ethz.ch>
@@ -4123,7 +4144,7 @@ to a CGI script that lets you edit the database entries yourself.
   RFLENS   Ronald F. Lens <ronald@ronaldlens.com>
   RFOLEY   Richard Foley <rfoley@rfi.net>
   RGEOFFREY R. Geoffrey Avery <rGeoffrey@PlatypiVentures.com>
-  RGIERSIG Roland Giersig <rgiersig@cpan.org>
+  RGIERSIG Roland Giersig <RGiersig@cpan.org>
   RHANSON  Robert Hanson <rhanson@blast.net>
   RHNELSON Rolf Harold Nelson <rolf@usa.healthnet.org>
   RHOFER   Robert Hofer <hofer@informatik.uni-muenchen.de>
@@ -4377,7 +4398,7 @@ to a CGI script that lets you edit the database entries yourself.
   WRW      William R Ward <wrw@bayview.com>
   WSANNIS  William S. Annis <annis@biostat.wisc.edu>
   WSCOT    Wayne Scott <wscott@ichips.intel.com>
-  WSNYDER  Wilson Snyder <wsnyder@ultranet.com>
+  WSNYDER  Wilson Snyder <wsnyder@world.std.com>
   WTOMPSON Wayne Tompson <Wayne.Thompson@Ebay.Sun.COM>
   WYTAN    Wei-Yuen Tan <Wei-Yuen_Tan@hip.com>
   XCALBET  Xavier Calbet <xcalbet@inm.es>
@@ -4396,6 +4417,7 @@ to a CGI script that lets you edit the database entries yourself.
   ZELT     Tom Zeltwanger <perl@ename.com>
   ZENIN    Byron Brummer <zenin@bawdycaste.org>
   ZHOUXIN  Xin Zhou <zhouxin@email.com>
+  ZOOVY    Brian Horakh <brian@zoovy.com>
   ZTURK    Ziga TURK <ziga.turk@fagg.uni-lj.si>
 
 2) Perl Frequently Asked Questions (FAQ)
